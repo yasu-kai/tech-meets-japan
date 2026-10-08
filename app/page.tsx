@@ -22,13 +22,12 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <Link href="/companies" className="button button-accent">企業を探す <ArrowRight size={17}/></Link>
-            <Link href="/for-vendors" className="button button-light">日本市場に参入する</Link>
           </div>
           <div className="hero-stats">
             <div><strong>{companies.length}</strong><span>Curated companies</span></div>
             <div><strong>{categoryCount}</strong><span>Technology categories</span></div>
             <div><strong>{signals.length}</strong><span>Entry signals tracked</span></div>
-            <div><strong>Neutral</strong><span>Paid placement ≠ ranking</span></div>
+            <div><strong>Independent</strong><span>Editorial intelligence</span></div>
           </div>
         </section>
 
@@ -106,8 +105,8 @@ export default function Home() {
           <div className="steps-grid">
             <div className="step-card"><Search/><span>01</span><h3>Discover</h3><p>課題・業界・用途から、海外テクノロジー企業を発見。</p></div>
             <div className="step-card"><Compass/><span>02</span><h3>Compare</h3><p>Japan Fit、導入難易度、ユースケースを共通軸で比較。</p></div>
-            <div className="step-card"><Globe2/><span>03</span><h3>Connect</h3><p>導入・提携・PoC・代理店など、最適な接点につなぐ。</p></div>
-            <div className="step-card"><Sparkles/><span>04</span><h3>Enter Japan</h3><p>市場調査、GTM、Partner探索まで日本参入を支援。</p></div>
+            <div className="step-card"><Globe2/><span>03</span><h3>Understand</h3><p>日本での導入状況、競合、リスク、実績まで立体的に理解。</p></div>
+            <div className="step-card"><Sparkles/><span>04</span><h3>Decide</h3><p>自社に合うか、今検討すべきか、次のアクションまで判断。</p></div>
           </div>
         </section>
 
@@ -130,15 +129,15 @@ export default function Home() {
 
         <section className="neutrality">
           <ShieldCheck size={28}/>
-          <div><p className="eyebrow">EDITORIAL INDEPENDENCE</p><h2>掲載料で、順位は買えません。</h2></div>
-          <p>掲載・特集・リサーチは有料化しても、Japan Fit Scoreと編集評価は独立。中立性そのものを、この媒体の資産にします。</p>
+          <div><p className="eyebrow">EDITORIAL PRINCIPLE</p><h2>読む人の判断に、役立つか。</h2></div>
+          <p>企業紹介で終わらず、実績・競合・リスク・導入適性まで同じ目線で整理。TECH MEETS JAPANは、判断材料の質を最優先にします。</p>
         </section>
 
         <section className="cta-band">
-          <p className="eyebrow">FOR GLOBAL TECHNOLOGY COMPANIES</p>
-          <h2>Japan is not a translation project.<br/>It is a market-entry project.</h2>
-          <p>日本市場に挑戦する海外テクノロジー企業の、最初の一歩から。</p>
-          <Link href="/for-vendors" className="button button-accent">Explore Japan Entry <ArrowRight size={17}/></Link>
+          <p className="eyebrow">EXPLORE WHAT'S NEXT</p>
+          <h2>知らなかった選択肢を、<br/>次の打ち手に。</h2>
+          <p>海外テックを、話題ではなく「自社で使えるか」で見る。</p>
+          <Link href="/companies" className="button button-accent">企業を探す <ArrowRight size={17}/></Link>
         </section>
       </main>
       <Footer/>
