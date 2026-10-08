@@ -8,7 +8,7 @@ export default function Footer() {
         <p>世界のテクノロジーを、日本の選択肢に。</p>
       </div>
       <div className="footer-links">
-        <Link href="/companies">Companies</Link>
+        <Link href="/products">Products</Link>
         <Link href="/signals">Signals</Link>
         <Link href="/research">Research</Link>
       </div>
