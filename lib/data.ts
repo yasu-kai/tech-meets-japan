@@ -67,9 +67,9 @@ export const companies: Company[] = [
         {segment:"放送 / 映画 / エンタメ",pain:"高コストなVFX・ロケ・企画検証が制作予算を圧迫。",openingOffer:"企画段階の絵作り、背景、VFX補助。",whyBuy:"本撮影前に完成イメージを早く検証できる。"}
       ],
       gtmPlays:[
-        {title:"広告代理店を“販売チャネル”にする",buyer:"大手代理店のAI / Creative Tech部門",wedge:"まず内製制作の高速化ツールとして導入。",expansion:"代理店が自社顧客へRunway活用施策を提案し、案件単位で横展開。"},
-        {title:"IP企業で成功事例を作る",buyer:"ゲーム・アニメ・出版のIPホルダー",wedge:"既存IPを壊さない限定ユースケースでPoC。",expansion:"プロモーション→ゲーム内映像→海外展開へ拡張。"},
-        {title:"Enterprise workflowとして売る",buyer:"大企業マーケ / Creative Operations",wedge:"単発生成ではなく、Brand Kit・Workspace・ガバナンス込みで導入。",expansion:"部署利用→全社標準→API / workflow組み込みへ。"}
+        {title:"広告制作のB案量産から始める",buyer:"広告代理店・制作会社のCreative Tech部門",wedge:"既存案件のプリビズや複数案作成で、まず制作フローに組み込む。",expansion:"社内利用から、顧客案件・キャンペーン制作へ広げる。"},
+        {title:"既存IPのプロモーションから試す",buyer:"ゲーム・アニメ・出版のIPホルダー",wedge:"世界観を壊しにくい短尺PVやSNS素材など、限定用途で試す。",expansion:"プロモーションからゲーム内映像・海外向け展開へ広げる。"},
+        {title:"企業標準の制作ワークフローにする",buyer:"大企業マーケ / Creative Operations",wedge:"単発生成ではなく、Brand Kit・Workspace・ガバナンス込みで導入する。",expansion:"部署利用から全社標準、API / workflow組み込みへ進める。"}
       ],
       competition:[
         {name:"Adobe Firefly",strength:"既存Creative Cloudとの統合と企業安心感。",runwayEdge:"映像生成・編集ワークフローの速度と先進性。",threat:"既存Adobe契約にバンドルされると追加導入が難しい。"},
@@ -96,7 +96,7 @@ export const companies: Company[] = [
         {date:"2026.08",title:"Enterprise事業がさらに拡大",detail:"全社売上は年初来2倍超、NRR 300%超を公表。日本はアジア最大市場と説明。"},
         {date:"2026.10",title:"日本向けDeployment体制を強化",detail:"Founding Deployment LeadやCreative Workflow Architectなど、日本企業の導入定着を担う役割を採用。"}
       ],
-      verdict:"日本市場で既にPMFの兆候があり、しかも商業組織はまだ構築途上。『売れるか分からない海外企業』ではなく、『既に自然流入で売れている会社を、組織的GTMで一段上げる』局面。Japan Entry案件としては最上位クラス。",
+      verdict:"日本市場で既に導入実績と成長シグナルがあり、しかも活用領域はまだ広がっている。『面白い生成AI』として見るより、広告・IP・ブランド・映像制作のどこで実務に組み込めるかを判断する段階。日本企業が今検討する価値はかなり高い。",
       sources:[
         {label:"Runway — Runway is Coming to Japan (May 2026)",url:"https://runway.com/news/runway-is-coming-to-japan"},
         {label:"Runway — MIXI strategic partnership (Jun 2026)",url:"https://runway.com/news/runway-and-mixi-announce-strategic-partnership"},
