@@ -298,6 +298,30 @@ export const themes = [
 ];
 
 
+export type ProductDecisionData = {
+  capabilities?: { label: string; detail: string; confidence?: "High"|"Medium"|"Low" }[];
+  limitations?: string[];
+  pricing?: {
+    publicPlans?: { name:string; monthly?:string; annualEquivalent?:string; credits?:string; notes?:string }[];
+    enterprise?: string;
+    api?: string;
+    tcoNote?: string;
+  };
+  onboarding?: { level:1|2|3|4|5; label:string; timeToValue:string; costNote:string; tasks:string[] };
+  replacement?: { level:1|2|3|4|5; label:string; costNote:string; migrationRisks:string[] };
+  japanese?: { ui:string; input:string; output:string; docs:string; support:string; note?:string };
+  support?: { level:string; details:string[] };
+  integrations?: string[];
+  enterpriseReadiness?: { item:string; status:string; note?:string }[];
+  contract?: { item:string; value:string }[];
+  trial?: { available:string; detail:string };
+  lockIn?: { level:1|2|3|4|5; label:string; reasons:string[] };
+  bestFor?: string[];
+  notFor?: string[];
+  verdict?: { status:"今すぐ試す"|"PoC推奨"|"様子見"|"日本ではまだ早い"; summary:string };
+  evidence?: { item:string; type:"Official"|"Observed"|"Estimated"; confidence:"High"|"Medium"|"Low"; source?:string }[];
+};
+
 export type Product = {
   slug: string;
   name: string;
@@ -316,10 +340,79 @@ export type Product = {
   tags: string[];
   website: string;
   featured?: boolean;
+  decision?: ProductDecisionData;
 };
 
 export const products: Product[] = [
-  {slug:"runway-ai-video",name:"Runway AI Video Platform",provider:"Runway",companySlug:"runway",country:"United States",category:"Creative AI",tagline:"撮影・編集・VFXの一部を、生成AIの制作フローへ。",description:"映像生成、編集、Transformation、Character performanceなどを一つの制作環境で扱うAI映像プラットフォーム。",fitScore:94,japanStatus:"Japan expansion",entryStage:"Scaling",useCases:["広告動画","プリビズ","SNSクリエイティブ","IP・ゲーム映像"],targetUsers:["広告・制作会社","ブランドマーケ","ゲーム・IP","放送・映像"],alternatives:["Adobe Firefly","Google Veo","OpenAI video","Higgsfield"],tags:["Generative Video","Enterprise","Creative Workflow"],website:"https://runwayml.com",featured:true},
+  {slug:"runway-ai-video",name:"Runway AI Video Platform",provider:"Runway",companySlug:"runway",country:"United States",category:"Creative AI",tagline:"撮影・編集・VFXの一部を、生成AIの制作フローへ。",description:"映像生成、編集、Transformation、Character performanceなどを一つの制作環境で扱うAI映像プラットフォーム。",fitScore:94,japanStatus:"Japan expansion",entryStage:"Scaling",useCases:["広告動画","プリビズ","SNSクリエイティブ","IP・ゲーム映像"],targetUsers:["広告・制作会社","ブランドマーケ","ゲーム・IP","放送・映像"],alternatives:["Adobe Firefly","Google Veo","OpenAI video","Higgsfield"],tags:["Generative Video","Enterprise","Creative Workflow"],website:"https://runwayml.com",featured:true,
+  decision:{
+    capabilities:[
+      {label:"Text / Image → Video",detail:"Gen-4.5などでテキスト・画像から動画生成。"},
+      {label:"Video Editing / Transformation",detail:"Aleph系で既存映像の変換・編集ワークフローに対応。"},
+      {label:"Character Performance",detail:"人物・キャラクター表現を動かすAct-Two系機能を利用可能。"},
+      {label:"Multi-model workflow",detail:"Runway独自モデルに加え一部サードパーティモデルも同一環境で利用可能。"},
+      {label:"Enterprise controls",detail:"EnterpriseではSSO、Audit Logs、Analytics、Brand Kit、組織管理などを提供。"}
+    ],
+    limitations:[
+      "モデル品質だけを比較すると競合との差が短期間で縮まりやすい。",
+      "高品質動画は試行回数が増えやすく、クレジット消費が読みにくい。",
+      "SAMLとSCIMは現時点で未対応。SSOはOIDCベース。",
+      "日本語UI・日本語サポートの提供範囲は公開情報だけでは判定しきれない。"
+    ],
+    pricing:{
+      publicPlans:[
+        {name:"Free",monthly:"$0",credits:"125 one-time credits",notes:"試用向け。"},
+        {name:"Standard",monthly:"$15",annualEquivalent:"$12/月相当",credits:"625 credits/月"},
+        {name:"Pro",monthly:"$35",annualEquivalent:"$28/月相当",credits:"2,250 credits/月"},
+        {name:"Max",monthly:"$95",annualEquivalent:"$76/月相当",credits:"9,500 credits/月",notes:"1か月分まで未使用creditsを繰越。"}
+      ],
+      enterprise:"Enterpriseは個別見積。Custom credits、SSO、Workspace Analytics、Enterprise-wide onboarding、Priority support等を含む。",
+      api:"Runway Devは基本1 credit = $0.01。モデル・解像度・秒数ごとに従量課金。",
+      tcoNote:"制作現場では契約費より『何回生成し直すか』がTCOを左右しやすい。PoC時に1成果物あたりの平均生成回数を必ず測るべき。"
+    },
+    onboarding:{
+      level:2,label:"低〜中",timeToValue:"個人利用なら即日。企業利用は1〜3週間程度が目安。",costNote:"小規模PoCならほぼライセンス費のみ。EnterpriseはSSO・権限・ブランドルール・運用設計の工数が追加。",
+      tasks:["アカウント/Workspace設定","対象ユースケース選定","Brand / IP利用ルール整理","プロンプト・生成フロー検証","EnterpriseならSSO・権限設定"]
+    },
+    replacement:{
+      level:2,label:"比較的低い",costNote:"Adobe等の制作環境を完全置換するより、生成工程を追加するケースが多く、初期リプレイス負荷は低め。",
+      migrationRisks:["既存アセット管理との二重運用","社内承認フローの再設計","制作担当者の学習コスト","Adobe等の既存工程を完全には置き換えにくい"]
+    },
+    japanese:{ui:"要確認",input:"日本語プロンプト利用可",output:"言語依存度は用途次第",docs:"英語中心",support:"日本語専任対応は公開情報では要確認",note:"日本拠点は開設済みだが、UI・Help・Supportの日本語提供範囲は契約前確認推奨。"},
+    support:{level:"Enterpriseは強い",details:["Enterprise Creative Support","Priority Creative & Technical Support","Same business day response","Weekly Office Hours（US/EU time zones）","Monthly Feature Deep Dives"]},
+    integrations:["API","MCP","Workspace / Organization","Brand Kits","Third-party models"],
+    enterpriseReadiness:[
+      {item:"SSO",status:"○",note:"OIDC対応"},
+      {item:"SCIM",status:"×",note:"現時点で未対応"},
+      {item:"SAML",status:"×",note:"現時点で未対応"},
+      {item:"Audit Logs",status:"○",note:"CSV export可"},
+      {item:"SOC 2 Type II",status:"○"},
+      {item:"ISO/IEC 27001:2022",status:"○"},
+      {item:"Workspace Analytics",status:"○",note:"Enterprise"},
+      {item:"Priority Support",status:"○",note:"Enterprise"}
+    ],
+    contract:[
+      {item:"個人プラン",value:"月額/年額。アップグレードは日割り。"},
+      {item:"Team",value:"2〜9席。$69/席/月、年契約は$55/席/月。"},
+      {item:"Enterprise",value:"10名以上の大規模利用向け。個別契約。"},
+      {item:"追加credits",value:"最低1,000 creditsから購入可能。"}
+    ],
+    trial:{available:"あり",detail:"Freeで125 creditsを一度付与。まず操作感と出力品質を確認可能。"},
+    lockIn:{level:2,label:"低〜中",reasons:["出力物自体は動画/画像として持ち出せる","ただし生成フロー・Brand Kit・運用ノウハウはRunway依存になりやすい","API組み込み後は置換コストが上がる"]},
+    bestFor:["広告・映像制作で生成AIを本番利用したい","複数モデルを一つの制作環境で扱いたい","ブランド/制作チーム単位でEnterprise運用したい","まず短期PoCから始めたい"],
+    notFor:["日本語UI・国内時間帯サポートが必須","既存Adobe環境を完全に一発置換したい","生成コストを固定額で厳密に予算化したい"],
+    verdict:{status:"PoC推奨",summary:"導入難易度は低く、制作現場で価値検証しやすい。まず1つの明確な制作工程に限定し、品質・生成回数・1成果物あたりTCOを測るのが最短。"},
+    evidence:[
+      {item:"公開料金",type:"Official",confidence:"High",source:"Runway pricing"},
+      {item:"API単価",type:"Official",confidence:"High",source:"Runway Dev pricing"},
+      {item:"SSO / SCIM / SAML",type:"Official",confidence:"High",source:"Runway Help Center"},
+      {item:"Enterprise support",type:"Official",confidence:"High",source:"Runway Help Center"},
+      {item:"オンボーディング期間",type:"Estimated",confidence:"Medium"},
+      {item:"リプレイスコスト",type:"Estimated",confidence:"Medium"},
+      {item:"日本語サポート範囲",type:"Observed",confidence:"Low"}
+    ]
+  }
+},
   {slug:"heygen-avatar-video",name:"HeyGen AI Avatar & Video",provider:"HeyGen",companySlug:"heygen",country:"United States",category:"Creative AI",tagline:"1本の動画を、多言語・多地域へ展開する。",description:"AI Avatar、音声クローン、翻訳・リップシンクを組み合わせた動画ローカライズ／生成プロダクト。",fitScore:91,japanStatus:"Building ecosystem",entryStage:"Entering",useCases:["多言語営業","採用動画","研修","海外向けマーケ"],targetUsers:["グローバル企業","人事","営業企画","EC"],alternatives:["Synthesia","Captions","ElevenLabs"],tags:["Avatar","Localization","Video"],website:"https://www.heygen.com"},
   {slug:"synthesia-enterprise-video",name:"Synthesia Enterprise Video",provider:"Synthesia",companySlug:"synthesia",country:"United Kingdom",category:"Enterprise AI",tagline:"研修・マニュアル動画を、撮影せず更新する。",description:"企業向けのAI Avatar動画生成・更新基盤。研修、オンボーディング、営業Enablementに強い。",fitScore:88,japanStatus:"APAC expansion",entryStage:"Entering",useCases:["研修","マニュアル","オンボーディング","営業Enablement"],targetUsers:["人事","L&D","営業企画","グローバル本社"],alternatives:["HeyGen","Colossyan","Canva"],tags:["Training","Enterprise Video","Avatar"],website:"https://www.synthesia.io"},
   {slug:"minimax-multimodal",name:"MiniMax Multimodal AI",provider:"MiniMax",companySlug:"minimax",country:"China",category:"Multimodal AI",tagline:"動画・音声・画像・Agentを一つのAI群で扱う。",description:"動画、音声、画像、テキスト、Agentを横断するマルチモーダルAIプロダクト群。",fitScore:89,japanStatus:"Japan organization",entryStage:"Scaling",useCases:["IP動画","音声生成","動画生成","AI Agent"],targetUsers:["ゲーム","アニメ・出版","広告","プラットフォーム"],alternatives:["Runway","Kling","OpenAI","ElevenLabs"],tags:["Multimodal","Video","Voice","Agent"],website:"https://www.minimax.io"},
