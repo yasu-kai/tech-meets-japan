@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import { ArrowUpRight, Check, Globe2, AlertTriangle, BarChart3, Building2, Crosshair, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowUpRight, AlertTriangle, BarChart3, Building2, Crosshair, Globe2, ShieldCheck, Sparkles } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LeadForm from "@/components/LeadForm";
@@ -19,74 +18,111 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
   return (
     <>
       <Header/>
-      <main>
-        <section className="profile-hero">
-          <div className="profile-main">
-            <p className="eyebrow">{company.country} · {company.category}</p>
-            <h1>{company.name}</h1>
-            <p className="profile-tagline">{company.tagline}</p>
-            <p className="profile-description">{company.description}</p>
-            <div className="tag-row large">{company.tags.map(t => <span key={t}>{t}</span>)}</div>
+      <main className="company-profile">
+        <section className="profile-masthead">
+          <div className="profile-kicker-row">
+            <div className="profile-kicker">{company.country} / {company.category}</div>
+            <div className="profile-stage">{company.entryStage}</div>
           </div>
-          <div className="fit-panel">
-            <span>JAPAN FIT SCORE</span>
-            <strong>{company.fitScore}</strong>
-            <small>/ 100</small>
-            <div className="fit-bar"><i style={{width: company.fitScore + "%"}}></i></div>
-            <p>{company.japanStatus}</p>
+
+          <div className="profile-title-grid">
+            <div>
+              <h1>{company.name}</h1>
+              <p className="profile-deck">{company.tagline}</p>
+            </div>
+            <div className="score-orbit" style={{"--score": company.fitScore} as React.CSSProperties}>
+              <div>
+                <span>JAPAN FIT</span>
+                <strong>{company.fitScore}</strong>
+                <small>/100</small>
+              </div>
+            </div>
           </div>
+
+          <div className="profile-intro-grid">
+            <p>{company.description}</p>
+            <div className="profile-status">
+              <span>STATUS IN JAPAN</span>
+              <strong>{company.japanStatus}</strong>
+            </div>
+          </div>
+
+          <div className="tag-row editorial-tags">{company.tags.map(t => <span key={t}>{t}</span>)}</div>
         </section>
 
         {intel?.snapshot && (
-          <section className="intel-strip">
-            {intel.snapshot.map(item => (
+          <section className="stat-ribbon">
+            {intel.snapshot.map((item,index) => (
               <div key={item.label}>
-                <span>{item.label}</span>
+                <span>0{index+1}</span>
+                <p>{item.label}</p>
                 <strong>{item.value}</strong>
-                <p>{item.note}</p>
+                <small>{item.note}</small>
               </div>
             ))}
           </section>
         )}
 
-        <section className="profile-grid">
-          <div>
-            {intel?.verdict && (
-              <div className="verdict-card">
-                <div className="verdict-icon"><Sparkles size={22}/></div>
-                <div><p className="eyebrow">TECH MEETS JAPAN VERDICT</p><h2>この会社、日本で勝てるか。</h2><p>{intel.verdict}</p></div>
+        {intel?.verdict && (
+          <section className="editorial-verdict">
+            <div className="verdict-label"><Sparkles size={16}/> TECH MEETS JAPAN VIEW</div>
+            <div>
+              <h2>この会社、日本で勝てるか。</h2>
+              <p>{intel.verdict}</p>
+            </div>
+          </section>
+        )}
+
+        <section className="profile-editorial">
+          <div className="editorial-rail">
+            <div className="rail-block">
+              <span>PAIN</span>
+              <strong>何が痛いのか</strong>
+              <p>{company.pain}</p>
+            </div>
+            <div className="rail-block">
+              <span>WHY NOW</span>
+              <strong>なぜ今なのか</strong>
+              <p>{company.whyNow}</p>
+            </div>
+            {intel && (
+              <div className="rail-block rail-quick">
+                <span>QUICK TAKE</span>
+                <div><BarChart3 size={15}/><b>Fit</b><strong>{company.fitScore}/100</strong></div>
+                <div><ShieldCheck size={15}/><b>Stage</b><strong>{company.entryStage}</strong></div>
+                <div><Globe2 size={15}/><b>Status</b><strong>{company.japanStatus}</strong></div>
               </div>
             )}
+          </div>
 
-            <div className="analysis-block">
-              <p className="eyebrow">PAIN</p><h2>日本企業の、どんな痛みに刺さるか。</h2><p>{company.pain}</p>
-            </div>
-
+          <div className="editorial-main">
             {intel?.targetAccounts && (
-              <div className="analysis-block">
-                <p className="eyebrow">TARGET ACCOUNTS</p>
-                <h2>誰に、何を入口に売るか。</h2>
-                <div className="target-table">
-                  {intel.targetAccounts.map(row => (
-                    <div className="target-row" key={row.segment}>
-                      <div><span>BUYER</span><strong>{row.segment}</strong></div>
-                      <div><span>PAIN</span><p>{row.pain}</p></div>
-                      <div><span>WEDGE</span><p>{row.openingOffer}</p></div>
-                      <div><span>WHY BUY</span><p>{row.whyBuy}</p></div>
-                    </div>
+              <section className="story-section">
+                <div className="story-heading"><span>01</span><div><p>TARGET ACCOUNTS</p><h2>誰に、何を入口に売るか。</h2></div></div>
+                <div className="account-grid">
+                  {intel.targetAccounts.map((row,index) => (
+                    <article key={row.segment}>
+                      <div className="account-num">{String(index+1).padStart(2,"0")}</div>
+                      <h3>{row.segment}</h3>
+                      <dl>
+                        <div><dt>PAIN</dt><dd>{row.pain}</dd></div>
+                        <div><dt>WEDGE</dt><dd>{row.openingOffer}</dd></div>
+                        <div><dt>WHY BUY</dt><dd>{row.whyBuy}</dd></div>
+                      </dl>
+                    </article>
                   ))}
                 </div>
-              </div>
+              </section>
             )}
 
             {intel?.gtmPlays && (
-              <div className="analysis-block">
-                <p className="eyebrow">GTM HYPOTHESES</p>
-                <h2>日本での勝ち筋、3本。</h2>
-                <div className="gtm-grid">
+              <section className="story-section dark-story">
+                <div className="story-heading"><span>02</span><div><p>GTM HYPOTHESES</p><h2>日本での勝ち筋、3本。</h2></div></div>
+                <div className="gtm-editorial">
                   {intel.gtmPlays.map((play,index) => (
                     <article key={play.title}>
-                      <span>0{index+1}</span><Crosshair size={20}/>
+                      <div className="gtm-index">0{index+1}</div>
+                      <Crosshair size={18}/>
                       <h3>{play.title}</h3>
                       <p><b>Buyer</b>{play.buyer}</p>
                       <p><b>Wedge</b>{play.wedge}</p>
@@ -94,120 +130,98 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
                     </article>
                   ))}
                 </div>
-              </div>
+              </section>
             )}
 
-            <div className="analysis-block">
-              <p className="eyebrow">WHY NOW</p><h2>なぜ、今なのか。</h2><p>{company.whyNow}</p>
-            </div>
-
             {intel?.scoreBreakdown && (
-              <div className="analysis-block">
-                <p className="eyebrow">FIT BREAKDOWN</p>
-                <h2>94点の中身。</h2>
-                <div className="score-breakdown">
+              <section className="story-section">
+                <div className="story-heading"><span>03</span><div><p>FIT BREAKDOWN</p><h2>{company.fitScore}点は、何でできているか。</h2></div></div>
+                <div className="score-editorial">
                   {intel.scoreBreakdown.map(item => (
-                    <div className="score-line" key={item.label}>
-                      <div className="score-head"><strong>{item.label}</strong><b>{item.score}</b></div>
-                      <div className="score-track"><i style={{width:item.score+"%"}}></i></div>
+                    <div key={item.label}>
+                      <div className="score-editorial-head"><strong>{item.label}</strong><b>{item.score}</b></div>
+                      <div className="score-editorial-bar"><i style={{width:item.score+"%"}}></i></div>
                       <p>{item.reason}</p>
                     </div>
                   ))}
                 </div>
-              </div>
+              </section>
             )}
 
             {intel?.competition && (
-              <div className="analysis-block">
-                <p className="eyebrow">COMPETITION</p>
-                <h2>誰と戦い、どこで勝つか。</h2>
-                <div className="competition-grid">
+              <section className="story-section">
+                <div className="story-heading"><span>04</span><div><p>COMPETITION</p><h2>誰と戦い、どこで勝つか。</h2></div></div>
+                <div className="competition-editorial">
+                  <div className="competition-head"><span>COMPETITOR</span><span>THEIR EDGE</span><span>{company.name.toUpperCase()} EDGE</span><span>THREAT</span></div>
                   {intel.competition.map(x => (
-                    <article key={x.name}>
-                      <h3>{x.name}</h3>
-                      <p><b>相手の強み</b>{x.strength}</p>
-                      <p><b>{company.name}の勝ち筋</b>{x.runwayEdge}</p>
-                      <p><b>脅威</b>{x.threat}</p>
-                    </article>
+                    <div className="competition-row" key={x.name}>
+                      <strong>{x.name}</strong><p>{x.strength}</p><p>{x.runwayEdge}</p><p>{x.threat}</p>
+                    </div>
                   ))}
                 </div>
-              </div>
+              </section>
             )}
 
             {intel?.risks && (
-              <div className="analysis-block">
-                <p className="eyebrow">RISKS</p>
-                <h2>それでも、ここで詰まる。</h2>
-                <div className="risk-list">
-                  {intel.risks.map(risk => (
-                    <div key={risk.title}>
-                      <AlertTriangle size={17}/>
-                      <span className={"risk-level " + risk.severity.toLowerCase()}>{risk.severity}</span>
-                      <strong>{risk.title}</strong>
-                      <p>{risk.detail}</p>
-                    </div>
+              <section className="story-section">
+                <div className="story-heading"><span>05</span><div><p>RISKS</p><h2>それでも、ここで詰まる。</h2></div></div>
+                <div className="risk-editorial">
+                  {intel.risks.map((risk,index) => (
+                    <article key={risk.title}>
+                      <div className="risk-index">{String(index+1).padStart(2,"0")}</div>
+                      <AlertTriangle size={16}/>
+                      <div><span>{risk.severity}</span><h3>{risk.title}</h3><p>{risk.detail}</p></div>
+                    </article>
                   ))}
                 </div>
-              </div>
+              </section>
             )}
 
             {intel?.timeline && (
-              <div className="analysis-block">
-                <p className="eyebrow">JAPAN ENTRY TIMELINE</p>
-                <h2>日本で、何が起きているか。</h2>
-                <div className="timeline">
+              <section className="story-section">
+                <div className="story-heading"><span>06</span><div><p>JAPAN ENTRY TIMELINE</p><h2>日本で、何が起きているか。</h2></div></div>
+                <div className="timeline-editorial">
                   {intel.timeline.map(item => (
-                    <div key={item.date+item.title}>
-                      <span>{item.date}</span><i></i>
-                      <div><strong>{item.title}</strong><p>{item.detail}</p></div>
-                    </div>
+                    <article key={item.date+item.title}>
+                      <time>{item.date}</time>
+                      <div><h3>{item.title}</h3><p>{item.detail}</p></div>
+                    </article>
                   ))}
                 </div>
-              </div>
+              </section>
             )}
 
             {intel?.japanCustomers && (
-              <div className="analysis-block">
-                <p className="eyebrow">JAPAN PROOF</p>
-                <h2>すでに誰が使っているか。</h2>
-                <div className="proof-grid">{intel.japanCustomers.map(x => <span key={x}><Building2 size={16}/>{x}</span>)}</div>
-              </div>
+              <section className="story-section proof-story">
+                <div className="story-heading"><span>07</span><div><p>JAPAN PROOF</p><h2>すでに誰が使っているか。</h2></div></div>
+                <div className="proof-editorial">{intel.japanCustomers.map(x => <div key={x}><Building2 size={15}/><strong>{x}</strong></div>)}</div>
+              </section>
             )}
-
-            <div className="analysis-block">
-              <p className="eyebrow">USE CASES</p><h2>想定ユースケース</h2>
-              <div className="check-list">{company.useCases.map(x => <div key={x}><Check size={17}/>{x}</div>)}</div>
-            </div>
-            <div className="analysis-block">
-              <p className="eyebrow">BUYERS</p><h2>最初に誰へ売るか。</h2>
-              <div className="buyer-grid">{company.buyers.map(x => <span key={x}>{x}</span>)}</div>
-            </div>
 
             {intel?.sources && (
-              <div className="analysis-block">
-                <p className="eyebrow">SOURCES</p><h2>根拠を見る。</h2>
-                <div className="source-list">
-                  {intel.sources.map(source => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.label}<ArrowUpRight size={15}/></a>)}
+              <section className="story-section sources-story">
+                <div className="story-heading"><span>08</span><div><p>SOURCES</p><h2>根拠を追う。</h2></div></div>
+                <div className="sources-editorial">
+                  {intel.sources.map((source,index) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer"><span>{String(index+1).padStart(2,"0")}</span><strong>{source.label}</strong><ArrowUpRight size={15}/></a>)}
                 </div>
-              </div>
+              </section>
             )}
+          </div>
+        </section>
 
+        <section className="profile-end">
+          <div>
+            <p className="eyebrow">NEXT ACTION</p>
+            <h2>{company.name}を、日本でどう使うか。</h2>
+            <p>導入、提携、PoC、代理店候補まで、具体的な次の一手に落とします。</p>
             <a href={company.website} target="_blank" rel="noreferrer" className="text-link">Official website <ArrowUpRight size={16}/></a>
           </div>
-
-          <aside>
-            {intel && (
-              <div className="side-intel">
-                <p className="eyebrow">QUICK TAKE</p>
-                <div><BarChart3 size={18}/><span>Japan Fit</span><strong>{company.fitScore}/100</strong></div>
-                <div><ShieldCheck size={18}/><span>Entry stage</span><strong>{company.entryStage}</strong></div>
-                <div><Globe2 size={18}/><span>Japan status</span><strong>{company.japanStatus}</strong></div>
-              </div>
-            )}
-            <LeadForm company={company.name}/>
-            <div className="disclaimer"><Globe2 size={17}/><p>本ページは公開情報をもとにした独立編集プロフィールです。掲載企業との提携・代理関係を示すものではありません。GTM・競争分析の一部はTECH MEETS JAPANによる仮説です。</p></div>
-          </aside>
+          <LeadForm company={company.name}/>
         </section>
+
+        <div className="profile-disclaimer">
+          本ページは公開情報をもとにした独立編集プロフィールです。掲載企業との提携・代理関係を示すものではありません。GTM・競争分析の一部はTECH MEETS JAPANによる仮説です。
+        </div>
       </main>
       <Footer/>
     </>
