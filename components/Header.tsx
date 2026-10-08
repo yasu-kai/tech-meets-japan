@@ -8,8 +8,7 @@ import { useState } from "react";
 const links = [
   { href: "/companies", label: "企業を探す" },
   { href: "/signals", label: "Entry Signals" },
-  { href: "/research", label: "Japan Entry Research" },
-  { href: "/for-vendors", label: "日本進出を考える企業へ" },
+  { href: "/research", label: "Research" },
 ];
 
 export default function Header() {
@@ -29,7 +28,6 @@ export default function Header() {
         </nav>
         <div className="header-actions">
           <Link href="/companies" className="icon-button" aria-label="Search"><Search size={18}/></Link>
-          <Link href="/for-vendors" className="button button-dark desktop-only">List your company</Link>
           <button className="menu-button" onClick={() => setOpen(!open)} aria-label="Menu"><Menu size={22}/></button>
         </div>
       </div>
