@@ -5,15 +5,14 @@ export default function Footer() {
     <footer className="footer">
       <div>
         <div className="brand brand-footer">TECH <span>MEETS</span> JAPAN</div>
-        <p>Global technology, matched to Japan.</p>
+        <p>世界のテクノロジーを、日本の選択肢に。</p>
       </div>
       <div className="footer-links">
         <Link href="/companies">Companies</Link>
         <Link href="/signals">Signals</Link>
         <Link href="/research">Research</Link>
-        <Link href="/for-vendors">For Vendors</Link>
       </div>
-      <p className="footer-note">Independent editorial platform. Rankings are not influenced by paid placement.</p>
+      <p className="footer-note">Independent technology intelligence for people exploring what comes next.</p>
     </footer>
   );
 }
