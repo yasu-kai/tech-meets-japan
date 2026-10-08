@@ -67,7 +67,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
           <section className="editorial-verdict">
             <div className="verdict-label"><Sparkles size={16}/> TECH MEETS JAPAN VIEW</div>
             <div>
-              <h2>この会社、日本で勝てるか。</h2>
+              <h2>日本企業にとって、使う価値はあるか。</h2>
               <p>{intel.verdict}</p>
             </div>
           </section>
@@ -98,7 +98,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
           <div className="editorial-main">
             {intel?.targetAccounts && (
               <section className="story-section">
-                <div className="story-heading"><span>01</span><div><p>TARGET ACCOUNTS</p><h2>誰に、何を入口に売るか。</h2></div></div>
+                <div className="story-heading"><span>01</span><div><p>WHO IT FITS</p><h2>どんな企業に、どう刺さるか。</h2></div></div>
                 <div className="account-grid">
                   {intel.targetAccounts.map((row,index) => (
                     <article key={row.segment}>
@@ -106,8 +106,8 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
                       <h3>{row.segment}</h3>
                       <dl>
                         <div><dt>PAIN</dt><dd>{row.pain}</dd></div>
-                        <div><dt>WEDGE</dt><dd>{row.openingOffer}</dd></div>
-                        <div><dt>WHY BUY</dt><dd>{row.whyBuy}</dd></div>
+                        <div><dt>FIRST USE</dt><dd>{row.openingOffer}</dd></div>
+                        <div><dt>WHY FIT</dt><dd>{row.whyBuy}</dd></div>
                       </dl>
                     </article>
                   ))}
@@ -117,16 +117,16 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
 
             {intel?.gtmPlays && (
               <section className="story-section dark-story">
-                <div className="story-heading"><span>02</span><div><p>GTM HYPOTHESES</p><h2>日本での勝ち筋、3本。</h2></div></div>
+                <div className="story-heading"><span>02</span><div><p>ADOPTION PATTERNS</p><h2>導入するなら、この3パターン。</h2></div></div>
                 <div className="gtm-editorial">
                   {intel.gtmPlays.map((play,index) => (
                     <article key={play.title}>
                       <div className="gtm-index">0{index+1}</div>
                       <Crosshair size={18}/>
                       <h3>{play.title}</h3>
-                      <p><b>Buyer</b>{play.buyer}</p>
-                      <p><b>Wedge</b>{play.wedge}</p>
-                      <p><b>Expand</b>{play.expansion}</p>
+                      <p><b>向いている企業</b>{play.buyer}</p>
+                      <p><b>最初の使い方</b>{play.wedge}</p>
+                      <p><b>次の展開</b>{play.expansion}</p>
                     </article>
                   ))}
                 </div>
@@ -150,9 +150,9 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
 
             {intel?.competition && (
               <section className="story-section">
-                <div className="story-heading"><span>04</span><div><p>COMPETITION</p><h2>誰と戦い、どこで勝つか。</h2></div></div>
+                <div className="story-heading"><span>04</span><div><p>ALTERNATIVES</p><h2>何と比べて選ぶべきか。</h2></div></div>
                 <div className="competition-editorial">
-                  <div className="competition-head"><span>COMPETITOR</span><span>THEIR EDGE</span><span>{company.name.toUpperCase()} EDGE</span><span>THREAT</span></div>
+                  <div className="competition-head"><span>ALTERNATIVE</span><span>強み</span><span>{company.name.toUpperCase()} が向くケース</span><span>選ぶ際の注意</span></div>
                   {intel.competition.map(x => (
                     <div className="competition-row" key={x.name}>
                       <strong>{x.name}</strong><p>{x.strength}</p><p>{x.runwayEdge}</p><p>{x.threat}</p>
@@ -212,15 +212,15 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
         <section className="profile-end">
           <div>
             <p className="eyebrow">NEXT ACTION</p>
-            <h2>{company.name}を、日本でどう使うか。</h2>
-            <p>導入、提携、PoC、代理店候補まで、具体的な次の一手に落とします。</p>
+            <h2>{company.name}を、自社で使うなら。</h2>
+            <p>公式情報と独自分析を見比べながら、まず試すべき用途と比較対象を整理して判断できます。</p>
             <a href={company.website} target="_blank" rel="noreferrer" className="text-link">Official website <ArrowUpRight size={16}/></a>
           </div>
-          <LeadForm company={company.name}/>
+          <a href={company.website} target="_blank" rel="noreferrer" className="button button-dark">公式サイトを見る <ArrowUpRight size={16}/></a>
         </section>
 
         <div className="profile-disclaimer">
-          本ページは公開情報をもとにした独立編集プロフィールです。掲載企業との提携・代理関係を示すものではありません。GTM・競争分析の一部はTECH MEETS JAPANによる仮説です。
+          本ページは公開情報をもとにした独立編集プロフィールです。掲載企業との提携・代理関係を示すものではありません。導入適性・比較分析の一部はTECH MEETS JAPANによる独自見解です。
         </div>
       </main>
       <Footer/>
