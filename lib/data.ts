@@ -1,3 +1,16 @@
+export type CompanyIntelligence = {
+  snapshot?: { label: string; value: string; note?: string }[];
+  japanCustomers?: string[];
+  targetAccounts?: { segment: string; pain: string; openingOffer: string; whyBuy: string }[];
+  gtmPlays?: { title: string; buyer: string; wedge: string; expansion: string }[];
+  competition?: { name: string; strength: string; runwayEdge: string; threat: string }[];
+  risks?: { title: string; detail: string; severity: "High" | "Medium" | "Low" }[];
+  scoreBreakdown?: { label: string; score: number; reason: string }[];
+  timeline?: { date: string; title: string; detail: string }[];
+  verdict?: string;
+  sources?: { label: string; url: string }[];
+};
+
 export type Company = {
   slug: string;
   name: string;
@@ -16,6 +29,7 @@ export type Company = {
   website: string;
   featured?: boolean;
   entryStage: "Watching" | "Entering" | "Scaling" | "Established";
+  intelligence?: CompanyIntelligence;
 };
 
 export type Signal = {
@@ -37,7 +51,59 @@ export const companies: Company[] = [
     buyers:["広告代理店","テレビ・映画","ゲーム会社","大手ブランド"],
     pain:"制作費・制作期間が大きく、コンテンツ量を増やせない。",
     whyNow:"生成品質が実制作に届き、日本市場で企業導入フェーズへ移行。",
-    tags:["Generative Video","Enterprise","Media"],website:"https://runwayml.com",featured:true
+    tags:["Generative Video","Enterprise","Media"],website:"https://runwayml.com",featured:true,
+    intelligence:{
+      snapshot:[
+        {label:"Global market rank",value:"#3",note:"Enterprise / self-serveともに日本は第3位市場"},
+        {label:"Enterprise growth",value:"+300%",note:"日本の企業顧客数、過去12カ月"},
+        {label:"Asia sales share",value:"1/3",note:"アジア全体の販売量を日本が牽引"},
+        {label:"Initial Japan investment",value:"$40M",note:"東京拠点と日本事業構築への初期投資"}
+      ],
+      japanCustomers:["Yamaha","SoftBank Corp.","NHN PlayArt","MIXI"],
+      targetAccounts:[
+        {segment:"広告代理店 / 制作会社",pain:"案件数は増えるが、撮影・編集・VFX人員がボトルネック。",openingOffer:"既存CM案件のプリビズ / B案量産からPoC。",whyBuy:"制作日数と試作コストを落としつつ、提案本数を増やせる。"},
+        {segment:"ゲーム / アニメ / IP",pain:"世界観を守りながら大量のプロモーション素材を作りたい。",openingOffer:"既存IPのPV・SNS短尺・コンセプト映像。",whyBuy:"少人数で表現量を増やせ、海外向けローカライズにも展開しやすい。"},
+        {segment:"大手ブランド / マーケ",pain:"SNS・EC・キャンペーンで必要な動画量に制作体制が追いつかない。",openingOffer:"商品画像から短尺広告を複数パターン生成。",whyBuy:"クリエイティブテストの回数を大幅に増やせる。"},
+        {segment:"放送 / 映画 / エンタメ",pain:"高コストなVFX・ロケ・企画検証が制作予算を圧迫。",openingOffer:"企画段階の絵作り、背景、VFX補助。",whyBuy:"本撮影前に完成イメージを早く検証できる。"}
+      ],
+      gtmPlays:[
+        {title:"広告代理店を“販売チャネル”にする",buyer:"大手代理店のAI / Creative Tech部門",wedge:"まず内製制作の高速化ツールとして導入。",expansion:"代理店が自社顧客へRunway活用施策を提案し、案件単位で横展開。"},
+        {title:"IP企業で成功事例を作る",buyer:"ゲーム・アニメ・出版のIPホルダー",wedge:"既存IPを壊さない限定ユースケースでPoC。",expansion:"プロモーション→ゲーム内映像→海外展開へ拡張。"},
+        {title:"Enterprise workflowとして売る",buyer:"大企業マーケ / Creative Operations",wedge:"単発生成ではなく、Brand Kit・Workspace・ガバナンス込みで導入。",expansion:"部署利用→全社標準→API / workflow組み込みへ。"}
+      ],
+      competition:[
+        {name:"Adobe Firefly",strength:"既存Creative Cloudとの統合と企業安心感。",runwayEdge:"映像生成・編集ワークフローの速度と先進性。",threat:"既存Adobe契約にバンドルされると追加導入が難しい。"},
+        {name:"Google Veo",strength:"モデル品質とGoogleエコシステム。",runwayEdge:"複数モデルを含めた制作UIと現場ワークフロー。",threat:"モデル性能差が縮むほどモデル単体優位は消える。"},
+        {name:"OpenAI video",strength:"ブランド力・汎用AIとの統合。",runwayEdge:"プロ制作に寄せた編集・コラボ・Enterprise運用。",threat:"既存ChatGPT Enterprise顧客へのクロスセル。"},
+        {name:"Higgsfield / MiniMax / Kling",strength:"高速なモデル改善とコスト競争。",runwayEdge:"Enterprise導入・管理・制作基盤としての完成度。",threat:"生成品質と価格だけで比較されると差別化しづらい。"}
+      ],
+      risks:[
+        {title:"モデル差のコモディティ化",detail:"Runway自身もモデル性能は収斂すると述べており、勝負はWorkflow / UX / Enterprise運用へ移る。",severity:"High"},
+        {title:"著作権・IPガバナンス",detail:"日本のIP企業では学習データ、生成物の権利、ブランド毀損への説明責任が導入障壁。",severity:"High"},
+        {title:"Creative AI乱立",detail:"PoCは通っても、全社標準化されなければ各部署が別モデルへ分散する。",severity:"Medium"},
+        {title:"代理店の内製競争",detail:"大手代理店が独自AI基盤を持つため、単なる生成ツールとして売ると競合になる。",severity:"Medium"}
+      ],
+      scoreBreakdown:[
+        {label:"Pain intensity",score:92,reason:"制作費・時間・量の制約は明確。"},
+        {label:"Japan timing",score:98,reason:"$40M投資と東京拠点、顧客成長が同時進行。"},
+        {label:"Sales clarity",score:95,reason:"広告・ゲーム・ブランドなど買い手と用途が見えやすい。"},
+        {label:"New market creation",score:96,reason:"単なる効率化ではなく、制作量・表現・制作主体そのものを広げる。"},
+        {label:"Defensibility",score:82,reason:"モデル性能だけでは守りにくく、Workflow / Enterprise運用が鍵。"}
+      ],
+      timeline:[
+        {date:"2026.05",title:"日本本格進出を発表",detail:"東京に日本本社を開設し、初期$40Mを投資。Head of Japan採用も開始。"},
+        {date:"2026.06",title:"MIXIとEnterprise Partnership",detail:"スポーツ、ライフスタイル、デジタルエンタメへ利用を拡大。"},
+        {date:"2026.08",title:"Enterprise事業がさらに拡大",detail:"全社売上は年初来2倍超、NRR 300%超を公表。日本はアジア最大市場と説明。"},
+        {date:"2026.10",title:"日本向けDeployment体制を強化",detail:"Founding Deployment LeadやCreative Workflow Architectなど、日本企業の導入定着を担う役割を採用。"}
+      ],
+      verdict:"日本市場で既にPMFの兆候があり、しかも商業組織はまだ構築途上。『売れるか分からない海外企業』ではなく、『既に自然流入で売れている会社を、組織的GTMで一段上げる』局面。Japan Entry案件としては最上位クラス。",
+      sources:[
+        {label:"Runway — Runway is Coming to Japan (May 2026)",url:"https://runway.com/news/runway-is-coming-to-japan"},
+        {label:"Runway — MIXI strategic partnership (Jun 2026)",url:"https://runway.com/news/runway-and-mixi-announce-strategic-partnership"},
+        {label:"Runway — The Next Phase of Enterprise Video Generation (Aug 2026)",url:"https://runway.com/news/company-news%2Fthe-next-phase-of-enterprise-video-generation"},
+        {label:"Runway Dev — API pricing",url:"https://docs.dev.runwayml.com/guides/pricing/"}
+      ]
+    }
   },
   {
     slug:"heygen",name:"HeyGen",country:"United States",category:"Creative AI",
