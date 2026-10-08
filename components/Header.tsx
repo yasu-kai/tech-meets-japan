@@ -7,6 +7,7 @@ import { useState } from "react";
 
 const links = [
   { href: "/companies", label: "企業を探す" },
+  { href: "/signals", label: "Entry Signals" },
   { href: "/research", label: "Japan Entry Research" },
   { href: "/for-vendors", label: "日本進出を考える企業へ" },
 ];
