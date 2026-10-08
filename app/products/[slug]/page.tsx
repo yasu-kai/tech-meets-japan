@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { ArrowUpRight, Building2, Check, GitCompareArrows, Globe2, Sparkles } from "lucide-react";
+import { ArrowUpRight, Building2, Check, GitCompareArrows, Sparkles, Languages, Headphones, Plug, ShieldCheck, WalletCards, Replace, Rocket, LockKeyhole } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { companies, products } from "@/lib/data";
@@ -90,6 +90,85 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
               {intel.competition.map(x=><div className="competition-row" key={x.name}><strong>{x.name}</strong><p>{x.strength}</p><p>{x.runwayEdge}</p><p>{x.threat}</p></div>)}
             </div>
           </section>
+        )}
+
+        {product.decision && (
+          <>
+            <section className="section section-tight product-analysis">
+              <div className="section-heading"><div><p className="eyebrow">CAPABILITIES</p><h2>何ができるのか。</h2></div><Rocket size={28}/></div>
+              <div className="decision-grid">
+                {product.decision.capabilities?.map(x=>(
+                  <article key={x.label}><h3>{x.label}</h3><p>{x.detail}</p></article>
+                ))}
+              </div>
+              {!!product.decision.limitations?.length && <div className="decision-note"><strong>できないこと / 注意点</strong>{product.decision.limitations.map(x=><p key={x}>・{x}</p>)}</div>}
+            </section>
+
+            <section className="section section-tight product-analysis">
+              <div className="section-heading"><div><p className="eyebrow">PRICING & TCO</p><h2>料金はいくらで、実際いくらかかるか。</h2></div><WalletCards size={28}/></div>
+              <div className="pricing-table">
+                {product.decision.pricing?.publicPlans?.map(p=><div key={p.name}><strong>{p.name}</strong><span>{p.monthly}</span><span>{p.annualEquivalent||"—"}</span><p>{p.credits}</p><small>{p.notes}</small></div>)}
+              </div>
+              <div className="decision-split">
+                <div><strong>Enterprise</strong><p>{product.decision.pricing?.enterprise}</p></div>
+                <div><strong>API</strong><p>{product.decision.pricing?.api}</p></div>
+                <div><strong>TCOで見るポイント</strong><p>{product.decision.pricing?.tcoNote}</p></div>
+              </div>
+            </section>
+
+            <section className="section section-tight product-analysis">
+              <div className="section-heading"><div><p className="eyebrow">IMPLEMENTATION</p><h2>導入と乗り換えに、どれくらいかかるか。</h2></div><Replace size={28}/></div>
+              <div className="cost-meter-grid">
+                <div className="cost-card"><span>ONBOARDING</span><strong>{product.decision.onboarding?.label}</strong><b>{product.decision.onboarding?.level}/5</b><p>{product.decision.onboarding?.timeToValue}</p><small>{product.decision.onboarding?.costNote}</small><ul>{product.decision.onboarding?.tasks.map(x=><li key={x}>{x}</li>)}</ul></div>
+                <div className="cost-card"><span>REPLACEMENT</span><strong>{product.decision.replacement?.label}</strong><b>{product.decision.replacement?.level}/5</b><p>{product.decision.replacement?.costNote}</p><ul>{product.decision.replacement?.migrationRisks.map(x=><li key={x}>{x}</li>)}</ul></div>
+                <div className="cost-card"><span>LOCK-IN</span><strong>{product.decision.lockIn?.label}</strong><b>{product.decision.lockIn?.level}/5</b><ul>{product.decision.lockIn?.reasons.map(x=><li key={x}>{x}</li>)}</ul></div>
+              </div>
+            </section>
+
+            <section className="section section-tight product-analysis">
+              <div className="section-heading"><div><p className="eyebrow">JAPAN READINESS</p><h2>日本で、そのまま使えるか。</h2></div><Languages size={28}/></div>
+              <div className="readiness-grid">
+                <div><span>UI</span><strong>{product.decision.japanese?.ui}</strong></div>
+                <div><span>入力</span><strong>{product.decision.japanese?.input}</strong></div>
+                <div><span>出力</span><strong>{product.decision.japanese?.output}</strong></div>
+                <div><span>Docs</span><strong>{product.decision.japanese?.docs}</strong></div>
+                <div><span>Support</span><strong>{product.decision.japanese?.support}</strong></div>
+              </div>
+              {product.decision.japanese?.note && <div className="decision-note"><p>{product.decision.japanese.note}</p></div>}
+            </section>
+
+            <section className="section section-tight product-analysis">
+              <div className="section-heading"><div><p className="eyebrow">SUPPORT & INTEGRATIONS</p><h2>運用開始後に困らないか。</h2></div><Headphones size={28}/></div>
+              <div className="decision-split">
+                <div><strong>Support</strong>{product.decision.support?.details.map(x=><p key={x}>・{x}</p>)}</div>
+                <div><strong>Integrations</strong><div className="buyer-grid">{product.decision.integrations?.map(x=><span key={x}><Plug size={13}/>{x}</span>)}</div></div>
+                <div><strong>Trial</strong><p>{product.decision.trial?.available}</p><p>{product.decision.trial?.detail}</p></div>
+              </div>
+            </section>
+
+            <section className="section section-tight product-analysis">
+              <div className="section-heading"><div><p className="eyebrow">ENTERPRISE READINESS</p><h2>大企業導入に耐えられるか。</h2></div><ShieldCheck size={28}/></div>
+              <div className="enterprise-table">
+                {product.decision.enterpriseReadiness?.map(x=><div key={x.item}><strong>{x.item}</strong><span>{x.status}</span><p>{x.note||""}</p></div>)}
+              </div>
+            </section>
+
+            <section className="section section-tight product-analysis">
+              <div className="section-heading"><div><p className="eyebrow">FIT</p><h2>向いている会社、向いていない会社。</h2></div><LockKeyhole size={28}/></div>
+              <div className="fit-two-col">
+                <div><span>BEST FOR</span>{product.decision.bestFor?.map(x=><p key={x}>✓ {x}</p>)}</div>
+                <div><span>NOT FOR</span>{product.decision.notFor?.map(x=><p key={x}>× {x}</p>)}</div>
+              </div>
+              {product.decision.verdict && <div className="final-verdict"><span>{product.decision.verdict.status}</span><p>{product.decision.verdict.summary}</p></div>}
+            </section>
+
+            <section className="section section-tight product-analysis">
+              <div className="section-heading"><div><p className="eyebrow">DATA CONFIDENCE</p><h2>どこまで確かな情報か。</h2></div></div>
+              <div className="evidence-table">
+                {product.decision.evidence?.map(x=><div key={x.item}><strong>{x.item}</strong><span>{x.type}</span><span>{x.confidence}</span><p>{x.source||"独自推定"}</p></div>)}
+              </div>
+            </section>
+          </>
         )}
 
         <section className="profile-end">
