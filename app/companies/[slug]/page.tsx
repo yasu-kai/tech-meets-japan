@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { ArrowUpRight, AlertTriangle, BarChart3, Building2, Crosshair, Globe2, ShieldCheck, Sparkles } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import LeadForm from "@/components/LeadForm";
 import { companies } from "@/lib/data";
 
 export function generateStaticParams() {
