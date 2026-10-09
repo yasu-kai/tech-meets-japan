@@ -75,6 +75,8 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
                       <p className="fit-pain">{target?.pain || "この領域での利用適性を確認中。"}</p>
                       {!!target?.signals?.length && <div className="fit-checks"><b>こんな状態なら当てはまりやすい</b>{target.signals.map(s=><p key={s}>□ {s}</p>)}</div>}
                       {!!target?.exampleTasks?.length && <div className="fit-examples"><b>具体的には</b>{target.exampleTasks.map(s=><p key={s}>→ {s}</p>)}</div>}
+                      {!!target?.whyThisProduct?.length && <div className="fit-why-product"><b>なぜこの商品が合う？</b>{target.whyThisProduct.map(s=><p key={s}>★ {s}</p>)}</div>}
+                      {!!target?.comparedWhy?.length && <div className="fit-compare-why"><b>他商品と比べると</b>{target.comparedWhy.map(s=><p key={s}>⇄ {s}</p>)}</div>}
                       {!!target?.notFitIf?.length && <div className="fit-not"><b>逆に、向きにくい</b>{target.notFitIf.map(s=><p key={s}>× {s}</p>)}</div>}
                     </article>
                   )
