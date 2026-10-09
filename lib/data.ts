@@ -299,6 +299,14 @@ export const themes = [
 
 
 export type ProductDecisionData = {
+  differentiators?: {
+    label: string;
+    level: "Runway固有" | "Runwayで特に強い" | "他でもできる";
+    what: string;
+    whyItMatters: string;
+    comparedWith: string[];
+    evidence?: string;
+  }[];
   capabilities?: { label: string; detail: string; confidence?: "High"|"Medium"|"Low" }[];
   limitations?: string[];
   pricing?: {
@@ -346,6 +354,13 @@ export type Product = {
 export const products: Product[] = [
   {slug:"runway-ai-video",name:"Runway AI Video Platform",provider:"Runway",companySlug:"runway",country:"United States",category:"Creative AI",tagline:"撮影・編集・VFXの一部を、生成AIの制作フローへ。",description:"映像生成、編集、Transformation、Character performanceなどを一つの制作環境で扱うAI映像プラットフォーム。",fitScore:94,japanStatus:"Japan expansion",entryStage:"Scaling",useCases:["広告動画","プリビズ","SNSクリエイティブ","IP・ゲーム映像"],targetUsers:["広告・制作会社","ブランドマーケ","ゲーム・IP","放送・映像"],alternatives:["Adobe Firefly","Google Veo","OpenAI video","Higgsfield"],tags:["Generative Video","Enterprise","Creative Workflow"],website:"https://runwayml.com",featured:true,
   decision:{
+    differentiators:[
+      {label:"Aleph 2.0 Edit Studio",level:"Runway固有",what:"既存動画を自然言語で直接編集し、商品・人物・背景・不要物・VFXなどをショット単位で置換。さらに1フレームの編集を残りの動画へ反映できる。",whyItMatters:"“新しい動画を生成する”だけでなく、“すでに撮った映像を直す”工程にAIを入れられる。撮り直し・VFX・再編集の一部を置換しやすい。",comparedWith:["Google Veo","OpenAI video","Adobe Firefly"],evidence:"Runway Edit Studio / Aleph 2.0"},
+      {label:"Act-Two Performance Capture",level:"Runway固有",what:"演者のPerformance videoから、別キャラクターへ動き・表情・発話・ジェスチャーを転写できる。非人間キャラや様々な画角にも対応。",whyItMatters:"IPキャラクターやCGキャラクターを、モーションキャプチャ設備なしで“演技させる”ワークフローを作れる。",comparedWith:["HeyGen","Synthesia","Google Veo"],evidence:"Runway Act-Two"},
+      {label:"生成→編集→再利用が同一環境",level:"Runwayで特に強い",what:"Gen-4系の出力をAct-Two、Edit Studio、Retime、Expand、Upscaleなどへそのまま渡せる。",whyItMatters:"モデルを跨いでファイルを書き出し・再アップロードする手間が減り、“生成モデル”ではなく制作環境として使いやすい。",comparedWith:["Google Veo","OpenAI video","Higgsfield"],evidence:"Runway Gen-4 workflow"},
+      {label:"複数社モデルをEnterprise統制下で利用",level:"Runwayで特に強い",what:"Runway独自モデルと選択された第三者モデルを同じEnterprise契約・データ保護・管理下で利用し、管理者がモデル単位でON/OFFできる。",whyItMatters:"部署ごとにAI動画ツールを個別契約するより、ガバナンスを一本化しやすい。",comparedWith:["単一モデル系サービス","個別API契約"],evidence:"Runway Enterprise third-party models FAQ"},
+      {label:"Text / Image → Video",level:"他でもできる",what:"テキストや画像から高品質動画を生成する。",whyItMatters:"重要な基本機能だが、ここ自体はRunwayだけの差別化ではない。",comparedWith:["Google Veo","OpenAI video","Kling","MiniMax"],evidence:"Runway Gen-4.5"}
+    ],
     capabilities:[
       {label:"Text / Image → Video",detail:"Gen-4.5などでテキスト・画像から動画生成。"},
       {label:"Video Editing / Transformation",detail:"Aleph系で既存映像の変換・編集ワークフローに対応。"},
