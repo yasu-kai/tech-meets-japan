@@ -56,13 +56,52 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
           </div>
 
           <div className="decision-board-grid">
-            <article className="decision-board-card">
+            <article className="decision-board-card capability-deep-card">
               <div className="decision-board-head"><span>01 / WHAT IT DOES</span><h2>何ができる？</h2></div>
               <p className="decision-board-lead">{product.description}</p>
-              <div className="dense-list">
-                {product.decision?.capabilities?.slice(0,5).map(x=><div key={x.label}><strong>{x.label}</strong><p>{x.detail}</p></div>)}
+
+              <div className="capability-stack">
+                {product.decision?.capabilities?.slice(0,5).map((x,i)=>{
+                  const diff=product.decision?.differentiators?.find(d=>d.label.toLowerCase().includes(x.label.split(" ")[0].toLowerCase())) || product.decision?.differentiators?.[i];
+                  const examples=intel?.targetAccounts?.flatMap(t=>t.exampleTasks||[]).slice(i*2,i*2+2) || [];
+                  return (
+                    <section key={x.label} className="capability-deep-item">
+                      <div className="capability-deep-head">
+                        <span>0{i+1}</span>
+                        <h3>{x.label}</h3>
+                        {diff && <b className={"capability-badge "+(diff.level==="Runway固有"?"unique":diff.level==="Runwayで特に強い"?"strong":"common")}>{diff.level}</b>}
+                      </div>
+                      <p className="capability-desc">{x.detail}</p>
+                      <div className="capability-detail-grid">
+                        <div>
+                          <small>WHAT GOES IN</small>
+                          <p>{i===0?"テキストプロンプト / 静止画":i===1?"既存動画 / 編集指示":i===2?"演者動画 / キャラクター画像":i===3?"既存生成物 / 他モデル出力":"Workspace / Brand assets / Team settings"}</p>
+                        </div>
+                        <div>
+                          <small>WHAT COMES OUT</small>
+                          <p>{i===0?"新規生成動画":i===1?"編集済み動画 / 変換済みショット":i===2?"演技・表情を反映したキャラクター動画":i===3?"再編集・高解像度化した制作物":"統制された制作環境 / 管理ログ"}</p>
+                        </div>
+                        <div>
+                          <small>REPLACES / REDUCES</small>
+                          <p>{i===0?"ロケ前の試作 / 初期映像制作":i===1?"再撮影 / 手作業VFXの一部":i===2?"モーションキャプチャ設備 / 手付けアニメの一部":i===3?"ツール間の書き出し・再アップロード":"部署ごとの個別契約 / 管理負荷"}</p>
+                        </div>
+                        <div>
+                          <small>WHY IT MATTERS</small>
+                          <p>{diff?.whyItMatters || "制作工程の時間・コスト・手戻りを減らす。"}</p>
+                        </div>
+                      </div>
+                      {examples.length>0 && <div className="capability-examples"><small>EXAMPLES</small>{examples.map(e=><p key={e}>→ {e}</p>)}</div>}
+                    </section>
+                  )
+                })}
               </div>
-              {!!product.decision?.limitations?.length && <div className="dense-foot"><b>LIMITS</b><p>{product.decision.limitations.slice(0,2).join(" / ")}</p></div>}
+
+              {!!product.decision?.limitations?.length && (
+                <div className="capability-limits">
+                  <b>LIMITS / できないこと</b>
+                  {product.decision.limitations.map(x=><p key={x}>× {x}</p>)}
+                </div>
+              )}
             </article>
 
             <article className="decision-board-card">
