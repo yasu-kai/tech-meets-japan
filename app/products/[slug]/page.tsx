@@ -13,6 +13,13 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   const company=companies.find(c=>c.slug===product.companySlug);
   const intel=company?.intelligence;
   const calculatedFit=calculateJapanFit(product.companySlug) ?? product.fitScore;
+  const levelRank = (level?: string) => level==="Runway固有" ? 0 : level==="Runwayで特に強い" ? 1 : 2;
+  const sortedDifferentiators = [...(product.decision?.differentiators || [])].sort((a,b)=>levelRank(a.level)-levelRank(b.level));
+  const sortedCapabilities = [...(product.decision?.capabilities || [])].sort((a,b)=>{
+    const da=product.decision?.differentiators?.find(d=>d.label.toLowerCase().includes(a.label.split(" ")[0].toLowerCase()));
+    const db=product.decision?.differentiators?.find(d=>d.label.toLowerCase().includes(b.label.split(" ")[0].toLowerCase()));
+    return levelRank(da?.level)-levelRank(db?.level);
+  });
 
   return (
     <>
@@ -61,7 +68,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
               <p className="decision-board-lead">{product.description}</p>
 
               <div className="capability-stack">
-                {product.decision?.capabilities?.slice(0,5).map((x,i)=>{
+                {sortedCapabilities.slice(0,5).map((x,i)=>{
                   const diff=product.decision?.differentiators?.find(d=>d.label.toLowerCase().includes(x.label.split(" ")[0].toLowerCase())) || product.decision?.differentiators?.[i];
                   const examples=intel?.targetAccounts?.flatMap(t=>t.exampleTasks||[]).slice(i*2,i*2+2) || [];
                   return (
@@ -180,7 +187,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
               <p>「機能がある」ではなく、「他と比べて何が違うか」で見る。</p>
             </div>
             <div className="differentiator-list">
-              {product.decision.differentiators.map((x,index)=>(
+              {sortedDifferentiators.map((x,index)=>(
                 <article key={x.label} className={"differentiator-card " + (x.level==="Runway固有"?"unique":x.level==="Runwayで特に強い"?"strong":"common")}>
                   <div className="diff-index">0{index+1}</div>
                   <div className="diff-main">
