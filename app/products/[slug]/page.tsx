@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { ArrowUpRight, Building2, Check, GitCompareArrows, Sparkles, Languages, Headphones, Plug, ShieldCheck, WalletCards, Replace, Rocket, LockKeyhole } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { companies, products } from "@/lib/data";
+import { calculateJapanFit, companies, products } from "@/lib/data";
 
 export function generateStaticParams(){ return products.map(p=>({slug:p.slug})); }
 
@@ -12,6 +12,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   if(!product) notFound();
   const company=companies.find(c=>c.slug===product.companySlug);
   const intel=company?.intelligence;
+  const calculatedFit=calculateJapanFit(product.companySlug) ?? product.fitScore;
 
   return (
     <>
@@ -29,8 +30,8 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
               <h1>{product.name}</h1>
               <p className="profile-deck">{product.tagline}</p>
             </div>
-            <div className="score-orbit" style={{"--score":product.fitScore} as React.CSSProperties}>
-              <div><span>JAPAN FIT</span><strong>{product.fitScore}</strong><small>/100</small></div>
+            <div className="score-orbit" style={{"--score":calculatedFit} as React.CSSProperties}>
+              <div><span>JAPAN FIT</span><strong>{calculatedFit}</strong><small>/100</small></div>
             </div>
           </div>
 
@@ -172,17 +173,29 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
         {intel?.scoreBreakdown && (
           <section className="section section-tight product-analysis">
             <div className="section-heading">
-              <div><p className="eyebrow">FIT BREAKDOWN</p><h2>{product.fitScore}点は、何でできているか。</h2></div>
-              <p>話題性ではなく、日本企業が実際に使う目線で評価。</p>
+              <div><p className="eyebrow">FIT BREAKDOWN</p><h2>{calculatedFit}点は、こう計算する。</h2></div>
+              <p>100点満点。各評価軸を0〜100点で評価し、重みを掛けて合算。</p>
             </div>
-            <div className="score-editorial">
-              {intel.scoreBreakdown.map(item=>(
-                <div key={item.label}>
-                  <div className="score-editorial-head"><strong>{item.label}</strong><b>{item.score}</b></div>
-                  <div className="score-editorial-bar"><i style={{width:item.score+"%"}}></i></div>
-                  <p>{item.reason}</p>
-                </div>
-              ))}
+            <div className="fit-formula">
+              <strong>Japan Fit = Σ（各軸スコア × 重み）</strong>
+              <p>課題への刺さり25% / 日本での使いやすさ20% / 差別化20% / 導入しやすさ15% / 費用対効果10% / Enterprise適性10%</p>
+            </div>
+            <div className="score-calculation-table">
+              <div className="score-calc-head"><span>評価軸</span><span>素点</span><span>重み</span><span>加点</span><span>根拠</span></div>
+              {intel.scoreBreakdown.map(item=>{
+                const weight=item.weight ?? 0;
+                const contribution=item.score*weight/100;
+                return (
+                  <div className="score-calc-row" key={item.label}>
+                    <strong>{item.label}</strong>
+                    <span>{item.score}</span>
+                    <span>{weight}%</span>
+                    <b>{contribution.toFixed(1)}</b>
+                    <div><p>{item.reason}</p>{item.evidence?.map(e=><small key={e}>・{e}</small>)}</div>
+                  </div>
+                )
+              })}
+              <div className="score-calc-total"><strong>TOTAL</strong><b>{calculatedFit}</b><span>/ 100</span></div>
             </div>
           </section>
         )}
