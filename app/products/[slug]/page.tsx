@@ -66,10 +66,24 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
 
             <article className="decision-board-card">
               <div className="decision-board-head"><span>02 / WHO IT FITS</span><h2>誰に向く？</h2></div>
-              <div className="dense-fit-grid">
-                {product.targetUsers.map((x,i)=><div key={x}><span>0{i+1}</span><strong>{x}</strong><p>{intel?.targetAccounts?.[i]?.pain || "この領域での利用適性を確認中。"}</p></div>)}
+              <div className="fit-diagnostic">
+                {product.targetUsers.map((x,i)=>{
+                  const target=intel?.targetAccounts?.[i];
+                  return (
+                    <article key={x}>
+                      <div className="fit-diagnostic-head"><span>0{i+1}</span><h3>{x}</h3></div>
+                      <p className="fit-pain">{target?.pain || "この領域での利用適性を確認中。"}</p>
+                      {!!target?.signals?.length && <div className="fit-checks"><b>こんな状態なら当てはまりやすい</b>{target.signals.map(s=><p key={s}>□ {s}</p>)}</div>}
+                      {!!target?.exampleTasks?.length && <div className="fit-examples"><b>具体的には</b>{target.exampleTasks.map(s=><p key={s}>→ {s}</p>)}</div>}
+                      {!!target?.notFitIf?.length && <div className="fit-not"><b>逆に、向きにくい</b>{target.notFitIf.map(s=><p key={s}>× {s}</p>)}</div>}
+                    </article>
+                  )
+                })}
               </div>
-              <div className="dense-foot"><b>BEST FOR</b><p>{product.decision?.bestFor?.slice(0,3).join(" / ")}</p></div>
+              <div className="fit-selfcheck">
+                <strong>SELF CHECK</strong>
+                <p>上のチェックが2つ以上当てはまるなら、少なくともPoC候補。3つ以上なら導入検討の優先度は高め。</p>
+              </div>
             </article>
 
             <article className="decision-board-card">
