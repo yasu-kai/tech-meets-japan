@@ -385,7 +385,17 @@ export type ProductDecisionData = {
     comparedWith: string[];
     evidence?: string;
   }[];
-  capabilities?: { label: string; detail: string; confidence?: "High"|"Medium"|"Low" }[];
+  capabilities?: {
+    label: string;
+    detail: string;
+    level: "Runway固有" | "Runwayで特に強い" | "他でもできる";
+    input: string;
+    output: string;
+    replaces: string;
+    whyItMatters: string;
+    examples: string[];
+    confidence?: "High"|"Medium"|"Low";
+  }[];
   limitations?: string[];
   pricing?: {
     publicPlans?: { name:string; monthly?:string; annualEquivalent?:string; credits?:string; notes?:string }[];
@@ -440,11 +450,11 @@ export const products: Product[] = [
       {label:"Text / Image → Video",level:"他でもできる",what:"テキストや画像から高品質動画を生成する。",whyItMatters:"重要な基本機能だが、ここ自体はRunwayだけの差別化ではない。",comparedWith:["Google Veo","OpenAI video","Kling","MiniMax"],evidence:"Runway Gen-4.5"}
     ],
     capabilities:[
-      {label:"Text / Image → Video",detail:"Gen-4.5などでテキスト・画像から動画生成。"},
-      {label:"Video Editing / Transformation",detail:"Aleph系で既存映像の変換・編集ワークフローに対応。"},
-      {label:"Character Performance",detail:"人物・キャラクター表現を動かすAct-Two系機能を利用可能。"},
-      {label:"Multi-model workflow",detail:"Runway独自モデルに加え一部サードパーティモデルも同一環境で利用可能。"},
-      {label:"Enterprise controls",detail:"EnterpriseではSSO、Audit Logs、Analytics、Brand Kit、組織管理などを提供。"}
+      {label:"Aleph Edit Studio",detail:"既存映像を自然言語で編集・変換し、背景・人物・商品・不要物・VFXなどをショット単位で変更。",level:"Runway固有",input:"既存動画 / 自然言語の編集指示",output:"編集済み動画 / 変換済みショット",replaces:"再撮影 / 手作業VFX / 素材差し替えの一部",whyItMatters:"“新規生成”ではなく“撮影済み素材の修正”までAI化できるのがRunwayの強い差別化。",examples:["既存CMの背景だけ差し替える","撮影済み映像から不要物を除去","同一素材を季節・地域別に作り替える"]},
+      {label:"Act-Two Performance Capture",detail:"演者の動き・表情・発話・ジェスチャーを別キャラクターへ転写。",level:"Runway固有",input:"演者のPerformance video / キャラクター画像",output:"演技・表情を反映したキャラクター動画",replaces:"モーションキャプチャ設備 / 手付けアニメーションの一部",whyItMatters:"IPキャラクターを“演技させる”用途で、Avatar動画とは違う表現ができる。",examples:["既存IPキャラに人の演技を転写","非人間キャラを自然に動かす","短尺PV用のキャラクター演技を量産"]},
+      {label:"Integrated Creative Workflow",detail:"生成→編集→変換→高解像度化まで、同一制作環境で連続して扱える。",level:"Runwayで特に強い",input:"生成素材 / 既存映像 / 外部モデル出力",output:"再編集・変換・高解像度化した制作物",replaces:"複数ツール間の書き出し / 再アップロード / 手戻り",whyItMatters:"単一モデルではなく“制作環境”として使えるため、実務フローに組み込みやすい。",examples:["Gen-4出力をそのまま編集工程へ渡す","生成動画をExpand/Upscaleで仕上げる","複数案を同一Workspaceで比較"]},
+      {label:"Enterprise Model Governance",detail:"Runway独自モデルと一部第三者モデルを、同一Enterprise環境・管理ルールの下で利用。",level:"Runwayで特に強い",input:"Workspace / Brand assets / Team settings / 複数モデル",output:"統制された制作環境 / 利用ログ / 管理されたモデル利用",replaces:"部署ごとの個別AI契約 / モデルごとの管理分散",whyItMatters:"AI動画ツールが乱立しても、企業側のガバナンスを一本化しやすい。",examples:["部署ごとに利用可能モデルを制御","Brand Kitで制作ルールを共通化","Audit Logsで利用状況を確認"]},
+      {label:"Text / Image → Video",detail:"Gen-4.5などでテキスト・画像から動画を生成。",level:"他でもできる",input:"テキストプロンプト / 静止画",output:"新規生成動画",replaces:"ロケ前の試作 / 初期映像制作の一部",whyItMatters:"重要な基本機能だが、Veo・Kling・MiniMaxなどでも実現可能で、ここ自体はRunway固有ではない。",examples:["絵コンテから15秒CMのたたき台を作る","商品画像から縦型動画を生成","撮影前のプリビズを作る"]}
     ],
     limitations:[
       "モデル品質だけを比較すると競合との差が短期間で縮まりやすい。",
