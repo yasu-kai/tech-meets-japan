@@ -13,9 +13,13 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   const company=companies.find(c=>c.slug===product.companySlug);
   const intel=company?.intelligence;
   const calculatedFit=calculateJapanFit(product.companySlug) ?? product.fitScore;
-  const levelRank = (level?: string) => level==="Runway固有" ? 0 : level==="Runwayで特に強い" ? 1 : 2;
-  const sortedDifferentiators = [...(product.decision?.differentiators || [])].sort((a,b)=>levelRank(a.level)-levelRank(b.level));
-  const sortedCapabilities = [...(product.decision?.capabilities || [])].sort((a,b)=>levelRank(a.level)-levelRank(b.level));
+  const levelRank = (level?: string) => level==="Runway固有" ? 0 : 1;
+  const sortedDifferentiators = [...(product.decision?.differentiators || [])]
+    .filter(x=>x.level!=="他でもできる")
+    .sort((a,b)=>levelRank(a.level)-levelRank(b.level));
+  const sortedCapabilities = [...(product.decision?.capabilities || [])]
+    .filter(x=>x.level!=="他でもできる")
+    .sort((a,b)=>levelRank(a.level)-levelRank(b.level));
 
   return (
     <>
