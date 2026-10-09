@@ -8,6 +8,8 @@ export type CompanyIntelligence = {
     whyBuy: string;
     signals?: string[];
     exampleTasks?: string[];
+    whyThisProduct?: string[];
+    comparedWhy?: string[];
     notFitIf?: string[];
   }[];
   gtmPlays?: { title: string; buyer: string; wedge: string; expansion: string }[];
@@ -72,18 +74,26 @@ export const companies: Company[] = [
         {segment:"広告代理店 / 制作会社",pain:"案件数は増えるが、撮影・編集・VFX人員がボトルネック。",openingOffer:"既存CM案件のプリビズ / B案量産からPoC。",whyBuy:"制作日数と試作コストを落としつつ、提案本数を増やせる。",
 signals:["月10本以上の動画案件を回している","コンペや提案でB案・C案を大量に作る","ロケ・VFX・再撮影コストが重い","短尺SNS動画の量産を求められている"],
 exampleTasks:["絵コンテから15秒CMのたたき台を作る","既存映像の背景だけ差し替える","同じ商品で5パターンの広告動画を作る"],
+whyThisProduct:["Alephで既存映像を自然言語編集でき、撮り直しではなく“既存素材の修正”に強い","生成→編集→Upscaleまで同一環境なので、複数ツールを行き来しにくい","Enterpriseで複数モデルを統制下に置けるため制作会社の組織利用に向く"],
+comparedWhy:["単純な新規動画生成だけならVeo/Klingでも代替可能","既存映像の編集・再利用まで含むならRunway優位"],
 notFitIf:["完成品質を毎回100%人手で細かく制御したい","案件数が少なく制作コストも問題になっていない"]},
         {segment:"ゲーム / アニメ / IP",pain:"世界観を守りながら大量のプロモーション素材を作りたい。",openingOffer:"既存IPのPV・SNS短尺・コンセプト映像。",whyBuy:"少人数で表現量を増やせ、海外向けローカライズにも展開しやすい。",
 signals:["既存IPを使ったSNS動画を継続的に出している","プロモーション素材の制作本数が多い","キャラクターを“動かす”企画が多い","海外向けに同一IPを展開している"],
 exampleTasks:["静止画キャラを動かして短尺PV化","既存キャラに人の演技を転写","海外向けに同じ映像の別バージョンを制作"],
+whyThisProduct:["Act-Twoで人の演技をキャラクターへ転写できるため、IPキャラを“演技させる”用途に直結","非人間キャラにも対応しやすく、Avatar系ツールよりIP表現の自由度が高い","生成だけでなく編集工程までRunway内で続けられる"],
+comparedWhy:["Avatar主体ならHeyGen/Synthesiaの方が簡単な場合あり","キャラクター演技・映像表現重視ならRunwayが有利"],
 notFitIf:["権利処理上、生成AI利用が全面禁止","原作監修で1フレーム単位の厳密再現が必須"]},
         {segment:"大手ブランド / マーケ",pain:"SNS・EC・キャンペーンで必要な動画量に制作体制が追いつかない。",openingOffer:"商品画像から短尺広告を複数パターン生成。",whyBuy:"クリエイティブテストの回数を大幅に増やせる。",
 signals:["Meta/TikTok/YouTube向け動画を毎月大量に出す","ABテスト用クリエイティブが不足している","商品画像はあるが動画素材が足りない","海外展開で市場ごとに動画を作り分けたい"],
 exampleTasks:["商品画像から縦型動画を10案作る","同一クリエイティブの季節・背景違いを生成","既存CMをSNS尺へ展開"],
+whyThisProduct:["既存CMや商品動画をAlephで差し替え・変形できるため“ゼロから生成”以外の量産がしやすい","Brand KitやEnterprise統制を使えるのでブランド運用に乗せやすい","複数モデルを同一環境で試せるためABテストの制作速度を上げやすい"],
+comparedWhy:["静止画→短尺だけなら他ツールでも可能","既存ブランド資産の再利用＋Enterprise統制まで必要ならRunwayが強い"],
 notFitIf:["動画施策自体がほぼ無い","ブランドガイドライン上、生成表現の許容幅が極端に狭い"]},
         {segment:"放送 / 映画 / エンタメ",pain:"高コストなVFX・ロケ・企画検証が制作予算を圧迫。",openingOffer:"企画段階の絵作り、背景、VFX補助。",whyBuy:"本撮影前に完成イメージを早く検証できる。",
 signals:["企画段階で完成イメージ共有に時間がかかる","VFX・ロケ費が大きい","撮影後の修正や差し替えが頻繁","企画承認前のプリビズ需要が高い"],
 exampleTasks:["撮影前にシーンの完成イメージを動画化","ロケ背景を別環境へ差し替え","不要物除去や簡易VFXをAIで試す"],
+whyThisProduct:["Alephで撮影済み映像を直接編集できるため“生成AI＝プリビズ専用”で終わらない","Edit Studioで既存映像の要素差し替えができ、VFX補助として使いやすい","生成→編集→高解像度化を一連で扱える"],
+comparedWhy:["企画絵生成だけならVeo/OpenAIでも成立","撮影後編集まで含めるならRunwayの一貫性が強み"],
 notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パイプライン変更が許容されない"]}
       ],
       gtmPlays:[
