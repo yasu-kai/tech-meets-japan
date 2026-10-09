@@ -117,6 +117,32 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
           </div>
         </section>
 
+        {product.decision?.differentiators && (
+          <section className="section section-tight product-analysis differentiation-section">
+            <div className="section-heading">
+              <div><p className="eyebrow">WHY THIS PRODUCT</p><h2>他でもできる。<br/>それでも、これを選ぶ理由。</h2></div>
+              <p>「機能がある」ではなく、「他と比べて何が違うか」で見る。</p>
+            </div>
+            <div className="differentiator-list">
+              {product.decision.differentiators.map((x,index)=>(
+                <article key={x.label} className={"differentiator-card " + (x.level==="Runway固有"?"unique":x.level==="Runwayで特に強い"?"strong":"common")}>
+                  <div className="diff-index">0{index+1}</div>
+                  <div className="diff-main">
+                    <div className="diff-head"><span>{x.level}</span><h3>{x.label}</h3></div>
+                    <p className="diff-what">{x.what}</p>
+                    <div className="diff-why"><b>WHY IT MATTERS</b><p>{x.whyItMatters}</p></div>
+                  </div>
+                  <div className="diff-side">
+                    <span>COMPARE WITH</span>
+                    <div>{x.comparedWith.map(name=><b key={name}>{name}</b>)}</div>
+                    {x.evidence && <small>{x.evidence}</small>}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+
         {intel?.verdict && (
           <section className="editorial-verdict">
             <div className="verdict-label"><Sparkles size={16}/> TECH MEETS JAPAN VIEW</div>
