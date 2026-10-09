@@ -15,7 +15,18 @@ export type CompanyIntelligence = {
   gtmPlays?: { title: string; buyer: string; wedge: string; expansion: string }[];
   competition?: { name: string; strength: string; runwayEdge: string; threat: string }[];
   risks?: { title: string; detail: string; severity: "High" | "Medium" | "Low" }[];
-  scoreBreakdown?: { label: string; score: number; weight?: number; reason: string; evidence?: string[] }[];
+  scoreBreakdown?: {
+    label: string;
+    weight?: number;
+    criteria: {
+      label: string;
+      max: number;
+      awarded: number;
+      rule: string;
+      reason: string;
+      evidence?: string[];
+    }[];
+  }[];
   timeline?: { date: string; title: string; detail: string }[];
   verdict?: string;
   sources?: { label: string; url: string }[];
@@ -114,12 +125,48 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
         {title:"代理店の内製競争",detail:"大手代理店が独自AI基盤を持つため、単なる生成ツールとして売ると競合になる。",severity:"Medium"}
       ],
       scoreBreakdown:[
-        {label:"課題への刺さり",score:92,weight:25,reason:"制作費・時間・量という既存の強い課題に直接効く。",evidence:["撮影・VFX・再編集の代替余地","制作量増加ニーズ"]},
-        {label:"日本での使いやすさ",score:88,weight:20,reason:"日本拠点・導入実績は強いが、日本語UI/Support範囲には未確認点が残る。",evidence:["日本拠点あり","国内顧客事例あり","日本語Support範囲は要確認"]},
-        {label:"差別化の強さ",score:94,weight:20,reason:"AlephとAct-Twoなど、単なる動画生成より深い制作工程に入れる。",evidence:["Aleph Edit Studio","Act-Two","同一制作環境"]},
-        {label:"導入しやすさ",score:90,weight:15,reason:"Freeから試せ、個人利用は即日。既存制作環境を全面置換せず追加導入できる。",evidence:["Freeあり","低〜中オンボ負荷","低〜中リプレイス負荷"]},
-        {label:"費用対効果",score:86,weight:10,reason:"公開価格は入りやすい一方、生成回数によって実質TCOが変動する。",evidence:["$15/月〜","API従量","生成試行回数でTCO変動"]},
-        {label:"Enterprise適性",score:89,weight:10,reason:"SSO・Audit Logs・SOC2等は強いが、SAML/SCIM未対応が減点。",evidence:["OIDC SSO","Audit Logs","SOC 2 Type II","SAML/SCIM未対応"]}
+        {label:"課題への刺さり",weight:25,criteria:[
+          {label:"金額インパクト",max:20,awarded:20,rule:"20=直接コスト/売上に大きく効く、15=中程度、10=間接効果、5=小さい、0=不明",reason:"撮影・VFX・再編集は高コスト工程で、削減効果が直接金額に出る。",evidence:["撮影・VFX・再編集の代替余地"]},
+          {label:"発生頻度",max:20,awarded:20,rule:"20=日常/週次、15=月次、10=四半期、5=年数回、0=稀",reason:"広告・SNS・IPプロモーションでは動画制作が継続的に発生。",evidence:["短尺動画の継続制作","広告クリエイティブ量産"]},
+          {label:"対象企業の広さ",max:20,awarded:20,rule:"20=4業界以上、15=3業界、10=2業界、5=1業界、0=限定用途",reason:"広告、ブランド、ゲーム/IP、放送/映像の複数市場に適用可能。",evidence:["4つの明確な主要ターゲット"]},
+          {label:"現行手段の不便さ",max:20,awarded:15,rule:"20=人手/高コスト工程を直接置換、15=大幅短縮、10=一部短縮、5=軽微、0=代替不要",reason:"生成・編集工程は短縮できるが、最終仕上げや監修は残る。",evidence:["撮り直し/VFXの一部代替","完全自動化ではない"]},
+          {label:"効果測定のしやすさ",max:20,awarded:15,rule:"20=金額/時間で即測定、15=PoCで測定可能、10=定性的中心、5=長期評価、0=困難",reason:"制作時間・生成回数・1成果物TCOは測れるが、品質価値は主観も残る。",evidence:["Time-to-output","1成果物あたり生成回数"]}
+        ]},
+        {label:"日本での使いやすさ",weight:20,criteria:[
+          {label:"日本拠点",max:20,awarded:20,rule:"20=日本法人/拠点あり、10=APAC拠点のみ、0=なし",reason:"東京拠点を開設済み。",evidence:["Japan office"]},
+          {label:"国内導入実績",max:20,awarded:20,rule:"20=複数大手事例、15=複数事例、10=単一事例、5=PoCのみ、0=なし",reason:"複数の日本企業導入実績が確認できる。",evidence:["MIXI","SoftBank","Yamaha","NHN PlayArt"]},
+          {label:"日本語UI",max:20,awarded:5,rule:"20=完全対応、15=主要機能対応、10=部分対応、5=未確認/限定的、0=非対応",reason:"公開情報だけでは十分な日本語UI対応を確認できない。",evidence:["要確認"]},
+          {label:"日本語サポート",max:20,awarded:5,rule:"20=国内時間帯の日本語専任、15=日本語対応あり、10=Partner経由、5=未確認、0=英語のみ",reason:"日本拠点はあるが、日本語専任サポート範囲は未確認。",evidence:["要確認"]},
+          {label:"国内契約/調達しやすさ",max:20,awarded:10,rule:"20=国内契約/請求書/Partner完備、15=一部対応、10=Enterprise個別契約、5=海外カード中心、0=困難",reason:"Enterprise契約は可能だが、国内請求・商流の公開情報が限定的。",evidence:["Enterprise individual contract"]}
+        ]},
+        {label:"差別化の強さ",weight:20,criteria:[
+          {label:"固有機能",max:20,awarded:20,rule:"20=明確な固有機能複数、15=固有機能1つ、10=実装差、5=ほぼ同等、0=差なし",reason:"Aleph Edit StudioとAct-Twoが明確な差別化要素。",evidence:["Aleph","Act-Two"]},
+          {label:"ワークフロー統合",max:20,awarded:20,rule:"20=複数工程を一気通貫、15=主要工程、10=一部、5=単機能、0=なし",reason:"生成→編集→再利用→Upscaleまで同一環境。",evidence:["Integrated workflow"]},
+          {label:"Enterprise差別化",max:20,awarded:15,rule:"20=独自Enterprise統制、15=強い統制、10=標準、5=弱い、0=なし",reason:"複数モデル統制やBrand Kitは強いが、SAML/SCIM未対応。",evidence:["Third-party model controls","Brand Kit","No SAML/SCIM"]},
+          {label:"代替困難性",max:20,awarded:15,rule:"20=代替困難、15=複数機能組合せで優位、10=代替可能、5=容易、0=完全コモディティ",reason:"単機能は代替可能だが、編集と制作環境を含めると代替コストが上がる。",evidence:["Veo/Kling can replace generation only"]},
+          {label:"差の持続性",max:20,awarded:10,rule:"20=長期防御力高、15=中、10=競争激化、5=短期、0=急速コモディティ化",reason:"モデル性能差は縮まりやすく、優位はWorkflow側に依存。",evidence:["Rapid model competition"]}
+        ]},
+        {label:"導入しやすさ",weight:15,criteria:[
+          {label:"試しやすさ",max:20,awarded:20,rule:"20=無料ですぐ試せる、15=Trial、10=Demo必須、5=営業経由、0=困難",reason:"Free planで即試用可能。",evidence:["Free plan"]},
+          {label:"Time to Value",max:20,awarded:20,rule:"20=即日、15=1週間、10=1か月、5=四半期、0=長期",reason:"個人/小規模利用なら即日で生成可能。",evidence:["Self-serve"]},
+          {label:"オンボ負荷",max:20,awarded:15,rule:"20=ほぼ設定不要、15=軽微、10=部門導入、5=全社PJ、0=重い",reason:"PoCは軽いがEnterpriseは権限・Brand運用設計が必要。",evidence:["Low-medium onboarding"]},
+          {label:"既存環境との共存",max:20,awarded:20,rule:"20=追加導入可能、15=一部置換、10=移行必要、5=大規模移行、0=全面置換",reason:"Adobe等を置換せず生成工程だけ追加できる。",evidence:["Additive workflow"]},
+          {label:"学習コスト",max:20,awarded:15,rule:"20=直感的、15=短期学習、10=専門知識必要、5=高スキル、0=専門職必須",reason:"基本操作は容易だが、高品質生成にはプロンプト/編集ノウハウが必要。",evidence:["Creative learning curve"]}
+        ]},
+        {label:"費用対効果",weight:10,criteria:[
+          {label:"開始価格",max:20,awarded:20,rule:"20=低価格/Free、15=中、10=高、5=Enterpriseのみ、0=非公開のみ",reason:"Freeと低価格セルフサーブあり。",evidence:["Free","$15/month"]},
+          {label:"価格透明性",max:20,awarded:15,rule:"20=全価格公開、15=主要価格公開、10=一部、5=個別見積中心、0=不明",reason:"セルフサーブ/APIは公開、Enterpriseは個別見積。",evidence:["Public self-serve pricing"]},
+          {label:"TCO予測性",max:20,awarded:10,rule:"20=固定、15=上限明確、10=従量変動、5=大きく変動、0=不明",reason:"生成回数とcredits消費で実質TCOが変動。",evidence:["Credit-based usage"]},
+          {label:"代替コスト削減",max:20,awarded:20,rule:"20=高額工程代替、15=中、10=一部、5=軽微、0=なし",reason:"撮影/VFX/再編集の一部を置換できる。",evidence:["Production cost replacement"]},
+          {label:"スケール時の効率",max:20,awarded:15,rule:"20=規模拡大で効率増、15=概ね良好、10=比例課金、5=割高化、0=不明",reason:"量産価値は高いが、credits消費も増える。",evidence:["Credit scaling"]}
+        ]},
+        {label:"Enterprise適性",weight:10,criteria:[
+          {label:"認証/SSO",max:20,awarded:15,rule:"20=SAML+OIDC+SCIM、15=SSOあり、10=限定、5=弱い、0=なし",reason:"OIDC SSOはあるがSAML/SCIM未対応。",evidence:["OIDC","No SAML","No SCIM"]},
+          {label:"監査/管理",max:20,awarded:20,rule:"20=Audit+Analytics+Admin、15=主要機能、10=一部、5=弱い、0=なし",reason:"Audit Logs、Analytics、管理機能あり。",evidence:["Audit Logs","Workspace Analytics"]},
+          {label:"セキュリティ認証",max:20,awarded:20,rule:"20=SOC2+ISO、15=どちらか、10=基本対策、5=自己申告、0=不明",reason:"SOC 2 Type IIとISO 27001を確認。",evidence:["SOC 2 Type II","ISO 27001"]},
+          {label:"データ統制",max:20,awarded:15,rule:"20=詳細統制/地域選択、15=Enterprise保護、10=標準、5=弱い、0=不明",reason:"Enterprise保護は強いがData residency等は追加確認余地。",evidence:["Enterprise data protection"]},
+          {label:"導入支援",max:20,awarded:20,rule:"20=専任支援+Priority、15=Priority、10=通常、5=限定、0=なし",reason:"Enterprise onboardingとPriority supportあり。",evidence:["Enterprise onboarding","Priority support"]}
+        ]}
       ],
       timeline:[
         {date:"2026.05",title:"日本本格進出を発表",detail:"東京に日本本社を開設し、初期$40Mを投資。Head of Japan採用も開始。"},
@@ -488,12 +535,18 @@ export const japanFitWeights = {
   "Enterprise適性": 10
 };
 
+export function dimensionScore(item: NonNullable<CompanyIntelligence["scoreBreakdown"]>[number]): number {
+  const max = item.criteria.reduce((sum, c) => sum + c.max, 0);
+  const awarded = item.criteria.reduce((sum, c) => sum + c.awarded, 0);
+  return max ? Math.round((awarded / max) * 100) : 0;
+}
+
 export function calculateJapanFit(companySlug: string): number | null {
   const company = companies.find(c => c.slug === companySlug);
-  const scores = company?.intelligence?.scoreBreakdown;
-  if (!scores?.length) return null;
-  const weighted = scores.reduce((sum, item) => sum + item.score * (item.weight ?? 0), 0);
-  const totalWeight = scores.reduce((sum, item) => sum + (item.weight ?? 0), 0);
+  const dimensions = company?.intelligence?.scoreBreakdown;
+  if (!dimensions?.length) return null;
+  const weighted = dimensions.reduce((sum, item) => sum + dimensionScore(item) * (item.weight ?? 0), 0);
+  const totalWeight = dimensions.reduce((sum, item) => sum + (item.weight ?? 0), 0);
   return totalWeight ? Math.round(weighted / totalWeight) : null;
 }
 
