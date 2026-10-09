@@ -15,11 +15,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   const calculatedFit=calculateJapanFit(product.companySlug) ?? product.fitScore;
   const levelRank = (level?: string) => level==="Runway固有" ? 0 : level==="Runwayで特に強い" ? 1 : 2;
   const sortedDifferentiators = [...(product.decision?.differentiators || [])].sort((a,b)=>levelRank(a.level)-levelRank(b.level));
-  const sortedCapabilities = [...(product.decision?.capabilities || [])].sort((a,b)=>{
-    const da=product.decision?.differentiators?.find(d=>d.label.toLowerCase().includes(a.label.split(" ")[0].toLowerCase()));
-    const db=product.decision?.differentiators?.find(d=>d.label.toLowerCase().includes(b.label.split(" ")[0].toLowerCase()));
-    return levelRank(da?.level)-levelRank(db?.level);
-  });
+  const sortedCapabilities = [...(product.decision?.capabilities || [])].sort((a,b)=>levelRank(a.level)-levelRank(b.level));
 
   return (
     <>
@@ -68,39 +64,23 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
               <p className="decision-board-lead">{product.description}</p>
 
               <div className="capability-stack">
-                {sortedCapabilities.slice(0,5).map((x,i)=>{
-                  const diff=product.decision?.differentiators?.find(d=>d.label.toLowerCase().includes(x.label.split(" ")[0].toLowerCase())) || product.decision?.differentiators?.[i];
-                  const examples=intel?.targetAccounts?.flatMap(t=>t.exampleTasks||[]).slice(i*2,i*2+2) || [];
-                  return (
+                {sortedCapabilities.slice(0,5).map((x,i)=>(
                     <section key={x.label} className="capability-deep-item">
                       <div className="capability-deep-head">
                         <span>0{i+1}</span>
                         <h3>{x.label}</h3>
-                        {diff && <b className={"capability-badge "+(diff.level==="Runway固有"?"unique":diff.level==="Runwayで特に強い"?"strong":"common")}>{diff.level}</b>}
+                        <b className={"capability-badge "+(x.level==="Runway固有"?"unique":x.level==="Runwayで特に強い"?"strong":"common")}>{x.level}</b>
                       </div>
                       <p className="capability-desc">{x.detail}</p>
                       <div className="capability-detail-grid">
-                        <div>
-                          <small>WHAT GOES IN</small>
-                          <p>{i===0?"テキストプロンプト / 静止画":i===1?"既存動画 / 編集指示":i===2?"演者動画 / キャラクター画像":i===3?"既存生成物 / 他モデル出力":"Workspace / Brand assets / Team settings"}</p>
-                        </div>
-                        <div>
-                          <small>WHAT COMES OUT</small>
-                          <p>{i===0?"新規生成動画":i===1?"編集済み動画 / 変換済みショット":i===2?"演技・表情を反映したキャラクター動画":i===3?"再編集・高解像度化した制作物":"統制された制作環境 / 管理ログ"}</p>
-                        </div>
-                        <div>
-                          <small>REPLACES / REDUCES</small>
-                          <p>{i===0?"ロケ前の試作 / 初期映像制作":i===1?"再撮影 / 手作業VFXの一部":i===2?"モーションキャプチャ設備 / 手付けアニメの一部":i===3?"ツール間の書き出し・再アップロード":"部署ごとの個別契約 / 管理負荷"}</p>
-                        </div>
-                        <div>
-                          <small>WHY IT MATTERS</small>
-                          <p>{diff?.whyItMatters || "制作工程の時間・コスト・手戻りを減らす。"}</p>
-                        </div>
+                        <div><small>WHAT GOES IN</small><p>{x.input}</p></div>
+                        <div><small>WHAT COMES OUT</small><p>{x.output}</p></div>
+                        <div><small>REPLACES / REDUCES</small><p>{x.replaces}</p></div>
+                        <div><small>WHY IT MATTERS</small><p>{x.whyItMatters}</p></div>
                       </div>
-                      {examples.length>0 && <div className="capability-examples"><small>EXAMPLES</small>{examples.map(e=><p key={e}>→ {e}</p>)}</div>}
+                      <div className="capability-examples"><small>EXAMPLES</small>{x.examples.map(e=><p key={e}>→ {e}</p>)}</div>
                     </section>
-                  )
-                })}
+                ))}
               </div>
 
               {!!product.decision?.limitations?.length && (
