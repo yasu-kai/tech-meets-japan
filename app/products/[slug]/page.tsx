@@ -121,18 +121,45 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
 
             <article className="decision-board-card">
               <div className="decision-board-head"><span>03 / USE CASES</span><h2>何に使える？</h2></div>
-              <div className="dense-usecases">
-                {product.useCases.map((x,i)=><div key={x}><span>0{i+1}</span><strong>{x}</strong><p>{intel?.targetAccounts?.[i]?.openingOffer || "具体的な利用パターンを整理中。"}</p></div>)}
+              <div className="usecase-deep-list">
+                {(product.useCaseDetails || []).map((u,i)=>(
+                  <section key={u.title}>
+                    <div className="usecase-title"><span>0{i+1}</span><h3>{u.title}</h3></div>
+                    <p className="usecase-situation">{u.situation}</p>
+                    <div className="usecase-mini-grid">
+                      <div><small>INPUT</small><p>{u.input}</p></div>
+                      <div><small>OUTPUT</small><p>{u.output}</p></div>
+                      <div><small>USER</small><p>{u.user}</p></div>
+                      <div><small>REPLACES</small><p>{u.replaces}</p></div>
+                    </div>
+                    <div className="usecase-kpi"><b>KPI</b>{u.kpi.map(x=><span key={x}>{x}</span>)}</div>
+                    <div className="usecase-why"><b>WHY RUNWAY</b>{u.whyThis.map(x=><p key={x}>★ {x}</p>)}</div>
+                    <div className="usecase-not"><b>NOT FOR</b>{u.notFor.map(x=><p key={x}>× {x}</p>)}</div>
+                  </section>
+                ))}
               </div>
-              <div className="dense-foot"><b>FIRST USE</b><p>{intel?.gtmPlays?.[0]?.wedge || "まず1用途に限定したPoCから開始推奨。"}</p></div>
             </article>
 
             <article className="decision-board-card">
               <div className="decision-board-head"><span>04 / COMPARE</span><h2>何と比べる？</h2></div>
-              <div className="dense-compare">
-                {product.alternatives.map((x,i)=><div key={x}><strong>{x}</strong><p>{intel?.competition?.[i]?.strength || "比較情報を整理中。"}</p><small>{intel?.competition?.[i]?.threat || ""}</small></div>)}
+              <div className="comparison-deep-list">
+                {(product.comparisonDetails || []).map((x,i)=>(
+                  <section key={x.name}>
+                    <div className="compare-title"><span>0{i+1}</span><h3>{x.name}</h3></div>
+                    <div className="compare-split">
+                      <div><b>相手が向く</b>{x.otherWinsWhen.map(v=><p key={v}>→ {v}</p>)}</div>
+                      <div><b>Runwayが向く</b>{x.runwayWinsWhen.map(v=><p key={v}>→ {v}</p>)}</div>
+                    </div>
+                    <div className="compare-context">
+                      <div><small>BEST WHEN</small>{x.bestWhen.map(v=><p key={v}>{v}</p>)}</div>
+                      <div><small>SWITCHING</small><p>{x.switchingCost}</p></div>
+                      <div><small>PRICE</small><p>{x.pricingNote}</p></div>
+                      <div><small>JAPANESE</small><p>{x.japaneseNote}</p></div>
+                      <div><small>ENTERPRISE</small><p>{x.enterpriseNote}</p></div>
+                    </div>
+                  </section>
+                ))}
               </div>
-              <div className="dense-foot"><b>WHY THIS</b><p>{intel?.competition?.[0]?.runwayEdge || "用途・価格・導入負荷を横断して比較。"}</p></div>
             </article>
           </div>
 
