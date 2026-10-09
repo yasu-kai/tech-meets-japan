@@ -15,7 +15,7 @@ export type CompanyIntelligence = {
   gtmPlays?: { title: string; buyer: string; wedge: string; expansion: string }[];
   competition?: { name: string; strength: string; runwayEdge: string; threat: string }[];
   risks?: { title: string; detail: string; severity: "High" | "Medium" | "Low" }[];
-  scoreBreakdown?: { label: string; score: number; reason: string }[];
+  scoreBreakdown?: { label: string; score: number; weight?: number; reason: string; evidence?: string[] }[];
   timeline?: { date: string; title: string; detail: string }[];
   verdict?: string;
   sources?: { label: string; url: string }[];
@@ -114,11 +114,12 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
         {title:"代理店の内製競争",detail:"大手代理店が独自AI基盤を持つため、単なる生成ツールとして売ると競合になる。",severity:"Medium"}
       ],
       scoreBreakdown:[
-        {label:"Pain intensity",score:92,reason:"制作費・時間・量の制約は明確。"},
-        {label:"Japan timing",score:98,reason:"$40M投資と東京拠点、顧客成長が同時進行。"},
-        {label:"Sales clarity",score:95,reason:"広告・ゲーム・ブランドなど買い手と用途が見えやすい。"},
-        {label:"New market creation",score:96,reason:"単なる効率化ではなく、制作量・表現・制作主体そのものを広げる。"},
-        {label:"Defensibility",score:82,reason:"モデル性能だけでは守りにくく、Workflow / Enterprise運用が鍵。"}
+        {label:"課題への刺さり",score:92,weight:25,reason:"制作費・時間・量という既存の強い課題に直接効く。",evidence:["撮影・VFX・再編集の代替余地","制作量増加ニーズ"]},
+        {label:"日本での使いやすさ",score:88,weight:20,reason:"日本拠点・導入実績は強いが、日本語UI/Support範囲には未確認点が残る。",evidence:["日本拠点あり","国内顧客事例あり","日本語Support範囲は要確認"]},
+        {label:"差別化の強さ",score:94,weight:20,reason:"AlephとAct-Twoなど、単なる動画生成より深い制作工程に入れる。",evidence:["Aleph Edit Studio","Act-Two","同一制作環境"]},
+        {label:"導入しやすさ",score:90,weight:15,reason:"Freeから試せ、個人利用は即日。既存制作環境を全面置換せず追加導入できる。",evidence:["Freeあり","低〜中オンボ負荷","低〜中リプレイス負荷"]},
+        {label:"費用対効果",score:86,weight:10,reason:"公開価格は入りやすい一方、生成回数によって実質TCOが変動する。",evidence:["$15/月〜","API従量","生成試行回数でTCO変動"]},
+        {label:"Enterprise適性",score:89,weight:10,reason:"SSO・Audit Logs・SOC2等は強いが、SAML/SCIM未対応が減点。",evidence:["OIDC SSO","Audit Logs","SOC 2 Type II","SAML/SCIM未対応"]}
       ],
       timeline:[
         {date:"2026.05",title:"日本本格進出を発表",detail:"東京に日本本社を開設し、初期$40Mを投資。Head of Japan採用も開始。"},
@@ -476,5 +477,24 @@ export const products: Product[] = [
   {slug:"rlwrld-rfm",name:"RLWRLD Robotics Foundation Model",provider:"RLWRLD",companySlug:"rlwrld",country:"South Korea",category:"Physical AI",tagline:"既存ロボットに、非定型作業への適応力を与える。",description:"産業用ロボットに把持・認識・操作の汎化能力を与えるRobotics Foundation Model。",fitScore:86,japanStatus:"Japan early build",entryStage:"Entering",useCases:["ピッキング","組付け","検品","品出し"],targetUsers:["製造","物流","小売","ロボットSI"],alternatives:["Physical Intelligence","Covariant系","内製Vision AI"],tags:["Physical AI","Robotics Foundation Model","Manipulation"],website:"https://www.rlwrld.ai"},
   {slug:"shield-hivemind",name:"Hivemind",provider:"Shield AI",companySlug:"shield-ai",country:"United States",category:"Defense AI",tagline:"通信・GPS制約下でも動くAI Pilot。",description:"無人航空機・ドローン向けの自律飛行AI Pilot / autonomy stack。",fitScore:78,japanStatus:"Japan BD expansion",entryStage:"Entering",useCases:["自律無人機","協調飛行","監視","防衛AI"],targetUsers:["防衛","重工","航空宇宙","政府"],alternatives:["Anduril系","自社autonomy stack"],tags:["Defense Tech","AI Pilot","Autonomy"],website:"https://shield.ai"}
 ];
+
+
+export const japanFitWeights = {
+  "課題への刺さり": 25,
+  "日本での使いやすさ": 20,
+  "差別化の強さ": 20,
+  "導入しやすさ": 15,
+  "費用対効果": 10,
+  "Enterprise適性": 10
+};
+
+export function calculateJapanFit(companySlug: string): number | null {
+  const company = companies.find(c => c.slug === companySlug);
+  const scores = company?.intelligence?.scoreBreakdown;
+  if (!scores?.length) return null;
+  const weighted = scores.reduce((sum, item) => sum + item.score * (item.weight ?? 0), 0);
+  const totalWeight = scores.reduce((sum, item) => sum + (item.weight ?? 0), 0);
+  return totalWeight ? Math.round(weighted / totalWeight) : null;
+}
 
 export const productCategories = ["All", ...Array.from(new Set(products.map(p => p.category)))];
