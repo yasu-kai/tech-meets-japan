@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { ArrowUpRight, Building2, Check, GitCompareArrows, Sparkles, Languages, Headphones, Plug, ShieldCheck, WalletCards, Replace, Rocket, LockKeyhole } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { calculateJapanFit, companies, products } from "@/lib/data";
+import { calculateJapanFit, dimensionScore, companies, products } from "@/lib/data";
 
 export function generateStaticParams(){ return products.map(p=>({slug:p.slug})); }
 
@@ -180,22 +180,35 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
               <strong>Japan Fit = Σ（各軸スコア × 重み）</strong>
               <p>課題への刺さり25% / 日本での使いやすさ20% / 差別化20% / 導入しやすさ15% / 費用対効果10% / Enterprise適性10%</p>
             </div>
-            <div className="score-calculation-table">
-              <div className="score-calc-head"><span>評価軸</span><span>素点</span><span>重み</span><span>加点</span><span>根拠</span></div>
+            <div className="score-rubric-list">
               {intel.scoreBreakdown.map(item=>{
                 const weight=item.weight ?? 0;
-                const contribution=item.score*weight/100;
+                const score=dimensionScore(item);
+                const contribution=score*weight/100;
                 return (
-                  <div className="score-calc-row" key={item.label}>
-                    <strong>{item.label}</strong>
-                    <span>{item.score}</span>
-                    <span>{weight}%</span>
-                    <b>{contribution.toFixed(1)}</b>
-                    <div><p>{item.reason}</p>{item.evidence?.map(e=><small key={e}>・{e}</small>)}</div>
-                  </div>
+                  <section className="score-rubric-dimension" key={item.label}>
+                    <div className="score-rubric-summary">
+                      <div><span>DIMENSION</span><strong>{item.label}</strong></div>
+                      <div><span>SCORE</span><b>{score}</b></div>
+                      <div><span>WEIGHT</span><b>{weight}%</b></div>
+                      <div><span>CONTRIBUTION</span><b>{contribution.toFixed(1)}</b></div>
+                    </div>
+                    <div className="score-rubric-table">
+                      <div className="score-rubric-head"><span>判定項目</span><span>配点</span><span>獲得</span><span>採点ルール</span><span>今回の判定理由</span></div>
+                      {item.criteria.map(criterion=>(
+                        <div className="score-rubric-row" key={criterion.label}>
+                          <strong>{criterion.label}</strong>
+                          <span>{criterion.max}</span>
+                          <b>{criterion.awarded}</b>
+                          <p>{criterion.rule}</p>
+                          <div><p>{criterion.reason}</p>{criterion.evidence?.map(e=><small key={e}>・{e}</small>)}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
                 )
               })}
-              <div className="score-calc-total"><strong>TOTAL</strong><b>{calculatedFit}</b><span>/ 100</span></div>
+              <div className="score-calc-total"><strong>TOTAL JAPAN FIT</strong><b>{calculatedFit}</b><span>/ 100</span></div>
             </div>
           </section>
         )}
