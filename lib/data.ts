@@ -433,6 +433,27 @@ export type Product = {
   useCases: string[];
   targetUsers: string[];
   alternatives: string[];
+  useCaseDetails?: {
+    title:string;
+    situation:string;
+    input:string;
+    output:string;
+    user:string;
+    replaces:string;
+    kpi:string[];
+    whyThis:string[];
+    notFor:string[];
+  }[];
+  comparisonDetails?: {
+    name:string;
+    bestWhen:string[];
+    runwayWinsWhen:string[];
+    otherWinsWhen:string[];
+    switchingCost:string;
+    pricingNote:string;
+    japaneseNote:string;
+    enterpriseNote:string;
+  }[];
   tags: string[];
   website: string;
   featured?: boolean;
@@ -440,7 +461,20 @@ export type Product = {
 };
 
 export const products: Product[] = [
-  {slug:"runway-ai-video",name:"Runway AI Video Platform",provider:"Runway",companySlug:"runway",country:"United States",category:"Creative AI",tagline:"撮影・編集・VFXの一部を、生成AIの制作フローへ。",description:"映像生成、編集、Transformation、Character performanceなどを一つの制作環境で扱うAI映像プラットフォーム。",fitScore:94,japanStatus:"Japan expansion",entryStage:"Scaling",useCases:["広告動画","プリビズ","SNSクリエイティブ","IP・ゲーム映像"],targetUsers:["広告・制作会社","ブランドマーケ","ゲーム・IP","放送・映像"],alternatives:["Adobe Firefly","Google Veo","OpenAI video","Higgsfield"],tags:["Generative Video","Enterprise","Creative Workflow"],website:"https://runwayml.com",featured:true,
+  {slug:"runway-ai-video",name:"Runway AI Video Platform",provider:"Runway",companySlug:"runway",country:"United States",category:"Creative AI",tagline:"撮影・編集・VFXの一部を、生成AIの制作フローへ。",description:"映像生成、編集、Transformation、Character performanceなどを一つの制作環境で扱うAI映像プラットフォーム。",fitScore:94,japanStatus:"Japan expansion",entryStage:"Scaling",useCases:["広告動画","プリビズ","SNSクリエイティブ","IP・ゲーム映像"],targetUsers:["広告・制作会社","ブランドマーケ","ゲーム・IP","放送・映像"],alternatives:["Adobe Firefly","Google Veo","OpenAI video","Higgsfield"],
+  useCaseDetails:[
+    {title:"広告動画",situation:"既存CMや商品素材はあるが、媒体別・訴求別の動画案が足りない。",input:"商品画像 / 既存CM / ブランドガイド / コピー案",output:"15〜30秒動画 / 縦型短尺 / 背景・商品差し替え版",user:"広告制作 / ブランドマーケ / Creative Tech",replaces:"追加撮影 / 一部VFX / B案・C案制作",kpi:["1本あたり制作時間","案数/週","1成果物あたり生成回数","撮影・外注削減額"],whyThis:["Alephで既存映像の差し替えができる","生成→編集→Upscaleまで同一環境","Enterprise統制でブランド運用に載せやすい"],notFor:["1本の最高品質CMだけを作る案件","生成AI利用不可のブランド"]},
+    {title:"プリビズ",situation:"撮影やVFXに入る前に、演出・構図・世界観を動画で共有したい。",input:"絵コンテ / 静止画 / 台本 / シーン説明",output:"完成イメージに近い短尺動画 / 複数演出案",user:"監督 / プロデューサー / 企画 / 制作会社",replaces:"静止画だけの絵コンテ / 簡易モック / 一部ロケ検証",kpi:["企画承認までの日数","修正回数","撮影前の手戻り","検討案数"],whyThis:["動画生成だけでなく後編集まで同じ環境","Alephで既存素材を変形可能","複数案を高速に比較できる"],notFor:["長尺本編をそのまま納品したい","精密な物理挙動検証が必要"]},
+    {title:"SNSクリエイティブ",situation:"Meta/TikTok/YouTube向けに、同一商品の訴求・背景・尺違いを大量に作りたい。",input:"商品画像 / 過去広告 / コピー / CTA",output:"複数パターンの縦型動画 / 地域・季節別バリエーション",user:"Performance Marketing / SNS運用 / EC",replaces:"毎回の新規撮影 / 手作業リサイズ / 少数案でのABテスト",kpi:["制作本数","CTR/CVR改善","クリエイティブ更新頻度","1案あたりコスト"],whyThis:["既存素材を編集して量産しやすい","複数モデルを同一Workspaceで試せる","出力後の再編集まで一気通貫"],notFor:["静止画だけで十分な商材","動画広告をほぼ運用していない"]},
+    {title:"IP・ゲーム映像",situation:"既存キャラクターを使ったPVやSNS動画を増やしたいが、手付けアニメやモーキャプが重い。",input:"キャラクター画像 / 演者動画 / 既存PV / 台詞",output:"キャラクター演技動画 / 短尺PV / 別演出版",user:"ゲーム会社 / アニメ / 出版 / IPホルダー",replaces:"一部モーションキャプチャ / 手付けアニメ / 簡易PV制作",kpi:["PV制作日数","制作本数","外注費","1キャラあたり展開数"],whyThis:["Act-Twoで演技転写ができる","非人間キャラにも対応しやすい","生成後も編集工程を続けられる"],notFor:["原作監修で1フレーム単位の再現が必須","生成AI利用が権利上禁止"]}
+  ],
+  comparisonDetails:[
+    {name:"Adobe Firefly",bestWhen:["Creative Cloud中心の既存制作環境","Adobe契約内で完結したい","企業ガバナンスを最優先"],runwayWinsWhen:["既存動画そのものを自然言語で編集したい","Act-Twoなどキャラクター演技を使いたい","生成から編集までAI動画中心に回したい"],otherWinsWhen:["Photoshop/Premiereとの連携が最重要","新しい制作基盤を増やしたくない"],switchingCost:"低〜中。共存しやすく、全面リプレイスより併用が現実的。",pricingNote:"Adobe既存契約とのバンドル優位あり。",japaneseNote:"Adobe側が日本語・国内販売体制で優位。",enterpriseNote:"Adobeは既存Enterprise導入基盤が強い。RunwayはAI動画特化ワークフローで差別化。"},
+    {name:"Google Veo",bestWhen:["最高水準の生成品質を重視","Google Cloud/Workspace活用が強い","新規動画生成が中心"],runwayWinsWhen:["既存映像の編集・変換まで必要","制作工程を一つのUIで回したい","Enterpriseで複数モデルを統制したい"],otherWinsWhen:["生成モデル単体の品質が最重要","Googleエコシステム統合が決定要因"],switchingCost:"低。生成用途だけならモデル差し替えは比較的容易。",pricingNote:"モデル/API単価比較が重要。RunwayはWorkspace価値込みで見るべき。",japaneseNote:"Googleの国内体制は強い。",enterpriseNote:"Googleは基盤/Cloud統合、Runwayは制作現場ワークフローに強み。"},
+    {name:"OpenAI video",bestWhen:["ChatGPT Enterpriseとの一体運用","汎用AIと動画生成をまとめたい","社内AI標準をOpenAIに寄せている"],runwayWinsWhen:["映像制作専用の編集・再利用工程が必要","キャラクター演技や既存映像編集を重視","Creative team向け管理UIが必要"],otherWinsWhen:["既存OpenAI契約との統合が最重要","動画以外の生成AI利用も一元化したい"],switchingCost:"低〜中。API組み込み後は上がる。",pricingNote:"契約全体のAIコストで比較すべき。",japaneseNote:"日本語汎用AI体験はOpenAI側が強い。",enterpriseNote:"OpenAIは汎用AI基盤、Runwayは動画制作特化で差別化。"},
+    {name:"Higgsfield",bestWhen:["高速なトレンド追随","生成表現・カメラ演出を素早く試す","コストを抑えたクリエイター利用"],runwayWinsWhen:["Enterprise管理が必要","既存映像編集やAct-Twoを使う","チーム制作・ガバナンスまで含めたい"],otherWinsWhen:["個人/小規模チームで最新表現を高速に試したい","Enterprise統制が不要"],switchingCost:"低。生成専用用途なら並行利用しやすい。",pricingNote:"生成単価だけならHiggsfield系が有利になる可能性。",japaneseNote:"日本語支援体制は要確認。",enterpriseNote:"Runwayの方が組織利用・管理面で明確に強い。"}
+  ],
+tags:["Generative Video","Enterprise","Creative Workflow"],website:"https://runwayml.com",featured:true,
   decision:{
     differentiators:[
       {label:"Aleph 2.0 Edit Studio",level:"Runway固有",what:"既存動画を自然言語で直接編集し、商品・人物・背景・不要物・VFXなどをショット単位で置換。さらに1フレームの編集を残りの動画へ反映できる。",whyItMatters:"“新しい動画を生成する”だけでなく、“すでに撮った映像を直す”工程にAIを入れられる。撮り直し・VFX・再編集の一部を置換しやすい。",comparedWith:["Google Veo","OpenAI video","Adobe Firefly"],evidence:"Runway Edit Studio / Aleph 2.0"},
