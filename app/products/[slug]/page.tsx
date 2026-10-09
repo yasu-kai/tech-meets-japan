@@ -44,11 +44,77 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
           <div className="tag-row editorial-tags">{product.tags.map(t=><span key={t}>{t}</span>)}</div>
         </section>
 
-        <section className="product-quick-grid">
-          <div><span>WHAT IT DOES</span><h2>何ができる？</h2><p>{product.description}</p></div>
-          <div><span>WHO IT FITS</span><h2>誰に向く？</h2><div className="buyer-grid">{product.targetUsers.map(x=><span key={x}>{x}</span>)}</div></div>
-          <div><span>USE CASES</span><h2>何に使える？</h2><div className="check-list">{product.useCases.map(x=><div key={x}><Check size={15}/>{x}</div>)}</div></div>
-          <div><span>COMPARE WITH</span><h2>何と比べる？</h2><div className="buyer-grid">{product.alternatives.map(x=><span key={x}>{x}</span>)}</div></div>
+        <section className="decision-dashboard">
+          <div className="decision-summary">
+            <div><span>FROM</span><strong>{product.decision?.pricing?.publicPlans?.find(p=>p.name!=="Free")?.monthly || "要確認"}</strong><small>公開プラン</small></div>
+            <div><span>ONBOARD</span><strong>{product.decision?.onboarding?.label || "要確認"}</strong><small>{product.decision?.onboarding?.timeToValue || "導入期間未確認"}</small></div>
+            <div><span>REPLACE</span><strong>{product.decision?.replacement?.label || "要確認"}</strong><small>移行負荷 {product.decision?.replacement?.level || "?"}/5</small></div>
+            <div><span>JAPANESE</span><strong>{product.decision?.japanese?.ui || "要確認"}</strong><small>UI対応</small></div>
+            <div><span>SUPPORT</span><strong>{product.decision?.support?.level || "要確認"}</strong><small>運用支援</small></div>
+            <div><span>TRIAL</span><strong>{product.decision?.trial?.available || "要確認"}</strong><small>試しやすさ</small></div>
+          </div>
+
+          <div className="decision-board-grid">
+            <article className="decision-board-card">
+              <div className="decision-board-head"><span>01 / WHAT IT DOES</span><h2>何ができる？</h2></div>
+              <p className="decision-board-lead">{product.description}</p>
+              <div className="dense-list">
+                {product.decision?.capabilities?.slice(0,5).map(x=><div key={x.label}><strong>{x.label}</strong><p>{x.detail}</p></div>)}
+              </div>
+              {!!product.decision?.limitations?.length && <div className="dense-foot"><b>LIMITS</b><p>{product.decision.limitations.slice(0,2).join(" / ")}</p></div>}
+            </article>
+
+            <article className="decision-board-card">
+              <div className="decision-board-head"><span>02 / WHO IT FITS</span><h2>誰に向く？</h2></div>
+              <div className="dense-fit-grid">
+                {product.targetUsers.map((x,i)=><div key={x}><span>0{i+1}</span><strong>{x}</strong><p>{intel?.targetAccounts?.[i]?.pain || "この領域での利用適性を確認中。"}</p></div>)}
+              </div>
+              <div className="dense-foot"><b>BEST FOR</b><p>{product.decision?.bestFor?.slice(0,3).join(" / ")}</p></div>
+            </article>
+
+            <article className="decision-board-card">
+              <div className="decision-board-head"><span>03 / USE CASES</span><h2>何に使える？</h2></div>
+              <div className="dense-usecases">
+                {product.useCases.map((x,i)=><div key={x}><span>0{i+1}</span><strong>{x}</strong><p>{intel?.targetAccounts?.[i]?.openingOffer || "具体的な利用パターンを整理中。"}</p></div>)}
+              </div>
+              <div className="dense-foot"><b>FIRST USE</b><p>{intel?.gtmPlays?.[0]?.wedge || "まず1用途に限定したPoCから開始推奨。"}</p></div>
+            </article>
+
+            <article className="decision-board-card">
+              <div className="decision-board-head"><span>04 / COMPARE</span><h2>何と比べる？</h2></div>
+              <div className="dense-compare">
+                {product.alternatives.map((x,i)=><div key={x}><strong>{x}</strong><p>{intel?.competition?.[i]?.strength || "比較情報を整理中。"}</p><small>{intel?.competition?.[i]?.threat || ""}</small></div>)}
+              </div>
+              <div className="dense-foot"><b>WHY THIS</b><p>{intel?.competition?.[0]?.runwayEdge || "用途・価格・導入負荷を横断して比較。"}</p></div>
+            </article>
+          </div>
+
+          <div className="decision-facts-grid">
+            <div>
+              <span>PRICING</span>
+              <strong>{product.decision?.pricing?.publicPlans?.map(p=>p.name+" "+(p.monthly||"")).join(" / ") || "要確認"}</strong>
+            </div>
+            <div>
+              <span>ENTERPRISE</span>
+              <strong>{product.decision?.pricing?.enterprise || "要確認"}</strong>
+            </div>
+            <div>
+              <span>API</span>
+              <strong>{product.decision?.pricing?.api || "要確認"}</strong>
+            </div>
+            <div>
+              <span>JAPANESE SUPPORT</span>
+              <strong>{product.decision?.japanese?.support || "要確認"}</strong>
+            </div>
+            <div>
+              <span>SECURITY</span>
+              <strong>{product.decision?.enterpriseReadiness?.filter(x=>["SOC 2 Type II","ISO/IEC 27001:2022","SSO"].includes(x.item)).map(x=>x.item+" "+x.status).join(" / ") || "要確認"}</strong>
+            </div>
+            <div>
+              <span>LOCK-IN</span>
+              <strong>{product.decision?.lockIn?.label || "要確認"} / {product.decision?.lockIn?.level || "?"}/5</strong>
+            </div>
+          </div>
         </section>
 
         {intel?.verdict && (
