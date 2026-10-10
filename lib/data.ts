@@ -398,6 +398,16 @@ export type ProductDecisionData = {
     whyItMatters: string;
     behaviorDetails?: string[];
     examples: string[];
+    demoMedia?: {
+      type: "video" | "gif" | "before-after";
+      source: "manufacturer" | "official" | "editorial";
+      url: string;
+      thumbnail?: string;
+      caption?: string;
+      durationSeconds?: number;
+      featureKey?: string;
+      rightsConfirmed: boolean;
+    }[];
     confidence?: "High"|"Medium"|"Low";
   }[];
   limitations?: string[];
