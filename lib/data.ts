@@ -390,9 +390,13 @@ export type ProductDecisionData = {
     detail: string;
     level: "Runway固有" | "Runwayで特に強い" | "他でもできる";
     input: string;
+    inputDetails?: string[];
     output: string;
+    outputDetails?: string[];
     replaces: string;
+    replacesDetails?: string[];
     whyItMatters: string;
+    behaviorDetails?: string[];
     examples: string[];
     confidence?: "High"|"Medium"|"Low";
   }[];
@@ -484,8 +488,26 @@ tags:["Generative Video","Enterprise","Creative Workflow"],website:"https://runw
       {label:"Text / Image → Video",level:"他でもできる",what:"テキストや画像から高品質動画を生成する。",whyItMatters:"重要な基本機能だが、ここ自体はRunwayだけの差別化ではない。",comparedWith:["Google Veo","OpenAI video","Kling","MiniMax"],evidence:"Runway Gen-4.5"}
     ],
     capabilities:[
-      {label:"Aleph Edit Studio",detail:"既存映像を自然言語で編集・変換し、背景・人物・商品・不要物・VFXなどをショット単位で変更。",level:"Runway固有",input:"既存動画 / 自然言語の編集指示",output:"編集済み動画 / 変換済みショット",replaces:"再撮影 / 手作業VFX / 素材差し替えの一部",whyItMatters:"“新規生成”ではなく“撮影済み素材の修正”までAI化できるのがRunwayの強い差別化。",examples:["既存CMの背景だけ差し替える","撮影済み映像から不要物を除去","同一素材を季節・地域別に作り替える"]},
-      {label:"Act-Two Performance Capture",detail:"演者の動き・表情・発話・ジェスチャーを別キャラクターへ転写。",level:"Runway固有",input:"演者のPerformance video / キャラクター画像",output:"演技・表情を反映したキャラクター動画",replaces:"モーションキャプチャ設備 / 手付けアニメーションの一部",whyItMatters:"IPキャラクターを“演技させる”用途で、Avatar動画とは違う表現ができる。",examples:["既存IPキャラに人の演技を転写","非人間キャラを自然に動かす","短尺PV用のキャラクター演技を量産"]},
+      {label:"Aleph Edit Studio",detail:"既存映像を自然言語で編集・変換し、背景・人物・商品・不要物・VFXなどをショット単位で変更。",level:"Runway固有",
+input:"既存動画 / 自然言語の編集指示",
+inputDetails:["動画そのものを入力できる","add / remove / replace / relight / restyle などの指示","必要に応じて特定フレームを基準に編集"],
+output:"編集済み動画 / 変換済みショット",
+outputDetails:["指定した要素だけ変更し、それ以外は維持","背景・照明・構図・動き・タイミングを残したまま修正可能","1フレームの編集内容を後続フレームへ反映"],
+replaces:"再撮影 / 手作業VFX / 素材差し替えの一部",
+replacesDetails:["背景変更のための再撮影を減らせる","衣装・商品・小物差し替えを後工程で処理","不要物除去・Relight・季節変更を素材修正で対応"],
+whyItMatters:"“作り直す”のではなく、“良い部分を残したまま悪い部分だけ直す”挙動がRunwayの強い差別化。",
+behaviorDetails:["再生成ではなく局所修正","被写体を残して背景だけ差し替え","人物を残して衣装だけ変更","照明だけ変えて構図・動きは維持","同一ショット内の変更を時間方向に追従"],
+examples:["既存CMの背景だけ差し替える","撮影済み映像から不要物を除去","同一素材を季節・地域別に作り替える"]},
+      {label:"Act-Two Performance Capture",detail:"演者の動き・表情・発話・ジェスチャーを別キャラクターへ転写。",level:"Runway固有",
+input:"演者のPerformance video / キャラクター画像",
+inputDetails:["人の演技動画をそのまま参照","顔だけでなく身体・手・ジェスチャーも対象","実写人物に限らずキャラクター画像を利用"],
+output:"演技・表情を反映したキャラクター動画",
+outputDetails:["演者のタイミングを保持したキャラクター演技","口・表情・身体動作をまとめて転写","非人間キャラクターにも応用可能"],
+replaces:"モーションキャプチャ設備 / 手付けアニメーションの一部",
+replacesDetails:["簡易PVなら大規模モーキャプ不要","演技のたたき台を短時間で作成","SNS用キャラ動画の量産負荷を削減"],
+whyItMatters:"“喋るアバター”ではなく、“人の演技そのものをキャラクターに移す”ため、IP表現の自由度が高い。",
+behaviorDetails:["演者の動きをキャラクター側へ写す","表情と身体演技を同時に扱う","非人型・スタイライズキャラにも使いやすい"],
+examples:["既存IPキャラに人の演技を転写","非人間キャラを自然に動かす","短尺PV用のキャラクター演技を量産"]},
       {label:"Integrated Creative Workflow",detail:"生成→編集→変換→高解像度化まで、同一制作環境で連続して扱える。",level:"Runwayで特に強い",input:"生成素材 / 既存映像 / 外部モデル出力",output:"再編集・変換・高解像度化した制作物",replaces:"複数ツール間の書き出し / 再アップロード / 手戻り",whyItMatters:"単一モデルではなく“制作環境”として使えるため、実務フローに組み込みやすい。",examples:["Gen-4出力をそのまま編集工程へ渡す","生成動画をExpand/Upscaleで仕上げる","複数案を同一Workspaceで比較"]},
       {label:"Enterprise Model Governance",detail:"Runway独自モデルと一部第三者モデルを、同一Enterprise環境・管理ルールの下で利用。",level:"Runwayで特に強い",input:"Workspace / Brand assets / Team settings / 複数モデル",output:"統制された制作環境 / 利用ログ / 管理されたモデル利用",replaces:"部署ごとの個別AI契約 / モデルごとの管理分散",whyItMatters:"AI動画ツールが乱立しても、企業側のガバナンスを一本化しやすい。",examples:["部署ごとに利用可能モデルを制御","Brand Kitで制作ルールを共通化","Audit Logsで利用状況を確認"]},
       {label:"Text / Image → Video",detail:"Gen-4.5などでテキスト・画像から動画を生成。",level:"他でもできる",input:"テキストプロンプト / 静止画",output:"新規生成動画",replaces:"ロケ前の試作 / 初期映像制作の一部",whyItMatters:"重要な基本機能だが、Veo・Kling・MiniMaxなどでも実現可能で、ここ自体はRunway固有ではない。",examples:["絵コンテから15秒CMのたたき台を作る","商品画像から縦型動画を生成","撮影前のプリビズを作る"]}
