@@ -416,19 +416,56 @@ export type ProductDecisionData = {
     enterprise?: string;
     api?: string;
     tcoNote?: string;
+    decisionGuide?: { label:string; value:string }[];
+    hiddenCosts?: string[];
+    poCMeasure?: string[];
   };
-  onboarding?: { level:1|2|3|4|5; label:string; timeToValue:string; costNote:string; tasks:string[] };
-  replacement?: { level:1|2|3|4|5; label:string; costNote:string; migrationRisks:string[] };
-  japanese?: { ui:string; input:string; output:string; docs:string; support:string; note?:string };
-  support?: { level:string; details:string[] };
+  onboarding?: {
+    level:1|2|3|4|5; label:string; timeToValue:string; costNote:string; tasks:string[];
+    prerequisites?: string[];
+    recommendedFlow?: { phase:string; timing:string; actions:string[]; exit:string }[];
+    owners?: { role:string; responsibility:string }[];
+    successCriteria?: string[];
+  };
+  replacement?: {
+    level:1|2|3|4|5; label:string; costNote:string; migrationRisks:string[];
+    coexistence?: string[];
+    hardToReplace?: string[];
+    easyToReplace?: string[];
+    decisionRule?: string;
+  };
+  japanese?: {
+    ui:string; input:string; output:string; docs:string; support:string; note?:string;
+    practicalUse?: { scene:string; status:string; implication:string }[];
+    procurementChecks?: string[];
+  };
+  support?: {
+    level:string; details:string[];
+    whoGetsWhat?: { tier:string; support:string }[];
+    operationalRisks?: string[];
+    preContractQuestions?: string[];
+  };
   integrations?: string[];
-  enterpriseReadiness?: { item:string; status:string; note?:string }[];
+  enterpriseReadiness?: { item:string; status:string; note?:string; implication?:string; verify?:string }[];
   contract?: { item:string; value:string }[];
-  trial?: { available:string; detail:string };
-  lockIn?: { level:1|2|3|4|5; label:string; reasons:string[] };
+  trial?: {
+    available:string; detail:string;
+    testPlan?: { test:string; pass:string }[];
+    doNotJudgeBy?: string[];
+  };
+  lockIn?: {
+    level:1|2|3|4|5; label:string; reasons:string[];
+    lockInGrowsWhen?: string[];
+    exitPlan?: string[];
+  };
   bestFor?: string[];
   notFor?: string[];
-  verdict?: { status:"今すぐ試す"|"PoC推奨"|"様子見"|"日本ではまだ早い"; summary:string };
+  verdict?: {
+    status:"今すぐ試す"|"PoC推奨"|"様子見"|"日本ではまだ早い"; summary:string;
+    nextActions?: { when:string; action:string; why:string }[];
+    goSignals?: string[];
+    stopSignals?: string[];
+  };
   evidence?: { item:string; type:"Official"|"Observed"|"Estimated"; confidence:"High"|"Medium"|"Low"; source?:string }[];
 };
 
@@ -537,28 +574,74 @@ examples:["既存IPキャラに人の演技を転写","非人間キャラを自�
       ],
       enterprise:"Enterpriseは個別見積。Custom credits、SSO、Workspace Analytics、Enterprise-wide onboarding、Priority support等を含む。",
       api:"Runway Devは基本1 credit = $0.01。モデル・解像度・秒数ごとに従量課金。",
-      tcoNote:"制作現場では契約費より『何回生成し直すか』がTCOを左右しやすい。PoC時に1成果物あたりの平均生成回数を必ず測るべき。"
+      tcoNote:"制作現場では契約費より『何回生成し直すか』がTCOを左右しやすい。PoC時に1成果物あたりの平均生成回数を必ず測るべき。",
+      decisionGuide:[
+        {label:"まず触る",value:"Free / Standard。UIと出力品質を確認する段階。"},
+        {label:"個人制作",value:"Pro候補。生成回数が増えた時のcredits消費を実測して判断。"},
+        {label:"制作チーム",value:"Team / Enterpriseを比較。権限・Brand運用・管理負荷まで含めて選ぶ。"},
+        {label:"API組み込み",value:"月額ではなく『秒数×モデル×再試行回数』で原価を見る。"}
+      ],
+      hiddenCosts:["採用テイクまでの再生成credits","生成後のPremiere/After Effects等での仕上げ工数","ブランド/法務レビュー工数","Enterpriseでの権限・SSO・運用設計","API利用時の監視・失敗リトライ実装"],
+      poCMeasure:["1成果物あたり平均生成回数","人手制作との所要時間差","撮影・VFX・外注削減額","採用率（生成した案のうち実利用された割合）","月間想定creditsと上限超過時コスト"]
     },
     onboarding:{
       level:2,label:"低〜中",timeToValue:"個人利用なら即日。企業利用は1〜3週間程度が目安。",costNote:"小規模PoCならほぼライセンス費のみ。EnterpriseはSSO・権限・ブランドルール・運用設計の工数が追加。",
-      tasks:["アカウント/Workspace設定","対象ユースケース選定","Brand / IP利用ルール整理","プロンプト・生成フロー検証","EnterpriseならSSO・権限設定"]
+      tasks:["アカウント/Workspace設定","対象ユースケース選定","Brand / IP利用ルール整理","プロンプト・生成フロー検証","EnterpriseならSSO・権限設定"],
+      prerequisites:["試す制作工程を1つに限定する","比較対象となる従来工程の時間・費用を把握する","利用可能なブランド/IP素材を用意する","生成AI利用に関する社内ルールを確認する"],
+      recommendedFlow:[
+        {phase:"DAY 0",timing:"30〜60分",actions:["Free/Standardでログイン","代表素材を1つ投入","基本生成と編集を一度通す"],exit:"『触れる/触れない』ではなく、対象素材で最低1回成果物が出ること。"},
+        {phase:"WEEK 1",timing:"3〜5営業日",actions:["同じ案件で5〜10案生成","従来工程と時間比較","Aleph/Act-Twoの適用可否確認"],exit:"制作時間・生成回数・採用率の3指標が取れている。"},
+        {phase:"WEEK 2+",timing:"1〜3週間",actions:["チーム利用","権限/Brandルール整理","Enterprise要件確認"],exit:"本番案件で再現可能なワークフローが1本確立している。"}
+      ],
+      owners:[
+        {role:"Creative owner",responsibility:"品質基準と採用可否を決める"},
+        {role:"Operator",responsibility:"プロンプト・生成・編集フローを検証する"},
+        {role:"IT / Security",responsibility:"Enterprise利用時の認証・データ・ログ要件を確認する"},
+        {role:"Legal / Brand",responsibility:"IP・生成AI利用ルール・ブランド表現を確認する"}
+      ],
+      successCriteria:["従来工程より明確に短い","採用可能な品質が再現できる","生成回数が予算内に収まる","担当者が属人化せず再現できる"]
     },
     replacement:{
       level:2,label:"比較的低い",costNote:"Adobe等の制作環境を完全置換するより、生成工程を追加するケースが多く、初期リプレイス負荷は低め。",
-      migrationRisks:["既存アセット管理との二重運用","社内承認フローの再設計","制作担当者の学習コスト","Adobe等の既存工程を完全には置き換えにくい"]
+      migrationRisks:["既存アセット管理との二重運用","社内承認フローの再設計","制作担当者の学習コスト","Adobe等の既存工程を完全には置き換えにくい"],
+      coexistence:["Premiere / After Effectsの前工程として生成素材を作る","既存CMの修正工程だけAlephへ寄せる","プリビズだけRunway化し本制作は既存ツールを維持","SNS量産だけRunwayに切り出す"],
+      easyToReplace:["単発のText/Image→Video生成","プリビズ用途","個人クリエイターの試作工程"],
+      hardToReplace:["APIを業務システムに組み込んだ後","Brand Kitや承認フローをRunway前提で設計した後","Act-Two/Aleph固有工程が制作標準になった後"],
+      decisionRule:"最初から『Adobeを置き換える』と考えず、既存工程の中でRunwayが最も強い1工程だけ差し込む方が失敗しにくい。"
     },
-    japanese:{ui:"要確認",input:"日本語プロンプト利用可",output:"言語依存度は用途次第",docs:"英語中心",support:"日本語専任対応は公開情報では要確認",note:"日本拠点は開設済みだが、UI・Help・Supportの日本語提供範囲は契約前確認推奨。"},
-    support:{level:"Enterpriseは強い",details:["Enterprise Creative Support","Priority Creative & Technical Support","Same business day response","Weekly Office Hours（US/EU time zones）","Monthly Feature Deep Dives"]},
+    japanese:{
+      ui:"要確認",input:"日本語プロンプト利用可",output:"言語依存度は用途次第",docs:"英語中心",support:"日本語専任対応は公開情報では要確認",
+      note:"日本拠点は開設済みだが、UI・Help・Supportの日本語提供範囲は契約前確認推奨。",
+      practicalUse:[
+        {scene:"日本語で生成指示",status:"使える",implication:"制作担当者が英語プロンプト必須という状態ではない。"},
+        {scene:"管理画面/UI",status:"要確認",implication:"全社員展開する場合は教育コストに直結。"},
+        {scene:"Help / Docs",status:"英語中心",implication:"高度な機能ほど英語情報を読む場面が残る。"},
+        {scene:"国内時間帯サポート",status:"要確認",implication:"本番運用では障害・契約時の一次窓口を確認すべき。"},
+        {scene:"日本法人との商談",status:"可能性高",implication:"日本拠点があるためEnterprise調達の相談経路は取りやすい。"}
+      ],
+      procurementChecks:["契約主体が国内/海外どちらになるか","日本円請求・請求書払いの可否","日本語でのセキュリティ回答可否","国内時間帯のサポートSLA","データ保管・利用条件の契約文面"]
+    },
+    support:{
+      level:"Enterpriseは強い",
+      details:["Enterprise Creative Support","Priority Creative & Technical Support","Same business day response","Weekly Office Hours（US/EU time zones）","Monthly Feature Deep Dives"],
+      whoGetsWhat:[
+        {tier:"Free / 個人",support:"セルフサービス中心。まずHelpとコミュニティで自己解決する前提。"},
+        {tier:"Team",support:"チーム利用向け機能は増えるが、重要案件のSLAは契約条件を確認。"},
+        {tier:"Enterprise",support:"優先サポート・Creative Support・オンボーディングを期待できる。"}
+      ],
+      operationalRisks:["Office Hoursの時間帯が日本勤務時間と合わない可能性","日本語一次対応の範囲が不明確","生成品質に関する相談と障害対応は別物","本番制作では『何時間以内に返答が必要か』を契約前に決める必要"],
+      preContractQuestions:["日本時間での緊急窓口はあるか","日本語対応可能な担当者は付くか","障害/生成失敗/請求問い合わせの窓口は分かれるか","Enterprise onboardingは何回・何時間含まれるか"]
+    },
     integrations:["API","MCP","Workspace / Organization","Brand Kits","Third-party models"],
     enterpriseReadiness:[
-      {item:"SSO",status:"○",note:"OIDC対応"},
-      {item:"SCIM",status:"×",note:"現時点で未対応"},
-      {item:"SAML",status:"×",note:"現時点で未対応"},
-      {item:"Audit Logs",status:"○",note:"CSV export可"},
-      {item:"SOC 2 Type II",status:"○"},
-      {item:"ISO/IEC 27001:2022",status:"○"},
-      {item:"Workspace Analytics",status:"○",note:"Enterprise"},
-      {item:"Priority Support",status:"○",note:"Enterprise"}
+      {item:"SSO",status:"○",note:"OIDC対応",implication:"既存ID基盤と統合しやすい。",verify:"利用中IdPとの具体的互換性"},
+      {item:"SCIM",status:"×",note:"現時点で未対応",implication:"大人数運用では入退社時のアカウント管理が手作業寄りになる可能性。",verify:"代替のユーザー管理方法"},
+      {item:"SAML",status:"×",note:"現時点で未対応",implication:"SAML必須ポリシー企業では障壁。",verify:"OIDCで社内要件を満たせるか"},
+      {item:"Audit Logs",status:"○",note:"CSV export可",implication:"利用履歴を監査・調査に回せる。",verify:"ログ項目・保持期間・API取得可否"},
+      {item:"SOC 2 Type II",status:"○",implication:"Enterprise審査で要求されやすい統制証跡を持つ。",verify:"最新レポートの提供条件"},
+      {item:"ISO/IEC 27001:2022",status:"○",implication:"情報セキュリティ管理体制の説明材料になる。",verify:"認証範囲"},
+      {item:"Workspace Analytics",status:"○",note:"Enterprise",implication:"利用状況を管理者側で把握しやすい。",verify:"閲覧できる指標とエクスポート範囲"},
+      {item:"Priority Support",status:"○",note:"Enterprise",implication:"本番利用時の問い合わせ優先度を上げられる。",verify:"日本時間帯・SLA・日本語対応"}
     ],
     contract:[
       {item:"個人プラン",value:"月額/年額。アップグレードは日割り。"},
@@ -566,11 +649,37 @@ examples:["既存IPキャラに人の演技を転写","非人間キャラを自�
       {item:"Enterprise",value:"10名以上の大規模利用向け。個別契約。"},
       {item:"追加credits",value:"最低1,000 creditsから購入可能。"}
     ],
-    trial:{available:"あり",detail:"Freeで125 creditsを一度付与。まず操作感と出力品質を確認可能。"},
-    lockIn:{level:2,label:"低〜中",reasons:["出力物自体は動画/画像として持ち出せる","ただし生成フロー・Brand Kit・運用ノウハウはRunway依存になりやすい","API組み込み後は置換コストが上がる"]},
+    trial:{
+      available:"あり",detail:"Freeで125 creditsを一度付与。まず操作感と出力品質を確認可能。",
+      testPlan:[
+        {test:"既存素材編集",pass:"背景/不要物/商品など1要素を変え、残したい要素が十分維持される"},
+        {test:"新規生成",pass:"5〜10案中、実案件で使える候補が出る"},
+        {test:"再現性",pass:"別担当者でも同じ手順で近い品質を出せる"},
+        {test:"コスト",pass:"採用1成果物あたりのcreditsが許容範囲"},
+        {test:"工程削減",pass:"従来より少なくとも1工程を明確に短縮できる"}
+      ],
+      doNotJudgeBy:["1回目の生成だけで品質を決める","デモ用の派手な映像だけを見る","最高品質1本だけでROIを判断する","従来工程の時間・費用を測らず『速そう』で終える"]
+    },
+    lockIn:{
+      level:2,label:"低〜中",
+      reasons:["出力物自体は動画/画像として持ち出せる","ただし生成フロー・Brand Kit・運用ノウハウはRunway依存になりやすい","API組み込み後は置換コストが上がる"],
+      lockInGrowsWhen:["APIを自社サービスに組み込む","Aleph/Act-Two前提の制作SOPを作る","Brand Kitと権限設計を全社標準化する","過去プロンプト・運用知識が蓄積する"],
+      exitPlan:["完成素材は外部ストレージへ保存","プロンプト/SOPを社内ドキュメント化","代替モデルで四半期ごとにベンチマーク","API層をモデル交換可能な構造にする"]
+    },
     bestFor:["広告・映像制作で生成AIを本番利用したい","複数モデルを一つの制作環境で扱いたい","ブランド/制作チーム単位でEnterprise運用したい","まず短期PoCから始めたい"],
     notFor:["日本語UI・国内時間帯サポートが必須","既存Adobe環境を完全に一発置換したい","生成コストを固定額で厳密に予算化したい"],
-    verdict:{status:"PoC推奨",summary:"導入難易度は低く、制作現場で価値検証しやすい。まず1つの明確な制作工程に限定し、品質・生成回数・1成果物あたりTCOを測るのが最短。"},
+    verdict:{
+      status:"PoC推奨",
+      summary:"導入難易度は低く、制作現場で価値検証しやすい。まず1つの明確な制作工程に限定し、品質・生成回数・1成果物あたりTCOを測るのが最短。",
+      nextActions:[
+        {when:"今日",action:"実案件の既存素材を1本選ぶ",why:"デモ素材ではなく自社素材で差が出るかを見るため。"},
+        {when:"1週間",action:"同一用途で5〜10成果物を作り、生成回数と採用率を記録",why:"『良い1本が出た』ではなく再現性を測るため。"},
+        {when:"2週間",action:"従来工程の時間・外注費と比較",why:"導入価値を感覚ではなくTCOで判断するため。"},
+        {when:"Enterprise検討時",action:"SSO・SCIM・日本語Support・契約主体を確認",why:"制作価値と調達可否を分離して判断するため。"}
+      ],
+      goSignals:["既存素材修正で再撮影を回避できる","複数案の制作時間が大幅に短くなる","担当者を変えても再現できる","1成果物あたり生成コストが許容範囲"],
+      stopSignals:["生成後の手修正が従来工程より増える","ブランド/IPルール上、本番素材に使えない","毎回大量リトライが必要でコストが読めない","日本語/調達/セキュリティ要件を満たせない"]
+    },
     evidence:[
       {item:"公開料金",type:"Official",confidence:"High",source:"Runway pricing"},
       {item:"API単価",type:"Official",confidence:"High",source:"Runway Dev pricing"},
