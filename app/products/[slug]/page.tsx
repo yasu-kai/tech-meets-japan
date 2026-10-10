@@ -77,10 +77,26 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
                       </div>
                       <p className="capability-desc">{x.detail}</p>
                       <div className="capability-detail-grid">
-                        <div><small>WHAT GOES IN</small><p>{x.input}</p></div>
-                        <div><small>WHAT COMES OUT</small><p>{x.output}</p></div>
-                        <div><small>REPLACES / REDUCES</small><p>{x.replaces}</p></div>
-                        <div><small>WHY IT MATTERS</small><p>{x.whyItMatters}</p></div>
+                        <div>
+                          <small>WHAT GOES IN</small>
+                          <p>{x.input}</p>
+                          {!!x.inputDetails?.length && <div className="capability-behavior-list">{x.inputDetails.map(v=><span key={v}>→ {v}</span>)}</div>}
+                        </div>
+                        <div>
+                          <small>WHAT COMES OUT</small>
+                          <p>{x.output}</p>
+                          {!!x.outputDetails?.length && <div className="capability-behavior-list">{x.outputDetails.map(v=><span key={v}>→ {v}</span>)}</div>}
+                        </div>
+                        <div>
+                          <small>REPLACES / REDUCES</small>
+                          <p>{x.replaces}</p>
+                          {!!x.replacesDetails?.length && <div className="capability-behavior-list">{x.replacesDetails.map(v=><span key={v}>→ {v}</span>)}</div>}
+                        </div>
+                        <div>
+                          <small>WHY IT MATTERS</small>
+                          <p>{x.whyItMatters}</p>
+                          {!!x.behaviorDetails?.length && <div className="capability-behavior-list emphasis">{x.behaviorDetails.map(v=><span key={v}>★ {v}</span>)}</div>}
+                        </div>
                       </div>
                       <div className="capability-examples"><small>EXAMPLES</small>{x.examples.map(e=><p key={e}>→ {e}</p>)}</div>
                     </section>
