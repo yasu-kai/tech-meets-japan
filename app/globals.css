@@ -259,3 +259,157 @@
 .compare-split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:10px}.compare-split>div{background:#fbfaf6;padding:10px}.compare-split b{display:block;font-size:8px;letter-spacing:.08em;color:var(--muted);margin-bottom:5px}.compare-split p{font-size:9px;line-height:1.45;margin:3px 0}
 .compare-context{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-top:0}.compare-context>div{background:#f5f1e8;padding:9px}.compare-context>div:first-child{grid-column:1/-1}
 @media(max-width:560px){.usecase-mini-grid,.compare-split,.compare-context{grid-template-columns:1fr}.compare-context>div:first-child{grid-column:auto}}
+
+/* Readability pass — keep all content, increase legibility */
+.company-profile,
+.product-analysis,
+.decision-dashboard{
+  --text-xs:10px;
+  --text-sm:12px;
+  --text-md:14px;
+  --text-lg:16px;
+}
+
+.decision-summary>div{padding:18px 16px 20px;min-height:128px}
+.decision-summary span{font-size:10px}
+.decision-summary strong{font-size:22px;line-height:1.2}
+.decision-summary small{font-size:11px;line-height:1.5}
+
+.decision-board-card{padding:30px 32px 28px}
+.decision-board-head span{font-size:10px}
+.decision-board-head h2{font-size:38px}
+.decision-board-lead{font-size:15px;line-height:1.75}
+
+.capability-deep-item{padding:20px 0}
+.capability-deep-head>span{font-size:10px}
+.capability-deep-head h3{font-size:19px}
+.capability-badge{font-size:10px;padding:6px 9px}
+.capability-desc{font-size:12px;line-height:1.6}
+.capability-detail-grid>div{padding:12px;min-height:96px}
+.capability-detail-grid small,
+.capability-examples small{font-size:9px}
+.capability-detail-grid p,
+.capability-examples p{font-size:11px;line-height:1.55}
+.capability-limits b{font-size:10px}
+.capability-limits p{font-size:11px;line-height:1.55}
+
+.fit-diagnostic article{padding:22px;min-height:350px}
+.fit-diagnostic-head span{font-size:10px}
+.fit-diagnostic-head h3{font-size:22px}
+.fit-pain{font-size:12px;line-height:1.6}
+.fit-checks b,.fit-examples b,.fit-not b,.fit-why-product b,.fit-compare-why b{font-size:10px}
+.fit-checks p,.fit-examples p,.fit-not p,.fit-why-product p,.fit-compare-why p{font-size:11px;line-height:1.55}
+.fit-selfcheck{padding:16px 18px}
+.fit-selfcheck strong{font-size:10px}
+.fit-selfcheck p{font-size:12px;line-height:1.55}
+
+.usecase-deep-list>section,
+.comparison-deep-list>section{padding:20px 0}
+.usecase-title span,.compare-title span{font-size:10px}
+.usecase-title h3,.compare-title h3{font-size:21px}
+.usecase-situation{font-size:12px;line-height:1.6}
+.usecase-mini-grid>div{padding:12px;min-height:84px}
+.usecase-mini-grid small,.compare-context small{font-size:9px}
+.usecase-mini-grid p,.compare-context p{font-size:11px;line-height:1.5}
+.usecase-kpi b{font-size:10px}
+.usecase-kpi span{font-size:10px;padding:5px 8px}
+.usecase-why b,.usecase-not b{font-size:9px}
+.usecase-why p,.usecase-not p{font-size:11px;line-height:1.55}
+
+.compare-split>div{padding:13px}
+.compare-split b{font-size:10px}
+.compare-split p{font-size:11px;line-height:1.55}
+.compare-context>div{padding:12px}
+.compare-context p{font-size:11px;line-height:1.5}
+
+.decision-facts-grid>div{padding:18px 20px;min-height:118px}
+.decision-facts-grid span{font-size:10px}
+.decision-facts-grid strong{font-size:12px;line-height:1.6}
+
+.differentiator-card{min-height:250px}
+.diff-index{font-size:11px}
+.diff-head span{font-size:10px}
+.diff-head h3{font-size:27px}
+.diff-what{font-size:13px;line-height:1.7}
+.diff-why b{font-size:10px}
+.diff-why p{font-size:12px;line-height:1.6}
+.diff-side>span{font-size:10px}
+.diff-side b{font-size:10px;padding:7px 9px}
+.diff-side small{font-size:10px;line-height:1.5}
+
+.score-rubric-summary span{font-size:10px}
+.score-rubric-summary strong{font-size:22px}
+.score-rubric-summary b{font-size:28px}
+.score-rubric-head>*{font-size:10px}
+.score-rubric-row strong{font-size:13px}
+.score-rubric-row span{font-size:13px}
+.score-rubric-row>b{font-size:18px}
+.score-rubric-row p{font-size:11px;line-height:1.55}
+.score-rubric-row small{font-size:10px;line-height:1.45}
+
+.pricing-table>div{padding:24px;min-height:200px}
+.pricing-table strong{font-size:20px}
+.pricing-table span{font-size:30px}
+.pricing-table span+span{font-size:13px}
+.pricing-table p{font-size:12px;line-height:1.5}
+.pricing-table small{font-size:10px;line-height:1.45}
+
+.decision-split strong{font-size:14px}
+.decision-split p{font-size:12px;line-height:1.6}
+
+.cost-card{padding:26px}
+.cost-card>span{font-size:10px}
+.cost-card>strong{font-size:31px}
+.cost-card>b{font-size:15px}
+.cost-card p,.cost-card small{font-size:12px;line-height:1.6}
+.cost-card li{font-size:11px;line-height:1.55}
+
+.readiness-grid>div{padding:21px;min-height:125px}
+.readiness-grid span{font-size:10px}
+.readiness-grid strong{font-size:15px;line-height:1.45}
+
+.enterprise-table strong{font-size:13px}
+.enterprise-table span{font-size:14px}
+.enterprise-table p{font-size:11px;line-height:1.5}
+
+.fit-two-col>div{padding:26px}
+.fit-two-col span{font-size:10px}
+.fit-two-col p{font-size:13px;line-height:1.6}
+.final-verdict{padding:20px 24px}
+.final-verdict span{font-size:15px}
+.final-verdict p{font-size:13px;line-height:1.6}
+
+.evidence-table strong{font-size:12px}
+.evidence-table span{font-size:11px}
+.evidence-table p{font-size:11px;line-height:1.5}
+
+.story-heading p{font-size:10px}
+.story-heading>span{font-size:12px}
+.story-heading h2{font-size:clamp(38px,4.5vw,62px)}
+
+.profile-intro-grid>p{font-size:18px;line-height:1.75}
+.profile-status span{font-size:10px}
+.profile-status strong{font-size:17px}
+.editorial-verdict p{font-size:18px;line-height:1.75}
+
+@media(max-width:900px){
+  .decision-board-card{padding:26px 24px}
+  .decision-summary strong{font-size:20px}
+  .decision-facts-grid strong{font-size:12px}
+  .score-rubric-row p{font-size:11px}
+}
+
+@media(max-width:560px){
+  .decision-summary>div{padding:14px;min-height:104px}
+  .decision-summary span{font-size:9px}
+  .decision-summary strong{font-size:17px}
+  .decision-summary small{font-size:10px}
+  .decision-board-card{padding:22px 18px}
+  .decision-board-head h2{font-size:31px}
+  .decision-board-lead{font-size:14px}
+  .capability-deep-head h3{font-size:18px}
+  .fit-diagnostic-head h3{font-size:20px}
+  .usecase-title h3,.compare-title h3{font-size:19px}
+  .score-rubric-summary strong{font-size:18px}
+  .score-rubric-summary b{font-size:23px}
+}
