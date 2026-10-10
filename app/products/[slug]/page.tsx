@@ -321,6 +321,13 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
                 <div><strong>API</strong><p>{product.decision.pricing?.api}</p></div>
                 <div><strong>TCOで見るポイント</strong><p>{product.decision.pricing?.tcoNote}</p></div>
               </div>
+              {!!product.decision.pricing?.decisionGuide?.length && <div className="deep-decision-grid">
+                {product.decision.pricing.decisionGuide.map(x=><div key={x.label}><span>{x.label}</span><p>{x.value}</p></div>)}
+              </div>}
+              <div className="deep-two-col">
+                {!!product.decision.pricing?.hiddenCosts?.length && <div><b>HIDDEN COSTS</b>{product.decision.pricing.hiddenCosts.map(x=><p key={x}>× {x}</p>)}</div>}
+                {!!product.decision.pricing?.poCMeasure?.length && <div><b>PoCで必ず測る</b>{product.decision.pricing.poCMeasure.map(x=><p key={x}>→ {x}</p>)}</div>}
+              </div>
             </section>
 
             <section className="section section-tight product-analysis">
@@ -329,6 +336,23 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
                 <div className="cost-card"><span>ONBOARDING</span><strong>{product.decision.onboarding?.label}</strong><b>{product.decision.onboarding?.level}/5</b><p>{product.decision.onboarding?.timeToValue}</p><small>{product.decision.onboarding?.costNote}</small><ul>{product.decision.onboarding?.tasks.map(x=><li key={x}>{x}</li>)}</ul></div>
                 <div className="cost-card"><span>REPLACEMENT</span><strong>{product.decision.replacement?.label}</strong><b>{product.decision.replacement?.level}/5</b><p>{product.decision.replacement?.costNote}</p><ul>{product.decision.replacement?.migrationRisks.map(x=><li key={x}>{x}</li>)}</ul></div>
                 <div className="cost-card"><span>LOCK-IN</span><strong>{product.decision.lockIn?.label}</strong><b>{product.decision.lockIn?.level}/5</b><ul>{product.decision.lockIn?.reasons.map(x=><li key={x}>{x}</li>)}</ul></div>
+              </div>
+              {!!product.decision.onboarding?.recommendedFlow?.length && <div className="implementation-flow">
+                {product.decision.onboarding.recommendedFlow.map(x=><article key={x.phase}><div><span>{x.phase}</span><b>{x.timing}</b></div>{x.actions.map(a=><p key={a}>→ {a}</p>)}<small>EXIT / {x.exit}</small></article>)}
+              </div>}
+              <div className="deep-two-col">
+                {!!product.decision.onboarding?.prerequisites?.length && <div><b>BEFORE START</b>{product.decision.onboarding.prerequisites.map(x=><p key={x}>✓ {x}</p>)}</div>}
+                {!!product.decision.onboarding?.successCriteria?.length && <div><b>SUCCESS CRITERIA</b>{product.decision.onboarding.successCriteria.map(x=><p key={x}>✓ {x}</p>)}</div>}
+              </div>
+              {!!product.decision.replacement?.coexistence?.length && <div className="deep-three-col">
+                <div><b>共存させるなら</b>{product.decision.replacement.coexistence.map(x=><p key={x}>→ {x}</p>)}</div>
+                <div><b>置換しやすい</b>{product.decision.replacement.easyToReplace?.map(x=><p key={x}>✓ {x}</p>)}</div>
+                <div><b>置換しにくくなる</b>{product.decision.replacement.hardToReplace?.map(x=><p key={x}>× {x}</p>)}</div>
+              </div>}
+              {product.decision.replacement?.decisionRule && <div className="decision-rule"><b>導入判断のコツ</b><p>{product.decision.replacement.decisionRule}</p></div>}
+              <div className="deep-two-col">
+                {!!product.decision.lockIn?.lockInGrowsWhen?.length && <div><b>LOCK-INが増える瞬間</b>{product.decision.lockIn.lockInGrowsWhen.map(x=><p key={x}>→ {x}</p>)}</div>}
+                {!!product.decision.lockIn?.exitPlan?.length && <div><b>EXIT PLAN</b>{product.decision.lockIn.exitPlan.map(x=><p key={x}>✓ {x}</p>)}</div>}
               </div>
             </section>
 
@@ -342,6 +366,10 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
                 <div><span>Support</span><strong>{product.decision.japanese?.support}</strong></div>
               </div>
               {product.decision.japanese?.note && <div className="decision-note"><p>{product.decision.japanese.note}</p></div>}
+              {!!product.decision.japanese?.practicalUse?.length && <div className="japan-practical-table">
+                {product.decision.japanese.practicalUse.map(x=><div key={x.scene}><strong>{x.scene}</strong><span>{x.status}</span><p>{x.implication}</p></div>)}
+              </div>}
+              {!!product.decision.japanese?.procurementChecks?.length && <div className="check-strip"><b>契約前チェック</b>{product.decision.japanese.procurementChecks.map(x=><span key={x}>{x}</span>)}</div>}
             </section>
 
             <section className="section section-tight product-analysis">
@@ -351,12 +379,23 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
                 <div><strong>Integrations</strong><div className="buyer-grid">{product.decision.integrations?.map(x=><span key={x}><Plug size={13}/>{x}</span>)}</div></div>
                 <div><strong>Trial</strong><p>{product.decision.trial?.available}</p><p>{product.decision.trial?.detail}</p></div>
               </div>
+              {!!product.decision.support?.whoGetsWhat?.length && <div className="deep-three-col">
+                {product.decision.support.whoGetsWhat.map(x=><div key={x.tier}><b>{x.tier}</b><p>{x.support}</p></div>)}
+              </div>}
+              <div className="deep-two-col">
+                {!!product.decision.support?.operationalRisks?.length && <div><b>運用上の注意</b>{product.decision.support.operationalRisks.map(x=><p key={x}>× {x}</p>)}</div>}
+                {!!product.decision.support?.preContractQuestions?.length && <div><b>契約前に聞く</b>{product.decision.support.preContractQuestions.map(x=><p key={x}>? {x}</p>)}</div>}
+              </div>
+              {!!product.decision.trial?.testPlan?.length && <div className="trial-test-grid">
+                {product.decision.trial.testPlan.map(x=><div key={x.test}><strong>{x.test}</strong><p>{x.pass}</p></div>)}
+              </div>}
+              {!!product.decision.trial?.doNotJudgeBy?.length && <div className="decision-rule warning"><b>この評価だけで決めない</b><p>{product.decision.trial.doNotJudgeBy.join(" / ")}</p></div>}
             </section>
 
             <section className="section section-tight product-analysis">
               <div className="section-heading"><div><p className="eyebrow">ENTERPRISE READINESS</p><h2>大企業導入に耐えられるか。</h2></div><ShieldCheck size={28}/></div>
-              <div className="enterprise-table">
-                {product.decision.enterpriseReadiness?.map(x=><div key={x.item}><strong>{x.item}</strong><span>{x.status}</span><p>{x.note||""}</p></div>)}
+              <div className="enterprise-table enterprise-table-deep">
+                {product.decision.enterpriseReadiness?.map(x=><div key={x.item}><strong>{x.item}</strong><span>{x.status}</span><p>{x.note||""}</p><p>{x.implication||""}</p><small>{x.verify ? "確認: "+x.verify : ""}</small></div>)}
               </div>
             </section>
 
@@ -366,7 +405,14 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
                 <div><span>BEST FOR</span>{product.decision.bestFor?.map(x=><p key={x}>✓ {x}</p>)}</div>
                 <div><span>NOT FOR</span>{product.decision.notFor?.map(x=><p key={x}>× {x}</p>)}</div>
               </div>
-              {product.decision.verdict && <div className="final-verdict"><span>{product.decision.verdict.status}</span><p>{product.decision.verdict.summary}</p></div>}
+              {product.decision.verdict && <>
+                <div className="final-verdict"><span>{product.decision.verdict.status}</span><p>{product.decision.verdict.summary}</p></div>
+                {!!product.decision.verdict.nextActions?.length && <div className="next-action-grid">{product.decision.verdict.nextActions.map(x=><div key={x.when}><span>{x.when}</span><strong>{x.action}</strong><p>{x.why}</p></div>)}</div>}
+                <div className="deep-two-col">
+                  {!!product.decision.verdict.goSignals?.length && <div><b>GO SIGNAL</b>{product.decision.verdict.goSignals.map(x=><p key={x}>✓ {x}</p>)}</div>}
+                  {!!product.decision.verdict.stopSignals?.length && <div><b>STOP SIGNAL</b>{product.decision.verdict.stopSignals.map(x=><p key={x}>× {x}</p>)}</div>}
+                </div>
+              </>}
             </section>
 
             <section className="section section-tight product-analysis">
