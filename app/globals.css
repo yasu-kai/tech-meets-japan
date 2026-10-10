@@ -413,3 +413,8 @@
   .score-rubric-summary strong{font-size:18px}
   .score-rubric-summary b{font-size:23px}
 }
+
+.capability-behavior-list{display:grid;gap:5px;margin-top:9px;padding-top:8px;border-top:1px solid var(--line)}
+.capability-behavior-list span{display:block;font-size:10px;line-height:1.5;color:#50524d}
+.capability-behavior-list.emphasis span{font-weight:700;color:#2f4d22}
+.capability-detail-grid>div{min-height:150px}
