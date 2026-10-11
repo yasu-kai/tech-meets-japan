@@ -459,3 +459,35 @@
   .deep-decision-grid,.deep-two-col,.deep-three-col,.trial-test-grid,.next-action-grid{grid-template-columns:1fr}
   .japan-practical-table>div{grid-template-columns:1fr}
 }
+
+/* Offensive AI research */
+.offsec-hero{padding:72px max(24px,5vw) 54px;border-bottom:1px solid var(--line);background:#f5f1e8}
+.research-back{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;margin-bottom:34px}
+.offsec-hero h1{font-size:clamp(52px,8vw,108px);line-height:.94;letter-spacing:-.065em;max-width:1200px;margin:10px 0 28px}
+.offsec-lead{max-width:980px;font-size:18px;line-height:1.75}
+.cycle-flow{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.cycle-flow>div{position:relative;background:#fbfaf6;padding:18px 16px;min-height:108px;display:flex;flex-direction:column;justify-content:space-between}
+.cycle-flow span{font-size:9px;color:var(--muted)}.cycle-flow strong{font-size:15px}.cycle-flow svg{position:absolute;right:-9px;top:46%;z-index:2;background:#fbfaf6}
+.cycle-thesis{font-size:15px;line-height:1.7;max-width:900px;margin:20px 0 0}
+.automation-table{border-top:1px solid var(--line);overflow-x:auto}
+.automation-head,.automation-row{display:grid;grid-template-columns:180px repeat(6,minmax(120px,1fr));min-width:980px;border-bottom:1px solid var(--line)}
+.automation-head>*{font-size:9px;font-weight:900;letter-spacing:.06em;color:var(--muted);padding:10px;border-right:1px solid var(--line);background:#eee9df}
+.automation-row>*{padding:14px 10px;border-right:1px solid var(--line);font-size:11px;line-height:1.4;background:#fbfaf6}
+.automation-row strong{font-size:13px}.automation-row .human-cell{background:#fff0ea;font-weight:800}
+.research-note{font-size:10px;line-height:1.5;color:var(--muted);margin-top:10px}
+.offsec-company-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.offsec-company-grid article{background:#fbfaf6;padding:22px}
+.offsec-company-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.offsec-company-head h3{font-size:24px;margin:0}.offsec-company-head span{font-size:9px;font-weight:900;border:1px solid var(--line);border-radius:999px;padding:6px 8px}
+.offsec-company-grid article>p{font-size:12px;line-height:1.65;color:#50524d}
+.offsec-mini-flow{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:12px}
+.offsec-mini-flow span{font-size:9px;padding:5px 7px;background:#f1ede4;border-radius:999px}
+.depth-scale{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.depth-scale>div{background:#fbfaf6;padding:20px;min-height:150px}.depth-scale span{display:block;font-size:9px;color:var(--muted);margin-bottom:18px}.depth-scale strong{font-size:17px;display:block}.depth-scale p{font-size:10px;line-height:1.5;color:var(--muted)}
+.depth-scale .depth-highlight{background:#131613;color:#fff}.depth-scale .depth-highlight p,.depth-scale .depth-highlight span{color:#b8beb8}
+.offsec-callout{margin-top:20px;padding:32px;background:#171a17;color:#fff}.offsec-callout h3{font-size:clamp(28px,4vw,48px);line-height:1.08;letter-spacing:-.04em;margin:8px 0 18px;max-width:1000px}.offsec-callout>p:last-child{font-size:13px;line-height:1.7;color:#c7ccc7;max-width:900px}
+.future-state{padding:34px;background:#f2eee4;border:1px solid var(--line)}.future-state h2{font-size:clamp(36px,5vw,64px);line-height:1;letter-spacing:-.05em}
+.future-lanes{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:24px}.future-lanes>div{display:grid;grid-template-columns:100px 1fr;gap:16px;background:#fbfaf6;padding:18px}.future-lanes span{font-size:10px;font-weight:900;color:var(--accent)}.future-lanes p{font-size:13px;line-height:1.6;margin:0}
+.offsec-conclusion{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;padding:56px max(24px,5vw);background:#111411;color:white}.offsec-conclusion h2{font-size:clamp(38px,5vw,64px);line-height:1;letter-spacing:-.05em;margin:8px 0}.offsec-conclusion>p{font-size:14px;line-height:1.75;color:#c3c8c3;align-self:end}
+@media(max-width:900px){.cycle-flow{grid-template-columns:1fr 1fr 1fr}.offsec-company-grid{grid-template-columns:1fr}.depth-scale{grid-template-columns:1fr 1fr}.offsec-conclusion{grid-template-columns:1fr}.offsec-hero h1{font-size:clamp(48px,11vw,78px)}}
+@media(max-width:560px){.cycle-flow,.depth-scale{grid-template-columns:1fr}.cycle-flow svg{display:none}.future-lanes>div{grid-template-columns:1fr}.offsec-lead{font-size:15px}}
