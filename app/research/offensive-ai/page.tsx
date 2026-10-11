@@ -13,6 +13,16 @@ const cycle = [
   { company:"AgenticSec", attack:"AI", find:"AI", plan:"AI支援", decide:"人間", execute:"現状は人間中心", verify:"AI化志向", depth:3, note:"継続的なAI Pentest。初期侵入〜PoC実証を自動化し、履歴を次回検証へ活かす。" },
 ];
 
+const companyFocus: Record<string,string> = {
+  "XBOW":"攻撃と再検証に徹する",
+  "MindFort":"修正案の実行まで踏み込む",
+  "Pentera":"企業全体の攻撃検証を仕組み化",
+  "Horizon3 / NodeZero":"侵入経路を実証する",
+  "Synack Sara":"AIの探索を人間が検証する",
+  "Terra":"AIを人間の監督下で動かす",
+  "AgenticSec":"初期侵入の検証を自動化する",
+};
+
 const automationTone = (value:string) => {
   const v = value.replace(/\s/g,"");
   if (v === "人間" || v.includes("人間中心") || v.startsWith("人間/") || v.startsWith("人間＋")) return "tone-human";
@@ -96,11 +106,12 @@ export default function OffensiveAIResearchPage(){
         </section>
 
         <section className="section section-tight">
-          <div className="section-heading"><div><p className="eyebrow">COMPANY READ</p><h2>同じ市場に見えて、思想が違う。</h2></div><ShieldCheck size={28}/></div>
+          <div className="section-heading"><div><p className="eyebrow">COMPANY READ</p><h2>同じAIでも、担い方が違う。</h2></div><ShieldCheck size={28}/></div>
           <div className="offsec-company-grid">
             {cycle.map(x=><article key={x.company}>
-              <div className="offsec-company-head"><h3>{x.company}</h3><span>Depth {x.depth}/5</span></div>
-              <p>{x.note}</p>
+              <div className="offsec-company-head" style={{alignItems:"center"}}><h3 style={{fontSize:"clamp(13px, 1.15vw, 15px)",fontWeight:700,color:"#77746e",letterSpacing:"0.01em"}}>{x.company}</h3><span>Depth {x.depth}/5</span></div>
+              <h4 style={{fontSize:"clamp(19px, 2.05vw, 27px)",lineHeight:1.35,fontWeight:800,letterSpacing:"-0.035em",margin:"14px 0 9px",color:"#171715"}}>{companyFocus[x.company]}</h4>
+              <p style={{fontSize:"14px",lineHeight:1.75,color:"#5c5a56",marginBottom:"15px"}}>{x.note}</p>
               <div className="offsec-mini-flow">
                 <span>{x.attack}</span><ArrowRight size={12}/><span>{x.find}</span><ArrowRight size={12}/><span>{x.plan}</span><ArrowRight size={12}/><span>{x.execute}</span><ArrowRight size={12}/><span>{x.verify}</span>
               </div>
