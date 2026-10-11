@@ -27,69 +27,8 @@ export default function OffensiveAIResearchPage(){
       <Header/>
       <main>
         <section className="offsec-hero">
-          <div className="offsec-hero-art offsec-svg-hero" aria-label="AI offense versus AI defense">
-            <svg viewBox="0 0 1600 720" role="img" aria-label="AI攻撃側とAI防御側が中央のインフラを巡って対峙し、人間が承認を担う構図">
-              <defs>
-                <linearGradient id="offBg" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#120506"/>
-                  <stop offset="46%" stopColor="#111319"/>
-                  <stop offset="54%" stopColor="#111319"/>
-                  <stop offset="100%" stopColor="#03101a"/>
-                </linearGradient>
-                <radialGradient id="redGlow"><stop offset="0%" stopColor="#ff3b24" stopOpacity=".9"/><stop offset="100%" stopColor="#ff3b24" stopOpacity="0"/></radialGradient>
-                <radialGradient id="blueGlow"><stop offset="0%" stopColor="#2aa8ff" stopOpacity=".9"/><stop offset="100%" stopColor="#2aa8ff" stopOpacity="0"/></radialGradient>
-                <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-              </defs>
-              <rect width="1600" height="720" fill="url(#offBg)"/>
-              <circle cx="220" cy="350" r="320" fill="url(#redGlow)" opacity=".55"/>
-              <circle cx="1380" cy="350" r="320" fill="url(#blueGlow)" opacity=".55"/>
-
-              <text x="90" y="90" fill="#ff5a42" fontSize="32" fontWeight="800">OFFENSE AI</text>
-              <text x="1510" y="90" fill="#66c9ff" fontSize="32" fontWeight="800" textAnchor="end">DEFENSE AI</text>
-              <text x="800" y="105" fill="white" fontSize="84" fontWeight="900" textAnchor="middle">AI <tspan fill="#9ea4ad">vs</tspan> AI</text>
-              <text x="800" y="150" fill="#d9dce1" fontSize="22" fontWeight="700" textAnchor="middle">サイバー防御は「人間が戦う世界」から終わり始めている。</text>
-
-              <g stroke="#ff4b33" strokeWidth="4" fill="none" opacity=".9" filter="url(#glow)">
-                <path d="M100 250 C360 210 520 280 710 330"/>
-                <path d="M100 360 C360 330 520 360 710 360"/>
-                <path d="M100 470 C360 520 520 430 710 390"/>
-              </g>
-              <g stroke="#43b8ff" strokeWidth="4" fill="none" opacity=".9" filter="url(#glow)">
-                <path d="M1500 250 C1240 210 1080 280 890 330"/>
-                <path d="M1500 360 C1240 330 1080 360 890 360"/>
-                <path d="M1500 470 C1240 520 1080 430 890 390"/>
-              </g>
-
-              <g transform="translate(670 230)">
-                <rect x="0" y="0" width="260" height="250" rx="18" fill="#111820" stroke="#d7e8ff" strokeWidth="2"/>
-                <rect x="38" y="35" width="184" height="130" rx="10" fill="#172533" stroke="#62c4ff" strokeWidth="2"/>
-                <path d="M130 62 l44 20 v40 c0 34-22 56-44 70-22-14-44-36-44-70v-40z" fill="none" stroke="#62c4ff" strokeWidth="4"/>
-                <path d="M112 123 l14 14 28-34" fill="none" stroke="#62c4ff" strokeWidth="5"/>
-                <text x="130" y="210" fill="#fff" fontSize="24" fontWeight="800" textAnchor="middle">CORE INFRA</text>
-              </g>
-
-              <g fill="#ff4b33">
-                <circle cx="180" cy="250" r="34"/><circle cx="270" cy="330" r="29"/><circle cx="190" cy="430" r="38"/><circle cx="330" cy="470" r="24"/>
-              </g>
-              <g fill="#43b8ff">
-                <circle cx="1420" cy="250" r="34"/><circle cx="1330" cy="330" r="29"/><circle cx="1410" cy="430" r="38"/><circle cx="1270" cy="470" r="24"/>
-              </g>
-
-              <g fontSize="19" fontWeight="800" fill="white">
-                <text x="95" y="230">RECON</text><text x="95" y="300">EXPLOIT</text><text x="95" y="370">LATERAL MOVE</text><text x="95" y="440">IMPACT</text>
-                <text x="1505" y="230" textAnchor="end">DETECT</text><text x="1505" y="300" textAnchor="end">REMEDIATE</text><text x="1505" y="370" textAnchor="end">IMPLEMENT</text><text x="1505" y="440" textAnchor="end">VERIFY</text>
-              </g>
-
-              <g transform="translate(595 515)">
-                <rect width="410" height="120" rx="14" fill="#0d1117" stroke="#7f8790"/>
-                <text x="205" y="34" fill="#fff" fontSize="18" fontWeight="900" textAnchor="middle">HUMAN ROLE</text>
-                <text x="205" y="64" fill="#cfd4db" fontSize="16" textAnchor="middle">Approve / Reject · Risk Tolerance</text>
-                <text x="205" y="88" fill="#cfd4db" fontSize="16" textAnchor="middle">Business Impact · When to Deploy</text>
-              </g>
-
-              <text x="85" y="655" fill="#ff6a55" fontSize="18" fontWeight="900">攻撃 → 発見 → 対策 → 判断 → 実行 → 再検証</text>
-              <text x="1515" y="655" fill="#ffffff" fontSize="18" fontWeight="800" textAnchor="end">TECH <tspan fill="#ff4b33">MEETS</tspan> JAPAN</text>
-            </svg>
+          <div className="offsec-hero-art">
+            <img src="/offensive-ai-hero.webp" alt="AI攻撃側とAI防御側が中央のインフラを巡って対峙し、人間が承認を担う構図" />
           </div>
           <Link href="/research" className="research-back"><ArrowLeft size={14}/> Research</Link>
           <p className="eyebrow">OFFENSIVE AI / MARKET MAP</p>
