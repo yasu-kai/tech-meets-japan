@@ -458,6 +458,29 @@ export type ProductDecisionData = {
     lockInGrowsWhen?: string[];
     exitPlan?: string[];
   };
+  automationDepth?: {
+    domain: string;
+    cycle: {
+      step: string;
+      aiRole: "None" | "Assist" | "Primary" | "Autonomous";
+      humanRole: string;
+      note?: string;
+    }[];
+    currentLevel: 0|1|2|3|4|5;
+    currentLabel: "Human Only"|"AI Assistant"|"AI Analyst"|"AI Agent"|"Human-on-the-loop"|"Autonomous Closed Loop";
+    targetLevel?: 0|1|2|3|4|5;
+    targetLabel?: "Human Only"|"AI Assistant"|"AI Analyst"|"AI Agent"|"Human-on-the-loop"|"Autonomous Closed Loop";
+    humanRemainingRole: string[];
+    decisionBoundary: string;
+    executionBoundary: string;
+    closedLoop: {
+      status: "None" | "Partial" | "Strong";
+      detail: string;
+    };
+    disappearingAssumption: string;
+    futureState: string;
+    editorialTake?: string;
+  };
   bestFor?: string[];
   notFor?: string[];
   verdict?: {
@@ -665,6 +688,29 @@ examples:["既存IPキャラに人の演技を転写","非人間キャラを自�
       reasons:["出力物自体は動画/画像として持ち出せる","ただし生成フロー・Brand Kit・運用ノウハウはRunway依存になりやすい","API組み込み後は置換コストが上がる"],
       lockInGrowsWhen:["APIを自社サービスに組み込む","Aleph/Act-Two前提の制作SOPを作る","Brand Kitと権限設計を全社標準化する","過去プロンプト・運用知識が蓄積する"],
       exitPlan:["完成素材は外部ストレージへ保存","プロンプト/SOPを社内ドキュメント化","代替モデルで四半期ごとにベンチマーク","API層をモデル交換可能な構造にする"]
+    },
+    automationDepth:{
+      domain:"Creative / Video Production",
+      cycle:[
+        {step:"要件・意図の認識",aiRole:"Assist",humanRole:"企画意図・ブランド制約を与える",note:"自然言語や参照素材から制作意図を読み取れるが、目的そのものは人間が定義。"},
+        {step:"映像案の生成",aiRole:"Primary",humanRole:"採用基準を決める",note:"Text/Image/Videoから複数案をAIが生成。"},
+        {step:"編集・変換",aiRole:"Primary",humanRole:"修正意図と品質判断を担う",note:"Aleph等で背景・人物・商品・不要物・VFXを直接変更。"},
+        {step:"キャラクター演技",aiRole:"Primary",humanRole:"演技方針・IP監修",note:"Act-Twoで人の演技をキャラクターへ転写。"},
+        {step:"最終意思決定",aiRole:"Assist",humanRole:"ブランド/IP/品質の最終承認",note:"何を公開するか、どこまで修正するかは人間側。"},
+        {step:"公開・配信",aiRole:"Assist",humanRole:"本番公開・媒体判断",note:"Runway単体では配信判断まで自律実行するプロダクトではない。"},
+        {step:"結果検証・改善",aiRole:"Assist",humanRole:"KPI解釈と次クリエイティブ判断",note:"制作ループは高速化するが、広告成果を自律評価して再制作する閉ループは現状限定的。"}
+      ],
+      currentLevel:3,
+      currentLabel:"AI Agent",
+      targetLevel:4,
+      targetLabel:"Human-on-the-loop",
+      humanRemainingRole:["何を作るかという目的設定","ブランド・IP・法務の最終判断","採用/却下のクリエイティブ判断","公開タイミングと媒体判断","例外処理・品質責任"],
+      decisionBoundary:"生成・編集方法はAIへ広く渡せる。一方で『この表現をブランドとして採用するか』『本番公開するか』というBusiness / Creative decisionは人間側に残る。",
+      executionBoundary:"Runwayは生成・編集・変換という制作実行には深く踏み込むが、広告配信・公開・予算執行までを自律実行するわけではない。",
+      closedLoop:{status:"Partial",detail:"生成→編集→再利用は同一環境で連続する。ただし、公開後KPIを自律取得し、成果を評価し、次の制作を自動で回す完全閉ループではない。"},
+      disappearingAssumption:"『映像制作には、撮影・VFX・編集の各工程を人間の専門家が順番に手作業でつなぐ必要がある』という前提。",
+      futureState:"人間は素材を一から作る作業者ではなく、目的・世界観・制約・採用基準を定義するCreative Directorへ寄っていく。",
+      editorialTake:"Runwayの本質は『動画生成AI』よりも、制作工程の中から人間の手作業を連続的に抜いていくことにある。"
     },
     bestFor:["広告・映像制作で生成AIを本番利用したい","複数モデルを一つの制作環境で扱いたい","ブランド/制作チーム単位でEnterprise運用したい","まず短期PoCから始めたい"],
     notFor:["日本語UI・国内時間帯サポートが必須","既存Adobe環境を完全に一発置換したい","生成コストを固定額で厳密に予算化したい"],
