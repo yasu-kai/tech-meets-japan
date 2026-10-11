@@ -79,7 +79,7 @@ export default function OffensiveAIResearchPage(){
         </section>
 
         <section className="section section-tight">
-          <div className="section-heading"><div><p className="eyebrow">AUTOMATION MATRIX</p><h2>誰が、どこまでやるのか。</h2></div><Bot size={28}/></div>
+          <div className="section-heading"><div><p className="eyebrow">AUTOMATION MATRIX</p><h2>AIは、どこを担うのか。</h2></div><Bot size={28}/></div>
           <div className="automation-table">
             <div className="automation-head"><span>社名</span><span>① 擬似攻撃</span><span>② ホール発見</span><span>③ 対応策</span><span>④ 意思決定</span><span>⑤ 実行</span><span>⑥ 再検証</span></div>
             {cycle.map(x=><div className="automation-row" key={x.company}>
