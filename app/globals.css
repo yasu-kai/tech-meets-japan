@@ -701,3 +701,11 @@
 .depth-journey-foot span:nth-child(2){color:#c8412e;font-weight:800}
 @media(max-width:850px){.depth-journey{padding:24px 18px}.depth-journey-stages{gap:9px}.depth-stage-copy strong{font-size:16px}.depth-stage-copy p{font-size:10px}.depth-journey-top span:nth-child(2){font-size:11px}}
 @media(max-width:600px){.depth-journey{padding:22px 18px}.depth-journey-top{font-size:8px}.depth-journey-top span:nth-child(2){font-size:10px}.depth-journey-rail{position:absolute;left:37px;top:72px;bottom:90px;width:5px;height:auto;margin:0}.depth-journey-progress{width:100%;height:77%;background:linear-gradient(180deg,#cdd6ca,#e7ae7a,#e15a43)}.depth-journey-stages{display:flex;flex-direction:column;gap:20px;margin-top:28px}.depth-stage{display:grid;grid-template-columns:45px 1fr;gap:14px;min-height:58px}.depth-stage-marker,.depth-stage-pivot .depth-stage-marker{margin:0;align-self:start}.depth-stage-copy{padding:0}.depth-stage-copy small{margin-bottom:4px}.depth-stage-copy p{margin:4px 0 0}.depth-pivot-label{grid-column:2;justify-self:start;margin-top:-6px}.depth-journey-foot{font-size:9px;flex-wrap:wrap;margin-top:20px}}
+
+
+/* Align each level number vertically with its corresponding caption */
+@media(min-width:601px){
+  .depth-stage-copy{text-align:center}
+  .depth-stage-copy strong,.depth-stage-copy small,.depth-stage-copy p{margin-left:auto;margin-right:auto}
+  .depth-pivot-label{display:table;margin:6px auto 0}
+}
