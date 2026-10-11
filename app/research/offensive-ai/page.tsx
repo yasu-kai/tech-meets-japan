@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, ShieldCheck, Zap, Bot, RefreshCw } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { offensiveAiHero } from "./hero-data";
 
 const cycle = [
   { company:"XBOW", attack:"AI", find:"AI", plan:"AI支援", decide:"人間", execute:"人間", verify:"AI", depth:3, note:"AI Pentester。攻撃・発見・再検証までをAI化し、修正判断と適用は人間側。" },
@@ -27,6 +28,9 @@ export default function OffensiveAIResearchPage(){
       <Header/>
       <main>
         <section className="offsec-hero">
+          <div className="offsec-hero-art">
+            <img src={offensiveAiHero} alt="AI offense and defense agents battling across a cyber infrastructure while a human operator supervises approvals" />
+          </div>
           <Link href="/research" className="research-back"><ArrowLeft size={14}/> Research</Link>
           <p className="eyebrow">OFFENSIVE AI / MARKET MAP</p>
           <h1>AIは、サイバー防御の<br/>どこまでを奪うのか。</h1>
