@@ -1,53 +1,71 @@
 import Link from "next/link";
-import { ArrowRight, BarChart3, Bot, Clapperboard, Factory, Radar, ShieldCheck } from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const reports = [
-  { icon:<ShieldCheck/>, eyebrow:"OFFENSIVE AI", title:"AIは、サイバー防御のどこまでを奪うのか。", copy:"攻撃→発見→対策→判断→実行→再検証。XBOW、MindFort、Pentera、Horizon3、Synack、Terra、AgenticSecを“Automation Depth”で読む。", href:"/research/offensive-ai" },
-  { icon:<Clapperboard/>, eyebrow:"AI CREATIVE", title:"生成動画“第二ラウンド”をどう見るか。", copy:"Runway、MiniMax、HeyGen、Synthesia。モデル性能ではなく、日本企業にとっての用途・導入難易度・商用性で比較する。", href:"/companies" },
-  { icon:<Factory/>, eyebrow:"PHYSICAL AI", title:"日本の製造業が買うべきAIはどこにある。", copy:"Applied Intuition、Wayve、RLWRLD、Exotec。内製R&Dが強い日本企業でも外部テックを買う意味がある領域を整理。", href:"/companies" },
-  { icon:<Bot/>, eyebrow:"AI AGENTS", title:"“チャットボットの次”を選ぶ。", copy:"顧客対応、金融、物流。回答するAIではなく、業務を実行するAI Agentを用途別に見る。", href:"/companies" },
-  { icon:<Radar/>, eyebrow:"ENTRY SIGNALS", title:"日本参入の兆しをどう読むか。", copy:"採用、提携、PoC、販売開始。海外テックが日本へ本気で入り始めたシグナルを時系列で追う。", href:"/signals" },
-];
+import { researchCategories } from "@/lib/research";
 
 export default function ResearchPage() {
   return (
     <>
       <Header/>
       <main>
-        <section className="page-hero">
+        <section className="page-hero research-index-hero">
           <p className="eyebrow">RESEARCH</p>
-          <h1>世界のテックを、<br/>日本で使う目線で読む。</h1>
-          <p>ニュースの要約ではなく、「誰に向くか」「何と比較すべきか」「今検討する価値があるか」まで整理した独自リサーチ。</p>
+          <h1>世界の新しいプロダクトが、<br/>日本の仕事・産業・生活をどう変えるのか。</h1>
+          <p>AIを中心に、Security、Creative、Industry、Robotics、Gadgetsまで。機能紹介ではなく、「人間の役割がどう変わるか」まで読む。</p>
         </section>
 
         <section className="section section-tight">
-          <div className="research-grid">
-            {reports.map(report => (
-              <Link href={report.href} className="research-card" key={report.title}>
-                {report.icon}
-                <p className="eyebrow">{report.eyebrow}</p>
-                <h3>{report.title}</h3>
-                <p>{report.copy}</p>
-                <strong>読む <ArrowRight size={15}/></strong>
+          <div className="section-heading">
+            <div><p className="eyebrow">THEMES</p><h2>6つのテーマから掘る。</h2></div>
+            <span className="queue-count">30 STORIES IN QUEUE</span>
+          </div>
+
+          <div className="research-category-grid">
+            {researchCategories.map((category,index) => (
+              <Link href={`/research/${category.slug}`} className="research-category-card" key={category.slug}>
+                <div className="research-category-number">{String(index+1).padStart(2,"0")}</div>
+                <div>
+                  <p className="eyebrow">{category.shortLabel}</p>
+                  <h3>{category.label}</h3>
+                  <p>{category.description}</p>
+                </div>
+                <div className="research-category-bottom">
+                  <span>{category.topics.length} STORIES</span>
+                  <ArrowRight size={18}/>
+                </div>
               </Link>
             ))}
           </div>
         </section>
 
+        <section className="section section-tight">
+          <div className="section-heading">
+            <div><p className="eyebrow">PUBLISHED</p><h2>まずは、ここから。</h2></div>
+          </div>
+          <Link href="/research/offensive-ai" className="published-feature">
+            <div className="published-feature-icon"><ShieldCheck size={34}/></div>
+            <div>
+              <p className="eyebrow">AI × SECURITY / MARKET MAP</p>
+              <h3>AIは、サイバー防御のどこまでを奪うのか。</h3>
+              <p>攻撃 → 発見 → 対策 → 判断 → 実行 → 再検証。各社をAutomation DepthとAutonomyの違いから読む。</p>
+            </div>
+            <ArrowRight size={22}/>
+          </Link>
+        </section>
+
         <section className="split-section">
           <div>
-            <p className="eyebrow">HOW WE READ</p>
-            <h2>企業紹介ではなく、<br/>導入判断材料にする。</h2>
+            <p className="eyebrow">EDITORIAL LENS</p>
+            <h2>共通して問うのは、<br/>「人間は何をしなくなるか」。</h2>
           </div>
           <div>
             <ul className="plain-list">
-              <li>日本市場で既に何が起きているか</li>
-              <li>どんな企業・部門に向くか</li>
-              <li>最初に試すならどこか</li>
-              <li>何と比較すべきか</li>
-              <li>導入前に見るべきリスクは何か</li>
+              <li>何ができるのか</li>
+              <li>業務のどの工程を担うのか</li>
+              <li>AutomationとAutonomyはどこまで進んでいるか</li>
+              <li>人間に残る判断と責任は何か</li>
+              <li>日本企業が今導入する意味はあるか</li>
             </ul>
           </div>
         </section>
