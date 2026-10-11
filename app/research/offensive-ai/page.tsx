@@ -28,7 +28,7 @@ export default function OffensiveAIResearchPage(){
       <main>
         <section className="offsec-hero">
           <div className="offsec-hero-art">
-            <img src="/offensive-ai-hero.webp" alt="AI攻撃側とAI防御側が中央のインフラを巡って対峙し、人間が承認を担う構図" />
+            <img src="/offensive-ai-hero.png" alt="AI攻撃側とAI防御側が中央のインフラを巡って対峙し、人間が承認を担う構図" />
           </div>
           <Link href="/research" className="research-back"><ArrowLeft size={14}/> Research</Link>
           <p className="eyebrow">OFFENSIVE AI / MARKET MAP</p>
