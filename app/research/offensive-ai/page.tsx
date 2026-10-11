@@ -51,8 +51,29 @@ export default function OffensiveAIResearchPage(){
 
         <section className="section section-tight">
           <div className="section-heading"><div><p className="eyebrow">THE CYCLE</p><h2>見るべきサイクルは、これ。</h2></div><RefreshCw size={28}/></div>
-          <div className="cycle-flow">
-            {["① 擬似攻撃","② ホール発見","③ 対応策策定","④ 意思決定","⑤ 実行","⑥ 再検証"].map((x,i)=><div key={x}><span>0{i+1}</span><strong>{x}</strong>{i<5 && <ArrowRight size={16}/>}</div>)}
+          <div className="cycle-visual">
+            <div className="cycle-track" aria-hidden="true"></div>
+            {[
+              {no:"01",jp:"擬似攻撃",en:"ATTACK",desc:"侵入経路を探す"},
+              {no:"02",jp:"ホール発見",en:"DISCOVER",desc:"突破可能性を証明"},
+              {no:"03",jp:"対応策策定",en:"PLAN",desc:"どう塞ぐかを決める"},
+              {no:"04",jp:"意思決定",en:"DECIDE",desc:"止める・直す・許容する",decision:true},
+              {no:"05",jp:"実行",en:"EXECUTE",desc:"修正・設定変更・Deploy"},
+              {no:"06",jp:"再検証",en:"RE-ATTACK",desc:"本当に塞がったか再攻撃"}
+            ].map((x,i)=>
+              <div className={"cycle-node "+(x.decision?"cycle-decision":"")} key={x.no}>
+                <div className="cycle-node-top"><span>{x.no}</span><b>{x.en}</b></div>
+                <div className="cycle-dot">{i+1}</div>
+                <strong>{x.jp}</strong>
+                <p>{x.desc}</p>
+                {x.decision && <small>HUMAN DECISION BOUNDARY</small>}
+              </div>
+            )}
+            <div className="cycle-return" aria-hidden="true">
+              <span>RE-ATTACK LOOP</span>
+              <div className="cycle-return-line"></div>
+              <RefreshCw size={18}/>
+            </div>
           </div>
           <p className="cycle-thesis">本質は、<strong>「各工程を誰が担うか」</strong>。同じ“AI Pentest”でも、攻撃だけAI化する会社と、修正までAIに任せる会社では思想がまったく違う。</p>
         </section>
