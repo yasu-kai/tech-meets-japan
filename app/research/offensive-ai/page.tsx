@@ -145,12 +145,32 @@ export default function OffensiveAIResearchPage(){
         <section className="section section-tight">
           <div className="future-state">
             <p className="eyebrow">WHERE THIS GOES</p>
-            <h2>人間の仕事は「直す」から、<br/>「AI防衛軍の権限設計」へ。</h2>
-            <div className="future-lanes">
-              <div><span>NOW</span><p>AI攻撃 → AI発見 → 人間判断 → 人間修正 → AI検証</p></div>
-              <div><span>NEXT</span><p>AI攻撃 → AI発見 → AI対策案 → 人間承認 → AI修正 → AI検証</p></div>
-              <div><span>FURTHER</span><p>AI攻撃 → AI発見 → AIリスク評価 → PolicyでAI判断 → AI修正 → AI検証</p></div>
+            <h2>人間の仕事は「防御」から、<br/>「AIによるサイバー防御の権限設計」へ。</h2>
+            <p className="future-intro">守り方が変わる。人間は作業の担い手から、AIに与える権限と境界を決める側へ。</p>
+            <div className="future-evolution">
+              <div className="future-phase future-phase-now">
+                <div className="future-phase-label"><span className="future-phase-index">01 / 現在</span><strong>NOW</strong><p>AIが見つけ、人が直す</p></div>
+                <div className="future-phase-body">
+                  <div className="future-actors"><span className="future-chip future-chip-ai">AIが攻撃・発見</span><ArrowRight size={16}/><span className="future-chip future-chip-human">人間が判断・修正</span><ArrowRight size={16}/><span className="future-chip future-chip-ai">AIが再検証</span></div>
+                  <p>攻撃と検証はAIに任せる。修正の判断も作業も、人間が担う。</p>
+                </div>
+              </div>
+              <div className="future-phase future-phase-next">
+                <div className="future-phase-label"><span className="future-phase-index">02 / 次の段階</span><strong>NEXT</strong><p>人が承認し、AIが直す</p></div>
+                <div className="future-phase-body">
+                  <div className="future-actors"><span className="future-chip future-chip-ai">AIが攻撃・対策提案</span><ArrowRight size={16}/><span className="future-chip future-chip-human">人間が承認</span><ArrowRight size={16}/><span className="future-chip future-chip-ai">修正AIが実行</span><ArrowRight size={16}/><span className="future-chip future-chip-proof">攻撃AIが再検証</span></div>
+                  <p>修正作業もAIへ。ただし、適用の可否は人間が判断する。</p>
+                </div>
+              </div>
+              <div className="future-phase future-phase-future">
+                <div className="future-phase-label"><span className="future-phase-index">03 / 将来像</span><strong>FUTURE</strong><p>人は権限とルールを設計する</p></div>
+                <div className="future-phase-body">
+                  <div className="future-actors"><span className="future-chip future-chip-human">人間が権限・条件を設定</span><ArrowRight size={16}/><span className="future-chip future-chip-ai">AIが条件内で判断・実行</span><ArrowRight size={16}/><span className="future-chip future-chip-proof">独立した攻撃AIが検証</span></div>
+                  <p>承認済みの範囲ではAIが自律処理。例外・高リスク変更は人間に戻す。</p>
+                </div>
+              </div>
             </div>
+            <div className="future-principle"><ShieldCheck size={18}/><span>一貫する原則：<strong>攻撃・検証するAIと、修正を実行するAIは分ける。</strong></span></div>
           </div>
         </section>
 
