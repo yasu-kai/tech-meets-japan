@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { ArrowRight, BarChart3, Bot, Clapperboard, Factory, Radar } from "lucide-react";
+import { ArrowRight, BarChart3, Bot, Clapperboard, Factory, Radar, ShieldCheck } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const reports = [
+  { icon:<ShieldCheck/>, eyebrow:"OFFENSIVE AI", title:"AIは、サイバー防御のどこまでを奪うのか。", copy:"攻撃→発見→対策→判断→実行→再検証。XBOW、MindFort、Pentera、Horizon3、Synack、Terra、AgenticSecを“Automation Depth”で読む。", href:"/research/offensive-ai" },
   { icon:<Clapperboard/>, eyebrow:"AI CREATIVE", title:"生成動画“第二ラウンド”をどう見るか。", copy:"Runway、MiniMax、HeyGen、Synthesia。モデル性能ではなく、日本企業にとっての用途・導入難易度・商用性で比較する。", href:"/companies" },
   { icon:<Factory/>, eyebrow:"PHYSICAL AI", title:"日本の製造業が買うべきAIはどこにある。", copy:"Applied Intuition、Wayve、RLWRLD、Exotec。内製R&Dが強い日本企業でも外部テックを買う意味がある領域を整理。", href:"/companies" },
   { icon:<Bot/>, eyebrow:"AI AGENTS", title:"“チャットボットの次”を選ぶ。", copy:"顧客対応、金融、物流。回答するAIではなく、業務を実行するAI Agentを用途別に見る。", href:"/companies" },
