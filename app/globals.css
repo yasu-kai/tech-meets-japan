@@ -491,3 +491,21 @@
 .offsec-conclusion{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;padding:56px max(24px,5vw);background:#111411;color:white}.offsec-conclusion h2{font-size:clamp(38px,5vw,64px);line-height:1;letter-spacing:-.05em;margin:8px 0}.offsec-conclusion>p{font-size:14px;line-height:1.75;color:#c3c8c3;align-self:end}
 @media(max-width:900px){.cycle-flow{grid-template-columns:1fr 1fr 1fr}.offsec-company-grid{grid-template-columns:1fr}.depth-scale{grid-template-columns:1fr 1fr}.offsec-conclusion{grid-template-columns:1fr}.offsec-hero h1{font-size:clamp(48px,11vw,78px)}}
 @media(max-width:560px){.cycle-flow,.depth-scale{grid-template-columns:1fr}.cycle-flow svg{display:none}.future-lanes>div{grid-template-columns:1fr}.offsec-lead{font-size:15px}}
+
+.offsec-hero-art{
+  margin:-72px max(-5vw,-24px) 34px;
+  border-bottom:1px solid var(--line);
+  background:#05070a;
+  overflow:hidden;
+}
+.offsec-hero-art img{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:1881/836;
+  object-fit:cover;
+}
+@media(max-width:700px){
+  .offsec-hero-art{margin:-72px -24px 28px}
+  .offsec-hero-art img{aspect-ratio:16/10;object-fit:cover}
+}
