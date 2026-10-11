@@ -120,9 +120,20 @@ export default function OffensiveAIResearchPage(){
         </section>
 
         <section className="section section-tight">
-          <div className="section-heading"><div><p className="eyebrow">AUTOMATION DEPTH</p><h2>競争は「どこまで権限を渡すか」へ。</h2></div><Zap size={28}/></div>
-          <div className="depth-scale">
-            {depthLevels.map(([level,title,desc],i)=><div key={level} className={i===3?"depth-highlight":""}><span>{level}</span><strong>{title}</strong><p>{desc}</p></div>)}
+          <div className="section-heading"><div><p className="eyebrow">AUTOMATION DEPTH</p><h2>競争は、「どこまでAIに権限を渡すか」へ。</h2></div><Zap size={28}/></div>
+          <div className="depth-journey">
+            <div className="depth-journey-top"><span>LESS AUTONOMY</span><span>AIの裁量と責任が広がる <ArrowRight size={16}/></span><span>MORE AUTONOMY</span></div>
+            <div className="depth-journey-rail" aria-hidden="true"><div className="depth-journey-progress"/></div>
+            <div className="depth-journey-stages">
+              {depthLevels.map(([level,title,desc],i)=>
+                <div key={level} className={"depth-stage "+(i===3?"depth-stage-pivot ":"")+(i===4?"depth-stage-future":"")}>
+                  <div className="depth-stage-marker"><span>{String(i+1).padStart(2,"0")}</span></div>
+                  <div className="depth-stage-copy"><small>{level}</small><strong>{title}</strong><p>{desc}</p></div>
+                  {i===3 && <div className="depth-pivot-label">実行権限の境界</div>}
+                </div>
+              )}
+            </div>
+            <div className="depth-journey-foot"><span>AIが見つけ、提案する</span><span>AIが実際に変更を加える</span><span>AIが判断まで担う</span></div>
           </div>
           <div className="offsec-callout">
             <p className="eyebrow">THE SHIFT</p>
