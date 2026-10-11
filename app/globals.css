@@ -709,3 +709,34 @@
   .depth-stage-copy strong,.depth-stage-copy small,.depth-stage-copy p{margin-left:auto;margin-right:auto}
   .depth-pivot-label{display:table;margin:6px auto 0}
 }
+
+
+/* Future of cyber defense — editorial evolution diagram */
+.future-state{padding:clamp(24px,3.5vw,50px);background:#f2eee4}
+.future-state h2{font-size:clamp(30px,4.6vw,58px);line-height:1.12;letter-spacing:-.045em;max-width:1090px}
+.future-intro{margin:20px 0 27px;font-size:clamp(13px,1.15vw,16px);line-height:1.8;color:#63635e}
+.future-evolution{position:relative;display:flex;flex-direction:column;gap:12px}
+.future-phase{display:grid;grid-template-columns:minmax(185px,24%) minmax(0,1fr);border:1px solid #dedbd3;background:#fcfbf7;min-height:151px}
+.future-phase-label{padding:24px 25px;background:#e9e7df;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.future-phase-index{font-size:10px;font-weight:850;letter-spacing:.07em;color:#8a8981}
+.future-phase-label strong{font-size:clamp(27px,3vw,40px);line-height:1;font-weight:900;letter-spacing:-.05em;color:#343731}
+.future-phase-label p{margin:2px 0 0;font-size:12px;font-weight:700;line-height:1.5;color:#565850}
+.future-phase-body{padding:22px 26px;display:flex;flex-direction:column;justify-content:center}
+.future-actors{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.future-actors svg{flex-shrink:0;color:#9d9f99}
+.future-chip{display:inline-flex;align-items:center;justify-content:center;min-height:37px;border-radius:3px;padding:9px 12px;font-size:clamp(11px,1vw,14px);line-height:1.35;font-weight:800}
+.future-chip-ai{background:#e9a18e;color:#782719}
+.future-chip-human{background:#343933;color:#fff}
+.future-chip-proof{background:#f4d8b0;color:#78491b;border:1px solid #e5b981}
+.future-phase-body>p{font-size:13px;line-height:1.7;color:#696a64;margin:14px 0 0}
+.future-phase-next{border-color:#ddba9c}
+.future-phase-next .future-phase-label{background:#f0d5c4}
+.future-phase-next .future-phase-label strong{color:#a73e29}
+.future-phase-future{border-color:#3c413a;background:#f8f9f4}
+.future-phase-future .future-phase-label{background:#242a25}
+.future-phase-future .future-phase-index,.future-phase-future .future-phase-label p{color:#d1d7cd}
+.future-phase-future .future-phase-label strong{color:#fff}
+.future-principle{display:flex;align-items:center;gap:12px;margin-top:19px;padding:14px 17px;border-top:1px solid #d4d1c7;color:#3a413b;font-size:13px;line-height:1.6}
+.future-principle svg{flex-shrink:0}
+@media(max-width:780px){.future-phase{grid-template-columns:1fr}.future-phase-label{padding:16px 20px}.future-phase-label strong{font-size:30px}.future-phase-body{padding:20px}.future-actors{gap:6px}.future-chip{font-size:11px;padding:8px 9px}.future-intro{margin-bottom:22px}}
+@media(max-width:480px){.future-state h2{font-size:clamp(27px,7vw,36px)}.future-actors svg{width:13px;height:13px}.future-phase-body>p{font-size:12px}.future-principle{font-size:12px}}
