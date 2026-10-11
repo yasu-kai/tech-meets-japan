@@ -505,6 +505,12 @@
   aspect-ratio:1881/836;
   object-fit:cover;
 }
+.offsec-svg-hero svg{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:1600/720;
+}
 @media(max-width:700px){
   .offsec-hero-art{margin:-72px -24px 28px}
   .offsec-hero-art img{aspect-ratio:16/10;object-fit:cover}
