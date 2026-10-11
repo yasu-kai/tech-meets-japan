@@ -19,9 +19,10 @@ const automationTone = (value:string) => {
   if (v.includes("AI＋人間監督")) return "tone-supervised";
   if (v.includes("AI＋人間")) return "tone-hybrid";
   if (v.includes("AI支援") || v.includes("AI/自動支援")) return "tone-assist";
-  if (v.includes("AI中心")) return "tone-ai-centered";
-  if (v === "自動" || v.includes("AI/自動")) return "tone-auto";
   if (v === "AI") return "tone-ai";
+  if (v.includes("AI/自動") || v.includes("AI＋自動")) return "tone-ai-auto";
+  if (v.includes("AI中心")) return "tone-ai-centered";
+  if (v === "自動") return "tone-auto";
   return "tone-neutral";
 };
 
