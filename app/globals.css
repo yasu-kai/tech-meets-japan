@@ -566,6 +566,67 @@
 .automation-row .tone-neutral{background:#fbfaf6;color:#171717}
 .automation-row:hover>*{filter:brightness(.985)}
 .research-note{font-size:11px;line-height:1.55;color:var(--muted);margin-top:12px}
+.offsec-report{border-top:1px solid var(--line)}
+.offsec-report .section-heading{align-items:flex-end}
+.offsec-report .section-heading h2{max-width:980px}
+.offsec-report-body{
+  max-width:900px;
+  margin:8px auto 0;
+  padding:8px 0 12px;
+  font-size:17px;
+  line-height:1.95;
+  letter-spacing:.005em;
+  color:#2f302d
+}
+.offsec-report-body>p{margin:0 0 1.55em}
+.offsec-report-body strong{font-weight:900;color:#171715}
+.offsec-report-emphasis{
+  margin:34px 0;
+  padding:28px 30px;
+  border-top:1px solid #1d1e1b;
+  border-bottom:1px solid #1d1e1b
+}
+.offsec-report-emphasis span,
+.offsec-report-close>span{
+  display:block;
+  margin-bottom:10px;
+  font-size:10px;
+  font-weight:950;
+  letter-spacing:.14em;
+  color:#77746e
+}
+.offsec-report-emphasis strong{
+  display:block;
+  font-size:clamp(28px,4vw,46px);
+  line-height:1.08;
+  letter-spacing:-.045em
+}
+.offsec-report-close{
+  margin-top:42px;
+  padding:34px;
+  background:#171a17;
+  color:#fff
+}
+.offsec-report-close strong{
+  display:block;
+  max-width:760px;
+  color:#fff;
+  font-size:clamp(26px,3.6vw,42px);
+  line-height:1.15;
+  letter-spacing:-.04em
+}
+.offsec-report-close p{
+  margin:18px 0 0;
+  max-width:760px;
+  color:#c8ccc7;
+  font-size:14px;
+  line-height:1.8
+}
+@media(max-width:720px){
+  .offsec-report-body{font-size:15px;line-height:1.85}
+  .offsec-report-emphasis{padding:24px 0}
+  .offsec-report-close{padding:24px}
+}
 .offsec-company-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
 .offsec-company-grid article{background:#fbfaf6;padding:22px}
 .offsec-company-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
