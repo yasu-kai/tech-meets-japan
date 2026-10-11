@@ -120,7 +120,7 @@ export default function OffensiveAIResearchPage(){
         </section>
 
         <section className="section section-tight">
-          <div className="section-heading"><div><p className="eyebrow">AUTOMATION DEPTH</p><h2>競争は、「どこまでAIに権限を渡すか」へ。</h2></div><Zap size={28}/></div>
+          <div className="section-heading"><div><p className="eyebrow">AUTOMATION DEPTH</p><h2>人は、「どこまでAIに権限を渡すべきか」</h2></div><Zap size={28}/></div>
           <div className="depth-journey">
             <div className="depth-journey-top"><span>LESS AUTONOMY</span><span>AIの裁量と責任が広がる <ArrowRight size={16}/></span><span>MORE AUTONOMY</span></div>
             <div className="depth-journey-rail" aria-hidden="true"><div className="depth-journey-progress"/></div>
