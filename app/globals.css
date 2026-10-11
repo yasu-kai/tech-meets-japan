@@ -495,9 +495,10 @@
 .automation-row .tone-hybrid{background:#e3f2df;color:#2f6f39}
 .automation-row .tone-supervised{background:#f0f0c9;color:#6f681b}
 .automation-row .tone-assist{background:#f7dfb8;color:#9a5f11}
-.automation-row .tone-ai{background:#f8c8bd;color:#a72f21}
-.automation-row .tone-ai-centered{background:#f4aa99;color:#932719}
-.automation-row .tone-auto{background:#ee8d79;color:#7e1f14}
+.automation-row .tone-auto{background:#f6c7a8;color:#9a4d1d}
+.automation-row .tone-ai-centered{background:#f2a98f;color:#8e351f}
+.automation-row .tone-ai-auto{background:#ef846f;color:#7e2418}
+.automation-row .tone-ai{background:#e45a42;color:#68180f}
 .automation-row .tone-neutral{background:#fbfaf6;color:#171717}
 .automation-row:hover>*{filter:brightness(.985)}
 .research-note{font-size:11px;line-height:1.55;color:var(--muted);margin-top:12px}
