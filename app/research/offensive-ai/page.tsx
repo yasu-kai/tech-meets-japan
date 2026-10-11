@@ -13,6 +13,18 @@ const cycle = [
   { company:"AgenticSec", attack:"AI", find:"AI", plan:"AI支援", decide:"人間", execute:"現状は人間中心", verify:"AI化志向", depth:3, note:"継続的なAI Pentest。初期侵入〜PoC実証を自動化し、履歴を次回検証へ活かす。" },
 ];
 
+const automationTone = (value:string) => {
+  const v = value.replace(/\s/g,"");
+  if (v === "人間" || v.includes("人間中心") || v.startsWith("人間/") || v.startsWith("人間＋")) return "tone-human";
+  if (v.includes("AI＋人間監督")) return "tone-supervised";
+  if (v.includes("AI＋人間")) return "tone-hybrid";
+  if (v.includes("AI支援") || v.includes("AI/自動支援")) return "tone-assist";
+  if (v.includes("AI中心")) return "tone-ai-centered";
+  if (v === "自動" || v.includes("AI/自動")) return "tone-auto";
+  if (v === "AI") return "tone-ai";
+  return "tone-neutral";
+};
+
 const depthLevels = [
   ["Level 1","発見だけ","Scanner / Detection"],
   ["Level 2","攻撃まで","Exploitability validation"],
@@ -49,7 +61,13 @@ export default function OffensiveAIResearchPage(){
           <div className="automation-table">
             <div className="automation-head"><span>社名</span><span>① 擬似攻撃</span><span>② ホール発見</span><span>③ 対応策</span><span>④ 意思決定</span><span>⑤ 実行</span><span>⑥ 再検証</span></div>
             {cycle.map(x=><div className="automation-row" key={x.company}>
-              <strong>{x.company}</strong><span>{x.attack}</span><span>{x.find}</span><span>{x.plan}</span><span className="human-cell">{x.decide}</span><span>{x.execute}</span><span>{x.verify}</span>
+              <strong>{x.company}</strong>
+              <span className={automationTone(x.attack)}>{x.attack}</span>
+              <span className={automationTone(x.find)}>{x.find}</span>
+              <span className={automationTone(x.plan)}>{x.plan}</span>
+              <span className={automationTone(x.decide)}>{x.decide}</span>
+              <span className={automationTone(x.execute)}>{x.execute}</span>
+              <span className={automationTone(x.verify)}>{x.verify}</span>
             </div>)}
           </div>
           <div className="research-note">公開情報をもとにしたTECH MEETS JAPANの整理。製品アップデートや契約形態によって自動化範囲は変わり得る。</div>
