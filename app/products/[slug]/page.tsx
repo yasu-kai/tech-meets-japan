@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { ArrowUpRight, Building2, Check, GitCompareArrows, Sparkles, Languages, Headphones, Plug, ShieldCheck, WalletCards, Replace, Rocket, LockKeyhole } from "lucide-react";
+import { ArrowUpRight, Building2, Check, GitCompareArrows, Sparkles, Languages, Headphones, Plug, ShieldCheck, WalletCards, Replace, Rocket, LockKeyhole, Workflow, BrainCircuit } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { calculateJapanFit, dimensionScore, companies, products } from "@/lib/data";
@@ -398,6 +398,102 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
                 {product.decision.enterpriseReadiness?.map(x=><div key={x.item}><strong>{x.item}</strong><span>{x.status}</span><p>{x.note||""}</p><p>{x.implication||""}</p><small>{x.verify ? "確認: "+x.verify : ""}</small></div>)}
               </div>
             </section>
+
+            {product.decision.automationDepth && <section className="section section-tight product-analysis automation-depth-section">
+              <div className="section-heading">
+                <div><p className="eyebrow">AI AUTOMATION DEPTH</p><h2>この仕事、どこまでAIがやる？</h2></div>
+                <Workflow size={28}/>
+              </div>
+
+              <div className="automation-depth-summary">
+                <div>
+                  <span>CURRENT</span>
+                  <strong>Level {product.decision.automationDepth.currentLevel}</strong>
+                  <p>{product.decision.automationDepth.currentLabel}</p>
+                </div>
+                <div>
+                  <span>TARGET</span>
+                  <strong>Level {product.decision.automationDepth.targetLevel ?? "—"}</strong>
+                  <p>{product.decision.automationDepth.targetLabel ?? "要確認"}</p>
+                </div>
+                <div className="automation-depth-domain">
+                  <span>DOMAIN</span>
+                  <strong>{product.decision.automationDepth.domain}</strong>
+                  <p>機能ではなく、業務サイクルの自動化深度で見る。</p>
+                </div>
+              </div>
+
+              <div className="automation-depth-scale">
+                {[
+                  ["0","Human Only"],
+                  ["1","AI Assistant"],
+                  ["2","AI Analyst"],
+                  ["3","AI Agent"],
+                  ["4","Human-on-the-loop"],
+                  ["5","Autonomous Closed Loop"]
+                ].map(([n,label])=>{
+                  const level=Number(n);
+                  const current=product.decision!.automationDepth!.currentLevel===level;
+                  const target=product.decision!.automationDepth!.targetLevel===level;
+                  return <div key={n} className={(current?"current ":"")+(target?"target":"")}>
+                    <span>LEVEL {n}</span><strong>{label}</strong>
+                    {current && <b>CURRENT</b>}{target && !current && <b>TARGET</b>}
+                  </div>
+                })}
+              </div>
+
+              <div className="automation-cycle-table">
+                <div className="automation-cycle-head">
+                  <span>業務工程</span><span>AI</span><span>Human</span><span>どういう状態か</span>
+                </div>
+                {product.decision.automationDepth.cycle.map((x,i)=><div className="automation-cycle-row" key={x.step}>
+                  <strong><small>0{i+1}</small>{x.step}</strong>
+                  <span className={"ai-role "+x.aiRole.toLowerCase()}>{x.aiRole}</span>
+                  <p>{x.humanRole}</p>
+                  <p>{x.note || "—"}</p>
+                </div>)}
+              </div>
+
+              <div className="automation-boundary-grid">
+                <article>
+                  <span>DECISION BOUNDARY</span>
+                  <h3>AIに「決める権限」をどこまで渡している？</h3>
+                  <p>{product.decision.automationDepth.decisionBoundary}</p>
+                </article>
+                <article>
+                  <span>EXECUTION BOUNDARY</span>
+                  <h3>AIは提案だけ？ 実際に動かす？</h3>
+                  <p>{product.decision.automationDepth.executionBoundary}</p>
+                </article>
+                <article>
+                  <span>CLOSED LOOP</span>
+                  <h3>{product.decision.automationDepth.closedLoop.status}</h3>
+                  <p>{product.decision.automationDepth.closedLoop.detail}</p>
+                </article>
+              </div>
+
+              <div className="human-role-panel">
+                <div>
+                  <p className="eyebrow">HUMAN REMAINING ROLE</p>
+                  <h3>最後に、人間には何が残る？</h3>
+                </div>
+                <div>{product.decision.automationDepth.humanRemainingRole.map(x=><p key={x}>→ {x}</p>)}</div>
+              </div>
+
+              <div className="disappearing-assumption">
+                <BrainCircuit size={28}/>
+                <div>
+                  <p className="eyebrow">THE DISAPPEARING ASSUMPTION</p>
+                  <h3>この会社が成功した世界で、何が消える？</h3>
+                  <p>{product.decision.automationDepth.disappearingAssumption}</p>
+                </div>
+              </div>
+
+              <div className="automation-future-grid">
+                <div><span>FUTURE</span><p>{product.decision.automationDepth.futureState}</p></div>
+                {product.decision.automationDepth.editorialTake && <div><span>EDITORIAL TAKE</span><p>{product.decision.automationDepth.editorialTake}</p></div>}
+              </div>
+            </section>}
 
             <section className="section section-tight product-analysis">
               <div className="section-heading"><div><p className="eyebrow">FIT</p><h2>向いている会社、向いていない会社。</h2></div><LockKeyhole size={28}/></div>
