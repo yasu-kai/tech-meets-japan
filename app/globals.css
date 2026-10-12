@@ -1085,3 +1085,89 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
   .theme-tile-5 .editorial-theme-copy strong,
   .theme-tile-6 .editorial-theme-copy strong{font-size:32px}
 }
+
+/* Homepage feature story */
+.home-feature-story{
+  display:block;
+  margin-top:42px;
+  text-decoration:none;
+  color:#fff;
+  background:#151816;
+  border:1px solid #151816;
+  padding:24px 26px 22px;
+  position:relative;
+  overflow:hidden;
+}
+.home-feature-story:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 78% 18%,rgba(255,74,47,.18),transparent 25%),
+    radial-gradient(circle at 96% 78%,rgba(108,132,255,.14),transparent 28%);
+  pointer-events:none;
+}
+.home-feature-story>*{position:relative;z-index:1}
+.home-feature-meta,.home-feature-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+.home-feature-meta{
+  padding-bottom:18px;
+  border-bottom:1px solid rgba(255,255,255,.18);
+}
+.home-feature-meta span,.home-feature-meta b,.home-feature-footer span{
+  font-size:9px;
+  font-weight:950;
+  letter-spacing:.12em;
+}
+.home-feature-meta span,.home-feature-footer span{color:#a7aaa5}
+.home-feature-meta b{color:#ff6a52}
+.home-feature-main{
+  display:grid;
+  grid-template-columns:minmax(0,1.3fr) minmax(320px,.7fr);
+  gap:48px;
+  padding:38px 0 42px;
+  align-items:end;
+}
+.home-feature-kicker{
+  margin:0 0 10px;
+  font-size:13px;
+  font-weight:800;
+  color:#c7cbc5;
+}
+.home-feature-main h2{
+  margin:0;
+  max-width:760px;
+  font-size:clamp(44px,6.2vw,82px);
+  line-height:.93;
+  letter-spacing:-.06em;
+  color:#fff;
+}
+.home-feature-summary p{
+  margin:0 0 1em;
+  font-size:15px;
+  line-height:1.8;
+  color:#c8ccc7;
+}
+.home-feature-summary strong{color:#fff}
+.home-feature-footer{
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.18);
+}
+.home-feature-footer strong{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+  color:#fff;
+}
+.home-feature-story:hover .home-feature-footer strong{gap:14px}
+@media(max-width:780px){
+  .home-feature-main{grid-template-columns:1fr;gap:24px;padding:30px 0}
+  .home-feature-meta{align-items:flex-start;flex-direction:column;gap:6px}
+  .home-feature-footer{align-items:flex-start;flex-direction:column}
+  .home-feature-main h2{font-size:clamp(40px,12vw,64px)}
+}
