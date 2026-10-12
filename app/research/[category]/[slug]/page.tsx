@@ -20,10 +20,10 @@ function sourceContext(story:ResearchStory,label:string){
   }
 
   if(!best){
-    return `この記事で扱った「${label}」の機能・提供方針を確認できる公式情報です。記事内の整理と、公式側の最新説明・仕様を見比べられます。`;
+    return `この記事で紹介した「${label}」について、公式サイトで詳しく確認できます。`;
   }
 
-  return `本文「${best.heading}」で扱った論点に対応する一次情報です。記事内の整理を、公式側の機能説明・仕様・提供方針で確認できます。`;
+  return `本文「${best.heading}」で扱った論点にについて、公式サイトで詳しく確認できます。`;
 }
 
 export function generateStaticParams(){
@@ -76,14 +76,14 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
 
           <section className="story-sources">
             <p className="eyebrow">PRIMARY SOURCES</p>
-            <h2>この記事の根拠を、一次情報で確認する。</h2>
-            <p className="story-sources-intro">本文で触れた機能・方針・事例について、対応する公式情報を紐づけています。気になる論点だけ、そのまま一次情報まで辿れます。</p>
+            <h2>記事に登場したプロダクトを、公式サイトで確認する。</h2>
+            <p className="story-sources-intro">本文で紹介したプロダクトや機能を、各社の公式情報からさらに詳しく見られます。気になったものだけ、そのまま公式サイトへ。</p>
             <div>
               {story.sources.map((source,index)=><a className="story-source-link" key={source.url} href={source.url} target="_blank" rel="noreferrer">
                 <div className="story-source-index">{String(index+1).padStart(2,"0")}</div>
                 <div className="story-source-copy">
                   <strong>{source.label}</strong>
-                  <div className="story-source-context-label">本文との対応</div>
+                  <div className="story-source-context-label">この記事で触れたポイント</div>
                   <p>{sourceContext(story,source.label)}</p>
                 </div>
                 <div className="story-source-action"><span>公式情報を見る</span><ArrowRight size={16}/></div>
