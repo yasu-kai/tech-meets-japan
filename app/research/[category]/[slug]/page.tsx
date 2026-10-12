@@ -34,6 +34,7 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
   const {category,slug}=await params;
   const story=storyMap[slug];
   if(!story || story.category!==category) notFound();
+  const related=researchStories.filter(item=>item.category===story.category && item.slug!==story.slug).slice(0,3);
 
   return <>
     <Header/>
@@ -75,7 +76,8 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
 
           <section className="story-sources">
             <p className="eyebrow">PRIMARY SOURCES</p>
-            <h2>公開情報を確認する。</h2>
+            <h2>この記事の根拠を、一次情報で確認する。</h2>
+            <p className="story-sources-intro">本文で触れた機能・方針・事例について、対応する公式情報を紐づけています。気になる論点だけ、そのまま一次情報まで辿れます。</p>
             <div>
               {story.sources.map((source,index)=><a className="story-source-link" key={source.url} href={source.url} target="_blank" rel="noreferrer">
                 <div className="story-source-index">{String(index+1).padStart(2,"0")}</div>
@@ -89,6 +91,25 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
             </div>
             <p className="research-note">TECH MEETS JAPANによる公開情報ベースの編集・整理。各社の機能、提供地域、仕様は更新される可能性があります。</p>
           </section>
+
+          {related.length>0 && <section className="story-related">
+            <div className="story-related-heading">
+              <div>
+                <p className="eyebrow">NEXT IN THIS THEME</p>
+                <h2>このテーマを、別の角度から読む。</h2>
+              </div>
+            </div>
+            <div className="story-related-grid">
+              {related.map((item,index)=><Link className="story-related-card" href={"/research/"+item.category+"/"+item.slug} key={item.slug}>
+                <span>{String(index+1).padStart(2,"0")}</span>
+                <div>
+                  <p>{item.eyebrow}</p>
+                  <h3>{item.title}</h3>
+                </div>
+                <ArrowRight size={18}/>
+              </Link>)}
+            </div>
+          </section>}
         </div>
       </article>
     </main>
