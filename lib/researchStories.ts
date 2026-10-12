@@ -447,6 +447,158 @@ sources:[
 {label:"Stripe — How we built Radar",url:"https://stripe.com/blog/how-we-built-it-stripe-radar"}
 ]
 }
+,{
+slug:"continuous-validation",category:"ai-security",eyebrow:"AI × SECURITY / CONTINUOUS VALIDATION",
+title:"年1回の診断は、継続攻撃に置き換わるか。",
+dek:"Pentestをイベントではなく常時運転へ。自動化された攻撃・再検証が、セキュリティ評価の周期そのものを変え始めている。",
+thesis:"Continuous Validationの価値は『診断を安くする』ことではない。環境が変わるたびに、攻撃可能性を再計算できることだ。",
+companies:["Pentera","Horizon3.ai","Continuous Security Validation"],
+depth:{current:"Level 3–4 — Automated validation",target:"Level 4 — Human-on-the-loop",human:"検証範囲、事業影響判断、修正優先度、例外承認"},
+sections:[
+{heading:"年1回のPentestには、構造的な弱点がある。",body:[
+"クラウド設定、アカウント権限、SaaS連携、コードは日々変わる。一方でPentestが年1回なら、診断の翌日に生まれた侵入経路は次回まで見つからない可能性がある。",
+"Continuous Validationは、攻撃者と同じ視点で環境を定期的に検証し続けることで、この時間差を縮める。セキュリティ評価を『イベント』から『常時プロセス』へ変える考え方だ。"
+]},
+{heading:"スキャナーと違うのは、突破可能性を見ること。",body:[
+"脆弱性が存在することと、実際に重要資産まで到達できることは同じではない。自動Pentest系は、Credential、権限昇格、横展開などを組み合わせ、Attack Pathとして実証する。",
+"この違いは優先順位付けに効く。CVSSが高い問題を全部直すのではなく、『本当に突破へつながる穴』から直す判断がしやすくなる。"
+]},
+{heading:"再検証まで閉じると、修正の意味が変わる。",body:[
+"修正後に同じ攻撃経路を自動で再実行できれば、TicketをCloseする前に『本当に塞がった』ことを確認できる。",
+"ここまで来ると、Pentestは報告書を納品する仕事ではなく、攻撃→修正→再攻撃を回すControl loopへ近づく。"
+]},
+{heading:"人間は、攻撃者ではなく境界設計者になる。",body:[
+"どこまで攻撃してよいか、Productionで何を禁止するか、どの結果を自動で再検証するか。継続化するほどGuardrailが重要になる。",
+"日本企業でも、外部監査や年次診断を完全に消すより、日常的なValidationを自動化し、人間の専門家は重要経路や例外へ集中する形が現実的だ。"
+]}
+],
+sources:[
+{label:"Pentera",url:"https://pentera.io/"},
+{label:"Horizon3.ai — NodeZero",url:"https://www.horizon3.ai/nodezero/"}
+]
+},{
+slug:"ai-voice",category:"ai-creative",eyebrow:"AI × CREATIVE / VOICE",
+title:"声を作るAIから、会話を運用するAIへ。",
+dek:"ElevenLabsを中心に、Voice AIは音声合成からリアルタイム会話、本人確認、業務実行、継続改善まで広がっている。",
+thesis:"Voice AIの次の勝負は『人間らしい声』ではない。電話というチャネルで、どこまで仕事を完了できるかだ。",
+companies:["ElevenLabs","Voice Agent ecosystem"],
+depth:{current:"Level 3 — AI Agent",target:"Level 4 — Human-on-the-loop",human:"高リスク案件、感情判断、本人確認Policy、例外対応"},
+sections:[
+{heading:"Voice AIはTTS市場ではなくなりつつある。",body:[
+"初期の競争は、自然な発音、感情表現、多言語化だった。現在は、Speech recognition、Reasoning、Turn-taking、Backend tool useまで統合し、電話やWhatsApp上で業務を完了させる方向へ進んでいる。",
+"ElevenAgentsは、音声・チャットに加え、画像、ファイル、位置情報なども扱い、会話を単なる音声応答ではなくマルチモーダルな業務入口へ広げている。"
+]},
+{heading:"人間らしさより、『会話が壊れないこと』。",body:[
+"電話では、割り込み、沈黙、聞き返し、怒り、曖昧表現が普通に起こる。音声が自然でもTurn-takingが悪ければ実用にならない。",
+"Expressive Modeのような取り組みは、声色そのものより、相手の感情に応じてトーンを変え、会話をResolutionへ進めることを狙っている。"
+]},
+{heading:"本当の差は、通話後に学習できるか。",body:[
+"大量の通話を人間が全部レビューするのは難しい。ElevenAgents Spotlightは会話を分類し、品質やSentimentを評価し、改善ポイントを提案する。",
+"ここまで来るとVoice Agentは『電話を代行するAI』ではなく、自分の会話ログを観測し改善ループへつなぐ運用システムになる。"
+]},
+{heading:"日本では、電話文化が残る業界ほどインパクトが大きい。",body:[
+"医療、物流、予約、公共サービスなど、電話が重要なチャネルとして残る領域ではVoice Agentの価値が大きい。一方で敬語、間、本人確認、録音同意など、日本語特有の運用品質が要求される。",
+"導入時は『人間そっくりか』より、処理完了率、転送率、再入電率、誤案内率を見るべきだ。"
+]}
+],
+sources:[
+{label:"ElevenLabs — Expressive Mode",url:"https://elevenlabs.io/blog/introducing-expressive-mode"},
+{label:"ElevenLabs — Voice agent capabilities",url:"https://elevenlabs.io/blog/voice-agent-capabilities"},
+{label:"ElevenLabs — Spotlight",url:"https://elevenlabs.io/blog/introducing-elevenagents-spotlight"},
+{label:"ElevenLabs — New modalities",url:"https://elevenlabs.io/blog/introducing-new-modalities"}
+]
+},{
+slug:"synthetic-media",category:"ai-creative",eyebrow:"AI × CREATIVE / SYNTHETIC MEDIA",
+title:"Synthetic Mediaは、広告制作コストをどこまで崩すか。",
+dek:"一つの素材から、国・商品・チャネルごとに何百もの派生版を作る。生成AIの価値は『作品』より、Variation economicsに現れ始めている。",
+thesis:"Synthetic Mediaが変えるのはクリエイターの人数より、『1案を作った後に何種類展開できるか』という制作経済性だ。",
+companies:["Adobe Firefly","Enterprise creative workflows"],
+depth:{current:"Level 2–3 — AI Analyst / Agent",target:"Level 4 — Governed creative automation",human:"コンセプト、ブランド、権利、最終承認、キャンペーン責任"},
+sections:[
+{heading:"企業クリエイティブは、量の問題になっている。",body:[
+"EC、SNS、広告、CRM、地域別サイト。企業は同じキャンペーンでも大量のサイズ、言語、背景、商品差分を必要とする。生成AIは、この派生制作を一気に圧縮できる。",
+"AdobeのFirefly Creative Productionは、ブランドに沿った大量のコンテンツ生成を、Workflow authoring・Runtime・Governanceまで含めて扱う方向へ進んでいる。"
+]},
+{heading:"価値は『生成』より『再利用可能なWorkflow』。",body:[
+"単発で良い画像を出せても、毎回Promptから作り直すなら業務化しにくい。Firefly GraphのようなNode-based workflowは、入力・生成・編集・出力を接続し、同じ処理を再利用できるようにする。",
+"ここでクリエイティブ資産は完成物だけでなく、『どう作ったか』というWorkflowそのものになる。"
+]},
+{heading:"撮影すら、Variant生成の一部になる。",body:[
+"3D Digital Twinと生成AIを組み合わせれば、物理撮影なしに複数背景・角度・チャネル向け素材を作れる。商品撮影のコスト構造も変わる可能性がある。",
+"特にSKU数が多い企業ほど、1商品の制作費より、全商品×全市場×全チャネルの総コストで効いてくる。"
+]},
+{heading:"人間は、量産作業からブランド統制へ。",body:[
+"AIがVariationを増やすほど、間違ったロゴ、禁止表現、古い商品情報が大量拡散するリスクも増える。だからBrand rule、承認、Asset source-of-truthが重要になる。",
+"生成速度が上がるほど、人間の仕事は作ることから『何を許可するか』へ移る。"
+]}
+],
+sources:[
+{label:"Adobe — Firefly Graph",url:"https://business.adobe.com/blog/meet-firefly-graph"},
+{label:"Adobe — Creative Production for Enterprise",url:"https://helpx.adobe.com/jp/firefly/web/work-with-enterprise-features/creative-production/creative-production-overview.html"},
+{label:"Adobe — 3D digital twin workflows",url:"https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/use-3d-digital-twin-workflows.html"}
+]
+},{
+slug:"creative-stack",category:"ai-creative",eyebrow:"AI × CREATIVE / STACK",
+title:"Adobeを置き換えるのか、Adobeの中に入るのか。",
+dek:"生成モデルが増えるほど、企業は『どのモデルが一番強いか』より、制作・権利・ブランド・承認をどう束ねるかを考えるようになる。",
+thesis:"Creative AI市場の勝者は、最高性能モデルだけでは決まらない。複数モデルを企業Workflowに安全に組み込めるControl layerが重要になる。",
+companies:["Adobe","OpenAI","Google","Creative AI ecosystem"],
+depth:{current:"Level 2–3 — Multi-model workflow",target:"Level 4 — Governed agentic production",human:"モデル選定、ブランド設計、承認、権利、最終表現"},
+sections:[
+{heading:"生成モデルは、差し替え可能な部品になり始める。",body:[
+"画像や動画モデルが次々に更新されると、企業が一つのモデルへ全Workflowを固定するリスクが増える。昨日の最高モデルが半年後も最適とは限らない。",
+"Adobe Firefly Graphは、Adobeのツールと複数AIモデルをNodeとして組み合わせる考え方を押し出している。モデル競争の上にWorkflow layerを置く発想だ。"
+]},
+{heading:"Enterpriseでは、性能より統制が効く。",body:[
+"個人なら最高品質の出力を選べばいい。しかし企業では、商用利用条件、IP indemnification、データ扱い、ブランドルール、承認経路を同時に管理する必要がある。",
+"Creative Stackの競争は、Model benchmarkからGovernance benchmarkへ広がる。"
+]},
+{heading:"Adobeが強いのは、既存制作工程を持っていること。",body:[
+"Photoshop、Illustrator、Premiere、Frame.ioなど既存Workflowの中へAIを入れられることは大きい。生成AIが新しい入口でも、最終仕上げやAsset管理が既存ツールに戻るなら、そこを持つ企業はControl pointを維持できる。",
+"逆に新興AI企業は、従来工程そのものを消すことで勝ちに行く。"
+]},
+{heading:"日本企業は、単一モデル導入より『Model portfolio』を考える段階へ。",body:[
+"用途ごとに最適モデルが違うなら、企業側はモデル名ではなく、入力データ・権利条件・用途・承認レベルに応じて自動選択する方が合理的になる。",
+"Creative AIは『どのAIを契約するか』から、『どのWorkflowでどのAIを使わせるか』へ進む。"
+]}
+],
+sources:[
+{label:"Adobe — Firefly Graph",url:"https://business.adobe.com/products/creativecloud-business/firefly-graph.html"},
+{label:"Adobe — Node-based workflows",url:"https://business.adobe.com/blog/why-node-based-workflows-are-the-future-of-creative-ai"},
+{label:"Adobe — AI and creative work",url:"https://www.adobe.com/ai/research/202606/ai-is-redistributing-creative-work.html"}
+]
+},{
+slug:"logistics-ai",category:"ai-industry",eyebrow:"AI × INDUSTRY / LOGISTICS",
+title:"FAXと電話が残る物流に、AIはどこから入るのか。",
+dek:"配車、調達、追跡、例外対応、支払い。物流AIは『最適化』より先に、人間同士の調整作業をAgentへ移し始めている。",
+thesis:"物流のAI化で最初に消えるのはトラックではない。荷主・運送会社・倉庫の間を埋める『確認・催促・転記』だ。",
+companies:["project44","Uber Freight","LSP44"],
+depth:{current:"Level 3 — AI Agent",target:"Level 4 — Human-on-the-loop",human:"例外交渉、重大遅延、取引関係、現場判断、契約"},
+sections:[
+{heading:"物流のボトルネックは、データがないことではない。",body:[
+"GPS、TMS、メール、電話、EDIなど情報源は多い。しかし現場では、それらが分断され、人間が『今どこにある』『遅れるのか』『誰に連絡するか』をつないでいる。",
+"project44のMoやUber FreightのInsights AIは、複数データを横断し、Operatorが質問できる形へ整理する。まずは『探す』を減らす。"
+]},
+{heading:"次は、『調整する』をAIへ渡す。",body:[
+"project44 AutopilotはCarrier onboarding、Freight procurement、Exception managementなどでAgentを継続稼働させる。LSP44もExecutionとAutomationをAgent/API infrastructureとして提供する方向を示している。",
+"物流では一件の遅延が複数企業へ波及する。だからAIの価値は単体最適より、複数プレイヤーの間でActionをつなぐことにある。"
+]},
+{heading:"完全自律化を止めるのは、現場の例外。",body:[
+"天候、渋滞、荷待ち、破損、ドライバー不足、顧客都合。物流は例外の連続で、現場側が電話一本で解決しているケースも多い。",
+"だからAI導入は、現場文化を無視して全部置き換えるより、情報収集・定型連絡・再計算をAgentへ渡し、人間は交渉と例外判断へ集中する方が現実的だ。"
+]},
+{heading:"日本では、AIより先に『接続』が課題になる。",body:[
+"FAXや電話が残る現場では、AI Agentが直接システム操作できないこともある。そのためメール、音声、OCR、既存TMSとのBridgeを作りながら段階導入する必要がある。",
+"逆に言えば、非構造なコミュニケーションを扱えるAIが成熟すると、日本の物流は一気に変わる余地が大きい。"
+]}
+],
+sources:[
+{label:"project44 — Autopilot",url:"https://www.project44.com/press-releases/project44-launches-autopilot-to-cut-freight-costs-improve-data-quality-optimize-inventory-levels-and-accelerate-cash-flow/"},
+{label:"project44 — Mo AI Analyst",url:"https://www.project44.com/press-releases/project44-launches-conversational-ai-analyst-to-turn-real-time-supply-chain-data-into-faster-more-confident-decisions/"},
+{label:"Uber Freight — AI logistics",url:"https://www.uberfreight.com/en-US/technologie/ai"},
+{label:"Uber Freight — Intelligent supply chains",url:"https://www.uberfreight.com/en-US/blog/new-era"}
+]
+}
 ];
 
 export const storyMap=Object.fromEntries(researchStories.map(s=>[s.slug,s])) as Record<string,ResearchStory>;
