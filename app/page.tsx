@@ -21,24 +21,33 @@ export default function Home() {
             海外テクノロジープロダクトを、課題や用途から探す。比べる。使いどころを知る。<br className="desktop-only"/>
             TECH MEETS JAPANは、日本に入ってくるプロダクトを見つける独立系テックメディアです。
           </p>
+          <div className="home-feature-heading">
+            <span>特集</span>
+            <div><b>SPECIAL FEATURE 01</b><p>いま最も深く読みたいテーマを、比較と長文レポートで掘る。</p></div>
+          </div>
           <Link href="/research/offensive-ai" className="home-feature-story">
-            <div className="home-feature-meta">
-              <span>FEATURE STORY 01</span>
-              <b>AI × SECURITY / OFFENSIVE AI</b>
+            <div className="home-feature-image">
+              <img src="/offensive-ai-hero.png" alt="" />
             </div>
-            <div className="home-feature-main">
-              <div>
-                <p className="home-feature-kicker">攻撃するAIは、どこまで自律化したのか。</p>
-                <h2>AIは、サイバー防御の<br/>どこまでを奪うのか。</h2>
+            <div className="home-feature-content">
+              <div className="home-feature-meta">
+                <span>AI × SECURITY</span>
+                <b>OFFENSIVE AI / MARKET MAP</b>
               </div>
-              <div className="home-feature-summary">
-                <p>擬似攻撃、ホール発見、対応策、意思決定、実行、再検証。XBOW、Pentera、Horizon3、MindFortなどを同じ業務サイクルに並べると、「AI Pentest」という一言では見えない差が出てくる。</p>
-                <p>重要なのは、AIが脆弱性を見つけられるかではない。<strong>人間に何をさせなくしようとしているか。</strong> Offensive AI市場の現在地を、AutomationとAutonomyの違いから読む。</p>
+              <div className="home-feature-main">
+                <div>
+                  <p className="home-feature-kicker">攻撃するAIは、どこまで自律化したのか。</p>
+                  <h2>AIは、サイバー防御のどこまでを奪うのか。</h2>
+                </div>
+                <div className="home-feature-summary">
+                  <p>擬似攻撃から再検証まで、XBOW、Pentera、Horizon3、MindFortなどを同じ6工程に並べると、「AI Pentest」という一言では見えない差が浮かび上がる。</p>
+                  <p>重要なのは、AIが脆弱性を見つけられるかではない。<strong>人間に何をさせなくしようとしているか。</strong> AutomationとAutonomyの違いから市場の現在地を読む。</p>
+                </div>
               </div>
-            </div>
-            <div className="home-feature-footer">
-              <span>MARKET MAP / LONG-FORM REPORT</span>
-              <strong>特集を読む <ArrowRight size={18}/></strong>
+              <div className="home-feature-footer">
+                <span>LONG-FORM REPORT / AUTOMATION DEPTH</span>
+                <strong>特集を読む <ArrowRight size={18}/></strong>
+              </div>
             </div>
           </Link>
         </section>
