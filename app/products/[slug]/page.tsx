@@ -13,7 +13,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   const company=companies.find(c=>c.slug===product.companySlug);
   const intel=company?.intelligence;
   const calculatedFit=calculateJapanFit(product.companySlug) ?? product.fitScore;
-  const levelRank = (level?: string) => level==="Runway固有" ? 0 : 1;
+  const levelRank = (level?: string) => level==="固有" ? 0 : 1;
   const sortedDifferentiators = [...(product.decision?.differentiators || [])]
     .filter(x=>x.level!=="他でもできる")
     .sort((a,b)=>levelRank(a.level)-levelRank(b.level));
@@ -73,7 +73,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
                       <div className="capability-deep-head">
                         <span>0{i+1}</span>
                         <h3>{x.label}</h3>
-                        <b className={"capability-badge "+(x.level==="Runway固有"?"unique":x.level==="Runwayで特に強い"?"strong":"common")}>{x.level}</b>
+                        <b className={"capability-badge "+(x.level==="固有"?"unique":x.level==="特に強い"?"strong":"common")}>{x.level}</b>
                       </div>
                       <p className="capability-desc">{x.detail}</p>
                       <div className="capability-detail-grid">
@@ -115,7 +115,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
               <div className="decision-board-head"><span>02 / WHO IT FITS</span><h2>誰に向く？</h2></div>
               <div className="fit-diagnostic">
                 {product.targetUsers.map((x,i)=>{
-                  const target=intel?.targetAccounts?.[i];
+                  const target=intel?.targetAccounts?.[i] || product.decision?.fitProfiles?.[i];
                   return (
                     <article key={x}>
                       <div className="fit-diagnostic-head"><span>0{i+1}</span><h3>{x}</h3></div>
@@ -149,7 +149,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
                       <div><small>REPLACES</small><p>{u.replaces}</p></div>
                     </div>
                     <div className="usecase-kpi"><b>KPI</b>{u.kpi.map(x=><span key={x}>{x}</span>)}</div>
-                    <div className="usecase-why"><b>WHY RUNWAY</b>{u.whyThis.map(x=><p key={x}>★ {x}</p>)}</div>
+                    <div className="usecase-why"><b>WHY {product.provider.toUpperCase()}</b>{u.whyThis.map(x=><p key={x}>★ {x}</p>)}</div>
                     <div className="usecase-not"><b>NOT FOR</b>{u.notFor.map(x=><p key={x}>× {x}</p>)}</div>
                   </section>
                 ))}
@@ -164,7 +164,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
                     <div className="compare-title"><span>0{i+1}</span><h3>{x.name}</h3></div>
                     <div className="compare-split">
                       <div><b>相手が向く</b>{x.otherWinsWhen.map(v=><p key={v}>→ {v}</p>)}</div>
-                      <div><b>Runwayが向く</b>{x.runwayWinsWhen.map(v=><p key={v}>→ {v}</p>)}</div>
+                      <div><b>{product.provider}が向く</b>{x.runwayWinsWhen.map(v=><p key={v}>→ {v}</p>)}</div>
                     </div>
                     <div className="compare-context">
                       <div><small>BEST WHEN</small>{x.bestWhen.map(v=><p key={v}>{v}</p>)}</div>
@@ -215,7 +215,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
             </div>
             <div className="differentiator-list">
               {sortedDifferentiators.map((x,index)=>(
-                <article key={x.label} className={"differentiator-card " + (x.level==="Runway固有"?"unique":x.level==="Runwayで特に強い"?"strong":"common")}>
+                <article key={x.label} className={"differentiator-card " + (x.level==="固有"?"unique":x.level==="特に強い"?"strong":"common")}>
                   <div className="diff-index">0{index+1}</div>
                   <div className="diff-main">
                     <div className="diff-head"><span>{x.level}</span><h3>{x.label}</h3></div>
@@ -243,7 +243,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
           </section>
         )}
 
-        {intel?.scoreBreakdown && (
+        {(intel?.scoreBreakdown || product.decision?.scoreBreakdown) && (
           <section className="section section-tight product-analysis">
             <div className="section-heading">
               <div><p className="eyebrow">FIT BREAKDOWN</p><h2>{calculatedFit}点は、こう計算する。</h2></div>
@@ -254,7 +254,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
               <p>課題への刺さり25% / 日本での使いやすさ20% / 差別化20% / 導入しやすさ15% / 費用対効果10% / Enterprise適性10%</p>
             </div>
             <div className="score-rubric-list">
-              {intel.scoreBreakdown.map(item=>{
+              {(intel?.scoreBreakdown || product.decision?.scoreBreakdown || []).map(item=>{
                 const weight=item.weight ?? 0;
                 const score=dimensionScore(item);
                 const contribution=score*weight/100;
