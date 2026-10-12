@@ -1388,3 +1388,38 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
   line-height:.94!important;
   letter-spacing:-.055em!important;
 }
+
+.story-sources a.story-source-link{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:28px;
+  align-items:center;
+  padding:22px 4px;
+}
+.story-source-copy{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.story-source-copy strong{
+  font-size:14px;
+  line-height:1.35;
+}
+.story-source-copy p{
+  margin:0;
+  max-width:900px;
+  font-size:12px;
+  line-height:1.7;
+  font-weight:500;
+  color:var(--muted);
+}
+@media(max-width:720px){
+  .story-sources a.story-source-link{
+    gap:14px;
+    padding:18px 2px;
+  }
+  .story-source-copy p{
+    font-size:11px;
+    line-height:1.65;
+  }
+}
