@@ -55,7 +55,7 @@ export default function OffensiveAIResearchPage(){
           </div>
           <Link href="/research" className="research-back"><ArrowLeft size={14}/> Research</Link>
           <p className="eyebrow">OFFENSIVE AI / MARKET MAP</p>
-          <h1>AIは、サイバー防御の<br/>どこまでを担うのか。</h1>
+          <h1>AIは、サイバー防御のどこまでを担うのか。</h1>
           <p className="offsec-lead">見るべきは「AIでPentestできるか」ではない。<strong>攻撃 → 発見 → 対策 → 判断 → 実行 → 再検証</strong>の6工程のうち、どこまでAIに権限を渡しているかだ。</p>
         </section>
 
