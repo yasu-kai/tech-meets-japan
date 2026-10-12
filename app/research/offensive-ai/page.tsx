@@ -109,7 +109,7 @@ export default function OffensiveAIResearchPage(){
           <div className="section-heading">
             <div>
               <p className="eyebrow">MARKET REPORT</p>
-              <h2>AIは、サイバーセキュリティの「作業」ではなく「役割」を変え始めている。</h2>
+              <h2 className="market-report-title"><span>AIは、サイバーセキュリティの</span><span>「作業」ではなく「役割」を</span><span>変え始めている。</span></h2>
             </div>
           </div>
           <div className="offsec-report-body">
