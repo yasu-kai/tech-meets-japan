@@ -796,4 +796,16 @@ export function calculateJapanFit(companySlug: string): number | null {
   return totalWeight ? Math.round(weighted / totalWeight) : null;
 }
 
+export function calculateProductJapanFit(product: Product): number {
+  const productDimensions = product.decision?.scoreBreakdown;
+  if (productDimensions?.length) {
+    const weighted = productDimensions.reduce((sum, item) => sum + dimensionScore(item) * (item.weight ?? 0), 0);
+    const totalWeight = productDimensions.reduce((sum, item) => sum + (item.weight ?? 0), 0);
+    if (totalWeight) return Math.round(weighted / totalWeight);
+  }
+
+  const companyScore = calculateJapanFit(product.companySlug);
+  return companyScore ?? product.fitScore;
+}
+
 export const productCategories = ["All", ...Array.from(new Set(products.map(p => p.category)))];
