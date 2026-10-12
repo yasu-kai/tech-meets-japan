@@ -1336,3 +1336,18 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
     word-break:keep-all;
   }
 }
+
+.home-feature-title{
+  max-width:none!important;
+  font-size:clamp(38px,4.9vw,66px)!important;
+  line-height:.94!important;
+  letter-spacing:-.055em!important;
+  overflow:visible;
+}
+.home-feature-title span{
+  display:block;
+  white-space:nowrap;
+}
+@media(max-width:900px){
+  .home-feature-title span{white-space:normal}
+}
