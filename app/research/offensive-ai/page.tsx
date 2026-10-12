@@ -170,7 +170,7 @@ export default function OffensiveAIResearchPage(){
           </div>
           <div className="offsec-callout">
             <p className="eyebrow">THE SHIFT</p>
-            <h3>“PentestをAI化できるか” から、<br/>“Cybersecurity LifecycleのどこまでAIに権限を渡せるか”へ。</h3>
+            <h3>“PentestをAI化できるか” から、 “Cybersecurity LifecycleのどこまでAIに権限を渡せるか”へ。</h3>
             <p>攻撃・発見・対策・再検証は急速にAI化できる。一方で、Revenue影響、停止リスク、Risk acceptance、Deploy timingのようなBusiness contextを含む意思決定は、今もHuman側に残る。</p>
           </div>
         </section>
@@ -178,7 +178,7 @@ export default function OffensiveAIResearchPage(){
         <section className="section section-tight">
           <div className="future-state">
             <p className="eyebrow">WHERE THIS GOES</p>
-            <h2>人間の仕事は「防御」から、<br/>「AIによるサイバー防御の権限設計」へ。</h2>
+            <h2>人間の仕事は「防御」から、 「AIによるサイバー防御の権限設計」へ。</h2>
             <p className="future-intro">守り方が変わる。人間は作業の担い手から、AIに与える権限と境界を決める側へ。</p>
             <div className="future-evolution">
               <div className="future-phase future-phase-now">
@@ -210,7 +210,7 @@ export default function OffensiveAIResearchPage(){
         <section className="offsec-conclusion">
           <div>
             <p className="eyebrow">EDITORIAL TAKE</p>
-            <h2>XBOWは「AI Pentester」。<br/>MindFortは「AI Security Engineer」へ。</h2>
+            <h2>XBOWは「AI Pentester」。 MindFortは「AI Security Engineer」へ。</h2>
           </div>
           <p>この軸で見ると、単なる“攻撃自動化”よりも、修正実行まで踏み込むプレーヤーの意味が見えやすくなる。TECH MEETS JAPANでは今後、機能数ではなく<strong>Automation Depth</strong>でOffensive AI市場を追う。</p>
         </section>
