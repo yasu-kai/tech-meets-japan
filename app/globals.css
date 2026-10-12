@@ -1374,3 +1374,7 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
 @media(max-width:900px){
   .offsec-hero h1{font-size:clamp(44px,9vw,72px)}
 }
+
+.future-heading-line{
+  display:block;
+}
