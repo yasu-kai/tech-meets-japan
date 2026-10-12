@@ -16,9 +16,9 @@ export default function Home() {
       <main>
         <section className="hero">
           <div className="hero-badge"><span></span> JAPAN ENTRY INTELLIGENCE PLATFORM</div>
-          <h1>世界の次を、<br/><em>日本の選択肢に。</em></h1>
+          <h1>世界の次を、 <em>日本の選択肢に。</em></h1>
           <p className="hero-copy">
-            海外テクノロジープロダクトを、課題や用途から探す。比べる。使いどころを知る。<br className="desktop-only"/>
+            海外テクノロジープロダクトを、課題や用途から探す。比べる。使いどころを知る。 
             TECH MEETS JAPANは、日本に入ってくるプロダクトを見つける独立系テックメディアです。
           </p>
           <div className="home-feature-heading">
@@ -78,7 +78,7 @@ export default function Home() {
               <p className="eyebrow">DISCOVER</p>
               <h2>課題から、次の選択肢を探す。</h2>
             </div>
-            <p>「どの会社が来たか」ではなく、<br/>「何が使えるようになるか」を知るためのデータベース。</p>
+            <p>「どの会社が来たか」ではなく、 「何が使えるようになるか」を知るためのデータベース。</p>
           </div>
           <ProductExplorer compact/>
           <div className="center"><Link href="/products" className="text-link">すべてのプロダクトを見る <ArrowRight size={16}/></Link></div>
@@ -162,7 +162,7 @@ export default function Home() {
 
         <section className="cta-band">
           <p className="eyebrow">EXPLORE WHAT'S NEXT</p>
-          <h2>知らなかった選択肢を、<br/>次の打ち手に。</h2>
+          <h2>知らなかった選択肢を、 次の打ち手に。</h2>
           <p>海外プロダクトを、話題ではなく「自社で使えるか」で見る。</p>
           <Link href="/products" className="button button-accent">プロダクトを探す <ArrowRight size={17}/></Link>
         </section>
