@@ -3,7 +3,7 @@ import { ArrowRight, Compass, Globe2, Search, ShieldCheck, Sparkles, Activity, L
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductExplorer from "@/components/ProductExplorer";
-import { products, signals, themes } from "@/lib/data";
+import { calculateProductJapanFit, products, signals, themes } from "@/lib/data";
 import { researchCategories } from "@/lib/research";
 
 export default function Home() {
@@ -109,7 +109,7 @@ export default function Home() {
             <p className="feature-tagline">{featured.tagline}</p>
             <p>{featured.description}</p>
             <div className="feature-metrics">
-              <div><span>Japan Fit</span><strong>{featured.fitScore}/100</strong></div>
+              <div><span>Japan Fit</span><strong>{calculateProductJapanFit(featured)}/100</strong></div>
               <div><span>Status</span><strong>{featured.japanStatus}</strong></div>
             </div>
             <Link href={"/products/" + featured.slug} className="button button-light">分析を見る <ArrowRight size={17}/></Link>
