@@ -1308,3 +1308,31 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
     max-width:1180px;
   }
 }
+
+/* Prevent orphaned Japanese headline characters */
+.hero h1 .hero-line{
+  display:block;
+  width:max-content;
+  max-width:100%;
+  white-space:nowrap;
+}
+.hero h1{
+  max-width:none;
+}
+.section-heading h2,
+.page-hero h1,
+.offsec-hero h1,
+.story-hero h1,
+.home-feature-main h2,
+.offsec-report .section-heading h2{
+  text-wrap:balance;
+  word-break:keep-all;
+  overflow-wrap:normal;
+}
+@media(max-width:720px){
+  .hero h1 .hero-line{
+    width:auto;
+    white-space:normal;
+    word-break:keep-all;
+  }
+}
