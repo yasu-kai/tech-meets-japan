@@ -32,21 +32,20 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="ticker-section">
+        <section className="ticker-section editorial-themes-home">
           <div className="ticker-label"><Activity size={15}/> EDITORIAL THEMES</div>
-          <div className="home-theme-grid">
+          <div className="editorial-theme-mosaic">
             {researchCategories.map((category,i) => (
-              <Link href={"/research/" + category.slug} className="home-theme-item" key={category.slug}>
-                <div className="home-theme-top">
-                  <span>0{i+1}</span>
-                  <b>{category.shortLabel}</b>
+              <Link href={"/research/" + category.slug} className={"editorial-theme-tile theme-tile-" + (i+1)} key={category.slug}>
+                <div className="editorial-theme-kicker">
+                  <span>{String(i+1).padStart(2,"0")}</span>
+                  <b>{category.topics.length} STORIES</b>
                 </div>
-                <strong>{category.label}</strong>
-                <p>{category.description}</p>
-                <div className="home-theme-bottom">
-                  <span>{category.topics.length} STORIES</span>
-                  <ArrowRight size={15}/>
+                <div className="editorial-theme-copy">
+                  <strong>{category.label}</strong>
+                  <p>{category.thesis}</p>
                 </div>
+                <div className="editorial-theme-arrow"><ArrowRight size={18}/></div>
               </Link>
             ))}
           </div>
