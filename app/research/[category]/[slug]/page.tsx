@@ -49,7 +49,7 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
 
           <section className="story-question">
             <span>THE QUESTION</span>
-            <h2>この市場が成功した世界で、<br/>人間は何をしなくなるのか。</h2>
+            <h2>この市場が成功した世界で、 人間は何をしなくなるのか。</h2>
           </section>
 
           <section className="story-sources">
