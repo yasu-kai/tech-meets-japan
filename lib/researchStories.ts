@@ -297,6 +297,156 @@ sources:[
 {label:"Humane — Ai Pin consumer wind-down",url:"https://support.humane.com/hc/en-us/articles/34243204841997-Ai-Pin-Consumers-FAQ"}
 ]
 }
+,{
+slug:"ai-legal",category:"ai-work",eyebrow:"AI × WORK / LEGAL",
+title:"パラリーガル業務は、AIでどこまで消えるのか。",
+dek:"調査、レビュー、ドラフト、比較、論点整理。Legal AIは『文章を書く補助』から、案件の前処理を持つ業務基盤へ進みつつある。",
+thesis:"Legal AIの本質は、弁護士の代わりに結論を出すことではない。人間が判断する前に必要だった大量の探索・整理・比較を圧縮することだ。",
+companies:["Harvey","Legal AI platforms"],
+depth:{current:"Level 2–3 — AI Analyst / Agent",target:"Level 4 — Human-on-the-loop",human:"法的判断、顧客説明、交渉、署名・提出、最終責任"},
+sections:[
+{heading:"最初に消えるのは、『探す時間』。",body:[
+"法律業務では、契約書、判例、社内規程、過去案件、メールなど、判断そのものより前に大量の資料を探し、読み、比較する時間がかかる。Legal AIが最も早く価値を出すのは、この前処理だ。",
+"現在のLegal AIは、文書要約だけでなく、複数資料を横断した論点抽出、契約条項比較、ドラフト作成、レビュー支援まで広がっている。つまり『答えを作るAI』より、『案件を人間が判断できる状態まで持ってくるAI』に近づいている。"
+]},
+{heading:"Automation Depthが上がるほど、証拠が重要になる。",body:[
+"法務では、結果がもっともらしいだけでは足りない。どの資料を根拠にしたか、どの条項を参照したか、どこに不確実性があるかが追跡できなければならない。",
+"そのためLegal AIでは、モデル性能だけでなく、出典管理、アクセス権、監査ログ、機密情報の扱い、レビュー導線が競争力になる。自律性が高いほど、人間が後から検証できる構造が不可欠になる。"
+]},
+{heading:"弁護士より先に、パラリーガル業務が再編される。",body:[
+"定型的な調査、比較表作成、一次レビュー、ドラフト準備はAgentへ切り出しやすい。一方で、顧客の意図を読み、法的リスクと事業リスクを天秤にかけ、交渉方針を決める仕事は残りやすい。",
+"この変化は『法律家が不要になる』というより、ジュニア層が経験してきた仕事の構成を変える。AIが下準備を担うほど、人間は早い段階から判断と説明責任を求められる。"
+]},
+{heading:"日本企業では、社内法務から入りやすい。",body:[
+"外部提出や訴訟より、まず契約レビュー、社内規程検索、過去案件照会のような閉じた業務から導入しやすい。機密保持と権限管理を設計しやすく、効果も測りやすいからだ。",
+"見るべきKPIは『AIが何件回答したか』ではない。案件着手から人間の判断開始までの時間がどれだけ短くなったか、レビュー品質を落とさず何時間削減できたかだ。"
+]}
+],
+sources:[
+{label:"Harvey",url:"https://www.harvey.ai/"},
+{label:"Harvey — Platform",url:"https://www.harvey.ai/platform"}
+]
+},{
+slug:"ai-customer-service",category:"ai-work",eyebrow:"AI × WORK / CUSTOMER SERVICE",
+title:"回答するAIから、解決するAIへ。",
+dek:"FAQ回答、本人確認、契約変更、返金、予約変更。Customer Service AIは『会話』ではなく『処理完了』を競う段階へ。",
+thesis:"顧客対応AIの評価軸は正答率から変わる。ユーザーが人間へ引き継がれずに、目的を達成できた割合が重要になる。",
+companies:["Sierra","ServiceNow","Salesforce"],
+depth:{current:"Level 3 — AI Agent",target:"Level 4 — Human-on-the-loop",human:"高リスク判断、例外、クレーム、補償判断、ポリシー設計"},
+sections:[
+{heading:"チャットボットの限界は、『答えるだけ』だった。",body:[
+"従来のサポートBotはFAQを検索して回答することが中心だった。しかし顧客が本当に欲しいのは説明ではなく、住所を変える、予約を変更する、返金を受ける、契約を更新するといった結果だ。",
+"AI Agent型の顧客対応では、会話の途中で本人確認や業務システムへの操作を行い、処理完了まで進める。ここで初めて、Contact Centerの業務量そのものへ影響が出る。"
+]},
+{heading:"成功指標はContainmentだけでは足りない。",body:[
+"人間へ転送されなかった割合が高くても、顧客が諦めて離脱していれば成功ではない。重要なのはResolution、つまり目的が完了したかどうかだ。",
+"さらに、AIが返金や契約変更まで行うなら、権限範囲と金額上限、例外条件、本人確認レベルを細かく設計する必要がある。Agentの性能よりPolicy設計が品質を左右する。"
+]},
+{heading:"人間が残るのは、感情と例外。",body:[
+"定型手続きや情報照会はAIへ寄せやすい。一方で、顧客が怒っている、補償が必要、社内ルールでは処理できない、複数部署をまたぐ、といった状況では人間が価値を持つ。",
+"AIが増えるほど、人間のオペレーターは『平均的な問い合わせを処理する人』から、『難しい案件を解く人』へ変わる。教育内容も応対件数より例外処理力へ寄っていく。"
+]},
+{heading:"日本で効くのは、24時間化より『待たせないこと』。",body:[
+"日本企業では電話やメールが残る業界も多い。そこでAIを入れる価値は単なる営業時間外対応ではなく、本人確認や社内照会を先に済ませ、人間が対応するときには解決に必要な情報が揃っている状態を作ることにある。",
+"完全無人化を目指すより、AIが一次処理を完了させ、人間は高リスク案件だけを見る構造の方が現実的だ。"
+]}
+],
+sources:[
+{label:"Sierra",url:"https://sierra.ai/"},
+{label:"ServiceNow — AI Agents",url:"https://www.servicenow.com/products/ai-agents.html"},
+{label:"Salesforce — Agentforce",url:"https://www.salesforce.com/agentforce/"}
+]
+},{
+slug:"ai-soc",category:"ai-security",eyebrow:"AI × SECURITY / SOC",
+title:"SOCは監視室から、AI監督室へ変わるのか。",
+dek:"検知、Triage、調査、Threat Intel、封じ込め。Security CopilotのAgent化は、SOC業務を人間中心のキュー処理から継続的なAI運用へ近づける。",
+thesis:"SOCの自動化で重要なのはアラート数を減らすことではない。検知から調査・対応までを一つの閉ループへできるかだ。",
+companies:["Microsoft Security Copilot","AI SOC Agents"],
+depth:{current:"Level 3–4 — Agent / Human-on-the-loop",target:"Level 4–5 in bounded workflows",human:"重大インシデント、事業影響判断、封じ込め承認、復旧責任"},
+sections:[
+{heading:"SOCのボトルネックは、アラートではなく『次に何をするか』。",body:[
+"セキュリティ製品は長年、大量のアラートを生成してきた。問題は検知後に、関連ログを集め、脅威情報を調べ、優先順位を付け、封じ込めるまで人間が何度も画面を往復することだった。",
+"Security CopilotのAgent群は、Threat Intelligence briefing、調査、Identity、Endpointなどの反復作業を構造化して実行する。Microsoftは2026年、Red・Blue・Greenの専門Agentが継続ループで動くProject Perceptionも示した。"
+]},
+{heading:"『AIが調査する』から『AI同士が役割分担する』へ。",body:[
+"一つの万能Agentが全部を担うより、攻撃シミュレーション、検知、調査、修復を別Agentへ分ける方が、権限を制御しやすい。これはSOCの組織構造をそのままソフトウェア化する発想でもある。",
+"AgentごとにIdentity、Permission、Triggerを持たせれば、どのAIが何を見て何を実行できるかを定義できる。自律化の核心は、モデルの知性より権限境界にある。"
+]},
+{heading:"人間は『一次調査』から外れていく。",body:[
+"既知パターンの相関分析、脅威情報収集、端末情報の確認はAIに向く。一方で、本番系を止める、アカウントを大量に無効化する、顧客へ通知する、といった判断には事業影響が伴う。",
+"そのため短期的にはHuman-on-the-loopが中心になる。人間はすべてのアラートを見るのではなく、AIがエスカレーションした重要案件とPolicy設計を担当する。"
+]},
+{heading:"日本企業では、SOC人材不足への答えになり得る。",body:[
+"セキュリティ人材を大量採用できない企業ほど、反復調査をAgentへ渡す効果は大きい。ただし、AI導入前にログ統合や権限整理ができていなければ、自律化は進まない。",
+"AI SOCは人材不足を魔法のように解消するものではなく、まず『AIが動ける観測・権限基盤』を整えるプロジェクトでもある。"
+]}
+],
+sources:[
+{label:"Microsoft — Security Copilot agents",url:"https://learn.microsoft.com/en-us/copilot/security/agents-security-copilot"},
+{label:"Microsoft — Responsible AI FAQ for agents",url:"https://learn.microsoft.com/copilot/security/rai-faqs-security-copilot-agents"},
+{label:"Microsoft — Project Perception",url:"https://www.microsoft.com/en-us/security/blog/2026/07/30/whats-new-in-microsoft-security-july-2026/"}
+]
+},{
+slug:"identity-agents",category:"ai-security",eyebrow:"AI × SECURITY / IDENTITY",
+title:"AI Agent時代のIdentityは、誰を認証するのか。",
+dek:"社員だけでなく、Agent自身が企業システムへ接続し、権限を使い、処理を実行する。Identityは『人間のログイン管理』からAgent governanceへ広がる。",
+thesis:"AI Agentが本当に仕事をするなら、Agentはチャット機能ではなく『権限を持つデジタル労働者』として扱う必要がある。",
+companies:["Okta","Identity Security ecosystem"],
+depth:{current:"Level 2–3 — Governance emerging",target:"Level 4 — Policy-controlled agent identity",human:"Agent所有者、権限承認、例外、監査、停止判断"},
+sections:[
+{heading:"Agentが増えるほど、『誰がやったか』が曖昧になる。",body:[
+"AI AgentがCRM、メール、クラウド、コード、財務システムへ接続すれば、従来の人間用アカウントだけでは管理できない。どのAgentが、誰の依頼で、どの権限を使って行動したかを追跡する必要がある。",
+"Oktaは2026年、AI Agentをfirst-class identityとして登録・発見・統制する方向を明確にした。Agent SSOやAgent Discoveryは、Agentを『裏側のスクリプト』ではなくIdentity lifecycleの対象として扱う。"
+]},
+{heading:"重要なのは、常設権限を持たせないこと。",body:[
+"Agentは人間より高速に大量の操作を行える。だから長期間有効な強いCredentialを渡すと、誤動作時のBlast Radiusも大きい。",
+"理想は、特定タスクのために必要な最小権限を一時的に与え、終了後に失効させること。誰の意図で権限が付与されたかも紐づける。Agent Identityは、Zero TrustをAIへ拡張する領域になる。"
+]},
+{heading:"Shadow AIは、Shadow ITより厄介になる。",body:[
+"社員が勝手に使うSaaSなら、多くの場合は人間が操作主体だ。しかしAgentは一度接続すると継続的に動き、複数システムをまたぐ可能性がある。",
+"そのため『存在を把握する』『所有者を決める』『接続先を制限する』『即時停止できる』ことが必要になる。AI導入数が増える企業ほど、Identity側の整備が先行条件になる。"
+]},
+{heading:"日本企業は、Agent導入より先に台帳を作るべきかもしれない。",body:[
+"どの部署がどのAgentを使い、どのデータへアクセスし、誰が責任者なのか。これを管理できない状態で自律化だけを進めると、監査時に説明できなくなる。",
+"Agent Identityは地味だが、AIが『会話』から『実行』へ進むほど重要になる基盤層だ。"
+]}
+],
+sources:[
+{label:"Okta — Secure agentic enterprise",url:"https://www.okta.com/newsroom/press-releases/showcase-2026/"},
+{label:"Okta — Agent Discovery",url:"https://www.okta.com/newsroom/press-releases/okta-secures-the-agentic-enterprise-with-new-tools-for-discovering-and-mitigating-shadow-ai-risks/"},
+{label:"Okta — Agent SSO",url:"https://www.okta.com/newsroom/press-releases/okta-brings-first-class-identity-to-ai-agents-with-agent-sso/"}
+]
+},{
+slug:"ai-fraud",category:"ai-security",eyebrow:"AI × SECURITY / FRAUD",
+title:"不正検知AIは、『止める判断』まで持てるか。",
+dek:"不正スコアを出すだけでは守れない。決済拒否、入金保留、アカウント制限まで自動で行うとき、AIは分析から執行へ踏み込む。",
+thesis:"Fraud AIの難しさは検知精度ではない。『悪いものを止める』と『良い顧客を止めない』を同時に最適化することだ。",
+companies:["Stripe Radar","Fraud AI platforms"],
+depth:{current:"Level 3–4 — AI Decision / bounded execution",target:"Level 4 — Human-on-the-loop",human:"閾値設計、高額例外、顧客救済、Policy、監査"},
+sections:[
+{heading:"不正検知は、AIが強くなりやすい領域。",body:[
+"決済不正は大量の取引データとパターン変化を扱うため、機械学習と相性がいい。Stripe RadarはStripeネットワーク全体のデータを利用し、取引やアカウントをスコアリングして不正を判断する。",
+"2026年のRadarは、決済だけでなくBusiness accountやCustomer abuseまで対象を広げ、既存決済プロセッサからでもAPIでSignalsを利用できる構成を打ち出している。"
+]},
+{heading:"精度が高いだけでは、事業には使えない。",body:[
+"不正を厳しく止めればFraud lossは減る。しかし正当な顧客までブロックすれば売上が落ちる。逆に通しすぎれば損失が増える。",
+"だからFraud AIは、単純なAccuracy競争ではなく、False Positive、Revenue、Chargeback、運用コストを同時に最適化する問題になる。モデルの閾値そのものが事業判断だ。"
+]},
+{heading:"AIが『執行』すると責任が変わる。",body:[
+"スコア提示だけなら人間が最終判断できる。しかし、AIが取引拒否、Payout制限、Reserve設定まで自動で実行するなら、Agentは分析者ではなく業務権限者になる。",
+"ここでは自動化率を上げるほど、異議申し立てや救済導線が重要になる。止めるAIだけでなく、間違えたとき戻せる仕組みまで含めて設計する必要がある。"
+]},
+{heading:"日本企業でも、決済以外へ広がる。",body:[
+"EC、マーケットプレイス、サブスクだけでなく、アカウント乗っ取り、クーポン濫用、返品詐欺、無料トライアル悪用など、Fraudはサービス設計全体へ広がっている。",
+"AIが扱う範囲が広がるほど、不正対策部門だけでなく、CS、Finance、Productが同じPolicyを共有する必要が出てくる。"
+]}
+],
+sources:[
+{label:"Stripe Radar",url:"https://stripe.com/radar"},
+{label:"Stripe Radar — Japan",url:"https://stripe.com/jp/radar"},
+{label:"Stripe — How we built Radar",url:"https://stripe.com/blog/how-we-built-it-stripe-radar"}
+]
+}
 ];
 
 export const storyMap=Object.fromEntries(researchStories.map(s=>[s.slug,s])) as Record<string,ResearchStory>;
