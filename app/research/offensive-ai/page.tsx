@@ -178,7 +178,7 @@ export default function OffensiveAIResearchPage(){
         <section className="section section-tight">
           <div className="future-state">
             <p className="eyebrow">WHERE THIS GOES</p>
-            <h2>人間の仕事は「防御」から、 「AIによるサイバー防御の権限設計」へ。</h2>
+            <h2><span className="future-heading-line">人間の仕事は「防御」から、</span><span className="future-heading-line">「AIによるサイバー防御の権限設計」へ。</span></h2>
             <p className="future-intro">守り方が変わる。人間は作業の担い手から、AIに与える権限と境界を決める側へ。</p>
             <div className="future-evolution">
               <div className="future-phase future-phase-now">
