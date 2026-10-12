@@ -266,6 +266,321 @@ Object.assign(P,{
 "adobe-firefly":G("https://www.adobe.com/products/firefly.html","Creative production",3,4,"Creative Cloud + generative AI","Enterprise creative production","既存Adobe workflow内で生成AIを統制", "公開価格あり", "日本語UI/Docsあり",["Runway","Canva"])
 });
 
+
+const specialized:Record<string,Partial<Profile>>={
+"xbow-autonomous-pentest":{
+ capabilities:[
+  ["Autonomous attack reasoning","対象を観察しながら次に試す攻撃経路をAIが選ぶ。","Target / scope / observed responses","Exploit path / proof","人間Pentesterの探索","固定Scannerでは見つけにくい連鎖的な侵入経路を探せる。"],
+  ["Exploit validation","単にCVEを列挙せず、実際に成立するかを安全に実証する。","Candidate vulnerability","Validated finding / evidence","手動PoC","修正優先度を『本当に侵入できるか』で判断できる。"],
+  ["Retest loop","修正後に同じ経路を再検証する。","Remediated target","Pass / fail evidence","再診断の手配","攻撃→修正→再攻撃の周期を短くできる。"]
+ ],
+ useCases:[
+  ["外部Attack surface検証","公開資産が増え、どこから侵入できるか把握しきれない。","Domains / Apps / scope","Validated exploit paths","Security Engineering","年次Pentestの一部"],
+  ["AppSec連続検証","Releaseごとに手動Pentestできない。","Application build","Findings with proof","AppSec","手動PoC"],
+  ["修正後Retest","修正TicketをCloseしても本当に塞がったか不安。","Fixed target","Retest result","Vulnerability Management","再診断依頼"]
+ ],
+ differentiators:[
+  ["Attack reasoning loop","ScannerのRule実行ではなく、得られた結果から次の攻撃をAIが選ぶ。","Pentestの探索工程そのものを自律化する。",["Pentera","NodeZero"]],
+  ["Proof over alerts","脆弱性数ではなく侵入成立の証拠を返す。","修正優先度をRiskではなくExploitabilityへ寄せられる。",["Scanner","CSPM"]]
+ ],
+ limitations:["本番環境で許容する攻撃範囲の設計が必要","修正そのものは別Workflow/人間が担う","日本語Support・国内契約は要確認"],
+ integrations:["CI/CD","Ticketing","Security workflow"]
+},
+"pentera-validation":{
+ capabilities:[
+  ["Automated security validation","内部・外部・Cloudを継続的に攻撃Simulationする。","Assets / credentials / scope","Validated exposures","Point-in-time pentest","継続的なExposure validationへ移行できる。"],
+  ["Attack path prioritization","複数の弱点をつないでCritical assetまでの経路を示す。","Identity / network / vulnerabilities","Prioritized attack paths","CVSS中心の優先順位","実際のBusiness impactへ近い順で直せる。"],
+  ["Automated retest","修正後の検証を繰り返し自動化する。","Remediation changes","Closed / open validation","手動再診断","修正SLAを短縮できる。"]
+ ],
+ useCases:[
+  ["Enterprise exposure validation","Network/Cloud/Identityが複雑で診断が追いつかない。","Enterprise assets","Validated paths","CISO / VM","年次Pentest"],
+  ["Cloud posture proof","設定不備が本当に突破へつながるか知りたい。","Cloud assets","Exploit proof","Cloud Security","設定Scanner"],
+  ["Purple team validation","Detection controlが攻撃を捉えるか検証。","Attack techniques","Detection evidence","SOC","Manual purple team"]
+ ],
+ differentiators:[
+  ["Enterprise breadth","単一Appではなく企業全体の攻撃面を継続検証。","Exposure Managementの運用基盤になりやすい。",["XBOW","App pentest tools"]],
+  ["Repeatable validation","同じ攻撃を何度でも再現・比較できる。","Control改善を時系列で測定しやすい。",["Consulting pentest","Manual red team"]]
+ ],
+ integrations:["SIEM","SOAR","Ticketing","Cloud","Identity"]
+},
+"nodezero":{
+ capabilities:[
+  ["Autonomous pentest","Credential・Network・Cloudを横断して侵入経路を探索する。","Scope / credentials","Attack path evidence","Manual pentest","短時間で実侵入可能性を可視化。"],
+  ["Credential attack chaining","取得したCredentialを次の横展開へ利用する。","Identity / credential context","Privilege path","単発vulnerability scan","複数弱点の連鎖を証明。"],
+  ["Critical asset impact","Crown jewelまで到達できるかを示す。","Asset graph","Business-relevant path","脆弱性一覧","修正優先度が明確になる。"]
+ ],
+ useCases:[
+  ["Internal pentest","内部侵入後の横展開リスクを知りたい。","Internal scope","Attack graph","Security","Manual internal test"],
+  ["Cloud validation","Cloud/IAMの組み合わせリスクを確認。","Cloud/IAM","Validated path","Cloud Security","CSPM only"],
+  ["M&A/環境変更検証","Network変更後に新しい経路がないか確認。","Changed environment","Retest","IT/Security","Manual check"]
+ ],
+ differentiators:[
+  ["Attack-path proof","Credential chainを使いCritical assetまで実証。","単一findingより経営に説明しやすい。",["Vulnerability scanner","CSPM"]],
+  ["Fast repeatable pentest","自律実行を繰り返せる。","環境変更のたびに再検証できる。",["Consulting pentest","Red team"]]
+ ],
+ integrations:["Cloud","Identity","Ticketing","SIEM"]
+},
+"replit-agent":{
+ capabilities:[
+  ["Prompt-to-app build","要件からFrontend/Backendを生成し動くApplicationへ持っていく。","Natural-language brief","Running app","初期実装","非エンジニアでもPrototypeを作りやすい。"],
+  ["Database / auth setup","DBや認証を同じWorkspaceで設定する。","Data model / requirements","Connected backend","外部Service設定","App構築の前後工程を減らす。"],
+  ["Deploy in same environment","実装後そのままHosting/Deployへ進める。","Built app","Public deployment","別Cloud setup","Idea→公開までのTool移動を削減。"]
+ ],
+ useCases:[
+  ["社内Tool","Spreadsheet運用を簡単なAppへ変えたい。","Process / data","Internal app","Ops","Manual spreadsheet"],
+  ["新規事業Prototype","検証前に開発チームを大きく張れない。","Product brief","MVP","Business/Product","Outsourced prototype"],
+  ["Customer portal","小規模Web appを短期間で作る。","Requirements","Web app","SMB/Startup","Traditional build"]
+ ],
+ differentiators:[
+  ["Build + runtime in one place","Coding Agentと実行/Deploy環境が同居。","『生成したCodeを別環境へ持っていく』手間が少ない。",["Cursor","Claude Code"]],
+  ["Non-engineer accessibility","IDE知識が少なくても会話起点で作れる。","Engineering resourceが薄いTeamにも入口がある。",["Devin","Cursor"]]
+ ],
+ integrations:["Replit DB","Auth","Deploy","GitHub"]
+},
+"cursor-agent":{
+ capabilities:[
+  ["Repository-aware agent","既存Codebase全体を読み、複数Fileを横断編集する。","Repository / task","Code changes","Manual implementation","既存Product開発へ入りやすい。"],
+  ["Background / Cloud agents","別環境でTaskを並列実行する。","Issue / branch","PR / evidence","Developerの逐次作業","一人が複数Taskを監督できる。"],
+  ["IDE-native review loop","生成差分をEditor内で確認・修正する。","Agent diff","Reviewed code","Tool switching","Human reviewを残したままAgent化。"]
+ ],
+ useCases:[
+  ["Bug fix","再現条件は分かるが修正工数が積み上がる。","Issue / code","Patch / test","Engineer","Manual fix"],
+  ["Feature implementation","仕様の明確な機能を並列で進めたい。","Spec","PR","Product engineering","Sequential coding"],
+  ["Refactor/Test","品質改善Taskが後回し。","Repository","Refactor/tests","Platform team","Manual maintenance"]
+ ],
+ differentiators:[
+  ["IDE + agent continuity","Editorで考えたContextのままAgentへTaskを渡す。","CopilotとCloud agentを同じ開発体験で使える。",["Devin","Replit"]],
+  ["Existing-code focus","新規Appだけでなく大規模既存Repositoryに深く入る。","Professional engineerの本番Codebaseと相性が良い。",["Lovable","No-code builders"]]
+ ],
+ integrations:["GitHub","Terminal","Cloud agents","MCP"]
+},
+"devin":{
+ capabilities:[
+  ["Long-running software task","Issueを受けて計画・実装・検証を長時間進める。","Ticket / repository","PR / result","Engineer task ownership","人間が席を離れている間もTaskを進める。"],
+  ["Browser + terminal work","CodeだけでなくBrowser/CLIを使って調査・実行する。","Web / terminal / code","Completed workflow","Manual tool switching","Software taskの周辺作業も持てる。"],
+  ["Parallel delegated work","複数Devinへ別Taskを渡す。","Backlog","Parallel outputs","Single-developer queue","EngineerがManager的役割へ移れる。"]
+ ],
+ useCases:[
+  ["Backlog消化","明確なIssueが積み上がる。","Issues","PRs","Engineering","Manual backlog"],
+  ["Migration","Library/API変更を大量に適用。","Migration plan","Updated code","Platform","Manual repetitive changes"],
+  ["QA/Bug reproduction","Bug調査からFixまで往復が多い。","Bug report","Repro + fix","QA/Engineering","Manual triage"]
+ ],
+ differentiators:[
+  ["Task ownership model","補完ではなくTask単位で仕事を受ける。","人間の常時操作から離れやすい。",["GitHub Copilot","IDE copilots"]],
+  ["Tool-using engineer","Browser/Terminalを含めSoftware工程を横断。","Code生成だけで終わらない。",["Simple code generators","No-code"]]
+ ],
+ integrations:["GitHub","Browser","Terminal","Issue workflows"]
+},
+"clay-gtm":{
+ capabilities:[
+  ["Multi-source enrichment","多数のData providerをWaterfallで組み合わせる。","Company/contact list","Enriched records","手作業Research","GTM data準備を圧縮。"],
+  ["Claygent research","Webや公開情報をAIが調べ、条件判定・要約を行う。","Account / research question","Structured insight","SDR research","人手ResearchをScaleできる。"],
+  ["Sequencing / activation","Enriched dataからOutreachへ接続する。","Qualified records","Personalized sequence","CSV handoff","Research→接触を同一Workflow化。"]
+ ],
+ useCases:[
+  ["ABM list building","Target accountごとの情報収集が重い。","Account list","Prioritized accounts","RevOps","Manual research"],
+  ["Signal-based outbound","採用/資金調達等のTimingを拾いたい。","Signals","Triggered outreach","SDR","Periodic list"],
+  ["CRM enrichment","CRM dataが古く判断に使えない。","CRM records","Updated fields","Sales Ops","Manual cleanup"]
+ ],
+ differentiators:[
+  ["Composable GTM table","Data・AI・Logic・OutreachをSpreadsheet感覚で組む。","自社独自のGTM logicを構築しやすい。",["Apollo","ZoomInfo"]],
+  ["Claygent as research layer","定型Enrichmentで取れない情報をAI調査で埋める。","ニッチなSignal・定性情報まで構造化できる。",["Traditional databases","Static intent data"]]
+ ],
+ integrations:["Salesforce","HubSpot","Email","Webhooks","Data providers"]
+},
+"paradox-olivia":{
+ capabilities:[
+  ["Conversational apply","候補者がChatから応募・質問できる。","Candidate conversation","Application","Form-based apply","応募摩擦を減らす。"],
+  ["Screening automation","要件に基づいて初期Screeningする。","Answers / rules","Qualified candidate","Recruiter screening","大量採用の前処理を削減。"],
+  ["Interview scheduling","条件を満たした候補者へ面接枠を即提示。","Calendar / candidate","Booked interview","日程調整","応募から面接までの時間を短縮。"]
+ ],
+ useCases:[
+  ["Hourly hiring","応募数が多くRecruiterが追いつかない。","Applicants","Screened/booked candidates","Retail/Hotel HR","Manual screening"],
+  ["Hiring event","短期間に大量面接を設定。","Candidate pool","Schedules","Recruiting Ops","Email coordination"],
+  ["Candidate FAQ","同じ質問にRecruiterが繰り返し回答。","Policy/FAQ","Instant answers","HR","Manual response"]
+ ],
+ differentiators:[
+  ["Candidate conversation first","ATS画面ではなく会話を入口にする。","候補者体験と採用速度を同時に改善しやすい。",["Traditional ATS","Workday"]],
+  ["Screen-to-schedule continuity","Screening後すぐCalendarへつなぐ。","『応募後に待つ時間』を減らす。",["Point scheduling tools","Chatbots"]]
+ ],
+ integrations:["ATS","Calendar","HRIS","Messaging"]
+},
+"eightfold-talent":{
+ capabilities:[
+  ["Talent intelligence graph","Skill・経験・Roleの関係をAIでModel化する。","Profiles / jobs","Talent graph","Keyword matching","肩書だけでないMatchへ。"],
+  ["Internal mobility","社内人材とOpen role/ProjectをMatchする。","Employee skills","Mobility recommendations","Manager network","外部採用だけに頼らない。"],
+  ["Workforce planning","将来必要Skillと現在のGapを可視化。","Workforce data","Skill gap plan","Manual workforce analysis","人材戦略へAIを広げる。"]
+ ],
+ useCases:[
+  ["採用Search","Keywordでは候補者を見逃す。","Job/skills","Ranked talent","TA","Keyword search"],
+  ["社内異動","社内に適任者がいても見つからない。","Employee profiles","Internal matches","HRBP","Manager knowledge"],
+  ["Skill planning","将来必要Skillが曖昧。","Workforce/job data","Gap analysis","CHRO","Spreadsheet planning"]
+ ],
+ differentiators:[
+  ["Skill-centric model","Job titleよりSkill relationを中核に置く。","採用と社内Talentを同じModelで扱える。",["ATS","LinkedIn"]],
+  ["External + internal talent","採用だけでなくMobility/Planningへ広い。","人材DBを単発採用で終わらせない。",["Recruiting point tools","Sourcing tools"]]
+ ],
+ integrations:["HRIS","ATS","Career site","Enterprise data"]
+},
+"harvey-legal-ai":{
+ capabilities:[
+  ["Legal research","法律資料・案件資料を横断して論点を調査。","Legal documents / question","Cited analysis","Manual research","調査前処理を短縮。"],
+  ["Contract / document analysis","契約・大量文書の論点と差分を抽出。","Contracts / data room","Issue list / comparison","Junior review","Due diligenceをScale。"],
+  ["Drafting workspace","既存Template/ContextからDraftを生成・修正。","Matter context","Draft","First draft work","Legal professionalを判断へ寄せる。"]
+ ],
+ useCases:[
+  ["契約レビュー","大量契約を一次確認する。","Contracts","Issue summary","Legal","Manual first review"],
+  ["Due diligence","Data roomを短期間で読み込む。","Documents","Risk map","M&A legal","Manual review"],
+  ["Research memo","法的論点の調査に時間がかかる。","Question/sources","Memo","Lawyer","Manual research"]
+ ],
+ differentiators:[
+  ["Legal-domain workspace","法律実務のMatter/Document contextを前提に設計。","汎用Chatより法務Workflowに深く入る。",["ChatGPT Enterprise","Microsoft Copilot"]],
+  ["Professional-services orientation","Firm/法務のレビュー責任を残したままAIを組み込む。","完全自動結論ではなくExpert augmentationに寄る。",["Generic agents","Simple contract AI"]]
+ ],
+ integrations:["Document management","Enterprise knowledge","Legal workflows"]
+},
+"figure-helix":{
+ capabilities:[
+  ["Whole-body VLA control","視覚・言語・全身Controlを単一Policyへ統合。","Vision / instruction / proprioception","Whole-body action","個別motion program","歩行しながら両手作業を行える方向へ。"],
+  ["Dexterous manipulation","手・腕・Body balanceを協調して物体操作。","Object scene","Manipulation","固定Robot cell","人向け環境で作業しやすい。"],
+  ["Generalization","未知の環境・配置でもZero-shot適応を狙う。","New scene","Task execution","Site-specific programming","導入場所ごとの再Teachingを減らす可能性。"]
+ ],
+ useCases:[
+  ["工場Material handling","人向け設備で搬送・操作したい。","Factory scene","Physical task","Manufacturing","Manual labor"],
+  ["物流作業","棚・箱・道具が人間前提。","Warehouse","Pick/move","Logistics","Manual handling"],
+  ["家庭/Service","未知配置で複数Taskを行う。","Home scene","General task","Service robotics","Single-purpose robot"]
+ ],
+ differentiators:[
+  ["Human-environment compatibility","人型Bodyで既存の人間向け環境を使う。","設備側をRobot専用に作り直す必要を減らす可能性。",["Fixed arm","AMR"]],
+  ["Unified whole-body policy","歩行とManipulationを別Systemに分けない。","長い一連のPhysical taskをつなげやすい。",["Traditional humanoid stacks","Teleoperation"]]
+ ],
+ integrations:["Humanoid hardware","Vision","Robot policy stack"]
+},
+"nvidia-cosmos":{
+ capabilities:[
+  ["Vision reasoning","Real-world映像から物体・相互作用・意図を推論。","Video / image / sensor context","Reasoning","個別Vision model","Physical AI用理解基盤を共通化。"],
+  ["World generation","物理世界の複数Futureを生成しSimulationに使う。","Text/image/video/action","Synthetic worlds","実世界収集だけ","Rare scenarioを低Riskで増やす。"],
+  ["Action generation / policy backbone","Robot/AVのAction model学習基盤として使う。","Embodiment data","Policy action","Task-specific model from scratch","Physical AI学習をScale。"]
+ ],
+ useCases:[
+  ["Robot policy training","実機Dataだけでは不足。","Robot data","Trained policy","Robot R&D","Real-world-only collection"],
+  ["AV simulation","Rare caseを安全に大量生成。","Driving context","Synthetic scenarios","AV team","Physical testing"],
+  ["Industrial vision","Videoから異常/行動を理解。","Factory video","Reasoning/alerts","Manufacturing","Rule vision"]
+ ],
+ differentiators:[
+  ["Reasoning + world + action in one model family","理解・Simulation・Actionを同一Physical AI stackで扱う。","Robot開発の複数基盤を統合しやすい。",["Point world models","Standalone VLMs"]],
+  ["Open ecosystem / NVIDIA stack","Isaac/Jetson/Metropolis等とつながる。","日本のRobot/製造ecosystemへ入りやすい。",["Closed APIs","In-house stacks"]]
+ ],
+ integrations:["NVIDIA Isaac","Jetson","Metropolis","Simulation/robotics stack"]
+},
+"locus-array":{
+ capabilities:[
+  ["Autonomous mobile movement","AMRがContainer/Workを自律搬送。","Orders / facility map","Material movement","Human walking","移動工数を削減。"],
+  ["Robotic picking","Robot arm + perceptionでItem/Caseを扱う。","Items / vision","Picked goods","Human picking","Goods-to-personの先へ進む。"],
+  ["Fleet orchestration","複数RobotをOrder優先度に応じて配車。","WMS/orders","Optimized tasks","Manual dispatch","Throughputを施設全体で上げる。"]
+ ],
+ useCases:[
+  ["E-commerce fulfillment","多品種Pickingの人手依存が大きい。","Orders","Picked orders","3PL/EC","Manual picking"],
+  ["Case handling","Case単位作業を自動化したい。","Cases","Handled cases","Retail DC","Manual handling"],
+  ["Peak operation","繁忙期だけ人員確保が難しい。","Demand","Scaled fleet work","Warehouse","Temp labor"]
+ ],
+ differentiators:[
+  ["AMR + manipulation","移動支援だけでなくRobot armまで組み合わせる。","倉庫工程を一段深く自動化できる。",["AMR-only systems","Manual picking"]],
+  ["Brownfield-friendly direction","既存施設へ段階導入しやすいAMR思想。","巨大固定設備より移行を抑えやすい。",["Symbotic","Conveyor automation"]]
+ ],
+ integrations:["WMS","Warehouse controls","AMR fleet","Robotic arms"]
+},
+"symbotic-system":{
+ capabilities:[
+  ["High-speed case handling","高速Robot/ConveyorでCaseを搬送・順序制御。","Cases / orders","Sequenced outbound","Manual pallet/case work","大型DCのThroughputを上げる。"],
+  ["Dense automated storage","在庫を高密度に保管しSystemが位置を管理。","Inventory","Optimized storage","Traditional racking","Facility footprint効率を改善。"],
+  ["Facility orchestration","Storage・Robot・Orderを一つのSystemで制御。","WMS/orders","End-to-end flow","複数設備の個別制御","DC全体最適へ。"]
+ ],
+ useCases:[
+  ["Retail DC","大量Caseを店舗別に高速処理。","Store orders","Sequenced cases","Large retailer","Manual DC"],
+  ["Wholesale distribution","大規模在庫を自動保管・出荷。","Inventory/orders","Automated flow","Wholesale","Conventional automation"],
+  ["Network modernization","複数大型拠点を標準化。","Facility program","Standard automation","Enterprise logistics","Site-by-site systems"]
+ ],
+ differentiators:[
+  ["Facility-scale system","Robot製品ではなく大型DC全体を一体設計。","ThroughputとStorageを同時に最適化。",["Locus","Point robots"]],
+  ["High-volume case automation","Case単位の巨大Volumeに特化。","大手小売・卸のScaleで強みが出る。",["Exotec","AMR systems"]]
+ ],
+ integrations:["WMS","Warehouse infrastructure","Enterprise supply chain"]
+},
+"meta-ai-glasses":{
+ capabilities:[
+  ["First-person vision context","Cameraがユーザーと同じものを見てAIへContextを渡す。","Visual scene / voice","Contextual answer","Phone camera操作","『これ』を説明せず質問できる。"],
+  ["Hands-free voice interaction","眼鏡を外さずVoiceでAIを呼び出す。","Voice","Audio/display response","Phone unlock/app launch","AI呼び出し摩擦を下げる。"],
+  ["Translation / navigation context","周囲のText・場所を見ながら支援。","Scene / language / location","Guidance","Phone translation/navigation","移動中のHands-free利用に向く。"]
+ ],
+ useCases:[
+  ["旅行/翻訳","Phoneを取り出さず周囲を理解したい。","Scene/voice","Translation/guidance","Traveler","Phone translation"],
+  ["Field support","両手を使う作業中に情報を確認。","Visual task","Instructions","Field worker","Tablet/manual"],
+  ["Personal memory","見たもの・聞いたものをContextにしたい。","Daily context","Recall/answer","Consumer","Manual capture"]
+ ],
+ differentiators:[
+  ["AI shares your viewpoint","AIがユーザーの視界Contextを直接得る。","スマホよりInput操作を減らせる。",["Smartphone AI","Earbuds"]],
+  ["Socially wearable form","専用Gadget感を抑えた眼鏡形状。","日常利用時間を伸ばしやすい。",["Headsets","AI pins"]]
+ ],
+ integrations:["Meta AI","Camera","Audio","Mobile companion"]
+},
+"plaud-notepin":{
+ capabilities:[
+  ["Wearable capture","Pin/Clip/Wristで会話をすぐ録音。","Conversation audio","Recording","Phone操作","記録開始の摩擦を減らす。"],
+  ["Transcription + summary","音声を文字起こし・要約・Action item化。","Audio","Notes / tasks","Manual minutes","会議後処理を短縮。"],
+  ["Searchable memory","蓄積した会話を後から検索・質問する。","Past recordings","Recall / answer","Manual note search","個人のExternal memoryになる。"]
+ ],
+ useCases:[
+  ["会議","話しながらNotesを取りたくない。","Meeting audio","Minutes/tasks","Manager","Manual note"],
+  ["営業訪問","会話内容とNext actionを残したい。","Customer conversation","CRM-ready notes","Sales","Memory/manual memo"],
+  ["Interview","質問に集中し後で整理したい。","Interview audio","Transcript/summary","Researcher","Manual transcription"]
+ ],
+ differentiators:[
+  ["Dedicated wearable capture","Phoneを机に置くより常時持ちやすい。","Capture開始の行動コストが低い。",["Otter","Phone recorder"]],
+  ["Capture-to-memory workflow","録音で終わらず検索可能なKnowledgeへ。","過去会話をAI Contextとして再利用できる。",["Recorder","Transcription-only tools"]]
+ ],
+ integrations:["Plaud app","Export","AI templates"]
+},
+"rabbit-r1":{
+ capabilities:[
+  ["Voice-first AI interface","専用Button/VoiceでAIを即呼び出す。","Voice","Answer/action","Phone app launch","AI利用開始までの操作を減らす。"],
+  ["Camera vision","Cameraで見た対象についてAIへ質問。","Image/scene","Visual answer","Phone photo upload","現実世界をInputにしやすい。"],
+  ["Agent/computer interaction direction","AIが複数Tool/Computer操作へ進むOS思想。","Intent","Task result","Manual app navigation","App単位操作からIntent単位へ。"]
+ ],
+ useCases:[
+  ["Quick query","Phoneを開かずすぐ聞きたい。","Voice","Answer","Early adopter","Phone assistant"],
+  ["Visual question","目の前の物をAIに聞きたい。","Camera","Analysis","Consumer","Photo + chat"],
+  ["AI experiment","専用AI deviceの新しい操作系を試したい。","Intent","Agent result","Developer/enthusiast","Mobile app"]
+ ],
+ differentiators:[
+  ["Dedicated AI hardware","AIだけを呼び出す物理Device。","Phoneの通知・App構造から切り離した体験。",["Smartphone","ChatGPT app"]],
+  ["OS-level interaction experiment","『Appを選ぶ』より『目的を言う』思想。","次世代UIの実験として価値。",["Traditional mobile OS","Voice assistants"]]
+ ],
+ integrations:["rabbit OS","Camera","Cloud AI"]
+},
+"adobe-firefly":{
+ capabilities:[
+  ["Enterprise-safe generation","Image/Video等をAdobe ecosystem内で生成。","Prompt / assets","Creative media","External generation tools","既存Creative環境へ導入しやすい。"],
+  ["Creative Production","大量Resize/Variation/背景処理等をWorkflow化。","Assets / rules","Bulk variants","Manual production","量産工程を自動化。"],
+  ["Firefly Graph","Node-basedに生成・編集工程を再利用可能なFlowへする。","Models / nodes / assets","Reusable workflow","Prompt-by-prompt work","生成手順自体を資産化。"]
+ ],
+ useCases:[
+  ["広告Variation","媒体・市場別に大量差分が必要。","Master assets","Variants","Creative Ops","Manual resizing/editing"],
+  ["商品Creative","SKUごとの背景/素材制作が重い。","Product assets","Commerce media","Retail marketing","Photo editing"],
+  ["Enterprise AI standard","部署ごとの生成AI利用を統制したい。","Brand/model policy","Controlled AI workflow","IT/Creative","Shadow AI"]
+ ],
+ differentiators:[
+  ["Creative Cloud continuity","Photoshop/Premiere等既存制作環境と連続。","AIだけ別Toolに分断されにくい。",["Runway","Standalone AI tools"]],
+  ["Enterprise governance + IP posture","企業利用を意識した権利・管理設計。","大企業調達で説明しやすい。",["Consumer generators","Small AI vendors"]]
+ ],
+ integrations:["Photoshop","Illustrator","Premiere","Creative Cloud","Enterprise APIs"]
+}
+};
+
+for(const [slug,patch] of Object.entries(specialized)){
+  if(P[slug]) P[slug]={...P[slug],...patch} as Profile;
+}
+
 export const enrichProductCatalog=(p:BaseProduct)=>{
   if(p.decision) return p;
   const cfg=P[p.slug];
