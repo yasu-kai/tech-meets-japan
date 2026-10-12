@@ -1,6 +1,14 @@
 name: Editorial Audit
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "lib/data.ts"
+      - "lib/productCatalog.ts"
+      - "lib/editorialAudit.ts"
+      - "scripts/editorial-audit.mjs"
+      - "app/products/**"
   pull_request:
     paths:
       - "lib/data.ts"
