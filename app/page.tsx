@@ -21,15 +21,26 @@ export default function Home() {
             海外テクノロジープロダクトを、課題や用途から探す。比べる。使いどころを知る。<br className="desktop-only"/>
             TECH MEETS JAPANは、日本に入ってくるプロダクトを見つける独立系テックメディアです。
           </p>
-          <div className="hero-actions">
-            <Link href="/products" className="button button-accent">プロダクトを探す <ArrowRight size={17}/></Link>
-          </div>
-          <div className="hero-stats">
-            <div><strong>{products.length}</strong><span>Curated products</span></div>
-            <div><strong>{categoryCount}</strong><span>Technology categories</span></div>
-            <div><strong>{signals.length}</strong><span>Entry signals tracked</span></div>
-            <div><strong>Independent</strong><span>Editorial intelligence</span></div>
-          </div>
+          <Link href="/research/offensive-ai" className="home-feature-story">
+            <div className="home-feature-meta">
+              <span>FEATURE STORY 01</span>
+              <b>AI × SECURITY / OFFENSIVE AI</b>
+            </div>
+            <div className="home-feature-main">
+              <div>
+                <p className="home-feature-kicker">攻撃するAIは、どこまで自律化したのか。</p>
+                <h2>AIは、サイバー防御の<br/>どこまでを奪うのか。</h2>
+              </div>
+              <div className="home-feature-summary">
+                <p>擬似攻撃、ホール発見、対応策、意思決定、実行、再検証。XBOW、Pentera、Horizon3、MindFortなどを同じ業務サイクルに並べると、「AI Pentest」という一言では見えない差が出てくる。</p>
+                <p>重要なのは、AIが脆弱性を見つけられるかではない。<strong>人間に何をさせなくしようとしているか。</strong> Offensive AI市場の現在地を、AutomationとAutonomyの違いから読む。</p>
+              </div>
+            </div>
+            <div className="home-feature-footer">
+              <span>MARKET MAP / LONG-FORM REPORT</span>
+              <strong>特集を読む <ArrowRight size={18}/></strong>
+            </div>
+          </Link>
         </section>
 
         <section className="ticker-section editorial-themes-home">
