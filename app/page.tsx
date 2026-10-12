@@ -37,7 +37,7 @@ export default function Home() {
               <div className="home-feature-main">
                 <div>
                   <p className="home-feature-kicker">攻撃するAIは、どこまで自律化したのか。</p>
-                  <h2>AIは、サイバー防御のどこまでを奪うのか。</h2>
+                  <h2 className="home-feature-title"><span>AIは、</span><span>サイバー防御の</span><span>どこまでを奪うのか。</span></h2>
                 </div>
                 <div className="home-feature-summary">
                   <p>擬似攻撃から再検証まで、XBOW、Pentera、Horizon3、MindFortなどを同じ6工程に並べると、「AI Pentest」という一言では見えない差が浮かび上がる。</p>
