@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductExplorer from "@/components/ProductExplorer";
 import { products, signals, themes } from "@/lib/data";
+import { researchCategories } from "@/lib/research";
 
 export default function Home() {
   const featured = products.find(p => p.featured)!;
@@ -32,17 +33,24 @@ export default function Home() {
         </section>
 
         <section className="ticker-section">
-          <div className="ticker-label"><Activity size={15}/> LATEST JAPAN ENTRY SIGNALS</div>
-          <div className="ticker-grid">
-            {signals.slice(0,4).map(signal => (
-              <Link href="/signals" className="ticker-item" key={signal.date + signal.company}>
-                <div><span>{signal.date}</span><b>{signal.level}</b></div>
-                <strong>{signal.company}</strong>
-                <p>{signal.title}</p>
+          <div className="ticker-label"><Activity size={15}/> EDITORIAL THEMES</div>
+          <div className="home-theme-grid">
+            {researchCategories.map((category,i) => (
+              <Link href={"/research/" + category.slug} className="home-theme-item" key={category.slug}>
+                <div className="home-theme-top">
+                  <span>0{i+1}</span>
+                  <b>{category.shortLabel}</b>
+                </div>
+                <strong>{category.label}</strong>
+                <p>{category.description}</p>
+                <div className="home-theme-bottom">
+                  <span>{category.topics.length} STORIES</span>
+                  <ArrowRight size={15}/>
+                </div>
               </Link>
             ))}
           </div>
-          <Link href="/signals" className="text-link">すべてのシグナルを見る <ArrowRight size={16}/></Link>
+          <Link href="/research" className="text-link">すべてのテーマを見る <ArrowRight size={16}/></Link>
         </section>
 
         <section className="section">
