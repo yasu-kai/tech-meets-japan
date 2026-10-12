@@ -588,6 +588,170 @@ for(const [slug,patch] of Object.entries(specialized)){
   if(P[slug]) P[slug]={...P[slug],...patch} as Profile;
 }
 
+
+const researchedOverrides:Record<string,Partial<Profile>>={
+"heygen-avatar-video":{
+  source:"https://www.heygen.com/ja-jp/enterprise-api",
+  capabilities:[
+    ["Video Translation API","既存動画を175以上の言語・方言へ翻訳し、音声とLip-syncまでローカライズする。","既存動画 / 対象言語 / Transcript","翻訳済み動画","吹替収録・字幕制作・Lip-sync調整","海外展開のたびに撮り直す工程を大きく減らせる。"],
+    ["Video Agent API","社内WikiやKnowledge baseを入力に、AIが動画化する。","Wiki / Knowledge base / Prompt","説明・研修・Onboarding動画","企画→台本→Avatar動画の手作業","更新頻度の高いKnowledgeを動画へ継続変換できる。"],
+    ["Template / Batch API","編集可能なTemplateを使い、個別化動画をBatchで大量生成する。","Template / CRM・顧客Data / Script","個別化された大量動画","1本ずつの編集・書き出し","動画をCampaignやProductのInfrastructureとして組み込める。"],
+    ["Avatar / Voice stack","Avatar・Voice・Image・Music等をAPIから組み合わせる。","Avatar / Voice / Script / Assets","Production-ready video","撮影・ナレーション収録","Presenter動画の制作工程をAPI化できる。"]
+  ],
+  useCases:[
+    ["製品ローンチの多言語化","同じ製品動画を市場ごとに再収録している。","Master video / target locales","175+言語・方言のLocalized video","Global Marketing","吹替・字幕・再編集"],
+    ["研修動画の自動更新","社内Wiki更新のたびに動画も手直ししている。","Wiki / SOP / Knowledge base","更新版Training video","L&D","台本作成・Avatar動画制作"],
+    ["顧客別Onboarding","顧客名・Plan・利用機能ごとに説明動画を作り分けたい。","Template / customer data","Personalized onboarding video","Customer Success","個別編集"],
+    ["Product内動画生成","自社Serviceの中から動画を直接生成したい。","API request / assets","Rendered video","Product Team","外部制作Toolへの手動Export"]
+  ],
+  differentiators:[
+    ["Video infrastructure orientation","Avatar単体ではなく、Translation・Video Agent・Template・VoiceをAPIで提供する。","『動画を作るTool』より『動画生成を自社Workflowに埋め込む基盤』として評価できる。",["Synthesia","Runway"]],
+    ["Localization scale","175以上の言語・方言とLip-syncをEnterprise APIで扱う。","Global marketingやTrainingで、多言語版制作のOperationを圧縮できる。",["Runway","Traditional dubbing"]],
+    ["Agent-ready API","RESTに加えMCP・typed schemaを用意し、Agentから動画生成を呼び出せる。","AI Agentが動画を成果物として生成するWorkflowを作りやすい。",["Synthesia","Traditional video APIs"]]
+  ],
+  limitations:["映画的な編集・VFX・自由なScene generationはRunway系が向く","AvatarやVoiceを使う場合は本人同意・Brand ruleの運用が必要","大量生成ではAPI利用量・Concurrency・動画尺を含めたTCO確認が必要"],
+  pricing:{plans:[{name:"API Pay-as-you-go",monthly:"$5から開始可能",notes:"Video Agent / TTS / Generation / Translation等を利用"},{name:"Enterprise",monthly:"Contact Sales",notes:"高Concurrency・Reserved compute・Custom workflow"}],enterprise:"Contact Sales",api:"Pay-as-you-go + Enterprise",tco:"生成本数、尺、翻訳言語数、Avatar/Voice、Concurrencyで変動"},
+  japanese:{ui:"日本語公式ページあり",input:"日本語利用可",output:"日本語を含む多言語対応",docs:"英語中心＋日本語製品情報",support:"Enterpriseは個別確認",note:"日本語対応の有無より、固有名詞・敬語・Lip-sync品質を実動画で確認したい。"},
+  integrations:["REST API","MCP Server","HeyGen Skills","Webhooks","Batch API"],
+  enterprise:["SSO","Audit","Security"],
+  support:{level:"Self-serve / Enterprise",details:["Developer docs","API keyで即試用","EnterpriseはForward-deployed engineerによるCustom workflow対応"]},
+  automation:{domain:"Programmatic video production",current:3,target:4,decision:"Brand・内容・公開可否は人間。動画化・翻訳・個別化はAPI/Agentへ委任できる。",execution:"生成・翻訳・Batch renderingまで実行。",loop:"Partial",future:"Knowledge更新をTriggerにAgentが市場別動画を生成し、人間は承認中心へ。",assumption:"動画は制作担当者が1本ずつ編集・翻訳・書き出す前提。"},
+  bestFor:["多言語・大量・個別化されたPresenter動画をAPIで運用したい","自社ProductやWorkflowへ動画生成を埋め込みたい"],
+  notFor:["映画・CMの自由度高い生成編集が中心","APIではなく1本の作品品質だけを最優先する"]
+},
+"synthesia-enterprise-video":{
+  source:"https://www.synthesia.io/enterprise",
+  capabilities:[
+    ["Create → Publish workflow","Script・PowerPoint・Document・URL等から動画を作り、共同編集・管理・公開まで一つのPlatformで行う。","Script / PPT / Document / URL / Prompt","公開可能なEnterprise video","撮影・編集・別々の管理Tool","企業動画の制作から配信までを一本化できる。"],
+    ["Video Localization","既存動画を160以上の言語へ翻訳し、Review・編集・Viewer言語に応じた再生まで行う。","Source video / target languages","Localized video library","外部翻訳Vendor・再収録","Global trainingやProduct updateを同時展開しやすい。"],
+    ["Governance & Brand control","Versioning・Audit logs・Brand guardrails・SAML/SSOで組織利用を統制する。","Workspace / roles / Brand rules","Governed video operation","部門ごとの野良制作","Enterpriseで生成AI動画を標準化しやすい。"],
+    ["Interactive Sessions","Avatarと対話するRoleplay・Surveyを提供する。","Scenario / questions / Avatar","Interactive training / survey session","人間Coach・Interview","動画視聴だけでなく練習・Insight収集へ用途を広げる。"]
+  ],
+  useCases:[
+    ["全社Training","研修動画の制作・翻訳・更新が部門ごとに分断。","Policy / PPT / Script","Governed multilingual training","L&D","撮影・翻訳Vendor・LMS素材更新"],
+    ["Sales roleplay","営業会話の練習相手と評価者が不足。","Scenario / objection rules","Interactive Avatar session","Sales Enablement","人間Coachの一部"],
+    ["Global product update","Releaseごとに各国版を作り直している。","Master video / release notes","Localized updates","Product Marketing","再収録・字幕制作"],
+    ["Personalized video API","自社Dataから顧客ごとに動画を作りたい。","Customer data / Template","Personalized video","Product / CS","個別制作"]
+  ],
+  differentiators:[
+    ["Enterprise video lifecycle","Create・Translate・Manage・Publish・Engageを同一Platformで持つ。","動画生成Model単体ではなく、企業のVideo operation全体を置き換えやすい。",["HeyGen","Runway"]],
+    ["Governance depth","Audit logs、Brand guardrails、SAML/SSO、SOC2/GDPR/ISO42001を前面に出す。","Legal/ITが関与する大企業導入で説明しやすい。",["HeyGen","Consumer video tools"]],
+    ["Interactive Avatar Sessions","Roleplay・Surveyの双方向会話を動画Platform内に持つ。","L&DやResearchを『見る動画』から『対話する体験』へ広げる。",["Traditional e-learning","Static video"]]
+  ],
+  limitations:["広告・映画の自由な映像生成/編集を主目的にするとRunway等が向く","Stock/Synthetic Avatarの商用利用には用途別License制限があるためPaid広告等は事前確認が必要","Enterpriseの価値はGovernance込みなので小規模単発利用ではOverkillになり得る"],
+  japanese:{ui:"日本語利用は可能・UI範囲は要確認",input:"日本語Script対応",output:"日本語を含む160+言語Localize",docs:"英語中心",support:"Enterprise個別確認",note:"日本語音声品質だけでなく、Review workflowとLicense条件を用途別に確認。"},
+  integrations:["Video Creation API","Interactive Avatar API","Dubbing / Translation API","Enterprise SSO"],
+  enterprise:["SSO","Audit","Security"],
+  support:{level:"Enterprise strong",details:["Managed services","Team collaboration","Enterprise onboarding","AI governance / security"]},
+  automation:{domain:"Enterprise video operations",current:3,target:4,decision:"何を伝えるか・Brand/Legal承認は人間。制作・翻訳・Version管理の多くをPlatformへ移せる。",execution:"生成・翻訳・公開Workflowを実行。",loop:"Partial",future:"Source資料更新から多言語動画改訂・配信までHuman-on-the-loop化。",assumption:"企業動画は撮影・翻訳・管理・配信を別々のTool/Vendorで行う前提。"}
+},
+"minimax-multimodal":{
+  source:"https://www.minimax.io/news/minimax-h3-open-source",
+  capabilities:[
+    ["MiniMax H3 omni-modal video","Text・Image・Video・Audioを同時に理解し、Native stereo audio付きVideoを生成する。","Text / Image / Video / Audio context","4–15秒・最大2KのVideo + stereo audio","映像生成と音声生成の分離","映像と音を別工程で合わせる必要を減らす。"],
+    ["M3 / M2.x Agentic model","Long-context・Coding・Tool use・Multimodal understandingをAPIやAgentで提供する。","Messages / multimodal context / tools","Text / code / tool actions","単一用途LLM","VideoだけでなくAgent/Coding stackも同じVendorで選べる。"],
+    ["Speech API","WebSocketを含むTTS APIでStreaming音声を生成する。","Text / voice setting","Streaming speech","別TTS vendor","Realtime Voice機能を同じOpen Platformで組み込める。"],
+    ["Open Platform pricing","Language・Video・Speech等を同じAPI Platformで従量利用する。","API key / model request","Model response","複数Vendor契約","複数Modalの調達とBillingをまとめられる。"]
+  ],
+  useCases:[
+    ["映像＋音声を一体生成","動画生成後にBGM/Voiceを別Toolで足している。","Multimodal prompt / reference media","Native-audio video","Creative / Media","Video + audio別生成"],
+    ["AI Coding / Agent","CodingとTool useを自社Workflowへ入れたい。","Repository / tasks / tools","Code / tool actions","Developer team","単発Chat model"],
+    ["Realtime Voice","低Latencyな音声生成をServiceへ組み込みたい。","Text stream / voice settings","Streaming speech","Voice product","別TTS stack"],
+    ["Multi-model procurement","Text・Video・Speechを複数Vendorから買っている。","Mixed workloads","Single-platform model access","AI Platform team","複数Vendor管理"]
+  ],
+  differentiators:[
+    ["Full-modality model portfolio","Language・Video・Speech・Musicまで自社Model群を持つ。","単一のVideo SaaSではなく、複数ModalのModel providerとして比較すべき。",["Runway","ElevenLabs"]],
+    ["H3 native audio video","H3はVideo生成とNative stereo audioを一体で扱う。","映像と音の後工程を減らし、短尺コンテンツの完成度を一回の生成で上げられる。",["Silent video models","Separate audio stacks"]],
+    ["Open weights / local deployment direction","M2.x系でOpen weightsやLocal deploymentの選択肢を持つ。","API lock-inを抑えたいDeveloperには比較軸になる。",["Closed API models","SaaS-only tools"]]
+  ],
+  limitations:["H3は短尺4–15秒のVideo中心で、Enterprise制作Workflowそのものを提供する製品とは別物","Modelごとに能力・料金体系が異なるため『MiniMax全体』で一括比較すると誤解しやすい","日本語Support・国内契約・Enterprise governanceは個別確認が必要"],
+  pricing:{plans:[{name:"MiniMax H3 2K",monthly:"$0.13 / 秒",notes:"Video generation list price"},{name:"MiniMax H3 768P",monthly:"$0.08 / 秒",notes:"Video generation list price"},{name:"Language models",monthly:"Token従量",notes:"M3等はToken課金"}],enterprise:"Open Platform / Enterprise条件を確認",api:"Pay-as-you-go",tco:"Video秒数・解像度・Text token・Speech量をModal別に積算"},
+  japanese:{ui:"英語中心",input:"Modelにより日本語可",output:"Modelにより日本語可",docs:"英語中心",support:"要確認",note:"『日本語対応』を一括で書かず、M3/H3/Speechごとに実タスクで確認すべき。"},
+  integrations:["Open Platform API","WebSocket TTS","Open weights / local deployment options"],
+  automation:{domain:"Foundation models / multimodal generation",current:2,target:3,decision:"どのModelをどのTaskへ使うかは開発側。Model自体は生成・Tool useを担う。",execution:"Text/Code/Video/Speech生成と一部Tool action。",loop:"Partial",future:"Agentが複数ModalのModelを選び、生成・評価・Tool useをつなぐ。",assumption:"Text・Video・Speechは別々のAI Vendorを組み合わせる前提。"}
+},
+"applied-intuition-platform":{
+  source:"https://resource.applied.co/app-eng-candidates",
+  capabilities:[
+    ["Virtual vehicle testing","Simulation / Sensor simulationでADAS・Autonomyを実車外で検証する。","Scenario / sensor model / vehicle model / pass-fail rules","Simulation run / metrics / failure evidence","実車試験の一部","Rare caseを含む大量Scenarioを再現可能なSoftware testへ移せる。"],
+    ["VehicleOS / CoreOS","Safety-critical OSとPOSIX系OS、OTA・Diagnostics・Middleware・Networking等をCentral compute向けに提供する。","Vehicle hardware / SoC / ECU interfaces","Onboard vehicle software platform","OEMごとの基盤Software内製","SDVの土台をProgramごとにゼロから作る工数を削減する。"],
+    ["SIL / HIL infrastructure","Software-in-the-loop / Hardware-in-the-loopで車載Softwareを統合・検証する。","Vehicle software / virtualized hardware / HIL","Validation evidence","実機依存のIntegration test","Hardwareが揃う前から統合・検証を進められる。"],
+    ["Physical AI / Autonomy tooling","VLA・World model・Reconstruction等も含むPhysical AI開発基盤へ広げる。","Driving / robotics data","Training / evaluation workflow","個別Research stack","Simulation・Data・Onboard softwareを一社でつなげられる。"]
+  ],
+  useCases:[
+    ["ADAS Sensor validation","雨天など特定条件で検知性能を検証したい。","Sensor / scenario models","Pass-fail simulation","ADAS team","実車走行のみ"],
+    ["Vehicle software platform","複数車種・SoCでCore softwareを再利用したい。","Vehicle architecture / compute","VehicleOS","OEM platform team","Program別内製"],
+    ["Autonomous trucking","Autonomy stackの開発・検証Toolchainを整備したい。","Truck data / scenarios","Validated autonomy workflow","Autonomy team","自社Tool群"],
+    ["Pre-hardware integration","ECU/Hardware完成前にSoftware統合を進めたい。","Virtual platform / software","SIL/HIL validation","Vehicle software team","Hardware待ち"]
+  ],
+  differentiators:[
+    ["Simulation to onboard software breadth","SimulationだけでなくVehicleOS・Autonomy・Infrastructureまで持つ。","『検証Tool Vendor』ではなくSDV/Physical AI stack全体へ入り込める。",["dSPACE","Ansys"]],
+    ["Automotive production depth","OTA・Diagnostics・QNX/Linux/Android・SIL/HIL等Production vehicle softwareまで扱う。","Research prototypeではなく量産ProgramのSoftware architectureへ入りやすい。",["NVIDIA simulation","Point tools"]],
+    ["Japan OEM proof","ToyotaのSensor simulation、IsuzuのAutonomous trucking支援など日本OEMでの公開Use caseがある。","日本市場で『使えるか』を推測だけでなく実績ベースで見られる。",["New entrants","Generic simulation tools"]]
+  ],
+  limitations:["SaaSのような即日導入ではなく、OEM Program単位の重いIntegrationになりやすい","価格・契約はEnterprise個別見積で比較しづらい","価値がSimulation、VehicleOS、Autonomyで異なるため導入目的を絞らないと評価がぼやける"],
+  japanese:{ui:"製品により要確認",input:"日本語非依存",output:"日本語非依存",docs:"英語中心",support:"Tokyo office / 日本OEM支援実績あり",note:"日本語UIより、国内Postsales・Integration Engineerの支援範囲を確認する方が重要。"},
+  integrations:["Simulation pipelines","SIL/HIL","Vehicle hardware / ECUs","CI/CD","Cloud/HPC","VehicleOS"],
+  enterprise:["Security"],
+  support:{level:"High-touch enterprise",details:["Technical Customer Lead","Postsales Engineer","Integration Engineer","Onsite workshops / custom integration"]},
+  automation:{domain:"Vehicle software & autonomy development",current:3,target:4,decision:"Safety target・Release可否はOEM/Engineeringが保持。Simulation・Validation・一部Data workflowは自動化できる。",execution:"Scenario実行・Pass/Fail評価・Software validationまで深く実行。",loop:"Strong",future:"Real-world data→Scenario生成→Simulation→評価→Software改善のClosed loopへ。",assumption:"車両Softwareの検証は実車/実機が揃ってから始める前提。"}
+},
+"wayve-ai-driver":{
+  source:"https://wayve.ai/technology/av2-0/",
+  capabilities:[
+    ["End-to-end AI Driver","Camera・Radar等のSensor入力からDriving outputまでを単一のlearned AI Driverで扱う。","Camera / radar / vehicle context","Steering / braking / driving action","Sense-plan-act型の多数Module","手設計Module間のIntegration complexityを減らす。"],
+    ["Mapless generalization","HD mapや都市ごとの詳細Ruleへの依存を抑え、新しい都市・Roadへ展開する。","Live sensor input / learned world understanding","Driving in new geographies","City-by-city map build","地域展開前のMap作成・Rule tuning負荷を下げる思想。"],
+    ["Cross-vehicle adaptation","車両・Sensor構成をまたいで学習したDriving intelligenceを適用する。","Vehicle/sensor data","Vehicle-specific AI Driver","Vehicleごとのstack構築","OEM横展開を前提にできる。"],
+    ["Safety 2.0","World understandingとFail-operational / Redundancyを組み合わせてSafetyを設計する。","Driving context / safety constraints","Safe driving behavior","Rule-only safety layer","Long-tail scenarioへの対応を学習ベースで狙う。"]
+  ],
+  useCases:[
+    ["新都市へのAutonomy展開","都市ごとにHD mapとRuleを作ると展開コストが高い。","Fleet data / sensor feed","AI Driver deployment","Mobility operator","City-specific AV stack"],
+    ["OEM向けAI Driver","複数車種に自動運転Softwareを載せたい。","Vehicle interface / sensors","Integrated AI Driver","OEM","内製AV stack"],
+    ["Robotaxi","無人Ride-hailingで人間Driver依存を減らしたい。","Vehicle / city operation","Autonomous ride","Mobility platform","Human driver"],
+    ["Assisted driving","同じFoundation model思想を段階的なDriving automationへ使いたい。","Sensor data","Driving assistance","OEM","Rule-based ADAS"]
+  ],
+  differentiators:[
+    ["AV2.0 vs AV1.0","HD map・手書きRule・Modular stackではなくEnd-to-end learned AIを中核に置く。","Wayveを単なる『自動運転会社』ではなくAutonomy architectureの違いで比較できる。",["Waymo","Mobileye"]],
+    ["Generalization-first","都市・車両・Sensor・道路環境をまたぐGeneralizationを製品思想の中心に置く。","City-by-city deployment costを下げる可能性が最大の差分。",["Traditional AV1.0","Map-heavy autonomy"]],
+    ["Mapless deployment","HD mapを必須にしない。","新しい地域への展開準備を軽くできる可能性がある。",["HD-map-centric systems","Rule-based stacks"]]
+  ],
+  limitations:["Safety validation・法規・Liabilityが導入速度を決め、Software性能だけでは展開できない","Maplessでも車両Integration・Sensor calibration・地域検証は必要","一般企業向けSaaSではなくOEM/Mobility向けStrategic product"],
+  automation:{domain:"Autonomous driving",current:4,target:5,decision:"定義されたOperating条件でDriving判断をAIへ渡す。Service policy・Safety case・例外設計は人間。",execution:"Sensor入力からSteering/Brakingまで車両制御を実行。",loop:"Strong",future:"人間Driverが常時監視しないAutonomous mobilityを複数都市へScale。",assumption:"自動運転は都市ごとにHD mapと大量の手書きRuleを作り込む必要がある前提。"}
+},
+"sierra-agent-os":{
+  source:"https://sierra.ai/jp/product",
+  capabilities:[
+    ["Secure business actions","CRM・Order management等へ接続し、Subscription変更やWarranty申請などをAgentが実行する。","Customer request / authenticated account / policy","Updated subscription / submitted warranty / resolved action","Operatorの画面操作","Q&Aで止まらずResolutionまで自動化できる。"],
+    ["Single agent across channels","Chat・Voice・Email・SMS等へ同じAgentを展開する。","Conversation across channels","Consistent branded interaction","Channel別Bot/IVR","Channelごとの別設計を減らせる。"],
+    ["Agent Data Platform / Memory","過去会話とCRM・Billing・Inventory等の構造化Dataを統合し、継続Contextを持つ。","Conversation history / company data","Personalized next action","ConversationごとのContext reset","単発応答から継続RelationshipへAgentを進化させる。"],
+    ["Insights / Expert Answers","大量Conversationを分析し、失敗原因や改善点を見つけ、Knowledge更新へ戻す。","Conversation logs / outcomes","Issue diagnosis / new knowledge","人手QA・Sample review","Agent運用そのものを改善Loop化できる。"],
+    ["Agent Studio / SDK","No-code StudioとCode-based SDKの両方でJourney・Guardrail・Actionを定義する。","SOP / calls / goals / code","Production agent","Prompt-only configuration","CX担当とDeveloperの両方が同じAgent基盤を使える。"]
+  ],
+  useCases:[
+    ["契約・Plan変更","FAQ回答後にOperatorが別Systemで変更している。","Customer identity / subscription data","Changed plan","Customer Care","Operator action"],
+    ["返品・保証申請","注文確認・条件判定・申請が複数Systemに分かれる。","Order / warranty policy","Processed return / warranty","E-commerce CX","Manual workflow"],
+    ["24/7 Contact Center","電話・Chat・Emailで別々のTeam/Toolを使っている。","Cross-channel conversation","Unified resolution","CX Ops","Channel-specific support"],
+    ["Churn prevention","過去接点や利用状況を見て先回り提案したい。","History / billing / behavior","Next-best action","Retention team","Manual segmentation"]
+  ],
+  differentiators:[
+    ["Resolution over answer","Knowledge回答ではなくSystem of recordへ接続してActionまで行う。","Contact center自動化を『応答率』ではなく『解決率』で設計できる。",["FAQ chatbot","Basic RAG bot"]],
+    ["Memory + enterprise data","会話履歴とStructured dataをAgent Data Platformで継続Context化する。","問い合わせ単発処理からCustomer relationshipへ広げられる。",["Stateless bots","Point agents"]],
+    ["Build–run–improve loop","Ghostwriter/Studioで構築し、Insightsで失敗を分析、Expert AnswersでKnowledge改善へ戻す。","AI Agentを導入して終わりではなく運用改善までPlatform化している。",["Custom LLM stack","Point chatbot tools"]],
+    ["40+ prebuilt integrations","Agent Studioから多数の既成Integration＋Custom integrationを利用できる。","Backend actionの立ち上げを短縮できる。",["Custom agent framework","FAQ-only tools"]]
+  ],
+  limitations:["Action権限を渡すほどIdentity・Approval・Rollback設計が重要","高額補償・法的例外・感情的なEscalationはHuman handoff前提で設計すべき","Pricingが公開されておらずTCO比較には見積が必要"],
+  japanese:{ui:"日本語公式サイトあり",input:"多言語Agent対応",output:"多言語Agent対応",docs:"日本語製品情報あり",support:"Enterprise個別確認",note:"日本語対応そのものより、国内System連携・Voice品質・運用支援範囲をPoCで確認。"},
+  integrations:["40+ pre-built integrations","Custom integrations","CRM / order management / knowledge bases","Contact center","Agent SDK"],
+  enterprise:["Security"],
+  support:{level:"Enterprise",details:["Agent Studio","Agent SDK","Live Assist","Insights","Contact center handoff"]},
+  automation:{domain:"Customer experience operations",current:4,target:5,decision:"Journey・Guardrail・高リスク例外は人間が設定。定型判断と次ActionはAgentへ渡せる。",execution:"会話、System lookup、Subscription変更、Warranty等のActionまで実行。",loop:"Strong",future:"Conversation→Action→Outcome分析→Agent改善までClosed loop化し、人間はPolicyと例外に集中。",assumption:"Customer serviceはAgentが答えても、実際の処理は人間Operatorが行う前提。"}
+}
+};
+
+for(const [slug,patch] of Object.entries(researchedOverrides)){
+  if(P[slug]) P[slug]={...P[slug],...patch} as Profile;
+}
+
 export const enrichProductCatalog=(p:BaseProduct)=>{
   if(p.decision) return p;
   const cfg=P[p.slug];
