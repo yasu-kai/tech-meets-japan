@@ -88,11 +88,18 @@ const enrich=(p:BaseProduct,cfg:Profile)=>{
     decision:{
       differentiators:cfg.differentiators.map((d,i)=>({label:d[0],level:i===0?"固有":"特に強い",what:d[1],whyItMatters:d[2],comparedWith:d[3],evidence:cfg.source})),
       capabilities:cfg.capabilities.map((x,i)=>({
-        label:x[0],detail:x[1],level:i===0?"固有":"特に強い",input:x[2],inputDetails:["主要入力をそのまま取り込む","既存Workflowから段階的に接続可能"],
-        output:x[3],outputDetails:["人が確認・再利用できる成果物として返す","後工程へ渡せる形で出力"],
-        replaces:x[4],replacesDetails:["定型作業の工数を削減","複数ツール間の手作業を圧縮"],
-        whyItMatters:x[5],behaviorDetails:["単機能ではなく業務サイクル内で評価する","PoCでは人手との比較を取る"],
-        examples:[cfg.useCases[i%cfg.useCases.length]?.[0]||p.useCases[0],cfg.useCases[(i+1)%cfg.useCases.length]?.[0]||p.useCases[1]],confidence:"High"
+        label:x[0],
+        detail:x[1],
+        level: cfg.differentiators.some(d=>d[0]===x[0] && /独自|固有|唯一|専用|特有/.test(d[1]+d[2])) ? "固有" : "特に強い",
+        input:x[2],
+        output:x[3],
+        replaces:x[4],
+        whyItMatters:x[5],
+        examples:cfg.useCases
+          .filter(u=>[u[0],u[1],u[5]].join(" ").toLowerCase().includes(x[0].split(" ")[0].toLowerCase()) || i===0)
+          .slice(0,3)
+          .map(u=>u[0]),
+        confidence:"High"
       })),
       limitations:cfg.limitations,
       pricing:{
