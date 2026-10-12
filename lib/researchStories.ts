@@ -599,6 +599,307 @@ sources:[
 {label:"Uber Freight — Intelligent supply chains",url:"https://www.uberfreight.com/en-US/blog/new-era"}
 ]
 }
+,{
+slug:"finance-ai",category:"ai-industry",eyebrow:"AI × INDUSTRY / FINANCE",
+title:"金融AIは、分析補助から意思決定へ進めるか。",
+dek:"調査、モデリング、資料作成、リスク確認。Finance AIは、アナリストが情報を集める時間を削り、判断へ集中させる方向へ進んでいる。",
+thesis:"金融AIの価値は『答えを出すこと』より、判断に必要な証拠・計算・比較を一つの画面へ集約することにある。",
+companies:["Rogo","Finance AI platforms"],
+depth:{current:"Level 2–3 — AI Analyst / Agent",target:"Level 4 — Human-on-the-loop",human:"投資判断、顧客説明、リスク許容、署名・執行、規制責任"},
+sections:[
+{heading:"金融業務は、判断より前処理が長い。",body:[
+"企業分析、投資銀行、資産運用では、決算資料、Filings、社内メモ、マーケットデータを集め、比較し、モデルへ入れ、資料にまとめるまでに膨大な時間がかかる。",
+"RogoのようなFinance特化AIは、Research、Modeling、Reportingを一つのAgent体験へ寄せようとしている。汎用チャットではなく、金融データと業務フォーマットへ深く入る点が重要だ。"
+]},
+{heading:"正しさだけでなく、追跡可能性が必要。",body:[
+"金融では数値が一つ違うだけで意思決定が変わる。だから『もっともらしい説明』より、どの資料・どの期間・どの計算を根拠にしたかを追えることが重要になる。",
+"Agentが表やチャートを生成するほど、Citation、Data permission、Version管理が製品品質になる。"
+]},
+{heading:"人間に残るのは、意味付けとリスク。",body:[
+"同じデータを見ても、買収すべきか、投資すべきか、顧客に勧めるべきかはBusiness contextで変わる。AIは比較・計算・シナリオ生成を高速化できるが、最終判断の責任は人間に残る。",
+"その結果、ジュニアの仕事は情報収集から、仮説設定と検証へ移っていく可能性がある。"
+]},
+{heading:"日本では、Excelを消すより『Excelの前後』を消す。",body:[
+"金融機関でExcelそのものを一気に置き換えるのは難しい。むしろデータ収集、転記、更新、コメント作成をAgentが担い、既存モデルへ正しいデータを流す方が導入しやすい。",
+"AI導入のKPIはレポート本数ではなく、人間が判断に使える時間をどれだけ増やせたかで見るべきだ。"
+]}
+],
+sources:[
+{label:"Rogo",url:"https://rogo.ai/"},
+{label:"Rogo — Product design system",url:"https://design.rogo.ai/product"},
+{label:"Rogo — Product description",url:"https://design.rogo.ai/product/accordion"}
+]
+},{
+slug:"healthcare-ai",category:"ai-industry",eyebrow:"AI × INDUSTRY / HEALTHCARE",
+title:"医療AIで、最後まで人間に残る判断は何か。",
+dek:"記録、検索、患者説明、事前準備。Healthcare AIは診断置換より先に、医療従事者を事務作業から解放する方向で広がっている。",
+thesis:"医療AIの現実的な価値は『医師の代わり』ではない。医師が患者を見る時間を取り戻すことだ。",
+companies:["OpenAI for Healthcare","Healthcare AI ecosystem"],
+depth:{current:"Level 2 — AI Analyst",target:"Level 3–4 in bounded workflows",human:"診断、治療方針、患者説明、同意、緊急判断、最終責任"},
+sections:[
+{heading:"医療は、AIが強くても自律化しにくい。",body:[
+"医療では誤りの影響が大きく、患者ごとの状況も複雑だ。そのため『AIが診断して治療を決める』より、まずDocumentation、情報検索、紹介状、患者向け説明などの支援から導入が進む。",
+"OpenAI for Healthcareも、臨床・研究・事務のWorkflowを支援しながら、Enterprise securityやHIPAA対応を前提にする構成を取っている。"
+]},
+{heading:"最も大きな余地は、医療者の時間。",body:[
+"診療前の情報整理、診療後の記録、保険・紹介関連の文書作成は、患者と直接向き合わない時間を増やす。AIがここを圧縮すれば、医療の供給能力そのものを増やせる。",
+"AdventHealthでは、OpenAI活用で一部のAdministrative task時間を大きく削減した事例が公開されている。効率化がそのまま患者対応時間へ転換される点が重要だ。"
+]},
+{heading:"AIが扱うほど、Trusted sourceが重要になる。",body:[
+"医療情報はWeb検索の寄せ集めでは足りない。院内Protocol、患者情報、信頼できるClinical evidenceを権限付きで接続し、根拠を示す必要がある。",
+"Healthcare AIはモデル単体より、EHRや院内Knowledgeへ安全に接続できるかが価値を決める。"
+]},
+{heading:"日本では、診断AIより事務AIが先に広がる可能性が高い。",body:[
+"診療報酬、個人情報、医療安全の制約を考えると、いきなりClinical decisionを渡すより、記録・文書・予約・患者説明支援から入る方が現実的だ。",
+"人間に最後まで残るのは、患者個人の価値観まで含めた意思決定と責任だろう。"
+]}
+],
+sources:[
+{label:"OpenAI — OpenAI for Healthcare",url:"https://openai.com/index/openai-for-healthcare/"},
+{label:"OpenAI — Healthcare solutions",url:"https://openai.com/solutions/industries/healthcare/"},
+{label:"OpenAI — AdventHealth",url:"https://openai.com/index/adventhealth/"}
+]
+},{
+slug:"retail-ai",category:"ai-industry",eyebrow:"AI × INDUSTRY / RETAIL",
+title:"価格決定は、人間の勘からAIの推論へ移るか。",
+dek:"値付け、Markdown、在庫、補充。Retail AIは、過去実績だけでなく需要・在庫・価格弾力性をつないで意思決定を高速化する。",
+thesis:"Retail AIの面白さは予測ではない。予測を『価格を変える』『発注する』というActionへつなげられるかにある。",
+companies:["Blue Yonder","Retail planning AI"],
+depth:{current:"Level 2–3 — AI Analyst / Agent",target:"Level 4 — Human-on-the-loop",human:"ブランド価格戦略、例外、仕入れ関係、重大な価格変更、責任"},
+sections:[
+{heading:"価格は、いまだに人間の感覚が残る領域。",body:[
+"競合価格、在庫量、シーズン残日数、需要、粗利を全部見ながらSKU単位で価格を決めるのは難しい。そのため現場では横並びや経験則に頼る場面が残る。",
+"AI Pricingは、価格変更と需要変化の関係を学習し、商品・店舗・日付ごとにMarkdownや価格案を出す。ここでは人間の『勘』をデータで補強できる。"
+]},
+{heading:"本当の価値は、価格と在庫を別々に考えないこと。",body:[
+"価格を下げれば需要は増えるが、在庫が不足すれば機会損失になる。逆に在庫過多なら、早いMarkdownの方が最終利益を守れることもある。",
+"Blue YonderのPlanning系は、Allocation、Replenishment、Inventory、Supplier orderingなどを同じPlanning文脈で扱う方向へ進んでいる。"
+]},
+{heading:"AIが発注まで行うと、役割が変わる。",body:[
+"予測値を出すだけならAnalystだが、Pending orderを確認し、推奨し、条件内で発注へ進むならAgentになる。",
+"ここでも人間は例外、ブランド戦略、仕入れ先との関係、急激な市場変化を担当し、AIは日常的な大量判断を持つ構造になる。"
+]},
+{heading:"日本の小売ほど、実は余地が大きい。",body:[
+"店舗数・SKU数が多く、担当者の経験で調整している企業ではAIの効果が出やすい。一方で値付けがブランドイメージに直結する業態では、完全自動化は難しい。",
+"最初はClearanceや補充のように成功条件を定量化しやすい領域から始めるのが現実的だ。"
+]}
+],
+sources:[
+{label:"Blue Yonder — AI pricing",url:"https://now.blueyonder.com/AI-pricing-tailored"},
+{label:"Blue Yonder — 2026 Planning release",url:"https://es.blueyonder.com/release-announcements/1h-2026-release/cognitive-solutions-for-planning"},
+{label:"Blue Yonder — Retail decision speed",url:"https://blueyonder.com/blog/2026/retail-in-real-time-how-decision-speed-protects-margins"}
+]
+},{
+slug:"humanoid",category:"robotics",eyebrow:"ROBOTICS & PHYSICAL AI / HUMANOID",
+title:"Humanoidは、『人型』である必要が本当にあるのか。",
+dek:"FigureをはじめとするHumanoid各社が狙うのは、ロボット専用設備ではなく、人間向けに作られた世界をそのまま使うことだ。",
+thesis:"Humanoidの合理性は見た目ではない。工場・家・道具がすでに『人間サイズ』で設計されていることにある。",
+companies:["Figure","Humanoid ecosystem"],
+depth:{current:"Level 3 — Physical AI Agent",target:"Level 4–5 in bounded environments",human:"目的、安全Policy、例外、保守、重大判断"},
+sections:[
+{heading:"人型は、最適形状ではないかもしれない。",body:[
+"荷物を運ぶだけなら車輪の方が効率的で、溶接なら固定Robot armの方が速い。Humanoidが意味を持つのは、一つの作業最適ではなく、人間用に作られた複数環境をそのまま使える可能性にある。",
+"階段、棚、ドア、工具、キッチン。世界側を作り直さずRobot側が合わせる発想だ。"
+]},
+{heading:"FigureのHelixは、全身を一つのPolicyで動かそうとしている。",body:[
+"Helix 02はVision、Touch、Proprioceptionを使い、歩行・操作・バランスを連続した一つのSystemとして扱う。長時間のTaskをResetなしに行う方向が示されている。",
+"さらにHelix 2.5では、未知の家庭環境へ入ってZero-shotで作業するGeneralizationを狙う。Humanoidの競争軸はDemoの派手さより、場所が変わっても働けるかへ移っている。"
+]},
+{heading:"最大の壁は、器用さより信頼性。",body:[
+"工場や家庭で使うなら、100回中95回成功では足りない作業もある。人間と同じ空間で動く以上、安全性、故障時停止、物を壊さないことが重要になる。",
+"Physical AIはソフトウェアより失敗コストが高い。だから自律度の上昇と同時にSafety layerが必要になる。"
+]},
+{heading:"日本はHumanoidの実験場になり得る。",body:[
+"製造業、物流、介護、人手不足という条件が揃う一方、日本企業は産業Robotの経験も厚い。",
+"Humanoidが既存Robotを全部置き換えるのではなく、『設備を専用化するほど量がない仕事』から入る可能性が高い。"
+]}
+],
+sources:[
+{label:"Figure — Helix",url:"https://www.figure.ai/helix"},
+{label:"Figure — Helix 02",url:"https://www.figure.ai/news/helix-02"},
+{label:"Figure — Helix 2.5",url:"https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization"}
+]
+},{
+slug:"autonomous-driving",category:"robotics",eyebrow:"ROBOTICS & PHYSICAL AI / AUTONOMY",
+title:"自動運転のLevel思想は、他産業へ輸出される。",
+dek:"Waymoが示したのは、運転AIだけではない。『どこまで人間から責任を外せるか』をLevelで考える方法そのものが、AI産業全体へ広がり始めている。",
+thesis:"Autonomyを理解する最も強い問いは、『AIが何をできるか』ではなく『誰が失敗時の責任を持つか』だ。",
+companies:["Waymo","Autonomous Driving ecosystem"],
+depth:{current:"Level 4–5 in defined ODD",target:"Broader Level 4–5 operation",human:"Service design、Safety case、Remote assistance、Policy、例外"},
+sections:[
+{heading:"自動運転は、AI自律化の先行産業。",body:[
+"自動運転では昔から、運転支援と完全自律を同じ言葉で扱わない。人間が常時監視するのか、特定条件だけAIが運転するのか、人間なしで走るのかを分けて考えてきた。",
+"この考え方はCoding、Security、Customer Serviceにもそのまま使える。『AIができる』ではなく、『人間はまだ監視し続ける必要があるか』を見る。"
+]},
+{heading:"Waymoは、限定領域でHumanを外している。",body:[
+"Waymoは2026年、6th-generation DriverでFully autonomous operationを拡大し、複数都市で一般向け無人Ride-hailingを展開している。",
+"重要なのは、どこでも何でも運転できるAGIではなく、Operational Design Domainを定義し、その範囲でHuman driverを不要にしていることだ。"
+]},
+{heading:"SimulationがAutonomyを支える。",body:[
+"現実世界でRare caseをすべて試すことはできない。Waymo World ModelのようなSimulationは、実道路で遭遇しにくいScenarioを大量に作り、AIの行動を検証する。",
+"他業界のAgentでも同じ構造が必要になる。実行前にSandboxで試し、失敗条件を学習し、本番権限を段階的に広げる。"
+]},
+{heading:"日本にとって、これは遠い未来ではなくなった。",body:[
+"Waymoは2026年、日本交通とGOとともに東京で2027年の無人配車サービス商用化準備を発表した。",
+"つまりAutonomy Levelは海外の概念ではなく、日本のサービス設計・規制・保険・責任分界へ直接入ってくる。"
+]}
+],
+sources:[
+{label:"Waymo — 6th-generation Driver",url:"https://waymo.com/blog/2026/02/ro-on-6th-gen-waymo-driver/"},
+{label:"Waymo — World Model",url:"https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation/"},
+{label:"Waymo — Tokyo 2027",url:"https://waymo.com/blog/2026/09/opening-tokyo-in-2027-with-nihon-kotsu-go/"}
+]
+},{
+slug:"physical-ai-platforms",category:"robotics",eyebrow:"ROBOTICS & PHYSICAL AI / PLATFORM",
+title:"Physical AIの勝者は、ロボット企業か、基盤企業か。",
+dek:"NVIDIA Cosmos、Isaac、GR00T。Robot本体の競争の下で、Simulation・World Model・Training・Edge deploymentを握るPlatform競争が進む。",
+thesis:"Physical AIでは、Robot一台の知能より『学習を何台へ再利用できるか』がScaleを決める。",
+companies:["NVIDIA","Robot foundation model ecosystem"],
+depth:{current:"Level 2–3 — Platform intelligence",target:"Infrastructure for Level 4–5 robots",human:"Task definition、Safety、Deployment、Fleet governance"},
+sections:[
+{heading:"Physical AIには、LLM以上にデータが足りない。",body:[
+"Web上のTextと違い、Robotが必要とするのは、物体の位置、重さ、接触、動き、失敗など現実世界のDataだ。しかも実機で収集するのは高コストになる。",
+"NVIDIA CosmosはWorld generation、Vision reasoning、Action generationをまとめ、Synthetic dataとRobot policy学習を支える基盤を狙っている。"
+]},
+{heading:"Simulationが、Robot開発のCloudになる。",body:[
+"現実で千回失敗させる代わりに、Virtual environmentで大量Scenarioを作り、学習・評価する。IsaacやCosmosの価値は、Robotメーカーが一からSimulation stackを作らなくてよいことにある。",
+"これはPhysical AIにおけるInfrastructure layerだ。"
+]},
+{heading:"次の争点は、Robot fleetへのServing。",body:[
+"Robotが増えると、一台ごとに高性能GPUを持たせるのが最適とは限らない。NVIDIAのROSA研究は、複数Robotが共有GPU poolへアクセスし、工場全体の生産性を最大化するServing modelを示している。",
+"Physical AIは一台の賢さから、Fleet computingへ進む。"
+]},
+{heading:"日本企業はPlatform側でも重要になる。",body:[
+"NVIDIAは2026年、日本のFANUC、安川、川崎重工、富士通などがCosmos/Isaac/Jetson系のPhysical AI ecosystemへ参加する動きを発表した。",
+"日本の強みはHardwareだけではない。RobotとFactoryの実データを持つこと自体が、Foundation model時代の資産になる。"
+]}
+],
+sources:[
+{label:"NVIDIA — Cosmos 3",url:"https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai"},
+{label:"NVIDIA — Physical AI",url:"https://www.nvidia.com/en-us/ai/cosmos/"},
+{label:"NVIDIA — Japan Physical AI ecosystem",url:"https://nvidianews.nvidia.com/news/japans-robotics-and-manufacturing-leaders-build-on-nvidia-cosmos-to-advance-physical-ai-frontier?page=7"},
+{label:"NVIDIA Research — ROSA",url:"https://research.nvidia.com/publication/2026-07_rosa-robotics-foundation-model-serving-system-robot-factories"}
+]
+},{
+slug:"drones",category:"robotics",eyebrow:"ROBOTICS & PHYSICAL AI / DRONES",
+title:"ドローンは、『飛ぶカメラ』から作業主体へ進めるか。",
+dek:"点検、測量、警備、災害対応。DockとCloud controlが進むことで、ドローンは操縦される機体から、スケジュールで働く遠隔Robotへ変わる。",
+thesis:"Drone autonomyの本質は自動飛行ではない。人間が現地へ行かずに、観測→データ取得→異常確認を回せることだ。",
+companies:["DJI Enterprise","Autonomous drone ecosystem"],
+depth:{current:"Level 3–4 — Automated physical agent",target:"Level 4 — Human-on-the-loop",human:"飛行Policy、異常判断、整備、規制対応、重大Action"},
+sections:[
+{heading:"Droneは、操縦者から離れ始めている。",body:[
+"従来は操縦者が現場へ行き、飛ばし、撮影し、データを持ち帰った。DJI DockとFlightHub 2は、CloudからMissionを予約し、Droneが離陸・飛行・撮影・帰還・充電する運用を可能にする。",
+"これにより点検は『人が行く仕事』から『Remote operation』へ変わる。"
+]},
+{heading:"自動化しやすいのは、繰り返し点検。",body:[
+"送電線、Pipeline、屋根、橋梁、太陽光など、同じ場所を定期的に見る仕事はAutomationと相性がいい。",
+"Routeを再利用し、Visual/Thermal dataを蓄積すれば、時系列比較もしやすくなる。"
+]},
+{heading:"ただし、分析はまだ人間が多く残る。",body:[
+"飛行・撮影が自動でも、亀裂や異常をどう評価し、保守を実施するかは別工程だ。DJIのInspection workflowでも、画像を人間が確認するかThird-party model detectionへ渡す設計が多い。",
+"今後のAutomation Depthは、Flight autonomyより、Inspection decisionまで閉じられるかで決まる。"
+]},
+{heading:"日本では、人手不足と危険作業の両方に効く。",body:[
+"山間部、送電線、橋、工場など、移動コストや危険性が高い場所ほどRemote inspectionの価値が大きい。",
+"Droneが人間を完全に消すより、現場へ行く回数を劇的に減らすだけでも事業価値は十分に大きい。"
+]}
+],
+sources:[
+{label:"DJI Enterprise — Inspection",url:"https://enterprise.dji.com/inspection"},
+{label:"DJI Enterprise — Dock",url:"https://enterprise.dji.com/dock"},
+{label:"DJI — O4 Ground Station",url:"https://www.dji.com/media-center/announcements/dji-release-o4-ground-station"}
+]
+},{
+slug:"wearable-memory",category:"gadgets",eyebrow:"GADGETS & FUTURE DEVICES / MEMORY",
+title:"『全部覚えている』ウェアラブルは、便利か、怖いか。",
+dek:"Plaud NotePinのようなWearable AIは、会議メモから日常記憶へ近づく。『記録する』と『記憶する』の境界が薄くなる。",
+thesis:"Wearable Memoryの価値は録音ではない。過去の会話を、後から質問できる情報資産へ変えることだ。",
+companies:["Plaud NotePin","Wearable AI memory devices"],
+depth:{current:"Level 1–2 — Capture / AI Analyst",target:"Level 3 — Contextual memory agent",human:"録音許可、保存判断、削除、プライバシー、利用目的"},
+sections:[
+{heading:"メモを取る行為そのものが消える。",body:[
+"Plaud NotePinはPin、Clip、Wristbandなどで装着し、会話をHands-freeでCaptureし、Transcription、Summary、Action itemへ変換する。",
+"ここでの変化は文字起こしではない。人間が『これは重要だからメモしよう』と判断する前に、まず記録して後から意味を取り出せることだ。"
+]},
+{heading:"Memory deviceは、検索可能な人生ログへ近づく。",body:[
+"会議、商談、講義、現場会話を蓄積すれば、『先月あの人は何と言っていたか』『決定事項は何だったか』をAIへ聞ける。",
+"これはNotes appよりExternal memoryに近い。Contextが蓄積するほどAI Assistantの理解も深くなる。"
+]},
+{heading:"最大の壁は、周囲の人の権利。",body:[
+"Wearableが小さく自然になるほど、録音されていることに周囲が気づきにくい。製品側もRecording前に相手の同意を得るよう注意を促している。",
+"『自分の記憶を拡張する権利』と『他人に記録されない権利』が衝突する領域だ。"
+]},
+{heading:"日本では、仕事用途から広がる可能性が高い。",body:[
+"会議議事録、営業訪問、現場ヒアリングなど目的が明確な場面なら価値が説明しやすい。一方、常時Life-logは社会的受容のハードルが高い。",
+"まずは『録音ボタンを押した瞬間だけ記憶するAI』から普及し、その境界が少しずつ広がる可能性がある。"
+]}
+],
+sources:[
+{label:"Plaud — NotePin",url:"https://www.plaud.ai/products/plaud-notepin"},
+{label:"Plaud — NotePin S",url:"https://www.plaud.ai/products/plaud-notepin-s"},
+{label:"Plaud — AI memory capsule",url:"https://global.plaud.ai/blogs/articles/plaud-notepin-dual-mems"}
+]
+},{
+slug:"future-input",category:"gadgets",eyebrow:"GADGETS & FUTURE DEVICES / INPUT",
+title:"キーボードの次の入力装置は、何になる。",
+dek:"Voice、Vision、Gesture、EMG。AI時代は『文字を打つ』ことより、人間の意図をどう低摩擦で機械へ渡すかが重要になる。",
+thesis:"次世代Inputの勝者は、最も未来的なDeviceではない。人間が『操作している感覚』を最も消せるものだ。",
+companies:["Meta Neural Band","AI Glasses","Voice AI"],
+depth:{current:"Level 1–2 — New input modalities",target:"Level 3 — Context-aware multimodal control",human:"意図、確認、Privacy、誤操作修正"},
+sections:[
+{heading:"AIは、キーボードと相性が悪い部分がある。",body:[
+"生成AIへ長いPromptを書く行為は、自然言語を使っていても依然として『入力作業』だ。人間は本来、見て、話して、指差し、動きながら意図を伝える。",
+"AIがMultimodalになるほど、Input device側もText boxから離れる。"
+]},
+{heading:"Voiceは最も自然だが、すべての場所で使えない。",body:[
+"音声はHands-freeで速い。一方、オフィスや公共空間では話し続けるのが不自然な場面もある。",
+"そこでGestureやEMGのような静かなInputが意味を持つ。Meta Neural Bandは手首の筋電信号を使い、Glass interfaceを操作する方向を示している。"
+]},
+{heading:"最終形は、『入力しない』ことかもしれない。",body:[
+"AI Glassesが視線や周囲のContextを理解すれば、『これ何？』『次どう行く？』の“これ”を説明しなくてよくなる。",
+"Context-aware AIでは、Inputの一部をSensorが代行する。ユーザーが毎回情報を明示的に渡す必要がなくなる。"
+]},
+{heading:"日本では、公共空間で使えるInputが強い。",body:[
+"電車、オフィス、店舗など人の近くで使う場面が多い日本では、常時Voiceより小さなGestureや視線の方が社会的に受け入れやすい可能性がある。",
+"未来のDeviceを見るときは、画面サイズではなく『意図を伝えるために何動作必要か』で比較すると面白い。"
+]}
+],
+sources:[
+{label:"Meta — Ray-Ban Display and Neural Band",url:"https://about.fb.com/news/2025/09/meta-ray-ban-display-ai-glasses-emg-wristband/"},
+{label:"Meta — AI glasses in Japan",url:"https://about.fb.com/ja/news/2026/08/meta-glasses-launch-in-japan/"}
+]
+},{
+slug:"weird-gadgets",category:"gadgets",eyebrow:"WTF / GADGET",
+title:"なんだこれwww — 海外の変態ガジェットを拾う。",
+dek:"AI Pin、AI Glasses、Wearable recorder、AI専用端末。完成度より『なぜそれを専用ハードにしたのか』を見ると、次のUIが見えてくる。",
+thesis:"変なガジェットは、失敗しても価値がある。既存スマホでは解けないと誰かが感じた『摩擦』を可視化しているからだ。",
+companies:["Plaud","rabbit","Meta","AI-native hardware"],
+depth:{current:"Experimental",target:"Unknown — category formation",human:"採用判断、Privacy、習慣化、用途発見"},
+sections:[
+{heading:"変なHardwareは、未来の失敗作か、先行指標か。",body:[
+"新しいDeviceは、最初から完成されたCategoryとして現れない。スマホもWearableも、初期には『これ何に使うの？』という製品が大量に出た。",
+"AI Hardwareも同じで、Pin、Pendant、Glasses、専用Buttonなど、既存のPhoneとは違う入口を各社が試している。"
+]},
+{heading:"見るべきは、スペックではなく『消したい摩擦』。",body:[
+"Plaud NotePinはメモを取る動作を消そうとする。rabbit r1はAppを探して操作する手順を消そうとする。AI GlassesはPhoneを取り出してCameraを向ける動作を消そうとする。",
+"専用Hardwareの存在理由は、AI性能ではなく『この1アクションをなくしたい』という設計思想にある。"
+]},
+{heading:"失敗製品からも、Categoryの学習が進む。",body:[
+"Humane Ai Pinのように市場から退場する製品があっても、『常時AI』『Screenless』『Voice-first』への需要仮説そのものが消えるわけではない。",
+"次の企業は、Battery、熱、価格、Latency、Social acceptanceといった失敗原因を学習して再挑戦する。"
+]},
+{heading:"TECH MEETS JAPANでは、ここを遊び枠にする。",body:[
+"全部をAutomation Depthで重く読む必要はない。たまに『何これwww』から入り、なぜ作ったのか、日本で誰が使いそうか、普及障壁は何かを見る。",
+"変態ガジェット枠は、未来のCategoryが生まれる直前を拾うためのアンテナでもある。"
+]}
+],
+sources:[
+{label:"Plaud — NotePin",url:"https://www.plaud.ai/products/plaud-notepin"},
+{label:"rabbit — r1",url:"https://www.rabbit.tech/rabbit-r1"},
+{label:"Meta — AI Glasses",url:"https://about.fb.com/news/2026/05/ray-ban-meta-ai-glasses-launch-in-japan/"}
+]
+}
 ];
 
 export const storyMap=Object.fromEntries(researchStories.map(s=>[s.slug,s])) as Record<string,ResearchStory>;
