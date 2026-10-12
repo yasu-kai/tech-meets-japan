@@ -90,15 +90,15 @@ const enrich=(p:BaseProduct,cfg:Profile)=>{
       capabilities:cfg.capabilities.map((x,i)=>({
         label:x[0],
         detail:x[1],
-        level: cfg.differentiators.some(d=>d[0]===x[0] && /独自|固有|唯一|専用|特有/.test(d[1]+d[2])) ? "固有" : "特に強い",
+        level:"特に強い",
         input:x[2],
         output:x[3],
         replaces:x[4],
         whyItMatters:x[5],
-        examples:cfg.useCases
-          .filter(u=>[u[0],u[1],u[5]].join(" ").toLowerCase().includes(x[0].split(" ")[0].toLowerCase()) || i===0)
-          .slice(0,3)
-          .map(u=>u[0]),
+        examples:[
+          cfg.useCases[i%cfg.useCases.length]?.[0] || p.useCases[i%p.useCases.length] || x[0],
+          cfg.useCases[(i+1)%cfg.useCases.length]?.[0] || p.useCases[(i+1)%p.useCases.length] || x[0]
+        ],
         confidence:"High"
       })),
       limitations:cfg.limitations,
