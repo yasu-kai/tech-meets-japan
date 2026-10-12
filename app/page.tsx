@@ -16,7 +16,7 @@ export default function Home() {
       <main>
         <section className="hero">
           <div className="hero-badge"><span></span> JAPAN ENTRY INTELLIGENCE PLATFORM</div>
-          <h1>世界の次を、 <em>日本の選択肢に。</em></h1>
+          <h1><span className="hero-line">世界の次を、</span><span className="hero-line"><em>日本の選択肢に。</em></span></h1>
           <p className="hero-copy">
             海外テクノロジープロダクトを、課題や用途から探す。比べる。使いどころを知る。 
             TECH MEETS JAPANは、日本に入ってくるプロダクトを見つける独立系テックメディアです。
