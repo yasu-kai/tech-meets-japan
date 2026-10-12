@@ -1,3 +1,5 @@
+import { additionalProducts, enrichProductCatalog } from "./productCatalog";
+
 export type CompanyIntelligence = {
   snapshot?: { label: string; value: string; note?: string }[];
   japanCustomers?: string[];
@@ -544,7 +546,7 @@ export type Product = {
   decision?: ProductDecisionData;
 };
 
-export const products: Product[] = [
+const rawProducts: Product[] = [
   {slug:"runway-ai-video",name:"Runway AI Video Platform",provider:"Runway",companySlug:"runway",country:"United States",category:"Creative AI",tagline:"撮影・編集・VFXの一部を、生成AIの制作フローへ。",description:"映像生成、編集、Transformation、Character performanceなどを一つの制作環境で扱うAI映像プラットフォーム。",fitScore:94,japanStatus:"Japan expansion",entryStage:"Scaling",useCases:["広告動画","プリビズ","SNSクリエイティブ","IP・ゲーム映像"],targetUsers:["広告・制作会社","ブランドマーケ","ゲーム・IP","放送・映像"],alternatives:["Adobe Firefly","Google Veo","OpenAI video","Higgsfield"],
   useCaseDetails:[
     {title:"広告動画",situation:"既存CMや商品素材はあるが、媒体別・訴求別の動画案が足りない。",input:"商品画像 / 既存CM / ブランドガイド / コピー案",output:"15〜30秒動画 / 縦型短尺 / 背景・商品差し替え版",user:"広告制作 / ブランドマーケ / Creative Tech",replaces:"追加撮影 / 一部VFX / B案・C案制作",kpi:["1本あたり制作時間","案数/週","1成果物あたり生成回数","撮影・外注削減額"],whyThis:["Alephで既存映像の差し替えができる","生成→編集→Upscaleまで同一環境","Enterprise統制でブランド運用に載せやすい"],notFor:["1本の最高品質CMだけを作る案件","生成AI利用不可のブランド"]},
@@ -766,6 +768,9 @@ examples:["既存IPキャラに人の演技を転写","非人間キャラを自�
   {slug:"shield-hivemind",name:"Hivemind",provider:"Shield AI",companySlug:"shield-ai",country:"United States",category:"Defense AI",tagline:"通信・GPS制約下でも動くAI Pilot。",description:"無人航空機・ドローン向けの自律飛行AI Pilot / autonomy stack。",fitScore:78,japanStatus:"Japan BD expansion",entryStage:"Entering",useCases:["自律無人機","協調飛行","監視","防衛AI"],targetUsers:["防衛","重工","航空宇宙","政府"],alternatives:["Anduril系","自社autonomy stack"],tags:["Defense Tech","AI Pilot","Autonomy"],website:"https://shield.ai"}
 ];
 
+
+
+export const products: Product[] = [...rawProducts, ...(additionalProducts as Product[])].map(p=>enrichProductCatalog(p) as Product);
 
 export const japanFitWeights = {
   "課題への刺さり": 25,
