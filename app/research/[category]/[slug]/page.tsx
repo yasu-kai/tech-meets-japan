@@ -11,22 +11,19 @@ function sourceContext(story:ResearchStory,label:string){
     .map(x=>x.trim())
     .filter(x=>x.length>2 && !["Product","Platform","Solutions","Enterprise","Newsroom","Blog"].includes(x));
 
-  let best:{heading:string;body:string;score:number}|null=null;
+  let best:{heading:string;score:number}|null=null;
 
   for(const section of story.sections){
-    for(const body of section.body){
-      const score=rawTerms.reduce((n,term)=>n+(body.toLowerCase().includes(term.toLowerCase())?1:0),0);
-      if(score>0 && (!best || score>best.score)) best={heading:section.heading,body,score};
-    }
+    const sectionText=[section.heading,...section.body].join(" ").toLowerCase();
+    const score=rawTerms.reduce((n,term)=>n+(sectionText.includes(term.toLowerCase())?1:0),0);
+    if(score>0 && (!best || score>best.score)) best={heading:section.heading,score};
   }
 
   if(!best){
-    return `この記事で扱った「${label}」の機能・提供方針を確認できる公式情報。本文の整理とあわせて、一次情報側の表現・仕様も確認できます。`;
+    return `この記事で扱った「${label}」の機能・提供方針を確認できる公式情報です。記事内の整理と、公式側の最新説明・仕様を見比べられます。`;
   }
 
-  const firstSentence=(best.body.split("。")[0]||best.body).trim();
-  const trimmed=firstSentence.length>88 ? firstSentence.slice(0,88)+"…" : firstSentence;
-  return `本文「${best.heading}」で触れた「${trimmed}」に対応する一次情報。記事内の整理を、公式側の説明で確認できます。`;
+  return `本文「${best.heading}」で扱った論点に対応する一次情報です。記事内の整理を、公式側の機能説明・仕様・提供方針で確認できます。`;
 }
 
 export function generateStaticParams(){
@@ -80,12 +77,14 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
             <p className="eyebrow">PRIMARY SOURCES</p>
             <h2>公開情報を確認する。</h2>
             <div>
-              {story.sources.map(source=><a className="story-source-link" key={source.url} href={source.url} target="_blank" rel="noreferrer">
+              {story.sources.map((source,index)=><a className="story-source-link" key={source.url} href={source.url} target="_blank" rel="noreferrer">
+                <div className="story-source-index">{String(index+1).padStart(2,"0")}</div>
                 <div className="story-source-copy">
                   <strong>{source.label}</strong>
+                  <div className="story-source-context-label">本文との対応</div>
                   <p>{sourceContext(story,source.label)}</p>
                 </div>
-                <ArrowRight size={16}/>
+                <div className="story-source-action"><span>公式情報を見る</span><ArrowRight size={16}/></div>
               </a>)}
             </div>
             <p className="research-note">TECH MEETS JAPANによる公開情報ベースの編集・整理。各社の機能、提供地域、仕様は更新される可能性があります。</p>
