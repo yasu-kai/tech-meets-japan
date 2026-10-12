@@ -1326,8 +1326,15 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
 .home-feature-main h2,
 .offsec-report .section-heading h2{
   text-wrap:balance;
-  word-break:keep-all;
-  overflow-wrap:normal;
+}
+
+.page-hero h1,
+.offsec-hero h1,
+.story-hero h1,
+.section-heading h2,
+.offsec-report .section-heading h2{
+  word-break:normal;
+  overflow-wrap:break-word;
 }
 @media(max-width:720px){
   .hero h1 .hero-line{
@@ -1350,4 +1357,20 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
 }
 @media(max-width:900px){
   .home-feature-title span{white-space:normal}
+}
+
+/* Article hero headline containment */
+.offsec-hero h1{
+  max-width:1080px;
+  font-size:clamp(54px,7.2vw,96px);
+  line-height:.94;
+  letter-spacing:-.06em;
+  overflow:hidden;
+}
+.story-hero h1{
+  max-width:1080px;
+  overflow:hidden;
+}
+@media(max-width:900px){
+  .offsec-hero h1{font-size:clamp(44px,9vw,72px)}
 }
