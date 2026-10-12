@@ -18,7 +18,7 @@ export default function ResearchPage() {
         <section className="section section-tight">
           <div className="section-heading">
             <div><p className="eyebrow">THEMES</p><h2>6つのテーマから掘る。</h2></div>
-            <span className="queue-count">30 STORIES IN QUEUE</span>
+            <span className="queue-count">30 STORIES</span>
           </div>
 
           <div className="research-category-grid">
