@@ -1378,3 +1378,13 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
 .future-heading-line{
   display:block;
 }
+
+.market-report-title span{
+  display:block;
+}
+.market-report-title{
+  max-width:1120px!important;
+  font-size:clamp(44px,6.2vw,82px)!important;
+  line-height:.94!important;
+  letter-spacing:-.055em!important;
+}
