@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { ArrowUpRight, Building2, Check, GitCompareArrows, Sparkles, Languages, Headphones, Plug, ShieldCheck, WalletCards, Replace, Rocket, LockKeyhole, Workflow, BrainCircuit } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { calculateJapanFit, dimensionScore, companies, products } from "@/lib/data";
+import { calculateProductJapanFit, dimensionScore, companies, products } from "@/lib/data";
 
 export function generateStaticParams(){ return products.map(p=>({slug:p.slug})); }
 
@@ -12,7 +12,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   if(!product) notFound();
   const company=companies.find(c=>c.slug===product.companySlug);
   const intel=company?.intelligence;
-  const calculatedFit=calculateJapanFit(product.companySlug) ?? product.fitScore;
+  const calculatedFit=calculateProductJapanFit(product);
   const levelRank = (level?: string) => level==="固有" ? 0 : 1;
   const sortedDifferentiators = [...(product.decision?.differentiators || [])]
     .filter(x=>x.level!=="他でもできる")
