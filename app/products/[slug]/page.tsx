@@ -210,7 +210,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
         {product.decision?.differentiators && (
           <section className="section section-tight product-analysis differentiation-section">
             <div className="section-heading">
-              <div><p className="eyebrow">WHY THIS PRODUCT</p><h2>他でもできる。<br/>それでも、これを選ぶ理由。</h2></div>
+              <div><p className="eyebrow">WHY THIS PRODUCT</p><h2>他でもできる。 それでも、これを選ぶ理由。</h2></div>
               <p>「機能がある」ではなく、「他と比べて何が違うか」で見る。</p>
             </div>
             <div className="differentiator-list">
