@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Search, SlidersHorizontal } from "lucide-react";
-import { productCategories, products } from "@/lib/data";
+import { calculateProductJapanFit, productCategories, products } from "@/lib/data";
 
 export default function ProductExplorer({ compact = false }: { compact?: boolean }) {
   const [query, setQuery] = useState("");
@@ -38,7 +38,7 @@ export default function ProductExplorer({ compact = false }: { compact?: boolean
           <Link href={"/products/"+product.slug} className="company-card" key={product.slug}>
             <div className="company-card-top">
               <div className="company-monogram">{product.name.slice(0,2).toUpperCase()}</div>
-              <div className="score"><strong>{product.fitScore}</strong><span>Japan Fit</span></div>
+              <div className="score"><strong>{calculateProductJapanFit(product)}</strong><span>Japan Fit</span></div>
             </div>
             <p className="eyebrow">{product.category} · by {product.provider}</p>
             <h3>{product.name}</h3>
