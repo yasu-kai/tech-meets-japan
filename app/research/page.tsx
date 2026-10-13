@@ -48,7 +48,7 @@ export default function ResearchPage() {
             <div className="published-feature-icon"><ShieldCheck size={34}/></div>
             <div>
               <p className="eyebrow">AI × SECURITY / MARKET MAP</p>
-              <h3>AIは、サイバー防御のどこまでを奪うのか。</h3>
+              <h3>AIは、サイバー防御のどこまでを担うのか。</h3>
               <p>攻撃 → 発見 → 対策 → 判断 → 実行 → 再検証。各社をAutomation DepthとAutonomyの違いから読む。</p>
             </div>
             <ArrowRight size={22}/>
