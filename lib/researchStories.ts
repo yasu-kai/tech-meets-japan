@@ -1187,6 +1187,60 @@ sources:[
 ]
 }
 
+,{
+slug:"bridge-ultrasound-bci",category:"gadgets",eyebrow:"GADGETS & FUTURE DEVICES / NEUROTECH",
+title:"脳にチップを埋めない。BCIの次の賭けは、超音波だ。",
+dek:"Neuralinkが脳内電極で高解像度の信号を取る一方、Bridge Neurotechは頭蓋骨の外から超音波で脳血流を読み、AIで意図へ変換しようとしている。勝負は『どこまで読めるか』だけではない。BCIを、何人まで届けられるかだ。",
+thesis:"Bridgeの本質は、非侵襲であることそのものではない。Butterflyの半導体超音波とAI decodingを組み合わせ、これまで『信号品質を取るなら手術が必要』だったBCIのTrade-offを崩せるかにある。",
+companies:["Bridge Neurotech","Butterfly Network","Merge Labs","Neuralink","Synchron","Neurable"],
+depth:{current:"Research stage — observational human study",target:"Wearable non-invasive BCI",human:"意図の確認、誤認訂正、Privacy、医療判断、高Risk操作"},
+sections:[
+{heading:"BCIは、ずっと『信号品質か、非侵襲か』の二択だった。",body:[
+"脳のIntentをComputerへ直接渡すBCIは、長く同じTrade-offを抱えてきた。脳内へ電極を置けば高いSignal-to-noise ratioと速い応答を狙えるが、手術が必要になる。頭の外から読むEEGはWearableにしやすい一方、頭蓋骨や皮膚を通る間にSignalが弱まり、空間分解能や深部Signalに制約が出る。",
+"Bridge Neurotechの創業者Will Biedermanは、このTrade-off自体を変えようとしている。2026年10月にStealthを出たBridgeは1,350万ドルを調達し、手術もImplantも使わないBCIを掲げた。Biederman自身、大学院時代にNeuralinkが初期Deviceで使ったNeural recording chipを開発した経歴を持つ。"
+]},
+{heading:"Bridgeが賭けるのは、電気ではなく『血流』。",body:[
+"Bridgeが使うのはFunctional Ultrasound Imaging、fUSだ。Ultrasound arrayがBrainへ高速にSound pulseを送り、動く赤血球から返るEchoの変化を追う。Brain regionが活動すると近くの血管が拡張し、血流が変化する。そのHemodynamic signalを使って、どこが活動しているかをFunctional imageとして捉える。",
+"重要なのは、BridgeがNeuronのElectrical spikeを直接読んでいるわけではないことだ。fUSは神経活動に伴う血流変化をProxyとして読む。これはfMRIに近い考え方で、Electrical BCIとは取っているSignalの種類が根本的に違う。BridgeはこのFunctional imageをAIでDecodeし、MeaningやIntentへ変換することを目指している。"
+]},
+{heading:"小型化の鍵は、Butterflyの『Ultrasound-on-Chip』。",body:[
+"BridgeはButterfly Networkと複数年のR&D契約を結び、Butterfly Embedded経由でUltrasound-on-Chip技術を利用する。Butterflyは従来のPiezoelectric crystalではなく、半導体上へ約9,000のCMUT素子を集積した2D arrayを使う。Beam steeringをSoftwareで制御でき、従来大型だったUltrasound systemをHandheld probeへ縮小してきた。",
+"この半導体化がBCIで重要になる。Brain interfaceを日常Wearableにするには、Lab equipmentの性能だけでは足りない。小型、低消費電力、多数Element、Programmable beamという条件が必要になる。Bridgeは最終的にTemporal window付近へ置く、Headphoneに近いForm factorを構想していると説明している。"
+]},
+{heading:"最大の敵はAIではない。頭蓋骨だ。",body:[
+"Bridge自身が挙げる最初の技術課題は、Skull越しのImagingだ。BoneはUltrasoundをScatterしAbsorbする。しかも厚みや形状は人ごとに異なり、Aberrationも個人差が大きい。Transcranial fUS研究でも、Skull-induced aberrationによるImage qualityとSensitivity低下は依然として主要課題とされている。",
+"Bridgeの最初のObservational studyが面白いのは、その問題を正面から測ろうとしていることだ。Healthy adultに加えて、Skullの一部をPEEKまたはLongeviti Implantへ置換したCranioplasty経験者を募集し、Soundが通りやすい条件をReferenceとしてIntact skull越しのDataと比較する。これはまだ治療Trialではなく、Listen、Watch、Move、SpeakといったTask中のBrain activityを測るData collection studyだ。"
+]},
+{heading:"『思考を読む』には、もう一つの壁がある。血流はNeuronより遅い。",body:[
+"Functional Ultrasoundは高いSpatial resolutionと広いField of viewを持つ一方、SignalはNeurovascular couplingを介したHemodynamic responseだ。NeuronがFireしてから血流が変化するまでには自然なDelayがある。WIREDの取材でも専門家は数秒規模のLagを指摘し、高速TypingやRobot armの瞬時制御では課題になり得るとしている。",
+"BridgeはPredictive AI modelでこのDelayを補う方向を示している。ただし、AIが血流から未来のIntentを予測できることと、『自由な思考を直接読める』ことは全く違う。現時点でBridgeが実証しているのは完成BCIではなく、Skull越しにFunctional brain dataを安定取得し、Across peopleでDecodeできるかを確かめるResearch stageだ。"
+]},
+{heading:"競合を並べると、BCIは『侵襲度 × Signal × Wearability』の競争だと分かる。",body:[
+"NeuralinkはBrain tissueへElectrodeを埋め、Neuronに近いElectrical signalを取る。その代わりSurgeryが必要だ。SynchronのStentrodeはOpen brain surgeryを避け、Jugular veinからCatheterでBrain blood vessel内へElectrodeを置く。侵襲度は下がるが、体内Implantではある。",
+"NeurableはEEGをHeadphoneへ載せ、完全Non-invasiveを実現しているが、EEGはSkull越しのElectrical signalを取るため空間分解能やNoiseに制約がある。BridgeとMerge LabsはUltrasoundという別Routeを選んだ。特にMergeもButterflyのUltrasound-on-ChipをLicenseしており、今後は『Ultrasound BCI』の中でもHardware、Imaging、Decoding、Form factorの差が競争になる。"
+]},
+{heading:"日本で最初に刺さるのは、XRより『身体を使えない人のInterface』。",body:[
+"Bridgeが成功しても、最初から一般消費者がHeadphone型BCIでPCを操作する世界になる可能性は低い。臨床Benefitが大きい領域ほど、多少の装着負荷やCalibrationを許容しやすい。重度運動障害、Communication支援、Neurorehabilitation、Research interfaceの方が初期Marketとして自然だ。",
+"日本で医療用途へ入る場合、HardwareとDecoding softwareのIntended use次第で医療機器としてPMDA・厚生労働省の審査対象になり得る。日本には革新的医療機器やSaMDの優先審査・相談制度もあるが、Bridgeはまだ米国でもObservational study段階だ。日本参入を語るなら、まずClinical evidence、再現性、Safety、Data governance、国内Research partnerを見るべきだ。",
+"その先にPC操作、XR、Hands-free computingがある。もしBridgeがSkull越しのSignalを日常Wearableで安定Decodeできれば、BCIのMarketは『手術を受ける少数』から『Deviceを装着する多数』へ桁を変える可能性がある。だからこの会社の価値は、今読めるThoughtの量ではなく、BCIの利用母数をどこまで広げられるかにある。"
+]}
+],
+sources:[
+{label:"Bridge Neurotech — Official",url:"https://www.bridgeneurotech.com/"},
+{label:"Bridge Neurotech — Approach",url:"https://www.bridgeneurotech.com/approach"},
+{label:"Bridge Neurotech — First Research Study",url:"https://www.bridgeneurotech.com/study"},
+{label:"Bridge Neurotech — Founder Letter",url:"https://www.bridgeneurotech.com/letter"},
+{label:"Butterfly Network — Bridge Partnership",url:"https://english.butterflynetwork.com/press-releases/bridge-neurotech-partnership"},
+{label:"Butterfly Network — Ultrasound-on-Chip",url:"https://www.butterflynetwork.com/technology"},
+{label:"Butterfly Network — Merge Labs Partnership",url:"https://english.butterflynetwork.com/press-releases/merge-labs-bci-partnership"},
+{label:"Synchron — Stentrode Technology",url:"https://synchron.com/technology"},
+{label:"Neurable — Neurable One",url:"https://www.neurable.com/blog-posts/neurable-one-is-here-the-headphones-ive-wanted-to-build-for-10-years"},
+{label:"Nature Reviews Electrical Engineering — Scaling ultrasonic BCI beyond the lab",url:"https://www.nature.com/articles/s44287-026-00312-8"},
+{label:"IEEE / PubMed — Towards Transcranial Functional Ultrasound Imaging Through the Adult Skull",url:"https://pubmed.ncbi.nlm.nih.gov/41926414/"},
+{label:"PMDA — Medical Device Review / SaMD",url:"https://www.pmda.go.jp/review-services/drug-reviews/about-reviews/devices/0048.html"}
+]
+}
+
 ];
 
 export const storyMap=Object.fromEntries(researchStories.map(s=>[s.slug,s])) as Record<string,ResearchStory>;
