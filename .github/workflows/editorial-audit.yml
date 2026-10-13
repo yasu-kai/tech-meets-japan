@@ -9,6 +9,9 @@ on:
       - "lib/editorialAudit.ts"
       - "scripts/editorial-audit.mjs"
       - "app/products/**"
+      - "app/research/**"
+      - "lib/researchStories.ts"
+      - "lib/research.ts"
   pull_request:
     paths:
       - "lib/data.ts"
