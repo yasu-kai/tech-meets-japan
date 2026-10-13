@@ -55,12 +55,12 @@ export default function OffensiveAIResearchPage(){
           </div>
           <Link href="/research" className="research-back"><ArrowLeft size={14}/> Research</Link>
           <p className="eyebrow">OFFENSIVE AI / MARKET MAP</p>
-          <h1>AIは、サイバー防御のどこまでを担うのか。</h1>
+          <h1><span className="offsec-mobile-line">AIは、サイバー防御の</span><span className="offsec-mobile-line">どこまでを担うのか。</span></h1>
           <p className="offsec-lead">見るべきは「AIでPentestできるか」ではない。<strong>攻撃 → 発見 → 対策 → 判断 → 実行 → 再検証</strong>の6工程のうち、どこまでAIに権限を渡しているかだ。</p>
         </section>
 
         <section className="section section-tight">
-          <div className="section-heading"><div><p className="eyebrow">THE CYCLE</p><h2>見るべきサイクルは、これ。</h2></div><RefreshCw size={28}/></div>
+          <div className="section-heading"><div><p className="eyebrow">THE CYCLE</p><h2><span className="offsec-mobile-line">見るべきサイクルは、</span><span className="offsec-mobile-line">これ。</span></h2></div><RefreshCw size={28}/></div>
           <div className="cycle-visual">
             <div className="cycle-track" aria-hidden="true"></div>
             {[
@@ -89,7 +89,7 @@ export default function OffensiveAIResearchPage(){
         </section>
 
         <section className="section section-tight">
-          <div className="section-heading"><div><p className="eyebrow">AUTOMATION MATRIX</p><h2>AIは、どこを担うのか。</h2></div><Bot size={28}/></div>
+          <div className="section-heading"><div><p className="eyebrow">AUTOMATION MATRIX</p><h2><span className="offsec-mobile-line">AIは、</span><span className="offsec-mobile-line">どこを担うのか。</span></h2></div><Bot size={28}/></div>
           <div className="automation-table">
             <div className="automation-head"><span>社名</span><span>① 擬似攻撃</span><span>② ホール発見</span><span>③ 対応策</span><span>④ 意思決定</span><span>⑤ 実行</span><span>⑥ 再検証</span></div>
             {cycle.map(x=><div className="automation-row" key={x.company}>
@@ -139,7 +139,7 @@ export default function OffensiveAIResearchPage(){
         </section>
 
         <section className="section section-tight">
-          <div className="section-heading"><div><p className="eyebrow">COMPANY READ</p><h2>同じAIでも、担い方が違う。</h2></div><ShieldCheck size={28}/></div>
+          <div className="section-heading"><div><p className="eyebrow">COMPANY READ</p><h2><span className="offsec-mobile-line">同じAIでも、</span><span className="offsec-mobile-line">担い方が違う。</span></h2></div><ShieldCheck size={28}/></div>
           <div className="offsec-company-grid">
             {cycle.map(x=><article key={x.company}>
               <div className="offsec-company-head" style={{alignItems:"center"}}><h3 style={{fontSize:"clamp(13px, 1.15vw, 15px)",fontWeight:700,color:"#77746e",letterSpacing:"0.01em"}}>{x.company}</h3><span>Depth {x.depth}/5</span></div>
@@ -210,7 +210,7 @@ export default function OffensiveAIResearchPage(){
         <section className="offsec-conclusion">
           <div>
             <p className="eyebrow">EDITORIAL TAKE</p>
-            <h2>XBOWは「AI Pentester」。 MindFortは「AI Security Engineer」へ。</h2>
+            <h2><span className="offsec-mobile-line">XBOWは「AI Pentester」。</span><span className="offsec-mobile-line">MindFortは「AI Security Engineer」へ。</span></h2>
           </div>
           <p>この軸で見ると、単なる“攻撃自動化”よりも、修正実行まで踏み込むプレーヤーの意味が見えやすくなる。TECH MEETS JAPANでは今後、機能数ではなく<strong>Automation Depth</strong>でOffensive AI市場を追う。</p>
         </section>
