@@ -417,7 +417,7 @@
 .capability-behavior-list{display:grid;gap:5px;margin-top:9px;padding-top:8px;border-top:1px solid var(--line)}
 .capability-behavior-list span{display:block;font-size:10px;line-height:1.5;color:#50524d}
 .capability-behavior-list.emphasis span{font-weight:700;color:#2f4d22}
-.capability-detail-grid>div{min-height:150px}
+@media(min-width:561px){.capability-detail-grid>div{min-height:150px}}
 
 .deep-decision-grid,.deep-two-col,.deep-three-col,.implementation-flow,.trial-test-grid,.next-action-grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:14px}
 .deep-decision-grid{grid-template-columns:repeat(4,1fr)}
