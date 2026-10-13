@@ -113,13 +113,18 @@ if(semanticMobileHeadlineCount<10){
 
 
 const productCss=readFileSync("app/globals.css","utf8");
-const badMobileMinHeight=/@media\(max-width:560px\)[\s\S]*?\.capability-detail-grid>div\s*\{[^}]*min-height\s*:\s*(?:1[2-9]\d|[2-9]\d\d)px/;
-if(badMobileMinHeight.test(productCss)){
-  console.error("[MOBILE_DENSITY_FAIL] capability detail cells retain excessive fixed min-height on mobile.");
+const densityMarker=productCss.lastIndexOf("/* Mobile product intelligence density */");
+const mobileDensityCss=densityMarker>=0?productCss.slice(densityMarker):"";
+if(!mobileDensityCss.includes(".capability-detail-grid>div{") || !mobileDensityCss.includes("min-height:0!important;")){
+  console.error("[MOBILE_DENSITY_FAIL] compact mobile capability override is missing.");
   process.exit(1);
 }
-if(!productCss.includes(".capability-detail-grid>div{\n    min-height:0!important;")){
-  console.error("[MOBILE_DENSITY_FAIL] compact mobile capability override is missing.");
+if(/\.capability-detail-grid>div\s*\{[^}]*min-height\s*:\s*(?:1[2-9]\d|[2-9]\d\d)px/.test(mobileDensityCss)){
+  console.error("[MOBILE_DENSITY_FAIL] excessive fixed min-height remains inside the mobile density block.");
+  process.exit(1);
+}
+if(!productCss.includes(".fit-diagnostic article{min-height:0!important;}")){
+  console.error("[MOBILE_DENSITY_FAIL] fit diagnostic cards can still retain excessive mobile height.");
   process.exit(1);
 }
 
