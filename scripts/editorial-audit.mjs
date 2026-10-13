@@ -52,4 +52,53 @@ if(researchErrors>0){
   process.exit(1);
 }
 
+
+
+const css=readFileSync("app/globals.css","utf8");
+const researchPage=readFileSync("app/research/[category]/[slug]/page.tsx","utf8");
+const homePage=readFileSync("app/page.tsx","utf8");
+let wrapErrors=0;
+
+const forcedBreaks=[
+  ...researchPage.matchAll(/<h[12][^>]*>[\s\S]*?<br\s*\/?>(?:[\s\S]*?)<\/h[12]>/g),
+  ...homePage.matchAll(/<h[12][^>]*>[\s\S]*?<br\s*\/?>(?:[\s\S]*?)<\/h[12]>/g)
+];
+if(forcedBreaks.length){
+  console.error("[FORCED_HEADLINE_BREAK] semantic headline spans are preferred over <br> in display headings:",forcedBreaks.length);
+  wrapErrors+=forcedBreaks.length;
+}
+
+const riskyKeepAll=/((?:h1|h2|headline|title)[^{]*\{[^}]*word-break\s*:\s*keep-all[^}]*\})/gi;
+const keepAllMatches=[...css.matchAll(riskyKeepAll)];
+if(keepAllMatches.length){
+  console.error("[RISKY_KEEP_ALL] display heading uses word-break: keep-all and may overflow:",keepAllMatches.length);
+  wrapErrors+=keepAllMatches.length;
+}
+
+const riskyBreakWord=/((?:h1|h2|headline|title)[^{]*\{[^}]*overflow-wrap\s*:\s*break-word[^}]*\})/gi;
+const breakWordMatches=[...css.matchAll(riskyBreakWord)];
+if(breakWordMatches.length){
+  console.error("[RISKY_BREAK_WORD] Japanese display heading uses overflow-wrap: break-word and may split phrases awkwardly:",breakWordMatches.length);
+  wrapErrors+=breakWordMatches.length;
+}
+
+const suspiciousJapaneseEndings=/[、。・「『（(／\/\-]$/;
+for(const story of storyMatches){
+  const slug=story[1];
+  const start=story.index;
+  const end=storyMatches.find(x=>x.index>start)?.index ?? research.length;
+  const block=research.slice(start,end);
+  const title=block.match(/title:"([^"]+)"/)?.[1]||"";
+  if(suspiciousJapaneseEndings.test(title)){
+    console.error("[SUSPICIOUS_HEADLINE_END]",slug,title);
+    wrapErrors++;
+  }
+}
+
+console.log("- headline wrap findings:",wrapErrors);
+if(wrapErrors>0){
+  console.error("FAIL: headline wrapping quality gate failed.");
+  process.exit(1);
+}
+
 console.log("PASS: deterministic editorial checks.");
