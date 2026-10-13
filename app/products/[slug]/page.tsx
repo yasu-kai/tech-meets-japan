@@ -112,7 +112,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
             </article>
 
             <article className="decision-board-card">
-              <div className="decision-board-head"><span>02 / WHO IT FITS</span><h2>誰に向く？</h2></div>
+              <div className="decision-board-head"><span>02 / WHO IT FITS</span><h2>どんなユーザー向け？</h2></div>
               <div className="fit-diagnostic">
                 {product.targetUsers.map((x,i)=>{
                   const target=intel?.targetAccounts?.[i] || product.decision?.fitProfiles?.[i];
@@ -157,14 +157,14 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
             </article>
 
             <article className="decision-board-card">
-              <div className="decision-board-head"><span>04 / COMPARE</span><h2>何と比べる？</h2></div>
+              <div className="decision-board-head"><span>04 / COMPARE</span><h2>比較対象は？</h2></div>
               <div className="comparison-deep-list">
                 {(product.comparisonDetails || []).map((x,i)=>(
                   <section key={x.name}>
                     <div className="compare-title"><span>0{i+1}</span><h3>{x.name}</h3></div>
                     <div className="compare-split">
-                      <div><b>相手が向く</b>{x.otherWinsWhen.map(v=><p key={v}>→ {v}</p>)}</div>
-                      <div><b>{product.provider}が向く</b>{x.runwayWinsWhen.map(v=><p key={v}>→ {v}</p>)}</div>
+                      <div><b>{x.name}が向くケース</b>{x.otherWinsWhen.map(v=><p key={v}>→ {v}</p>)}</div>
+                      <div><b>{product.provider}が向くケース</b>{x.runwayWinsWhen.map(v=><p key={v}>→ {v}</p>)}</div>
                     </div>
                     <div className="compare-context">
                       <div><small>BEST WHEN</small>{x.bestWhen.map(v=><p key={v}>{v}</p>)}</div>
@@ -210,7 +210,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
         {product.decision?.differentiators && (
           <section className="section section-tight product-analysis differentiation-section">
             <div className="section-heading">
-              <div><p className="eyebrow">WHY THIS PRODUCT</p><h2>他でもできる。 それでも、これを選ぶ理由。</h2></div>
+              <div><p className="eyebrow">WHY THIS PRODUCT</p><h2>この製品を選ぶ理由は？</h2></div>
               <p>「機能がある」ではなく、「他と比べて何が違うか」で見る。</p>
             </div>
             <div className="differentiator-list">
@@ -246,7 +246,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
         {(intel?.scoreBreakdown || product.decision?.scoreBreakdown) && (
           <section className="section section-tight product-analysis">
             <div className="section-heading">
-              <div><p className="eyebrow">FIT BREAKDOWN</p><h2>{calculatedFit}点は、こう計算する。</h2></div>
+              <div><p className="eyebrow">FIT BREAKDOWN</p><h2>{calculatedFit}点の根拠は？</h2></div>
               <p>100点満点。各評価軸を0〜100点で評価し、重みを掛けて合算。</p>
             </div>
             <div className="fit-formula">
@@ -312,7 +312,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
             </section>
 
             <section className="section section-tight product-analysis">
-              <div className="section-heading"><div><p className="eyebrow">PRICING & TCO</p><h2>料金はいくらで、実際いくらかかるか。</h2></div><WalletCards size={28}/></div>
+              <div className="section-heading"><div><p className="eyebrow">PRICING & TCO</p><h2>料金・実運用コストは？</h2></div><WalletCards size={28}/></div>
               <div className="pricing-table">
                 {product.decision.pricing?.publicPlans?.map(p=><div key={p.name}><strong>{p.name}</strong><span>{p.monthly}</span><span>{p.annualEquivalent||"—"}</span><p>{p.credits}</p><small>{p.notes}</small></div>)}
               </div>
