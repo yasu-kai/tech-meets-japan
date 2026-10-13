@@ -717,7 +717,11 @@ sections:[
 "製造業、物流、介護、人手不足という条件が揃う一方、日本企業は産業Robotの経験も厚い。",
 "Humanoidが既存Robotを全部置き換えるのではなく、『設備を専用化するほど量がない仕事』から入る可能性が高い。"
 ]}
-],
+,{heading:"人型の価値は、賢さより『既存環境を変えなくていいこと』。",body:[
+"工場や倉庫をRobot専用に作り直せるなら、人型である必要は薄い。固定Arm、AMR、Conveyorの方が速く安く安全な工程は多い。それでもHumanoidが注目されるのは、階段、扉、棚、道具、作業台など、人間向けに作られたInfrastructureをそのまま使える可能性があるからだ。",
+"つまり比較対象はHumanoid同士だけではない。工程を固定自動化する費用、建屋を改修する費用、人手を残す費用と比べる必要がある。価値は『二足歩行できる』ことではなく、General-purposeなBodyへSoftware skillを追加していく経済性が成立するかにある。",
+"日本では既存工場が多く、Brownfieldへ後付けできる価値は大きい一方、安全柵なしで人と混在できるか、保守を誰が担うか、稼働率をどこまで上げられるかが導入判断を決める。"
+]}],
 sources:[
 {label:"Figure — Helix",url:"https://www.figure.ai/helix"},
 {label:"Figure — Helix 02",url:"https://www.figure.ai/news/helix-02"},
@@ -944,7 +948,11 @@ sections:[
 "Keyboardは指を動かす。Voiceは声を出す。AI Glassesは視界を共有する。Silent Speechは声を出す直前の筋活動を読む。入力技術の歴史を並べると、人間の意図とMachine inputの距離が少しずつ短くなっている。",
 "その先では、AIへ明示的にPromptする回数そのものが減るかもしれない。最も優れたAI interfaceは、最終的に『AIを操作している感覚』を消す方向へ進む可能性がある。"
 ]}
-],
+,{heading:"『なんだこれ』は、次の標準UIの実験場でもある。",body:[
+"奇妙なGadgetを笑って終わらせるのは簡単だ。しかし、専用AI端末、AI pin、眼鏡、Ring、Neckbandの多くは、スマホの画面を触るという前提をどう崩すかを試している。失敗製品でも、失敗した理由自体が次のUI設計の材料になる。",
+"見るべきは販売台数だけではない。なぜ専用Hardwareが必要だったのか、スマホAppでは代替できないInputやContextがあるのか、毎日持ち歩く理由があるのか、充電・Privacy・Social acceptanceを超えられるか。この4点で見ると『変態ガジェット』にも市場仮説が見える。",
+"TECH MEETS JAPANでは、変だから載せるのではなく、『この変さが5年後の普通になる可能性はどこにあるか』まで読む。"
+]}],
 sources:[
 {label:"Engram — Silent Speech Interface",url:"https://engramlabs.co/"},
 {label:"Silenzio — Speech, without sound",url:"https://silenzio.io/"},
