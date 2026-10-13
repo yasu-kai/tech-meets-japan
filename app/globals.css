@@ -1334,7 +1334,8 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
 .section-heading h2,
 .offsec-report .section-heading h2{
   word-break:normal;
-  overflow-wrap:break-word;
+  overflow-wrap:normal;
+  line-break:strict;
 }
 @media(max-width:720px){
   .hero h1 .hero-line{
