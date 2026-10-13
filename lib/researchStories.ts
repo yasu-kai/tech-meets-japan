@@ -1005,7 +1005,7 @@ sources:[
 
 ,{
 slug:"browser-agents",category:"ai-work",eyebrow:"AI × WORK / COMPUTER USE",
-title:"人間は、いつまでSaaSを操作するのか。",
+title:"SaaSは残る。でも、人間は触らなくなる。",
 dek:"Webサービスは、人間が画面を見てクリックするために作られてきた。Browser Agentが一般化すると、その前提自体が崩れる。次に変わるのはSaaSの機能ではなく、誰がUIを操作するかだ。",
 thesis:"Browser Agentの本質はRPAの置き換えではない。APIがない業務までAIが触れるようになり、ブラウザそのものがAgentのUniversal APIになることにある。",
 companies:["Browserbase","Anthropic","Stagehand","Browser Agents"],
@@ -1042,7 +1042,7 @@ sources:[
 
 ,{
 slug:"agentic-dev-security",category:"ai-security",eyebrow:"AI × SECURITY / AGENTIC DEVELOPMENT",
-title:"AIが書いたコードを、誰が守るのか。",
+title:"コードを書くAI。守るのは誰だ。",
 dek:"AI Coding AgentがMCP、Skill、外部Toolを使いながらSoftwareを作る時代では、守る対象はCodeだけでは足りない。Software Supply Chainの上流に、Agentそのものが加わり始めている。",
 thesis:"Agentic Development Securityの核心は『AI生成コードをScanする』ことではない。Agentが何を使い、何を実行し、何を生成したかを、生成者とは独立したLayerで統制することにある。",
 companies:["Snyk","Evo ADS","Claude Code","Cursor / Copilot / Codex"],
@@ -1079,7 +1079,7 @@ sources:[
 
 ,{
 slug:"procurement-agents",category:"ai-industry",eyebrow:"AI × INDUSTRY / PROCUREMENT",
-title:"購買は、AIにどこまで任せられるか。",
+title:"購買部門に、AIの同僚が増えている。",
 dek:"購買は承認フローだけではない。Requestの内容確認、Supplier比較、Risk review、契約条件、社内Routing。Zipはこの前処理をAgent化し始めている。次に問われるのは、購買担当者がどこまで『処理する人』であり続けるかだ。",
 thesis:"Procurement Agentの価値は承認を速くすることではない。IntakeからRisk、Supplier、Approvalまでの情報収集と確認をAgentへ渡し、人間を例外・交渉・Policyへ寄せられるかにある。",
 companies:["Zip","OpenAI Procurement","Agentic Procurement Orchestration"],
@@ -1116,7 +1116,7 @@ sources:[
 
 ,{
 slug:"robotics-as-labor",category:"robotics",eyebrow:"ROBOTICS & PHYSICAL AI / BUSINESS MODEL",
-title:"ロボットは、設備ではなく『労働力』として買う時代へ。",
+title:"ロボットを“買う”時代が終わる。",
 dek:"Robot導入が進まない理由は、技術不足だけではない。高額CapEx、Integration、保守、故障Risk。FormicのRaaSは、Robotを買うのではなく『稼働する労働力』へ変えようとしている。",
 thesis:"RaaSの本質は支払い方法ではない。Robot Vendorが導入・保守・稼働率のRiskまで引き受けることで、Automationの意思決定を設備投資からOperating expenseへ変えることにある。",
 companies:["Formic","Robotics-as-a-Service","SMB Manufacturing"],
@@ -1153,7 +1153,7 @@ sources:[
 
 ,{
 slug:"embodied-ai-reception",category:"gadgets",eyebrow:"GADGETS & FUTURE DEVICES / PHYSICAL AI",
-title:"受付は、人でも画面でもなくなるのか。",
+title:"受付に立つのは、人間でも画面でもない。",
 dek:"Chatbotは画面の中にいる。ProtoはAI Avatarを物理空間へ出し、店舗・受付・イベントへ『存在感のあるAgent』を置こうとしている。これはDisplayの進化ではなく、Digital Agentが身体を持つ話だ。",
 thesis:"Embodied AI Receptionの価値はホログラム演出ではない。Knowledgeと会話能力を持つAIを、店舗・受付・会場というPhysical touchpointへ常設できるかにある。",
 companies:["Proto Hologram","ProtoOS","AI Avatar","Spatial Computing"],
