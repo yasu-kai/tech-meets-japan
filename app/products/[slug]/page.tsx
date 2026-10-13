@@ -331,7 +331,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
             </section>
 
             <section className="section section-tight product-analysis">
-              <div className="section-heading"><div><p className="eyebrow">IMPLEMENTATION</p><h2>導入と乗り換えに、どれくらいかかるか。</h2></div><Replace size={28}/></div>
+              <div className="section-heading"><div><p className="eyebrow">IMPLEMENTATION</p><h2>導入・乗り換えの負荷は？</h2></div><Replace size={28}/></div>
               <div className="cost-meter-grid">
                 <div className="cost-card"><span>ONBOARDING</span><strong>{product.decision.onboarding?.label}</strong><b>{product.decision.onboarding?.level}/5</b><p>{product.decision.onboarding?.timeToValue}</p><small>{product.decision.onboarding?.costNote}</small><ul>{product.decision.onboarding?.tasks.map(x=><li key={x}>{x}</li>)}</ul></div>
                 <div className="cost-card"><span>REPLACEMENT</span><strong>{product.decision.replacement?.label}</strong><b>{product.decision.replacement?.level}/5</b><p>{product.decision.replacement?.costNote}</p><ul>{product.decision.replacement?.migrationRisks.map(x=><li key={x}>{x}</li>)}</ul></div>
