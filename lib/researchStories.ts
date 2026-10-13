@@ -565,7 +565,11 @@ sections:[
 "用途ごとに最適モデルが違うなら、企業側はモデル名ではなく、入力データ・権利条件・用途・承認レベルに応じて自動選択する方が合理的になる。",
 "Creative AIは『どのAIを契約するか』から、『どのWorkflowでどのAIを使わせるか』へ進む。"
 ]}
-],
+,{heading:"比較すべきは、Model性能ではなく『誰がControl layerを握るか』。",body:[
+"Creative AIが増えるほど、企業は一つのModelへ賭けにくくなる。画像はA、動画はB、音声はCという構成が普通になれば、どのModelを使うかより、Brand asset、権限、承認、Rights、Versionを誰が一元管理するかが重要になる。",
+"Adobeの強みは既存Creative workflowとAsset管理へ近いこと。一方、Runwayや新興Model vendorは新しい表現や速度で先行する。企業側は『最高Modelを選ぶ』より、『Modelを差し替えてもWorkflowが壊れない構造』を持てるかを見るべきだ。",
+"この市場の勝者は生成Modelそのものではなく、複数Modelを安全に交換できるOperating layerになる可能性がある。"
+]}],
 sources:[
 {label:"Adobe — Firefly Graph",url:"https://business.adobe.com/products/creativecloud-business/firefly-graph.html"},
 {label:"Adobe — Node-based workflows",url:"https://business.adobe.com/blog/why-node-based-workflows-are-the-future-of-creative-ai"},
@@ -661,7 +665,11 @@ sections:[
 "診療報酬、個人情報、医療安全の制約を考えると、いきなりClinical decisionを渡すより、記録・文書・予約・患者説明支援から入る方が現実的だ。",
 "人間に最後まで残るのは、患者個人の価値観まで含めた意思決定と責任だろう。"
 ]}
-],
+,{heading:"医療AIで自律性を上げるほど、説明責任は消えない。",body:[
+"医療では、AIが高精度でも、そのまま最終判断へ接続できるとは限らない。誤診のCost、患者への説明、既往歴や生活背景、治療選択肢のPreferenceなど、Model外の情報が意思決定へ入るからだ。",
+"だから比較したいのはAccuracyだけではない。AIが何を根拠に提案したかをClinicianが確認できるか、異常時にHumanへ戻せるか、医療記録へどう残るか、責任主体が明確か。Healthcare AIではHuman-on-the-loopが弱さではなく設計要件になる。",
+"一方、Documentation、Coding、Triage、画像の一次読影など、判断前後のOperationは自動化余地が大きい。人間を消すより、医師・看護師が患者を見る時間を取り戻す方向で価値が出やすい。"
+]}],
 sources:[
 {label:"OpenAI — OpenAI for Healthcare",url:"https://openai.com/index/openai-for-healthcare/"},
 {label:"OpenAI — Healthcare solutions",url:"https://openai.com/solutions/industries/healthcare/"},
@@ -921,7 +929,11 @@ sections:[
 "全部をAutomation Depthで重く読む必要はない。たまに『何これwww』から入り、なぜ作ったのか、日本で誰が使いそうか、普及障壁は何かを見る。",
 "変態ガジェット枠は、未来のCategoryが生まれる直前を拾うためのアンテナでもある。"
 ]}
-],
+,{heading:"『なんだこれ』は、次の標準UIの実験場でもある。",body:[
+"奇妙なGadgetを笑って終わらせるのは簡単だ。しかしAI pin、眼鏡、Ring、Neckbandの多くは、スマホの画面を触るという前提をどう崩すかを試している。失敗製品でも、失敗した理由自体が次のUI設計の材料になる。",
+"見るべきは販売台数だけではない。なぜ専用Hardwareが必要だったのか、スマホAppでは代替できないInputやContextがあるのか、毎日持ち歩く理由があるのか、充電・Privacy・Social acceptanceを超えられるか。この4点で見ると『変態ガジェット』にも市場仮説が見える。",
+"TECH MEETS JAPANでは、変だから載せるのではなく、『この変さが5年後の普通になる可能性はどこにあるか』まで読む。"
+]}],
 sources:[
 {label:"Plaud — NotePin",url:"https://www.plaud.ai/products/plaud-notepin"},
 {label:"rabbit — r1",url:"https://www.rabbit.tech/rabbit-r1"},
