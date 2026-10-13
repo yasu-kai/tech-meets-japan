@@ -834,7 +834,11 @@ sections:[
 "会議議事録、営業訪問、現場ヒアリングなど目的が明確な場面なら価値が説明しやすい。一方、常時Life-logは社会的受容のハードルが高い。",
 "まずは『録音ボタンを押した瞬間だけ記憶するAI』から普及し、その境界が少しずつ広がる可能性がある。"
 ]}
-],
+,{heading:"記憶AIの本当の競争は、録音できるかではない。",body:[
+"録音、文字起こし、要約だけならスマートフォンでもできる。Wearable Memoryの差が出るのは、いつ記録を始めるかを人間が意識しなくてよいこと、そして過去の会話・場所・人物を後からContextとして再利用できることだ。",
+"一方で、常時Captureが便利になるほど、本人以外の会話をどう扱うか、録音中をどう示すか、削除要求へどう応えるかが製品価値の一部になる。『全部覚えている』ことは機能であると同時に、社会的Permissionの設計でもある。",
+"日本で普及するかを見るなら、文字起こし精度だけでなく、録音表示、保存先、第三者同意、企業利用時のData retention、会議Toolとの役割重複まで比較したい。"
+]}],
 sources:[
 {label:"Plaud — NotePin",url:"https://www.plaud.ai/products/plaud-notepin"},
 {label:"Plaud — NotePin S",url:"https://www.plaud.ai/products/plaud-notepin-s"},
@@ -864,7 +868,11 @@ sections:[
 "電車、オフィス、店舗など人の近くで使う場面が多い日本では、常時Voiceより小さなGestureや視線の方が社会的に受け入れやすい可能性がある。",
 "未来のDeviceを見るときは、画面サイズではなく『意図を伝えるために何動作必要か』で比較すると面白い。"
 ]}
-],
+,{heading:"Silent Speechは、入力装置そのものを消し始める。",body:[
+"Voice UIの弱点は、声を出さなければ使えないことだ。会議中、電車内、工場、寝室、公共空間。AIへ話しかけること自体が摩擦になる場面は多い。そこで注目されるのが、発話時に動く顔・顎・首の筋活動をsEMGで拾い、音を出さずに言語へ変換するSilent Speech Interfaceだ。",
+"Engram、Silenzio、SilentWearのような取り組みは、Keyboard対Voiceという比較そのものを古くする。入力競争は『どのDeviceを触るか』から『人間の意図をどのSignalで取るか』へ進み始めている。",
+"ただし限定語彙の分類精度と自由会話の連続Decodeは別物だ。位置ずれ、個人差、Calibration、長時間装着、Privacyまで含めて初めて日常Inputになる。"
+]}],
 sources:[
 {label:"Meta — Ray-Ban Display and Neural Band",url:"https://about.fb.com/news/2025/09/meta-ray-ban-display-ai-glasses-emg-wristband/"},
 {label:"Meta — AI glasses in Japan",url:"https://about.fb.com/ja/news/2026/08/meta-glasses-launch-in-japan/"}
