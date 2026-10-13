@@ -23,7 +23,7 @@ function sourceContext(story:ResearchStory,label:string){
     return `この記事で紹介した「${label}」について、公式サイトで詳しく確認できます。`;
   }
 
-  return `本文「${best.heading}」で扱った論点にについて、公式サイトで詳しく確認できます。`;
+  return `本文「${best.heading}」で扱った論点について、公式サイトで詳しく確認できます。`;
 }
 
 export function generateStaticParams(){
