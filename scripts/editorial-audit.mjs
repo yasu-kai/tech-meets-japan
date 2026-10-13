@@ -128,4 +128,59 @@ if(!productCss.includes(".fit-diagnostic article{min-height:0!important;}")){
   process.exit(1);
 }
 
+
+
+const catalogSource=readFileSync("lib/productCatalog.ts","utf8");
+const capabilityTuples=[...catalogSource.matchAll(/\["([^"]+)","([^"]+)","([^"]+)","([^"]+)","([^"]+)","([^"]+)"\]/g)]
+  .map(m=>({label:m[1],detail:m[2],input:m[3],output:m[4],replaces:m[5],why:m[6]}))
+  .filter(x=>!["Human Only","AI Assistant","AI Analyst","AI Agent","Human-on-the-loop","Autonomous Closed Loop"].includes(x.label));
+
+let contentShapeFindings=0;
+const tooLong=(s,max)=>s.length>max;
+const emptyish=s=>!s || s.trim().length<2;
+const norm=s=>s.toLowerCase().replace(/[\s。、，,.・／/()（）「」『』:_-]/g,"");
+
+for(const cap of capabilityTuples){
+  const fields=[["detail",cap.detail],["input",cap.input],["output",cap.output],["replaces",cap.replaces],["why",cap.why]];
+  for(const [name,value] of fields){
+    if(emptyish(value)){
+      console.error("[CONTENT_SHAPE_FAIL]",cap.label,name,"is empty or meaningless");
+      contentShapeFindings++;
+    }
+  }
+
+  if(tooLong(cap.input,60)){
+    console.error("[CONTENT_OVERWRITTEN]",cap.label,"input is too verbose:",cap.input.length);
+    contentShapeFindings++;
+  }
+  if(tooLong(cap.output,60)){
+    console.error("[CONTENT_OVERWRITTEN]",cap.label,"output is too verbose:",cap.output.length);
+    contentShapeFindings++;
+  }
+  if(tooLong(cap.replaces,70)){
+    console.error("[CONTENT_OVERWRITTEN]",cap.label,"replaces is too verbose:",cap.replaces.length);
+    contentShapeFindings++;
+  }
+  if(tooLong(cap.why,90)){
+    console.error("[CONTENT_OVERWRITTEN]",cap.label,"why is too verbose:",cap.why.length);
+    contentShapeFindings++;
+  }
+
+  const values=[cap.input,cap.output,cap.replaces,cap.why].map(norm);
+  for(let i=0;i<values.length;i++){
+    for(let j=i+1;j<values.length;j++){
+      if(values[i] && values[i]===values[j]){
+        console.error("[CONTENT_REDUNDANCY]",cap.label,"two fields say effectively the same thing");
+        contentShapeFindings++;
+      }
+    }
+  }
+}
+
+console.log("- capability content-shape findings:",contentShapeFindings);
+if(contentShapeFindings>0){
+  console.error("FAIL: capability text quantity/content shape needs editorial revision.");
+  process.exit(1);
+}
+
 console.log("PASS: deterministic editorial checks.");
