@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { researchCategories } from "@/lib/research";
 
 export default function ResearchPage() {
+  const storyCount = researchCategories.reduce((sum,category)=>sum+category.topics.length,0);
   return (
     <>
       <Header/>
@@ -18,7 +19,7 @@ export default function ResearchPage() {
         <section className="section section-tight">
           <div className="section-heading">
             <div><p className="eyebrow">THEMES</p><h2>6つのテーマから掘る。</h2></div>
-            <span className="queue-count">30 STORIES</span>
+            <span className="queue-count">{storyCount} STORIES</span>
           </div>
 
           <div className="research-category-grid">
