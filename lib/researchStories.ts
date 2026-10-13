@@ -324,7 +324,8 @@ sections:[
 ],
 sources:[
 {label:"Harvey",url:"https://www.harvey.ai/"},
-{label:"Harvey — Platform",url:"https://www.harvey.ai/platform"}
+{label:"Harvey — Platform",url:"https://www.harvey.ai/platform"},
+{label:"Thomson Reuters — CoCounsel",url:"https://legal.thomsonreuters.com/en/products/cocounsel"}
 ]
 },{
 slug:"ai-customer-service",category:"ai-work",eyebrow:"AI × WORK / CUSTOMER SERVICE",
@@ -482,7 +483,8 @@ sections:[
 ]}],
 sources:[
 {label:"Pentera",url:"https://pentera.io/"},
-{label:"Horizon3.ai — NodeZero",url:"https://www.horizon3.ai/nodezero/"}
+{label:"Horizon3.ai — NodeZero",url:"https://www.horizon3.ai/nodezero/"},
+{label:"XBOW — Autonomous Pentesting",url:"https://xbow.com/"}
 ]
 },{
 slug:"ai-voice",category:"ai-creative",eyebrow:"AI × CREATIVE / VOICE",
@@ -919,7 +921,9 @@ sections:[
 ]}],
 sources:[
 {label:"Meta — Ray-Ban Display and Neural Band",url:"https://about.fb.com/news/2025/09/meta-ray-ban-display-ai-glasses-emg-wristband/"},
-{label:"Meta — AI glasses in Japan",url:"https://about.fb.com/ja/news/2026/08/meta-glasses-launch-in-japan/"}
+{label:"Meta — AI glasses in Japan",url:"https://about.fb.com/ja/news/2026/08/meta-glasses-launch-in-japan/"},
+{label:"Engram — Silent Speech Interface",url:"https://engramlabs.co/"},
+{label:"SilentWear — ETH Zürich / PULP-Bio",url:"https://github.com/pulp-bio/SilentWear"}
 ]
 },{
 slug:"weird-gadgets",category:"gadgets",eyebrow:"WTF / GADGET",
