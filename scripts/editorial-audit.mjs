@@ -101,4 +101,13 @@ if(wrapErrors>0){
   process.exit(1);
 }
 
+
+
+const offsecPage=readFileSync("app/research/offensive-ai/page.tsx","utf8");
+const semanticMobileHeadlineCount=(offsecPage.match(/className="offsec-mobile-line"/g)||[]).length;
+if(semanticMobileHeadlineCount<10){
+  console.error("[MOBILE_SEMANTIC_BREAKS] Offensive AI has too few semantic mobile headline segments:",semanticMobileHeadlineCount);
+  process.exit(1);
+}
+
 console.log("PASS: deterministic editorial checks.");
