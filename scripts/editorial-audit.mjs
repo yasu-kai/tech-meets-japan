@@ -82,7 +82,7 @@ if(breakWordMatches.length){
   wrapErrors+=breakWordMatches.length;
 }
 
-const suspiciousJapaneseEndings=/[、。・「『（(／\/\-]$/;
+const suspiciousJapaneseEndings=/[、・「『（(／\/\-]$/;
 for(const story of storyMatches){
   const slug=story[1];
   const start=story.index;
