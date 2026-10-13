@@ -350,7 +350,11 @@ sections:[
 "日本企業では電話やメールが残る業界も多い。そこでAIを入れる価値は単なる営業時間外対応ではなく、本人確認や社内照会を先に済ませ、人間が対応するときには解決に必要な情報が揃っている状態を作ることにある。",
 "完全無人化を目指すより、AIが一次処理を完了させ、人間は高リスク案件だけを見る構造の方が現実的だ。"
 ]}
-],
+,{heading:"『解決した』の定義を決めないと、Agent導入は数字だけ良くなる。",body:[
+"AIが一次回答してConversationを終了すればContainment rateは上がる。しかし顧客が翌日に再問い合わせしたり、裏で人間が処理をやり直しているなら、実際には解決していない。",
+"Customer Service Agentを比較するときは、回答率ではなくResolution rate、再問い合わせ率、Human handoff後の処理時間、Backend action成功率まで見る必要がある。SierraのようにSystem actionまで持つ製品が注目されるのは、この『回答と解決の差』を取りに行くからだ。",
+"人間に残るのは怒りや例外だけではない。Policyそのものを変更する判断、補償の境界、重要顧客への関係維持など、企業として責任を引き受ける部分が残る。"
+]}],
 sources:[
 {label:"Sierra",url:"https://sierra.ai/"},
 {label:"ServiceNow — AI Agents",url:"https://www.servicenow.com/products/ai-agents.html"},
@@ -504,7 +508,11 @@ sections:[
 "医療、物流、予約、公共サービスなど、電話が重要なチャネルとして残る領域ではVoice Agentの価値が大きい。一方で敬語、間、本人確認、録音同意など、日本語特有の運用品質が要求される。",
 "導入時は『人間そっくりか』より、処理完了率、転送率、再入電率、誤案内率を見るべきだ。"
 ]}
-],
+,{heading:"Voice Agentの比較軸は、声質から業務完了率へ。",body:[
+"自然な声は入口にすぎない。実運用では、割り込みを処理できるか、本人確認を通せるか、CalendarやCRMを操作できるか、失敗時に人へ転送できるか、通話後に結果をSystemへ残せるかが重要になる。",
+"つまりElevenLabs、Voice Agent platform、Contact Center AIを比べるときはTTS品質だけでは足りない。Latency、Turn-taking、Tool use、Telephony、Monitoring、Escalation、Cost per resolved callまで同じ表に並べる必要がある。",
+"日本語では敬語や相槌、固有名詞、数字・住所確認などで会話が崩れやすい。『人間っぽい声』より、例外を含めて最後まで業務を終えられるかを見るべきだ。"
+]}],
 sources:[
 {label:"ElevenLabs — Expressive Mode",url:"https://elevenlabs.io/blog/introducing-expressive-mode"},
 {label:"ElevenLabs — Voice agent capabilities",url:"https://elevenlabs.io/blog/voice-agent-capabilities"},
@@ -535,7 +543,11 @@ sections:[
 "AIがVariationを増やすほど、間違ったロゴ、禁止表現、古い商品情報が大量拡散するリスクも増える。だからBrand rule、承認、Asset source-of-truthが重要になる。",
 "生成速度が上がるほど、人間の仕事は作ることから『何を許可するか』へ移る。"
 ]}
-],
+,{heading:"Variationが増えるほど、評価と配信まで自動化したくなる。",body:[
+"100案を作れるようになると、次に詰まるのは『どれを出すか』だ。人間が100案をすべて確認し、媒体ごとに選び、結果を見て次案を作るなら、生成だけ高速化してもWorkflow全体は詰まったままになる。",
+"そこでSynthetic Mediaの次の競争は、Brand ruleを守ってVariationを作り、媒体実績を受け取り、次の案を更新するClosed loopへ進む。Creative productionとPerformance marketingの境界が薄くなる。",
+"ただしCTRだけを最適化するとBrandや長期価値を壊す可能性もある。何を最適化してはいけないかを人間が決めるGovernanceが必要になる。"
+]}],
 sources:[
 {label:"Adobe — Firefly Graph",url:"https://business.adobe.com/blog/meet-firefly-graph"},
 {label:"Adobe — Creative Production for Enterprise",url:"https://helpx.adobe.com/jp/firefly/web/work-with-enterprise-features/creative-production/creative-production-overview.html"},
@@ -767,7 +779,11 @@ sections:[
 "Waymoは2026年、日本交通とGOとともに東京で2027年の無人配車サービス商用化準備を発表した。",
 "つまりAutonomy Levelは海外の概念ではなく、日本のサービス設計・規制・保険・責任分界へ直接入ってくる。"
 ]}
-],
+,{heading:"自動運転Levelが他産業へ輸出できる理由。",body:[
+"自動運転Levelが便利なのは、AIの賢さではなく『誰がいつ責任を持つか』を段階で表せるからだ。Warehouse、Security、Customer Service、Software Agentでも同じで、AssistとAutonomyの差は、異常時に誰が戻ってくるかで決まる。",
+"たとえばAIが提案するだけならHuman-in-the-loop。通常運転はAIが担い、人間が監督するならHuman-on-the-loop。さらに定義された条件内で結果確認・再実行まで閉じればAutonomous closed loopに近づく。",
+"このLevel思想を使うと、製品比較が『AIを使っているか』から『人間が業務サイクルのどこから外れるか』へ変わる。TECH MEETS JAPANのAutomation Depthもこの考え方を横展開している。"
+]}],
 sources:[
 {label:"Waymo — 6th-generation Driver",url:"https://waymo.com/blog/2026/02/ro-on-6th-gen-waymo-driver/"},
 {label:"Waymo — World Model",url:"https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation/"},
