@@ -471,7 +471,11 @@ sections:[
 "どこまで攻撃してよいか、Productionで何を禁止するか、どの結果を自動で再検証するか。継続化するほどGuardrailが重要になる。",
 "日本企業でも、外部監査や年次診断を完全に消すより、日常的なValidationを自動化し、人間の専門家は重要経路や例外へ集中する形が現実的だ。"
 ]}
-],
+,{heading:"『毎日攻撃できる』ことと『毎日自律攻撃する』ことは違う。",body:[
+"Continuous Validationという言葉は自動化を強く感じさせるが、実際には定義済みScenarioを定期実行する製品と、得られた結果から次の攻撃経路をAI自身が選ぶ製品が混在する。ここを分けないと、AutomationをAutonomyとして評価してしまう。",
+"比較軸は、攻撃Scopeを誰が決めるか、Credentialや権限昇格を動的に利用するか、未知のAttack pathを探索するか、修正後Retestを自動で回すか、そしてProductionへ与えるRiskをどう制御するか。単純な実行頻度だけでは足りない。",
+"年1回Pentestが完全に消えるとは限らない。むしろHuman expertによる深い評価と、Machineによる高頻度Validationが役割分担する可能性が高い。"
+]}],
 sources:[
 {label:"Pentera",url:"https://pentera.io/"},
 {label:"Horizon3.ai — NodeZero",url:"https://www.horizon3.ai/nodezero/"}
@@ -623,7 +627,11 @@ sections:[
 "金融機関でExcelそのものを一気に置き換えるのは難しい。むしろデータ収集、転記、更新、コメント作成をAgentが担い、既存モデルへ正しいデータを流す方が導入しやすい。",
 "AI導入のKPIはレポート本数ではなく、人間が判断に使える時間をどれだけ増やせたかで見るべきだ。"
 ]}
-],
+,{heading:"金融でAIに渡しにくいのは、分析ではなく『責任のある結論』。",body:[
+"資料収集、決算比較、Model更新、Memo作成はAIへ移しやすい。しかし『この会社へ融資する』『この銘柄を推奨する』『このRiskを許容する』という判断は、規制・説明責任・顧客適合性と結びつく。",
+"金融AIの自律性を見るときは、AIがRecommendationを出せるかではなく、そのRecommendationがそのままTransactionや顧客提案へ接続されるかを見るべきだ。多くの領域ではHuman approvalが意図的に残る。",
+"一方、裏側のResearch工程では閉ループ化が進みやすい。新しいFilingsを検知し、Modelを更新し、差分を要約し、Analystへ重要度順で渡すところまで自動化できれば、人間は情報処理ではなく仮説と判断へ移る。"
+]}],
 sources:[
 {label:"Rogo",url:"https://rogo.ai/"},
 {label:"Rogo — Product design system",url:"https://design.rogo.ai/product"},
