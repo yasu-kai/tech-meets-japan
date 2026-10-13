@@ -1588,3 +1588,9 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
 }
 
 /* Headline wrapping audited */
+
+
+.offsec-mobile-line{display:inline}
+@media(max-width:720px){
+  .offsec-mobile-line{display:block}
+}
