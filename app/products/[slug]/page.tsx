@@ -395,7 +395,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
             <section className="section section-tight product-analysis">
               <div className="section-heading"><div><p className="eyebrow">ENTERPRISE READINESS</p><h2>大企業導入に耐えられるか。</h2></div><ShieldCheck size={28}/></div>
               <div className="enterprise-table enterprise-table-deep">
-                {product.decision.enterpriseReadiness?.map(x=><div key={x.item}><strong>{x.item}</strong><span>{x.status}</span><p>{x.note||""}</p><p>{x.implication||""}</p><small>{x.verify ? "確認: "+x.verify : ""}</small></div>)}
+                {product.decision.enterpriseReadiness?.map(x=><div key={x.item}><strong>{x.item}</strong><span>{x.status}</span><p>{x.note||""}</p><p>{x.implication||""}</p><small>{x.verify ? <a href={x.verify} target="_blank" rel="noreferrer">公式情報を確認 ↗</a> : ""}</small></div>)}
               </div>
             </section>
 
