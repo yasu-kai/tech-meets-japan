@@ -900,6 +900,45 @@ sources:[
 {label:"Meta — AI Glasses",url:"https://about.fb.com/news/2026/05/ray-ban-meta-ai-glasses-launch-in-japan/"}
 ]
 }
+,{
+slug:"silent-speech",category:"gadgets",eyebrow:"GADGETS & FUTURE DEVICES / INTERFACE",
+title:"人間は、いつまでAIに話しかけるのか。",
+dek:"Voiceの次は、声を出すことすら要らなくなるかもしれない。顎、首、手。Silent Speechを読むEMG wearableが、AIへの入力そのものを作り替え始めている。",
+thesis:"Silent Speechの本質は『無音で話せる』ことだけではない。人間がAIを操作していると意識する瞬間を、どこまで消せるかにある。",
+companies:["Engram","Silenzio","SilentWear / ETH Zürich","GMO Pepabo + Yokohama National University"],
+depth:{current:"Level 1–2 — Experimental interface",target:"Level 3–4 — Contextual / silent AI input",human:"意図、確認、Privacy境界、誤認時の訂正、最終操作責任"},
+sections:[
+{heading:"生成AIは進化した。でも、入口はまだ古い。",body:[
+"AIは文章を書き、画像を作り、コードを書き、電話までできるようになった。一方、人間がAIへ指示する方法は、キーボードで打つか、声で話すかという古いInputに強く依存している。Voiceは自然だが、電車、会議中、騒音環境、静かな場所では使いにくい。Privacyの問題もある。",
+"Silent Speech Interfaceは、この制約を音声認識の改善ではなく、音そのものを不要にすることで解こうとしている。発話時に動く筋肉の電気信号をsurface EMGで読み、声を出す前の運動信号をDigital inputへ変える。"
+]},
+{heading:"顎、首、手。人体のどこを入力端子にするか。",body:[
+"Engramは耳から顎周辺へ装着する非侵襲Wearableを試作し、Speech muscle signalsをSilent commandやPhraseへ変える構想を掲げる。Silenzioも顔・首周辺のsurface-EMGからSilent articulationを読み、単なるGesture分類ではなく自然言語Decodeを目指す。",
+"ETH ZürichのPULP-BioによるSilentWearは14-channelのDry EMG neckbandをOpen-sourceで公開している。Hardware・Firmware・Datasetまで公開することで、Silent Speechを再現可能な研究Platformへ近づけている。"
+]},
+{heading:"日本勢は、顔に貼りっぱなしにしない方向を出した。",body:[
+"GMOペパボ研究所と横浜国立大学の共同研究は、手に装着したSoft EMG interfaceの指先Electrodeを口元へ近づけ、必要なときだけ筋活動を取る方式を提案した。30語Vocabularyを3名で平均97.2±1.3%分類し、Real-time drone controlまで実証している。",
+"面白いのはAccuracyだけではない。顔や首へSensorを常時装着する負担を、手を口元へ近づけるGestureへ置き換えている点だ。WearabilityとPrivacyをSensor placementから解こうとしている。"
+]},
+{heading:"ただし、97%と自然な会話は同じではない。",body:[
+"限定WordやCommandを分類するTaskと、自由な文章を連続的にDecodeするTaskの難易度は大きく違う。30語を高精度に分類できても、そのまま無制限のPromptをSilent入力できるわけではない。",
+"個人差、Sensor位置ずれ、再装着、汗、未知語、Calibration、長時間装着も課題になる。誤認されたCommandがAgent Actionへつながるなら、入力精度はSafety問題にもなる。"
+]},
+{heading:"次のUI競争は、画面ではなく『意図までの距離』。",body:[
+"Keyboardは指を動かす。Voiceは声を出す。AI Glassesは視界を共有する。Silent Speechは声を出す直前の筋活動を読む。入力技術の歴史を並べると、人間の意図とMachine inputの距離が少しずつ短くなっている。",
+"その先では、AIへ明示的にPromptする回数そのものが減るかもしれない。最も優れたAI interfaceは、最終的に『AIを操作している感覚』を消す方向へ進む可能性がある。"
+]}
+],
+sources:[
+{label:"Engram — Silent Speech Interface",url:"https://engramlabs.co/"},
+{label:"Silenzio — Speech, without sound",url:"https://silenzio.io/"},
+{label:"SilentWear — ETH Zürich / PULP-Bio",url:"https://github.com/pulp-bio/SilentWear"},
+{label:"ETH Zürich — Wearable fully-dry EMG neckband",url:"https://www.research-collection.ethz.ch/entities/publication/269abfdb-581f-48b2-a847-7ea8711f7adc"},
+{label:"GMO Pepabo Research — 2026 research archive",url:"https://rand.pepabo.com/archive/"},
+{label:"Soft Active EMG Interface — 2026 paper",url:"https://arxiv.org/abs/2608.27048"}
+]
+}
+
 ];
 
 export const storyMap=Object.fromEntries(researchStories.map(s=>[s.slug,s])) as Record<string,ResearchStory>;
