@@ -110,4 +110,17 @@ if(semanticMobileHeadlineCount<10){
   process.exit(1);
 }
 
+
+
+const productCss=readFileSync("app/globals.css","utf8");
+const badMobileMinHeight=/@media\(max-width:560px\)[\s\S]*?\.capability-detail-grid>div\s*\{[^}]*min-height\s*:\s*(?:1[2-9]\d|[2-9]\d\d)px/;
+if(badMobileMinHeight.test(productCss)){
+  console.error("[MOBILE_DENSITY_FAIL] capability detail cells retain excessive fixed min-height on mobile.");
+  process.exit(1);
+}
+if(!productCss.includes(".capability-detail-grid>div{\n    min-height:0!important;")){
+  console.error("[MOBILE_DENSITY_FAIL] compact mobile capability override is missing.");
+  process.exit(1);
+}
+
 console.log("PASS: deterministic editorial checks.");
