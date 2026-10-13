@@ -1040,6 +1040,43 @@ sources:[
 ]
 }
 
+,{
+slug:"agentic-dev-security",category:"ai-security",eyebrow:"AI × SECURITY / AGENTIC DEVELOPMENT",
+title:"AIが書いたコードを、誰が守るのか。",
+dek:"AI Coding AgentがMCP、Skill、外部Toolを使いながらSoftwareを作る時代では、守る対象はCodeだけでは足りない。Software Supply Chainの上流に、Agentそのものが加わり始めている。",
+thesis:"Agentic Development Securityの核心は『AI生成コードをScanする』ことではない。Agentが何を使い、何を実行し、何を生成したかを、生成者とは独立したLayerで統制することにある。",
+companies:["Snyk","Evo ADS","Claude Code","Cursor / Copilot / Codex"],
+depth:{current:"Level 3 — Agent-governed development",target:"Level 4 — Continuous policy enforcement",human:"Policy、Risk appetite、例外承認、Security ownership"},
+sections:[
+{heading:"Codeだけ見ても、もうSoftware Supply Chain全体は見えない。",body:[
+"従来のAppSecはRepository、Dependency、Container、CI/CD、Artifactを検査すれば多くのRiskを捉えられた。しかしCoding AgentはCodeを書く前に、MCP Serverへ接続し、Skillを読み、外部Toolを呼び、Local fileやBrowserへAccessする。RiskがRepositoryへCommitされる前から発生する。",
+"Snykが約1万のDeveloper environmentを調査した結果では、複数のAI Coding環境、MCP Server、Agent Skillがすでに広く使われており、Tool descriptionへのPrompt InjectionやSkill内のMalicious patternも確認されている。Softwareを作る『環境』自体がSupply Chainへ加わったと見るべきだ。"
+]},
+{heading:"新しいRiskは、What agents use / do / generateの3面にある。",body:[
+"SnykのAgentic Development Securityは、Agentが『何を使うか』『何をするか』『何を生成するか』を別のControl surfaceとして整理している。MCPやSkillの安全性、実行中のAgent action、最後に生成されたCode。従来のSASTだけでは、この3つのうち最後しか見えない。",
+"特にMCPは、Agentへ外部Systemの権限を与えるAccess layerになる。便利だから接続したToolが、過剰権限、悪意あるInstruction、未管理Credentialを持てば、Code品質とは無関係にSecurity incidentが起き得る。"
+]},
+{heading:"『AIが書いたものを、同じAIに自己採点させない』という思想。",body:[
+"SnykはAI Security Platformで、生成者と検証者を分離するIndependent validation layerを明確に打ち出している。Frontier modelのReasoningだけに任せず、SAST、SCA、Secrets、Container、IaCなどのDeterministic engineと組み合わせて検証する。",
+"これはAI監査全般にも通じる。生成AIは自分が生成した内容の前提や意図を共有しているため、同じSystemだけでSelf-reviewすると盲点が残る。SpeedをAIに渡すほど、Validationは独立させる必要がある。"
+]},
+{heading:"Security control pointはCI/CDより前、AgentのExecution loopへ移る。",body:[
+"AgentがToolを呼ぶ前、Credentialへ触れる前、Commandを実行する前にPolicyをEnforceできれば、RiskがArtifactになる前に止められる。Snykは2026年、MCP Governanceを含むGovern Agent BehaviorをGAへ進め、Execution loop内でAgent actionを統制する方向を強めている。",
+"これはShift Leftのさらに左側だ。DeveloperがCodeを書く前に、Agentが何をしようとしているかをSecurityが見る。AppSec TeamはCode reviewerだけでなく、AI workforceのPermission designerへ役割を広げることになる。"
+]},
+{heading:"AI開発の速度が上がるほど、人間のSecurity reviewだけでは追いつかない。",body:[
+"Agentが複数Taskを並列で進めると、Code generationの量は人間DeveloperのReview capacityを超えていく。だからSecurityもMachine speedへ移らざるを得ない。ただし、AIが自動修正まで行うほど、どのRiskを許容するかというPolicyは人間側に残る。",
+"将来の開発組織では、Developer AgentとSecurity Agentが同時に動き、人間はすべてのLineをReviewするのではなく、Policy violationと高Risk例外だけを見る構造が自然になる。『AIが書いたコードを誰が守るのか』への答えは、別のAI。ただし、そのAIへ何を許すかを決めるのは人間だ。"
+]}
+],
+sources:[
+{label:"Snyk — AI Security Platform",url:"https://snyk.io/jp/platform/"},
+{label:"Snyk — Evo Agentic Development Security",url:"https://snyk.io/jp/news/snyk-launches-evo-agentic-development-security/"},
+{label:"Snyk — Agentic Development Risk Research",url:"https://snyk.io/blog/agentic-development-security-ai-coding-risk/"},
+{label:"Snyk — MCP Governance Goes GA",url:"https://snyk.io/blog/evo-ads-govern-agent-behavior-ga/"}
+]
+}
+
 ];
 
 export const storyMap=Object.fromEntries(researchStories.map(s=>[s.slug,s])) as Record<string,ResearchStory>;
