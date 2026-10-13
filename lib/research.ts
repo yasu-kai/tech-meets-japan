@@ -101,6 +101,7 @@ export const researchCategories: ResearchCategory[] = [
       { slug:"wearable-memory", title:"『全部覚えている』ウェアラブルは便利か、怖いか。", kicker:"Memory / Capture / Search", format:"REPORT", status:"published", href:"/research/gadgets/wearable-memory" },
       { slug:"future-input", title:"キーボードの次の入力装置は何になる。", kicker:"Voice / Gesture / Vision / Neural input", format:"REPORT", status:"published", href:"/research/gadgets/future-input" },
       { slug:"weird-gadgets", title:"なんだこれwww — 海外の変態ガジェットを拾う。", kicker:"The weird edge of product innovation", format:"WTF / GADGET", status:"published", href:"/research/gadgets/weird-gadgets" },
+      { slug:"silent-speech", title:"人間は、いつまでAIに話しかけるのか。", kicker:"Engram / Silenzio / SilentWear / GMO Pepabo + YNU", format:"REPORT", status:"published", href:"/research/gadgets/silent-speech" },
     ],
   },
 ];
