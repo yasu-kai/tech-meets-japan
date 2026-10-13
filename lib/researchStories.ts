@@ -683,7 +683,11 @@ sections:[
 "店舗数・SKU数が多く、担当者の経験で調整している企業ではAIの効果が出やすい。一方で値付けがブランドイメージに直結する業態では、完全自動化は難しい。",
 "最初はClearanceや補充のように成功条件を定量化しやすい領域から始めるのが現実的だ。"
 ]}
-],
+,{heading:"価格AIで危ないのは、精度より『目的関数』。",body:[
+"AIが価格を最適化するとき、何を最大化するかで結果は変わる。粗利、売上、在庫回転、来店頻度、廃棄削減。短期粗利だけを追えば値上げが増え、在庫消化だけを追えばBrandを壊す可能性がある。",
+"だからRetail AIを比較するときは、予測精度だけでなく、どのKPIを同時に制約として扱えるか、Human overrideがどこにあるか、価格変更の理由を説明できるかを見るべきだ。価格決定はModel性能よりGovernanceの問題になりやすい。",
+"日本では店舗ごとの裁量、チラシ・ポイント施策、メーカーとの商慣行も絡む。完全自律価格より、需要予測と提案をAIが担い、例外だけ人間が承認するHuman-on-the-loop型から広がる可能性が高い。"
+]}],
 sources:[
 {label:"Blue Yonder — AI pricing",url:"https://now.blueyonder.com/AI-pricing-tailored"},
 {label:"Blue Yonder — 2026 Planning release",url:"https://es.blueyonder.com/release-announcements/1h-2026-release/cognitive-solutions-for-planning"},
@@ -804,7 +808,11 @@ sections:[
 "山間部、送電線、橋、工場など、移動コストや危険性が高い場所ほどRemote inspectionの価値が大きい。",
 "Droneが人間を完全に消すより、現場へ行く回数を劇的に減らすだけでも事業価値は十分に大きい。"
 ]}
-],
+,{heading:"次の差は、飛行性能より『任務を終えられるか』。",body:[
+"Droneが作業主体になるには、目的地まで飛べるだけでは足りない。対象を識別し、異常を判断し、必要なら近づき、撮影・散布・運搬を実行し、結果を記録して戻る必要がある。競争軸は機体性能からMission autonomyへ移る。",
+"比較したいのは、人間OperatorがWaypointを指定するのか、AIが状況から次のActionを選ぶのか、通信が切れても任務を継続できるのか、複数機を一人で監督できるのかだ。同じ『自律Drone』でもAutomationとAutonomyには大きな差がある。",
+"日本では航空法、目視外飛行、機体認証、現場安全が導入速度を決める。技術的にできることと、現場で任せられることを分けて読む必要がある。"
+]}],
 sources:[
 {label:"DJI Enterprise — Inspection",url:"https://enterprise.dji.com/inspection"},
 {label:"DJI Enterprise — Dock",url:"https://enterprise.dji.com/dock"},
