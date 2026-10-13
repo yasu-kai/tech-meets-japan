@@ -109,3 +109,5 @@ export const researchCategories: ResearchCategory[] = [
 export const researchCategoryMap = Object.fromEntries(
   researchCategories.map(category => [category.slug, category])
 ) as Record<string, ResearchCategory>;
+
+// Research catalog is audited on push.
