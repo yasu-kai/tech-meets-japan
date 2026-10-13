@@ -1003,6 +1003,43 @@ sources:[
 ]
 }
 
+,{
+slug:"browser-agents",category:"ai-work",eyebrow:"AI × WORK / COMPUTER USE",
+title:"人間は、いつまでSaaSを操作するのか。",
+dek:"Webサービスは、人間が画面を見てクリックするために作られてきた。Browser Agentが一般化すると、その前提自体が崩れる。次に変わるのはSaaSの機能ではなく、誰がUIを操作するかだ。",
+thesis:"Browser Agentの本質はRPAの置き換えではない。APIがない業務までAIが触れるようになり、ブラウザそのものがAgentのUniversal APIになることにある。",
+companies:["Browserbase","Anthropic","Stagehand","Browser Agents"],
+depth:{current:"Level 3 — AI Agent",target:"Level 4 — Human-on-the-loop",human:"目的、権限、例外、最終承認、高リスク操作"},
+sections:[
+{heading:"SaaSは、人間がクリックする前提で作られている。",body:[
+"企業の仕事はSaaSへ移った。CRM、ATS、会計、購買、サポート、管理画面。しかしAPIが整備されているのは業務の一部で、実際には人間が画面を開き、検索し、コピーし、入力し、Submitすることでシステム同士をつないでいる。",
+"Computer UseやBrowser Agentが重要なのは、既存SaaS側がAgent対応するのを待たず、AIが人間と同じGUIを操作できることだ。AnthropicはComputer Useを『画面を見て、カーソルを動かし、クリックし、入力する』能力として提供してきた。これは専用APIがなくても仕事の入口を作れるという意味を持つ。"
+]},
+{heading:"Browserbaseは、ブラウザをAgentのInfrastructureとして売り始めた。",body:[
+"Browserbase Agentsは、自然言語でGoalを渡すと、AgentがWebを移動し、操作し、Structured resultを返すManaged Browser Agentとして提供されている。従来のBrowser AutomationではSiteごとにScriptやSelectorを保守する必要があったが、Agentは画面やDOMを見ながら次のActionを選ぶ。",
+"Stagehandも同じ方向を示す。Playwright系の操作を残しつつ、act・observe・extractのようなAI向けPrimitiveを加え、ページ変更に対してSelf-healingする。つまりBrowser Automationは『壊れないSelectorを書く競争』から、『目的を達成できるAgentを作る競争』へ移っている。"
+]},
+{heading:"ブラウザがUniversal APIになると、SaaSの価値の置き場所が変わる。",body:[
+"人間が直接SaaSを操作しなくなると、UIの使いやすさだけでは差別化しにくくなる。Agentが裏でSalesforce、HubSpot、Workday、ServiceNowを操作し、人間はSlackやChatからGoalだけ渡す世界では、ユーザーは個々のSaaS画面をほとんど見ない可能性がある。",
+"Browserbase自身も、社内Agent『bb』がSlackからPR作成、Snowflake調査、HubSpot登録、Browser operationまで横断する事例を公開している。ここで価値を持つのは『最も使いやすい画面』ではなく、Agentが安全に使える権限、Data、Workflow、監査性になる。"
+]},
+{heading:"ただし、GUIを操作できることと、任せてよいことは別。",body:[
+"Browser Agentは人間と同じ画面を触れるため、誤操作も人間と同じように本番へ反映される。さらにWebページにはPrompt Injectionが混入し得る。Agentが閲覧したページ上の命令を信頼すると、意図しない操作やData流出につながる。",
+"そのため実運用では、閲覧だけ、下書きまで、更新可能、送信・決済可能といったActionごとの権限境界が必要になる。Browser Agentの自律性を上げるほど、確認画面を減らすことより『どこで必ず止めるか』を設計することが重要になる。"
+]},
+{heading:"消えるのはSaaSではなく、『SaaSを操作する仕事』かもしれない。",body:[
+"CRMも会計も採用Systemも残る。ただし、それぞれの画面を人間が覚え、毎日巡回し、同じ情報を転記する仕事は減っていく可能性が高い。SaaSは人間向けApplicationから、Agentが使うSystem of recordへ近づく。",
+"この変化が進めば、Software選定の基準も変わる。UIだけでなく、Agentが読めるData、実行可能なAction、権限の細かさ、監査Log、失敗時のRollbackが重要になる。人間は『どの画面を操作するか』ではなく、『Agentへ何を任せるか』を設計する側へ移る。"
+]}
+],
+sources:[
+{label:"Browserbase — Introducing Browserbase Agents",url:"https://www.browserbase.com/blog/introducing-browserbase-agents"},
+{label:"Browserbase — How we build Internal Agents",url:"https://www.browserbase.com/blog/internal-agents"},
+{label:"Browserbase — Stagehand",url:"https://www.browserbase.com/stagehand"},
+{label:"Anthropic — Computer Use",url:"https://www.anthropic.com/news/3-5-models-and-computer-use"}
+]
+}
+
 ];
 
 export const storyMap=Object.fromEntries(researchStories.map(s=>[s.slug,s])) as Record<string,ResearchStory>;
