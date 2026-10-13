@@ -107,6 +107,7 @@ export const researchCategories: ResearchCategory[] = [
       { slug:"weird-gadgets", title:"なんだこれwww — 海外の変態ガジェットを拾う。", kicker:"The weird edge of product innovation", format:"WTF / GADGET", status:"published", href:"/research/gadgets/weird-gadgets" },
       { slug:"silent-speech", title:"人間は、いつまでAIに話しかけるのか。", kicker:"Engram / Silenzio / SilentWear / GMO Pepabo + YNU", format:"REPORT", status:"published", href:"/research/gadgets/silent-speech" },
       { slug:"embodied-ai-reception", title:"受付に立つのは、人間でも画面でもない。", kicker:"Proto Hologram / AI Avatar / Spatial Computing", format:"REPORT", status:"published", href:"/research/gadgets/embodied-ai-reception" },
+      { slug:"bridge-ultrasound-bci", title:"脳にチップを埋めない。BCIの次の賭けは、超音波だ。", kicker:"Bridge Neurotech / Butterfly / Merge Labs / Neuralink", format:"REPORT", status:"published", href:"/research/gadgets/bridge-ultrasound-bci" },
     ],
   },
 ];
