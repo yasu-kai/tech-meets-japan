@@ -1043,13 +1043,13 @@ sources:[
 ,{
 slug:"agentic-dev-security",category:"ai-security",eyebrow:"AI × SECURITY / AGENTIC DEVELOPMENT",
 title:"コードを書くAI。守るのは誰だ。",
-dek:"AI Coding AgentがMCP、Skill、外部Toolを使いながらSoftwareを作る時代では、守る対象はCodeだけでは足りない。Software Supply Chainの上流に、Agentそのものが加わり始めている。",
-thesis:"Agentic Development Securityの核心は『AI生成コードをScanする』ことではない。Agentが何を使い、何を実行し、何を生成したかを、生成者とは独立したLayerで統制することにある。",
+dek:"コードを書く側がAIになるなら、守る側も人間だけでは追いつかない。MCP、Skill、外部Toolまで使うCoding Agentの登場で、Securityは『生成後のCode review』から『Agentの行動を別のAIとPolicyで監視する』仕事へ広がっている。",
+thesis:"次のAppSecは、AIが書いたCodeを人間が後から全部読む形では回らない。Developer Agentとは独立したSecurity AgentとDeterministic engineが、何を使い、何を実行し、何を生成したかを継続検証する構造へ移る。",
 companies:["Snyk","Evo ADS","Claude Code","Cursor / Copilot / Codex"],
 depth:{current:"Level 3 — Agent-governed development",target:"Level 4 — Continuous policy enforcement",human:"Policy、Risk appetite、例外承認、Security ownership"},
 sections:[
-{heading:"Codeだけ見ても、もうSoftware Supply Chain全体は見えない。",body:[
-"従来のAppSecはRepository、Dependency、Container、CI/CD、Artifactを検査すれば多くのRiskを捉えられた。しかしCoding AgentはCodeを書く前に、MCP Serverへ接続し、Skillを読み、外部Toolを呼び、Local fileやBrowserへAccessする。RiskがRepositoryへCommitされる前から発生する。",
+{heading:"コードを書くAIを、人間だけで守るのは無理がある。",body:[
+"Developer Agentが複数Taskを並列で進めると、生成されるCodeとActionの量は人間のReview capacityを簡単に超える。しかもRiskはCodeだけに現れない。MCP Serverへ接続し、Skillを読み、外部Toolを呼び、Local fileやBrowserへAccessする時点からSecurity eventは始まっている。",
 "Snykが約1万のDeveloper environmentを調査した結果では、複数のAI Coding環境、MCP Server、Agent Skillがすでに広く使われており、Tool descriptionへのPrompt InjectionやSkill内のMalicious patternも確認されている。Softwareを作る『環境』自体がSupply Chainへ加わったと見るべきだ。"
 ]},
 {heading:"新しいRiskは、What agents use / do / generateの3面にある。",body:[
@@ -1080,13 +1080,13 @@ sources:[
 ,{
 slug:"procurement-agents",category:"ai-industry",eyebrow:"AI × INDUSTRY / PROCUREMENT",
 title:"購買部門に、AIの同僚が増えている。",
-dek:"購買は承認フローだけではない。Requestの内容確認、Supplier比較、Risk review、契約条件、社内Routing。Zipはこの前処理をAgent化し始めている。次に問われるのは、購買担当者がどこまで『処理する人』であり続けるかだ。",
-thesis:"Procurement Agentの価値は承認を速くすることではない。IntakeからRisk、Supplier、Approvalまでの情報収集と確認をAgentへ渡し、人間を例外・交渉・Policyへ寄せられるかにある。",
+dek:"購買部門に増えているのは、ひとつの万能AIではない。申請内容を確認するAgent、Supplierを調べるAgent、Riskを見るAgent、RoutingするAgent。Zipは購買業務を細かな役割へ分解し、AIの『同僚』を複数配置する方向へ進んでいる。",
+thesis:"Procurement Agentの本質は、購買担当者を一人のAIで置き換えることではない。Intake、Risk、Supplier、Approvalという役割ごとにAgentを置き、人間を例外・交渉・Policyへ寄せる『AI込みの購買組織』を作ることにある。",
 companies:["Zip","OpenAI Procurement","Agentic Procurement Orchestration"],
 depth:{current:"Level 3 — AI Agent",target:"Level 4 — Human-on-the-loop procurement",human:"Supplier選定、交渉、Policy、例外、高額案件の最終責任"},
 sections:[
-{heading:"購買のボトルネックは、承認者が押すボタンだけではない。",body:[
-"購買Requestが来ると、担当者は申請内容を読み、添付されたOrder Formと突合し、既存Supplierかを確認し、SecurityやLegalへ回し、金額やPayment termの不一致を見つけ、必要ならRequesterへ差し戻す。時間がかかるのはApprovalそのものより、その前後の確認とRoutingだ。",
+{heading:"購買部門の仕事は、すでに複数のAgentへ分解できる。",body:[
+"購買Requestが来ると、担当者は申請内容を読み、Order Formと突合し、既存Supplierかを確認し、SecurityやLegalへ回し、金額やPayment termの不一致を見つける。ひとつひとつは小さな仕事だが、件数が積み上がると大きな工数になる。ここに役割別Agentを置ける余地がある。",
 "ZipはProcurement Orchestrationを、複数部門にまたがるこのWorkflow全体をつなぐLayerとして位置づけている。Agentic AIが入ると、RuleでRouteするだけでなく、Documentを読み、差分を検出し、次のActionを提案・実行するところまで自動化範囲が広がる。"
 ]},
 {heading:"OpenAIの事例は、『確認作業』がAgent化しやすいことを示す。",body:[
@@ -1117,13 +1117,13 @@ sources:[
 ,{
 slug:"robotics-as-labor",category:"robotics",eyebrow:"ROBOTICS & PHYSICAL AI / BUSINESS MODEL",
 title:"ロボットを“買う”時代が終わる。",
-dek:"Robot導入が進まない理由は、技術不足だけではない。高額CapEx、Integration、保守、故障Risk。FormicのRaaSは、Robotを買うのではなく『稼働する労働力』へ変えようとしている。",
-thesis:"RaaSの本質は支払い方法ではない。Robot Vendorが導入・保守・稼働率のRiskまで引き受けることで、Automationの意思決定を設備投資からOperating expenseへ変えることにある。",
+dek:"工場がRobotを導入する時、これまでは『設備を買う』のが前提だった。FormicのRaaSは、その前提を崩す。Robot本体ではなく、設計・保守・稼働率まで含む『作業能力』を月額で使う。Automationが設備投資から労働力調達へ近づき始めている。",
+thesis:"RaaSの本質は分割払いではない。Robot Vendorが導入・保守・稼働率のRiskを持ち、顧客はHardwareの所有ではなく成果と稼働時間へ払う。Robot市場の競争軸を『何台売るか』から『何時間働かせるか』へ変える可能性がある。",
 companies:["Formic","Robotics-as-a-Service","SMB Manufacturing"],
 depth:{current:"Level 2–3 — Managed automation",target:"Level 4 — Outcome-based robotic labor",human:"工程設計、Safety、例外、改善、現場責任"},
 sections:[
-{heading:"Robotが売れない理由は、『高い』だけではない。",body:[
-"中小製造業がRobotを導入しようとすると、機体価格だけでなく、Cell設計、Integration、Installation、Programming、保守、故障対応、Upgradeまで自社側の負担になる。投資回収が見えにくい工程では、技術的に自動化できても稟議が止まる。",
+{heading:"Robotを買う、という前提そのものがBarrierだった。",body:[
+"中小製造業がRobotを導入しようとすると、機体価格だけでなく、Cell設計、Integration、Installation、Programming、保守、故障対応、Upgradeまで『設備を所有する側』の責任になる。投資回収が見えにくい工程では、技術的に自動化できても稟議が止まる。",
 "特に初めてAutomationを導入する工場では、何を買えばよいか、誰が止まったRobotを直すか、需要変動で設備が余ったらどうするかというRiskが大きい。Robotの性能より、導入後の責任分界がBarrierになる。"
 ]},
 {heading:"FormicはRobotではなく、稼働するSystemを売る。",body:[
@@ -1154,13 +1154,13 @@ sources:[
 ,{
 slug:"embodied-ai-reception",category:"gadgets",eyebrow:"GADGETS & FUTURE DEVICES / PHYSICAL AI",
 title:"受付に立つのは、人間でも画面でもない。",
-dek:"Chatbotは画面の中にいる。ProtoはAI Avatarを物理空間へ出し、店舗・受付・イベントへ『存在感のあるAgent』を置こうとしている。これはDisplayの進化ではなく、Digital Agentが身体を持つ話だ。",
-thesis:"Embodied AI Receptionの価値はホログラム演出ではない。Knowledgeと会話能力を持つAIを、店舗・受付・会場というPhysical touchpointへ常設できるかにある。",
+dek:"受付のDigital化は、長く『人を減らして画面を置く』ことだった。Protoが狙うのはその次だ。Knowledgeと会話能力を持つAI Avatarを物理空間へ置き、来訪者の前にDigital Agentそのものを立たせる。",
+thesis:"Embodied AI Receptionの本質はホログラム演出ではない。AIが店舗・受付・会場というPhysical touchpointに『身体』を持ち、人間StaffとKioskの間に新しい接客レイヤーを作れるかにある。",
 companies:["Proto Hologram","ProtoOS","AI Avatar","Spatial Computing"],
 depth:{current:"Level 2–3 — Interactive AI avatar",target:"Level 4 — Human-on-the-loop physical service agent",human:"例外対応、Brand policy、本人確認、高Risk案内、接客品質管理"},
 sections:[
-{heading:"受付Digital化は、ずっと『画面を置く』発想だった。",body:[
-"無人受付やKioskは珍しくない。しかし多くはTouch panelやTabletにFormを表示し、人間が入力する構造だ。Chatbotを載せても、ユーザーは『端末を操作する』感覚から抜けない。",
+{heading:"受付に画面を置く時代から、AIそのものを立たせる時代へ。",body:[
+"無人受付やKioskは珍しくない。しかし多くはTouch panelやTabletにFormを表示し、人間が入力する構造だ。Chatbotを載せても、ユーザーは『端末を操作する』感覚から抜けない。Protoが変えようとしているのは、この入口そのものだ。",
 "Proto Hologramは、Holographic device、ProtoOS、Conversational AI、AI Avatarを組み合わせ、Physical spaceへ対話可能なAvatarを置くPlatformを提供している。ここではUser interfaceが画面のMenuではなく、人型の存在そのものになる。"
 ]},
 {heading:"AI Avatarの価値は、見た目より『その場にいること』。",body:[
