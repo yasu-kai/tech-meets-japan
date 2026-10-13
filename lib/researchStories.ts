@@ -1114,6 +1114,43 @@ sources:[
 ]
 }
 
+,{
+slug:"robotics-as-labor",category:"robotics",eyebrow:"ROBOTICS & PHYSICAL AI / BUSINESS MODEL",
+title:"ロボットは、設備ではなく『労働力』として買う時代へ。",
+dek:"Robot導入が進まない理由は、技術不足だけではない。高額CapEx、Integration、保守、故障Risk。FormicのRaaSは、Robotを買うのではなく『稼働する労働力』へ変えようとしている。",
+thesis:"RaaSの本質は支払い方法ではない。Robot Vendorが導入・保守・稼働率のRiskまで引き受けることで、Automationの意思決定を設備投資からOperating expenseへ変えることにある。",
+companies:["Formic","Robotics-as-a-Service","SMB Manufacturing"],
+depth:{current:"Level 2–3 — Managed automation",target:"Level 4 — Outcome-based robotic labor",human:"工程設計、Safety、例外、改善、現場責任"},
+sections:[
+{heading:"Robotが売れない理由は、『高い』だけではない。",body:[
+"中小製造業がRobotを導入しようとすると、機体価格だけでなく、Cell設計、Integration、Installation、Programming、保守、故障対応、Upgradeまで自社側の負担になる。投資回収が見えにくい工程では、技術的に自動化できても稟議が止まる。",
+"特に初めてAutomationを導入する工場では、何を買えばよいか、誰が止まったRobotを直すか、需要変動で設備が余ったらどうするかというRiskが大きい。Robotの性能より、導入後の責任分界がBarrierになる。"
+]},
+{heading:"FormicはRobotではなく、稼働するSystemを売る。",body:[
+"FormicのRobotics-as-a-Serviceは、設計、導入、24/7 Monitoring、Maintenance、UpgradeまでをManaged serviceとしてまとめ、初期CapExを抑えた月額・稼働ベースの契約を提供する。公式情報では、顧客が生産している時間に対して支払い、Performanceを契約で保証するモデルを強調している。",
+"ここで重要なのはFinance手法だけではない。Robotが止まるとVendor側のRevenueにも影響するため、従来の『設備を納品したら終わり』より、Vendorと工場のIncentiveが稼働率で揃いやすい。"
+]},
+{heading:"Robot購入から『Robot workforce』へ変わると、導入単位も変わる。",body:[
+"Cameron's Coffeeの公開事例では、Palletizingから始め、12か月で複数Systemへ拡大している。最初に巨大なAutomation projectを組むのではなく、一工程で稼働実績を作り、次の工程へ増やす。",
+"このモデルでは、Automationを設備更新Cycleではなく、人員配置に近い感覚で追加できる可能性がある。何台のRobotを所有しているかではなく、何時間の作業能力を確保するかがManagement指標になる。"
+]},
+{heading:"RaaSが普及すると、Robotメーカーの競争軸も変わる。",body:[
+"Hardware性能だけで売るなら、速さ、可搬重量、精度が中心になる。しかしService化すると、Uptime、Mean time to repair、Remote support、Swap、Software update、導入Lead timeまでProductになる。",
+"さらにVendorがPerformance Riskを引き受けるほど、最適なRobotを自社製に限定する理由は薄れる。工程ごとに最も経済的なHardwareを組み合わせ、裏側でFleetを管理する『Robot operator』が価値を持つ可能性がある。"
+]},
+{heading:"日本で刺さるなら、大企業より中堅・中小工場かもしれない。",body:[
+"日本の大手製造業は既にIntegratorや設備部門を持つ企業も多い。一方、中堅・中小工場では人手不足が強くても、Automation Engineerを抱えられず、数千万円単位のCapExを怖がるケースがある。",
+"だから日本でRaaSを見るときは、Robot技術そのものより、初期費用、最低契約期間、稼働率保証、保守拠点、故障時SLA、工程変更時の再構成費用を見るべきだ。Robotを『買えるか』ではなく、『人を採用する代わりに月額で使えるか』まで下がれば、市場は一段広がる。"
+]}
+],
+sources:[
+{label:"Formic — Full Service Automation / No CapEx",url:"https://formic.co/lp/accounting-for-robots"},
+{label:"Formic — Robotics-as-a-Service Overview",url:"https://land.formic.co/formic-robotics-as-a-service-affordable-automation-for-growth"},
+{label:"Formic — Cameron's Coffee Customer Story",url:"https://formic.co/resources/customer-stories/cameron-s-coffee-hits-automation-easy-button-scaling-from-0-to-5-systems-in-12-mo"},
+{label:"Formic — State of U.S. Manufacturing / RaaS",url:"https://land.formic.co/2024-us-manufacturing-report"}
+]
+}
+
 ];
 
 export const storyMap=Object.fromEntries(researchStories.map(s=>[s.slug,s])) as Record<string,ResearchStory>;
