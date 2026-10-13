@@ -45,6 +45,12 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
           <p className="eyebrow">{story.eyebrow}</p>
           <h1>{story.title}</h1>
           <p className="story-dek">{story.dek}</p>
+          <div className={"story-editorial-visual story-editorial-visual-"+story.category}>
+            <div className="story-visual-index">TECH MEETS JAPAN / {story.eyebrow}</div>
+            <div className="story-visual-title">{story.title}</div>
+            <div className="story-visual-companies">{story.companies.slice(0,4).map(c=><span key={c}>{c}</span>)}</div>
+            <div className="story-visual-grid" aria-hidden="true"><i/><i/><i/><i/><i/><i/></div>
+          </div>
           <div className="story-companies">{story.companies.map(c=><span key={c}>{c}</span>)}</div>
         </section>
 
