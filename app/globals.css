@@ -1340,7 +1340,9 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
   .hero h1 .hero-line{
     width:auto;
     white-space:normal;
-    word-break:keep-all;
+    word-break:normal;
+    overflow-wrap:normal;
+    line-break:strict;
   }
 }
 
