@@ -1077,6 +1077,43 @@ sources:[
 ]
 }
 
+,{
+slug:"procurement-agents",category:"ai-industry",eyebrow:"AI × INDUSTRY / PROCUREMENT",
+title:"購買は、AIにどこまで任せられるか。",
+dek:"購買は承認フローだけではない。Requestの内容確認、Supplier比較、Risk review、契約条件、社内Routing。Zipはこの前処理をAgent化し始めている。次に問われるのは、購買担当者がどこまで『処理する人』であり続けるかだ。",
+thesis:"Procurement Agentの価値は承認を速くすることではない。IntakeからRisk、Supplier、Approvalまでの情報収集と確認をAgentへ渡し、人間を例外・交渉・Policyへ寄せられるかにある。",
+companies:["Zip","OpenAI Procurement","Agentic Procurement Orchestration"],
+depth:{current:"Level 3 — AI Agent",target:"Level 4 — Human-on-the-loop procurement",human:"Supplier選定、交渉、Policy、例外、高額案件の最終責任"},
+sections:[
+{heading:"購買のボトルネックは、承認者が押すボタンだけではない。",body:[
+"購買Requestが来ると、担当者は申請内容を読み、添付されたOrder Formと突合し、既存Supplierかを確認し、SecurityやLegalへ回し、金額やPayment termの不一致を見つけ、必要ならRequesterへ差し戻す。時間がかかるのはApprovalそのものより、その前後の確認とRoutingだ。",
+"ZipはProcurement Orchestrationを、複数部門にまたがるこのWorkflow全体をつなぐLayerとして位置づけている。Agentic AIが入ると、RuleでRouteするだけでなく、Documentを読み、差分を検出し、次のActionを提案・実行するところまで自動化範囲が広がる。"
+]},
+{heading:"OpenAIの事例は、『確認作業』がAgent化しやすいことを示す。",body:[
+"Zipが公開するOpenAIの事例では、Intake Validation Agentが申請内容と添付DocumentやSupplier recordを突合し、不一致を自動でFlagする。従来15〜20分かかっていた確認が秒単位へ短縮されたとされる。",
+"この種のTaskは、購買判断そのものではないが件数が多い。だからAgent化による効果が出やすい。人間が全Requestを最初から読むのではなく、矛盾・不足・高Risk案件だけを見る構造へ変えられる。"
+]},
+{heading:"50以上のAgentという発想は、購買を機能ではなく役割へ分解する。",body:[
+"Zipは2025年に50以上のProcurement向けAI Agentを発表し、Intake routing、Vendor risk、Supplier recommendationなど個別TaskへAgentを配置する方向を示した。これは一体型の『購買AI』ではなく、Category manager、Analyst、Coordinatorが持っていた細かな役割をAgentへ分配する考え方に近い。",
+"重要なのはAgent数ではない。どのAgentがDataを読み、どこまでActionを起こし、どこでHuman approvalへ戻るかだ。Agent同士をOrchestrateするほど、権限・監査Log・Escalation設計がProduct価値になる。"
+]},
+{heading:"Supplier選定や交渉まで完全自律化できるかは別問題。",body:[
+"価格比較やSupplier候補抽出はAIに向く。一方、Supplierとの関係、供給継続性、契約上の微妙な条件、社内政治、将来のStrategic valueはDataだけで決めにくい。高額・長期契約ほど、人間が責任を持つ理由は残る。",
+"だからProcurement Agentの現実的な到達点は、すべてを自動購入することではなく、定型RequestをStraight-through processingし、例外だけ購買担当者へ上げるHuman-on-the-loop型だろう。"
+]},
+{heading:"購買担当者は、『申請を回す人』からPolicy designerへ移る。",body:[
+"AgentがDocument確認、Risk screening、Routing、Supplier情報収集を担えば、人間が使う時間は交渉、Category strategy、Supplier relationship、Policy設計へ移せる。購買DXの本当の価値は承認画面を新しくすることではなく、担当者の仕事の配分を変えることにある。",
+"日本企業で導入を見るなら、AI精度だけでなく、既存稟議・法務・情報Security・会計Systemを横断できるか、誰が例外を持つか、AI判断の根拠を監査できるかを見るべきだ。"
+]}
+],
+sources:[
+{label:"Zip — 2025 Global Growth and AI-powered Transformation",url:"https://ziphq.com/guides/zip-in-2025"},
+{label:"Zip — 90-Day ROI / OpenAI Procurement Agents",url:"https://lp.ziphq.com/rs/195-QFD-187/images/eBook_90_Day-ROI-Zip.pdf?version=0"},
+{label:"Zip — Executive Guide to Procurement Orchestration",url:"https://lp.ziphq.com/rs/195-QFD-187/images/Zip_Executive_Guide.pdf?version=0"},
+{label:"Zip — 2026 Procurement Predictions",url:"https://lp.ziphq.com/rs/195-QFD-187/images/2026_Procurement_Predictions_Zip.pdf?version=0"}
+]
+}
+
 ];
 
 export const storyMap=Object.fromEntries(researchStories.map(s=>[s.slug,s])) as Record<string,ResearchStory>;
