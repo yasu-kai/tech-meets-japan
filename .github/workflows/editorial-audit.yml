@@ -9,6 +9,7 @@ on:
       - "lib/editorialAudit.ts"
       - "scripts/editorial-audit.mjs"
       - "app/products/**"
+      - "app/globals.css"
       - "app/research/**"
       - "lib/researchStories.ts"
       - "lib/research.ts"
@@ -19,6 +20,7 @@ on:
       - "lib/editorialAudit.ts"
       - "scripts/editorial-audit.mjs"
       - "app/products/**"
+      - "app/globals.css"
   workflow_dispatch:
 
 jobs:
