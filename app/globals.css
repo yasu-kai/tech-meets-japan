@@ -1641,3 +1641,31 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
 @media(max-width:560px){
   .fit-diagnostic article{min-height:0!important;}
 }
+
+
+/* Content-first mobile capability layout: concise facts stay concise */
+@media(max-width:560px){
+  .capability-detail-grid{
+    display:block;
+  }
+  .capability-detail-grid>div{
+    display:grid;
+    grid-template-columns:minmax(108px,32%) 1fr;
+    gap:12px;
+    align-items:start;
+    padding:11px 12px!important;
+  }
+  .capability-detail-grid small{
+    margin:1px 0 0;
+    line-height:1.35;
+  }
+  .capability-detail-grid p{
+    margin:0;
+    line-height:1.45;
+  }
+  .capability-behavior-list{
+    grid-column:2;
+    margin-top:4px;
+    padding-top:6px;
+  }
+}
