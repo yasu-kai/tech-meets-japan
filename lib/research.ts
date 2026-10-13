@@ -111,3 +111,5 @@ export const researchCategoryMap = Object.fromEntries(
 ) as Record<string, ResearchCategory>;
 
 // Research catalog is audited on push.
+
+// Headline wrapping audit trigger.
