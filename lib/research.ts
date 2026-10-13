@@ -31,6 +31,7 @@ export const researchCategories: ResearchCategory[] = [
       { slug:"ai-recruiting", title:"採用は、AIでどこまで変わるのか。", kicker:"Sourcing / Screening / Interview / Scheduling", format:"MARKET MAP", status:"published", href:"/research/ai-work/ai-recruiting" },
       { slug:"ai-legal", title:"パラリーガル業務は、AIでどこまで消えるのか。", kicker:"Research / Review / Draft / Filing", format:"REPORT", status:"published", href:"/research/ai-work/ai-legal" },
       { slug:"ai-customer-service", title:"回答するAIから、解決するAIへ。", kicker:"Customer Service Agents", format:"COMPARE", status:"published", href:"/research/ai-work/ai-customer-service" },
+      { slug:"browser-agents", title:"人間は、いつまでSaaSを操作するのか。", kicker:"Browserbase / Claude Computer Use / Stagehand", format:"REPORT", status:"published", href:"/research/ai-work/browser-agents" },
     ],
   },
   {
@@ -40,11 +41,12 @@ export const researchCategories: ResearchCategory[] = [
     description: "攻撃、検知、対策、実行、再検証。AIへ渡されるセキュリティ権限の深さを見る。",
     thesis: "AutomationとAutonomyを分け、AIが自ら次の行動を選べる範囲を見る。",
     topics: [
-      { slug:"offensive-ai", title:"AIは、サイバー防御のどこまでを奪うのか。", kicker:"XBOW / MindFort / Pentera / Horizon3 / Synack / Terra / AgenticSec", format:"MARKET MAP", status:"published", href:"/research/offensive-ai" },
+      { slug:"offensive-ai", title:"AIは、サイバー防御のどこまでを担うのか。", kicker:"XBOW / MindFort / Pentera / Horizon3 / Synack / Terra / AgenticSec", format:"MARKET MAP", status:"published", href:"/research/offensive-ai" },
       { slug:"ai-soc", title:"SOCは監視室からAI監督室へ変わるのか。", kicker:"Detection → Triage → Investigation → Response", format:"REPORT", status:"published", href:"/research/ai-security/ai-soc" },
       { slug:"identity-agents", title:"AI Agent時代のIdentityは誰を認証するのか。", kicker:"Human / Machine / Agent Identity", format:"REPORT", status:"published", href:"/research/ai-security/identity-agents" },
       { slug:"ai-fraud", title:"不正検知AIは『止める判断』まで持てるか。", kicker:"Fraud Detection / Decision / Action", format:"MARKET MAP", status:"published", href:"/research/ai-security/ai-fraud" },
       { slug:"continuous-validation", title:"年1回の診断は、継続攻撃に置き換わるか。", kicker:"Continuous Security Validation", format:"COMPARE", status:"published", href:"/research/ai-security/continuous-validation" },
+      { slug:"agentic-dev-security", title:"AIが書いたコードを、誰が守るのか。", kicker:"Snyk / MCP / Agentic Development Security", format:"REPORT", status:"published", href:"/research/ai-security/agentic-dev-security" },
     ],
   },
   {
@@ -73,6 +75,7 @@ export const researchCategories: ResearchCategory[] = [
       { slug:"finance-ai", title:"金融AIは分析補助から意思決定へ進めるか。", kicker:"Research / Risk / Advisory / Operations", format:"MARKET MAP", status:"published", href:"/research/ai-industry/finance-ai" },
       { slug:"healthcare-ai", title:"医療AIで最後まで人間に残る判断は何か。", kicker:"Diagnosis support / Workflow / Documentation", format:"REPORT", status:"published", href:"/research/ai-industry/healthcare-ai" },
       { slug:"retail-ai", title:"価格決定は、人間の勘からAIの推論へ移るか。", kicker:"Pricing / Promotion / Inventory", format:"REPORT", status:"published", href:"/research/ai-industry/retail-ai" },
+      { slug:"procurement-agents", title:"購買は、AIにどこまで任せられるか。", kicker:"Zip / Intake / Risk / Supplier / Approval", format:"REPORT", status:"published", href:"/research/ai-industry/procurement-agents" },
     ],
   },
   {
@@ -87,6 +90,7 @@ export const researchCategories: ResearchCategory[] = [
       { slug:"autonomous-driving", title:"自動運転のLevel思想は、他産業へ輸出される。", kicker:"Autonomy Levels as a common language", format:"REPORT", status:"published", href:"/research/robotics/autonomous-driving" },
       { slug:"physical-ai-platforms", title:"Physical AIの勝者はロボット企業か、基盤企業か。", kicker:"Models / Simulation / Hardware / Data", format:"COMPARE", status:"published", href:"/research/robotics/physical-ai-platforms" },
       { slug:"drones", title:"ドローンは『飛ぶカメラ』から作業主体へ進めるか。", kicker:"Inspection / Delivery / Security / Maintenance", format:"MARKET MAP", status:"published", href:"/research/robotics/drones" },
+      { slug:"robotics-as-labor", title:"ロボットは、設備ではなく『労働力』として買う時代へ。", kicker:"Formic / Robotics-as-a-Service / Manufacturing", format:"REPORT", status:"published", href:"/research/robotics/robotics-as-labor" },
     ],
   },
   {
@@ -102,6 +106,7 @@ export const researchCategories: ResearchCategory[] = [
       { slug:"future-input", title:"キーボードの次の入力装置は何になる。", kicker:"Voice / Gesture / Vision / Neural input", format:"REPORT", status:"published", href:"/research/gadgets/future-input" },
       { slug:"weird-gadgets", title:"なんだこれwww — 海外の変態ガジェットを拾う。", kicker:"The weird edge of product innovation", format:"WTF / GADGET", status:"published", href:"/research/gadgets/weird-gadgets" },
       { slug:"silent-speech", title:"人間は、いつまでAIに話しかけるのか。", kicker:"Engram / Silenzio / SilentWear / GMO Pepabo + YNU", format:"REPORT", status:"published", href:"/research/gadgets/silent-speech" },
+      { slug:"embodied-ai-reception", title:"受付は、人でも画面でもなくなるのか。", kicker:"Proto Hologram / AI Avatar / Spatial Computing", format:"REPORT", status:"published", href:"/research/gadgets/embodied-ai-reception" },
     ],
   },
 ];
