@@ -1637,3 +1637,7 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
     padding:18px 0;
   }
 }
+
+@media(max-width:560px){
+  .fit-diagnostic article{min-height:0!important;}
+}
