@@ -1151,6 +1151,42 @@ sources:[
 ]
 }
 
+,{
+slug:"embodied-ai-reception",category:"gadgets",eyebrow:"GADGETS & FUTURE DEVICES / PHYSICAL AI",
+title:"受付は、人でも画面でもなくなるのか。",
+dek:"Chatbotは画面の中にいる。ProtoはAI Avatarを物理空間へ出し、店舗・受付・イベントへ『存在感のあるAgent』を置こうとしている。これはDisplayの進化ではなく、Digital Agentが身体を持つ話だ。",
+thesis:"Embodied AI Receptionの価値はホログラム演出ではない。Knowledgeと会話能力を持つAIを、店舗・受付・会場というPhysical touchpointへ常設できるかにある。",
+companies:["Proto Hologram","ProtoOS","AI Avatar","Spatial Computing"],
+depth:{current:"Level 2–3 — Interactive AI avatar",target:"Level 4 — Human-on-the-loop physical service agent",human:"例外対応、Brand policy、本人確認、高Risk案内、接客品質管理"},
+sections:[
+{heading:"受付Digital化は、ずっと『画面を置く』発想だった。",body:[
+"無人受付やKioskは珍しくない。しかし多くはTouch panelやTabletにFormを表示し、人間が入力する構造だ。Chatbotを載せても、ユーザーは『端末を操作する』感覚から抜けない。",
+"Proto Hologramは、Holographic device、ProtoOS、Conversational AI、AI Avatarを組み合わせ、Physical spaceへ対話可能なAvatarを置くPlatformを提供している。ここではUser interfaceが画面のMenuではなく、人型の存在そのものになる。"
+]},
+{heading:"AI Avatarの価値は、見た目より『その場にいること』。",body:[
+"ProtoのEnterprise solutionでは、Knowledge baseやLLMへ接続したPhotorealistic multilingual avatarを店舗、Office、Venue、KioskへDeployできる。Existing displayをAI-enabled assistantとして使う構成もある。",
+"つまり必ずしも大型Hologram装置が本質ではない。重要なのは、WebのChatbotで終わっていたAI AgentをPhysical customer journeyへ接続し、来訪者がその場で質問し、案内を受け、必要なら人へEscalateできることだ。"
+]},
+{heading:"『人が足りない受付』と『人を置くほどではない場所』の間を埋める。",body:[
+"Hotel、Showroom、Hospital、Event venueでは、常時人員を置くにはCostが高いが、無人Kioskだけでは体験が弱い場所がある。AI Avatarは多言語対応、定型案内、FAQ、Product explanationを常時提供できる。",
+"特に複数拠点で同じBrand messageを出したい企業では、AvatarのPersona、Knowledge、言語、説明内容をCentralに管理できることが価値になる。人間Staffの教育・配置とは異なるScaleの仕方が可能になる。"
+]},
+{heading:"ただし、見た目が人間に近いほど期待値も上がる。",body:[
+"PhotorealisticなAvatarは『何でも答えられそう』に見える。だから回答できない質問、本人確認、契約変更、医療・金融のような高Risk案内で失敗した時の違和感も大きい。",
+"Physical spaceでは周囲のNoise、複数人の発話、Privacy、視線、Display位置、待ち時間もUXに効く。Web Chatbotより環境条件が複雑になるため、導入評価は会話精度だけでなく、現場で何割を自己解決し、何割を人へつなげるかで見るべきだ。"
+]},
+{heading:"次に競うのは、受付Staffの代替率ではなく『Agentの存在感』かもしれない。",body:[
+"AI GlassesはAIを個人へ近づけ、Silent SpeechはInputを身体へ近づける。一方、ProtoのようなEmbodied AIは、AIを建物や店舗側へ常設する。AI interfaceがScreenから離れる方向は複数ある。",
+"将来、店舗へ入るとAI Agentが人の姿で案内し、必要な時だけRemote humanへ切り替わるなら、Reception deskは人員配置ではなくSoftware＋Hardwareの運用問題になる。『受付を無人化する』より、『AIに物理的な接点を与える』という見方の方が本質に近い。"
+]}
+],
+sources:[
+{label:"Proto Hologram — Official Platform",url:"https://protohologram.com/"},
+{label:"Proto Hologram — Enterprise Solutions",url:"https://protohologram.com/enterprise-solutions/"},
+{label:"Proto Hologram — FAQ / Platform Overview",url:"https://protohologram.com/faqs"}
+]
+}
+
 ];
 
 export const storyMap=Object.fromEntries(researchStories.map(s=>[s.slug,s])) as Record<string,ResearchStory>;
