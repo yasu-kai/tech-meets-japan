@@ -24,6 +24,9 @@ For each candidate, capture product, company, official website, HQ country, fund
 7. Check article links, navigation, responsive layout, accessibility basics and build status.
 8. Record audit date and reviewer; withhold publication for blocking items.
 
+## Discovery universe (source-neutral)
+Search all early-stage companies regardless of academic origin: VC portfolios, accelerators, bootstrapped founders, startup launches, university spinouts, TLOs and direct patent/technology discovery. University affiliation is a provenance attribute, never an eligibility requirement. Target Pre-seed through Series A while allowing exceptional earlier or later companies on merits. Diversify the first 30 across source channels, sectors and regions; do not treat the university-derived initial longlist as the final sample.
+
 ## 30-company discovery pilot
 The 30 / 30 / 9 / 4 / 2 funnel is an experimental target, not a forecast. Record denominators and timestamps. Report delivered outreach separately from replies, verified needs, qualified opportunities, and paid commitments. Allow opt-out and avoid bulk contact without proper contact/privacy review.
 
