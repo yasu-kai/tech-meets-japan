@@ -100,19 +100,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section">
-          <div className="section-heading">
-            <div><p className="eyebrow">HOW IT WORKS</p><h2>メディアで終わらない。</h2></div>
-            <p>発見から、日本市場での実装まで。</p>
-          </div>
-          <div className="steps-grid">
-            <div className="step-card"><Search/><span>01</span><h3>Discover</h3><p>課題・業界・用途から、海外テクノロジープロダクトを発見。</p></div>
-            <div className="step-card"><Compass/><span>02</span><h3>Compare</h3><p>Japan Fit、導入難易度、ユースケースを共通軸で比較。</p></div>
-            <div className="step-card"><Globe2/><span>03</span><h3>Understand</h3><p>日本での導入状況、競合、リスク、実績まで立体的に理解。</p></div>
-            <div className="step-card"><Sparkles/><span>04</span><h3>Decide</h3><p>自社に合うか、今検討すべきか、次のアクションまで判断。</p></div>
-          </div>
-        </section>
-
         <section className="editorial-section">
           <div className="section-heading">
             <div><p className="eyebrow">EDITORIAL</p><h2>日本参入を、“ニュース”で終わらせない。</h2></div>
@@ -136,12 +123,6 @@ export default function Home() {
           <p>プロダクト紹介で終わらず、用途・比較対象・実績・リスク・導入適性まで同じ目線で整理。TECH MEETS JAPANは、判断材料の質を最優先にします。</p>
         </section>
 
-        <section className="cta-band">
-          <p className="eyebrow">EXPLORE WHAT'S NEXT</p>
-          <h2>知らなかった選択肢を、 次の打ち手に。</h2>
-          <p>海外プロダクトを、話題ではなく「自社で使えるか」で見る。</p>
-          <Link href="/products" className="button button-accent">プロダクトを探す <ArrowRight size={17}/></Link>
-        </section>
       </main>
       <Footer/>
     </>
