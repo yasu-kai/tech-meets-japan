@@ -1189,7 +1189,7 @@ sources:[
 
 ,{
 slug:"bridge-ultrasound-bci",category:"gadgets",eyebrow:"GADGETS & FUTURE DEVICES / NEUROTECH",
-title:"脳にチップを埋めない。BCIの次の賭けは、超音波だ。",
+title:"脳にチップを埋めない。BCIの本命争いに「超音波」が入ってきた。",
 dek:"Neuralinkが脳内電極で高解像度の信号を取る一方、Bridge Neurotechは頭蓋骨の外から超音波で脳血流を読み、AIで意図へ変換しようとしている。勝負は『どこまで読めるか』だけではない。BCIを、何人まで届けられるかだ。",
 thesis:"Bridgeの本質は、非侵襲であることそのものではない。Butterflyの半導体超音波とAI decodingを組み合わせ、これまで『信号品質を取るなら手術が必要』だったBCIのTrade-offを崩せるかにある。",
 companies:["Bridge Neurotech","Butterfly Network","Merge Labs","Neuralink","Synchron","Neurable"],
@@ -1216,8 +1216,14 @@ sections:[
 "BridgeはPredictive AI modelでこのDelayを補う方向を示している。ただし、AIが血流から未来のIntentを予測できることと、『自由な思考を直接読める』ことは全く違う。現時点でBridgeが実証しているのは完成BCIではなく、Skull越しにFunctional brain dataを安定取得し、Across peopleでDecodeできるかを確かめるResearch stageだ。"
 ]},
 {heading:"競合を並べると、BCIは『侵襲度 × Signal × Wearability』の競争だと分かる。",body:[
-"NeuralinkはBrain tissueへElectrodeを埋め、Neuronに近いElectrical signalを取る。その代わりSurgeryが必要だ。SynchronのStentrodeはOpen brain surgeryを避け、Jugular veinからCatheterでBrain blood vessel内へElectrodeを置く。侵襲度は下がるが、体内Implantではある。",
-"NeurableはEEGをHeadphoneへ載せ、完全Non-invasiveを実現しているが、EEGはSkull越しのElectrical signalを取るため空間分解能やNoiseに制約がある。BridgeとMerge LabsはUltrasoundという別Routeを選んだ。特にMergeもButterflyのUltrasound-on-ChipをLicenseしており、今後は『Ultrasound BCI』の中でもHardware、Imaging、Decoding、Form factorの差が競争になる。"
+"NeuralinkのN1は1,024 Electrodeを64本のFlexible threadへ載せ、Brain tissueへ直接置く。Neuronに近いElectrical signalを高速に取れる代わりに、Robot-assisted surgeryが必要になる。SynchronのStentrodeはJugular veinからCatheterでBrain blood vessel内へ入れるためOpen brain surgeryは避けられるが、体内Implantである点は変わらない。",
+"Neurableは12個のDry EEG sensorをHeadphoneのEar cushionへ入れ、FocusやFatigueを日常的に測る完全Non-invasive Routeを商用化し始めている。ただしEEGは頭皮上でElectrical signalを読むため、深部や空間分解能では制約がある。BridgeとMerge Labsは、その中間に『Ultrasound』という別Routeを置こうとしている。",
+"つまりBCI市場は、単純なNeuralink対非侵襲ではない。高いSignal fidelityを取りに行くIntracortical、手術負担を下げるEndovascular、Wearabilityを取るEEG、Spatial resolutionと非侵襲性の両立を狙うfUS。それぞれが別のTrade-offを選んでいる。"
+]},
+{heading:"BridgeとMergeが同じButterflyを選んだ。BCIの『つるはし』を握る会社がいる。",body:[
+"BridgeとMerge Labsは競合になり得るが、両社ともButterfly NetworkのUltrasound-on-Chipを使う。Mergeは2026年1月に2.52億ドルを調達し、ButterflyとはCMOS-MEMS chip-based ultrasoundのExclusive partner契約を結んだ。一方Butterflyは、同じTechnologyをBridgeにもLicenseする権利を保持している。",
+"この構図は面白い。BCIの勝者がBridgeかMergeかを当てるより、Ultrasound BCIが伸びた時にHardware foundationを誰が押さえるかを見る方が事業的には重要かもしれない。Butterfly EmbeddedはBCI以外にもRobotics、Catheter、TherapyなどへUltrasound-on-Chipを外販しており、BCI競争の裏でPlatform providerのPositionを取り始めている。",
+"つまりBridgeの記事を読む時、Bridgeだけを追うと半分しか見えない。非侵襲BCIが成立するかというScienceの勝負と、そのScienceを小型・量産可能なDeviceへ落とすSemiconductor platformの勝負が同時に走っている。"
 ]},
 {heading:"日本で最初に刺さるのは、XRより『身体を使えない人のInterface』。",body:[
 "Bridgeが成功しても、最初から一般消費者がHeadphone型BCIでPCを操作する世界になる可能性は低い。臨床Benefitが大きい領域ほど、多少の装着負荷やCalibrationを許容しやすい。重度運動障害、Communication支援、Neurorehabilitation、Research interfaceの方が初期Marketとして自然だ。",
@@ -1232,7 +1238,8 @@ sources:[
 {label:"Bridge Neurotech — Founder Letter",url:"https://www.bridgeneurotech.com/letter"},
 {label:"Butterfly Network — Bridge Partnership",url:"https://english.butterflynetwork.com/press-releases/bridge-neurotech-partnership"},
 {label:"Butterfly Network — Ultrasound-on-Chip",url:"https://www.butterflynetwork.com/technology"},
-{label:"Butterfly Network — Merge Labs Partnership",url:"https://english.butterflynetwork.com/press-releases/merge-labs-bci-partnership"},
+{label:"Butterfly Network — Merge Labs Partnership",url:"https://www.butterflynetwork.com/press-releases/merge-labs-bci-partnership"},
+{label:"WIRED — Bridge Neurotech Launch",url:"https://www.wired.com/story/bridge-neurotech-startup-rival-sam-altman-merge-labs/"},
 {label:"Synchron — Stentrode Technology",url:"https://synchron.com/technology"},
 {label:"Neurable — Neurable One",url:"https://www.neurable.com/blog-posts/neurable-one-is-here-the-headphones-ive-wanted-to-build-for-10-years"},
 {label:"Nature Reviews Electrical Engineering — Scaling ultrasonic BCI beyond the lab",url:"https://www.nature.com/articles/s44287-026-00312-8"},
