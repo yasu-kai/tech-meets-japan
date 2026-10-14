@@ -45,7 +45,7 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
           <p className="eyebrow">{story.eyebrow}</p>
           <h1>{story.title}</h1>
           <p className="story-dek">{story.dek}</p>
-          <div className={"story-editorial-visual story-editorial-visual-"+story.category}>
+          <div className={"story-editorial-visual story-editorial-visual-"+story.category+" story-editorial-with-image"}>
             <div className="story-visual-index">TECH MEETS JAPAN / {story.eyebrow}</div>
             <div className="story-visual-title">{story.title}</div>
             <div className="story-visual-companies">{story.companies.slice(0,4).map(c=><span key={c}>{c}</span>)}</div>
@@ -109,6 +109,7 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
               {related.map((item,index)=><Link className="story-related-card" href={"/research/"+item.category+"/"+item.slug} key={item.slug}>
                 <span>{String(index+1).padStart(2,"0")}</span>
                 <div>
+                  <div className={"story-related-image story-related-image-"+item.category} aria-hidden="true"/>
                   <p>{item.eyebrow}</p>
                   <h3>{item.title}</h3>
                 </div>
