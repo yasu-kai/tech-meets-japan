@@ -1248,6 +1248,49 @@ sources:[
 ]
 }
 
+,{
+slug:"ultrasound-bci",category:"gadgets",eyebrow:"GADGETS & FUTURE DEVICES / NEUROTECH",
+title:"脳に穴を開けない。超音波BCIが走り出した。",
+dek:"Neuralinkのような埋め込み型BCIが高精度を追う一方、Bridge Neurotechは『手術をしない』道を選んだ。頭蓋骨の外から超音波で脳血流を捉え、AIで意図を読み解く。まだ研究初期だが、BCIを一部の患者向け医療機器から、より広い人が使える入力装置へ広げる条件が見え始めている。",
+thesis:"BCI普及の最大の分岐点は、精度だけではない。手術が必要かどうかだ。Bridgeが挑む超音波BCIは、空間解像度と非侵襲性を両立しながら、頭蓋骨越しの信号取得とリアルタイム解読という難題を越えられるかが勝負になる。",
+companies:["Bridge Neurotech","Butterfly Network","Merge Labs","Neuralink","Synchron","Neurable"],
+depth:{current:"Level 1–2 — Research-stage neural sensing",target:"Level 3–4 — Intent-driven computer control",human:"装着、校正、意図の確認、高リスク操作、医療判断"},
+sections:[
+{heading:"BCIの次の勝負は、『脳に近づく』ではなく『手術から離れる』ことかもしれない。",body:[
+"脳コンピューターインターフェースは、すでに実験室だけの技術ではない。NeuralinkやSynchronなどは、人の意思をComputerへ伝える実証を進めている。ただし高品質な信号を取るため、多くの方式は手術や体内へのDevice挿入を伴う。高い精度と引き換えに、利用対象はどうしても限られる。",
+"Bridge Neurotechが置いた賭けは逆だ。FounderのWill Biedermanは、学生時代に後のNeuralink初期Chipにつながるneural interface技術を開発しながら、今は完全非侵襲のBCIを目指している。2026年10月にStealthから出たBridgeは1,350万ドルを調達し、『脳に穴を開けないInterface』を掲げた。"
+]},
+{heading:"Bridgeが見ているのは神経発火そのものではなく、血流の変化だ。",body:[
+"Bridgeが使うfunctional ultrasoundは、超音波Pulseを脳へ送り、動いている赤血球から返るEchoの変化を捉える。脳領域が活性化すると近くの血管が拡張し、血流が増える。その変化をImageとして捉え、どの領域が活動しているかを推定する。",
+"つまり『思考を超音波で直接読む』わけではない。神経活動に伴うHemodynamic responseを介して間接的に見る。Bridge自身もfMRIに近い考え方として説明している。この違いは重要で、非侵襲で深部を見られる可能性がある一方、神経電位を直接取る埋め込み電極より時間応答では不利になりやすい。"
+]},
+{heading:"最大の敵は、頭蓋骨そのもの。",body:[
+"Bridgeが公式に挙げる技術課題は2つある。ひとつは頭蓋骨越しのImaging。骨は超音波を散乱・吸収し、その影響も人によって異なる。もうひとつはDecodingで、得られたImageを意味のある意図へリアルタイム変換し、個人差を越えて使えるModelへすることだ。",
+"その難しさは最初のHuman studyにも表れている。Bridgeは健康な成人に加え、PEEKやLongeviti製Cranioplastyを受けた成人を募集している。骨よりSoundを通しやすいImplant越しのDataをReferenceとして、intact skull越しのSignalと比較する。つまり現時点では『誰でもHelmetを被ればPCを操作できる』段階からはかなり遠い。"
+]},
+{heading:"しかも、超音波BCIはBridgeだけの賭けではない。",body:[
+"Butterfly NetworkのUltrasound-on-Chipは、この分野の重要な基盤技術になり始めている。BridgeはButterfly Embeddedを通じて同社Technologyを使う一方、Sam Altmanらが創業したMerge LabsもButterflyと複数年契約を結び、超音波BCIを開発している。Mergeは2026年1月に2.52億ドルを調達しており、資本規模ではBridgeを大きく上回る。",
+"一方でBCI全体では、Neuralinkの埋め込み電極、Synchronの血管内Electrode、NeurableなどのEEG系が異なる位置にいる。比較すべきなのは単純な『精度ランキング』ではない。侵襲性、空間解像度、時間解像度、装着性、個人校正、長時間利用、Consumer化のしやすさを一緒に見る必要がある。"
+]},
+{heading:"日本で面白いのは、医療より先に『入力装置』として考えた時。",body:[
+"Bridge自身はまず、身体が意思を外へ出せない人に新しいInterfaceを届ける意義を強く語っている。そこが最初の社会的価値であることは変わらない。ただ、手術不要のBCIが本当にWearableまで小型化できれば、その先にはAssistive technologyだけではない市場が見える。",
+"PC操作、XR、Gaming、Hands-free control、Silent communication。Keyboard、Mouse、Voiceの次に『意図』がInputになる可能性がある。日本では高齢化、身体障がい者支援、Care、製造現場のHands-free operationとの相性も考えられる。ただし実用化前に、精度、Latency、個人差、Privacy、医療機器規制、脳Dataの扱いという巨大な壁がある。今見るべきなのはProduct完成度ではなく、『非侵襲BCIがどこまで現実のInterfaceに近づいたか』だ。"
+]},
+{heading:"本当に変わるのは、Computerではなく『入力』の前提。",body:[
+"今のAIは賢くなった。それでも人間はKeyboardを打ち、Screenを触り、Voiceで命令する。つまり人間の意図は身体を経由してMachineへ渡っている。Bridgeが言う『body is the only interface to the mind』という問題設定は、BCIを医療だけでなくHuman-computer interactionの話に広げる。",
+"もし手術なしで、十分な精度と速度で意図を読み取れるなら、BCIは特殊な医療Deviceではなくなる。そこまで行けるかはまだ分からない。むしろ今は、頭蓋骨越しのDataがどこまで取れるかを確かめ始めた段階だ。ただ、その最初の壁を越えた時、KeyboardやVoice interfaceと同じ土俵にBCIが入ってくる可能性がある。"
+]}
+],
+sources:[
+{label:"Bridge Neurotech — Approach",url:"https://www.bridgeneurotech.com/approach"},
+{label:"Bridge Neurotech — Founder Letter",url:"https://www.bridgeneurotech.com/letter"},
+{label:"Bridge Neurotech — First Research Study",url:"https://www.bridgeneurotech.com/study"},
+{label:"Bridge Neurotech — About",url:"https://www.bridgeneurotech.com/about"},
+{label:"Butterfly Network — Bridge partnership",url:"https://ir.butterflynetwork.com/News/press-releases/news-details/2026/Bridge-Neurotech-and-Butterfly-Network-Announce-Partnership-to-Develop-Fully-Non-Invasive-Brain-Computer-Interface/"},
+{label:"Butterfly Network — Merge Labs partnership",url:"https://www.butterflynetwork.com/press-releases/merge-labs-bci-partnership"}
+]
+}
+
 ];
 
 export const storyMap=Object.fromEntries(researchStories.map(s=>[s.slug,s])) as Record<string,ResearchStory>;
