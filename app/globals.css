@@ -1836,3 +1836,25 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
 .home-feature-more{width:100%;margin:12px 0 0;padding:0 2px;display:flex;justify-content:flex-end;position:relative;z-index:2}
 .home-feature-more .text-link{display:inline-flex;align-items:center;gap:10px;padding:9px 4px;font-size:14px;font-weight:800}
 @media(max-width:650px){.home-feature-more{margin:8px 0 0;padding:0 1px}}
+
+
+/* Curated, distinct Special Features index */
+.features-page-hero{background-image:url('/hero-research.svg')}
+.features-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.features-card{background:#141a20;color:#fff;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.features-card-art{height:215px;background:#152439 url('/hero-research.svg') center/cover no-repeat}
+.features-card-security .features-card-art{background-image:url('/offensive-ai-hero.png')}
+.features-card-trust .features-card-art{background-image:url('/hero-signals.svg')}
+.features-card-neuro .features-card-art{background-image:url('/hero-early-stage.svg')}
+.features-card-robotics .features-card-art{background-image:url('/hero-products.svg')}
+.features-card-creative .features-card-art{background-image:url('/hero-signals.svg')}
+.features-card-early .features-card-art{background-image:url('/hero-early-stage.svg')}
+.features-card-body{padding:28px;display:flex;flex-direction:column;align-items:flex-start;flex:1;gap:15px}
+.features-card-body .eyebrow{font-size:11px;letter-spacing:.12em;color:#e5a78b}
+.features-card-body h3{font-size:clamp(24px,2.5vw,35px);line-height:1.23;color:#fff;margin:0}
+.features-card-body>p:not(.eyebrow){font-size:15px;line-height:1.75;color:#cbd0d5;margin:0}
+.features-card-action,.features-coming{display:inline-flex;align-items:center;gap:10px;margin-top:auto;padding-top:22px;font-weight:800;font-size:14px}
+.features-card-action{color:#fff;text-decoration:none}
+.features-card-action:hover{text-decoration:underline}
+.features-coming{color:#a9b0b9}
+@media(max-width:700px){.features-grid{grid-template-columns:1fr;gap:16px}.features-card-art{height:165px}.features-card-body{padding:22px}.features-card-body h3{font-size:26px}}
