@@ -1858,3 +1858,6 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
 .features-card-action:hover{text-decoration:underline}
 .features-coming{color:#a9b0b9}
 @media(max-width:700px){.features-grid{grid-template-columns:1fr;gap:16px}.features-card-art{height:165px}.features-card-body{padding:22px}.features-card-body h3{font-size:26px}}
+
+.research-category-intro{font-size:14px;line-height:1.7;color:#686b68;margin:8px 0 24px;max-width:720px}
+@media(max-width:650px){.research-category-intro{font-size:13px;margin:8px 0 18px}}
