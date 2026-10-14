@@ -48,8 +48,8 @@ export default function Home() {
               </div>
             </div>
           </Link>
+          <div className="home-feature-more"><Link href="/research" className="text-link">特集一覧を見る <ArrowRight size={17}/></Link></div>
         </section>
-        <div className="home-feature-more"><Link href="/research" className="text-link">特集一覧を見る <ArrowRight size={17}/></Link></div>
 
         <section className="ticker-section editorial-themes-home">
           <div className="ticker-label"><Activity size={15}/> EDITORIAL THEMES</div>
