@@ -102,8 +102,8 @@ export default function Home() {
 
         <section className="editorial-section">
           <div className="section-heading">
-            <div><p className="eyebrow">EDITORIAL</p><h2>日本参入を、“ニュース”で終わらせない。</h2></div>
-            <p>なぜ今なのか。誰に売るのか。何が障壁なのかまで読む。</p>
+            <div><p className="eyebrow">EDITORIAL</p><h2>世界のテクノロジー、その先を読む。</h2></div>
+            <p>新しい技術は、何を変えるのか。競合との違いから、日本市場での可能性まで深く掘り下げる。</p>
           </div>
           <div className="editorial-grid">
             <article className="editorial-lead">
