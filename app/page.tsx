@@ -91,13 +91,13 @@ export default function Home() {
           </div>
           <div className="theme-grid">
             {themes.map((theme,i) => (
-              <div className="theme-card" key={theme.title}>
+              <Link href={["/research/ai-creative","/research/robotics","/research/ai-work","/research/ai-industry"][i]} className="theme-card" key={theme.title}>
                 <span>0{i+1}</span>
                 <div className="theme-icon">{i===0?<Sparkles/>:i===1?<Radar/>:i===2?<Layers3/>:<Globe2/>}</div>
                 <h3>{theme.title}</h3>
                 <p>{theme.copy}</p>
-                <strong>{theme.count} companies tracked</strong>
-              </div>
+                <strong>関連テーマを読む <ArrowRight size={15}/></strong>
+              </Link>
             ))}
           </div>
         </section>
@@ -147,10 +147,10 @@ export default function Home() {
               <span>DEEP DIVE</span>
               <h3>AI Creative 第二ラウンド。日本IPを取りに来るプレーヤーは誰か。</h3>
               <p>Runway、MiniMax、HeyGen、Synthesia。映像生成の比較ではなく、日本市場で何を取りに来ているかで整理する。</p>
-              <Link href="/companies" className="text-link">関連企業を見る <ArrowRight size={16}/></Link>
+              <Link href="/research/ai-creative/ai-video" className="text-link">映像AIの比較記事を読む <ArrowRight size={16}/></Link>
             </article>
-            <article><span>MARKET ENTRY</span><h3>海外企業が日本で最初に間違えること。</h3><p>翻訳とJapan Entryは違う。商流、価格、信頼、導入プロセスをどう組み替えるか。</p></article>
-            <article><span>PHYSICAL AI</span><h3>日本の製造業が“買うAI”はどこにある。</h3><p>内製R&Dが強い市場で、外部テック企業が入り込める場所を考える。</p></article>
+            <article><span>EARLY-STAGE</span><h3>まだ知られていない技術を、日本の選択肢に。</h3><p>研究・試作・実証から、日本企業との接点を探る。</p><Link href="/early-stage" className="text-link">Early-Stageを見る <ArrowRight size={16}/></Link></article>
+            <article><span>PHYSICAL AI</span><h3>日本の製造業が“買うAI”はどこにある。</h3><p>内製R&Dが強い市場で、外部テック企業が入り込める場所を考える。</p><Link href="/research/ai-industry/manufacturing-ai" className="text-link">製造AIの分析を読む <ArrowRight size={16}/></Link></article>
           </div>
         </section>
 
