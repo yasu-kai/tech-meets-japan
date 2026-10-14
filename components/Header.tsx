@@ -8,6 +8,7 @@ import { useState } from "react";
 const links = [
   { href: "/products", label: "プロダクトを探す" },
   { href: "/signals", label: "Entry Signals" },
+  { href: "/features", label: "特集" },
   { href: "/research", label: "Research" },
   { href: "/early-stage", label: "Early-Stage" },
 ];
