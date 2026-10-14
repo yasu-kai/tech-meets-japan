@@ -10,7 +10,7 @@ export default function ResearchPage() {
     <>
       <Header/>
       <main>
-        <section className="page-hero research-index-hero">
+        <section className="page-hero research-index-hero tmj-image-hero tmj-image-hero-research">
           <p className="eyebrow">RESEARCH</p>
           <h1>世界の新しいプロダクトが、 日本の仕事・産業・生活をどう変えるのか。</h1>
           <p>AIを中心に、Security、Creative、Industry、Robotics、Gadgetsまで。機能紹介ではなく、「人間の役割がどう変わるか」まで読む。</p>
@@ -25,7 +25,7 @@ export default function ResearchPage() {
           <div className="research-category-grid">
             {researchCategories.map((category,index) => (
               <Link href={`/research/${category.slug}`} className="research-category-card" key={category.slug}>
-                <div className="research-category-number">{String(index+1).padStart(2,"0")}</div>
+                <div className={"research-category-photo research-category-photo-"+category.slug} aria-hidden="true"><span>{String(index+1).padStart(2,"0")}</span></div>
                 <div>
                   <p className="eyebrow">{category.shortLabel}</p>
                   <h3>{category.label}</h3>
@@ -45,7 +45,7 @@ export default function ResearchPage() {
             <div><p className="eyebrow">PUBLISHED</p><h2>まずは、ここから。</h2></div>
           </div>
           <Link href="/research/offensive-ai" className="published-feature">
-            <div className="published-feature-icon"><ShieldCheck size={34}/></div>
+            <div className="published-feature-photo" aria-hidden="true"/>
             <div>
               <p className="eyebrow">AI × SECURITY / MARKET MAP</p>
               <h3>AIは、サイバー防御のどこまでを担うのか。</h3>

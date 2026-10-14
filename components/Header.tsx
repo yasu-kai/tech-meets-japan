@@ -9,6 +9,7 @@ const links = [
   { href: "/products", label: "プロダクトを探す" },
   { href: "/signals", label: "Entry Signals" },
   { href: "/research", label: "Research" },
+  { href: "/early-stage", label: "Early-Stage" },
 ];
 
 export default function Header() {

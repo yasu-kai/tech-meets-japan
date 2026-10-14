@@ -18,7 +18,7 @@ export default async function ResearchCategoryPage({ params }:{ params:Promise<{
     <>
       <Header/>
       <main>
-        <section className="page-hero research-category-hero">
+        <section className={"page-hero research-category-hero tmj-image-hero tmj-research-category-hero tmj-research-category-"+slug}>
           <Link href="/research" className="research-back"><ArrowLeft size={14}/> Research</Link>
           <p className="eyebrow">{category.shortLabel}</p>
           <h1>{category.label}</h1>
@@ -32,7 +32,7 @@ export default async function ResearchCategoryPage({ params }:{ params:Promise<{
             {category.topics.map((topic,index) => {
               const content = (
                 <>
-                  <div className="topic-index">{String(index+1).padStart(2,"0")}</div>
+                  <div className={"topic-image topic-image-"+slug} aria-hidden="true"><span>{String(index+1).padStart(2,"0")}</span></div>
                   <div className="topic-main">
                     <div className="topic-meta"><span>{topic.format}</span><span className={topic.status==="published"?"published":"queued"}>{topic.status==="published"?"PUBLISHED":"QUEUE"}</span></div>
                     <h3>{topic.title}</h3>

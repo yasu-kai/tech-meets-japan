@@ -11,6 +11,7 @@ export default function Footer() {
         <Link href="/products">Products</Link>
         <Link href="/signals">Signals</Link>
         <Link href="/research">Research</Link>
+        <Link href="/early-stage">Early-Stage</Link>
       </div>
       <p className="footer-note">Independent technology intelligence for people exploring what comes next.</p>
     </footer>

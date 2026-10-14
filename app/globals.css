@@ -1752,3 +1752,82 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
     padding-top:6px!important;
   }
 }
+
+
+/* Shared editorial imagery: responsive, readable and text-independent. */
+.tmj-image-hero{
+  position:relative;
+  isolation:isolate;
+  max-width:none;
+  min-height:510px;
+  padding:100px max(28px,calc((100vw - 1184px)/2)) 84px;
+  background-position:center;
+  background-size:cover;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.tmj-image-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(3,9,17,.76) 0%,rgba(3,9,17,.4) 59%,rgba(3,9,17,.08) 100%);
+  z-index:-1;
+}
+.tmj-image-hero-products{background-image:url('/hero-products.svg')}
+.tmj-image-hero-research{background-image:url('/hero-research.svg')}
+.tmj-image-hero-signals{background-image:url('/hero-signals.svg')}
+.tmj-image-hero-early-stage{background-image:url('/hero-early-stage.svg')}
+.tmj-image-hero .eyebrow{color:#dce8f0!important}
+.tmj-image-hero h1{max-width:1000px;font-size:clamp(44px,6.8vw,92px);line-height:1.05;margin:24px 0}
+.tmj-image-hero>p:last-child{color:#e4e9eb;max-width:740px;font-size:clamp(16px,2vw,20px)}
+@media(max-width:700px){
+  .tmj-image-hero{min-height:440px;padding:76px 22px 64px;background-position:65% center}
+  .tmj-image-hero h1{font-size:clamp(39px,10vw,58px);line-height:1.12;letter-spacing:-.06em}
+  .tmj-image-hero::before{background:linear-gradient(90deg,rgba(3,9,17,.87),rgba(3,9,17,.45))}
+}
+
+
+/* Homepage uses a light fade to retain the existing dark editorial typography. */
+.hero{
+  background-image:linear-gradient(90deg,rgba(244,241,234,.99) 0%,rgba(244,241,234,.94) 38%,rgba(244,241,234,.69) 78%,rgba(244,241,234,.48) 100%),url('/hero-home.svg');
+  background-size:cover;
+  background-position:center;
+}
+
+
+/* Editorial visual system: category art is an image surface, while headings remain accessible HTML. */
+.tmj-research-category-hero{background-image:url('/hero-research.svg')}
+.tmj-research-category-ai-work{background-image:url('/hero-products.svg')}
+.tmj-research-category-ai-security{background-image:url('/offensive-ai-hero.png')}
+.tmj-research-category-ai-creative{background-image:url('/hero-signals.svg')}
+.tmj-research-category-ai-industry{background-image:url('/hero-research.svg')}
+.tmj-research-category-robotics{background-image:url('/hero-products.svg')}
+.tmj-research-category-gadgets{background-image:url('/hero-early-stage.svg')}
+.tmj-research-category-hero .research-back{color:#fff}
+.tmj-research-category-hero .category-thesis{background:rgba(7,17,30,.65);color:#fff;border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(4px)}
+.story-editorial-with-image{background-image:linear-gradient(90deg,rgba(7,12,22,.78),rgba(7,12,22,.16)),url('/hero-research.svg');background-size:cover;background-position:center;color:#fff}
+.story-editorial-with-image.story-editorial-visual-ai-work{background-image:linear-gradient(90deg,rgba(7,12,22,.8),rgba(7,12,22,.2)),url('/hero-products.svg')}
+.story-editorial-with-image.story-editorial-visual-ai-security{background-image:linear-gradient(90deg,rgba(7,12,22,.83),rgba(7,12,22,.2)),url('/offensive-ai-hero.png')}
+.story-editorial-with-image.story-editorial-visual-ai-creative{background-image:linear-gradient(90deg,rgba(7,12,22,.82),rgba(7,12,22,.2)),url('/hero-signals.svg')}
+.story-editorial-with-image.story-editorial-visual-robotics{background-image:linear-gradient(90deg,rgba(7,12,22,.85),rgba(7,12,22,.2)),url('/hero-products.svg')}
+.story-editorial-with-image.story-editorial-visual-gadgets{background-image:linear-gradient(90deg,rgba(7,12,22,.8),rgba(7,12,22,.2)),url('/hero-early-stage.svg')}
+.research-category-photo,.topic-image,.story-related-image,.published-feature-photo{background-color:#152439;background-image:url('/hero-research.svg');background-size:cover;background-position:center;position:relative;overflow:hidden}
+.research-category-photo{height:124px;margin:-12px -12px 18px;border-radius:4px;display:flex;align-items:flex-start;padding:14px}
+.research-category-photo span{background:rgba(2,12,24,.7);padding:5px 10px;color:white;font-size:12px;font-weight:800;border-radius:3px}
+.research-category-photo-ai-work,.topic-image-ai-work,.story-related-image-ai-work{background-image:url('/hero-products.svg')}
+.research-category-photo-ai-security,.topic-image-ai-security,.story-related-image-ai-security{background-image:url('/offensive-ai-hero.png')}
+.research-category-photo-ai-creative,.topic-image-ai-creative,.story-related-image-ai-creative{background-image:url('/hero-signals.svg')}
+.research-category-photo-robotics,.topic-image-robotics,.story-related-image-robotics{background-image:url('/hero-products.svg')}
+.research-category-photo-gadgets,.topic-image-gadgets,.story-related-image-gadgets{background-image:url('/hero-early-stage.svg')}
+.topic-image{width:118px;min-width:118px;min-height:96px;border-radius:4px;display:flex;align-items:flex-end;padding:10px}
+.topic-image span{color:white;background:rgba(3,12,22,.7);padding:4px 7px;border-radius:3px;font-weight:800;font-size:12px}
+.story-related-image{width:100%;height:96px;border-radius:3px;margin-bottom:12px}
+.published-feature-photo{width:130px;min-width:130px;height:115px;background-image:url('/offensive-ai-hero.png');border-radius:4px}
+@media(max-width:640px){
+  .research-category-photo{height:118px}
+  .topic-image{width:76px;min-width:76px;min-height:84px}
+  .published-feature-photo{width:100%;height:140px}
+  .tmj-research-category-hero{min-height:430px}
+}

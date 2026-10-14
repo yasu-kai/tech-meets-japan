@@ -7,7 +7,7 @@ export default function SignalsPage(){
     <>
       <Header/>
       <main>
-        <section className="page-hero">
+        <section className="page-hero tmj-image-hero tmj-image-hero-signals">
           <p className="eyebrow">JAPAN ENTRY SIGNALS</p>
           <h1>日本参入の“兆し”を、 ニュースになる前から追う。</h1>
           <p>採用、提携、販売開始、PoC、資金調達。海外テック企業が日本市場へ動き始めたシグナルを整理します。</p>
