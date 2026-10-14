@@ -19,7 +19,7 @@ export default function EarlyStagePage() {
   return <>
     <Header/>
     <main>
-      <section className="page-hero">
+      <section className="page-hero tmj-image-hero tmj-image-hero-early-stage">
         <p className="eyebrow">DISCOVER / EARLY-STAGE TECHNOLOGY</p>
         <h1>まだ知られていない技術を、<br/>日本の選択肢に。</h1>
         <p>海外のアーリースタートアップ、大学発技術、研究成果。製品化の段階と使い道、競合、日本での可能性を独立した編集基準で読み解く。</p>
