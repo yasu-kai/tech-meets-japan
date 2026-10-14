@@ -52,7 +52,8 @@ export default function Home() {
         </section>
 
         <section className="ticker-section editorial-themes-home">
-          <div className="ticker-label"><Activity size={15}/> EDITORIAL THEMES</div>
+          <div className="ticker-label"><Activity size={15}/> RESEARCH CATEGORIES — 技術分野から探す</div>
+          <p className="research-category-intro">特定の技術をもっと知りたい人へ。関心のある分野から記事を探せます。</p>
           <div className="editorial-theme-mosaic">
             {researchCategories.map((category,i) => (
               <Link href={"/research/" + category.slug} className={"editorial-theme-tile theme-tile-" + (i+1)} key={category.slug}>
@@ -68,7 +69,7 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          <Link href="/research" className="text-link">すべてのテーマを見る <ArrowRight size={16}/></Link>
+          <Link href="/research" className="text-link">Researchの記事一覧を見る <ArrowRight size={16}/></Link>
         </section>
 
         <section className="section">
