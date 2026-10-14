@@ -10,7 +10,7 @@ export default function ResearchPage() {
     <>
       <Header/>
       <main>
-        <section className="page-hero research-index-hero">
+        <section className="page-hero research-index-hero tmj-image-hero tmj-image-hero-research">
           <p className="eyebrow">RESEARCH</p>
           <h1>世界の新しいプロダクトが、 日本の仕事・産業・生活をどう変えるのか。</h1>
           <p>AIを中心に、Security、Creative、Industry、Robotics、Gadgetsまで。機能紹介ではなく、「人間の役割がどう変わるか」まで読む。</p>
