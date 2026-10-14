@@ -3,12 +3,10 @@ import { ArrowRight, Compass, Globe2, Search, ShieldCheck, Sparkles, Activity, L
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductExplorer from "@/components/ProductExplorer";
-import { calculateProductJapanFit, products, signals, themes } from "@/lib/data";
+import { themes } from "@/lib/data";
 import { researchCategories } from "@/lib/research";
 
 export default function Home() {
-  const featured = products.find(p => p.featured)!;
-  const categoryCount = new Set(products.map(p => p.category)).size;
 
   return (
     <>
@@ -99,28 +97,6 @@ export default function Home() {
                 <strong>関連テーマを読む <ArrowRight size={15}/></strong>
               </Link>
             ))}
-          </div>
-        </section>
-
-        <section className="feature-band">
-          <div className="feature-copy">
-            <p className="eyebrow">FEATURED PRODUCT</p>
-            <h2>{featured.name}</h2>
-            <p className="feature-tagline">{featured.tagline}</p>
-            <p>{featured.description}</p>
-            <div className="feature-metrics">
-              <div><span>Japan Fit</span><strong>{calculateProductJapanFit(featured)}/100</strong></div>
-              <div><span>Status</span><strong>{featured.japanStatus}</strong></div>
-            </div>
-            <Link href={"/products/" + featured.slug} className="button button-light">分析を見る <ArrowRight size={17}/></Link>
-          </div>
-          <div className="feature-visual">
-            <div className="visual-orbit orbit-one"></div>
-            <div className="visual-orbit orbit-two"></div>
-            <div className="visual-center">R</div>
-            <div className="visual-label label-a">Creative AI</div>
-            <div className="visual-label label-b">Enterprise</div>
-            <div className="visual-label label-c">Japan Entry</div>
           </div>
         </section>
 
