@@ -18,6 +18,21 @@ export default function ResearchPage() {
 
         <section className="section section-tight">
           <div className="section-heading">
+            <div><p className="eyebrow">FEATURED REPORT</p><h2>まず読んでほしい特集。</h2></div>
+          </div>
+          <Link href="/research/offensive-ai" className="published-feature">
+            <div className="published-feature-photo" aria-hidden="true"/>
+            <div>
+              <p className="eyebrow">AI × SECURITY / MARKET MAP</p>
+              <h3>AIは、サイバー防御のどこまでを担うのか。</h3>
+              <p>攻撃 → 発見 → 対策 → 判断 → 実行 → 再検証。各社をAutomation DepthとAutonomyの違いから読む。</p>
+            </div>
+            <ArrowRight size={22}/>
+          </Link>
+        </section>
+
+        <section className="section section-tight">
+          <div className="section-heading">
             <div><p className="eyebrow">THEMES</p><h2>6つのテーマから掘る。</h2></div>
             <span className="queue-count">{storyCount} STORIES</span>
           </div>
@@ -38,21 +53,6 @@ export default function ResearchPage() {
               </Link>
             ))}
           </div>
-        </section>
-
-        <section className="section section-tight">
-          <div className="section-heading">
-            <div><p className="eyebrow">PUBLISHED</p><h2>まずは、ここから。</h2></div>
-          </div>
-          <Link href="/research/offensive-ai" className="published-feature">
-            <div className="published-feature-photo" aria-hidden="true"/>
-            <div>
-              <p className="eyebrow">AI × SECURITY / MARKET MAP</p>
-              <h3>AIは、サイバー防御のどこまでを担うのか。</h3>
-              <p>攻撃 → 発見 → 対策 → 判断 → 実行 → 再検証。各社をAutomation DepthとAutonomyの違いから読む。</p>
-            </div>
-            <ArrowRight size={22}/>
-          </Link>
         </section>
 
         <section className="split-section">
