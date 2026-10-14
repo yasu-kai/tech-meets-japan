@@ -7,7 +7,7 @@ export default function ProductsPage(){
     <>
       <Header/>
       <main>
-        <section className="page-hero">
+        <section className="page-hero tmj-image-hero tmj-image-hero-products">
           <p className="eyebrow">PRODUCT DATABASE</p>
           <h1>日本に入ってくる、 次のプロダクトを探す。</h1>
           <p>企業名からではなく、何ができるか・何に使えるか・何と比べるべきかから探すプロダクトデータベース。</p>
