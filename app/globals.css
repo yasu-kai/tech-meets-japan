@@ -1936,3 +1936,6 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
 .topic-image-story-ai-fraud,.story-editorial-article-ai-fraud,.story-related-image-ai-fraud{background-image:linear-gradient(125deg,rgba(87,8,25,.6),rgba(255,91,42,.22)),url('/hero-signals.svg')}
 .topic-image-story-continuous-validation,.story-editorial-article-continuous-validation,.story-related-image-continuous-validation{background-image:linear-gradient(130deg,rgba(5,30,44,.25),rgba(13,204,167,.26)),url('/hero-research.svg')}
 .topic-image-story-agentic-dev-security,.story-editorial-article-agentic-dev-security,.story-related-image-agentic-dev-security{background-image:linear-gradient(125deg,rgba(13,11,32,.25),rgba(81,61,179,.45)),url('/hero-products.svg')}
+
+/* First successfully published generated WebP photo: real binary asset on GitHub. */
+.research-category-photo-ai-security,.tmj-research-category-hero.tmj-research-category-ai-security,.topic-image-story-ai-soc,.story-editorial-article-ai-soc{background-image:linear-gradient(90deg,rgba(5,10,23,.55),rgba(5,10,23,.08)),url('/research-security-control-room.webp');background-position:center;background-size:cover}
