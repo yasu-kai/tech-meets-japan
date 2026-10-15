@@ -1990,3 +1990,16 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
 .topic-image-story-embodied-ai-reception,.story-editorial-article-embodied-ai-reception,.story-related-image-embodied-ai-reception{background-image:linear-gradient(90deg,rgba(2,10,24,.22),rgba(2,10,24,.02)),url('/editorial/article-embodied-ai-reception.webp');background-size:cover;background-position:center}
 .topic-image-story-ultrasound-bci,.story-editorial-article-ultrasound-bci,.story-related-image-ultrasound-bci{background-image:linear-gradient(90deg,rgba(2,10,24,.22),rgba(2,10,24,.02)),url('/editorial/article-ultrasound-bci.webp');background-size:cover;background-position:center}
 .topic-image-story-bridge-ultrasound-bci,.story-editorial-article-bridge-ultrasound-bci,.story-related-image-bridge-ultrasound-bci{background-image:linear-gradient(90deg,rgba(2,10,24,.22),rgba(2,10,24,.02)),url('/editorial/article-bridge-ultrasound-bci.webp');background-size:cover;background-position:center}
+
+/* Photo-backed home navigation */
+.editorial-theme-mosaic .theme-tile-1{background:linear-gradient(115deg,rgba(2,10,22,.9),rgba(2,10,22,.4)),url('/editorial/cat-ai-work.webp') center/cover no-repeat;color:#fff;border-color:rgba(255,255,255,.2)}
+.editorial-theme-mosaic .theme-tile-2{background:linear-gradient(115deg,rgba(2,10,22,.9),rgba(2,10,22,.4)),url('/editorial/cat-ai-security.webp') center/cover no-repeat;color:#fff;border-color:rgba(255,255,255,.2)}
+.editorial-theme-mosaic .theme-tile-3{background:linear-gradient(115deg,rgba(2,10,22,.9),rgba(2,10,22,.4)),url('/editorial/cat-ai-creative.webp') center/cover no-repeat;color:#fff;border-color:rgba(255,255,255,.2)}
+.editorial-theme-mosaic .theme-tile-4{background:linear-gradient(115deg,rgba(2,10,22,.9),rgba(2,10,22,.4)),url('/editorial/cat-ai-industry.webp') center/cover no-repeat;color:#fff;border-color:rgba(255,255,255,.2)}
+.editorial-theme-mosaic .theme-tile-5{background:linear-gradient(115deg,rgba(2,10,22,.9),rgba(2,10,22,.4)),url('/editorial/cat-robotics.webp') center/cover no-repeat;color:#fff;border-color:rgba(255,255,255,.2)}
+.editorial-theme-mosaic .theme-tile-6{background:linear-gradient(115deg,rgba(2,10,22,.9),rgba(2,10,22,.4)),url('/editorial/cat-gadgets.webp') center/cover no-repeat;color:#fff;border-color:rgba(255,255,255,.2)}
+.features-card-trust .features-card-art{background-image:url('/editorial/cat-ai-security.webp');background-size:cover;background-position:center}
+.features-card-neuro .features-card-art{background-image:url('/editorial/article-ultrasound-bci.webp');background-size:cover;background-position:center}
+.features-card-robotics .features-card-art{background-image:url('/editorial/cat-robotics.webp');background-size:cover;background-position:center}
+.features-card-creative .features-card-art{background-image:url('/editorial/cat-ai-creative.webp');background-size:cover;background-position:center}
+.features-card-early .features-card-art{background-image:url('/editorial/cat-gadgets.webp');background-size:cover;background-position:center}
