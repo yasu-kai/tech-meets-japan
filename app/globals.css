@@ -1927,3 +1927,12 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
   .research-category-grid .research-category-bottom{padding:12px 18px 18px}
   .research-category-grid .research-category-card h3{font-size:26px}
 }
+
+
+/* Distinguish editorial subjects while binary photo import is pending. */
+.topic-image-story-offensive-ai,.story-editorial-article-offensive-ai,.story-related-image-offensive-ai{background-image:url('/offensive-ai-hero.png')}
+.topic-image-story-ai-soc,.story-editorial-article-ai-soc,.story-related-image-ai-soc{background-image:linear-gradient(135deg,rgba(2,19,38,.1),rgba(0,110,200,.45)),url('/hero-signals.svg')}
+.topic-image-story-identity-agents,.story-editorial-article-identity-agents,.story-related-image-identity-agents{background-image:linear-gradient(130deg,rgba(22,28,65,.1),rgba(68,120,235,.35)),url('/hero-early-stage.svg')}
+.topic-image-story-ai-fraud,.story-editorial-article-ai-fraud,.story-related-image-ai-fraud{background-image:linear-gradient(125deg,rgba(87,8,25,.6),rgba(255,91,42,.22)),url('/hero-signals.svg')}
+.topic-image-story-continuous-validation,.story-editorial-article-continuous-validation,.story-related-image-continuous-validation{background-image:linear-gradient(130deg,rgba(5,30,44,.25),rgba(13,204,167,.26)),url('/hero-research.svg')}
+.topic-image-story-agentic-dev-security,.story-editorial-article-agentic-dev-security,.story-related-image-agentic-dev-security{background-image:linear-gradient(125deg,rgba(13,11,32,.25),rgba(81,61,179,.45)),url('/hero-products.svg')}
