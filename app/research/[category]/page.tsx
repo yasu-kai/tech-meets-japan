@@ -27,12 +27,12 @@ export default async function ResearchCategoryPage({ params }:{ params:Promise<{
         </section>
 
         <section className="section section-tight">
-          <div className="section-heading"><div><p className="eyebrow">STORIES</p><h2>このテーマを、5つの角度から読む。</h2></div><span className="queue-count">{category.topics.length} STORIES</span></div>
+          <div className="section-heading"><div><p className="eyebrow">STORIES</p><h2>このテーマの記事を読む。</h2></div><span className="queue-count">{category.topics.length} STORIES</span></div>
           <div className="topic-queue">
             {category.topics.map((topic,index) => {
               const content = (
                 <>
-                  <div className={"topic-image topic-image-"+slug} aria-hidden="true"><span>{String(index+1).padStart(2,"0")}</span></div>
+                  <div className={"topic-image topic-image-"+slug+" topic-image-story-"+topic.slug} aria-hidden="true"><span>{String(index+1).padStart(2,"0")}</span></div>
                   <div className="topic-main">
                     <div className="topic-meta"><span>{topic.format}</span><span className={topic.status==="published"?"published":"queued"}>{topic.status==="published"?"PUBLISHED":"QUEUE"}</span></div>
                     <h3>{topic.title}</h3>
