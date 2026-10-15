@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ShieldCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { researchCategories } from "@/lib/research";
@@ -18,23 +18,8 @@ export default function ResearchPage() {
 
         <section className="section section-tight">
           <div className="section-heading">
-            <div><p className="eyebrow">FEATURED REPORT</p><h2>まず読んでほしい特集。</h2></div>
-          </div>
-          <Link href="/research/offensive-ai" className="published-feature">
-            <div className="published-feature-photo" aria-hidden="true"/>
-            <div>
-              <p className="eyebrow">AI × SECURITY / MARKET MAP</p>
-              <h3>AIは、サイバー防御のどこまでを担うのか。</h3>
-              <p>攻撃 → 発見 → 対策 → 判断 → 実行 → 再検証。各社をAutomation DepthとAutonomyの違いから読む。</p>
-            </div>
-            <ArrowRight size={22}/>
-          </Link>
-        </section>
-
-        <section className="section section-tight">
-          <div className="section-heading">
-            <div><p className="eyebrow">THEMES</p><h2>6つのテーマから掘る。</h2></div>
-            <span className="queue-count">{storyCount} STORIES</span>
+            <div><p className="eyebrow">RESEARCH LIBRARY</p><h2>技術分野から探す。</h2><p className="research-index-intro">関心のある分野を選んで、個別の技術・製品・市場分析を読む。</p></div>
+            <span className="queue-count">{storyCount} ARTICLES</span>
           </div>
 
           <div className="research-category-grid">
@@ -55,21 +40,7 @@ export default function ResearchPage() {
           </div>
         </section>
 
-        <section className="split-section">
-          <div>
-            <p className="eyebrow">EDITORIAL LENS</p>
-            <h2>共通して問うのは、 「人間は何をしなくなるか」。</h2>
-          </div>
-          <div>
-            <ul className="plain-list">
-              <li>何ができるのか</li>
-              <li>業務のどの工程を担うのか</li>
-              <li>AutomationとAutonomyはどこまで進んでいるか</li>
-              <li>人間に残る判断と責任は何か</li>
-              <li>日本企業が今導入する意味はあるか</li>
-            </ul>
-          </div>
-        </section>
+
       </main>
       <Footer/>
     </>
