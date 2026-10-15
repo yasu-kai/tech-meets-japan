@@ -1939,3 +1939,6 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
 
 /* First successfully published generated WebP photo: real binary asset on GitHub. */
 .research-category-photo-ai-security,.tmj-research-category-hero.tmj-research-category-ai-security,.topic-image-story-ai-soc,.story-editorial-article-ai-soc{background-image:linear-gradient(90deg,rgba(5,10,23,.55),rgba(5,10,23,.08)),url('/research-security-control-room.webp');background-position:center;background-size:cover}
+
+/* Resolution safeguard (2026-10-15): never enlarge the 320px upload test image into an article thumbnail or hero. */
+.topic-image-story-ai-soc,.story-editorial-article-ai-soc{background-image:url('/offensive-ai-hero.png');background-position:center;background-size:cover}
