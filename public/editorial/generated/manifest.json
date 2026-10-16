@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "coding-agents",
+    "source": "夜のaiコーディング作業室.png",
+    "filename": "coding-agents.webp",
+    "bytes": 138242,
+    "dimensions": [
+      1600,
+      900
+    ],
+    "repo_path": "public/editorial/generated/coding-agents.webp",
+    "url": "/editorial/generated/coding-agents.webp"
+  },
+  {
+    "slug": "ai-sales",
+    "source": "夜景ハイテク会議室のai分析会議.png",
+    "filename": "ai-sales.webp",
+    "bytes": 85360,
+    "dimensions": [
+      1600,
+      900
+    ],
+    "repo_path": "public/editorial/generated/ai-sales.webp",
+    "url": "/editorial/generated/ai-sales.webp"
+  },
+  {
+    "slug": "ai-recruiting",
+    "source": "夜のai採用ダッシュボード.png",
+    "filename": "ai-recruiting.webp",
+    "bytes": 99192,
+    "dimensions": [
+      1600,
+      900
+    ],
+    "repo_path": "public/editorial/generated/ai-recruiting.webp",
+    "url": "/editorial/generated/ai-recruiting.webp"
+  },
+  {
+    "slug": "ai-legal",
+    "source": "ai法務分析の夜景オフィス.png",
+    "filename": "ai-legal.webp",
+    "bytes": 102180,
+    "dimensions": [
+      1600,
+      900
+    ],
+    "repo_path": "public/editorial/generated/ai-legal.webp",
+    "url": "/editorial/generated/ai-legal.webp"
+  },
+  {
+    "slug": "ai-customer-service",
+    "source": "ai支援コールセンターの夜.png",
+    "filename": "ai-customer-service.webp",
+    "bytes": 87360,
+    "dimensions": [
+      1600,
+      900
+    ],
+    "repo_path": "public/editorial/generated/ai-customer-service.webp",
+    "url": "/editorial/generated/ai-customer-service.webp"
+  },
+  {
+    "slug": "browser-agents",
+    "source": "未来型aiトラベル予約デスク.png",
+    "filename": "browser-agents.webp",
+    "bytes": 137776,
+    "dimensions": [
+      1600,
+      900
+    ],
+    "repo_path": "public/editorial/generated/browser-agents.webp",
+    "url": "/editorial/generated/browser-agents.webp"
+  },
+  {
+    "slug": "ai-video",
+    "source": "ai映像制作スタジオの夜明け.png",
+    "filename": "ai-video.webp",
+    "bytes": 141946,
+    "dimensions": [
+      1600,
+      900
+    ],
+    "repo_path": "public/editorial/generated/ai-video.webp",
+    "url": "/editorial/generated/ai-video.webp"
+  },
+  {
+    "slug": "runway-production",
+    "source": "未来型ai映像制作スタジオ.png",
+    "filename": "runway-production.webp",
+    "bytes": 140836,
+    "dimensions": [
+      1600,
+      900
+    ],
+    "repo_path": "public/editorial/generated/runway-production.webp",
+    "url": "/editorial/generated/runway-production.webp"
+  },
+  {
+    "slug": "ai-voice",
+    "source": "夜のai音声制作スタジオ.png",
+    "filename": "ai-voice.webp",
+    "bytes": 104190,
+    "dimensions": [
+      1600,
+      900
+    ],
+    "repo_path": "public/editorial/generated/ai-voice.webp",
+    "url": "/editorial/generated/ai-voice.webp"
+  },
+  {
+    "slug": "synthetic-media",
+    "source": "夜のクリエイティブスタジオで進むvfx制作.png",
+    "filename": "synthetic-media.webp",
+    "bytes": 111176,
+    "dimensions": [
+      1600,
+      900
+    ],
+    "repo_path": "public/editorial/generated/synthetic-media.webp",
+    "url": "/editorial/generated/synthetic-media.webp"
+  }
+]
