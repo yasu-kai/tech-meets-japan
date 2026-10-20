@@ -1,3 +1,5 @@
+import GeneratedEditorialImage from "@/components/GeneratedEditorialImage";
+import { generatedEditorialImage } from "@/lib/generatedEditorial";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -34,6 +36,7 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
   const {category,slug}=await params;
   const story=storyMap[slug];
   if(!story || story.category!==category) notFound();
+  const image=generatedEditorialImage(story.slug);
   const related=researchStories.filter(item=>item.category===story.category && item.slug!==story.slug).slice(0,3);
 
   return <>
@@ -45,12 +48,15 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
           <p className="eyebrow">{story.eyebrow}</p>
           <h1>{story.title}</h1>
           <p className="story-dek">{story.dek}</p>
-          <div className={"story-editorial-visual story-editorial-visual-"+story.category+" story-editorial-with-image story-editorial-article-"+story.slug}>
+          {image ? <figure className="generated-editorial-hero">
+            <GeneratedEditorialImage slug={story.slug} alt={story.title+"（AI生成イメージ）"} priority/>
+            <figcaption>{image.note || "AI生成イメージ"}</figcaption>
+          </figure> : <div className={"story-editorial-visual story-editorial-visual-"+story.category+" story-editorial-with-image story-editorial-article-"+story.slug}>
             <div className="story-visual-index">TECH MEETS JAPAN / {story.eyebrow}</div>
             <div className="story-visual-title">{story.title}</div>
             <div className="story-visual-companies">{story.companies.slice(0,4).map(c=><span key={c}>{c}</span>)}</div>
             <div className="story-visual-grid" aria-hidden="true"><i/><i/><i/><i/><i/><i/></div>
-          </div>
+          </div>}
           <div className="story-companies">{story.companies.map(c=><span key={c}>{c}</span>)}</div>
         </section>
 
@@ -109,7 +115,7 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
               {related.map((item,index)=><Link className="story-related-card" href={"/research/"+item.category+"/"+item.slug} key={item.slug}>
                 <span>{String(index+1).padStart(2,"0")}</span>
                 <div>
-                  <div className={"story-related-image story-related-image-"+item.category+" story-related-image-"+item.slug} aria-hidden="true"/>
+                  <div className={"story-related-image story-related-image-"+item.category+" story-related-image-"+item.slug+(generatedEditorialImage(item.slug)?" generated-editorial-frame":"")} style={generatedEditorialImage(item.slug)?{backgroundImage:"none"}:undefined} aria-hidden="true"><GeneratedEditorialImage slug={item.slug}/></div>
                   <p>{item.eyebrow}</p>
                   <h3>{item.title}</h3>
                 </div>

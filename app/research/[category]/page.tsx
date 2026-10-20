@@ -1,3 +1,5 @@
+import GeneratedEditorialImage from "@/components/GeneratedEditorialImage";
+import { generatedEditorialImage } from "@/lib/generatedEditorial";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -32,7 +34,7 @@ export default async function ResearchCategoryPage({ params }:{ params:Promise<{
             {category.topics.map((topic,index) => {
               const content = (
                 <>
-                  <div className={"topic-image topic-image-"+slug+" topic-image-story-"+topic.slug} aria-hidden="true"><span>{String(index+1).padStart(2,"0")}</span></div>
+                  <div className={"topic-image topic-image-"+slug+" topic-image-story-"+topic.slug+(generatedEditorialImage(topic.slug)?" generated-editorial-frame":"")} style={generatedEditorialImage(topic.slug)?{backgroundImage:"none"}:undefined} aria-hidden="true"><GeneratedEditorialImage slug={topic.slug}/><span>{String(index+1).padStart(2,"0")}</span></div>
                   <div className="topic-main">
                     <div className="topic-meta"><span>{topic.format}</span><span className={topic.status==="published"?"published":"queued"}>{topic.status==="published"?"PUBLISHED":"QUEUE"}</span></div>
                     <h3>{topic.title}</h3>

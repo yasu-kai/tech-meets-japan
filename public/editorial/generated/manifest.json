@@ -1,122 +1,354 @@
 [
   {
+    "number": 1,
+    "category": "ai-work",
     "slug": "coding-agents",
-    "source": "夜のaiコーディング作業室.png",
-    "filename": "coding-agents.webp",
-    "bytes": 138242,
-    "dimensions": [
-      1600,
-      900
-    ],
-    "repo_path": "public/editorial/generated/coding-agents.webp",
-    "url": "/editorial/generated/coding-agents.webp"
+    "image": "images/coding-agents.webp",
+    "source_filename": "夜のaiコーディング作業室.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "6ce09af120a101246bd6378fd899d3775adde74e8fb1b12d122c0e6112bc8064",
+    "note": ""
   },
   {
+    "number": 2,
+    "category": "ai-work",
     "slug": "ai-sales",
-    "source": "夜景ハイテク会議室のai分析会議.png",
-    "filename": "ai-sales.webp",
-    "bytes": 85360,
-    "dimensions": [
-      1600,
-      900
-    ],
-    "repo_path": "public/editorial/generated/ai-sales.webp",
-    "url": "/editorial/generated/ai-sales.webp"
+    "image": "images/ai-sales.webp",
+    "source_filename": "夜景都市とaiエージェントの開発デスクチェーン.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "ed2793fe9bcb711815ece411309892ea6e249c98d074ee35a4566e44ec736fb9",
+    "note": ""
   },
   {
+    "number": 3,
+    "category": "ai-work",
     "slug": "ai-recruiting",
-    "source": "夜のai採用ダッシュボード.png",
-    "filename": "ai-recruiting.webp",
-    "bytes": 99192,
-    "dimensions": [
-      1600,
-      900
-    ],
-    "repo_path": "public/editorial/generated/ai-recruiting.webp",
-    "url": "/editorial/generated/ai-recruiting.webp"
+    "image": "images/ai-recruiting.webp",
+    "source_filename": "夜景オフィスのai採用ダッシュボード.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "6085337fd90752fbc4bad95f638ffab9ba1c2dce95fc1d32047f3a0af0f12d6d",
+    "note": ""
   },
   {
+    "number": 4,
+    "category": "ai-work",
     "slug": "ai-legal",
-    "source": "ai法務分析の夜景オフィス.png",
-    "filename": "ai-legal.webp",
-    "bytes": 102180,
-    "dimensions": [
-      1600,
-      900
-    ],
-    "repo_path": "public/editorial/generated/ai-legal.webp",
-    "url": "/editorial/generated/ai-legal.webp"
+    "image": "images/ai-legal.webp",
+    "source_filename": "ai法務分析の夜景オフィス.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "b011f5b57fe672ff12b25122534923e1da5494c3d642dd5c3de35571959d9367",
+    "note": ""
   },
   {
+    "number": 5,
+    "category": "ai-work",
     "slug": "ai-customer-service",
-    "source": "ai支援コールセンターの夜.png",
-    "filename": "ai-customer-service.webp",
-    "bytes": 87360,
-    "dimensions": [
-      1600,
-      900
-    ],
-    "repo_path": "public/editorial/generated/ai-customer-service.webp",
-    "url": "/editorial/generated/ai-customer-service.webp"
+    "image": "images/ai-customer-service.webp",
+    "source_filename": "ai支援コールセンターの夜.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "fb1815de6741504d0237badba10e0e465da2beac22b06d62cd9b45c11aa4e90c",
+    "note": ""
   },
   {
+    "number": 6,
+    "category": "ai-work",
     "slug": "browser-agents",
-    "source": "未来型aiトラベル予約デスク.png",
-    "filename": "browser-agents.webp",
-    "bytes": 137776,
-    "dimensions": [
-      1600,
-      900
-    ],
-    "repo_path": "public/editorial/generated/browser-agents.webp",
-    "url": "/editorial/generated/browser-agents.webp"
+    "image": "images/browser-agents.webp",
+    "source_filename": "自律型aiロボットの夜間予約ワークステーション.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "0b8146060913265ba504d63689de2d3fed71626116ee2276140022de19608b30",
+    "note": ""
   },
   {
+    "number": 7,
+    "category": "ai-creative",
     "slug": "ai-video",
-    "source": "ai映像制作スタジオの夜明け.png",
-    "filename": "ai-video.webp",
-    "bytes": 141946,
-    "dimensions": [
-      1600,
-      900
-    ],
-    "repo_path": "public/editorial/generated/ai-video.webp",
-    "url": "/editorial/generated/ai-video.webp"
+    "image": "images/ai-video.webp",
+    "source_filename": "未来型ai映像制作スタジオ.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "0edc8d2b1a35c25efaa124ece02440ede01840a5b37f3fa8969c95d3c3ef0714",
+    "note": ""
   },
   {
+    "number": 8,
+    "category": "ai-creative",
     "slug": "runway-production",
-    "source": "未来型ai映像制作スタジオ.png",
-    "filename": "runway-production.webp",
-    "bytes": 140836,
-    "dimensions": [
-      1600,
-      900
-    ],
-    "repo_path": "public/editorial/generated/runway-production.webp",
-    "url": "/editorial/generated/runway-production.webp"
+    "image": "images/runway-production.webp",
+    "source_filename": "ai映像編集スタジオの夜間風景.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "5f433c350e4f6b9f4e1d2bc9728a1d060b300144750ec9d81050f1ab77ceaf78",
+    "note": ""
   },
   {
+    "number": 9,
+    "category": "ai-creative",
     "slug": "ai-voice",
-    "source": "夜のai音声制作スタジオ.png",
-    "filename": "ai-voice.webp",
-    "bytes": 104190,
-    "dimensions": [
-      1600,
-      900
-    ],
-    "repo_path": "public/editorial/generated/ai-voice.webp",
-    "url": "/editorial/generated/ai-voice.webp"
+    "image": "images/ai-voice.webp",
+    "source_filename": "夜のai音声制作スタジオ.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "e9d265a626bdf03d177dfb75005b07b71ddb1caabb0b73c011f99cfe9e3939c9",
+    "note": ""
   },
   {
+    "number": 10,
+    "category": "ai-creative",
     "slug": "synthetic-media",
-    "source": "夜のクリエイティブスタジオで進むvfx制作.png",
-    "filename": "synthetic-media.webp",
-    "bytes": 111176,
-    "dimensions": [
-      1600,
-      900
-    ],
-    "repo_path": "public/editorial/generated/synthetic-media.webp",
-    "url": "/editorial/generated/synthetic-media.webp"
+    "image": "images/synthetic-media.webp",
+    "source_filename": "映画制作スタジオの幻想的な舞台裏.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "0875e5cfa44008f16d82797421ea71bf489f95c626f9df7c3e65ac9a1c054aae",
+    "note": ""
+  },
+  {
+    "number": 11,
+    "category": "ai-creative",
+    "slug": "creative-stack",
+    "image": "images/creative-stack.webp",
+    "source_filename": "夜のクリエイティブスタジオで描く女性.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "f81111e612df78699788b64ebafdadd8384a6e4c998561667fdb75fb12ea5cd6",
+    "note": ""
+  },
+  {
+    "number": 12,
+    "category": "ai-industry",
+    "slug": "manufacturing-ai",
+    "image": "images/manufacturing-ai.webp",
+    "source_filename": "a_wide_cinematic_ultra_detailed_industrial_facto.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "4e77b744d15832e0ce632c4cad38d67014feee5c48311cab205033db3b2e56a9",
+    "note": ""
+  },
+  {
+    "number": 13,
+    "category": "ai-industry",
+    "slug": "logistics-ai",
+    "image": "images/logistics-ai.webp",
+    "source_filename": "a_detailed_realistic_cinematic_office_warehouse.png",
+    "width": 1536,
+    "height": 1024,
+    "sha256": "d0f2d6da32449f5be3960c348205dce8a85d1d42c6cf8eaee1b4d06c22b5ee85",
+    "note": ""
+  },
+  {
+    "number": 14,
+    "category": "ai-industry",
+    "slug": "finance-ai",
+    "image": "images/finance-ai.webp",
+    "source_filename": "a_cinematic_high_detail_realistic_office_finance.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "2ff30d03e05c8abb548c40005ab8daa011e9d0f165b87a611cff5223cefe8d66",
+    "note": ""
+  },
+  {
+    "number": 15,
+    "category": "ai-industry",
+    "slug": "healthcare-ai",
+    "image": "images/healthcare-ai.webp",
+    "source_filename": "a_realistic_cinematic_high_tech_hospital_clinic.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "03e894bc8e13f2d45d5f9149481e1743b4812cb4520b122953f932ce1e75a8bc",
+    "note": ""
+  },
+  {
+    "number": 16,
+    "category": "ai-industry",
+    "slug": "retail-ai",
+    "image": "images/retail-ai.webp",
+    "source_filename": "wide_angle_cinematic_realistic_supermarket_scene.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "a421f9d186c5c4ef78b21f0a375e1231d8a54c1d68a2ac6178285e0acc846b1d",
+    "note": ""
+  },
+  {
+    "number": 17,
+    "category": "ai-industry",
+    "slug": "procurement-agents",
+    "image": "images/procurement-agents.webp",
+    "source_filename": "wide_modern_office_industrial_control_room_scene_w.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "3b7bac6e8eaf236bf5e90b5354ff437c0d6e29792643170bec5f896135641f53",
+    "note": ""
+  },
+  {
+    "number": 18,
+    "category": "robotics",
+    "slug": "warehouse-robotics",
+    "image": "images/warehouse-robotics.webp",
+    "source_filename": "a_wide_cinematic_high_tech_warehouse_fulfillment.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "88dcf094accd2f6b988cd84a1b2a2b56ad41651367045dd736f9f45606dc0e18",
+    "note": ""
+  },
+  {
+    "number": 19,
+    "category": "robotics",
+    "slug": "humanoid",
+    "image": "images/humanoid.webp",
+    "source_filename": "wide_industrial_high_tech_factory_assembly_line_sc.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "6d1603164954ec368916470d97fccf602dc1971bd340dc9afd4aa4cf8a4cae68",
+    "note": ""
+  },
+  {
+    "number": 20,
+    "category": "robotics",
+    "slug": "autonomous-driving",
+    "image": "images/autonomous-driving.webp",
+    "source_filename": "a_realistic_cinematic_urban_street_scene_in_japan.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "f1c305ef108d66df840e892753145d5a4d6470e895a110446c951f15cc279ee0",
+    "note": ""
+  },
+  {
+    "number": 21,
+    "category": "robotics",
+    "slug": "physical-ai-platforms",
+    "image": "images/physical-ai-platforms.webp",
+    "source_filename": "wide_cinematic_high_tech_laboratory_industrial_r.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "66e342fc3169dfd92904fc2d14cea296064f259a2c88fda5ceb76be8ce9b50c9",
+    "note": ""
+  },
+  {
+    "number": 22,
+    "category": "robotics",
+    "slug": "drones",
+    "image": "images/drones.webp",
+    "source_filename": "wide_cinematic_aerial_industrial_scene_of_a_suspen.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "3bf1b91830f369b0d418b2fbcd83a7ac36ee0c0f7c5314719884272bfb317424",
+    "note": ""
+  },
+  {
+    "number": 23,
+    "category": "robotics",
+    "slug": "robotics-as-labor",
+    "image": "images/robotics-as-labor.webp",
+    "source_filename": "a_wide_crisp_realistic_photograph_like_scene_of.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "2815b91962b4c3d9ada2803c2b12df6398474cbf38855c53459d31fc8f17fb96",
+    "note": ""
+  },
+  {
+    "number": 24,
+    "category": "gadgets",
+    "slug": "ai-glasses",
+    "image": "images/ai-glasses.webp",
+    "source_filename": "wide_realistic_cinematic_street_cafe_scene_with.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "0a85547caad79b90b8de162f3743fdd1f71b4c4e5232d0b40cba6a1beb103499",
+    "note": ""
+  },
+  {
+    "number": 25,
+    "category": "gadgets",
+    "slug": "personal-ai-device",
+    "image": "images/personal-ai-device.webp",
+    "source_filename": "a_high_quality_cinematic_close_up_promotional_te.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "4480425acd4949cc370ee13bb7c580d068b8619b3ead4d73ad415576fb9e2295",
+    "note": ""
+  },
+  {
+    "number": 26,
+    "category": "gadgets",
+    "slug": "wearable-memory",
+    "image": "images/wearable-memory.webp",
+    "source_filename": "a_crisp_cinematic_photorealistic_corporate_meeti.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "2af3ffe36f0afdf5804bec309c1ae91197ab01b86b0a4bc440dab15f541ee124",
+    "note": ""
+  },
+  {
+    "number": 27,
+    "category": "gadgets",
+    "slug": "future-input",
+    "image": "images/future-input.webp",
+    "source_filename": "a_crisp_cinematic_photorealistic_futuristic_tech.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "c8beec025939e13a588a565318408b0372e67f404a25a94c4681896a6192a007",
+    "note": ""
+  },
+  {
+    "number": 28,
+    "category": "gadgets",
+    "slug": "weird-gadgets",
+    "image": "images/weird-gadgets.webp",
+    "source_filename": "a_wide_futuristic_concept_technology_showcase_sce.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "21d1c0a25aa9b4b7004b1edb05a1a0ac92289c8629850d9aa52088121afc3924",
+    "note": "AI生成コンセプトイメージ／実在製品の外観を示すものではありません"
+  },
+  {
+    "number": 29,
+    "category": "gadgets",
+    "slug": "silent-speech",
+    "image": "images/silent-speech.webp",
+    "source_filename": "close_up_of_a_young_japanese_man_side_profile_l.png",
+    "width": 1671,
+    "height": 941,
+    "sha256": "76f42640a50fbb17af626f69965d1c88336460588f34eebf3a7a3d1b0cd392b7",
+    "note": ""
+  },
+  {
+    "number": 30,
+    "category": "gadgets",
+    "slug": "embodied-ai-reception",
+    "image": "images/embodied-ai-reception.webp",
+    "source_filename": "wide_cinematic_photoreal_cgi_like_modern_lobby_s.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "fa11a61bbacf303476ff736c56cdf4de6b2f6f09ddcb71c470622e86e844e68e",
+    "note": ""
+  },
+  {
+    "number": 31,
+    "category": "gadgets",
+    "slug": "ultrasound-bci",
+    "image": "images/ultrasound-bci.webp",
+    "source_filename": "a_futuristic_high_tech_laboratory_brain_computer.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "b41de82ddeb76f10f98ab08a5ba40990f4225d6950bfbb3aebd9e7612674caef",
+    "note": ""
+  },
+  {
+    "number": 32,
+    "category": "gadgets",
+    "slug": "bridge-ultrasound-bci",
+    "image": "images/bridge-ultrasound-bci.webp",
+    "source_filename": "a_high_tech_futuristic_laboratory_research_lab_s.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "b40b5cd7c5cba7c824beab39bcbab7a1b805a69c9fbb9e7197e8aa0bfd2283e8",
+    "note": ""
   }
 ]
