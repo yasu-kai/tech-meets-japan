@@ -1245,7 +1245,9 @@ sections:[
 "Bridgeが成功しても、最初から一般消費者がHeadphone型BCIでPCを操作する世界になる可能性は低い。臨床Benefitが大きい領域ほど、多少の装着負荷やCalibrationを許容しやすい。重度運動障害、Communication支援、Neurorehabilitation、Research interfaceの方が初期Marketとして自然だ。",
 "日本で医療用途へ入る場合、HardwareとDecoding softwareのIntended use次第で医療機器としてPMDA・厚生労働省の審査対象になり得る。日本には革新的医療機器やSaMDの優先審査・相談制度もあるが、Bridgeはまだ米国でもObservational study段階だ。日本参入を語るなら、まずClinical evidence、再現性、Safety、Data governance、国内Research partnerを見るべきだ。",
 "その先にPC操作、XR、Hands-free computingがある。もしBridgeがSkull越しのSignalを日常Wearableで安定Decodeできれば、BCIのMarketは『手術を受ける少数』から『Deviceを装着する多数』へ桁を変える可能性がある。だからこの会社の価値は、今読めるThoughtの量ではなく、BCIの利用母数をどこまで広げられるかにある。"
-]}
+]},
+{heading:"初回の人対象研究は、完成品の試験ではない。",body:["Bridgeは2026年10月、健常成人と、PEEKまたはLongevitiによる頭蓋形成術を受けた成人を対象とする観察研究への参加者募集を公表した。聞く・見る・話す・動くといったタスク中に超音波画像を記録し、頭蓋骨越しの計測信号を、音が通りやすい修復材越しのデータと比較する設計である。","メーカーは独立した倫理審査委員会による承認、同意取得、治療や診断をしない観察研究であることを明記している。しかし、それは一般向けBCIの実用性や臨床有効性が証明されたことを意味しない。ヘルメット型の計測装置の研究実施と、市販ウェアラブルの完成も区別する必要がある。"]},
+{heading:"次に確認すべきは、頭蓋骨越しの画像と意図解読の再現性だ。",body:["機能的超音波は神経電位の直接測定ではない。超音波の反射から赤血球の動きや血流変化を推定し、脳活動を間接的に読む。頭蓋骨による散乱・吸収、個体差、反応速度、体動、長時間の装着性といった条件が成否を左右する。","日本で実用化を評価するには、健常成人での信号品質、別日に測定した際の再現性、個人間モデルの転用性、実時間解読の誤差、必要な校正時間を確認したい。Bridgeによる日本向け販売、代理店募集、国内臨床計画は公開一次情報では未確認であり、用途の紹介は現段階では編集部の仮説となる。"]}
 ],
 sources:[
 {label:"Bridge Neurotech — Official",url:"https://www.bridgeneurotech.com/"},
@@ -1303,7 +1305,9 @@ sources:[
 {label:"Bridge Neurotech — First Research Study",url:"https://www.bridgeneurotech.com/study"},
 {label:"Bridge Neurotech — About",url:"https://www.bridgeneurotech.com/about"},
 {label:"Butterfly Network — Bridge partnership",url:"https://ir.butterflynetwork.com/News/press-releases/news-details/2026/Bridge-Neurotech-and-Butterfly-Network-Announce-Partnership-to-Develop-Fully-Non-Invasive-Brain-Computer-Interface/"},
-{label:"Butterfly Network — Merge Labs partnership",url:"https://www.butterflynetwork.com/press-releases/merge-labs-bci-partnership"}
+{label:"Butterfly Network — Merge Labs partnership",url:"https://www.butterflynetwork.com/press-releases/merge-labs-bci-partnership"},
+{label:"Bridge Neurotech — first observational human study",url:"https://www.bridgeneurotech.com/study"},
+{label:"Bridge Neurotech — technology approach",url:"https://www.bridgeneurotech.com/approach"}
 ]
 }
 
