@@ -405,7 +405,7 @@ export const earlyStageCompanies: EarlyStageCompany[] = [
   {
     "id": "wearable-devices-mudra",
     "company": "Wearable Devices",
-    "country": "United States",
+    "country": "Israel",
     "website": "https://mudra-band.com/",
     "product": "Mudra Band / Mudra Link",
     "summary": "手首での神経・筋活動に伴う信号から手指ジェスチャーを認識し、機器操作に変換するウェアラブル。一般消費者向け製品販売を確認。",
