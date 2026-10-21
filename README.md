@@ -6,7 +6,7 @@ A neutral Japan Entry intelligence platform that helps Japanese companies discov
 
 ## Product pillars
 - Curated company database
-- Japan Fit scoring
+- Evidence-based product research without numerical scores
 - Problem / use-case search
 - Independent editorial profiles
 - Japan Entry Research
@@ -14,7 +14,7 @@ A neutral Japan Entry intelligence platform that helps Japanese companies discov
 - Introductions, partner search and future GTM support
 
 ## Editorial principle
-Paid listings or sponsored features do not influence Japan Fit Score or editorial ranking.
+Products and companies are not numerically scored or ranked. Every comparison should give readers verifiable facts, sources, limitations and context to decide for themselves. Paid listings and sponsorship do not affect independent editorial coverage.
 
 ## Local development
 
