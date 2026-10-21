@@ -20,18 +20,14 @@ export type ResearchCategory = {
 
 export const researchCategories: ResearchCategory[] = [
   {
-    slug: "frontier-tech",
-    label: "FRONTIER TECH & MATERIALS",
-    shortLabel: "FRONTIER",
-    description: "AIの外側にも面白い未来がある。ロボット、食素材、半導体、新しい製法を技術の成熟度から読む。",
-    thesis: "技術の独自性と実用性、事業成立性を切り分ける。面白さと商用化の証拠は同じではない。",
+    slug: "materials-energy",
+    label: "FOODTECH, MATERIALS & ENERGY",
+    shortLabel: "MATERIALS",
+    description: "食素材、材料、エネルギー。原料と製法を変える技術を、実用化の証拠とともに読む。",
+    thesis: "材料の驚きだけでなく、製造条件、供給量、品質、環境負荷、コストまで見る。",
     topics: [
-      { slug:"nori-a3", title:"25万円の双腕ロボット。NORI A3は家事の未来をどこまで近づけたか。", kicker:"Nori Robotics / Bimanual / $1,688 / Reality Check", format:"PRODUCT", status:"published", href:"/research/frontier-tech/nori-a3" },
-      { slug:"savor-carbon-fats", title:"牛も畑も使わずに、バターを作る。Savorの油脂は何を変えるのか。", kicker:"Savor / Carbon-crafted fats / AAK / Food materials", format:"REPORT", status:"published", href:"/research/frontier-tech/savor-carbon-fats" },
-      { slug:"chargebotic-kestrel", title:"送電線から電気をもらう。ChargeboticのKestrelは何を変えるのか。", kicker:"Chargebotic / Kestrel / 18W field demonstration", format:"REPORT", status:"published", href:"/research/frontier-tech/chargebotic-kestrel" },
-      { slug:"ixana-wir", title:"人体が通信路になる。IxanaのWi-RはBluetoothを置き換えるのか。", kicker:"Ixana / Wi-R / 5Mbit/s shipping / 20Mbit/s sampling", format:"PRODUCT", status:"published", href:"/research/frontier-tech/ixana-wir" },
-      { slug:"mudra-link", title:"指を動かす前の信号を、手首で読む。Mudra Linkはマウスの次になるか。", kicker:"Wearable Devices / Mudra Link / EMG input", format:"PRODUCT", status:"published", href:"/research/frontier-tech/mudra-link" },
-      { slug:"ipolish-digital-nails", title:"爪に電池はない。iPolishの『300色ネイル』は何で動くのか。", kicker:"iPolish / Magic Wand / Color-changing nails", format:"PRODUCT", status:"published", href:"/research/frontier-tech/ipolish-digital-nails" },
+      { slug:"savor-carbon-fats", title:"牛も畑も使わずに、バターを作る。Savorの油脂は何を変えるのか。", kicker:"Savor / Carbon-crafted fats / AAK / Food materials", format:"REPORT", status:"published", href:"/research/materials-energy/savor-carbon-fats" },
+      { slug:"chargebotic-kestrel", title:"送電線から電気をもらう。ChargeboticのKestrelは何を変えるのか。", kicker:"Chargebotic / Kestrel / 18W field demonstration", format:"REPORT", status:"published", href:"/research/materials-energy/chargebotic-kestrel" },
     ],
   },
   {
@@ -100,6 +96,7 @@ export const researchCategories: ResearchCategory[] = [
     description: "Humanoid、倉庫、車両、ドローン。AIが現実世界で移動し、掴み、運ぶ領域。",
     thesis: "ソフトウェアの自律性が、物理世界でどこまで許容されるかを見る。",
     topics: [
+      { slug:"nori-a3", title:"25万円の双腕ロボット。NORI A3は家事の未来をどこまで近づけたか。", kicker:"Nori Robotics / Bimanual / $1,688 / Reality Check", format:"PRODUCT", status:"published", href:"/research/robotics/nori-a3" },
       { slug:"warehouse-robotics", title:"倉庫は、どこまで人を必要としなくなるのか。", kicker:"Exotec / Locus / Symbotic", format:"MARKET MAP", status:"published", href:"/research/robotics/warehouse-robotics" },
       { slug:"humanoid", title:"Humanoidは『人型』である必要が本当にあるのか。", kicker:"General-purpose robotics", format:"REPORT", status:"published", href:"/research/robotics/humanoid" },
       { slug:"autonomous-driving", title:"自動運転のLevel思想は、他産業へ輸出される。", kicker:"Autonomy Levels as a common language", format:"REPORT", status:"published", href:"/research/robotics/autonomous-driving" },
@@ -115,6 +112,9 @@ export const researchCategories: ResearchCategory[] = [
     description: "Smart Glasses、Wearables、Personal AI Device。たまには『なんだこれwww』から未来を見る。",
     thesis: "面白さだけで終わらせず、誰が使うのか、日本で普及する障壁は何かまで見る。",
     topics: [
+      { slug:"ixana-wir", title:"人体が通信路になる。IxanaのWi-RはBluetoothを置き換えるのか。", kicker:"Ixana / Wi-R / 5Mbit/s shipping / 20Mbit/s sampling", format:"PRODUCT", status:"published", href:"/research/gadgets/ixana-wir" },
+      { slug:"mudra-link", title:"指を動かす前の信号を、手首で読む。Mudra Linkはマウスの次になるか。", kicker:"Wearable Devices / Mudra Link / EMG input", format:"PRODUCT", status:"published", href:"/research/gadgets/mudra-link" },
+      { slug:"ipolish-digital-nails", title:"爪に電池はない。iPolishの『300色ネイル』は何で動くのか。", kicker:"iPolish / Magic Wand / Color-changing nails", format:"PRODUCT", status:"published", href:"/research/gadgets/ipolish-digital-nails" },
       { slug:"ai-glasses", title:"AI Glassesは、スマホの次の画面になれるか。", kicker:"Meta / Google / Android XR", format:"MARKET MAP", status:"published", href:"/research/gadgets/ai-glasses" },
       { slug:"personal-ai-device", title:"AI専用端末は、スマホアプリに勝てるのか。", kicker:"rabbit r1 / Humane / AI-native devices", format:"COMPARE", status:"published", href:"/research/gadgets/personal-ai-device" },
       { slug:"wearable-memory", title:"『全部覚えている』ウェアラブルは便利か、怖いか。", kicker:"Memory / Capture / Search", format:"REPORT", status:"published", href:"/research/gadgets/wearable-memory" },
