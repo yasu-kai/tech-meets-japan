@@ -256,7 +256,8 @@ export const earlyStageCompanies: EarlyStageCompany[] = [
         "note": "会社公開情報による説明。出荷日と機能はメーカー告知。実出荷と自律作業性能は要確認。"
       }
     ],
-    "editorialStatus": "research"
+    "editorialStatus": "published",
+    "publishedPath": "/research/frontier-tech/nori-a3"
   },
   {
     "id": "savor",
@@ -304,7 +305,8 @@ export const earlyStageCompanies: EarlyStageCompany[] = [
         "note": "会社公開情報による説明。環境影響値は別途LCA原文・境界条件の確認が必要。"
       }
     ],
-    "editorialStatus": "research"
+    "editorialStatus": "published",
+    "publishedPath": "/research/frontier-tech/savor-carbon-fats"
   },
   {
     "id": "ipolish",
