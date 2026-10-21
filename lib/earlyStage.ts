@@ -211,7 +211,8 @@ export const earlyStageCompanies: EarlyStageCompany[] = [
         "note": "企業の発表履歴と製品マイルストーン"
       }
     ],
-    "editorialStatus": "research"
+    "editorialStatus": "published",
+    "publishedPath": "/research/frontier-tech/ixana-wir"
   },
   {
     "id": "nori-robotics",
@@ -356,7 +357,8 @@ export const earlyStageCompanies: EarlyStageCompany[] = [
         "note": "会社公開情報による説明。サイト上の予約・発送予定は販売履行の証拠とは区別。"
       }
     ],
-    "editorialStatus": "research"
+    "editorialStatus": "published",
+    "publishedPath": "/research/frontier-tech/ipolish-digital-nails"
   },
   {
     "id": "lollipop-star",
@@ -452,7 +454,8 @@ export const earlyStageCompanies: EarlyStageCompany[] = [
         "note": "会社公開情報による説明。脳波そのものを直接読む装置とは区別。実機性能の独立検証は未確認。"
       }
     ],
-    "editorialStatus": "research"
+    "editorialStatus": "published",
+    "publishedPath": "/research/frontier-tech/mudra-link"
   },
   {
     "id": "mindfort",
