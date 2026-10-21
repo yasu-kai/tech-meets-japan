@@ -36,10 +36,7 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
               <h1>{product.name}</h1>
               <p className="profile-deck">{product.tagline}</p>
             </div>
-            <div className="profile-evidence-note" style={{alignSelf:"center",borderLeft:"3px solid #f4512c",padding:"12px 16px",maxWidth:300,lineHeight:1.75,fontSize:14}}>
-              <strong style={{display:"block",fontSize:13,marginBottom:5}}>POINTS, NOT SCORES</strong>
-              点数ではなく、できること・向く用途・導入条件を個別に確認する。
-            </div>
+
           </div>
 
           <div className="profile-intro-grid">
