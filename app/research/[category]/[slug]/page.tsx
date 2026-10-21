@@ -37,7 +37,7 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
   const story=storyMap[slug];
   if(!story || story.category!==category) notFound();
   const image=generatedEditorialImage(story.slug);
-  const isFrontierTech=story.category==="frontier-tech";
+  const isFrontierTech=["nori-a3","savor-carbon-fats","chargebotic-kestrel","ixana-wir","mudra-link","ipolish-digital-nails"].includes(story.slug);
   const related=researchStories.filter(item=>item.category===story.category && item.slug!==story.slug).slice(0,3);
 
   return <>
