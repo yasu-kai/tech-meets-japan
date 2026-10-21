@@ -110,7 +110,8 @@ export const earlyStageCompanies: EarlyStageCompany[] = [
         "note": "Butterfly Networkとの研究開発契約"
       }
     ],
-    "editorialStatus": "research"
+    "editorialStatus": "published",
+    "publishedPath": "/research/gadgets/bridge-ultrasound-bci"
   },
   {
     "id": "chargebotic",
@@ -156,7 +157,8 @@ export const earlyStageCompanies: EarlyStageCompany[] = [
         "note": "18Wは企業が公表したフィールド実証値。運用中の送電網での継続給電は未検証と明記。"
       }
     ],
-    "editorialStatus": "research"
+    "editorialStatus": "published",
+    "publishedPath": "/research/frontier-tech/chargebotic-kestrel"
   },
   {
     "id": "ixana",
