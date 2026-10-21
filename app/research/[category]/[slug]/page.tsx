@@ -37,6 +37,7 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
   const story=storyMap[slug];
   if(!story || story.category!==category) notFound();
   const image=generatedEditorialImage(story.slug);
+  const isFrontierTech=story.category==="frontier-tech";
   const related=researchStories.filter(item=>item.category===story.category && item.slug!==story.slug).slice(0,3);
 
   return <>
@@ -66,10 +67,10 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
         </section>
 
         <section className="story-depth">
-          <div><span>CURRENT</span><strong>{story.depth.current}</strong></div>
+          <div><span>{isFrontierTech?"CURRENT MATURITY":"CURRENT"}</span><strong>{story.depth.current}</strong></div>
           <ArrowRight size={20}/>
-          <div><span>TARGET</span><strong>{story.depth.target}</strong></div>
-          <div className="story-human"><span>HUMAN REMAINS</span><strong>{story.depth.human}</strong></div>
+          <div><span>{isFrontierTech?"WHAT TO VERIFY":"TARGET"}</span><strong>{story.depth.target}</strong></div>
+          <div className="story-human"><span>{isFrontierTech?"ADOPTION & SAFETY":"HUMAN REMAINS"}</span><strong>{story.depth.human}</strong></div>
         </section>
 
         <div className="story-body">
@@ -83,7 +84,7 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
 
           <section className="story-question">
             <span>THE QUESTION</span>
-            <h2>この市場が成功した世界で、 人間は何をしなくなるのか。</h2>
+            <h2>{isFrontierTech?"この技術が日本で使われるには、次に何を検証する必要があるか。":"この市場が成功した世界で、 人間は何をしなくなるのか。"}</h2>
           </section>
 
           <section className="story-sources">
