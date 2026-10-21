@@ -17,18 +17,6 @@ export type CompanyIntelligence = {
   gtmPlays?: { title: string; buyer: string; wedge: string; expansion: string }[];
   competition?: { name: string; strength: string; runwayEdge: string; threat: string }[];
   risks?: { title: string; detail: string; severity: "High" | "Medium" | "Low" }[];
-  scoreBreakdown?: {
-    label: string;
-    weight?: number;
-    criteria: {
-      label: string;
-      max: number;
-      awarded: number;
-      rule: string;
-      reason: string;
-      evidence?: string[];
-    }[];
-  }[];
   timeline?: { date: string; title: string; detail: string }[];
   verdict?: string;
   sources?: { label: string; url: string }[];
@@ -41,7 +29,6 @@ export type Company = {
   category: string;
   tagline: string;
   description: string;
-  fitScore: number;
   stage: string;
   japanStatus: string;
   useCases: string[];
@@ -69,7 +56,7 @@ export const companies: Company[] = [
     slug:"runway",name:"Runway",country:"United States",category:"Creative AI",
     tagline:"AIで映像制作そのものを再設計する。",
     description:"生成映像・編集・制作ワークフローを統合し、広告、メディア、エンターテインメントの制作速度と表現力を変えるAIプラットフォーム。",
-    fitScore:94,stage:"Scale-up",japanStatus:"Japan expansion",entryStage:"Scaling",
+    stage:"Scale-up",japanStatus:"Japan expansion",entryStage:"Scaling",
     useCases:["広告クリエイティブ","映像制作","ゲーム・IP","ブランドコンテンツ"],
     buyers:["広告代理店","テレビ・映画","ゲーム会社","大手ブランド"],
     pain:"制作費・制作期間が大きく、コンテンツ量を増やせない。",
@@ -126,50 +113,7 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
         {title:"Creative AI乱立",detail:"PoCは通っても、全社標準化されなければ各部署が別モデルへ分散する。",severity:"Medium"},
         {title:"代理店の内製競争",detail:"大手代理店が独自AI基盤を持つため、単なる生成ツールとして売ると競合になる。",severity:"Medium"}
       ],
-      scoreBreakdown:[
-        {label:"課題への刺さり",weight:25,criteria:[
-          {label:"金額インパクト",max:20,awarded:20,rule:"20=直接コスト/売上に大きく効く、15=中程度、10=間接効果、5=小さい、0=不明",reason:"撮影・VFX・再編集は高コスト工程で、削減効果が直接金額に出る。",evidence:["撮影・VFX・再編集の代替余地"]},
-          {label:"発生頻度",max:20,awarded:20,rule:"20=日常/週次、15=月次、10=四半期、5=年数回、0=稀",reason:"広告・SNS・IPプロモーションでは動画制作が継続的に発生。",evidence:["短尺動画の継続制作","広告クリエイティブ量産"]},
-          {label:"対象企業の広さ",max:20,awarded:20,rule:"20=4業界以上、15=3業界、10=2業界、5=1業界、0=限定用途",reason:"広告、ブランド、ゲーム/IP、放送/映像の複数市場に適用可能。",evidence:["4つの明確な主要ターゲット"]},
-          {label:"現行手段の不便さ",max:20,awarded:15,rule:"20=人手/高コスト工程を直接置換、15=大幅短縮、10=一部短縮、5=軽微、0=代替不要",reason:"生成・編集工程は短縮できるが、最終仕上げや監修は残る。",evidence:["撮り直し/VFXの一部代替","完全自動化ではない"]},
-          {label:"効果測定のしやすさ",max:20,awarded:15,rule:"20=金額/時間で即測定、15=PoCで測定可能、10=定性的中心、5=長期評価、0=困難",reason:"制作時間・生成回数・1成果物TCOは測れるが、品質価値は主観も残る。",evidence:["Time-to-output","1成果物あたり生成回数"]}
-        ]},
-        {label:"日本での使いやすさ",weight:20,criteria:[
-          {label:"日本拠点",max:20,awarded:20,rule:"20=日本法人/拠点あり、10=APAC拠点のみ、0=なし",reason:"東京拠点を開設済み。",evidence:["Japan office"]},
-          {label:"国内導入実績",max:20,awarded:20,rule:"20=複数大手事例、15=複数事例、10=単一事例、5=PoCのみ、0=なし",reason:"複数の日本企業導入実績が確認できる。",evidence:["MIXI","SoftBank","Yamaha","NHN PlayArt"]},
-          {label:"日本語UI",max:20,awarded:5,rule:"20=完全対応、15=主要機能対応、10=部分対応、5=未確認/限定的、0=非対応",reason:"公開情報だけでは十分な日本語UI対応を確認できない。",evidence:["要確認"]},
-          {label:"日本語サポート",max:20,awarded:5,rule:"20=国内時間帯の日本語専任、15=日本語対応あり、10=Partner経由、5=未確認、0=英語のみ",reason:"日本拠点はあるが、日本語専任サポート範囲は未確認。",evidence:["要確認"]},
-          {label:"国内契約/調達しやすさ",max:20,awarded:10,rule:"20=国内契約/請求書/Partner完備、15=一部対応、10=Enterprise個別契約、5=海外カード中心、0=困難",reason:"Enterprise契約は可能だが、国内請求・商流の公開情報が限定的。",evidence:["Enterprise individual contract"]}
-        ]},
-        {label:"差別化の強さ",weight:20,criteria:[
-          {label:"固有機能",max:20,awarded:20,rule:"20=明確な固有機能複数、15=固有機能1つ、10=実装差、5=ほぼ同等、0=差なし",reason:"Aleph Edit StudioとAct-Twoが明確な差別化要素。",evidence:["Aleph","Act-Two"]},
-          {label:"ワークフロー統合",max:20,awarded:20,rule:"20=複数工程を一気通貫、15=主要工程、10=一部、5=単機能、0=なし",reason:"生成→編集→再利用→Upscaleまで同一環境。",evidence:["Integrated workflow"]},
-          {label:"Enterprise差別化",max:20,awarded:15,rule:"20=独自Enterprise統制、15=強い統制、10=標準、5=弱い、0=なし",reason:"複数モデル統制やBrand Kitは強いが、SAML/SCIM未対応。",evidence:["Third-party model controls","Brand Kit","No SAML/SCIM"]},
-          {label:"代替困難性",max:20,awarded:15,rule:"20=代替困難、15=複数機能組合せで優位、10=代替可能、5=容易、0=完全コモディティ",reason:"単機能は代替可能だが、編集と制作環境を含めると代替コストが上がる。",evidence:["Veo/Kling can replace generation only"]},
-          {label:"差の持続性",max:20,awarded:10,rule:"20=長期防御力高、15=中、10=競争激化、5=短期、0=急速コモディティ化",reason:"モデル性能差は縮まりやすく、優位はWorkflow側に依存。",evidence:["Rapid model competition"]}
-        ]},
-        {label:"導入しやすさ",weight:15,criteria:[
-          {label:"試しやすさ",max:20,awarded:20,rule:"20=無料ですぐ試せる、15=Trial、10=Demo必須、5=営業経由、0=困難",reason:"Free planで即試用可能。",evidence:["Free plan"]},
-          {label:"Time to Value",max:20,awarded:20,rule:"20=即日、15=1週間、10=1か月、5=四半期、0=長期",reason:"個人/小規模利用なら即日で生成可能。",evidence:["Self-serve"]},
-          {label:"オンボ負荷",max:20,awarded:15,rule:"20=ほぼ設定不要、15=軽微、10=部門導入、5=全社PJ、0=重い",reason:"PoCは軽いがEnterpriseは権限・Brand運用設計が必要。",evidence:["Low-medium onboarding"]},
-          {label:"既存環境との共存",max:20,awarded:20,rule:"20=追加導入可能、15=一部置換、10=移行必要、5=大規模移行、0=全面置換",reason:"Adobe等を置換せず生成工程だけ追加できる。",evidence:["Additive workflow"]},
-          {label:"学習コスト",max:20,awarded:15,rule:"20=直感的、15=短期学習、10=専門知識必要、5=高スキル、0=専門職必須",reason:"基本操作は容易だが、高品質生成にはプロンプト/編集ノウハウが必要。",evidence:["Creative learning curve"]}
-        ]},
-        {label:"費用対効果",weight:10,criteria:[
-          {label:"開始価格",max:20,awarded:20,rule:"20=低価格/Free、15=中、10=高、5=Enterpriseのみ、0=非公開のみ",reason:"Freeと低価格セルフサーブあり。",evidence:["Free","$15/month"]},
-          {label:"価格透明性",max:20,awarded:15,rule:"20=全価格公開、15=主要価格公開、10=一部、5=個別見積中心、0=不明",reason:"セルフサーブ/APIは公開、Enterpriseは個別見積。",evidence:["Public self-serve pricing"]},
-          {label:"TCO予測性",max:20,awarded:10,rule:"20=固定、15=上限明確、10=従量変動、5=大きく変動、0=不明",reason:"生成回数とcredits消費で実質TCOが変動。",evidence:["Credit-based usage"]},
-          {label:"代替コスト削減",max:20,awarded:20,rule:"20=高額工程代替、15=中、10=一部、5=軽微、0=なし",reason:"撮影/VFX/再編集の一部を置換できる。",evidence:["Production cost replacement"]},
-          {label:"スケール時の効率",max:20,awarded:15,rule:"20=規模拡大で効率増、15=概ね良好、10=比例課金、5=割高化、0=不明",reason:"量産価値は高いが、credits消費も増える。",evidence:["Credit scaling"]}
-        ]},
-        {label:"Enterprise適性",weight:10,criteria:[
-          {label:"認証/SSO",max:20,awarded:15,rule:"20=SAML+OIDC+SCIM、15=SSOあり、10=限定、5=弱い、0=なし",reason:"OIDC SSOはあるがSAML/SCIM未対応。",evidence:["OIDC","No SAML","No SCIM"]},
-          {label:"監査/管理",max:20,awarded:20,rule:"20=Audit+Analytics+Admin、15=主要機能、10=一部、5=弱い、0=なし",reason:"Audit Logs、Analytics、管理機能あり。",evidence:["Audit Logs","Workspace Analytics"]},
-          {label:"セキュリティ認証",max:20,awarded:20,rule:"20=SOC2+ISO、15=どちらか、10=基本対策、5=自己申告、0=不明",reason:"SOC 2 Type IIとISO 27001を確認。",evidence:["SOC 2 Type II","ISO 27001"]},
-          {label:"データ統制",max:20,awarded:15,rule:"20=詳細統制/地域選択、15=Enterprise保護、10=標準、5=弱い、0=不明",reason:"Enterprise保護は強いがData residency等は追加確認余地。",evidence:["Enterprise data protection"]},
-          {label:"導入支援",max:20,awarded:20,rule:"20=専任支援+Priority、15=Priority、10=通常、5=限定、0=なし",reason:"Enterprise onboardingとPriority supportあり。",evidence:["Enterprise onboarding","Priority support"]}
-        ]}
-      ],
+
       timeline:[
         {date:"2026.05",title:"日本本格進出を発表",detail:"東京に日本本社を開設し、初期$40Mを投資。Head of Japan採用も開始。"},
         {date:"2026.06",title:"MIXIとEnterprise Partnership",detail:"スポーツ、ライフスタイル、デジタルエンタメへ利用を拡大。"},
@@ -189,7 +133,7 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
     slug:"heygen",name:"HeyGen",country:"United States",category:"Creative AI",
     tagline:"一人を、世界中で話せる存在に。",
     description:"AIアバター、音声、翻訳、動画生成を組み合わせ、多言語での動画コミュニケーションを大幅に簡略化。",
-    fitScore:91,stage:"Scale-up",japanStatus:"Building ecosystem",entryStage:"Entering",
+    stage:"Scale-up",japanStatus:"Building ecosystem",entryStage:"Entering",
     useCases:["多言語営業","採用","教育","IR・広報"],buyers:["グローバル企業","教育","EC","クリエイター"],
     pain:"言語ごとの撮影・翻訳・編集に時間とコストがかかる。",
     whyNow:"日本企業の海外展開とインバウンド対応の両方で需要が拡大。",
@@ -199,7 +143,7 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
     slug:"synthesia",name:"Synthesia",country:"United Kingdom",category:"Enterprise AI",
     tagline:"企業動画を、撮影しない。",
     description:"研修、オンボーディング、営業支援、マニュアルなど企業内動画をAIで生成・更新するエンタープライズ動画基盤。",
-    fitScore:88,stage:"Scale-up",japanStatus:"APAC expansion",entryStage:"Entering",
+    stage:"Scale-up",japanStatus:"APAC expansion",entryStage:"Entering",
     useCases:["研修動画","マニュアル","営業Enablement","多言語社内広報"],buyers:["人事","営業企画","L&D","グローバル本社"],
     pain:"動画の撮影・更新コストが高く、情報更新に追いつかない。",
     whyNow:"AI動画が“制作物”から“業務インフラ”へ移行中。",
@@ -209,7 +153,7 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
     slug:"minimax",name:"MiniMax",country:"China",category:"Multimodal AI",
     tagline:"日本のIPを、AI時代のグローバルコンテンツへ。",
     description:"テキスト、音声、画像、動画、音楽、Agentまでを展開するマルチモーダルAI企業。クリエイティブとIP活用の接点が大きい。",
-    fitScore:89,stage:"Scale-up",japanStatus:"Japan organization",entryStage:"Scaling",
+    stage:"Scale-up",japanStatus:"Japan organization",entryStage:"Scaling",
     useCases:["IPコンテンツ","動画生成","音声生成","AI Agent"],buyers:["ゲーム","アニメ・出版","広告","プラットフォーム"],
     pain:"IPを守りながらAI生成を活用し、海外展開を加速したい。",
     whyNow:"日本IPと生成AIの商用利用ルールが形成され始めている。",
@@ -219,7 +163,7 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
     slug:"applied-intuition",name:"Applied Intuition",country:"United States",category:"Physical AI",
     tagline:"車と機械のソフトウェア開発を加速する。",
     description:"自動運転・SDV・自律機械向けのシミュレーション、検証、車両ソフトウェア開発基盤。",
-    fitScore:84,stage:"Scale-up",japanStatus:"Strategic expansion",entryStage:"Scaling",
+    stage:"Scale-up",japanStatus:"Strategic expansion",entryStage:"Scaling",
     useCases:["SDV","自動運転","建機自律化","シミュレーション"],buyers:["自動車OEM","Tier1","建機","農機"],
     pain:"実機中心の検証では開発速度と試験コストに限界がある。",
     whyNow:"日本の製造業でPhysical AIとSDV投資が加速。",
@@ -229,7 +173,7 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
     slug:"wayve",name:"Wayve",country:"United Kingdom",category:"Mobility AI",
     tagline:"都市を学習するAI Driver。",
     description:"汎化可能なEmbodied AIによる自動運転を開発。異なる道路環境へ適応するAI Driverを目指す。",
-    fitScore:90,stage:"Scale-up",japanStatus:"Tokyo deployment",entryStage:"Entering",
+    stage:"Scale-up",japanStatus:"Tokyo deployment",entryStage:"Entering",
     useCases:["Robotaxi","自動運転","配送","Mobility Platform"],buyers:["自動車OEM","配車","交通事業者","自治体"],
     pain:"自動運転を都市ごとにゼロから作るコストが大きい。",
     whyNow:"東京での実証・商用展開が具体化し始めている。",
@@ -239,7 +183,7 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
     slug:"sierra",name:"Sierra",country:"United States",category:"Enterprise AI",
     tagline:"顧客対応を、AI Agentそのものへ。",
     description:"問い合わせ回答だけでなく、返品・手続き・解約防止など顧客業務を実行するAI Agentプラットフォーム。",
-    fitScore:95,stage:"Scale-up",japanStatus:"SoftBank exclusive partnership",entryStage:"Scaling",
+    stage:"Scale-up",japanStatus:"SoftBank exclusive partnership",entryStage:"Scaling",
     useCases:["カスタマーサポート","契約手続き","解約防止","顧客体験"],buyers:["通信","金融","小売","大手サービス"],
     pain:"問い合わせ量が増えるほど人員・品質・営業時間の制約が大きくなる。",
     whyNow:"日本でも大企業導入の成果が出始め、販売チャネルが整った。",
@@ -249,7 +193,7 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
     slug:"elevenlabs",name:"ElevenLabs",country:"United Kingdom",category:"Voice AI",
     tagline:"企業と人の会話を、AIのインフラに。",
     description:"高品質音声生成から多言語コンテンツ、会話型AI Agentまでを提供する音声AIプラットフォーム。",
-    fitScore:92,stage:"Scale-up",japanStatus:"Enterprise expansion",entryStage:"Entering",
+    stage:"Scale-up",japanStatus:"Enterprise expansion",entryStage:"Entering",
     useCases:["AIコールセンター","多言語音声","ゲーム音声","営業・予約Agent"],buyers:["コンタクトセンター","ゲーム","メディア","グローバル企業"],
     pain:"音声対応は人手・言語・営業時間に強く制約される。",
     whyNow:"Voice Agentがデモから本番業務へ移行している。",
@@ -259,7 +203,7 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
     slug:"fresha",name:"Fresha",country:"United Kingdom",category:"Vertical SaaS",
     tagline:"美容・ウェルネス業界のOSを取りにいく。",
     description:"予約、POS、顧客管理、決済、マーケットプレイスを統合する美容・ウェルネス向けVertical SaaS。",
-    fitScore:86,stage:"Scale-up",japanStatus:"Japan build-out",entryStage:"Entering",
+    stage:"Scale-up",japanStatus:"Japan build-out",entryStage:"Entering",
     useCases:["予約管理","決済","顧客管理","新規集客"],buyers:["美容室","ネイル","エステ","ウェルネス"],
     pain:"予約・決済・顧客管理・集客が複数ツールに分断される。",
     whyNow:"世界でPMF済みだが、日本はまだ白地が大きい。",
@@ -269,7 +213,7 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
     slug:"joby",name:"Joby Aviation",country:"United States",category:"Mobility",
     tagline:"日本に、新しい空の交通網をつくる。",
     description:"eVTOL機体、運航、予約、インフラまでを垂直統合する次世代エアモビリティ企業。",
-    fitScore:87,stage:"Pre-commercial / Scale-up",japanStatus:"ANA / Toyota strategic build",entryStage:"Entering",
+    stage:"Pre-commercial / Scale-up",japanStatus:"ANA / Toyota strategic build",entryStage:"Entering",
     useCases:["都市間移動","空港アクセス","エアタクシー","新交通インフラ"],buyers:["航空","自治体","不動産","交通事業者"],
     pain:"都市部の移動時間と既存交通インフラの制約。",
     whyNow:"日本での運航・製造・提携体制が具体化。",
@@ -279,7 +223,7 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
     slug:"exotec",name:"Exotec",country:"France",category:"Robotics",
     tagline:"倉庫を、人手不足に依存しない構造へ。",
     description:"Skypodを中心に保管・ピッキング・搬送を自動化し、物流センター全体の生産性を再設計するロボティクス企業。",
-    fitScore:85,stage:"Scale-up",japanStatus:"Established Japan business",entryStage:"Established",
+    stage:"Scale-up",japanStatus:"Established Japan business",entryStage:"Established",
     useCases:["倉庫自動化","ピッキング","保管効率","フルフィルメント"],buyers:["小売","EC","3PL","食品・製造"],
     pain:"物流人材不足と、固定設備中心の自動化では変動に追いつけない。",
     whyNow:"CLO設置や物流改革で経営課題化が進む。",
@@ -289,7 +233,7 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
     slug:"pallet",name:"Pallet",country:"United States",category:"Logistics AI",
     tagline:"物流の“人がやっている事務”をAI Agentへ。",
     description:"配車・予約・メール・データ入力など物流オペレーションをAI Agentで自動化するVertical AI企業。",
-    fitScore:83,stage:"Growth",japanStatus:"Early commercial hiring",entryStage:"Entering",
+    stage:"Growth",japanStatus:"Early commercial hiring",entryStage:"Entering",
     useCases:["配車事務","予約調整","転記","問い合わせ"],buyers:["運送会社","3PL","倉庫","物流部門"],
     pain:"物流現場にメール・電話・Excelの手作業が大量に残る。",
     whyNow:"人手不足とAI Agent成熟が同時に進行。",
@@ -299,7 +243,7 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
     slug:"fever",name:"Fever",country:"Spain / United States",category:"Experience Tech",
     tagline:"リアル体験を、世界へ流通させる。",
     description:"イベント発見・チケット・自社体験IP・ブランド施策を統合し、都市ごとにリアル体験を展開するプラットフォーム。",
-    fitScore:88,stage:"Scale-up",japanStatus:"Japan growth",entryStage:"Scaling",
+    stage:"Scale-up",japanStatus:"Japan growth",entryStage:"Scaling",
     useCases:["イベント集客","IP体験","ブランドイベント","チケット販売"],buyers:["IPホルダー","ブランド","イベント会社","施設"],
     pain:"良い体験を作っても都市横断で集客・展開する仕組みが弱い。",
     whyNow:"AI時代にリアル体験価値が再評価されている。",
@@ -309,7 +253,7 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
     slug:"establishment-labs",name:"Establishment Labs",country:"Costa Rica",category:"HealthTech",
     tagline:"乳房医療を、美容だけで終わらせない。",
     description:"乳房インプラント、再建、低侵襲施術を軸にWomen's Health領域を展開するMedTech企業。",
-    fitScore:81,stage:"Public growth",japanStatus:"Commercial expansion",entryStage:"Scaling",
+    stage:"Public growth",japanStatus:"Commercial expansion",entryStage:"Scaling",
     useCases:["乳房再建","美容医療","低侵襲施術","クリニック導入"],buyers:["病院","美容クリニック","形成外科","医療法人"],
     pain:"従来施術は身体負担・回復期間・選択肢に制約がある。",
     whyNow:"日本で規制承認・導入実績が積み上がっている。",
@@ -319,7 +263,7 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
     slug:"rogo",name:"Rogo",country:"United States",category:"Financial AI",
     tagline:"金融プロフェッショナルの“仕事そのもの”をAI化。",
     description:"投資銀行、PE、Asset Manager向けに調査、モデル、メモ、案件分析などを支援する金融専用AIプラットフォーム。",
-    fitScore:89,stage:"Scale-up",japanStatus:"Japan team formation",entryStage:"Entering",
+    stage:"Scale-up",japanStatus:"Japan team formation",entryStage:"Entering",
     useCases:["金融リサーチ","案件分析","モデル作成","投資メモ"],buyers:["投資銀行","PE","資産運用","金融機関"],
     pain:"高スキル人材が調査・資料作成・モデル更新に大量の時間を使う。",
     whyNow:"金融向けVertical AIの導入が本番化。",
@@ -329,7 +273,7 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
     slug:"protopie",name:"ProtoPie",country:"South Korea",category:"Design Tech",
     tagline:"デザインから実装までの距離を縮める。",
     description:"高度なインタラクションプロトタイプ、ユーザーテスト、AI、MCPをつなぎ、Design-to-Productionを狙う開発基盤。",
-    fitScore:84,stage:"Growth",japanStatus:"Japan enterprise expansion",entryStage:"Scaling",
+    stage:"Growth",japanStatus:"Japan enterprise expansion",entryStage:"Scaling",
     useCases:["車載HMI","プロトタイピング","UX検証","AI実装連携"],buyers:["自動車","家電","デザイン組織","プロダクト開発"],
     pain:"静的デザインでは複雑な体験を検証できず、実装との往復が遅い。",
     whyNow:"AI CodingとMCPでデザインから実装への接続が急速に進む。",
@@ -339,7 +283,7 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
     slug:"rlwrld",name:"RLWRLD",country:"South Korea",category:"Physical AI",
     tagline:"既存ロボットに、“見る・考える・掴む”を。",
     description:"産業用ロボット向けRobotics Foundation Modelを開発し、不定形物の把持や現場適応をAIで可能にするPhysical AI企業。",
-    fitScore:86,stage:"Seed",japanStatus:"Japan early build",entryStage:"Entering",
+    stage:"Seed",japanStatus:"Japan early build",entryStage:"Entering",
     useCases:["ピッキング","組付け","検品","品出し"],buyers:["製造業","物流","小売","ロボットSI"],
     pain:"従来ロボットは対象物や工程が変わるたび再設計が必要。",
     whyNow:"Physical AIへの投資が製造・物流で本格化。",
@@ -349,7 +293,7 @@ notFitIf:["長尺本編を一貫した品質で全編生成したい","制作パ
     slug:"shield-ai",name:"Shield AI",country:"United States",category:"Defense AI",
     tagline:"AI Pilotを、複数の無人機へ。",
     description:"Hivemindを中心に、自律飛行・無人航空機・防衛向けAI Pilotを展開するDefense Tech企業。",
-    fitScore:78,stage:"Scale-up",japanStatus:"Japan BD expansion",entryStage:"Entering",
+    stage:"Scale-up",japanStatus:"Japan BD expansion",entryStage:"Entering",
     useCases:["自律無人機","防衛AI","協調飛行","監視"],buyers:["防衛省","重工","航空宇宙","政府"],
     pain:"通信・GPSが制約される環境でも自律判断できるシステムが必要。",
     whyNow:"日本の防衛・無人機投資が加速。",
@@ -492,7 +436,7 @@ export type ProductDecisionData = {
     comparedWhy:string[];
     notFitIf:string[];
   }[];
-  scoreBreakdown?: NonNullable<CompanyIntelligence["scoreBreakdown"]>;
+
   bestFor?: string[];
   notFor?: string[];
   verdict?: {
@@ -513,7 +457,6 @@ export type Product = {
   category: string;
   tagline: string;
   description: string;
-  fitScore: number;
   japanStatus: string;
   entryStage: "Watching" | "Entering" | "Scaling" | "Established";
   useCases: string[];
@@ -547,7 +490,7 @@ export type Product = {
 };
 
 const rawProducts: Product[] = [
-  {slug:"runway-ai-video",name:"Runway AI Video Platform",provider:"Runway",companySlug:"runway",country:"United States",category:"Creative AI",tagline:"撮影・編集・VFXの一部を、生成AIの制作フローへ。",description:"映像生成、編集、Transformation、Character performanceなどを一つの制作環境で扱うAI映像プラットフォーム。",fitScore:94,japanStatus:"Japan expansion",entryStage:"Scaling",useCases:["広告動画","プリビズ","SNSクリエイティブ","IP・ゲーム映像"],targetUsers:["広告・制作会社","ブランドマーケ","ゲーム・IP","放送・映像"],alternatives:["Adobe Firefly","Google Veo","OpenAI video","Higgsfield"],
+  {slug:"runway-ai-video",name:"Runway AI Video Platform",provider:"Runway",companySlug:"runway",country:"United States",category:"Creative AI",tagline:"撮影・編集・VFXの一部を、生成AIの制作フローへ。",description:"映像生成、編集、Transformation、Character performanceなどを一つの制作環境で扱うAI映像プラットフォーム。",japanStatus:"Japan expansion",entryStage:"Scaling",useCases:["広告動画","プリビズ","SNSクリエイティブ","IP・ゲーム映像"],targetUsers:["広告・制作会社","ブランドマーケ","ゲーム・IP","放送・映像"],alternatives:["Adobe Firefly","Google Veo","OpenAI video","Higgsfield"],
   useCaseDetails:[
     {title:"広告動画",situation:"既存CMや商品素材はあるが、媒体別・訴求別の動画案が足りない。",input:"商品画像 / 既存CM / ブランドガイド / コピー案",output:"15〜30秒動画 / 縦型短尺 / 背景・商品差し替え版",user:"広告制作 / ブランドマーケ / Creative Tech",replaces:"追加撮影 / 一部VFX / B案・C案制作",kpi:["1本あたり制作時間","案数/週","1成果物あたり生成回数","撮影・外注削減額"],whyThis:["Alephで既存映像の差し替えができる","生成→編集→Upscaleまで同一環境","Enterprise統制でブランド運用に載せやすい"],notFor:["1本の最高品質CMだけを作る案件","生成AI利用不可のブランド"]},
     {title:"プリビズ",situation:"撮影やVFXに入る前に、演出・構図・世界観を動画で共有したい。",input:"絵コンテ / 静止画 / 台本 / シーン説明",output:"完成イメージに近い短尺動画 / 複数演出案",user:"監督 / プロデューサー / 企画 / 制作会社",replaces:"静止画だけの絵コンテ / 簡易モック / 一部ロケ検証",kpi:["企画承認までの日数","修正回数","撮影前の手戻り","検討案数"],whyThis:["動画生成だけでなく後編集まで同じ環境","Alephで既存素材を変形可能","複数案を高速に比較できる"],notFor:["長尺本編をそのまま納品したい","精密な物理挙動検証が必要"]},
@@ -749,63 +692,27 @@ examples:["既存IPキャラに人の演技を転写","非人間キャラを自�
     ]
   }
 },
-  {slug:"heygen-avatar-video",name:"HeyGen AI Avatar & Video",provider:"HeyGen",companySlug:"heygen",country:"United States",category:"Creative AI",tagline:"1本の動画を、多言語・多地域へ展開する。",description:"AI Avatar、音声クローン、翻訳・リップシンクを組み合わせた動画ローカライズ／生成プロダクト。",fitScore:91,japanStatus:"Building ecosystem",entryStage:"Entering",useCases:["多言語営業","採用動画","研修","海外向けマーケ"],targetUsers:["グローバル企業","人事","営業企画","EC"],alternatives:["Synthesia","Captions","ElevenLabs"],tags:["Avatar","Localization","Video"],website:"https://www.heygen.com"},
-  {slug:"synthesia-enterprise-video",name:"Synthesia Enterprise Video",provider:"Synthesia",companySlug:"synthesia",country:"United Kingdom",category:"Enterprise AI",tagline:"研修・マニュアル動画を、撮影せず更新する。",description:"企業向けのAI Avatar動画生成・更新基盤。研修、オンボーディング、営業Enablementに強い。",fitScore:88,japanStatus:"APAC expansion",entryStage:"Entering",useCases:["研修","マニュアル","オンボーディング","営業Enablement"],targetUsers:["人事","L&D","営業企画","グローバル本社"],alternatives:["HeyGen","Colossyan","Canva"],tags:["Training","Enterprise Video","Avatar"],website:"https://www.synthesia.io"},
-  {slug:"minimax-multimodal",name:"MiniMax Multimodal AI",provider:"MiniMax",companySlug:"minimax",country:"China",category:"Multimodal AI",tagline:"動画・音声・画像・Agentを一つのAI群で扱う。",description:"動画、音声、画像、テキスト、Agentを横断するマルチモーダルAIプロダクト群。",fitScore:89,japanStatus:"Japan organization",entryStage:"Scaling",useCases:["IP動画","音声生成","動画生成","AI Agent"],targetUsers:["ゲーム","アニメ・出版","広告","プラットフォーム"],alternatives:["Runway","Kling","OpenAI","ElevenLabs"],tags:["Multimodal","Video","Voice","Agent"],website:"https://www.minimax.io"},
-  {slug:"applied-intuition-platform",name:"Applied Intuition Vehicle & Autonomy Platform",provider:"Applied Intuition",companySlug:"applied-intuition",country:"United States",category:"Physical AI",tagline:"自動運転・SDV開発を、実機依存から切り離す。",description:"自動運転、SDV、自律機械向けのシミュレーション・検証・車両ソフトウェア開発基盤。",fitScore:84,japanStatus:"Strategic expansion",entryStage:"Scaling",useCases:["自動運転検証","SDV開発","建機自律化","シミュレーション"],targetUsers:["自動車OEM","Tier1","建機","農機"],alternatives:["内製基盤","NVIDIA","dSPACE","Vector"],tags:["Simulation","Autonomy","SDV"],website:"https://www.appliedintuition.com"},
-  {slug:"wayve-ai-driver",name:"Wayve AI Driver",provider:"Wayve",companySlug:"wayve",country:"United Kingdom",category:"Mobility AI",tagline:"都市ごとに作り込まない、自動運転AI。",description:"End-to-End学習型のEmbodied AIを用い、異なる道路環境への汎化を狙う自動運転AI Driver。",fitScore:90,japanStatus:"Tokyo deployment",entryStage:"Entering",useCases:["Robotaxi","自動運転","配送","Mobility"],targetUsers:["自動車OEM","配車","交通事業者","自治体"],alternatives:["Waymo","Cruise系","自社AD stack"],tags:["Embodied AI","Autonomy","Robotaxi"],website:"https://wayve.ai"},
-  {slug:"sierra-agent-os",name:"Sierra Agent OS",provider:"Sierra",companySlug:"sierra",country:"United States",category:"Enterprise AI",tagline:"顧客対応を、“回答”から“実行”へ。",description:"問い合わせ回答だけでなく、返品・契約変更・手続きなどを実行する企業向けAI Agent基盤。",fitScore:95,japanStatus:"SoftBank exclusive partnership",entryStage:"Scaling",useCases:["CS自動化","契約手続き","解約防止","顧客体験"],targetUsers:["通信","金融","小売","大手サービス"],alternatives:["Salesforce Agentforce","Intercom Fin","Zendesk AI"],tags:["AI Agent","Customer Experience","Enterprise"],website:"https://sierra.ai"},
-  {slug:"elevenlabs-agents",name:"ElevenLabs Conversational AI",provider:"ElevenLabs",companySlug:"elevenlabs",country:"United Kingdom",category:"Voice AI",tagline:"自然な音声AIを、電話・接客の実務へ。",description:"高品質音声生成とリアルタイム会話を組み合わせたVoice Agent／音声AI基盤。",fitScore:92,japanStatus:"Enterprise expansion",entryStage:"Entering",useCases:["AIコールセンター","予約","営業電話","多言語音声"],targetUsers:["コンタクトセンター","サービス業","ゲーム","メディア"],alternatives:["OpenAI Realtime","Deepgram","Cartesia"],tags:["Voice AI","Agents","Realtime"],website:"https://elevenlabs.io"},
-  {slug:"fresha-platform",name:"Fresha Platform",provider:"Fresha",companySlug:"fresha",country:"United Kingdom",category:"Vertical SaaS",tagline:"美容・ウェルネス店舗の予約・決済・集客を一つに。",description:"予約、POS、顧客管理、決済、マーケットプレイスを統合する美容・ウェルネス業界向けプラットフォーム。",fitScore:86,japanStatus:"Japan build-out",entryStage:"Entering",useCases:["予約","POS","決済","集客"],targetUsers:["美容室","ネイル","エステ","ウェルネス"],alternatives:["HOT PEPPER Beauty","STORES 予約","Square"],tags:["Vertical SaaS","Marketplace","Payments"],website:"https://www.fresha.com"},
-  {slug:"joby-air-taxi",name:"Joby Air Taxi",provider:"Joby Aviation",companySlug:"joby",country:"United States",category:"Mobility",tagline:"都市と空港を、eVTOLで短時間接続する。",description:"電動垂直離着陸機（eVTOL）を使う次世代エアタクシーサービスと運航基盤。",fitScore:87,japanStatus:"ANA / Toyota strategic build",entryStage:"Entering",useCases:["空港アクセス","都市間移動","観光","新交通"],targetUsers:["航空","自治体","不動産","交通事業者"],alternatives:["ヘリコプター","鉄道","タクシー","Archer"],tags:["eVTOL","Air Taxi","Mobility"],website:"https://www.jobyaviation.com"},
-  {slug:"exotec-skypod",name:"Exotec Skypod System",provider:"Exotec",companySlug:"exotec",country:"France",category:"Robotics",tagline:"倉庫の保管とピッキングを、ロボットで再設計する。",description:"高密度保管・搬送・ピッキングを組み合わせるGoods-to-Person型倉庫ロボティクス。",fitScore:85,japanStatus:"Established Japan business",entryStage:"Established",useCases:["倉庫自動化","ピッキング","保管効率","フルフィルメント"],targetUsers:["小売","EC","3PL","製造"],alternatives:["AutoStore","Geek+","HAI Robotics","Daifuku"],tags:["Warehouse Robotics","Automation","Logistics"],website:"https://www.exotec.com"},
-  {slug:"pallet-logistics-agent",name:"Pallet Logistics AI Agents",provider:"Pallet",companySlug:"pallet",country:"United States",category:"Logistics AI",tagline:"物流のメール・電話・入力業務をAI Agentへ。",description:"配車、予約調整、メール処理、データ入力など物流オペレーションを自動化するVertical AI Agent。",fitScore:83,japanStatus:"Early commercial hiring",entryStage:"Entering",useCases:["配車事務","予約調整","転記","問い合わせ"],targetUsers:["運送会社","3PL","倉庫","物流部門"],alternatives:["RPA","BPO","内製AI Agent"],tags:["Logistics","AI Agent","Automation"],website:"https://www.pallet.com"},
-  {slug:"fever-marketplace",name:"Fever Experience Platform",provider:"Fever",companySlug:"fever",country:"Spain / United States",category:"Experience Tech",tagline:"イベントの企画・集客・販売を、都市横断で展開する。",description:"イベント発見、チケット販売、IP体験、ブランドイベントを統合するExperience Marketplace。",fitScore:88,japanStatus:"Japan growth",entryStage:"Scaling",useCases:["イベント集客","IP体験","ブランドイベント","チケット"],targetUsers:["IPホルダー","ブランド","イベント会社","施設"],alternatives:["Peatix","Eventbrite","チケットぴあ"],tags:["Experience","Marketplace","IP"],website:"https://feverup.com"},
-  {slug:"motiva-implants",name:"Motiva Implants",provider:"Establishment Labs",companySlug:"establishment-labs",country:"Costa Rica",category:"HealthTech",tagline:"乳房再建・美容医療の選択肢を拡張する。",description:"乳房再建・美容用途の次世代インプラント製品群。",fitScore:81,japanStatus:"Commercial expansion",entryStage:"Scaling",useCases:["乳房再建","美容医療","術後QOL","クリニック導入"],targetUsers:["形成外科","病院","美容クリニック","医療法人"],alternatives:["Mentor","Allergan系","既存インプラント"],tags:["MedTech","FemTech","Healthcare"],website:"https://establishmentlabs.com"},
-  {slug:"rogo-finance-ai",name:"Rogo Finance AI",provider:"Rogo",companySlug:"rogo",country:"United States",category:"Financial AI",tagline:"金融調査・案件分析・モデル作成をAIで高速化する。",description:"投資銀行、PE、Asset Manager向けに調査、モデル、メモ、案件分析を支援する金融専用AI。",fitScore:89,japanStatus:"Japan team formation",entryStage:"Entering",useCases:["金融リサーチ","案件分析","モデル作成","投資メモ"],targetUsers:["投資銀行","PE","資産運用","金融機関"],alternatives:["ChatGPT Enterprise","Hebbia","Harvey","内製LLM"],tags:["Financial AI","Vertical AI","Enterprise"],website:"https://rogo.com"},
-  {slug:"protopie",name:"ProtoPie",provider:"ProtoPie",companySlug:"protopie",country:"South Korea",category:"Design Tech",tagline:"複雑なUIを、実装前に“動く形”で検証する。",description:"高度なインタラクションをコードなしで再現し、UX検証・HMI開発に使えるプロトタイピング基盤。",fitScore:84,japanStatus:"Japan enterprise expansion",entryStage:"Scaling",useCases:["車載HMI","UX検証","プロトタイピング","Design-to-Code"],targetUsers:["自動車","家電","デザイン組織","プロダクト開発"],alternatives:["Figma Proto","Framer","Axure"],tags:["Prototyping","Automotive UX","MCP"],website:"https://www.protopie.io"},
-  {slug:"rlwrld-rfm",name:"RLWRLD Robotics Foundation Model",provider:"RLWRLD",companySlug:"rlwrld",country:"South Korea",category:"Physical AI",tagline:"既存ロボットに、非定型作業への適応力を与える。",description:"産業用ロボットに把持・認識・操作の汎化能力を与えるRobotics Foundation Model。",fitScore:86,japanStatus:"Japan early build",entryStage:"Entering",useCases:["ピッキング","組付け","検品","品出し"],targetUsers:["製造","物流","小売","ロボットSI"],alternatives:["Physical Intelligence","Covariant系","内製Vision AI"],tags:["Physical AI","Robotics Foundation Model","Manipulation"],website:"https://www.rlwrld.ai"},
-  {slug:"shield-hivemind",name:"Hivemind",provider:"Shield AI",companySlug:"shield-ai",country:"United States",category:"Defense AI",tagline:"通信・GPS制約下でも動くAI Pilot。",description:"無人航空機・ドローン向けの自律飛行AI Pilot / autonomy stack。",fitScore:78,japanStatus:"Japan BD expansion",entryStage:"Entering",useCases:["自律無人機","協調飛行","監視","防衛AI"],targetUsers:["防衛","重工","航空宇宙","政府"],alternatives:["Anduril系","自社autonomy stack"],tags:["Defense Tech","AI Pilot","Autonomy"],website:"https://shield.ai"}
+  {slug:"heygen-avatar-video",name:"HeyGen AI Avatar & Video",provider:"HeyGen",companySlug:"heygen",country:"United States",category:"Creative AI",tagline:"1本の動画を、多言語・多地域へ展開する。",description:"AI Avatar、音声クローン、翻訳・リップシンクを組み合わせた動画ローカライズ／生成プロダクト。",japanStatus:"Building ecosystem",entryStage:"Entering",useCases:["多言語営業","採用動画","研修","海外向けマーケ"],targetUsers:["グローバル企業","人事","営業企画","EC"],alternatives:["Synthesia","Captions","ElevenLabs"],tags:["Avatar","Localization","Video"],website:"https://www.heygen.com"},
+  {slug:"synthesia-enterprise-video",name:"Synthesia Enterprise Video",provider:"Synthesia",companySlug:"synthesia",country:"United Kingdom",category:"Enterprise AI",tagline:"研修・マニュアル動画を、撮影せず更新する。",description:"企業向けのAI Avatar動画生成・更新基盤。研修、オンボーディング、営業Enablementに強い。",japanStatus:"APAC expansion",entryStage:"Entering",useCases:["研修","マニュアル","オンボーディング","営業Enablement"],targetUsers:["人事","L&D","営業企画","グローバル本社"],alternatives:["HeyGen","Colossyan","Canva"],tags:["Training","Enterprise Video","Avatar"],website:"https://www.synthesia.io"},
+  {slug:"minimax-multimodal",name:"MiniMax Multimodal AI",provider:"MiniMax",companySlug:"minimax",country:"China",category:"Multimodal AI",tagline:"動画・音声・画像・Agentを一つのAI群で扱う。",description:"動画、音声、画像、テキスト、Agentを横断するマルチモーダルAIプロダクト群。",japanStatus:"Japan organization",entryStage:"Scaling",useCases:["IP動画","音声生成","動画生成","AI Agent"],targetUsers:["ゲーム","アニメ・出版","広告","プラットフォーム"],alternatives:["Runway","Kling","OpenAI","ElevenLabs"],tags:["Multimodal","Video","Voice","Agent"],website:"https://www.minimax.io"},
+  {slug:"applied-intuition-platform",name:"Applied Intuition Vehicle & Autonomy Platform",provider:"Applied Intuition",companySlug:"applied-intuition",country:"United States",category:"Physical AI",tagline:"自動運転・SDV開発を、実機依存から切り離す。",description:"自動運転、SDV、自律機械向けのシミュレーション・検証・車両ソフトウェア開発基盤。",japanStatus:"Strategic expansion",entryStage:"Scaling",useCases:["自動運転検証","SDV開発","建機自律化","シミュレーション"],targetUsers:["自動車OEM","Tier1","建機","農機"],alternatives:["内製基盤","NVIDIA","dSPACE","Vector"],tags:["Simulation","Autonomy","SDV"],website:"https://www.appliedintuition.com"},
+  {slug:"wayve-ai-driver",name:"Wayve AI Driver",provider:"Wayve",companySlug:"wayve",country:"United Kingdom",category:"Mobility AI",tagline:"都市ごとに作り込まない、自動運転AI。",description:"End-to-End学習型のEmbodied AIを用い、異なる道路環境への汎化を狙う自動運転AI Driver。",japanStatus:"Tokyo deployment",entryStage:"Entering",useCases:["Robotaxi","自動運転","配送","Mobility"],targetUsers:["自動車OEM","配車","交通事業者","自治体"],alternatives:["Waymo","Cruise系","自社AD stack"],tags:["Embodied AI","Autonomy","Robotaxi"],website:"https://wayve.ai"},
+  {slug:"sierra-agent-os",name:"Sierra Agent OS",provider:"Sierra",companySlug:"sierra",country:"United States",category:"Enterprise AI",tagline:"顧客対応を、“回答”から“実行”へ。",description:"問い合わせ回答だけでなく、返品・契約変更・手続きなどを実行する企業向けAI Agent基盤。",japanStatus:"SoftBank exclusive partnership",entryStage:"Scaling",useCases:["CS自動化","契約手続き","解約防止","顧客体験"],targetUsers:["通信","金融","小売","大手サービス"],alternatives:["Salesforce Agentforce","Intercom Fin","Zendesk AI"],tags:["AI Agent","Customer Experience","Enterprise"],website:"https://sierra.ai"},
+  {slug:"elevenlabs-agents",name:"ElevenLabs Conversational AI",provider:"ElevenLabs",companySlug:"elevenlabs",country:"United Kingdom",category:"Voice AI",tagline:"自然な音声AIを、電話・接客の実務へ。",description:"高品質音声生成とリアルタイム会話を組み合わせたVoice Agent／音声AI基盤。",japanStatus:"Enterprise expansion",entryStage:"Entering",useCases:["AIコールセンター","予約","営業電話","多言語音声"],targetUsers:["コンタクトセンター","サービス業","ゲーム","メディア"],alternatives:["OpenAI Realtime","Deepgram","Cartesia"],tags:["Voice AI","Agents","Realtime"],website:"https://elevenlabs.io"},
+  {slug:"fresha-platform",name:"Fresha Platform",provider:"Fresha",companySlug:"fresha",country:"United Kingdom",category:"Vertical SaaS",tagline:"美容・ウェルネス店舗の予約・決済・集客を一つに。",description:"予約、POS、顧客管理、決済、マーケットプレイスを統合する美容・ウェルネス業界向けプラットフォーム。",japanStatus:"Japan build-out",entryStage:"Entering",useCases:["予約","POS","決済","集客"],targetUsers:["美容室","ネイル","エステ","ウェルネス"],alternatives:["HOT PEPPER Beauty","STORES 予約","Square"],tags:["Vertical SaaS","Marketplace","Payments"],website:"https://www.fresha.com"},
+  {slug:"joby-air-taxi",name:"Joby Air Taxi",provider:"Joby Aviation",companySlug:"joby",country:"United States",category:"Mobility",tagline:"都市と空港を、eVTOLで短時間接続する。",description:"電動垂直離着陸機（eVTOL）を使う次世代エアタクシーサービスと運航基盤。",japanStatus:"ANA / Toyota strategic build",entryStage:"Entering",useCases:["空港アクセス","都市間移動","観光","新交通"],targetUsers:["航空","自治体","不動産","交通事業者"],alternatives:["ヘリコプター","鉄道","タクシー","Archer"],tags:["eVTOL","Air Taxi","Mobility"],website:"https://www.jobyaviation.com"},
+  {slug:"exotec-skypod",name:"Exotec Skypod System",provider:"Exotec",companySlug:"exotec",country:"France",category:"Robotics",tagline:"倉庫の保管とピッキングを、ロボットで再設計する。",description:"高密度保管・搬送・ピッキングを組み合わせるGoods-to-Person型倉庫ロボティクス。",japanStatus:"Established Japan business",entryStage:"Established",useCases:["倉庫自動化","ピッキング","保管効率","フルフィルメント"],targetUsers:["小売","EC","3PL","製造"],alternatives:["AutoStore","Geek+","HAI Robotics","Daifuku"],tags:["Warehouse Robotics","Automation","Logistics"],website:"https://www.exotec.com"},
+  {slug:"pallet-logistics-agent",name:"Pallet Logistics AI Agents",provider:"Pallet",companySlug:"pallet",country:"United States",category:"Logistics AI",tagline:"物流のメール・電話・入力業務をAI Agentへ。",description:"配車、予約調整、メール処理、データ入力など物流オペレーションを自動化するVertical AI Agent。",japanStatus:"Early commercial hiring",entryStage:"Entering",useCases:["配車事務","予約調整","転記","問い合わせ"],targetUsers:["運送会社","3PL","倉庫","物流部門"],alternatives:["RPA","BPO","内製AI Agent"],tags:["Logistics","AI Agent","Automation"],website:"https://www.pallet.com"},
+  {slug:"fever-marketplace",name:"Fever Experience Platform",provider:"Fever",companySlug:"fever",country:"Spain / United States",category:"Experience Tech",tagline:"イベントの企画・集客・販売を、都市横断で展開する。",description:"イベント発見、チケット販売、IP体験、ブランドイベントを統合するExperience Marketplace。",japanStatus:"Japan growth",entryStage:"Scaling",useCases:["イベント集客","IP体験","ブランドイベント","チケット"],targetUsers:["IPホルダー","ブランド","イベント会社","施設"],alternatives:["Peatix","Eventbrite","チケットぴあ"],tags:["Experience","Marketplace","IP"],website:"https://feverup.com"},
+  {slug:"motiva-implants",name:"Motiva Implants",provider:"Establishment Labs",companySlug:"establishment-labs",country:"Costa Rica",category:"HealthTech",tagline:"乳房再建・美容医療の選択肢を拡張する。",description:"乳房再建・美容用途の次世代インプラント製品群。",japanStatus:"Commercial expansion",entryStage:"Scaling",useCases:["乳房再建","美容医療","術後QOL","クリニック導入"],targetUsers:["形成外科","病院","美容クリニック","医療法人"],alternatives:["Mentor","Allergan系","既存インプラント"],tags:["MedTech","FemTech","Healthcare"],website:"https://establishmentlabs.com"},
+  {slug:"rogo-finance-ai",name:"Rogo Finance AI",provider:"Rogo",companySlug:"rogo",country:"United States",category:"Financial AI",tagline:"金融調査・案件分析・モデル作成をAIで高速化する。",description:"投資銀行、PE、Asset Manager向けに調査、モデル、メモ、案件分析を支援する金融専用AI。",japanStatus:"Japan team formation",entryStage:"Entering",useCases:["金融リサーチ","案件分析","モデル作成","投資メモ"],targetUsers:["投資銀行","PE","資産運用","金融機関"],alternatives:["ChatGPT Enterprise","Hebbia","Harvey","内製LLM"],tags:["Financial AI","Vertical AI","Enterprise"],website:"https://rogo.com"},
+  {slug:"protopie",name:"ProtoPie",provider:"ProtoPie",companySlug:"protopie",country:"South Korea",category:"Design Tech",tagline:"複雑なUIを、実装前に“動く形”で検証する。",description:"高度なインタラクションをコードなしで再現し、UX検証・HMI開発に使えるプロトタイピング基盤。",japanStatus:"Japan enterprise expansion",entryStage:"Scaling",useCases:["車載HMI","UX検証","プロトタイピング","Design-to-Code"],targetUsers:["自動車","家電","デザイン組織","プロダクト開発"],alternatives:["Figma Proto","Framer","Axure"],tags:["Prototyping","Automotive UX","MCP"],website:"https://www.protopie.io"},
+  {slug:"rlwrld-rfm",name:"RLWRLD Robotics Foundation Model",provider:"RLWRLD",companySlug:"rlwrld",country:"South Korea",category:"Physical AI",tagline:"既存ロボットに、非定型作業への適応力を与える。",description:"産業用ロボットに把持・認識・操作の汎化能力を与えるRobotics Foundation Model。",japanStatus:"Japan early build",entryStage:"Entering",useCases:["ピッキング","組付け","検品","品出し"],targetUsers:["製造","物流","小売","ロボットSI"],alternatives:["Physical Intelligence","Covariant系","内製Vision AI"],tags:["Physical AI","Robotics Foundation Model","Manipulation"],website:"https://www.rlwrld.ai"},
+  {slug:"shield-hivemind",name:"Hivemind",provider:"Shield AI",companySlug:"shield-ai",country:"United States",category:"Defense AI",tagline:"通信・GPS制約下でも動くAI Pilot。",description:"無人航空機・ドローン向けの自律飛行AI Pilot / autonomy stack。",japanStatus:"Japan BD expansion",entryStage:"Entering",useCases:["自律無人機","協調飛行","監視","防衛AI"],targetUsers:["防衛","重工","航空宇宙","政府"],alternatives:["Anduril系","自社autonomy stack"],tags:["Defense Tech","AI Pilot","Autonomy"],website:"https://shield.ai"}
 ];
 
 
 
 export const products: Product[] = [...rawProducts, ...(additionalProducts as Product[])].map(p=>enrichProductCatalog(p) as Product);
-
-export const japanFitWeights = {
-  "課題への刺さり": 25,
-  "日本での使いやすさ": 20,
-  "差別化の強さ": 20,
-  "導入しやすさ": 15,
-  "費用対効果": 10,
-  "Enterprise適性": 10
-};
-
-export function dimensionScore(item: NonNullable<CompanyIntelligence["scoreBreakdown"]>[number]): number {
-  const max = item.criteria.reduce((sum, c) => sum + c.max, 0);
-  const awarded = item.criteria.reduce((sum, c) => sum + c.awarded, 0);
-  return max ? Math.round((awarded / max) * 100) : 0;
-}
-
-export function calculateJapanFit(companySlug: string): number | null {
-  const company = companies.find(c => c.slug === companySlug);
-  const dimensions = company?.intelligence?.scoreBreakdown;
-  if (!dimensions?.length) return null;
-  const weighted = dimensions.reduce((sum, item) => sum + dimensionScore(item) * (item.weight ?? 0), 0);
-  const totalWeight = dimensions.reduce((sum, item) => sum + (item.weight ?? 0), 0);
-  return totalWeight ? Math.round(weighted / totalWeight) : null;
-}
-
-export function calculateProductJapanFit(product: Product): number {
-  const productDimensions = product.decision?.scoreBreakdown;
-  if (productDimensions?.length) {
-    const weighted = productDimensions.reduce((sum, item) => sum + dimensionScore(item) * (item.weight ?? 0), 0);
-    const totalWeight = productDimensions.reduce((sum, item) => sum + (item.weight ?? 0), 0);
-    if (totalWeight) return Math.round(weighted / totalWeight);
-  }
-
-  const companyScore = calculateJapanFit(product.companySlug);
-  return companyScore ?? product.fitScore;
-}
 
 export const productCategories = ["All", ...Array.from(new Set(products.map(p => p.category)))];
