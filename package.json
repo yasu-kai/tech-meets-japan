@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/no-score-regression.mjs && next build",
     "start": "next start",
-    "audit:editorial": "node scripts/editorial-audit.mjs"
+    "audit:editorial": "node scripts/no-score-regression.mjs && node scripts/editorial-audit.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
