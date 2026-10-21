@@ -158,7 +158,7 @@ export const earlyStageCompanies: EarlyStageCompany[] = [
       }
     ],
     "editorialStatus": "published",
-    "publishedPath": "/research/frontier-tech/chargebotic-kestrel"
+    "publishedPath": "/research/materials-energy/chargebotic-kestrel"
   },
   {
     "id": "ixana",
@@ -212,7 +212,7 @@ export const earlyStageCompanies: EarlyStageCompany[] = [
       }
     ],
     "editorialStatus": "published",
-    "publishedPath": "/research/frontier-tech/ixana-wir"
+    "publishedPath": "/research/gadgets/ixana-wir"
   },
   {
     "id": "nori-robotics",
@@ -260,7 +260,7 @@ export const earlyStageCompanies: EarlyStageCompany[] = [
       }
     ],
     "editorialStatus": "published",
-    "publishedPath": "/research/frontier-tech/nori-a3"
+    "publishedPath": "/research/robotics/nori-a3"
   },
   {
     "id": "savor",
@@ -309,7 +309,7 @@ export const earlyStageCompanies: EarlyStageCompany[] = [
       }
     ],
     "editorialStatus": "published",
-    "publishedPath": "/research/frontier-tech/savor-carbon-fats"
+    "publishedPath": "/research/materials-energy/savor-carbon-fats"
   },
   {
     "id": "ipolish",
@@ -358,7 +358,7 @@ export const earlyStageCompanies: EarlyStageCompany[] = [
       }
     ],
     "editorialStatus": "published",
-    "publishedPath": "/research/frontier-tech/ipolish-digital-nails"
+    "publishedPath": "/research/gadgets/ipolish-digital-nails"
   },
   {
     "id": "lollipop-star",
@@ -455,7 +455,7 @@ export const earlyStageCompanies: EarlyStageCompany[] = [
       }
     ],
     "editorialStatus": "published",
-    "publishedPath": "/research/frontier-tech/mudra-link"
+    "publishedPath": "/research/gadgets/mudra-link"
   },
   {
     "id": "mindfort",
