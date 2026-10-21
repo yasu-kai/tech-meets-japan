@@ -29,6 +29,9 @@ export const researchCategories: ResearchCategory[] = [
       { slug:"nori-a3", title:"25万円の双腕ロボット。NORI A3は家事の未来をどこまで近づけたか。", kicker:"Nori Robotics / Bimanual / $1,688 / Reality Check", format:"PRODUCT", status:"published", href:"/research/frontier-tech/nori-a3" },
       { slug:"savor-carbon-fats", title:"牛も畑も使わずに、バターを作る。Savorの油脂は何を変えるのか。", kicker:"Savor / Carbon-crafted fats / AAK / Food materials", format:"REPORT", status:"published", href:"/research/frontier-tech/savor-carbon-fats" },
       { slug:"chargebotic-kestrel", title:"送電線から電気をもらう。ChargeboticのKestrelは何を変えるのか。", kicker:"Chargebotic / Kestrel / 18W field demonstration", format:"REPORT", status:"published", href:"/research/frontier-tech/chargebotic-kestrel" },
+      { slug:"ixana-wir", title:"人体が通信路になる。IxanaのWi-RはBluetoothを置き換えるのか。", kicker:"Ixana / Wi-R / 5Mbit/s shipping / 20Mbit/s sampling", format:"PRODUCT", status:"published", href:"/research/frontier-tech/ixana-wir" },
+      { slug:"mudra-link", title:"指を動かす前の信号を、手首で読む。Mudra Linkはマウスの次になるか。", kicker:"Wearable Devices / Mudra Link / EMG input", format:"PRODUCT", status:"published", href:"/research/frontier-tech/mudra-link" },
+      { slug:"ipolish-digital-nails", title:"爪に電池はない。iPolishの『300色ネイル』は何で動くのか。", kicker:"iPolish / Magic Wand / Color-changing nails", format:"PRODUCT", status:"published", href:"/research/frontier-tech/ipolish-digital-nails" },
     ],
   },
   {
