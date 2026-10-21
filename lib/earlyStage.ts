@@ -46,6 +46,8 @@ export type PrivateOutreachRecord = {
 
 
 // Verified-source research candidates. Not public articles until editorial audit passes.
+// Public research registry; records are NOT automatically published as Early-Stage articles.
+// Commercial products should be considered for Products/Research instead of Early-Stage stories.
 export const earlyStageCompanies: EarlyStageCompany[] = [
   {
     "id": "bridge-neurotech",
@@ -205,6 +207,433 @@ export const earlyStageCompanies: EarlyStageCompany[] = [
         "sourceUrl": "https://ixana.ai/news-events/news",
         "checkedAt": "2026-10-21",
         "note": "企業の発表履歴と製品マイルストーン"
+      }
+    ],
+    "editorialStatus": "research"
+  },
+  {
+    "id": "nori-robotics",
+    "company": "Nori Robotics",
+    "country": "United States",
+    "website": "https://www.norirobotics.com/",
+    "product": "NORI A3 双腕家庭用ロボット",
+    "summary": "家庭用の卓上・移動型双腕ロボット。予約・2026年秋出荷予定を案内しているが一般利用環境での性能実証は未確認。",
+    "sector": [
+      "Robotics",
+      "Home Devices"
+    ],
+    "fundingStage": "unknown",
+    "maturity": "prototype",
+    "japanPresence": {
+      "value": "unknown",
+      "evidence": {
+        "status": "unverified",
+        "checkedAt": "2026-10-21",
+        "note": "日本市場における現地体制の確認未了"
+      }
+    },
+    "japanPartnershipInterest": {
+      "value": "unconfirmed",
+      "evidence": {
+        "status": "unverified",
+        "checkedAt": "2026-10-21",
+        "note": "日本企業との提携意向を確認していない"
+      }
+    },
+    "potentialJapanUseCases": [
+      "家庭内の作業補助",
+      "研究・開発用ロボットプラットフォーム"
+    ],
+    "partnerHypotheses": [
+      "生活支援ロボットメーカー",
+      "大学研究室"
+    ],
+    "evidence": [
+      {
+        "status": "reported",
+        "sourceUrl": "https://www.norirobotics.com/",
+        "checkedAt": "2026-10-21",
+        "note": "会社公開情報による説明。出荷日と機能はメーカー告知。実出荷と自律作業性能は要確認。"
+      }
+    ],
+    "editorialStatus": "research"
+  },
+  {
+    "id": "savor",
+    "company": "Savor",
+    "country": "United States",
+    "website": "https://www.savor.it/",
+    "product": "ガス由来の炭素から製造する食用油脂",
+    "summary": "炭素源から脂肪酸・油脂を製造し、農地・動植物原料に依存しない食品原料を目指す。LCAの第三者監査を企業が説明。",
+    "sector": [
+      "Foodtech",
+      "Materials",
+      "Climate"
+    ],
+    "fundingStage": "unknown",
+    "maturity": "commercial",
+    "japanPresence": {
+      "value": "unknown",
+      "evidence": {
+        "status": "unverified",
+        "checkedAt": "2026-10-21",
+        "note": "日本市場における現地体制の確認未了"
+      }
+    },
+    "japanPartnershipInterest": {
+      "value": "unconfirmed",
+      "evidence": {
+        "status": "unverified",
+        "checkedAt": "2026-10-21",
+        "note": "日本企業との提携意向を確認していない"
+      }
+    },
+    "potentialJapanUseCases": [
+      "食品メーカーの代替油脂",
+      "化粧品・機能性油脂原料"
+    ],
+    "partnerHypotheses": [
+      "食品素材メーカー",
+      "食品加工メーカー"
+    ],
+    "evidence": [
+      {
+        "status": "reported",
+        "sourceUrl": "https://www.savor.it/mission",
+        "checkedAt": "2026-10-21",
+        "note": "会社公開情報による説明。環境影響値は別途LCA原文・境界条件の確認が必要。"
+      }
+    ],
+    "editorialStatus": "research"
+  },
+  {
+    "id": "ipolish",
+    "company": "iPolish",
+    "country": "United States",
+    "website": "https://ipolish.fashion/ja/",
+    "product": "スマホアプリで色を変更できるプレスオンネイル",
+    "summary": "専用ワンドとアプリでネイルの色を切り替える製品を案内。予約状況や出荷状況は公表時点に依存する。",
+    "sector": [
+      "Beauty",
+      "Wearables",
+      "Consumer Hardware"
+    ],
+    "fundingStage": "unknown",
+    "maturity": "commercial",
+    "japanPresence": {
+      "value": "unknown",
+      "evidence": {
+        "status": "unverified",
+        "checkedAt": "2026-10-21",
+        "note": "日本市場における現地体制の確認未了"
+      }
+    },
+    "japanPartnershipInterest": {
+      "value": "unconfirmed",
+      "evidence": {
+        "status": "unverified",
+        "checkedAt": "2026-10-21",
+        "note": "日本企業との提携意向を確認していない"
+      }
+    },
+    "potentialJapanUseCases": [
+      "ネイルサロン",
+      "美容小売・ファッション"
+    ],
+    "partnerHypotheses": [
+      "美容商社",
+      "サロンチェーン"
+    ],
+    "evidence": [
+      {
+        "status": "reported",
+        "sourceUrl": "https://ipolish.fashion/ja/",
+        "checkedAt": "2026-10-21",
+        "note": "会社公開情報による説明。サイト上の予約・発送予定は販売履行の証拠とは区別。"
+      }
+    ],
+    "editorialStatus": "research"
+  },
+  {
+    "id": "lollipop-star",
+    "company": "Lollipop Star",
+    "country": "United States",
+    "website": "https://www.lollipopstar.com/",
+    "product": "骨伝導で音楽が聴こえるキャンディ",
+    "summary": "キャンディを介した骨伝導リスニング体験を提供する音楽ロリポップ。商品販売ページを確認。",
+    "sector": [
+      "Consumer Hardware",
+      "Foodtech",
+      "Entertainment"
+    ],
+    "fundingStage": "unknown",
+    "maturity": "commercial",
+    "japanPresence": {
+      "value": "unknown",
+      "evidence": {
+        "status": "unverified",
+        "checkedAt": "2026-10-21",
+        "note": "日本市場における現地体制の確認未了"
+      }
+    },
+    "japanPartnershipInterest": {
+      "value": "unconfirmed",
+      "evidence": {
+        "status": "unverified",
+        "checkedAt": "2026-10-21",
+        "note": "日本企業との提携意向を確認していない"
+      }
+    },
+    "potentialJapanUseCases": [
+      "ライブ・イベント物販",
+      "IPコラボ・ギフト"
+    ],
+    "partnerHypotheses": [
+      "菓子輸入販売会社",
+      "イベント運営・ライセンス企業"
+    ],
+    "evidence": [
+      {
+        "status": "reported",
+        "sourceUrl": "https://www.lollipopstar.com/pages/about-us",
+        "checkedAt": "2026-10-21",
+        "note": "会社公開情報による説明。日本国内の食品規制・輸入実績は未確認。"
+      }
+    ],
+    "editorialStatus": "research"
+  },
+  {
+    "id": "wearable-devices-mudra",
+    "company": "Wearable Devices",
+    "country": "United States",
+    "website": "https://mudra-band.com/",
+    "product": "Mudra Band / Mudra Link",
+    "summary": "手首での神経・筋活動に伴う信号から手指ジェスチャーを認識し、機器操作に変換するウェアラブル。一般消費者向け製品販売を確認。",
+    "sector": [
+      "Wearables",
+      "Human Interfaces",
+      "Semiconductors"
+    ],
+    "fundingStage": "unknown",
+    "maturity": "commercial",
+    "japanPresence": {
+      "value": "unknown",
+      "evidence": {
+        "status": "unverified",
+        "checkedAt": "2026-10-21",
+        "note": "日本市場における現地体制の確認未了"
+      }
+    },
+    "japanPartnershipInterest": {
+      "value": "unconfirmed",
+      "evidence": {
+        "status": "unverified",
+        "checkedAt": "2026-10-21",
+        "note": "日本企業との提携意向を確認していない"
+      }
+    },
+    "potentialJapanUseCases": [
+      "XR・スマートグラス操作",
+      "アクセシビリティ研究"
+    ],
+    "partnerHypotheses": [
+      "XR機器メーカー",
+      "福祉機器・UI研究機関"
+    ],
+    "evidence": [
+      {
+        "status": "reported",
+        "sourceUrl": "https://mudra-band.com/products/mudra-link",
+        "checkedAt": "2026-10-21",
+        "note": "会社公開情報による説明。脳波そのものを直接読む装置とは区別。実機性能の独立検証は未確認。"
+      }
+    ],
+    "editorialStatus": "research"
+  },
+  {
+    "id": "mindfort",
+    "company": "MindFort",
+    "country": "United States",
+    "website": "https://www.mindfort.ai/",
+    "product": "自律ペネトレーションテスト・修正支援AI",
+    "summary": "脆弱性の探索・実証・修正PR・再検証を支援するAIセキュリティ製品を案内。提供済み製品として評価。",
+    "sector": [
+      "AI Security",
+      "Developer Tools"
+    ],
+    "fundingStage": "unknown",
+    "maturity": "commercial",
+    "japanPresence": {
+      "value": "unknown",
+      "evidence": {
+        "status": "unverified",
+        "checkedAt": "2026-10-21",
+        "note": "日本市場における現地体制の確認未了"
+      }
+    },
+    "japanPartnershipInterest": {
+      "value": "unconfirmed",
+      "evidence": {
+        "status": "unverified",
+        "checkedAt": "2026-10-21",
+        "note": "日本企業との提携意向を確認していない"
+      }
+    },
+    "potentialJapanUseCases": [
+      "アプリケーションセキュリティ",
+      "継続的脆弱性検証"
+    ],
+    "partnerHypotheses": [
+      "セキュリティ販売パートナー",
+      "SIer"
+    ],
+    "evidence": [
+      {
+        "status": "reported",
+        "sourceUrl": "https://www.mindfort.ai/product",
+        "checkedAt": "2026-10-21",
+        "note": "会社公開情報による説明。自動修正の適用範囲と実運用上の承認境界は要検証。"
+      }
+    ],
+    "editorialStatus": "research"
+  },
+  {
+    "id": "terra-security",
+    "company": "Terra Security",
+    "country": "United States",
+    "website": "https://www.terra.security/",
+    "product": "Terra Platform 継続型AIペンテスト",
+    "summary": "Web・ネットワーク・AIシステムを対象にAIエージェントと人間の監督を組み合わせる攻撃検証プラットフォーム。",
+    "sector": [
+      "AI Security",
+      "Enterprise Software"
+    ],
+    "fundingStage": "unknown",
+    "maturity": "commercial",
+    "japanPresence": {
+      "value": "unknown",
+      "evidence": {
+        "status": "unverified",
+        "checkedAt": "2026-10-21",
+        "note": "日本市場における現地体制の確認未了"
+      }
+    },
+    "japanPartnershipInterest": {
+      "value": "unconfirmed",
+      "evidence": {
+        "status": "unverified",
+        "checkedAt": "2026-10-21",
+        "note": "日本企業との提携意向を確認していない"
+      }
+    },
+    "potentialJapanUseCases": [
+      "継続的攻撃面検証",
+      "AIシステムのレッドチーミング"
+    ],
+    "partnerHypotheses": [
+      "国内セキュリティ事業者",
+      "大手SIer"
+    ],
+    "evidence": [
+      {
+        "status": "reported",
+        "sourceUrl": "https://www.terra.security/terra-platform",
+        "checkedAt": "2026-10-21",
+        "note": "会社公開情報による説明。競合比較や性能数値はメーカー独自主張から独立検証する必要。"
+      }
+    ],
+    "editorialStatus": "research"
+  },
+  {
+    "id": "duckbill",
+    "company": "Duckbill",
+    "country": "United States",
+    "website": "https://getduckbill.com/",
+    "product": "AIと人間の協働による実世界タスク代行",
+    "summary": "調査・準備をAIが担い、電話・交渉・追跡など現実世界の手続きを人間オペレーターが完了させるサービス。",
+    "sector": [
+      "AI Services",
+      "Consumer Services"
+    ],
+    "fundingStage": "unknown",
+    "maturity": "commercial",
+    "japanPresence": {
+      "value": "unknown",
+      "evidence": {
+        "status": "unverified",
+        "checkedAt": "2026-10-21",
+        "note": "日本市場における現地体制の確認未了"
+      }
+    },
+    "japanPartnershipInterest": {
+      "value": "unconfirmed",
+      "evidence": {
+        "status": "unverified",
+        "checkedAt": "2026-10-21",
+        "note": "日本企業との提携意向を確認していない"
+      }
+    },
+    "potentialJapanUseCases": [
+      "手続代行サービス",
+      "コンシェルジュAPI"
+    ],
+    "partnerHypotheses": [
+      "生活サービスプラットフォーム",
+      "コンシェルジュ運営企業"
+    ],
+    "evidence": [
+      {
+        "status": "reported",
+        "sourceUrl": "https://getduckbill.com/how-it-works",
+        "checkedAt": "2026-10-21",
+        "note": "会社公開情報による説明。完全自律AIとは扱わない。サービス地域と個人情報取扱いは要確認。"
+      }
+    ],
+    "editorialStatus": "research"
+  },
+  {
+    "id": "vizcom",
+    "company": "Vizcom",
+    "country": "United States",
+    "website": "https://www.vizcom.ai/",
+    "product": "スケッチから製品イメージ・3D化するデザインAI",
+    "summary": "工業デザインの初期スケッチからレンダリングや3Dモデルを生成・反復する設計支援ツール。",
+    "sector": [
+      "AI Creative",
+      "Design Software"
+    ],
+    "fundingStage": "unknown",
+    "maturity": "commercial",
+    "japanPresence": {
+      "value": "unknown",
+      "evidence": {
+        "status": "unverified",
+        "checkedAt": "2026-10-21",
+        "note": "日本市場における現地体制の確認未了"
+      }
+    },
+    "japanPartnershipInterest": {
+      "value": "unconfirmed",
+      "evidence": {
+        "status": "unverified",
+        "checkedAt": "2026-10-21",
+        "note": "日本企業との提携意向を確認していない"
+      }
+    },
+    "potentialJapanUseCases": [
+      "工業デザイン初期検討",
+      "製品企画・試作の可視化"
+    ],
+    "partnerHypotheses": [
+      "工業デザイン会社",
+      "製造業の企画部門"
+    ],
+    "evidence": [
+      {
+        "status": "reported",
+        "sourceUrl": "https://www.vizcom.ai/overview",
+        "checkedAt": "2026-10-21",
+        "note": "会社公開情報による説明。商用製品。調達ステージを根拠なくEarly-Stage判定しない。"
       }
     ],
     "editorialStatus": "research"
