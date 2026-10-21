@@ -42,7 +42,7 @@ export default function CompanyExplorer({ compact = false }: { compact?: boolean
           <Link href={"/companies/" + company.slug} className="company-card" key={company.slug}>
             <div className="company-card-top">
               <div className="company-monogram">{company.name.slice(0,2).toUpperCase()}</div>
-              <div className="score"><strong>{company.fitScore}</strong><span>Japan Fit</span></div>
+              <span className="company-category-label">{company.category}</span>
             </div>
             <p className="eyebrow">{company.country} · {company.category}</p>
             <h3>{company.name}</h3>
