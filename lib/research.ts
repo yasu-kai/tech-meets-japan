@@ -20,6 +20,17 @@ export type ResearchCategory = {
 
 export const researchCategories: ResearchCategory[] = [
   {
+    slug: "frontier-tech",
+    label: "FRONTIER TECH & MATERIALS",
+    shortLabel: "FRONTIER",
+    description: "AIの外側にも面白い未来がある。ロボット、食素材、半導体、新しい製法を技術の成熟度から読む。",
+    thesis: "技術の独自性と実用性、事業成立性を切り分ける。面白さと商用化の証拠は同じではない。",
+    topics: [
+      { slug:"nori-a3", title:"25万円の双腕ロボット。NORI A3は家事の未来をどこまで近づけたか。", kicker:"Nori Robotics / Bimanual / $1,688 / Reality Check", format:"PRODUCT", status:"published", href:"/research/frontier-tech/nori-a3" },
+      { slug:"savor-carbon-fats", title:"牛も畑も使わずに、バターを作る。Savorの油脂は何を変えるのか。", kicker:"Savor / Carbon-crafted fats / AAK / Food materials", format:"REPORT", status:"published", href:"/research/frontier-tech/savor-carbon-fats" },
+    ],
+  },
+  {
     slug: "ai-work",
     label: "AI × WORK",
     shortLabel: "WORK",
