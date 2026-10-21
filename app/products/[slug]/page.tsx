@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { ArrowUpRight, Building2, Check, GitCompareArrows, Sparkles, Languages, Headphones, Plug, ShieldCheck, WalletCards, Replace, Rocket, LockKeyhole, Workflow, BrainCircuit } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { calculateProductJapanFit, dimensionScore, companies, products } from "@/lib/data";
+import { companies, products } from "@/lib/data";
 
 export function generateStaticParams(){ return products.map(p=>({slug:p.slug})); }
 
@@ -12,7 +12,6 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
   if(!product) notFound();
   const company=companies.find(c=>c.slug===product.companySlug);
   const intel=company?.intelligence;
-  const calculatedFit=calculateProductJapanFit(product);
   const levelRank = (level?: string) => level==="固有" ? 0 : 1;
   const sortedDifferentiators = [...(product.decision?.differentiators || [])]
     .filter(x=>x.level!=="他でもできる")
@@ -37,8 +36,9 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
               <h1>{product.name}</h1>
               <p className="profile-deck">{product.tagline}</p>
             </div>
-            <div className="score-orbit" style={{"--score":calculatedFit} as React.CSSProperties}>
-              <div><span>JAPAN FIT</span><strong>{calculatedFit}</strong><small>/100</small></div>
+            <div className="profile-evidence-note" style={{alignSelf:"center",borderLeft:"3px solid #f4512c",padding:"12px 16px",maxWidth:300,lineHeight:1.75,fontSize:14}}>
+              <strong style={{display:"block",fontSize:13,marginBottom:5}}>POINTS, NOT SCORES</strong>
+              点数ではなく、できること・向く用途・導入条件を個別に確認する。
             </div>
           </div>
 
@@ -239,49 +239,6 @@ export default async function ProductPage({params}:{params:Promise<{slug:string}
             <div>
               <h2>日本企業が、今見る価値はあるか。</h2>
               <p>{intel.verdict}</p>
-            </div>
-          </section>
-        )}
-
-        {(intel?.scoreBreakdown || product.decision?.scoreBreakdown) && (
-          <section className="section section-tight product-analysis">
-            <div className="section-heading">
-              <div><p className="eyebrow">FIT BREAKDOWN</p><h2>{calculatedFit}点の根拠は？</h2></div>
-              <p>100点満点。各評価軸を0〜100点で評価し、重みを掛けて合算。</p>
-            </div>
-            <div className="fit-formula">
-              <strong>Japan Fit = Σ（各軸スコア × 重み）</strong>
-              <p>課題への刺さり25% / 日本での使いやすさ20% / 差別化20% / 導入しやすさ15% / 費用対効果10% / Enterprise適性10%</p>
-            </div>
-            <div className="score-rubric-list">
-              {(intel?.scoreBreakdown || product.decision?.scoreBreakdown || []).map(item=>{
-                const weight=item.weight ?? 0;
-                const score=dimensionScore(item);
-                const contribution=score*weight/100;
-                return (
-                  <section className="score-rubric-dimension" key={item.label}>
-                    <div className="score-rubric-summary">
-                      <div><span>DIMENSION</span><strong>{item.label}</strong></div>
-                      <div><span>SCORE</span><b>{score}</b></div>
-                      <div><span>WEIGHT</span><b>{weight}%</b></div>
-                      <div><span>CONTRIBUTION</span><b>{contribution.toFixed(1)}</b></div>
-                    </div>
-                    <div className="score-rubric-table">
-                      <div className="score-rubric-head"><span>判定項目</span><span>配点</span><span>獲得</span><span>採点ルール</span><span>今回の判定理由</span></div>
-                      {item.criteria.map(criterion=>(
-                        <div className="score-rubric-row" key={criterion.label}>
-                          <strong>{criterion.label}</strong>
-                          <span>{criterion.max}</span>
-                          <b>{criterion.awarded}</b>
-                          <p>{criterion.rule}</p>
-                          <div><p>{criterion.reason}</p>{criterion.evidence?.map(e=><small key={e}>・{e}</small>)}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </section>
-                )
-              })}
-              <div className="score-calc-total"><strong>TOTAL JAPAN FIT</strong><b>{calculatedFit}</b><span>/ 100</span></div>
             </div>
           </section>
         )}
