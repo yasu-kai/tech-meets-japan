@@ -5,21 +5,15 @@ import Footer from "@/components/Footer";
 import { earlyStageCompanies } from "@/lib/earlyStage";
 
 export const metadata = {
-  title: "Early-Stage｜世界の新しい技術を見つける｜TECH MEETS JAPAN",
-  description: "空気から作る油脂、家庭用双腕ロボット、超音波BCI。海外の新しい技術を、その面白さと日本での可能性から紹介。",
+  title: "Early-Stage｜世界の初期スタートアップを知る｜TECH MEETS JAPAN",
+  description: "まだ広く知られていない海外の初期企業。何を目指し、どこまで開発が進み、何が課題なのか。会社と挑戦を紹介する。",
 };
 
 const editorialPicks = [
-  {id:"savor",theme:"FOODTECH",headline:"バターを作るのに、牛も畑もいらない。",lead:"炭素から脂肪を合成するSavor。原料の常識を変える技術は、食品工場に入れるのか。",read:"油脂はどこから生まれる？",number:"01",className:"food"},
-  {id:"nori-robotics",theme:"ROBOTICS",headline:"約25万円の双腕ロボットが、家にやってくる。",lead:"NORI A3は人間の家事をどこまで手伝えるのか。できることと、まだ難しいこと。",read:"家事ロボットの現在地を見る",number:"02",className:"robot"},
-  {id:"bridge-neurotech",theme:"NEUROTECH",headline:"脳にチップを埋めない。超音波で意図を読む。",lead:"手術なしのBCIに挑むBridge Neurotech。研究段階の技術が、日常の入力装置になる日は来るか。",read:"超音波BCIを知る",number:"03",className:"brain"},
-  {id:"chargebotic",theme:"ENERGY",headline:"送電線から、ドローンが電気をもらう。",lead:"遠隔地の電源問題を解決するChargebotic。18Wの実証から見える現実と限界。",read:"磁界を使う給電を知る",number:"04",className:"energy"},
+  {id:"bridge-neurotech",theme:"NEUROTECH",headline:"脳に埋め込まないBCIを、研究室から現実へ。",lead:"超音波で脳の活動を捉えるBridge Neurotech。研究はいま、どこまで進んでいるのか。",read:"この会社を知る",number:"01",className:"brain"},
+  {id:"chargebotic",theme:"ENERGY",headline:"送電線のそばで、小さな電源を作る。",lead:"Chargeboticは遠隔地の電源問題に挑む。18Wの実証と、次の壁。",read:"この会社を知る",number:"02",className:"energy"},
+  {id:"nori-robotics",theme:"ROBOTICS",headline:"家庭用ロボットを、もっと身近に。",lead:"Nori Roboticsが目指す低価格の双腕ロボット。家庭で使うには何が必要なのか。",read:"この会社を知る",number:"03",className:"robot"},
 ];
-const briefLabels: Record<string,string> = {
-  "ixana":"人体を通信路にする半導体。Bluetoothとは何が違う？",
-  "wearable-devices-mudra":"手首から指先の動きを読み取る。次の入力装置になる？",
-  "ipolish":"ネイルが300色以上に変わる。爪に電池がない仕組みとは？",
-};
 const maturityLabel: Record<string,string>={research:"研究段階",prototype:"試作・初期出荷",pilot:"実証段階",commercial:"商用化段階",unknown:"成熟度未確認"};
 
 export default function EarlyStagePage(){
@@ -32,21 +26,21 @@ export default function EarlyStagePage(){
       <section className="esr-hero">
         <div className="esr-shell">
           <p className="esr-overline">EARLY-STAGE / DISCOVER WHAT'S NEXT</p>
-          <h1>まだ知らない技術に、<br/>出会おう。</h1>
-          <p className="esr-hero-copy">牛を使わないバター。家事を覚えるロボット。脳に埋め込まないコンピューターインターフェース。世界では、ちょっと信じられない技術が、もう動き始めている。</p>
-          <Link href="#stories" className="esr-hero-link">新しい技術を見つける <ArrowRight size={18}/></Link>
+          <h1>まだ知らない挑戦者に、<br/>出会おう。</h1>
+          <p className="esr-hero-copy">脳に埋め込まない入力装置。送電線のそばに生まれる電源。身近な双腕ロボット。世界の初期企業は、どんな未来を作ろうとしているのか。</p>
+          <Link href="#stories" className="esr-hero-link">企業を見つける <ArrowRight size={18}/></Link>
         </div>
       </section>
 
       <section id="stories" className="esr-shell esr-main">
         <div className="esr-heading">
           <p className="esr-overline esr-overline-dark">CURATED STORIES</p>
-          <h2>まずは、この4つから。</h2>
-          <p>「なんだこれ？」から始まる技術を、仕組みと現実の両面から見てみよう。</p>
+          <h2>まずは、この3社から。</h2>
+          <p>まだ小さなチームが挑む、大きな問題。会社の狙いと開発の現在地を知ろう。</p>
         </div>
         <div className="esr-features">
-        {picks.map(({p,company},index)=><Link className={"esr-feature esr-"+p.className} key={p.id} href={company!.publishedPath!}>
-          <div className="esr-feature-art" aria-hidden="true"><span className="esr-art-type">{p.theme}</span><strong>{p.number}</strong><span className="esr-art-mark">{p.theme==="FOODTECH"?"C → F":p.theme==="ROBOTICS"?"↗":p.theme==="NEUROTECH"?"∿":"⚡"}</span></div>
+        {picks.map(({p,company},index)=><Link className={"esr-feature esr-"+p.className} key={p.id} href={"/early-stage/"+company!.id}>
+          <div className="esr-feature-art" aria-hidden="true"><span className="esr-art-type">{p.theme}</span><strong>{p.number}</strong><span className="esr-art-mark">{p.theme==="ROBOTICS"?"↗":p.theme==="NEUROTECH"?"∿":"⚡"}</span></div>
           <div className="esr-feature-text"><span className="esr-overline esr-overline-dark">{p.theme} <span className="esr-dot">•</span> {maturityLabel[company!.maturity]}</span>
             <h3>{p.headline}</h3><p>{p.lead}</p><span className="esr-read">{p.read}<ArrowUpRight size={18}/></span>
           </div>
@@ -54,21 +48,11 @@ export default function EarlyStagePage(){
         </div>
       </section>
 
-      {more.length>0&&<section className="esr-more">
-        <div className="esr-shell">
-          <div className="esr-heading"><p className="esr-overline esr-overline-dark">MORE TO EXPLORE</p><h2>まだまだ、面白い。</h2><p>見た目は未来っぽい。でも、本当に使うには何が必要なのか。</p></div>
-          <div className="esr-more-grid">{more.map(c=><Link href={c.publishedPath!} className="esr-small" key={c.id}>
-            <span className="esr-overline esr-overline-dark">{c.company} / {maturityLabel[c.maturity]}</span>
-            <h3>{briefLabels[c.id]||c.product}</h3><p>{c.summary}</p><span className="esr-read">記事を読む <ArrowUpRight size={16}/></span>
-          </Link>)}</div>
-        </div>
-      </section>}
-
       <section className="esr-shell esr-editorial">
-        <div><p className="esr-overline esr-overline-dark">WHY IT MATTERS IN JAPAN</p><h2>面白い。<br/>でも、日本では？</h2></div>
-        <div><p>新しい技術が話題になる理由と、実際に使えるかどうかは別の話。TECH MEETS JAPANは、何が新しいのかを紹介するだけでなく、性能の根拠、価格、導入の難しさ、日本での用途まで一緒に考える。</p>
-          <p>研究中のものは研究中と書く。メーカーの発表と、第三者が検証した事実も分ける。未来への期待を楽しみながら、現在地は見失わない。</p>
-          <Link href="/research" className="esr-read">ほかの技術記事を探す <ArrowRight size={18}/></Link>
+        <div><p className="esr-overline esr-overline-dark">COMPANIES & TECHNOLOGY</p><h2>会社を知る。<br/>技術を掘る。</h2></div>
+        <div><p>Early-Stageでは、会社が何を目指し、どこまで前進したのかを紹介する。技術の仕組み、競合比較、導入条件を詳しく知りたいときはResearchの記事へ。</p>
+          <p>研究・試作・実証と商用化は分けて示し、日本での提携や進出が未確認なら、そのまま未確認と書く。掲載は会社を推薦することではない。</p>
+          <Link href="/research" className="esr-read">技術テーマから記事を探す <ArrowRight size={18}/></Link>
         </div>
       </section>
       <section className="esr-disclosure"><div className="esr-shell"><ShieldCheck size={20}/><p>編集記事は独立した判断で制作しています。掲載は推薦・提携・日本進出意思の確認を意味しません。記事中の未確認事項や将来の用途は、その旨を明記します。</p></div></section>
