@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { earlyStageCompanies } from "@/lib/earlyStage";
+import { earlyStageProfiles } from "@/lib/earlyStageProfiles";
 
 const featured = ["bridge-neurotech","chargebotic","nori-robotics"] as const;
 const profiles: Record<string,{headline:string;opening:string;why:string;challenge:string;status:string;question:string;research:string}> = {
@@ -41,7 +42,8 @@ export default async function EarlyCompanyProfile({params}:{params:Promise<{id:s
   if(!featured.includes(id as typeof featured[number])) notFound();
   const c=earlyStageCompanies.find(x=>x.id===id);
   const p=profiles[id];
-  if(!c||!p) notFound();
+  const intelligence=earlyStageProfiles[id];
+  if(!c||!p||!intelligence) notFound();
   return <><Header/><main style={{background:"#f5f2eb",color:"#18201b"}}>
     <article style={{width:"min(900px,calc(100% - 40px))",margin:"0 auto",padding:"68px 0 100px"}}>
       <Link href="/early-stage" style={{display:"inline-flex",alignItems:"center",gap:8,fontSize:13,fontWeight:700,marginBottom:42}}><ArrowLeft size={16}/> Early-Stageに戻る</Link>
@@ -52,6 +54,35 @@ export default async function EarlyCompanyProfile({params}:{params:Promise<{id:s
       <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,270px),1fr))",gap:16,marginBottom:66}}>
         {[{title:"なぜ注目するのか",body:p.why},{title:"いま、どこまで来たか",body:p.status},{title:"次に確かめたいこと",body:p.challenge}].map(b=><section key={b.title} style={{borderTop:"2px solid #202820",padding:"22px 8px"}}><h2 style={{fontSize:21,lineHeight:1.45,margin:"0 0 18px"}}>{b.title}</h2><p style={{lineHeight:1.9,color:"#525c54",fontSize:15}}>{b.body}</p></section>)}
       </div>
+      <section style={{marginBottom:70}}>
+        <p className="eyebrow" style={{color:"#66776c"}}>THE PEOPLE BEHIND IT</p>
+        <h2 style={{fontSize:"clamp(30px,4vw,44px)",lineHeight:1.35,letterSpacing:"-.045em",margin:"14px 0 27px"}}>この挑戦を始めたのは、誰か。</h2>
+        {intelligence.people.map(person=><div key={person.name} style={{borderTop:"1px solid #bec8bf",padding:"25px 0 28px",display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,270px),1fr))",gap:24}}>
+          <div><strong style={{fontSize:24,lineHeight:1.4,display:"block"}}>{person.name}</strong><span style={{fontSize:13,color:"#637168"}}>{person.role}</span></div>
+          <p style={{fontSize:16,lineHeight:1.9,margin:0,color:"#46544a"}}>{person.story}</p>
+        </div>)}
+      </section>
+      <section style={{background:"#fffdf7",border:"1px solid #d3ddd2",padding:"clamp(22px,4vw,44px)",marginBottom:70}}>
+        <p className="eyebrow" style={{color:"#67786b"}}>COMPANY / WHERE THEY STAND</p>
+        <h2 style={{fontSize:"clamp(27px,3vw,37px)",lineHeight:1.35,letterSpacing:"-.04em",margin:"14px 0 28px"}}>会社として、どこまで進んだのか。</h2>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,250px),1fr))",gap:26}}>
+          <div><h3 style={{fontSize:18,marginBottom:12}}>創業・拠点</h3><p style={{fontSize:15,lineHeight:1.9,color:"#4c5a4e"}}>{intelligence.founding}</p></div>
+          <div><h3 style={{fontSize:18,marginBottom:12}}>資金・事業の現状</h3><p style={{fontSize:15,lineHeight:1.9,color:"#4c5a4e"}}>{intelligence.finance}</p></div>
+        </div>
+      </section>
+      <section style={{marginBottom:70}}>
+        <p className="eyebrow" style={{color:"#67786b"}}>MILESTONES</p>
+        <h2 style={{fontSize:"clamp(28px,3.8vw,42px)",lineHeight:1.4,letterSpacing:"-.045em",margin:"14px 0 24px"}}>始まってから、いままで。</h2>
+        {intelligence.progress.map((item,i)=><div key={item.date+i} style={{display:"grid",gridTemplateColumns:"minmax(100px,170px) minmax(0,1fr)",gap:20,borderTop:"1px solid #cbd4cc",padding:"21px 0"}}>
+          <strong style={{fontSize:14,lineHeight:1.7}}>{item.date}</strong><p style={{fontSize:15,lineHeight:1.85,margin:0,color:"#4c5b50"}}>{item.event}</p>
+        </div>)}
+      </section>
+      <section style={{marginBottom:68}}>
+        <p className="eyebrow" style={{color:"#67786b"}}>JAPAN / THE BUSINESS QUESTION</p>
+        <h2 style={{fontSize:"clamp(28px,3.8vw,42px)",lineHeight:1.35,letterSpacing:"-.045em",margin:"14px 0 26px"}}>日本と、どうつながりそうか。</h2>
+        {intelligence.market.map((line,i)=><p key={i} style={{fontSize:16,lineHeight:1.95,color:"#4b584d",margin:"0 0 20px"}}>{line}</p>)}
+        <p style={{fontSize:17,lineHeight:1.9,fontWeight:700,borderLeft:"3px solid #f4512c",paddingLeft:18,marginTop:26}}>{intelligence.takeaway}</p>
+      </section>
       <section style={{background:"#193f3d",color:"white",padding:"clamp(25px,5vw,55px)",marginBottom:60}}>
         <p className="eyebrow" style={{color:"#d6ff39"}}>THE NEXT QUESTION</p>
         <h2 style={{fontSize:"clamp(27px,3.5vw,43px)",lineHeight:1.45,letterSpacing:"-.04em",margin:"18px 0 28px"}}>{p.question}</h2>
@@ -59,7 +90,9 @@ export default async function EarlyCompanyProfile({params}:{params:Promise<{id:s
       </section>
       <section><h2 style={{fontSize:23,marginBottom:20}}>公式情報を確認する</h2><p style={{lineHeight:1.8,color:"#5c685f",marginBottom:16}}>会社の発表に基づく内容と、編集部の用途仮説を区別しています。国内での提携意向・販売体制は確認できていません。</p>
       <a href={c.website} target="_blank" rel="noreferrer" style={{display:"inline-flex",gap:8,alignItems:"center",textDecoration:"underline",fontWeight:750}}>企業公式サイト <ExternalLink size={15}/></a>
-      <div style={{marginTop:20}}>{c.evidence.filter(e=>e.sourceUrl).map((e,i)=><p key={i} style={{margin:"10px 0",fontSize:13,color:"#647067",overflowWrap:"anywhere"}}><a href={e.sourceUrl} target="_blank" rel="noreferrer" style={{textDecoration:"underline"}}>出典 {i+1} <ExternalLink size={12}/></a>{e.checkedAt?" / 確認日："+e.checkedAt:""}</p>)}</div>
+      <p style={{fontSize:13,color:"#67746b",lineHeight:1.8,marginTop:23}}>{intelligence.disclosure}</p>
+      <div style={{marginTop:20}}>{intelligence.sources.map((e,i)=><p key={e.url} style={{margin:"14px 0",fontSize:14,color:"#56665c",overflowWrap:"anywhere"}}><a href={e.url} target="_blank" rel="noreferrer" style={{textDecoration:"underline"}}>{String(i+1).padStart(2,"0")} / {e.label} <ExternalLink size={12}/></a></p>)}</div>
+      <p style={{fontSize:12,color:"#718076",marginTop:22}}>情報確認日：2026年10月22日。情報は更新される可能性があります。</p>
       </section>
     </article>
   </main><Footer/></>;
