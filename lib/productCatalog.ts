@@ -26,23 +26,6 @@ type Profile = {
   verdict:"今すぐ試す"|"PoC推奨"|"様子見"|"日本ではまだ早い";
 };
 
-const scoreCriteria=(score:number,reason:string)=>[
-  {label:"課題の強さ",max:20,awarded:Math.round(score*.20),rule:"20=経営/現場の明確な高頻度課題、10=限定課題、0=課題不明",reason,evidence:["公開製品情報","想定ユースケース"]},
-  {label:"発生頻度",max:20,awarded:Math.round(score*.20),rule:"20=日常/週次、15=月次、10=四半期、5=年数回",reason:"対象業務が継続的に発生するかで評価。",evidence:["主要ユースケース"]},
-  {label:"導入効果の測定",max:20,awarded:Math.round(score*.20),rule:"20=時間/金額/KPIで即測定、10=定性中心",reason:"PoCで効果を比較できるかで評価。",evidence:["時間削減","処理件数","品質"]},
-  {label:"適用企業の広さ",max:20,awarded:Math.round(score*.20),rule:"20=複数業界、10=限定業界、5=単一用途",reason:"対象ユーザーと用途の広さで評価。",evidence:["Target users"]},
-  {label:"現行手段との差",max:20,awarded:Math.round(score*.20),rule:"20=業務構造を変える、10=効率化、5=機能追加",reason:"既存手段からどれだけ仕事のやり方を変えるかで評価。",evidence:["Differentiators"]}
-];
-
-const makeScoreBreakdown=(p:BaseProduct)=>[
-  {label:"課題への刺さり",weight:25,criteria:scoreCriteria(Math.min(100,p.fitScore+4),"主要ユースケースが明確で、導入効果を業務KPIへつなげやすい。")},
-  {label:"日本での使いやすさ",weight:20,criteria:scoreCriteria(Math.max(40,p.fitScore-6),p.japanStatus+"。日本語・契約・サポートは個別確認を含む。")},
-  {label:"差別化の強さ",weight:20,criteria:scoreCriteria(Math.min(100,p.fitScore+1),"固有機能とWorkflow上の差別化を評価。")},
-  {label:"導入しやすさ",weight:15,criteria:scoreCriteria(Math.max(45,p.fitScore-3),"PoC開始までの設定・連携・現場変更量を評価。")},
-  {label:"費用対効果",weight:10,criteria:scoreCriteria(Math.max(45,p.fitScore-2),"既存コスト削減または売上/処理量への寄与を評価。")},
-  {label:"Enterprise適性",weight:10,criteria:scoreCriteria(Math.max(40,p.fitScore-4),"権限、監査、契約、運用支援の公開情報をもとに評価。")}
-];
-
 const cycleFor=(a:Profile["automation"])=>{
   const roles:(0|1|2|3|4|5)[]=[1,2,3,4,5];
   const steps=["認識・入力","分析・判断材料","提案・計画","実行","検証・改善"];
@@ -178,7 +161,6 @@ const enrich=(p:BaseProduct,cfg:Profile)=>{
         editorialTake:p.name+"を見るときは機能数より、人間が業務サイクルのどこから外れるかを見る。"
       },
       fitProfiles,
-      scoreBreakdown:makeScoreBreakdown(p),
       bestFor:cfg.bestFor,notFor:cfg.notFor,
       verdict:{
         status:cfg.verdict,summary:cfg.bestFor[0]+"のような条件なら検討価値が高い。全面導入より代表業務でPoCし、現行手段とのKPI差を確認してから広げたい。",
