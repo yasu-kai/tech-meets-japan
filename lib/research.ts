@@ -28,6 +28,7 @@ export const researchCategories: ResearchCategory[] = [
     topics: [
       { slug:"nori-a3", title:"25万円の双腕ロボット。NORI A3は家事の未来をどこまで近づけたか。", kicker:"Nori Robotics / Bimanual / $1,688 / Reality Check", format:"PRODUCT", status:"published", href:"/research/frontier-tech/nori-a3" },
       { slug:"savor-carbon-fats", title:"牛も畑も使わずに、バターを作る。Savorの油脂は何を変えるのか。", kicker:"Savor / Carbon-crafted fats / AAK / Food materials", format:"REPORT", status:"published", href:"/research/frontier-tech/savor-carbon-fats" },
+      { slug:"chargebotic-kestrel", title:"送電線から電気をもらう。ChargeboticのKestrelは何を変えるのか。", kicker:"Chargebotic / Kestrel / 18W field demonstration", format:"REPORT", status:"published", href:"/research/frontier-tech/chargebotic-kestrel" },
     ],
   },
   {
