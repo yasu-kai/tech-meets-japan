@@ -1998,3 +1998,48 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
 .info-policy-grid{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:45px}
 .info-policy-grid h2{font-size:25px;margin:12px 0}
 @media(max-width:680px){.info-shell{width:calc(100% - 40px)}.info-hero{padding:67px 0 72px}.info-hero h1{font-size:clamp(39px,10vw,54px)}.info-content{padding:60px 0 75px}.info-content>section{margin-bottom:65px}.info-grid,.info-policy-grid,.info-two{grid-template-columns:1fr}.info-two{gap:15px}.info-dl{grid-template-columns:1fr;gap:3px}.info-dl dd{margin-bottom:15px}}
+
+
+/* Keep related-article thumbnails aligned regardless of headline length. */
+.story-related-grid .story-related-card{
+  display:grid;
+  grid-template-rows:24px minmax(0,1fr) 24px;
+  align-content:start;
+  gap:20px;
+}
+.story-related-grid .story-related-card>div{min-width:0;align-self:start}
+.story-related-grid .story-related-card>svg{justify-self:end;align-self:end}
+.story-related-grid .story-related-image{
+  width:100%;
+  aspect-ratio:16/9;
+  height:auto;
+  margin:0 0 14px;
+  overflow:hidden;
+}
+.story-related-grid .story-related-image .generated-editorial-media{
+  object-fit:cover;
+}
+
+/* Align the footer brand and navigation on the same horizontal axis. */
+.footer{
+  grid-template-columns:minmax(220px,1fr) minmax(0,auto);
+  align-items:center;
+  column-gap:32px;
+}
+.footer>div:first-child{min-width:0}
+.footer-links{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  column-gap:20px;
+  row-gap:12px;
+}
+.footer-links a{white-space:nowrap}
+@media(max-width:900px){
+  .footer{grid-template-columns:1fr;align-items:start}
+  .footer-links{justify-content:flex-start}
+}
+@media(max-width:560px){
+  .story-related-grid .story-related-card{grid-template-rows:24px minmax(0,1fr) 24px}
+}
