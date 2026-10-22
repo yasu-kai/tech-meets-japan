@@ -151,12 +151,12 @@ companies:["Runway","HeyGen","Synthesia"],
 depth:{current:"Level 3 — AI Agent",target:"Level 4 — Human-on-the-loop",human:"企画、ブランド、権利確認、最終クリエイティブ判断、公開責任"},
 sections:[
 {heading:"『動画を作れる』だけでは差にならなくなった。",body:[
-"テキストや画像から動画を生成する能力は急速に一般化した。そこで各社の差は、映像制作のどこを取りに行くかへ移っている。Runwayは生成・編集・演技表現を一つの制作環境へ寄せ、HeyGenは人物・アバター・翻訳・APIを通じて『出演者を必要とする動画』を大規模化し、Synthesiaは研修や社内コミュニケーションを中心にEnterprise運用とGovernanceを強く意識している。",
+"テキストや画像から動画を生成する能力は急速に一般化した。そこで各社の差は、映像制作のどこを取りに行くかへ移っている。Runwayは生成・編集・演技表現を一つの制作環境へ寄せ、HeyGenは人物・アバター・翻訳・APIを通じて『出演者を必要とする動画』を大規模化し、Synthesiaは研修や社内コミュニケーションを中心に企業向け運用と管理体制を強く意識している。",
 "同じAI Videoでも、狙っている代替対象が違う。"
 ]},
-{heading:"第二ラウンドは、Workflowの戦い。",body:[
+{heading:"第二ラウンドは、作業工程の戦い。",body:[
 "企業が毎月数百本の動画を作るとき、重要なのは最高品質の1本ではない。企画から生成、修正、ブランド統制、多言語化、承認、公開までをどれだけ安定して回せるかだ。",
-"HeyGenはWebページから動画を生成するAgent workflowや多言語Avatarを拡張し、SynthesiaはEnterprise向けのCollaboration、Governance、APIを押し出す。映像AIは『クリエイティブツール』から『コンテンツ生産基盤』へ近づいている。"
+"HeyGenはWebページから動画を生成するAgent 作業工程や多言語Avatarを拡張し、Synthesiaは企業向け向けのCollaboration、管理体制、APIを押し出す。映像AIは『クリエイティブツール』から『コンテンツ生産基盤』へ近づいている。"
 ]},
 {heading:"人間が残る場所は、品質より責任。",body:[
 "AIが映像を生成できても、ブランドを毀損しないか、人物の権利を侵害しないか、誤情報を含まないか、どの表現を公開するかは人間側に残る。特に企業利用では、生成能力の高さと運用可能性は別物だ。",
@@ -177,7 +177,7 @@ sources:[
 {
 slug:"runway-production",category:"ai-creative",eyebrow:"AI × CREATIVE / PRODUCT",
 title:"Runwayは映像生成AIではなく、制作工程OSになれるか。",
-dek:"Generate、Edit、Performance、Enterprise Governance。Runwayを見るとき、生成モデル単体より“撮影後の仕事までどこまで吸収するか”が重要になる。",
+dek:"Generate、Edit、Performance、企業向け 管理体制。Runwayを見るとき、生成モデル単体より“撮影後の仕事までどこまで吸収するか”が重要になる。",
 thesis:"Runwayの強さは映像をゼロから作ることだけではない。既存映像を壊さずに変える工程へ深く入っている。",
 companies:["Runway"],
 depth:{current:"Level 3 — AI Agent",target:"Level 4 — Human-on-the-loop",human:"企画、ブランド、演出判断、権利確認、公開"},
@@ -192,7 +192,7 @@ sections:[
 ]},
 {heading:"Automation Depthはまだ完全閉ループではない。",body:[
 "Runwayが深く担うのはCreative Executionだ。何を作るか、どの表現を採用するか、ブランドとして公開できるかは人間側に残る。また、媒体配信や予算配分まで自律的に行うわけではない。",
-"そのため現在はLevel 3に近い。今後、ブランドルールや過去成果を読み、複数案を生成し、評価し、最終候補を提示するところまで進めばHuman-on-the-loopへ近づく。"
+"そのため現在はLevel 3に近い。今後、ブランドルールや過去成果を読み、複数案を生成し、評価し、最終候補を提示するところまで進めばAIが進め、人が監督する運用へ近づく。"
 ]},
 {heading:"日本企業での初手は、制作会社置換ではない。",body:[
 "最初に効きやすいのは、既存制作フローの高コスト部分を一つずつ削ることだ。再撮影、ローカライズ、SNS向け再編集、社内説明動画など、ROIを測りやすい工程から入る。",
@@ -223,7 +223,7 @@ sections:[
 ]},
 {heading:"完全自律化が難しい理由。",body:[
 "工場では一つの判断が、設備停止、品質不良、安全事故へ直結する。だからソフトウェア業務よりも実行権限をAIへ渡すハードルが高い。",
-"一方で、問題の検知、原因候補の提示、過去対応の検索、作業手順の提案までをAIへ寄せれば、人間は最終承認と例外処理へ集中できる。製造AIの現実的な進化は、いきなり無人工場ではなくHuman-on-the-loop化だ。"
+"一方で、問題の検知、原因候補の提示、過去対応の検索、作業手順の提案までをAIへ寄せれば、人間は最終承認と例外処理へ集中できる。製造AIの現実的な進化は、いきなり無人工場ではなくAIが進め、人が監督する運用化だ。"
 ]},
 {heading:"日本企業が見るべきは『熟練者の暗黙知』。",body:[
 "設備や品質のノウハウがベテランに依存している企業ほど、AI導入の意味がある。重要なのは、その知識を単に文書化することではなく、異常が起きたときにAIが状況に応じて呼び出せる形へ変換すること。",
@@ -250,7 +250,7 @@ sections:[
 ]},
 {heading:"次の境界はPicking。",body:[
 "人のところまで商品を運べても、最後に商品を掴み、箱へ入れる工程が人間なら完全自律にはならない。Locus Arrayは移動ロボット、ロボットアーム、AI perceptionを組み合わせ、end-to-end fulfillmentの自律化を狙う。",
-"ここが重要な転換点だ。『人の歩行を削るロボット』から、『一つのFulfillment workflowを丸ごと持つロボット群』へ変わる。"
+"ここが重要な転換点だ。『人の歩行を削るロボット』から、『一つのFulfillment 作業工程を丸ごと持つロボット群』へ変わる。"
 ]},
 {heading:"自律化は、単体ロボットの賢さだけでは決まらない。",body:[
 "倉庫では数百台のロボット、在庫、注文、充電、設備故障を同時に管理する必要がある。だから価値の中心は、ロボット本体だけでなくオーケストレーションにある。",
@@ -413,7 +413,7 @@ sections:[
 ]},
 {heading:"人間は『一次調査』から外れていく。",body:[
 "既知パターンの相関分析、脅威情報収集、端末情報の確認はAIに向く。一方で、本番系を止める、アカウントを大量に無効化する、顧客へ通知する、といった判断には事業影響が伴う。",
-"そのため短期的にはHuman-on-the-loopが中心になる。人間はすべてのアラートを見るのではなく、AIがエスカレーションした重要案件とPolicy設計を担当する。"
+"そのため短期的にはAIが進め、人が監督する運用が中心になる。人間はすべてのアラートを見るのではなく、AIがエスカレーションした重要案件とPolicy設計を担当する。"
 ]},
 {heading:"日本企業では、SOC人材不足への答えになり得る。",body:[
 "セキュリティ人材を大量採用できない企業ほど、反復調査をAgentへ渡す効果は大きい。ただし、AI導入前にログ統合や権限整理ができていなければ、自律化は進まない。",
@@ -428,7 +428,7 @@ sources:[
 },{
 slug:"identity-agents",category:"ai-security",eyebrow:"AI × SECURITY / IDENTITY",
 title:"AI Agent時代のIdentityは、誰を認証するのか。",
-dek:"社員だけでなく、Agent自身が企業システムへ接続し、権限を使い、処理を実行する。Identityは『人間のログイン管理』からAgent governanceへ広がる。",
+dek:"社員だけでなく、Agent自身が企業システムへ接続し、権限を使い、処理を実行する。Identityは『人間のログイン管理』からAgent 管理体制へ広がる。",
 thesis:"AI Agentが本当に仕事をするなら、Agentはチャット機能ではなく『権限を持つデジタル労働者』として扱う必要がある。",
 companies:["Okta","Identity Security ecosystem"],
 depth:{current:"Level 2–3 — Governance emerging",target:"Level 4 — Policy-controlled agent identity",human:"Agent所有者、権限承認、例外、監査、停止判断"},
@@ -565,24 +565,24 @@ depth:{current:"Level 2–3 — AI Analyst / Agent",target:"Level 4 — Governed
 sections:[
 {heading:"企業クリエイティブは、量の問題になっている。",body:[
 "EC、SNS、広告、CRM、地域別サイト。企業は同じキャンペーンでも大量のサイズ、言語、背景、商品差分を必要とする。生成AIは、この派生制作を一気に圧縮できる。",
-"AdobeのFirefly Creative Productionは、ブランドに沿った大量のコンテンツ生成を、Workflow authoring・Runtime・Governanceまで含めて扱う方向へ進んでいる。"
+"AdobeのFirefly Creative Productionは、ブランドに沿った大量のコンテンツ生成を、作業工程 authoring・Runtime・管理体制まで含めて扱う方向へ進んでいる。"
 ]},
-{heading:"価値は『生成』より『再利用可能なWorkflow』。",body:[
-"単発で良い画像を出せても、毎回Promptから作り直すなら業務化しにくい。Firefly GraphのようなNode-based workflowは、入力・生成・編集・出力を接続し、同じ処理を再利用できるようにする。",
-"ここでクリエイティブ資産は完成物だけでなく、『どう作ったか』というWorkflowそのものになる。"
+{heading:"価値は『生成』より『再利用可能な作業工程』。",body:[
+"単発で良い画像を出せても、毎回指示文から作り直すなら業務化しにくい。Firefly GraphのようなNode-based 作業工程は、入力・生成・編集・出力を接続し、同じ処理を再利用できるようにする。",
+"ここでクリエイティブ資産は完成物だけでなく、『どう作ったか』という作業工程そのものになる。"
 ]},
 {heading:"撮影すら、Variant生成の一部になる。",body:[
 "3D Digital Twinと生成AIを組み合わせれば、物理撮影なしに複数背景・角度・チャネル向け素材を作れる。商品撮影のコスト構造も変わる可能性がある。",
 "特にSKU数が多い企業ほど、1商品の制作費より、全商品×全市場×全チャネルの総コストで効いてくる。"
 ]},
 {heading:"人間は、量産作業からブランド統制へ。",body:[
-"AIがVariationを増やすほど、間違ったロゴ、禁止表現、古い商品情報が大量拡散するリスクも増える。だからBrand rule、承認、Asset source-of-truthが重要になる。",
+"AIがVariationを増やすほど、間違ったロゴ、禁止表現、古い商品情報が大量拡散するリスクも増える。だからブランドの基準、承認、Asset source-of-truthが重要になる。",
 "生成速度が上がるほど、人間の仕事は作ることから『何を許可するか』へ移る。"
 ]}
 ,{heading:"Variationが増えるほど、評価と配信まで自動化したくなる。",body:[
-"100案を作れるようになると、次に詰まるのは『どれを出すか』だ。人間が100案をすべて確認し、媒体ごとに選び、結果を見て次案を作るなら、生成だけ高速化してもWorkflow全体は詰まったままになる。",
-"そこでSynthetic Mediaの次の競争は、Brand ruleを守ってVariationを作り、媒体実績を受け取り、次の案を更新するClosed loopへ進む。Creative productionとPerformance marketingの境界が薄くなる。",
-"ただしCTRだけを最適化するとBrandや長期価値を壊す可能性もある。何を最適化してはいけないかを人間が決めるGovernanceが必要になる。"
+"100案を作れるようになると、次に詰まるのは『どれを出すか』だ。人間が100案をすべて確認し、媒体ごとに選び、結果を見て次案を作るなら、生成だけ高速化しても作業工程全体は詰まったままになる。",
+"そこでSynthetic Mediaの次の競争は、ブランドの基準を守ってVariationを作り、媒体実績を受け取り、次の案を更新するClosed loopへ進む。Creative productionとPerformance marketingの境界が薄くなる。",
+"ただしCTRだけを最適化するとBrandや長期価値を壊す可能性もある。何を最適化してはいけないかを人間が決める管理体制が必要になる。"
 ]}],
 sources:[
 {label:"Adobe — Firefly Graph",url:"https://business.adobe.com/blog/meet-firefly-graph"},
@@ -699,7 +699,7 @@ depth:{current:"Level 2 — AI Analyst",target:"Level 3–4 in bounded workflows
 sections:[
 {heading:"医療は、AIが強くても自律化しにくい。",body:[
 "医療では誤りの影響が大きく、患者ごとの状況も複雑だ。そのため『AIが診断して治療を決める』より、まずDocumentation、情報検索、紹介状、患者向け説明などの支援から導入が進む。",
-"OpenAI for Healthcareも、臨床・研究・事務のWorkflowを支援しながら、Enterprise securityやHIPAA対応を前提にする構成を取っている。"
+"OpenAI for Healthcareも、臨床・研究・事務の作業工程を支援しながら、企業向け securityやHIPAA対応を前提にする構成を取っている。"
 ]},
 {heading:"最も大きな余地は、医療者の時間。",body:[
 "診療前の情報整理、診療後の記録、保険・紹介関連の文書作成は、患者と直接向き合わない時間を増やす。AIがここを圧縮すれば、医療の供給能力そのものを増やせる。",
@@ -715,7 +715,7 @@ sections:[
 ]}
 ,{heading:"医療AIで自律性を上げるほど、説明責任は消えない。",body:[
 "医療では、AIが高精度でも、そのまま最終判断へ接続できるとは限らない。誤診のCost、患者への説明、既往歴や生活背景、治療選択肢のPreferenceなど、Model外の情報が意思決定へ入るからだ。",
-"だから比較したいのはAccuracyだけではない。AIが何を根拠に提案したかをClinicianが確認できるか、異常時にHumanへ戻せるか、医療記録へどう残るか、責任主体が明確か。Healthcare AIではHuman-on-the-loopが弱さではなく設計要件になる。",
+"だから比較したいのはAccuracyだけではない。AIが何を根拠に提案したかをClinicianが確認できるか、異常時にHumanへ戻せるか、医療記録へどう残るか、責任主体が明確か。Healthcare AIではAIが進め、人が監督する運用が弱さではなく設計要件になる。",
 "一方、Documentation、Coding、Triage、画像の一次読影など、判断前後のOperationは自動化余地が大きい。人間を消すより、医師・看護師が患者を見る時間を取り戻す方向で価値が出やすい。"
 ]}],
 sources:[
@@ -749,8 +749,8 @@ sections:[
 ]}
 ,{heading:"価格AIで危ないのは、精度より『目的関数』。",body:[
 "AIが価格を最適化するとき、何を最大化するかで結果は変わる。粗利、売上、在庫回転、来店頻度、廃棄削減。短期粗利だけを追えば値上げが増え、在庫消化だけを追えばBrandを壊す可能性がある。",
-"だからRetail AIを比較するときは、予測精度だけでなく、どのKPIを同時に制約として扱えるか、Human overrideがどこにあるか、価格変更の理由を説明できるかを見るべきだ。価格決定はModel性能よりGovernanceの問題になりやすい。",
-"日本では店舗ごとの裁量、チラシ・ポイント施策、メーカーとの商慣行も絡む。完全自律価格より、需要予測と提案をAIが担い、例外だけ人間が承認するHuman-on-the-loop型から広がる可能性が高い。"
+"だからRetail AIを比較するときは、予測精度だけでなく、どのKPIを同時に制約として扱えるか、Human overrideがどこにあるか、価格変更の理由を説明できるかを見るべきだ。価格決定はModel性能より管理体制の問題になりやすい。",
+"日本では店舗ごとの裁量、チラシ・ポイント施策、メーカーとの商慣行も絡む。完全自律価格より、需要予測と提案をAIが担い、例外だけ人間が承認するAIが進め、人が監督する運用型から広がる可能性が高い。"
 ]}],
 sources:[
 {label:"Blue Yonder — AI pricing",url:"https://now.blueyonder.com/AI-pricing-tailored"},
@@ -817,7 +817,7 @@ sections:[
 ]}
 ,{heading:"自動運転Levelが他産業へ輸出できる理由。",body:[
 "自動運転Levelが便利なのは、AIの賢さではなく『誰がいつ責任を持つか』を段階で表せるからだ。Warehouse、Security、Customer Service、Software Agentでも同じで、AssistとAutonomyの差は、異常時に誰が戻ってくるかで決まる。",
-"たとえばAIが提案するだけならHuman-in-the-loop。通常運転はAIが担い、人間が監督するならHuman-on-the-loop。さらに定義された条件内で結果確認・再実行まで閉じればAutonomous closed loopに近づく。",
+"たとえばAIが提案するだけならHuman-in-the-loop。通常運転はAIが担い、人間が監督するならAIが進め、人が監督する運用。さらに定義された条件内で結果確認・再実行まで閉じればAutonomous closed loopに近づく。",
 "このLevel思想を使うと、製品比較が『AIを使っているか』から『人間が業務サイクルのどこから外れるか』へ変わる。TECH MEETS JAPANのAutomation Depthもこの考え方を横展開している。"
 ]}],
 sources:[
@@ -873,7 +873,7 @@ sections:[
 "Routeを再利用し、Visual/Thermal dataを蓄積すれば、時系列比較もしやすくなる。"
 ]},
 {heading:"ただし、分析はまだ人間が多く残る。",body:[
-"飛行・撮影が自動でも、亀裂や異常をどう評価し、保守を実施するかは別工程だ。DJIのInspection workflowでも、画像を人間が確認するかThird-party model detectionへ渡す設計が多い。",
+"飛行・撮影が自動でも、亀裂や異常をどう評価し、保守を実施するかは別工程だ。DJIのInspection 作業工程でも、画像を人間が確認するかThird-party model detectionへ渡す設計が多い。",
 "今後のAutomation Depthは、Flight autonomyより、Inspection decisionまで閉じられるかで決まる。"
 ]},
 {heading:"日本では、人手不足と危険作業の両方に効く。",body:[
@@ -933,7 +933,7 @@ companies:["Meta Neural Band","AI Glasses","Voice AI"],
 depth:{current:"Level 1–2 — New input modalities",target:"Level 3 — Context-aware multimodal control",human:"意図、確認、Privacy、誤操作修正"},
 sections:[
 {heading:"AIは、キーボードと相性が悪い部分がある。",body:[
-"生成AIへ長いPromptを書く行為は、自然言語を使っていても依然として『入力作業』だ。人間は本来、見て、話して、指差し、動きながら意図を伝える。",
+"生成AIへ長い指示文を書く行為は、自然言語を使っていても依然として『入力作業』だ。人間は本来、見て、話して、指差し、動きながら意図を伝える。",
 "AIがMultimodalになるほど、Input device側もText boxから離れる。"
 ]},
 {heading:"Voiceは最も自然だが、すべての場所で使えない。",body:[
@@ -1015,12 +1015,12 @@ sections:[
 "面白いのはAccuracyだけではない。顔や首へSensorを常時装着する負担を、手を口元へ近づけるGestureへ置き換えている点だ。WearabilityとPrivacyをSensor placementから解こうとしている。"
 ]},
 {heading:"ただし、97%と自然な会話は同じではない。",body:[
-"限定WordやCommandを分類するTaskと、自由な文章を連続的にDecodeするTaskの難易度は大きく違う。30語を高精度に分類できても、そのまま無制限のPromptをSilent入力できるわけではない。",
+"限定WordやCommandを分類するTaskと、自由な文章を連続的にDecodeするTaskの難易度は大きく違う。30語を高精度に分類できても、そのまま無制限の指示文をSilent入力できるわけではない。",
 "個人差、Sensor位置ずれ、再装着、汗、未知語、Calibration、長時間装着も課題になる。誤認されたCommandがAgent Actionへつながるなら、入力精度はSafety問題にもなる。"
 ]},
 {heading:"次のUI競争は、画面ではなく『意図までの距離』。",body:[
 "Keyboardは指を動かす。Voiceは声を出す。AI Glassesは視界を共有する。Silent Speechは声を出す直前の筋活動を読む。入力技術の歴史を並べると、人間の意図とMachine inputの距離が少しずつ短くなっている。",
-"その先では、AIへ明示的にPromptする回数そのものが減るかもしれない。最も優れたAI interfaceは、最終的に『AIを操作している感覚』を消す方向へ進む可能性がある。"
+"その先では、AIへ明示的に指示文する回数そのものが減るかもしれない。最も優れたAI interfaceは、最終的に『AIを操作している感覚』を消す方向へ進む可能性がある。"
 ]}
 ,{heading:"『なんだこれ』は、次の標準UIの実験場でもある。",body:[
 "奇妙なGadgetを笑って終わらせるのは簡単だ。しかし、専用AI端末、AI pin、眼鏡、Ring、Neckbandの多くは、スマホの画面を触るという前提をどう崩すかを試している。失敗製品でも、失敗した理由自体が次のUI設計の材料になる。",
@@ -1055,10 +1055,10 @@ sections:[
 ]},
 {heading:"ブラウザがUniversal APIになると、SaaSの価値の置き場所が変わる。",body:[
 "人間が直接SaaSを操作しなくなると、UIの使いやすさだけでは差別化しにくくなる。Agentが裏でSalesforce、HubSpot、Workday、ServiceNowを操作し、人間はSlackやChatからGoalだけ渡す世界では、ユーザーは個々のSaaS画面をほとんど見ない可能性がある。",
-"Browserbase自身も、社内Agent『bb』がSlackからPR作成、Snowflake調査、HubSpot登録、Browser operationまで横断する事例を公開している。ここで価値を持つのは『最も使いやすい画面』ではなく、Agentが安全に使える権限、Data、Workflow、監査性になる。"
+"Browserbase自身も、社内Agent『bb』がSlackからPR作成、Snowflake調査、HubSpot登録、Browser operationまで横断する事例を公開している。ここで価値を持つのは『最も使いやすい画面』ではなく、Agentが安全に使える権限、Data、作業工程、監査性になる。"
 ]},
 {heading:"ただし、GUIを操作できることと、任せてよいことは別。",body:[
-"Browser Agentは人間と同じ画面を触れるため、誤操作も人間と同じように本番へ反映される。さらにWebページにはPrompt Injectionが混入し得る。Agentが閲覧したページ上の命令を信頼すると、意図しない操作やData流出につながる。",
+"Browser Agentは人間と同じ画面を触れるため、誤操作も人間と同じように本番へ反映される。さらにWebページには指示文 Injectionが混入し得る。Agentが閲覧したページ上の命令を信頼すると、意図しない操作やData流出につながる。",
 "そのため実運用では、閲覧だけ、下書きまで、更新可能、送信・決済可能といったActionごとの権限境界が必要になる。Browser Agentの自律性を上げるほど、確認画面を減らすことより『どこで必ず止めるか』を設計することが重要になる。"
 ]},
 {heading:"消えるのはSaaSではなく、『SaaSを操作する仕事』かもしれない。",body:[
@@ -1084,7 +1084,7 @@ depth:{current:"Level 3 — Agent-governed development",target:"Level 4 — Cont
 sections:[
 {heading:"コードを書くAIを、人間だけで守るのは無理がある。",body:[
 "Developer Agentが複数Taskを並列で進めると、生成されるCodeとActionの量は人間のReview capacityを簡単に超える。しかもRiskはCodeだけに現れない。MCP Serverへ接続し、Skillを読み、外部Toolを呼び、Local fileやBrowserへAccessする時点からSecurity eventは始まっている。",
-"Snykが約1万のDeveloper environmentを調査した結果では、複数のAI Coding環境、MCP Server、Agent Skillがすでに広く使われており、Tool descriptionへのPrompt InjectionやSkill内のMalicious patternも確認されている。Softwareを作る『環境』自体がSupply Chainへ加わったと見るべきだ。"
+"Snykが約1万のDeveloper environmentを調査した結果では、複数のAI Coding環境、MCP Server、Agent Skillがすでに広く使われており、Tool descriptionへの指示文 InjectionやSkill内のMalicious patternも確認されている。Softwareを作る『環境』自体がSupply Chainへ加わったと見るべきだ。"
 ]},
 {heading:"新しいRiskは、What agents use / do / generateの3面にある。",body:[
 "SnykのAgentic Development Securityは、Agentが『何を使うか』『何をするか』『何を生成するか』を別のControl surfaceとして整理している。MCPやSkillの安全性、実行中のAgent action、最後に生成されたCode。従来のSASTだけでは、この3つのうち最後しか見えない。",
@@ -1094,8 +1094,8 @@ sections:[
 "SnykはAI Security Platformで、生成者と検証者を分離するIndependent validation layerを明確に打ち出している。Frontier modelのReasoningだけに任せず、SAST、SCA、Secrets、Container、IaCなどのDeterministic engineと組み合わせて検証する。",
 "これはAI監査全般にも通じる。生成AIは自分が生成した内容の前提や意図を共有しているため、同じSystemだけでSelf-reviewすると盲点が残る。SpeedをAIに渡すほど、Validationは独立させる必要がある。"
 ]},
-{heading:"Security control pointはCI/CDより前、AgentのExecution loopへ移る。",body:[
-"AgentがToolを呼ぶ前、Credentialへ触れる前、Commandを実行する前にPolicyをEnforceできれば、RiskがArtifactになる前に止められる。Snykは2026年、MCP Governanceを含むGovern Agent BehaviorをGAへ進め、Execution loop内でAgent actionを統制する方向を強めている。",
+{heading:"Security control pointはCI/CDより前、Agentの実行の過程へ移る。",body:[
+"AgentがToolを呼ぶ前、Credentialへ触れる前、Commandを実行する前にPolicyをEnforceできれば、RiskがArtifactになる前に止められる。Snykは2026年、MCP 管理体制を含むGovern Agent BehaviorをGAへ進め、実行の過程内でAgent actionを統制する方向を強めている。",
 "これはShift Leftのさらに左側だ。DeveloperがCodeを書く前に、Agentが何をしようとしているかをSecurityが見る。AppSec TeamはCode reviewerだけでなく、AI workforceのPermission designerへ役割を広げることになる。"
 ]},
 {heading:"AI開発の速度が上がるほど、人間のSecurity reviewだけでは追いつかない。",body:[
@@ -1121,7 +1121,7 @@ depth:{current:"Level 3 — AI Agent",target:"Level 4 — Human-on-the-loop proc
 sections:[
 {heading:"購買部門の仕事は、すでに複数のAgentへ分解できる。",body:[
 "購買Requestが来ると、担当者は申請内容を読み、Order Formと突合し、既存Supplierかを確認し、SecurityやLegalへ回し、金額やPayment termの不一致を見つける。ひとつひとつは小さな仕事だが、件数が積み上がると大きな工数になる。ここに役割別Agentを置ける余地がある。",
-"ZipはProcurement Orchestrationを、複数部門にまたがるこのWorkflow全体をつなぐLayerとして位置づけている。Agentic AIが入ると、RuleでRouteするだけでなく、Documentを読み、差分を検出し、次のActionを提案・実行するところまで自動化範囲が広がる。"
+"ZipはProcurement Orchestrationを、複数部門にまたがるこの作業工程全体をつなぐLayerとして位置づけている。Agentic AIが入ると、RuleでRouteするだけでなく、Documentを読み、差分を検出し、次のActionを提案・実行するところまで自動化範囲が広がる。"
 ]},
 {heading:"OpenAIの事例は、『確認作業』がAgent化しやすいことを示す。",body:[
 "Zipが公開するOpenAIの事例では、Intake Validation Agentが申請内容と添付DocumentやSupplier recordを突合し、不一致を自動でFlagする。従来15〜20分かかっていた確認が秒単位へ短縮されたとされる。",
@@ -1133,7 +1133,7 @@ sections:[
 ]},
 {heading:"Supplier選定や交渉まで完全自律化できるかは別問題。",body:[
 "価格比較やSupplier候補抽出はAIに向く。一方、Supplierとの関係、供給継続性、契約上の微妙な条件、社内政治、将来のStrategic valueはDataだけで決めにくい。高額・長期契約ほど、人間が責任を持つ理由は残る。",
-"だからProcurement Agentの現実的な到達点は、すべてを自動購入することではなく、定型RequestをStraight-through processingし、例外だけ購買担当者へ上げるHuman-on-the-loop型だろう。"
+"だからProcurement Agentの現実的な到達点は、すべてを自動購入することではなく、定型RequestをStraight-through processingし、例外だけ購買担当者へ上げるAIが進め、人が監督する運用型だろう。"
 ]},
 {heading:"購買担当者は、『申請を回す人』からPolicy designerへ移る。",body:[
 "AgentがDocument確認、Risk screening、Routing、Supplier情報収集を担えば、人間が使う時間は交渉、Category strategy、Supplier relationship、Policy設計へ移せる。購買DXの本当の価値は承認画面を新しくすることではなく、担当者の仕事の配分を変えることにある。",
@@ -1198,7 +1198,7 @@ sections:[
 "Proto Hologramは、Holographic device、ProtoOS、Conversational AI、AI Avatarを組み合わせ、Physical spaceへ対話可能なAvatarを置くPlatformを提供している。ここではUser interfaceが画面のMenuではなく、人型の存在そのものになる。"
 ]},
 {heading:"AI Avatarの価値は、見た目より『その場にいること』。",body:[
-"ProtoのEnterprise solutionでは、Knowledge baseやLLMへ接続したPhotorealistic multilingual avatarを店舗、Office、Venue、KioskへDeployできる。Existing displayをAI-enabled assistantとして使う構成もある。",
+"Protoの企業向け solutionでは、Knowledge baseやLLMへ接続したPhotorealistic multilingual avatarを店舗、Office、Venue、KioskへDeployできる。Existing displayをAI-enabled assistantとして使う構成もある。",
 "つまり必ずしも大型Hologram装置が本質ではない。重要なのは、WebのChatbotで終わっていたAI AgentをPhysical customer journeyへ接続し、来訪者がその場で質問し、案内を受け、必要なら人へEscalateできることだ。"
 ]},
 {heading:"『人が足りない受付』と『人を置くほどではない場所』の間を埋める。",body:[
@@ -1261,7 +1261,7 @@ sections:[
 ]},
 {heading:"日本で最初に刺さるのは、XRより『身体を使えない人のInterface』。",body:[
 "Bridgeが成功しても、最初から一般消費者がHeadphone型BCIでPCを操作する世界になる可能性は低い。臨床Benefitが大きい領域ほど、多少の装着負荷やCalibrationを許容しやすい。重度運動障害、Communication支援、Neurorehabilitation、Research interfaceの方が初期Marketとして自然だ。",
-"日本で医療用途へ入る場合、HardwareとDecoding softwareのIntended use次第で医療機器としてPMDA・厚生労働省の審査対象になり得る。日本には革新的医療機器やSaMDの優先審査・相談制度もあるが、Bridgeはまだ米国でもObservational study段階だ。日本参入を語るなら、まずClinical evidence、再現性、Safety、Data governance、国内Research partnerを見るべきだ。",
+"日本で医療用途へ入る場合、HardwareとDecoding softwareのIntended use次第で医療機器としてPMDA・厚生労働省の審査対象になり得る。日本には革新的医療機器やSaMDの優先審査・相談制度もあるが、Bridgeはまだ米国でもObservational study段階だ。日本参入を語るなら、まずClinical evidence、再現性、Safety、Data 管理体制、国内Research partnerを見るべきだ。",
 "その先にPC操作、XR、Hands-free computingがある。もしBridgeがSkull越しのSignalを日常Wearableで安定Decodeできれば、BCIのMarketは『手術を受ける少数』から『Deviceを装着する多数』へ桁を変える可能性がある。だからこの会社の価値は、今読めるThoughtの量ではなく、BCIの利用母数をどこまで広げられるかにある。"
 ]},
 {heading:"初回の人対象研究は、完成品の試験ではない。",body:["Bridgeは2026年10月、健常成人と、PEEKまたはLongevitiによる頭蓋形成術を受けた成人を対象とする観察研究への参加者募集を公表した。聞く・見る・話す・動くといったタスク中に超音波画像を記録し、頭蓋骨越しの計測信号を、音が通りやすい修復材越しのデータと比較する設計である。","メーカーは独立した倫理審査委員会による承認、同意取得、治療や診断をしない観察研究であることを明記している。しかし、それは一般向けBCIの実用性や臨床有効性が証明されたことを意味しない。ヘルメット型の計測装置の研究実施と、市販ウェアラブルの完成も区別する必要がある。"]},
