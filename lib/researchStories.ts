@@ -590,33 +590,33 @@ sources:[
 {label:"Adobe — 3D digital twin workflows",url:"https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/use-3d-digital-twin-workflows.html"}
 ]
 },{
-slug:"creative-stack",category:"ai-creative",eyebrow:"AI × CREATIVE / STACK",
+slug:"creative-stack",category:"ai-creative",eyebrow:"生成AIと制作業務",
 title:"Adobeを置き換えるのか、Adobeの中に入るのか。",
-dek:"生成モデルが増えるほど、企業は『どのモデルが一番強いか』より、制作・権利・ブランド・承認をどう束ねるかを考えるようになる。",
-thesis:"Creative AI市場の勝者は、最高性能モデルだけでは決まらない。複数モデルを企業Workflowに安全に組み込めるControl layerが重要になる。",
+dek:"画像や動画を作るAIが増える中、企業は仕上がりの良さだけでなく、著作権への対応や社内の確認手順も考える必要がある。",
+thesis:"画像や動画を作るAIは、性能だけで選べない。制作の流れに組み込み、素材や利用権限を管理しやすいことも重要だ。",
 companies:["Adobe","OpenAI","Google","Creative AI ecosystem"],
-depth:{current:"Level 2–3 — Multi-model workflow",target:"Level 4 — Governed agentic production",human:"モデル選定、ブランド設計、承認、権利、最終表現"},
+depth:{current:"複数の生成AIを使い分ける",target:"制作手順や承認を含めた運用",human:"モデル選定、ブランド設計、承認、権利、最終表現"},
 sections:[
-{heading:"生成モデルは、差し替え可能な部品になり始める。",body:[
-"画像や動画モデルが次々に更新されると、企業が一つのモデルへ全Workflowを固定するリスクが増える。昨日の最高モデルが半年後も最適とは限らない。",
-"Adobe Firefly Graphは、Adobeのツールと複数AIモデルをNodeとして組み合わせる考え方を押し出している。モデル競争の上にWorkflow layerを置く発想だ。"
+{heading:"画像や動画の生成AIを、用途によって使い分ける。",body:[
+"画像や動画モデルが次々に更新されると、企業が制作工程を一つのAIだけに依存するリスクが増える。昨日の最高モデルが半年後も最適とは限らない。",
+"Adobe Firefly Graphは、Adobeの制作ツールと複数のAIを、作業の流れに沿って組み合わせる仕組みを提案している。"
 ]},
-{heading:"Enterpriseでは、性能より統制が効く。",body:[
-"個人なら最高品質の出力を選べばいい。しかし企業では、商用利用条件、IP indemnification、データ扱い、ブランドルール、承認経路を同時に管理する必要がある。",
-"Creative Stackの競争は、Model benchmarkからGovernance benchmarkへ広がる。"
+{heading:"企業では、品質だけでなく利用条件も重要になる。",body:[
+"個人で試すなら仕上がりの良さを優先できる。しかし企業で使う場合は、商用利用の可否、著作権侵害に関する補償、入力データの扱い、ブランドの決まり、社内の承認手順も確認しなければならない。",
+"企業が生成AIを選ぶ際には、作品の出来栄えだけでなく、安心して業務に使えるかどうかも比較する必要がある。"
 ]},
 {heading:"Adobeが強いのは、既存制作工程を持っていること。",body:[
-"Photoshop、Illustrator、Premiere、Frame.ioなど既存Workflowの中へAIを入れられることは大きい。生成AIが新しい入口でも、最終仕上げやAsset管理が既存ツールに戻るなら、そこを持つ企業はControl pointを維持できる。",
+"Photoshop、Illustrator、Premiere、Frame.ioなど、すでに現場で使われている制作ツールにAIを組み込めることはAdobeの強みだ。生成AIで素材を作っても、仕上げや素材の管理を従来のツールで行うなら、Adobeを使い続ける理由になる。",
 "逆に新興AI企業は、従来工程そのものを消すことで勝ちに行く。"
 ]},
-{heading:"日本企業は、単一モデル導入より『Model portfolio』を考える段階へ。",body:[
-"用途ごとに最適モデルが違うなら、企業側はモデル名ではなく、入力データ・権利条件・用途・承認レベルに応じて自動選択する方が合理的になる。",
-"Creative AIは『どのAIを契約するか』から、『どのWorkflowでどのAIを使わせるか』へ進む。"
+{heading:"日本企業でも、用途に応じたAIの使い分けが課題になる。",body:[
+"画像、動画、音声で得意なAIが違うなら、用途や利用条件に合わせて使い分ける方法が考えられる。ただし、複数のAIを管理する手間も増える。",
+"大切なのは契約するAIの名前だけではない。どの作業で使い、誰が確認し、どこで完成させるかまで決める必要がある。"
 ]}
-,{heading:"比較すべきは、Model性能ではなく『誰がControl layerを握るか』。",body:[
-"Creative AIが増えるほど、企業は一つのModelへ賭けにくくなる。画像はA、動画はB、音声はCという構成が普通になれば、どのModelを使うかより、Brand asset、権限、承認、Rights、Versionを誰が一元管理するかが重要になる。",
-"Adobeの強みは既存Creative workflowとAsset管理へ近いこと。一方、Runwayや新興Model vendorは新しい表現や速度で先行する。企業側は『最高Modelを選ぶ』より、『Modelを差し替えてもWorkflowが壊れない構造』を持てるかを見るべきだ。",
-"この市場の勝者は生成Modelそのものではなく、複数Modelを安全に交換できるOperating layerになる可能性がある。"
+,{heading:"制作現場に残るのは、どのサービスか。",body:[
+"画像はA社、動画はB社、音声はC社と使い分ける企業も考えられる。その場合、素材の保存場所、利用できる人、著作権の確認、修正履歴などをまとめて管理できるかが課題になる。",
+"Adobeは既存の制作工程や素材管理とのつながりに強みがある。一方、Runwayなどの新興企業は新しい表現や制作速度で選ばれる可能性がある。企業側は、使うAIを変更しても日々の制作が滞らないかを確かめたい。",
+"今後はAIの生成品質だけでなく、複数のサービスを無理なく使い分けられる制作環境にも注目したい。"
 ]}],
 sources:[
 {label:"Adobe — Firefly Graph",url:"https://business.adobe.com/products/creativecloud-business/firefly-graph.html"},
