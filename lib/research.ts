@@ -37,8 +37,8 @@ export const researchCategories: ResearchCategory[] = [
     description: "営業、開発、採用、法務、顧客対応。AIがホワイトカラー業務のどこまでを引き受けるのか。",
     thesis: "見るべきは機能数ではなく、人間の業務サイクルから何が消えるか。",
     topics: [
-      { slug:"coding-agents", title:"Coding Agentは、プログラマーの何を奪うのか。", kicker:"Replit / Cognition / Cursor / Claude Code", format:"MARKET MAP", status:"published", href:"/research/ai-work/coding-agents" },
-      { slug:"ai-sales", title:"AI Salesは『提案』ではなく『営業活動』を代替できるか。", kicker:"Prospecting → Outreach → Qualification → Handoff", format:"REPORT", status:"published", href:"/research/ai-work/ai-sales" },
+      { slug:"coding-agents", title:"プログラムを書くAIは、開発者の仕事をどこまで任せられるのか。", kicker:"Replit / Cognition / Cursor / Claude Code", format:"MARKET MAP", status:"published", href:"/research/ai-work/coding-agents" },
+      { slug:"ai-sales", title:"営業AIは、見込み客探しから連絡まで任せられるのか。", kicker:"見込み客探し → 連絡 → 商談の見極め → 引き継ぎ", format:"REPORT", status:"published", href:"/research/ai-work/ai-sales" },
       { slug:"ai-recruiting", title:"採用は、AIでどこまで変わるのか。", kicker:"Sourcing / Screening / Interview / Scheduling", format:"MARKET MAP", status:"published", href:"/research/ai-work/ai-recruiting" },
       { slug:"ai-legal", title:"パラリーガル業務は、AIでどこまで消えるのか。", kicker:"Research / Review / Draft / Filing", format:"REPORT", status:"published", href:"/research/ai-work/ai-legal" },
       { slug:"ai-customer-service", title:"回答するAIから、解決するAIへ。", kicker:"Customer Service Agents", format:"COMPARE", status:"published", href:"/research/ai-work/ai-customer-service" },
