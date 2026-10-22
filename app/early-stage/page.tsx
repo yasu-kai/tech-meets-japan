@@ -25,7 +25,7 @@ export default function EarlyStagePage(){
     <main className="es-relaunch">
       <section className="esr-hero">
         <div className="esr-shell">
-          <p className="esr-overline">EARLY-STAGE / DISCOVER WHAT'S NEXT</p>
+          <p className="esr-overline">創業初期のスタートアップ</p>
           <h1>まだ知らない挑戦者に、<br/>出会おう。</h1>
           <p className="esr-hero-copy">脳に埋め込まない入力装置。送電線のそばに生まれる電源。身近な双腕ロボット。世界の初期企業は、どんな未来を作ろうとしているのか。</p>
           <Link href="#stories" className="esr-hero-link">企業を見つける <ArrowRight size={18}/></Link>
@@ -34,7 +34,7 @@ export default function EarlyStagePage(){
 
       <section id="stories" className="esr-shell esr-main">
         <div className="esr-heading">
-          <p className="esr-overline esr-overline-dark">CURATED STORIES</p>
+          <p className="esr-overline esr-overline-dark">注目の企業</p>
           <h2>まずは、この3社から。</h2>
           <p>まだ小さなチームが挑む、大きな問題。会社の狙いと開発の現在地を知ろう。</p>
         </div>
@@ -49,8 +49,8 @@ export default function EarlyStagePage(){
       </section>
 
       <section className="esr-shell esr-editorial">
-        <div><p className="esr-overline esr-overline-dark">COMPANIES & TECHNOLOGY</p><h2>会社を知る。<br/>技術を掘る。</h2></div>
-        <div><p>Early-Stageでは、会社が何を目指し、どこまで前進したのかを紹介する。技術の仕組み、競合比較、導入条件を詳しく知りたいときはResearchの記事へ。</p>
+        <div><p className="esr-overline esr-overline-dark">企業と技術</p><h2>会社を知る。<br/>技術を掘る。</h2></div>
+        <div><p>このページでは、企業が何を目指し、どこまで前進したのかを紹介します。技術の仕組みや競合比較、導入条件は技術解説の記事で詳しく取り上げます。</p>
           <p>研究・試作・実証と商用化は分けて示し、日本での提携や進出が未確認なら、そのまま未確認と書く。掲載は会社を推薦することではない。</p>
           <Link href="/research" className="esr-read">技術テーマから記事を探す <ArrowRight size={18}/></Link>
         </div>
