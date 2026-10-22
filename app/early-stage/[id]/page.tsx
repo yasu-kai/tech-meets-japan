@@ -47,7 +47,7 @@ export default async function EarlyCompanyProfile({params}:{params:Promise<{id:s
   return <><Header/><main style={{background:"#f5f2eb",color:"#18201b"}}>
     <article style={{width:"min(900px,calc(100% - 40px))",margin:"0 auto",padding:"68px 0 100px"}}>
       <Link href="/early-stage" style={{display:"inline-flex",alignItems:"center",gap:8,fontSize:13,fontWeight:700,marginBottom:42}}><ArrowLeft size={16}/> Early-Stageに戻る</Link>
-      <p className="eyebrow">EARLY-STAGE / COMPANY PROFILE</p>
+      <p className="eyebrow">スタートアップ企業紹介</p>
       <h1 style={{fontSize:"clamp(40px,6vw,74px)",lineHeight:1.22,letterSpacing:"-.055em",margin:"16px 0 22px",overflowWrap:"normal",wordBreak:"normal"}}>{p.headline}</h1>
       <p style={{fontSize:18,lineHeight:1.85,color:"#58645b",marginBottom:38}}>{c.company} / {c.country}</p>
       <p style={{fontSize:"clamp(18px,2vw,23px)",lineHeight:1.95,maxWidth:820,marginBottom:65}}>{p.opening}</p>
@@ -55,7 +55,7 @@ export default async function EarlyCompanyProfile({params}:{params:Promise<{id:s
         {[{title:"なぜ注目するのか",body:p.why},{title:"いま、どこまで来たか",body:p.status},{title:"次に確かめたいこと",body:p.challenge}].map(b=><section key={b.title} style={{borderTop:"2px solid #202820",padding:"22px 8px"}}><h2 style={{fontSize:21,lineHeight:1.45,margin:"0 0 18px"}}>{b.title}</h2><p style={{lineHeight:1.9,color:"#525c54",fontSize:15}}>{b.body}</p></section>)}
       </div>
       <section style={{marginBottom:70}}>
-        <p className="eyebrow" style={{color:"#66776c"}}>THE PEOPLE BEHIND IT</p>
+        <p className="eyebrow" style={{color:"#66776c"}}>創業者とチーム</p>
         <h2 style={{fontSize:"clamp(30px,4vw,44px)",lineHeight:1.35,letterSpacing:"-.045em",margin:"14px 0 27px"}}>この挑戦を始めたのは、誰か。</h2>
         {intelligence.people.map(person=><div key={person.name} style={{borderTop:"1px solid #bec8bf",padding:"25px 0 28px",display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,270px),1fr))",gap:24}}>
           <div><strong style={{fontSize:24,lineHeight:1.4,display:"block"}}>{person.name}</strong><span style={{fontSize:13,color:"#637168"}}>{person.role}</span></div>
@@ -63,7 +63,7 @@ export default async function EarlyCompanyProfile({params}:{params:Promise<{id:s
         </div>)}
       </section>
       <section style={{background:"#fffdf7",border:"1px solid #d3ddd2",padding:"clamp(22px,4vw,44px)",marginBottom:70}}>
-        <p className="eyebrow" style={{color:"#67786b"}}>COMPANY / WHERE THEY STAND</p>
+        <p className="eyebrow" style={{color:"#67786b"}}>事業の現在地</p>
         <h2 style={{fontSize:"clamp(27px,3vw,37px)",lineHeight:1.35,letterSpacing:"-.04em",margin:"14px 0 28px"}}>会社として、どこまで進んだのか。</h2>
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,250px),1fr))",gap:26}}>
           <div><h3 style={{fontSize:18,marginBottom:12}}>創業・拠点</h3><p style={{fontSize:15,lineHeight:1.9,color:"#4c5a4e"}}>{intelligence.founding}</p></div>
@@ -71,20 +71,20 @@ export default async function EarlyCompanyProfile({params}:{params:Promise<{id:s
         </div>
       </section>
       <section style={{marginBottom:70}}>
-        <p className="eyebrow" style={{color:"#67786b"}}>MILESTONES</p>
+        <p className="eyebrow" style={{color:"#67786b"}}>これまでの歩み</p>
         <h2 style={{fontSize:"clamp(28px,3.8vw,42px)",lineHeight:1.4,letterSpacing:"-.045em",margin:"14px 0 24px"}}>始まってから、いままで。</h2>
         {intelligence.progress.map((item,i)=><div key={item.date+i} style={{display:"grid",gridTemplateColumns:"minmax(100px,170px) minmax(0,1fr)",gap:20,borderTop:"1px solid #cbd4cc",padding:"21px 0"}}>
           <strong style={{fontSize:14,lineHeight:1.7}}>{item.date}</strong><p style={{fontSize:15,lineHeight:1.85,margin:0,color:"#4c5b50"}}>{item.event}</p>
         </div>)}
       </section>
       <section style={{marginBottom:68}}>
-        <p className="eyebrow" style={{color:"#67786b"}}>JAPAN / THE BUSINESS QUESTION</p>
+        <p className="eyebrow" style={{color:"#67786b"}}>日本市場との接点</p>
         <h2 style={{fontSize:"clamp(28px,3.8vw,42px)",lineHeight:1.35,letterSpacing:"-.045em",margin:"14px 0 26px"}}>日本と、どうつながりそうか。</h2>
         {intelligence.market.map((line,i)=><p key={i} style={{fontSize:16,lineHeight:1.95,color:"#4b584d",margin:"0 0 20px"}}>{line}</p>)}
         <p style={{fontSize:17,lineHeight:1.9,fontWeight:700,borderLeft:"3px solid #f4512c",paddingLeft:18,marginTop:26}}>{intelligence.takeaway}</p>
       </section>
       <section style={{background:"#193f3d",color:"white",padding:"clamp(25px,5vw,55px)",marginBottom:60}}>
-        <p className="eyebrow" style={{color:"#d6ff39"}}>THE NEXT QUESTION</p>
+        <p className="eyebrow" style={{color:"#d6ff39"}}>これからの注目点</p>
         <h2 style={{fontSize:"clamp(27px,3.5vw,43px)",lineHeight:1.45,letterSpacing:"-.04em",margin:"18px 0 28px"}}>{p.question}</h2>
         <Link href={p.research} style={{display:"inline-flex",gap:10,alignItems:"center",fontWeight:800,color:"#d6ff39"}}>技術の仕組みと競合を詳しく読む <ArrowRight size={18}/></Link>
       </section>
