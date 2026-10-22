@@ -13,8 +13,11 @@ export default function Footer() {
         <Link href="/research">Research</Link>
         <Link href="/features">Features</Link>
         <Link href="/early-stage">Early-Stage</Link>
+        <Link href="/about">About</Link>
+        <Link href="/editorial-policy">編集方針</Link>
+        <Link href="/editor/kai-umeda">Editor</Link>
       </div>
-      <p className="footer-note">Independent technology intelligence for people exploring what comes next.</p>
+      <p className="footer-note">Edited by Kai Umeda · Independent technology intelligence · <span>© TECH MEETS JAPAN</span></p>
     </footer>
   );
 }
