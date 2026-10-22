@@ -969,6 +969,7 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
 }
 .theme-tile-1,.theme-tile-2,.theme-tile-3,.theme-tile-4{grid-column:span 3}
 .theme-tile-5,.theme-tile-6{grid-column:span 6;min-height:190px}
+.theme-tile-7{grid-column:1 / -1;min-height:210px}
 .theme-tile-1{background:#151816;color:#fff}
 .theme-tile-2{background:#ff4b2f;color:#fff;border-color:#ff4b2f}
 .theme-tile-3{background:#ddd5ff;color:#171717}
@@ -1004,7 +1005,8 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
   letter-spacing:-.055em
 }
 .theme-tile-5 .editorial-theme-copy strong,
-.theme-tile-6 .editorial-theme-copy strong{
+.theme-tile-6 .editorial-theme-copy strong,
+.theme-tile-7 .editorial-theme-copy strong{
   font-size:clamp(34px,4vw,58px)
 }
 .editorial-theme-copy p{
@@ -1031,10 +1033,11 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
 }
 @media(max-width:620px){
   .editorial-theme-mosaic{grid-template-columns:1fr}
-  .theme-tile-1,.theme-tile-2,.theme-tile-3,.theme-tile-4,.theme-tile-5,.theme-tile-6{grid-column:auto;min-height:180px}
+  .theme-tile-1,.theme-tile-2,.theme-tile-3,.theme-tile-4,.theme-tile-5,.theme-tile-6,.theme-tile-7{grid-column:auto;min-height:180px}
   .editorial-theme-copy strong,
   .theme-tile-5 .editorial-theme-copy strong,
-  .theme-tile-6 .editorial-theme-copy strong{font-size:32px}
+  .theme-tile-6 .editorial-theme-copy strong,
+  .theme-tile-7 .editorial-theme-copy strong{font-size:32px}
 }
 
 /* Homepage feature story */
@@ -1949,6 +1952,7 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
 .editorial-theme-mosaic .theme-tile-4{background:linear-gradient(115deg,rgba(2,10,22,.9),rgba(2,10,22,.4)),url('/editorial/cat-ai-industry.webp') center/cover no-repeat;color:#fff;border-color:rgba(255,255,255,.2)}
 .editorial-theme-mosaic .theme-tile-5{background:linear-gradient(115deg,rgba(2,10,22,.9),rgba(2,10,22,.4)),url('/editorial/cat-robotics.webp') center/cover no-repeat;color:#fff;border-color:rgba(255,255,255,.2)}
 .editorial-theme-mosaic .theme-tile-6{background:linear-gradient(115deg,rgba(2,10,22,.9),rgba(2,10,22,.4)),url('/editorial/cat-gadgets.webp') center/cover no-repeat;color:#fff;border-color:rgba(255,255,255,.2)}
+.editorial-theme-mosaic .theme-tile-7{background:linear-gradient(105deg,rgba(2,10,22,.95),rgba(2,10,22,.4)),url('/editorial/cat-gadgets.webp') center/cover no-repeat;color:#fff;border-color:rgba(255,255,255,.2)}
 .features-card-trust .features-card-art{background-image:url('/editorial/cat-ai-security.webp');background-size:cover;background-position:center}
 .features-card-neuro .features-card-art{background-image:url('/editorial/generated/ultrasound-bci.webp');background-size:cover;background-position:center}
 .features-card-robotics .features-card-art{background-image:url('/editorial/cat-robotics.webp');background-size:cover;background-position:center}
