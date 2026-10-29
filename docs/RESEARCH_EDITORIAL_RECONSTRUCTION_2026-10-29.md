@@ -202,6 +202,14 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Source-bound individual verdicts, scores, warnings, comparisons and fixes: [audit/research_reconstruction_batch_2026-10-30_17.md](../audit/research_reconstruction_batch_2026-10-30_17.md). Content commit `4feaa6ae7e2c0f5ea3a302a8a303bb7ee6db7892`; Vercel deployment `dpl_Bom3Fo5MSA7C8P1Z1d4HV7TH3Dvj` READY. Independent VPS check: all six revised pages HTTP 200 with expected text; all six adopted WebPs HTTP 200, image/webp and RIFF magic.
 - Fresh post-content GitHub Actions rerun `40907522742`, job `123710330187` **SUCCESS**: deterministic editorial checks PASS, Playwright **94/94 desktop/mobile views, 0 failures**, screenshot artifact `12930811029` uploaded. This is automated QA, not human pixel-level review. **Canonical editorial second-pass status 27/47 PASS, 20/47 PENDING.** Global completion gate remains OPEN. No notification.
 
+## Batch 18 — 2026-10-30 / five independent second-pass editorial PASS
+- Independently reviewed and revised **warehouse-robotics, ai-glasses, personal-ai-device, ai-legal, ai-customer-service**. Source-bound per-article verdicts, scores, corrected claims and official URLs: [audit/research_reconstruction_batch_2026-10-30_18.md](../audit/research_reconstruction_batch_2026-10-30_18.md).
+- Corrections include Exotec workstation bins/hour versus warehouse throughput, Locus integrated SKU claims versus Array grasping, Meta's September Gen3 Japan release and Muse US-only restriction, rabbit OS3 approval/privacy boundaries, Harvey/CoCounsel document capacity versus accuracy, and Sierra/ServiceNow/Salesforce control distinctions.
+- Substantive Japanese body lengths after edits: **3,127–3,371** characters per article, without generic padding. No slug, category, adopted hero or image binary changed.
+- Content commit `7682788205e02370ddc18f7c5c1b0430fb561e47` and audit commit `c391d7dd34b72e1a1cab9c99b88f91dcf6b50eaf` both reached Vercel production **READY**. Independent VPS verification: five updated article routes HTTP 200 with expected new text; five adopted hero WebP URLs HTTP 200, image/webp, RIFF/WebP magic.
+- Fresh post-content 94-view GitHub Actions visual QA rerun requested for run `40907522742`; **result pending at this tracker update**. The previous successful 94/94 visual QA predates batch 18. Do not claim this run passed until verified.
+- Canonical second-pass state: **32/47 PASS, 15/47 PENDING**. Global completion gate OPEN; no user notification.
+
 ## Canonical final editorial audit — 47 Research articles
 The statuses below are separate from the first-pass rewrite status. `PASS` means source-bound independent second-pass editorial acceptance, `PENDING` means not yet independently reviewed; the sitewide completion gate also requires current production desktop/mobile QA.
 
@@ -219,11 +227,11 @@ The statuses below are separate from the first-pass rewrite status. `PASS` means
 | ai-video | ai-creative | PASS | audit/research_reconstruction_batch_2026-10-30_17.md |
 | runway-production | ai-creative | PASS | audit/research_reconstruction_batch_2026-10-30_17.md |
 | manufacturing-ai | ai-industry | PASS | audit/research_reconstruction_batch_2026-10-30_17.md |
-| warehouse-robotics | robotics | PENDING | — |
-| ai-glasses | gadgets | PENDING | — |
-| personal-ai-device | gadgets | PENDING | — |
-| ai-legal | ai-work | PENDING | — |
-| ai-customer-service | ai-work | PENDING | — |
+| warehouse-robotics | robotics | PASS | audit/research_reconstruction_batch_2026-10-30_18.md |
+| ai-glasses | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_18.md |
+| personal-ai-device | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_18.md |
+| ai-legal | ai-work | PASS | audit/research_reconstruction_batch_2026-10-30_18.md |
+| ai-customer-service | ai-work | PASS | audit/research_reconstruction_batch_2026-10-30_18.md |
 | ai-soc | ai-security | PENDING | — |
 | identity-agents | ai-security | PENDING | — |
 | ai-fraud | ai-security | PENDING | — |
