@@ -106,7 +106,7 @@ export const researchCategories: ResearchCategory[] = [
       { slug:"autonomous-driving", title:"自動運転のLevel思想は、他産業へ輸出される。", kicker:"Autonomy Levels as a common language", format:"REPORT", status:"published", href:"/research/robotics/autonomous-driving" },
       { slug:"physical-ai-platforms", title:"Physical AIの勝者はロボット企業か、基盤企業か。", kicker:"Models / Simulation / Hardware / Data", format:"COMPARE", status:"published", href:"/research/robotics/physical-ai-platforms" },
       { slug:"drones", title:"ドローンは『飛ぶカメラ』から作業主体へ進めるか。", kicker:"Inspection / Delivery / Security / Maintenance", format:"MARKET MAP", status:"published", href:"/research/robotics/drones" },
-      { slug:"robotics-as-labor", title:"ロボットを“買う”時代が終わる。", kicker:"Formic / Robotics-as-a-Service / Manufacturing", format:"REPORT", status:"published", href:"/research/robotics/robotics-as-labor" },
+      { slug:"robotics-as-labor", title:"ロボットを買わずに使う。Formicが変える工場の自動化。", kicker:"Formic / Robotics-as-a-Service / Manufacturing", format:"REPORT", status:"published", href:"/research/robotics/robotics-as-labor" },
     ],
   },
   {
@@ -125,7 +125,7 @@ export const researchCategories: ResearchCategory[] = [
       { slug:"future-input", title:"キーボードの次の入力装置は何になる。", kicker:"Voice / Gesture / Vision / Neural input", format:"REPORT", status:"published", href:"/research/gadgets/future-input" },
       { slug:"weird-gadgets", title:"なんだこれwww — 海外の変態ガジェットを拾う。", kicker:"The weird edge of product innovation", format:"WTF / GADGET", status:"published", href:"/research/gadgets/weird-gadgets" },
       { slug:"silent-speech", title:"人間は、いつまでAIに話しかけるのか。", kicker:"Engram / Silenzio / SilentWear / GMO Pepabo + YNU", format:"REPORT", status:"published", href:"/research/gadgets/silent-speech" },
-      { slug:"embodied-ai-reception", title:"受付に立つのは、人間でも画面でもない。", kicker:"Proto Hologram / AI Avatar / Spatial Computing", format:"REPORT", status:"published", href:"/research/gadgets/embodied-ai-reception" },
+      { slug:"embodied-ai-reception", title:"受付に人の姿をしたAI。Protoは接客をどう変えるか。", kicker:"Proto Hologram / AI Avatar / Spatial Computing", format:"REPORT", status:"published", href:"/research/gadgets/embodied-ai-reception" },
       { slug:"ultrasound-bci", title:"脳に穴を開けない。超音波BCIが走り出した。", kicker:"Bridge Neurotech / Butterfly / Merge Labs / Neuralink", format:"REPORT", status:"published", href:"/research/gadgets/ultrasound-bci" },
       { slug:"bridge-ultrasound-bci", title:"脳にチップを埋めない。BCIの本命争いに「超音波」が入ってきた。", kicker:"Bridge Neurotech / Butterfly / Merge Labs / Neuralink", format:"REPORT", status:"published", href:"/research/gadgets/bridge-ultrasound-bci" },
     ],
