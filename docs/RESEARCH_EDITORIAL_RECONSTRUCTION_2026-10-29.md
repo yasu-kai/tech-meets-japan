@@ -207,7 +207,7 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Corrections include Exotec workstation bins/hour versus warehouse throughput, Locus integrated SKU claims versus Array grasping, Meta's September Gen3 Japan release and Muse US-only restriction, rabbit OS3 approval/privacy boundaries, Harvey/CoCounsel document capacity versus accuracy, and Sierra/ServiceNow/Salesforce control distinctions.
 - Substantive Japanese body lengths after edits: **3,127–3,371** characters per article, without generic padding. No slug, category, adopted hero or image binary changed.
 - Content commit `7682788205e02370ddc18f7c5c1b0430fb561e47` and audit commit `c391d7dd34b72e1a1cab9c99b88f91dcf6b50eaf` both reached Vercel production **READY**. Independent VPS verification: five updated article routes HTTP 200 with expected new text; five adopted hero WebP URLs HTTP 200, image/webp, RIFF/WebP magic.
-- Fresh post-content 94-view GitHub Actions visual QA rerun requested for run `40907522742`; **result pending at this tracker update**. The previous successful 94/94 visual QA predates batch 18. Do not claim this run passed until verified.
+- Post-content GitHub Actions rerun `40907522742`, job `123740392029` **SUCCESS**: deterministic editorial gate 47 stories, 0 findings; Playwright **94/94 desktop/mobile views, 0 failures**; screenshot artifact `12933943080`. Checkout main `90f3ca13f8f0ac3cbe47f50461d7f9d4334e5fbd` includes the batch-18 article content. Automated assertions do not equal manual review of every screenshot.
 - Canonical second-pass state: **32/47 PASS, 15/47 PENDING**. Global completion gate OPEN; no user notification.
 
 ## Canonical final editorial audit — 47 Research articles
