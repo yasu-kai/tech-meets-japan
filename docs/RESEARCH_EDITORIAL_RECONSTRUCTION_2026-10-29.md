@@ -269,7 +269,7 @@ The statuses below are separate from the first-pass rewrite status. `PASS` means
 - Canonical second-pass count: **38/47 PASS, 9/47 PENDING**. The older 43-row first-pass status block is intentionally unchanged.
 - A malformed TypeScript object splice caused one Vercel ERROR deployment. Exact source restoration at `da0487c3f709a1e02a4245541d88e900fcd70f84` returned READY; corrected content commits `1da8b7a0310454525092162191bf97f364f11c7e` and `429f3ab0126d518f63d0c07ae996a314f477e60e` passed a 47-unique-slug parse and untouched-story check, and final content deployment `dpl_8xuqVUDBmYGYKitnEWUP2FEJRjSj` is **READY**.
 - Independent remote HTTP test of six revised article URLs: **6/6 HTTP 200 and new-body markers present**; six adopted hero WebPs: **6/6 HTTP 200, image/webp, RIFF/WebP magic**.
-- Fresh sitewide 47-page/94-view GitHub Actions Playwright rerun requested on workflow run `40907522742`, previous latest successful job `123740392029`. **Latest rerun result must be checked before claiming post-batch visual QA PASS.**
+- Post-batch sitewide GitHub Actions rerun `40907522742`, job `123767078935`: **SUCCESS**. Deterministic editorial QA 47 stories / 0 findings; Playwright desktop/mobile **94 views / 0 failures**. Screenshot artifact `12937397849` (7-day retention). This is automated QA, not a claim that all screenshots were manually reviewed.
 - Remaining 9 PENDING: creative-stack, logistics-ai, finance-ai, healthcare-ai, retail-ai, humanoid, autonomous-driving, physical-ai-platforms, drones. No completion notification.
 
 ## Change discipline
