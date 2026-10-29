@@ -124,6 +124,11 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Source and editorial notes: [audit/research_reconstruction_batch_2026-10-30_09.md](../audit/research_reconstruction_batch_2026-10-30_09.md).
 - No slugs, categories, image binaries or associations changed. Expanded article depth: humanoid 2543 chars; autonomous-driving 2385 chars; physical-ai-platforms 2409 chars; drones 2232 chars. Earlier production commit reached READY and 4 original WebP heroes served HTTP 200; final updated commit requires fresh production verification. Independent final audit and visual QA pending.
 
+## Production/link QA — batches 08–09 (2026-10-30)
+- Production content commit `768cb27cea1f6da00b978de88de23aa532ba1e85` reached Vercel **READY**. All nine new batch 08/09 article routes returned HTTP **200**; all nine original hero WebP URLs returned HTTP **200**, `image/webp`, RIFF/WebP magic bytes. No image binaries or mappings were changed.
+- Corrected the drones O4 Ground Station source after a remote HTTP 404 and added the official Japan-specific Relay Mode restriction from DJI's first-party FAQ. Current source and caveat recorded in batch 09 audit.
+- Independent final editorial PASS and desktop/mobile visual QA remain **open** for all articles. No user notification until entire backlog is complete.
+
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
 - Verify official references for each material claim before publishing a rewrite.

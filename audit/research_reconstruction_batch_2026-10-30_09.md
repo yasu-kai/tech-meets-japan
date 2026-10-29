@@ -25,3 +25,8 @@ Rewritten: humanoid, autonomous-driving, physical-ai-platforms, drones. Product-
 - physical-ai-platforms: 10 sections; 2409 Japanese body characters. Added concrete input/output, failure and implementation tests.
 - drones: 10 sections; 2232 Japanese body characters. Added concrete input/output, failure and implementation tests.
 Final independent audit and desktop/mobile visual QA still outstanding.
+
+## Critical Japanese availability correction — DJI O4 Ground Station
+- DJI's current first-party O4 product/FAQ explicitly says Relay Mode is unavailable in Japan due to 5GHz support restrictions. Added this blocking limitation to the Japanese adoption section. The earlier DJI media-center URL returned HTTP 404 from a remote client despite being indexed by web search; replaced with live first-party product page and FAQ.
+- Corrected drones article: 2391 body characters; 4 official source links.
+- All nine batch 08/09 article routes and original WebP assets returned HTTP 200 in remote HTTP checks; the latest production content commit 768cb27cea1f6da00b978de88de23aa532ba1e85 reached Vercel READY. Screenshot QA and independent final audit remain open.
