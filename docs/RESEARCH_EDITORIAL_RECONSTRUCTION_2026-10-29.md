@@ -44,11 +44,11 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 | ai-security | continuous-validation | REWRITTEN_LIVE_AUDIT_PENDING |
 | ai-creative | ai-voice | REWRITTEN_LIVE_AUDIT_PENDING |
 | ai-creative | synthetic-media | REWRITTEN_LIVE_AUDIT_PENDING |
-| ai-creative | creative-stack | REWRITE_PENDING |
-| ai-industry | logistics-ai | REWRITE_PENDING |
-| ai-industry | finance-ai | REWRITE_PENDING |
-| ai-industry | healthcare-ai | REWRITE_PENDING |
-| ai-industry | retail-ai | REWRITE_PENDING |
+| ai-creative | creative-stack | REWRITTEN_LIVE_AUDIT_PENDING |
+| ai-industry | logistics-ai | REWRITTEN_LIVE_AUDIT_PENDING |
+| ai-industry | finance-ai | REWRITTEN_LIVE_AUDIT_PENDING |
+| ai-industry | healthcare-ai | REWRITTEN_LIVE_AUDIT_PENDING |
+| ai-industry | retail-ai | REWRITTEN_LIVE_AUDIT_PENDING |
 | robotics | humanoid | REWRITE_PENDING |
 | robotics | autonomous-driving | REWRITE_PENDING |
 | robotics | physical-ai-platforms | REWRITE_PENDING |
@@ -112,6 +112,11 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Of 38 first-party source links, 29 returned HTTP 200 from the remote client; 5 returned HTTP 403 (Salesforce Admin, Feedzai x2, Pentera x2) and 4 Adobe pages returned 403 or timed out. The blocked pages were independently retrievable through web source tools; do not equate anti-bot 403 with a dead URL. Browser visual QA is **not completed**.
 - Headless browser attempt failed because the authorized VPS Chrome binary lacks system libraries (first missing `libatk-1.0.so.0`); do not claim desktop/mobile screenshots or pixel-level QA. No system packages were installed.
 - The original inventory has **43** tracker rows excluding the four separately published new AI governance/privacy/collaboration/security stories; the user request referred to 42. The discrepancy must be resolved by actual inventory, not by dropping an article. Current tracker status: **23/43 rewritten; 20/43 pending**, **0 final independent PASS**.
+
+## Batch 08 — 2026-10-30
+- Reconstructed **5 more stories**: creative-stack, logistics-ai, finance-ai, healthcare-ai, retail-ai. Total **28/43** rewritten; **15/43** remain not rewritten. No final independent PASS.
+- Source and editorial notes: [audit/research_reconstruction_batch_2026-10-30_08.md](../audit/research_reconstruction_batch_2026-10-30_08.md).
+- Original slugs, image associations and image binaries unchanged. Deployment and visual QA pending.
 
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.

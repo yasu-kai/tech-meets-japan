@@ -552,33 +552,8 @@ dek:"画像や動画を作るAIが増える中、企業は仕上がりの良さ�
 thesis:"画像や動画を作るAIは、性能だけで選べない。制作の流れに組み込み、素材や利用権限を管理しやすいことも重要だ。",
 companies:["Adobe","OpenAI","Google","Creative AI ecosystem"],
 depth:{current:"複数の生成AIを使い分ける",target:"制作手順や承認を含めた運用",human:"モデル選定、ブランド設計、承認、権利、最終表現"},
-sections:[
-{heading:"画像や動画の生成AIを、用途によって使い分ける。",body:[
-"画像や動画モデルが次々に更新されると、企業が制作工程を一つのAIだけに依存するリスクが増える。昨日の最高モデルが半年後も最適とは限らない。",
-"Adobe Firefly Graphは、Adobeの制作ツールと複数のAIを、作業の流れに沿って組み合わせる仕組みを提案している。"
-]},
-{heading:"企業では、品質だけでなく利用条件も重要になる。",body:[
-"個人で試すなら仕上がりの良さを優先できる。しかし企業で使う場合は、商用利用の可否、著作権侵害に関する補償、入力データの扱い、ブランドの決まり、社内の承認手順も確認しなければならない。",
-"企業が生成AIを選ぶ際には、作品の出来栄えだけでなく、安心して業務に使えるかどうかも比較する必要がある。"
-]},
-{heading:"Adobeが強いのは、既存制作工程を持っていること。",body:[
-"Photoshop、Illustrator、Premiere、Frame.ioなど、すでに現場で使われている制作ツールにAIを組み込めることはAdobeの強みだ。生成AIで素材を作っても、仕上げや素材の管理を従来のツールで行うなら、Adobeを使い続ける理由になる。",
-"逆に新興AI企業は、従来工程そのものを消すことで勝ちに行く。"
-]},
-{heading:"日本企業でも、用途に応じたAIの使い分けが課題になる。",body:[
-"画像、動画、音声で得意なAIが違うなら、用途や利用条件に合わせて使い分ける方法が考えられる。ただし、複数のAIを管理する手間も増える。",
-"大切なのは契約するAIの名前だけではない。どの作業で使い、誰が確認し、どこで完成させるかまで決める必要がある。"
-]}
-,{heading:"制作現場に残るのは、どのサービスか。",body:[
-"画像はA社、動画はB社、音声はC社と使い分ける企業も考えられる。その場合、素材の保存場所、利用できる人、著作権の確認、修正履歴などをまとめて管理できるかが課題になる。",
-"Adobeは既存の制作工程や素材管理とのつながりに強みがある。一方、Runwayなどの新興企業は新しい表現や制作速度で選ばれる可能性がある。企業側は、使うAIを変更しても日々の制作が滞らないかを確かめたい。",
-"今後はAIの生成品質だけでなく、複数のサービスを無理なく使い分けられる制作環境にも注目したい。"
-]}],
-sources:[
-{label:"Adobe — Firefly Graph",url:"https://business.adobe.com/products/creativecloud-business/firefly-graph.html"},
-{label:"Adobe — Node-based workflows",url:"https://business.adobe.com/blog/why-node-based-workflows-are-the-future-of-creative-ai"},
-{label:"Adobe — AI and creative work",url:"https://www.adobe.com/ai/research/202606/ai-is-redistributing-creative-work.html"}
-]
+sections:[{"heading":"生成AIで一枚作った。その後の仕事は誰がするのか。","body":["広告の画像を一枚生成するのは速くなった。だが企業の制作では、商品を正しく見せ、ブランドの色を守り、縦横の広告サイズへ展開し、承認を受ける工程が残る。モデルの性能が上がっても、毎回人がツールを行き来するなら仕事は終わらない。","ここで重要なのは、最高の画像を偶然一枚作ることではなく、承認された品質を何度も再現できることだ。"]},{"heading":"Firefly Graphが保存するのは作品ではなく制作手順。","body":["Adobe Firefly Graph for Enterpriseは、生成モデルと画像編集操作をノードで接続する視覚的なワークフローだ。公式ページでは300種類以上のノードや生成アクション、分岐、反復、過去の実行の確認を説明する。","入力画像を処理し、背景を調整し、仕上がりを確認するという順序を組める。プロンプトだけでなく、どの処理をどの順番で使ったかを共有できることが特徴だ。","ただしモデルの更新や入力素材の違いで結果は変わり得る。工程の再利用と、すべての出力が完全に同じになることは別である。"]},{"heading":"複数モデルを束ねる戦略には理由がある。","body":["画像や動画の生成AIは用途ごとに得意分野が異なり、利用条件も変わる。企業が一つのモデルに制作工程を固定すると、乗り換え時に作業手順を作り直す負担が生じる。","Adobeは自社アプリとパートナーモデルをFirefly Graph内で組み合わせる構想を示す。モデル単体の性能競争ではなく、モデルを使い分ける制作工程を管理する戦略だ。利用できるモデルと外部送信の条件は契約ごとに確認したい。"]},{"heading":"Firefly Creative Productionとは役割が違う。","body":["Adobe自身のFAQでは、Firefly Graphはワークフローの設計・改善、Firefly Creative Productionは承認済み工程を大規模に実行するための製品と区別している。","新しい広告の加工手順を作る仕事と、全国の店舗向けに大量の画像を作る仕事では必要な機能が違う。前者は試行錯誤、後者は処理量と品質管理が中心になる。名前が似ていても、同じ用途の製品として比較すべきではない。"]},{"heading":"既存の制作資産は強みであり制約でもある。","body":["PhotoshopやIllustrator、Premiereを使う組織なら、AIで作った素材を既存の制作工程へつなげられる価値がある。最終的な構図や色の判断も担当者が引き受けられる。","一方、少人数のチームがクラウド上で生成から納品まで完結させるなら、従来アプリとの連携が必須とは限らない。Adobeを選ぶ理由は『画像が最も美しい』ではなく、既存の制作資産を再利用し、組織で運用する必要があるかどうかだ。"]},{"heading":"権利と管理の確認は、生成品質と別工程。","body":["Adobeは管理権限、コンテンツ認証情報、特定の生成モデル出力に関する知的財産権の補償を案内する。ただし補償の対象と条件には制限がある。すべての生成物が無条件で補償されるわけではない。","企業では、預かった未公開素材をどのモデルへ送るか、誰が途中成果物を閲覧できるか、最終広告の権利を誰が確認するかを決める必要がある。AIで作れることと公開できることは違う。"]},{"heading":"日本企業の検証は『一枚』ではなく『一式の納品物』で。","body":["同じ商品画像から複数サイズの広告を作り、背景差し替え、余白調整、社内承認までを通して試す。手作業との比較では、生成時間だけでなく修正回数、ブランド規定への適合、担当者ごとの差、承認履歴を測る。","公式ページではFirefly GraphがCreative Cloud for enterprise Edition 5向けと説明されている。個人向けFireflyと同じ契約で使えると考えず、価格や日本語環境、モデル利用条件を個別に確認したい。"]},{"heading":"制作現場の競争軸は、モデルから再現性へ。","body":["Adobeの2026年の調査は、AIが制作の初期案や仕上げを支援する一方、選択、顧客との調整、最終責任が残ることを示す。ただしこれは同社による調査であり、全業界の代表値とは限らない。","Firefly Graphの面白さはAIに制作を丸投げすることではない。人が見つけた良い制作手順を、次の担当者も使える組織の資産へ変えることにある。"]}],
+sources:[{"label":"Adobe — Firefly Graph for Enterprise","url":"https://business.adobe.com/products/creativecloud-business/firefly-graph.html"},{"label":"Adobe — Node-based workflows (2026-10-06)","url":"https://business.adobe.com/blog/why-node-based-workflows-are-the-future-of-creative-ai"},{"label":"Adobe — Creative work research (2026-06)","url":"https://www.adobe.com/ai/research/202606/ai-is-redistributing-creative-work.html"}]
 },{
 slug:"logistics-ai",category:"ai-industry",eyebrow:"AI × INDUSTRY / LOGISTICS",
 title:"FAXと電話が残る物流に、AIはどこから入るのか。",
@@ -586,30 +561,8 @@ dek:"配車、調達、追跡、例外対応、支払い。物流AIは『最適�
 thesis:"物流のAI化で最初に消えるのはトラックではない。荷主・運送会社・倉庫の間を埋める『確認・催促・転記』だ。",
 companies:["project44","Uber Freight","LSP44"],
 depth:{current:"Level 3 — AI Agent",target:"Level 4 — Human-on-the-loop",human:"例外交渉、重大遅延、取引関係、現場判断、契約"},
-sections:[
-{heading:"物流のボトルネックは、データがないことではない。",body:[
-"GPS、TMS、メール、電話、EDIなど情報源は多い。しかし現場では、それらが分断され、人間が『今どこにある』『遅れるのか』『誰に連絡するか』をつないでいる。",
-"project44のMoやUber FreightのInsights AIは、複数データを横断し、Operatorが質問できる形へ整理する。まずは『探す』を減らす。"
-]},
-{heading:"次は、『調整する』をAIへ渡す。",body:[
-"project44 AutopilotはCarrier onboarding、Freight procurement、Exception managementなどでAgentを継続稼働させる。LSP44もExecutionとAutomationをAgent/API infrastructureとして提供する方向を示している。",
-"物流では一件の遅延が複数企業へ波及する。だからAIの価値は単体最適より、複数プレイヤーの間でActionをつなぐことにある。"
-]},
-{heading:"完全自律化を止めるのは、現場の例外。",body:[
-"天候、渋滞、荷待ち、破損、ドライバー不足、顧客都合。物流は例外の連続で、現場側が電話一本で解決しているケースも多い。",
-"だからAI導入は、現場文化を無視して全部置き換えるより、情報収集・定型連絡・再計算をAgentへ渡し、人間は交渉と例外判断へ集中する方が現実的だ。"
-]},
-{heading:"日本では、AIより先に『接続』が課題になる。",body:[
-"FAXや電話が残る現場では、AI Agentが直接システム操作できないこともある。そのためメール、音声、OCR、既存TMSとのBridgeを作りながら段階導入する必要がある。",
-"逆に言えば、非構造なコミュニケーションを扱えるAIが成熟すると、日本の物流は一気に変わる余地が大きい。"
-]}
-],
-sources:[
-{label:"project44 — Autopilot",url:"https://www.project44.com/press-releases/project44-launches-autopilot-to-cut-freight-costs-improve-data-quality-optimize-inventory-levels-and-accelerate-cash-flow/"},
-{label:"project44 — Mo AI Analyst",url:"https://www.project44.com/press-releases/project44-launches-conversational-ai-analyst-to-turn-real-time-supply-chain-data-into-faster-more-confident-decisions/"},
-{label:"Uber Freight — AI logistics",url:"https://www.uberfreight.com/en-US/technologie/ai"},
-{label:"Uber Freight — Intelligent supply chains",url:"https://www.uberfreight.com/en-US/blog/new-era"}
-]
+sections:[{"heading":"トラックが遅れている。誰が最初に気づくのか。","body":["荷主の担当者が納品予定を聞かれ、倉庫、運送会社、追跡システム、メールを順に調べる。情報はあるのに、結び付ける作業は人が担っている。これは物流の典型的な課題を示す想定例で、特定企業の導入事例ではない。","物流AIが最初に減らせるのは運転手ではなく、状況照会、転記、催促、関係者への定型連絡だ。"]},{"heading":"project44のMoは、物流データを読む分析担当。","body":["project44は2026年7月、対話型の物流分析機能Moを発表した。顧客の出荷データ、業務ルール、運送会社の履歴を参照して質問に答える設計で、発表時は貸切トラック、混載、海上輸送を対象としていた。","『今週の遅延が多い運送会社は』という質問では、顧客ごとの遅延定義や輸送区間を理解する必要がある。Moは顧客固有の文脈を使う点を訴求するが、発表された速度や精度は同社による評価であり独立検証ではない。"]},{"heading":"Autopilotは、答えるだけでなく業務を進める。","body":["project44は2026年5月、運送会社の登録、輸送調達、例外管理などにAIエージェントを設定するAutopilotを発表した。Moが分析に重心を置くのに対し、Autopilotは設定されたワークフローの実行を扱う。","遅延候補の抽出から通知、対応記録までをつなげられれば、人が同じ情報を転記する手間を減らせる。ただし運賃交渉や補償の判断まで無条件に自動化できるわけではない。実行権限と接続システムが境界になる。"]},{"heading":"Uber Freight Insights AIとの違いは何か。","body":["Uber FreightはInsights AIについて、物流に特化したデータを使う対話、主要指標のダッシュボード、推奨アクションを説明する。同社の輸送管理や運送会社ネットワークを背景に、物流判断を支える仕組みだ。","project44とUber Freightは同じ『物流AI』でも、利用できるデータ、契約する物流サービス、実際の輸送手配との接続が異なる。回答の見栄えより、自社の出荷データがどこにあり、誰が次の操作を実行するかで選ぶべきだ。"]},{"heading":"入力・出力・減らせる仕事を明確にする。","body":["入力は出荷予定、追跡イベント、運送会社情報、納品条件、顧客との約束、例外判断の基準。出力は遅延候補、根拠イベント、連絡先、対応提案、処理履歴になる。","減らせる可能性があるのは毎朝の状況照会、表計算への転記、同じ催促、定型レポートの作成だ。一方、破損時の補償、契約変更、取引先との優先順位の交渉には人の判断が残る。"]},{"heading":"日本の課題はFAXだけではない。","body":["荷主、元請け、協力会社、倉庫でシステムやデータ項目が異なり、電話やFAXが残る工程では、AIが読めても更新先が存在しないことがある。","現場の複雑さを『デジタル化の遅れ』だけで説明するのは不十分だ。荷姿、納品時間、再委託、取引条件などの例外が多い。まず一つの輸送区間で、必要な追跡情報を何割取得できるかを測りたい。"]},{"heading":"自動連絡の前に、止める条件を決める。","body":["AIが誤った到着予定を顧客へ送れば、店舗や倉庫の人員配置にも影響する。社内の要確認リストを作る段階と、外部へ連絡する段階ではリスクが違う。","最初は人の承認を残し、誤通知率、遅延検知から連絡までの時間、再問い合わせ件数を測る。運賃交渉や損害賠償は別の承認経路にする。これは製品の標準機能を保証する記述ではなく、導入時の設計提案だ。"]},{"heading":"デモより、現場の一日を短くできるか。","body":["質問に答えられても、結果を現場が使わなければ輸送は改善しない。担当者が普段使うシステムへ通知できるか、例外対応の履歴が残るか、担当者が交代しても追跡できるかが重要だ。","同じ出荷群で従来の手順とAI支援を比べ、見逃し、連絡の正確さ、処理時間を測る。物流AIの価値は巨大な最適化計算だけでなく、企業間に残る『確認する仕事』を信頼できる形で減らすことにある。"]}],
+sources:[{"label":"project44 — Autopilot (2026-05-11)","url":"https://www.project44.com/press-releases/project44-launches-autopilot-to-cut-freight-costs-improve-data-quality-optimize-inventory-levels-and-accelerate-cash-flow/"},{"label":"project44 — Mo launch (2026-07-23)","url":"https://www.project44.com/press-releases/project44-launches-conversational-ai-analyst-to-turn-real-time-supply-chain-data-into-faster-more-confident-decisions/"},{"label":"project44 — Mo product","url":"https://www.project44.com/ai-agent-orchestration/mo/"},{"label":"Uber Freight — Insights AI","url":"https://www.uberfreight.com/en-US/technologie/ai"},{"label":"Uber Freight — AI-led logistics","url":"https://www.uberfreight.com/en-US/blog/new-era"}]
 }
 ,{
 slug:"finance-ai",category:"ai-industry",eyebrow:"AI × INDUSTRY / FINANCE",
@@ -618,33 +571,8 @@ dek:"調査、モデリング、資料作成、リスク確認。Finance AIは�
 thesis:"金融AIの価値は『答えを出すこと』より、判断に必要な証拠・計算・比較を一つの画面へ集約することにある。",
 companies:["Rogo","Finance AI platforms"],
 depth:{current:"Level 2–3 — AI Analyst / Agent",target:"Level 4 — Human-on-the-loop",human:"投資判断、顧客説明、リスク許容、署名・執行、規制責任"},
-sections:[
-{heading:"金融業務は、判断より前処理が長い。",body:[
-"企業分析、投資銀行、資産運用では、決算資料、Filings、社内メモ、マーケットデータを集め、比較し、モデルへ入れ、資料にまとめるまでに膨大な時間がかかる。",
-"RogoのようなFinance特化AIは、Research、Modeling、Reportingを一つのAgent体験へ寄せようとしている。汎用チャットではなく、金融データと業務フォーマットへ深く入る点が重要だ。"
-]},
-{heading:"正しさだけでなく、追跡可能性が必要。",body:[
-"金融では数値が一つ違うだけで意思決定が変わる。だから『もっともらしい説明』より、どの資料・どの期間・どの計算を根拠にしたかを追えることが重要になる。",
-"Agentが表やチャートを生成するほど、Citation、Data permission、Version管理が製品品質になる。"
-]},
-{heading:"人間に残るのは、意味付けとリスク。",body:[
-"同じデータを見ても、買収すべきか、投資すべきか、顧客に勧めるべきかはBusiness contextで変わる。AIは比較・計算・シナリオ生成を高速化できるが、最終判断の責任は人間に残る。",
-"その結果、ジュニアの仕事は情報収集から、仮説設定と検証へ移っていく可能性がある。"
-]},
-{heading:"日本では、Excelを消すより『Excelの前後』を消す。",body:[
-"金融機関でExcelそのものを一気に置き換えるのは難しい。むしろデータ収集、転記、更新、コメント作成をAgentが担い、既存モデルへ正しいデータを流す方が導入しやすい。",
-"AI導入のKPIはレポート本数ではなく、人間が判断に使える時間をどれだけ増やせたかで見るべきだ。"
-]}
-,{heading:"金融でAIに渡しにくいのは、分析ではなく『責任のある結論』。",body:[
-"資料収集、決算比較、Model更新、Memo作成はAIへ移しやすい。しかし『この会社へ融資する』『この銘柄を推奨する』『このRiskを許容する』という判断は、規制・説明責任・顧客適合性と結びつく。",
-"金融AIの自律性を見るときは、AIがRecommendationを出せるかではなく、そのRecommendationがそのままTransactionや顧客提案へ接続されるかを見るべきだ。多くの領域ではHuman approvalが意図的に残る。",
-"一方、裏側のResearch工程では閉ループ化が進みやすい。新しいFilingsを検知し、Modelを更新し、差分を要約し、Analystへ重要度順で渡すところまで自動化できれば、人間は情報処理ではなく仮説と判断へ移る。"
-]}],
-sources:[
-{label:"Rogo",url:"https://rogo.ai/"},
-{label:"Rogo — Product design system",url:"https://design.rogo.ai/product"},
-{label:"Rogo — Product description",url:"https://design.rogo.ai/product/accordion"}
-]
+sections:[{"heading":"決算が出た夜、分析担当者は何をしているのか。","body":["企業が決算を公表すると、担当者は開示資料を探し、前期との差を調べ、既存の予測を修正し、顧客向け資料を作る。最も重要な判断の前に、収集と転記の作業が積み重なる。","金融AIの価値はもっともらしい答えを出すことではない。判断に必要な資料、計算、比較を、後から検証できる形に整えることだ。"]},{"heading":"Rogoは金融の仕事を単位にエージェントを設計する。","body":["Rogoの公式サイトは、財務モデル、比較会社分析、投資メモ、取引資料などを金融向けエージェントの対象に挙げる。Agentsページでは、既製のAgent Library、社内テンプレートを使うAgent Builder、新しい資料を契機に動くProactive Agentsを説明する。","汎用チャットで決算を要約するのとは異なり、金融機関が使う成果物と手順を前提にする構想だ。ただし複雑なモデルの計算式や会計上の例外が自動で正しく処理されるとは限らない。"]},{"heading":"公開情報と社内情報をつなぐ難しさ。","body":["RogoのIntegrationsページにはSEC開示、EDINET、S&P Capital IQ、FactSet、LSEGに加え、SharePoint、メール、CRM、仮想データルームが掲載されている。接続先ごとの契約や権限は別に必要となり得る。","重要なのは公開情報と社内資料を混ぜて答えるだけでなく、誰が見られる資料か、どの期間の数値か、外部へ転用できるかを区別することだ。未公表の重要情報を扱う部門では情報遮断の設計が欠かせない。"]},{"heading":"Projectsは案件の進行と情報更新を扱う。","body":["RogoのProjectsはファイル保管場所や仮想データルームと同期し、案件資料、担当者、エージェントを同じ作業場所で扱う構想だ。案件の目的に応じたワークフローや、レビュー待ちの操作も説明されている。","買収案件なら新しい資料を検知し、論点を整理し、担当者へ確認を求める流れが考えられる。これは検証用の業務例であり、すべての契約で完全自動実行されると保証するものではない。"]},{"heading":"金融の根拠は、出典リンクだけでは足りない。","body":["売上高の引用元が正しくても、連結と単体、年度と四半期、通貨、会計基準が違えば比較は成立しない。投資メモでは、数値と計算式のつながりを追えることが重要になる。","Rogoは社内知識と判断の文脈を保持するIntelligence機能を説明する。担当者交代時にも役立つ可能性があるが、記録の完全性と閲覧制限は実際の環境で確認したい。"]},{"heading":"Excelを消すより、Excelの前後を減らす。","body":["日本の金融機関ではExcelの数式や承認手順が業務資産になっている。これを一度に置き換えるより、開示資料の取り込み、比較表の更新、差分説明を先に改善する方法がある。","RogoのサイトにはExcelモデルを扱う画面例があるが、すべてのマクロや複雑な計算を再現できるという証拠ではない。実際のテンプレートを使い、入力、出力、検算、承認まで試すべきだ。"]},{"heading":"導入判断は速さと誤りの影響を同時に見る。","body":["過去の分析案件を使い、従来の担当者とAI支援の担当者で同じ成果物を作る。時間だけでなく、引用元の追跡率、数値誤り、レビュー時の修正回数、権限違反の有無を測る。","金融では一つの誤りが投資判断や顧客説明に波及する。AIの提案から顧客への配布・執行までの間には、適切な人間の承認が必要だ。"]},{"heading":"日本との接点はあるが、導入可能性は別に検証する。","body":["Rogoの公式サイトには野村の投資銀行部門幹部によるコメントが掲載されている。日本に関係する金融機関との接点を示す一次情報だが、国内のあらゆる業務で同じ機能が使える証拠ではない。","日本語開示、EDINETの利用条件、社内審査、データ処理地域、価格、サポートを個別に確認する。金融AIの本質は判断の代行ではなく、責任を持って判断できる材料を整えることにある。"]}],
+sources:[{"label":"Rogo — Official platform","url":"https://rogo.com/"},{"label":"Rogo — Agents","url":"https://rogo.com/platform/agents"},{"label":"Rogo — Projects","url":"https://rogo.com/platform/projects"},{"label":"Rogo — Intelligence","url":"https://rogo.com/platform/intelligence"},{"label":"Rogo — Integrations","url":"https://rogo.com/platform/integrations"}]
 },{
 slug:"healthcare-ai",category:"ai-industry",eyebrow:"AI × INDUSTRY / HEALTHCARE",
 title:"医療AIで、最後まで人間に残る判断は何か。",
@@ -652,33 +580,8 @@ dek:"記録、検索、患者説明、事前準備。Healthcare AIは診断置�
 thesis:"医療AIの現実的な価値は『医師の代わり』ではない。医師が患者を見る時間を取り戻すことだ。",
 companies:["OpenAI for Healthcare","Healthcare AI ecosystem"],
 depth:{current:"Level 2 — AI Analyst",target:"Level 3–4 in bounded workflows",human:"診断、治療方針、患者説明、同意、緊急判断、最終責任"},
-sections:[
-{heading:"医療は、AIが強くても自律化しにくい。",body:[
-"医療では誤りの影響が大きく、患者ごとの状況も複雑だ。そのため『AIが診断して治療を決める』より、まずDocumentation、情報検索、紹介状、患者向け説明などの支援から導入が進む。",
-"OpenAI for Healthcareも、臨床・研究・事務の作業工程を支援しながら、企業向け securityやHIPAA対応を前提にする構成を取っている。"
-]},
-{heading:"最も大きな余地は、医療者の時間。",body:[
-"診療前の情報整理、診療後の記録、保険・紹介関連の文書作成は、患者と直接向き合わない時間を増やす。AIがここを圧縮すれば、医療の供給能力そのものを増やせる。",
-"AdventHealthでは、OpenAI活用で一部のAdministrative task時間を大きく削減した事例が公開されている。効率化がそのまま患者対応時間へ転換される点が重要だ。"
-]},
-{heading:"AIが扱うほど、Trusted sourceが重要になる。",body:[
-"医療情報はWeb検索の寄せ集めでは足りない。院内Protocol、患者情報、信頼できるClinical evidenceを権限付きで接続し、根拠を示す必要がある。",
-"Healthcare AIはモデル単体より、EHRや院内Knowledgeへ安全に接続できるかが価値を決める。"
-]},
-{heading:"日本では、診断AIより事務AIが先に広がる可能性が高い。",body:[
-"診療報酬、個人情報、医療安全の制約を考えると、いきなりClinical decisionを渡すより、記録・文書・予約・患者説明支援から入る方が現実的だ。",
-"人間に最後まで残るのは、患者個人の価値観まで含めた意思決定と責任だろう。"
-]}
-,{heading:"医療AIで自律性を上げるほど、説明責任は消えない。",body:[
-"医療では、AIが高精度でも、そのまま最終判断へ接続できるとは限らない。誤診のCost、患者への説明、既往歴や生活背景、治療選択肢のPreferenceなど、Model外の情報が意思決定へ入るからだ。",
-"だから比較したいのはAccuracyだけではない。AIが何を根拠に提案したかをClinicianが確認できるか、異常時にHumanへ戻せるか、医療記録へどう残るか、責任主体が明確か。Healthcare AIではAIが進め、人が監督する運用が弱さではなく設計要件になる。",
-"一方、Documentation、Coding、Triage、画像の一次読影など、判断前後のOperationは自動化余地が大きい。人間を消すより、医師・看護師が患者を見る時間を取り戻す方向で価値が出やすい。"
-]}],
-sources:[
-{label:"OpenAI — OpenAI for Healthcare",url:"https://openai.com/index/openai-for-healthcare/"},
-{label:"OpenAI — Healthcare solutions",url:"https://openai.com/solutions/industries/healthcare/"},
-{label:"OpenAI — AdventHealth",url:"https://openai.com/index/adventhealth/"}
-]
+sections:[{"heading":"医師の仕事を減らすのではなく、患者に向き合う時間を戻す。","body":["診察後にも、医療者は記録を整理し、紹介状を作り、検査結果を確認し、患者向けの説明文を整える。医療に必要な仕事だが、すべてが専門的な判断を要するわけではない。","医療AIを『診断の代行』としてだけ見ると、情報検索、文書の下書き、院内手順の確認といった現実的な導入領域を見落とす。"]},{"heading":"OpenAI for Healthcareは利用環境と開発基盤を分ける。","body":["2026年1月発表のOpenAI for Healthcareは、医療機関の職員が使うChatGPT for Healthcareと、医療システムへ組み込むAPIを含む。診療、研究、事務の業務を支える製品群だ。","ChatGPT for Healthcareは医学文献などの根拠検索、院内方針との接続、退院時サマリーなどのテンプレート、組織のアクセス管理を説明する。APIは医療システムの開発者向けで、チャットの導入と業務システムの自動化は同じではない。"]},{"heading":"医学文献の引用だけでは診療の根拠にならない。","body":["AIが関連論文を見つけても、患者の年齢、既往歴、併用薬、院内で利用できる治療に合うかどうかは別の問題だ。","公式発表は外部の医学知識と院内で承認された方針を参照する仕組みを説明する。しかし引用が付いていても研究の質や患者への適用可能性が保証されるわけではない。医療者の確認が必要だ。"]},{"heading":"AdventHealthの事例は何を測ったのか。","body":["OpenAIが2026年5月に公開したAdventHealthの事例には、事務作業にかかる時間を減らす取り組みが紹介され、一部業務で80%の時間削減という数値が掲げられる。これはベンダーが紹介する特定の事例であり、全診療科で同じ結果が出たという意味ではない。","同事例で重要なのは、利用回数だけでなく処理時間、処理量、手戻りを測っていることだ。確認作業が別の担当者へ移っただけなら全体の効率化ではない。"]},{"heading":"HIPAA支援と日本の医療情報管理は別。","body":["公式説明は組織管理、監査ログ、データ管理、Business Associate Agreementなど、米国のHIPAA遵守を支援する機能を案内する。対象サービスや契約条件の確認が必要だ。","HIPAAへの対応を支援することと、日本の医療情報システムに求められる法令・ガイドラインへの適合は同義ではない。入力範囲、外部委託、保存場所、ログ、アクセス権限、削除手順を国内要件で確認する。"]},{"heading":"診断業務以外から始める選択肢。","body":["院内で承認済みの説明文を分かりやすく言い換える、会議記録を整理する、事務連絡の下書きを作る。診療判断に直接触れない工程から検証できる。","次に紹介状や退院時説明、診療記録の整理など、医療情報を扱うが人間が確認できる工程へ広げる。実データを使う前に契約と安全対策を確認し、AIの下書きを無確認で患者へ送らない。"]},{"heading":"医療AIは正答率だけで評価できない。","body":["重要な既往歴の見落とし、誤った引用、院内方針との不一致など、誤りの種類によって影響が異なる。","架空症例や適切に管理された検証データを用い、根拠の追跡、重大情報の欠落、修正時間、担当者間のばらつきを測る。モデルの一般的な評価と、自院の業務に対する安全性評価は別工程だ。"]},{"heading":"日本では文書作成から保存までが一つの仕事。","body":["電子カルテの仕様、診療科ごとの様式、医療情報の安全管理、診療報酬の事務処理が導入条件になる。AIが文章を作れても、記録の保存先とつながらなければ二重入力が残る。","どの文書に最も時間がかかるかを測り、入力から確認、電子カルテへの保存までを通して評価したい。価格、日本語、処理地域、システム接続は個別確認が必要だ。医療AIの価値は患者に向き合う時間を安全に増やせるかにある。"]}],
+sources:[{"label":"OpenAI — OpenAI for Healthcare (2026-01-08)","url":"https://openai.com/index/openai-for-healthcare/"},{"label":"OpenAI — Healthcare solutions","url":"https://openai.com/solutions/industries/healthcare/"},{"label":"OpenAI — AdventHealth (2026-05-21)","url":"https://openai.com/index/adventhealth/"}]
 },{
 slug:"retail-ai",category:"ai-industry",eyebrow:"AI × INDUSTRY / RETAIL",
 title:"価格決定は、人間の勘からAIの推論へ移るか。",
@@ -686,33 +589,8 @@ dek:"値付け、Markdown、在庫、補充。Retail AIは、過去実績だけ�
 thesis:"Retail AIの面白さは予測ではない。予測を『価格を変える』『発注する』というActionへつなげられるかにある。",
 companies:["Blue Yonder","Retail planning AI"],
 depth:{current:"Level 2–3 — AI Analyst / Agent",target:"Level 4 — Human-on-the-loop",human:"ブランド価格戦略、例外、仕入れ関係、重大な価格変更、責任"},
-sections:[
-{heading:"価格は、いまだに人間の感覚が残る領域。",body:[
-"競合価格、在庫量、シーズン残日数、需要、粗利を全部見ながらSKU単位で価格を決めるのは難しい。そのため現場では横並びや経験則に頼る場面が残る。",
-"AI Pricingは、価格変更と需要変化の関係を学習し、商品・店舗・日付ごとにMarkdownや価格案を出す。ここでは人間の『勘』をデータで補強できる。"
-]},
-{heading:"本当の価値は、価格と在庫を別々に考えないこと。",body:[
-"価格を下げれば需要は増えるが、在庫が不足すれば機会損失になる。逆に在庫過多なら、早いMarkdownの方が最終利益を守れることもある。",
-"Blue YonderのPlanning系は、Allocation、Replenishment、Inventory、Supplier orderingなどを同じPlanning文脈で扱う方向へ進んでいる。"
-]},
-{heading:"AIが発注まで行うと、役割が変わる。",body:[
-"予測値を出すだけならAnalystだが、Pending orderを確認し、推奨し、条件内で発注へ進むならAgentになる。",
-"ここでも人間は例外、ブランド戦略、仕入れ先との関係、急激な市場変化を担当し、AIは日常的な大量判断を持つ構造になる。"
-]},
-{heading:"日本の小売ほど、実は余地が大きい。",body:[
-"店舗数・SKU数が多く、担当者の経験で調整している企業ではAIの効果が出やすい。一方で値付けがブランドイメージに直結する業態では、完全自動化は難しい。",
-"最初はClearanceや補充のように成功条件を定量化しやすい領域から始めるのが現実的だ。"
-]}
-,{heading:"価格AIで危ないのは、精度より『目的関数』。",body:[
-"AIが価格を最適化するとき、何を最大化するかで結果は変わる。粗利、売上、在庫回転、来店頻度、廃棄削減。短期粗利だけを追えば値上げが増え、在庫消化だけを追えばBrandを壊す可能性がある。",
-"だからRetail AIを比較するときは、予測精度だけでなく、どのKPIを同時に制約として扱えるか、Human overrideがどこにあるか、価格変更の理由を説明できるかを見るべきだ。価格決定はModel性能より管理体制の問題になりやすい。",
-"日本では店舗ごとの裁量、チラシ・ポイント施策、メーカーとの商慣行も絡む。完全自律価格より、需要予測と提案をAIが担い、例外だけ人間が承認するAIが進め、人が監督する運用型から広がる可能性が高い。"
-]}],
-sources:[
-{label:"Blue Yonder — AI pricing",url:"https://now.blueyonder.com/AI-pricing-tailored"},
-{label:"Blue Yonder — 2026 Planning release",url:"https://es.blueyonder.com/release-announcements/1h-2026-release/cognitive-solutions-for-planning"},
-{label:"Blue Yonder — Retail decision speed",url:"https://blueyonder.com/blog/2026/retail-in-real-time-how-decision-speed-protects-margins"}
-]
+sections:[{"heading":"売れ残った商品を、いつ値下げするべきか。","body":["季節商品を早く値下げすれば在庫は減るかもしれないが、定価で売れたはずの利益を失う。遅すぎれば季節が終わり、さらに大きな値引きが必要になる。","価格AIが扱うのは最安値探しではない。いつ、どの商品を、どの店舗で、どれだけ値下げすると、在庫と粗利がどう変わるかという判断だ。"]},{"heading":"Blue YonderのPricing Real Timeは何を計算するのか。","body":["Blue Yonderは生鮮食品向けのPricing Real Timeについて、店舗別・商品別の価格弾力性と複数の需要要因を使うと説明する。価格弾力性とは、価格の変化に対して需要がどれほど変わるかという関係だ。","消費期限が近い商品は値下げを遅らせると廃棄につながる一方、早すぎる値下げは利益を削る。需要と在庫期限を合わせて判断する必要がある。新商品や急な天候変化では過去のデータが参考にならない場合もある。"]},{"heading":"値付けと在庫を別々に考えると失敗する。","body":["値下げで需要が増えても売り場に商品がなければ売上は生まれない。倉庫に在庫があるのに店舗へ補充されなければ、値下げの効果も測れない。","Blue Yonderは品揃え、財務計画、在庫、補充、配送の意思決定を接続する構想を説明する。ただし同じ企業の製品だからといって、単一の契約ですべての工程が自動連携するとは限らない。"]},{"heading":"価格を変更する権限をどこまでAIへ渡すか。","body":["AIが値下げを提案する段階と、店頭やECサイトの価格を実際に変更する段階は違う。誤設定は顧客への請求やブランドへの信頼に直結する。","最初は推奨価格と根拠を担当者が確認し、次に値下げ幅と対象商品を制限して自動化する。変更の取り消し、販促との重複、承認履歴を運用に含めたい。"]},{"heading":"生鮮食品とファッションでは判断条件が違う。","body":["生鮮食品では鮮度や廃棄期限が重要で、短い時間で価格を見直す。一方、衣料品では季節性、サイズ欠け、商品の見せ方、ブランドの値引き方針が大きく影響する。","Blue Yonderの公式資料は、生鮮向けのリアルタイム価格と、ファッション向けのライフサイクル価格・値下げ管理を別の文脈で紹介している。『小売AI』として一括りにせず、対象商品に合うかを確認する。"]},{"heading":"入力・出力・減らせる仕事。","body":["入力は商品別販売履歴、現在価格、在庫、補充予定、販売期限、販促計画、店舗ごとの需要。出力は推奨価格、期待する需要変化、値下げ候補、例外一覧になる。","減らせる可能性があるのは店舗別実績の集計、値下げ候補の抽出、価格案の作成、実績との突き合わせだ。ただし商品コードや在庫数が誤っていればAIも誤った状況を前提にする。"]},{"heading":"2026年のBlue Yonderの主張をどう確かめるか。","body":["Blue Yonderは2026年9月の公式ブログで、価格、販促、品揃え、補充が別システムに分かれると判断が遅くなると説明した。これは同社による分析であり、導入効果の保証ではない。","過去の値下げ判断を再現し、従来ルールとAIの提案を比較する。売上だけでなく粗利、廃棄、期末在庫、欠品、手戻りを同時に見る。天候や販促の影響があるため単純な前後比較だけでは不十分だ。"]},{"heading":"日本企業では売り場への反映まで検証する。","body":["店舗ごとの裁量、販促カレンダー、仕入れ条件、POSとECの価格整合、消費税表示など、価格変更には周辺業務が多い。AIが良い価格を計算しても売り場で正しく反映されなければ価値は出ない。","日本語の管理画面、国内サポート、価格、導入期間、店舗システムとの連携は個別に確認する。少数店舗の実データで提案から反映、実績検証まで試したい。"]}],
+sources:[{"label":"Blue Yonder — Pricing Real Time","url":"https://blueyonder.com/resources/automate-fresh-food-pricing-with-pricing-real-time"},{"label":"Blue Yonder — AI-enabled pricing","url":"https://now.blueyonder.com/AI-pricing-tailored"},{"label":"Blue Yonder — End-to-end retail","url":"https://now.blueyonder.com/e2e-retail.html"},{"label":"Blue Yonder — Retail decision speed (2026-09-01)","url":"https://blueyonder.com/blog/2026/retail-in-real-time-how-decision-speed-protects-margins"}]
 },{
 slug:"humanoid",category:"robotics",eyebrow:"ROBOTICS & PHYSICAL AI / HUMANOID",
 title:"Humanoidは、『人型』である必要が本当にあるのか。",
