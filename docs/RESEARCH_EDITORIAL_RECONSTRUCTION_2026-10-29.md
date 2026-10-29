@@ -34,8 +34,8 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 | ai-creative | runway-production | REWRITTEN_LIVE_AUDIT_PENDING |
 | ai-industry | manufacturing-ai | REWRITTEN_LIVE_AUDIT_PENDING |
 | robotics | warehouse-robotics | REWRITTEN_LIVE_AUDIT_PENDING |
-| gadgets | ai-glasses | REWRITE_PENDING |
-| gadgets | personal-ai-device | REWRITE_PENDING |
+| gadgets | ai-glasses | REWRITTEN_LIVE_AUDIT_PENDING |
+| gadgets | personal-ai-device | REWRITTEN_LIVE_AUDIT_PENDING |
 | ai-work | ai-legal | REWRITE_PENDING |
 | ai-work | ai-customer-service | REWRITE_PENDING |
 | ai-security | ai-soc | REWRITE_PENDING |
@@ -89,6 +89,11 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Each story was rewritten from official vendor documentation and includes product-specific mechanisms, operational inputs/outputs, limitations, comparisons, and Japan deployment criteria.
 - Evidence: [audit/research_reconstruction_batch_2026-10-29_04.md](../audit/research_reconstruction_batch_2026-10-29_04.md).
 - Status **REWRITTEN_LIVE_AUDIT_PENDING**. Latest content commit `75340223d18ab3a5df47453619c39ff556d8dab1` is Vercel READY; all four article routes HTTP 200 and correct original WebP heroes HTTP 200. Independent final audit and responsive screenshot QA remain open. Preserve original image mappings and slugs.
+
+## Batch 05 — 2026-10-29
+- Reconstructed **2 stories**: ai-glasses and personal-ai-device. Total rewritten **15/42**; remaining not rewritten **27**.
+- Source and editorial evidence: [audit/research_reconstruction_batch_2026-10-29_05.md](../audit/research_reconstruction_batch_2026-10-29_05.md).
+- Status **REWRITTEN_LIVE_AUDIT_PENDING** pending final independent audit, production checks and responsive screenshot QA. Existing slugs and image mappings unchanged.
 
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
