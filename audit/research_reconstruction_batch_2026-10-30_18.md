@@ -111,6 +111,6 @@ Source-bound independent editorial review of five previously PENDING articles. R
 
 ## Deployment and visual QA gate
 - Content commit: `7682788205e02370ddc18f7c5c1b0430fb561e47`.
-- Vercel production READY and independent article/hero HTTP verification: **pending at audit-file creation**; record results in canonical tracker after observed.
-- Fresh post-content Playwright 94-view QA: **pending at audit-file creation**; no claim of success until run evidence is checked.
+- Vercel content commit `7682788205e02370ddc18f7c5c1b0430fb561e47`, audit commit `c391d7dd34b72e1a1cab9c99b88f91dcf6b50eaf` and canonical tracker commit `eaec049d8b0abcad9ded04b3e811d624502be74f` reached production **READY**. Independently checked all five revised article pages HTTP 200 with unique new-body markers and all five adopted hero WebPs HTTP 200 / image/webp / RIFF-WebP magic.
+- Fresh post-content GitHub Actions rerun `40907522742` job `123740392029` **SUCCESS**. Checkout main `90f3ca13f8f0ac3cbe47f50461d7f9d4334e5fbd` includes batch-18 content. Deterministic editorial gate **47 stories, 0 findings**; Playwright **94 desktop/mobile views, 0 failures**. Screenshot artifact `12933943080` (7-day retention). This is automated QA; not a claim of manually inspecting every screenshot.
 - No completion notification: other PENDING articles remain.
