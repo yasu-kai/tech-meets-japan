@@ -143,6 +143,13 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Primary-source link checks found automated-client HTTP 403 for Plaud support and intermittent ETH/Butterfly source errors. The ETH and Butterfly references were replaced by accessible official alternatives. A 403 does not establish that the page is absent in a normal browser.
 - **Open blockers:** independent source-bound final editorial audit for every original story; desktop/mobile visual QA for all stories; production verification of the latest final content commit; review of four additional separately published AI articles and exact inventory reconciliation. No completion notification until all required gates PASS.
 
+## Full Research HTTP/image smoke QA — 2026-10-30
+- Independently requested **all 47** public Research article URLs (43 original tracker stories plus four newer AI articles). **47/47** returned HTTP 200 and included the correct slug in the rendered HTML.
+- Independently requested all **47** article-specific `/editorial/generated/{slug}.webp` assets. **47/47** returned HTTP 200, `image/webp`, and valid RIFF/WebP magic bytes. This is URL/asset verification, **not** desktop/mobile visual approval.
+- Vercel production commit `edfe0218af0e3da27961961b408c33d4b658fdb4` reached **READY**. Subsequent documentation/QA workflow commits do not change editorial content.
+- Added `scripts/research-visual-qa.mjs` and GitHub Actions workflow `.github/workflows/research-visual-qa.yml` to capture desktop (1440px) and mobile (390px) full-page screenshots for all 47 pages, checking hero load, horizontal overflow and heading overlap. The first workflow run failed on an unsupported Ubuntu 26.04 Playwright browser installation; pinned the runner to Ubuntu 24.04 and retriggered. **Do not count visual QA PASS until the corrected workflow completes and screenshots are inspected.**
+- Editorial final independent audit remains **0/43 PASS** for the original tracker; four newer articles also require depth review. Do not notify completion.
+
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
 - Verify official references for each material claim before publishing a rewrite.
