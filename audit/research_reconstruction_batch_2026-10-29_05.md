@@ -41,3 +41,11 @@ Two device stories fully rewritten from first-party sources on 2026-10-29. Exist
 - Follow-up added 4-5 original sections per article: ai-glasses 13 sections / 2616 Japanese characters; personal-ai-device 14 sections / 2742 Japanese characters.
 - Focus: display tradeoffs, audio vs visual instruction, privacy and consent; AI device memory, execution permissions, cost, continuity and exit risk.
 - Independent final audit and responsive QA remain open.
+
+## Historical source link repair and live verification
+- Original Humane consumer FAQ link is no longer reliably accessible (web retrieval 502; remote HTTP connection error). Removed it from live article sources; historical provenance retained in the audit.
+- Replaced broken live source with HP's 2025-02-18 first-party acquisition release and Ars Technica's contemporaneous 2025-02-19 report citing the original Humane FAQ shutdown terms. Explicit secondary-source exception for a defunct primary page.
+- Content follow-up commit `ca9d963f4cadbf072b7093e61d4621c92d8d46a8` reached Vercel Production deployment `dpl_JGBYk2Ao6kqvSeS8SXd261bLhKv4` READY.
+- Both live routes HTTP 200 with new sections; correct original WebP heroes HTTP 200 image/webp. SHA256 prefixes: ai-glasses `0a85547caad79b90b8de`, personal-ai-device `4480425acd4949cc370e`.
+- Eight of nine original official links HTTP 200 via remote client; the original Humane FAQ failed and was replaced.
+- Final independent editorial audit and desktop/mobile screenshot QA remain open; **not final PASS**.

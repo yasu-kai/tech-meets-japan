@@ -93,7 +93,7 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 ## Batch 05 — 2026-10-29
 - Reconstructed **2 stories**: ai-glasses and personal-ai-device. Total rewritten **15/42**; remaining not rewritten **27**.
 - Source and editorial evidence: [audit/research_reconstruction_batch_2026-10-29_05.md](../audit/research_reconstruction_batch_2026-10-29_05.md).
-- Status **REWRITTEN_LIVE_AUDIT_PENDING** pending final independent audit, production checks and responsive screenshot QA. Existing slugs and image mappings unchanged.
+- Status **REWRITTEN_LIVE_AUDIT_PENDING**. Both article routes and original WebP heroes verified HTTP 200. Broken historical Humane source replaced with HP first-party acquisition release and contemporary secondary shutdown reporting. Final independent audit and responsive screenshot QA remain open.
 
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
