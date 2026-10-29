@@ -191,17 +191,23 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Fresh 47-page/94-viewport Playwright rerun on workflow `40907522742`, job `123649434786`, **completed SUCCESS** after content deployment. Job logs: deterministic editorial audit PASS, **94 views, 0 failures**; screenshot artifact upload succeeded. Automated layout/asset checks are not equivalent to a human pixel-by-pixel review of all screenshots.
 - Canonical independent second-pass editorial status **15/47 PASS, 32/47 PENDING**. Global completion gate remains OPEN; no notification.
 
+## Batch 16 — 2026-10-30 / six additional second-pass editorial PASS
+- Independent second-pass review and source-bound corrections completed for **ixana-wir, mudra-link, ipolish-digital-nails, chargebotic-kestrel, nori-a3, savor-carbon-fats**. Individual verdict, score, findings, limitations, comparisons and official evidence are recorded in [audit/research_reconstruction_batch_2026-10-30_16.md](../audit/research_reconstruction_batch_2026-10-30_16.md).
+- Critical correction: Mudra Link's official listed price is now **USD 499**, not the draft's USD 249. iPolish's QR activation is 30 days with no separate subscription and is tied to batch color calibration. Chargebotic Kestrel is remotely perched/fixed near a power line, not a continuously hovering power-generating drone; the vendor's noncontact conductor claim is explicitly qualified.
+- Article changes in GitHub main commit `3fdd85164c92dc7539235ebb643db63dc6e2190e`; audit evidence commit `10f5d1bb70b0f7180dc903e8a193d105a5b9d890`. Existing URLs, adopted image mappings and binary files remain unchanged. The legacy 43-row first-pass tracker is unchanged.
+- Canonical editorial second-pass state now **21/47 PASS, 26/47 PENDING**. Production deployment and fresh 94-view Playwright QA for this content revision still need explicit verification before the global publication gate can close. No completion notification.
+
 ## Canonical final editorial audit — 47 Research articles
 The statuses below are separate from the first-pass rewrite status. `PASS` means source-bound independent second-pass editorial acceptance, `PENDING` means not yet independently reviewed; the sitewide completion gate also requires current production desktop/mobile QA.
 
 | Slug | Category | Second-pass editorial verdict | Evidence |
 | --- | --- | --- | --- |
-| ixana-wir | gadgets | PENDING | — |
-| mudra-link | gadgets | PENDING | — |
-| ipolish-digital-nails | gadgets | PENDING | — |
-| chargebotic-kestrel | materials-energy | PENDING | — |
-| nori-a3 | robotics | PENDING | — |
-| savor-carbon-fats | materials-energy | PENDING | — |
+| ixana-wir | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_16.md |
+| mudra-link | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_16.md |
+| ipolish-digital-nails | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_16.md |
+| chargebotic-kestrel | materials-energy | PASS | audit/research_reconstruction_batch_2026-10-30_16.md |
+| nori-a3 | robotics | PASS | audit/research_reconstruction_batch_2026-10-30_16.md |
+| savor-carbon-fats | materials-energy | PASS | audit/research_reconstruction_batch_2026-10-30_16.md |
 | coding-agents | ai-work | PENDING | — |
 | ai-sales | ai-work | PENDING | — |
 | ai-recruiting | ai-work | PENDING | — |
