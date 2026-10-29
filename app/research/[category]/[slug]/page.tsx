@@ -1,5 +1,5 @@
 import GeneratedEditorialImage from "@/components/GeneratedEditorialImage";
-import { generatedEditorialImage, isProtectedEditorialArticle } from "@/lib/generatedEditorial";
+import { generatedEditorialImage } from "@/lib/generatedEditorial";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -37,13 +37,28 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
   const story=storyMap[slug];
   if(!story || story.category!==category) notFound();
   const image=generatedEditorialImage(story.slug);
-  // Keep the reviewed 32 articles identical, including their existing related cards.
-  const relatedImage=(itemSlug:string)=>{
-    const candidate=generatedEditorialImage(itemSlug);
-    return isProtectedEditorialArticle(story.slug) && candidate?.batch ? undefined : candidate;
-  };
+  // Reuse the article's adopted image in related cards; never fall back to a repeated placeholder.
+  const relatedImage=(itemSlug:string)=>generatedEditorialImage(itemSlug);
   const isFrontierTech=["nori-a3","savor-carbon-fats","chargebotic-kestrel","ixana-wir","mudra-link","ipolish-digital-nails"].includes(story.slug);
-  const related=researchStories.filter(item=>item.category===story.category && item.slug!==story.slug).slice(0,3);
+  const editorialRelated:Record<string,string[]>={
+    "wearable-memory":["personal-ai-device","weird-gadgets","future-input"],
+    "future-input":["silent-speech","mudra-link","ai-glasses"],
+    "weird-gadgets":["wearable-memory","personal-ai-device","ai-glasses"],
+    "silent-speech":["future-input","mudra-link","bridge-ultrasound-bci"],
+    "browser-agents":["coding-agents","ai-customer-service","ai-sales"],
+    "agentic-dev-security":["identity-agents","continuous-validation","ai-soc"],
+    "procurement-agents":["finance-ai","logistics-ai","retail-ai"],
+    "robotics-as-labor":["warehouse-robotics","humanoid","physical-ai-platforms"],
+    "embodied-ai-reception":["personal-ai-device","ai-glasses","future-input"],
+    "bridge-ultrasound-bci":["ultrasound-bci","silent-speech","future-input"],
+    "ultrasound-bci":["bridge-ultrasound-bci","future-input","silent-speech"],
+    "ai-governance":["identity-agents","agentic-dev-security","future-of-security"],
+    "data-privacy":["ai-governance","identity-agents","future-of-security"],
+    "human-ai-collaboration":["browser-agents","procurement-agents","ai-customer-service"],
+    "future-of-security":["ai-governance","agentic-dev-security","continuous-validation"],
+  };
+  const curated=(editorialRelated[story.slug]||[]).map(slug=>storyMap[slug]).filter((item):item is ResearchStory=>Boolean(item&&item.slug!==story.slug));
+  const related=curated.length?curated.slice(0,3):researchStories.filter(item=>item.category===story.category && item.slug!==story.slug).slice(0,3);
 
   return <>
     <Header/>
