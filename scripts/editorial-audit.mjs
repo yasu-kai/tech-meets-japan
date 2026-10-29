@@ -24,20 +24,20 @@ if(errors>0){ console.error("FAIL: generic editorial filler detected."); process
 
 
 const research=readFileSync("lib/researchStories.ts","utf8");
-const storyMatches=[...research.matchAll(/slug:"([^"]+)",category:"([^"]+)"/g)];
+const storyMatches=[...research.matchAll(/(?:"slug"|slug)\s*:\s*"([^"]+)"\s*,\s*(?:"category"|category)\s*:\s*"([^"]+)"/g)];
 let researchErrors=0;
 for(let i=0;i<storyMatches.length;i++){
   const slug=storyMatches[i][1];
   const start=storyMatches[i].index;
   const end=i+1<storyMatches.length?storyMatches[i+1].index:research.length;
   const block=research.slice(start,end);
-  const bodies=[...block.matchAll(/body:\[(.*?)\](?:,|\})/gs)]
-    .flatMap(x=>[...x[1].matchAll(/"([^"]+)"/g)].map(y=>y[1]))
+  const bodies=[...block.matchAll(/(?:"body"|body)\s*:\s*\[((?:\\.|[^\]])*)\]/gs)]
+    .flatMap(x=>{ try { return JSON.parse("["+x[1]+"]"); } catch { return []; } })
     .join("");
-  const sections=(block.match(/heading:"/g)||[]).length;
-  const sources=(block.match(/\{label:"[^"]+",url:"[^"]+"\}/g)||[]).length;
-  if(bodies.length<650){ console.error("[THIN_STORY]",slug,"body chars",bodies.length); researchErrors++; }
-  if(sections<4){ console.error("[TOO_FEW_SECTIONS]",slug,"sections",sections); researchErrors++; }
+  const sections=(block.match(/(?:"heading"|heading)\s*:/g)||[]).length;
+  const sources=(block.match(/(?:"label"|label)\s*:/g)||[]).length;
+  if(bodies.length<1800){ console.error("[THIN_STORY]",slug,"body chars",bodies.length); researchErrors++; }
+  if(sections<6){ console.error("[TOO_FEW_SECTIONS]",slug,"sections",sections); researchErrors++; }
   if(sources<3){ console.error("[TOO_FEW_SOURCES]",slug,"sources",sources); researchErrors++; }
 }
 const storyTemplate=readFileSync("app/research/[category]/[slug]/page.tsx","utf8");
@@ -45,6 +45,7 @@ if(!storyTemplate.includes("story-editorial-visual")){
   console.error("[MISSING_VISUAL_SYSTEM] research story template has no editorial visual");
   researchErrors++;
 }
+if(storyMatches.length!==47){ console.error("[INVENTORY_MISMATCH] Expected 47 Research stories, got",storyMatches.length); researchErrors++; }
 console.log("- research stories:",storyMatches.length);
 console.log("- research quality findings:",researchErrors);
 if(researchErrors>0){
@@ -88,7 +89,7 @@ for(const story of storyMatches){
   const start=story.index;
   const end=storyMatches.find(x=>x.index>start)?.index ?? research.length;
   const block=research.slice(start,end);
-  const title=block.match(/title:"([^"]+)"/)?.[1]||"";
+  const title=block.match(/(?:"title"|title)\s*:\s*"([^"]+)"/)?.[1]||"";
   if(suspiciousJapaneseEndings.test(title)){
     console.error("[SUSPICIOUS_HEADLINE_END]",slug,title);
     wrapErrors++;
