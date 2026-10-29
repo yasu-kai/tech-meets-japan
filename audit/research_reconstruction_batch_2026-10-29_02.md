@@ -29,4 +29,9 @@ Four articles rewritten in lib/researchStories.ts without changing their slug, c
 - Added two evidence-aware sections to each article: quantitative Wi-R throughput and industrial use, Mudra interoperability and accessibility, iPolish refill sizing and material disposal, Chargebotic energy arithmetic and high-voltage deployment caveats. All added numerical comparisons are arithmetic or official manufacturer disclosures, not independent product performance tests.
 
 ## Delivery evidence
-GitHub commit and Vercel deployment details are to be appended after successful deployment. Production READY alone does not prove live article rendering.
+- GitHub main content commits: `8d1d90c5987183dc9b596a540d8391f472483f31` (initial batch) and `0b99b8db0afa98ea6f962624cba63d249f396cb3` (quantitative depth pass).
+- Vercel Production deployment for second commit: `dpl_GPHq63mZEmDHyoq5n9Xju8vzVWQP` — **READY**, commit SHA matched.
+- Live production checks on 2026-10-29 via an independent HTTP client: **4/4 article URLs HTTP 200**; each page rendered **10 story sections**, including the new quantitative/operational sections. **4/4 original hero assets HTTP 200 with Content-Type image/webp** and RIFF/WEBP binary signatures.
+- Live image SHA-256 prefixes: ixana-wir `2ae48447fbb3089ad430`; mudra-link `6ebfcb146b1eaaf032bc`; ipolish-digital-nails `88fbba9f88dc2f4aae73`; chargebotic-kestrel `67a8a8267221b8a8ec80`. No image binaries were modified by the commits.
+- Official source reachability check: **18/20 source links HTTP 200**. Two Mudra support pages returned **403 to the automated client**; the official gestures page was separately retrievable through web inspection. Treat these as automated access restrictions, not confirmed broken links.
+- **Remaining QA blockers:** no independent full-text auditor sign-off and no desktop/mobile screenshot inspection. Thus all four remain `REWRITTEN_LIVE_AUDIT_PENDING`, not final PASS.
