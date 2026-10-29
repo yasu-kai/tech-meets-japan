@@ -72,3 +72,8 @@ Editorial PASS means the reviewed text meets the source-bound editorial criteria
 - The 5 revised pages and unchanged original hero binaries passed live HTTP/content checks on 2026-10-30.
 - The existing Playwright workflow run `40907522742` was requested for re-run after these content updates; do not mark post-change desktop/mobile QA PASS until its latest attempt finishes and results are inspected.
 - Keep 47-story final completion gate open. Editorial PASS is **5/47** after this batch; other 42 stories remain unaudited in the independent second pass. Do not notify the owner until all 47 satisfy editorial and visual gates.
+
+## Final post-change QA and headline corrections
+- Corrected two overstatements discovered in the headline review: `robotics-as-labor` is now **ロボットを買わずに使う。Formicが変える工場の自動化。** rather than claiming robot purchasing has ended; `embodied-ai-reception` is now **受付に人の姿をしたAI。Protoは接客をどう変えるか。** rather than implying Proto is not a screen-based display. The article titles and Research listing titles were updated together in GitHub commits `300c01f012d3f912afb633522bf07a8d0a3d26ce` and `c74fb7fd4384eace2abd39d066a90e96e8a374b3`.
+- Latest title-corrected Vercel Production deployment `dpl_3g9tCBeMsuG6kEc99xfYV9x659Nh` reached READY. Both revised article pages returned HTTP 200 and displayed their corrected titles; original headlines were absent.
+- GitHub Actions workflow `40907522742`, latest rerun job `123619472614`, **PASS: 94 desktop/mobile views, 0 automated failures** after all nine batch-12/13 article changes and title corrections. Screenshot artifact ID `12918667139`. This verifies automated layout, hero and related-card checks; it is not a claim of fresh human inspection of every screenshot.
