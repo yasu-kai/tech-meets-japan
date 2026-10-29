@@ -197,6 +197,11 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Article changes in GitHub main commit `3fdd85164c92dc7539235ebb643db63dc6e2190e`; audit evidence commit `10f5d1bb70b0f7180dc903e8a193d105a5b9d890`. Existing URLs, adopted image mappings and binary files remain unchanged. The legacy 43-row first-pass tracker is unchanged.
 - Canonical editorial second-pass state now **21/47 PASS, 26/47 PENDING**. Vercel production content commit `3fdd85164c92dc7539235ebb643db63dc6e2190e` and latest tracker commit `dd1751e303b0eefaa3fc1179f649c09ef06a4e87` both reached **READY**. Independent VPS checks: all six revised article URLs HTTP 200 with expected body markers; all six adopted hero WebPs HTTP 200 / image/webp / RIFF-WebP magic. Post-change GitHub Actions rerun `40907522742`, job `123664638644` **SUCCESS**: deterministic editorial gate 47 stories, 0 findings; Playwright **94 desktop/mobile views, 0 failures**; screenshot artifact `12924532597`. Automated visual assertions do not equal manual review of every screenshot. Global completion gate remains OPEN; no notification.
 
+## Batch 17 — 2026-10-30 / six independent second-pass editorial PASS
+- Reviewed and revised **coding-agents, ai-sales, ai-recruiting, ai-video, runway-production, manufacturing-ai** against first-party sources; each article now has 3,191–3,808 substantive Japanese body characters without filler. Corrected Replit checkpoint scope, Eightfold's interview capability, Artisan's CRM controls and dialer, Runway credit and editing limits, and Siemens Copilot versus Digital Twin functions. Removed outdated numerical AI level metadata from three stories.
+- Source-bound individual verdicts, scores, warnings, comparisons and fixes: [audit/research_reconstruction_batch_2026-10-30_17.md](../audit/research_reconstruction_batch_2026-10-30_17.md). Content commit `4feaa6ae7e2c0f5ea3a302a8a303bb7ee6db7892`; Vercel deployment `dpl_Bom3Fo5MSA7C8P1Z1d4HV7TH3Dvj` READY. Independent VPS check: all six revised pages HTTP 200 with expected text; all six adopted WebPs HTTP 200, image/webp and RIFF magic.
+- Fresh 94-view GitHub Actions Playwright rerun requested after this batch; result pending verification. **Canonical editorial second-pass status 27/47 PASS, 20/47 PENDING.** Global completion gate remains OPEN. No notification.
+
 ## Canonical final editorial audit — 47 Research articles
 The statuses below are separate from the first-pass rewrite status. `PASS` means source-bound independent second-pass editorial acceptance, `PENDING` means not yet independently reviewed; the sitewide completion gate also requires current production desktop/mobile QA.
 
@@ -208,12 +213,12 @@ The statuses below are separate from the first-pass rewrite status. `PASS` means
 | chargebotic-kestrel | materials-energy | PASS | audit/research_reconstruction_batch_2026-10-30_16.md |
 | nori-a3 | robotics | PASS | audit/research_reconstruction_batch_2026-10-30_16.md |
 | savor-carbon-fats | materials-energy | PASS | audit/research_reconstruction_batch_2026-10-30_16.md |
-| coding-agents | ai-work | PENDING | — |
-| ai-sales | ai-work | PENDING | — |
-| ai-recruiting | ai-work | PENDING | — |
-| ai-video | ai-creative | PENDING | — |
-| runway-production | ai-creative | PENDING | — |
-| manufacturing-ai | ai-industry | PENDING | — |
+| coding-agents | ai-work | PASS | audit/research_reconstruction_batch_2026-10-30_17.md |
+| ai-sales | ai-work | PASS | audit/research_reconstruction_batch_2026-10-30_17.md |
+| ai-recruiting | ai-work | PASS | audit/research_reconstruction_batch_2026-10-30_17.md |
+| ai-video | ai-creative | PASS | audit/research_reconstruction_batch_2026-10-30_17.md |
+| runway-production | ai-creative | PASS | audit/research_reconstruction_batch_2026-10-30_17.md |
+| manufacturing-ai | ai-industry | PASS | audit/research_reconstruction_batch_2026-10-30_17.md |
 | warehouse-robotics | robotics | PENDING | — |
 | ai-glasses | gadgets | PENDING | — |
 | personal-ai-device | gadgets | PENDING | — |
