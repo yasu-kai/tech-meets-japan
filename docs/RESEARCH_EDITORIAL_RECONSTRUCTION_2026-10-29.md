@@ -49,10 +49,10 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 | ai-industry | finance-ai | REWRITTEN_LIVE_AUDIT_PENDING |
 | ai-industry | healthcare-ai | REWRITTEN_LIVE_AUDIT_PENDING |
 | ai-industry | retail-ai | REWRITTEN_LIVE_AUDIT_PENDING |
-| robotics | humanoid | REWRITE_PENDING |
-| robotics | autonomous-driving | REWRITE_PENDING |
-| robotics | physical-ai-platforms | REWRITE_PENDING |
-| robotics | drones | REWRITE_PENDING |
+| robotics | humanoid | REWRITTEN_LIVE_AUDIT_PENDING |
+| robotics | autonomous-driving | REWRITTEN_LIVE_AUDIT_PENDING |
+| robotics | physical-ai-platforms | REWRITTEN_LIVE_AUDIT_PENDING |
+| robotics | drones | REWRITTEN_LIVE_AUDIT_PENDING |
 | gadgets | wearable-memory | REWRITE_PENDING |
 | gadgets | future-input | REWRITE_PENDING |
 | gadgets | weird-gadgets | REWRITE_PENDING |
@@ -118,6 +118,11 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Source and editorial notes: [audit/research_reconstruction_batch_2026-10-30_08.md](../audit/research_reconstruction_batch_2026-10-30_08.md).
 - Original slugs, image associations and image binaries unchanged. All five article pages and original WebP heroes returned HTTP 200, WebP MIME and RIFF magic from an independent remote HTTP client on 2026-10-30; screenshot QA and independent final audit pending.
 - Expanded the five rewrites further: creative-stack 2491 body characters; logistics-ai 2361 body characters; finance-ai 2385 body characters; healthcare-ai 2305 body characters; retail-ai 2167 body characters.
+
+## Batch 09 — 2026-10-30
+- Reconstructed **4 more stories**: humanoid, autonomous-driving, physical-ai-platforms, drones. Total **32/43** rewritten; **11/43** still pending. **0 final independent PASS**.
+- Source and editorial notes: [audit/research_reconstruction_batch_2026-10-30_09.md](../audit/research_reconstruction_batch_2026-10-30_09.md).
+- No slugs, categories, image binaries or associations changed. Deployment and visual QA pending.
 
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.

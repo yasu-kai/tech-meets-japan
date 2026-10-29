@@ -598,33 +598,8 @@ dek:"FigureをはじめとするHumanoid各社が狙うのは、ロボット専�
 thesis:"Humanoidの合理性は見た目ではない。工場・家・道具がすでに『人間サイズ』で設計されていることにある。",
 companies:["Figure","Humanoid ecosystem"],
 depth:{current:"Level 3 — Physical AI Agent",target:"Level 4–5 in bounded environments",human:"目的、安全Policy、例外、保守、重大判断"},
-sections:[
-{heading:"人型は、最適形状ではないかもしれない。",body:[
-"荷物を運ぶだけなら車輪の方が効率的で、溶接なら固定Robot armの方が速い。Humanoidが意味を持つのは、一つの作業最適ではなく、人間用に作られた複数環境をそのまま使える可能性にある。",
-"階段、棚、ドア、工具、キッチン。世界側を作り直さずRobot側が合わせる発想だ。"
-]},
-{heading:"FigureのHelixは、全身を一つのPolicyで動かそうとしている。",body:[
-"Helix 02はVision、Touch、Proprioceptionを使い、歩行・操作・バランスを連続した一つのSystemとして扱う。長時間のTaskをResetなしに行う方向が示されている。",
-"さらにHelix 2.5では、未知の家庭環境へ入ってZero-shotで作業するGeneralizationを狙う。Humanoidの競争軸はDemoの派手さより、場所が変わっても働けるかへ移っている。"
-]},
-{heading:"最大の壁は、器用さより信頼性。",body:[
-"工場や家庭で使うなら、100回中95回成功では足りない作業もある。人間と同じ空間で動く以上、安全性、故障時停止、物を壊さないことが重要になる。",
-"Physical AIはソフトウェアより失敗コストが高い。だから自律度の上昇と同時にSafety layerが必要になる。"
-]},
-{heading:"日本はHumanoidの実験場になり得る。",body:[
-"製造業、物流、介護、人手不足という条件が揃う一方、日本企業は産業Robotの経験も厚い。",
-"Humanoidが既存Robotを全部置き換えるのではなく、『設備を専用化するほど量がない仕事』から入る可能性が高い。"
-]}
-,{heading:"人型の価値は、賢さより『既存環境を変えなくていいこと』。",body:[
-"工場や倉庫をRobot専用に作り直せるなら、人型である必要は薄い。固定Arm、AMR、Conveyorの方が速く安く安全な工程は多い。それでもHumanoidが注目されるのは、階段、扉、棚、道具、作業台など、人間向けに作られたInfrastructureをそのまま使える可能性があるからだ。",
-"つまり比較対象はHumanoid同士だけではない。工程を固定自動化する費用、建屋を改修する費用、人手を残す費用と比べる必要がある。価値は『二足歩行できる』ことではなく、General-purposeなBodyへSoftware skillを追加していく経済性が成立するかにある。",
-"日本では既存工場が多く、Brownfieldへ後付けできる価値は大きい一方、安全柵なしで人と混在できるか、保守を誰が担うか、稼働率をどこまで上げられるかが導入判断を決める。"
-]}],
-sources:[
-{label:"Figure — Helix",url:"https://www.figure.ai/helix"},
-{label:"Figure — Helix 02",url:"https://www.figure.ai/news/helix-02"},
-{label:"Figure — Helix 2.5",url:"https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization"}
-]
+sections:[{"heading":"人型ロボットは、車輪より不利なのになぜ必要なのか。","body":["箱を運ぶだけなら車輪付きの搬送ロボットの方が単純で、溶接なら固定式の産業ロボットの方が安定する。人型の意味は、専用設備へ置き換えるほど量がない作業を、人間向けに作られた場所で引き受けられる可能性にある。","階段、ドア、棚、工具、作業台は人間の身体を前提に配置されている。建物を改造せずに仕事を増やせるなら、人型であることが経済的な価値になる。"]},{"heading":"Figure Helix 02は歩行と手作業を一つにつなぐ。","body":["Figureが2026年1月に発表したHelix 02は、視覚、触覚、関節の状態を使い、歩行、物をつかむ動作、バランスを連続して制御する仕組みだ。公式発表では、食器洗い機の片付けを4分間、途中のリセットなしで実行した例を示している。","単に手が器用なだけでは足りない。皿を持ったまま歩き、姿勢を変え、両手を協調させる必要がある。Figureの実演はこの複合動作を示すが、あらゆる家庭で同じ作業ができるという証明ではない。"]},{"heading":"Helixの三層構造は何を分担するのか。","body":["Figureの技術説明では、System 2が場面や言語の意味を扱い、System 1が身体全体の動作目標を作り、System 0が高頻度の身体制御を担う。高いレベルの指示を、足や指の細かな操作へつなぐ構成だ。","たとえば『食器を棚にしまう』という目的と、実際に指へどの程度の力をかけるかという制御では時間尺度が違う。各層をつなぐことが、歩きながら物を扱うための課題になる。"]},{"heading":"Helix 2.5が狙うのは、知らない家でも動くこと。","body":["2026年9月のHelix 2.5発表でFigureは、学習に使っていない30軒の住宅で、部屋の片付け、タオルをたたむ、ベッドを整えるという三つの動作を検証したと説明した。環境ごとの追加データ収集なしに試す点が従来の実演と異なる。","同社は事前学習の効果や成功率を公表しているが、これはFigureによる評価であり、独立した第三者試験ではない。対象は限定された三つの作業で、家事全般が解決したわけではない。"]},{"heading":"器用さより『失敗から戻れるか』が重要。","body":["柔らかい布をつかむ、棚の奥の物へ手を伸ばす、持ち上げた物が滑る。現実の作業では、毎回同じ動きで成功するとは限らない。FigureはHelix 2.5で姿勢を変えて作業をやり直す自己修正の例を示している。","現場では成功率だけでなく、失敗後に安全な状態へ戻れるか、人がどれほど介入するかを測る必要がある。壊れやすい物や人の近くでは、一度の失敗の影響が大きい。"]},{"heading":"既存の自動化との比較を避けてはいけない。","body":["人型ロボットの導入判断では、同じ作業を固定ロボット、搬送ロボット、人間の作業改善で実現する費用と比べる必要がある。人型同士の性能比較だけでは、設備投資の合理性が分からない。","作業が毎日同じなら専用機の方が有利な可能性がある。人型が価値を持つのは、作業内容が変わり、場所も変わり、専用設備の改修費が高い場合だ。"]},{"heading":"入力・出力・人が引き受ける仕事。","body":["入力はカメラや触覚の情報、作業目標、周囲の人や物の位置。出力は歩行、把持、移動、物の配置などの物理的な動作になる。ソフトウェアのエージェントと違い、誤操作が物損やけがにつながる。","人間に残るのは作業の定義、安全区域の設定、異常時の停止、保守、作業結果の確認だ。デモで一度成功したことと、工場で毎日安全に稼働できることを分けて評価したい。"]},{"heading":"日本の工場で最初に試すべき工程。","body":["既存設備を改造しにくい工場では、複数の作業台を移動しながら行う補助作業が候補になる。ただし搬送だけなら車輪式、反復作業なら固定アームの方が合理的な場合もある。","実証では、作業成功率、介入回数、停止時間、保守費用、設備改修費を同じ期間で比較する。日本語の操作環境、国内保守、供給体制、労働安全上の条件は公式資料だけで確定できない。"]},{"heading":"人型の未来は、見た目ではなく稼働率で決まる。","body":["Figureの発表は、身体全体の制御と未知の環境への適応が研究開発の中心にあることを示す。一方で、限定された実演から商用の稼働率や総保有費用を推定することはできない。","ロボットが一つの動作を覚えるたびに専用の設備を作り直す必要がなくなれば、ソフトウェア更新で仕事を増やせる可能性がある。その経済性を実測できたとき、人型である理由が初めて事業上の答えになる。"]}],
+sources:[{"label":"Figure — Helix overview","url":"https://www.figure.ai/helix"},{"label":"Figure — Helix 02 (2026-01-27)","url":"https://www.figure.ai/news/helix-02"},{"label":"Figure — Helix 2.5 (2026-09-17)","url":"https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization"}]
 },{
 slug:"autonomous-driving",category:"robotics",eyebrow:"ROBOTICS & PHYSICAL AI / AUTONOMY",
 title:"自動運転のLevel思想は、他産業へ輸出される。",
@@ -632,33 +607,8 @@ dek:"Waymoが示したのは、運転AIだけではない。『どこまで人�
 thesis:"Autonomyを理解する最も強い問いは、『AIが何をできるか』ではなく『誰が失敗時の責任を持つか』だ。",
 companies:["Waymo","Autonomous Driving ecosystem"],
 depth:{current:"Level 4–5 in defined ODD",target:"Broader Level 4–5 operation",human:"Service design、Safety case、Remote assistance、Policy、例外"},
-sections:[
-{heading:"自動運転は、AI自律化の先行産業。",body:[
-"自動運転では昔から、運転支援と完全自律を同じ言葉で扱わない。人間が常時監視するのか、特定条件だけAIが運転するのか、人間なしで走るのかを分けて考えてきた。",
-"この考え方はCoding、Security、Customer Serviceにもそのまま使える。『AIができる』ではなく、『人間はまだ監視し続ける必要があるか』を見る。"
-]},
-{heading:"Waymoは、限定領域でHumanを外している。",body:[
-"Waymoは2026年、6th-generation DriverでFully autonomous operationを拡大し、複数都市で一般向け無人Ride-hailingを展開している。",
-"重要なのは、どこでも何でも運転できるAGIではなく、Operational Design Domainを定義し、その範囲でHuman driverを不要にしていることだ。"
-]},
-{heading:"SimulationがAutonomyを支える。",body:[
-"現実世界でRare caseをすべて試すことはできない。Waymo World ModelのようなSimulationは、実道路で遭遇しにくいScenarioを大量に作り、AIの行動を検証する。",
-"他業界のAgentでも同じ構造が必要になる。実行前にSandboxで試し、失敗条件を学習し、本番権限を段階的に広げる。"
-]},
-{heading:"日本にとって、これは遠い未来ではなくなった。",body:[
-"Waymoは2026年、日本交通とGOとともに東京で2027年の無人配車サービス商用化準備を発表した。",
-"つまりAutonomy Levelは海外の概念ではなく、日本のサービス設計・規制・保険・責任分界へ直接入ってくる。"
-]}
-,{heading:"自動運転Levelが他産業へ輸出できる理由。",body:[
-"自動運転Levelが便利なのは、AIの賢さではなく『誰がいつ責任を持つか』を段階で表せるからだ。Warehouse、Security、Customer Service、Software Agentでも同じで、AssistとAutonomyの差は、異常時に誰が戻ってくるかで決まる。",
-"たとえばAIが提案するだけならHuman-in-the-loop。通常運転はAIが担い、人間が監督するならAIが進め、人が監督する運用。さらに定義された条件内で結果確認・再実行まで閉じればAutonomous closed loopに近づく。",
-"このLevel思想を使うと、製品比較が『AIを使っているか』から『人間が業務サイクルのどこから外れるか』へ変わる。TECH MEETS JAPANのAutomation Depthもこの考え方を横展開している。"
-]}],
-sources:[
-{label:"Waymo — 6th-generation Driver",url:"https://waymo.com/blog/2026/02/ro-on-6th-gen-waymo-driver/"},
-{label:"Waymo — World Model",url:"https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation/"},
-{label:"Waymo — Tokyo 2027",url:"https://waymo.com/blog/2026/09/opening-tokyo-in-2027-with-nihon-kotsu-go/"}
-]
+sections:[{"heading":"運転席に人がいない。それだけで自動運転なのか。","body":["自動運転を考えるとき、最初に区別したいのは、運転を支援する機能と、定められた条件内で運転の主体を引き受ける仕組みだ。運転席が空いている映像だけでは、安全にどの範囲を走れるかは分からない。","Waymoが示すのは、走行できる地域と条件を定め、その範囲で無人の配車サービスを運営する方法だ。どこでも走れる万能なAIとは異なる。"]},{"heading":"Waymo Driverは車ではなく運転システム。","body":["Waymoは2026年2月、6世代目のWaymo Driverについて、複数の車両プラットフォームへ適用できる設計を説明した。車体そのものを一社で作るのではなく、センサー、計算機、運転AIを組み合わせた運転システムを展開する考え方だ。","同社はカメラ、LiDAR、レーダーを組み合わせ、雨や雪、暗い道路などの条件に対応するための冗長性を説明している。ただし対応できる天候や地域には運用上の条件がある。"]},{"heading":"センサーを重ねるのは、互いの弱点が違うから。","body":["カメラは信号や標識などの意味を読み取るのに向くが、強い逆光や汚れで見えにくくなることがある。LiDARは距離と形状、レーダーは物体の動きや速度の把握を補う。","Waymoの6世代目の説明には、カメラの洗浄機構や、センサー情報を組み合わせる設計が登場する。重要なのはセンサーの数を競うことではなく、一つが苦手な条件で別の情報から判断を続けられるかだ。"]},{"heading":"シミュレーションは、珍しい危険を試すためにある。","body":["実際の道路だけでは、まれに起こる事故寸前の場面を十分な回数試せない。Waymo World Modelは、仮想の走行場面を作り、運転システムの行動を検証する方向を示している。","ただし仮想環境で成功したから現実でも必ず安全とは言えない。シミュレーション、閉鎖試験場、実道路の検証を組み合わせ、仮想と現実の差を見続ける必要がある。"]},{"heading":"遠隔支援と遠隔運転は同じではない。","body":["無人の車が判断に迷う場面では、人間の支援が必要になることがある。ここで重要なのは、人が助言するのか、車両の操作を直接引き受けるのかという責任の違いだ。","自動運転の運用を評価するなら、支援を求めた頻度、支援中の安全確保、通信障害時の動作、停止後の復旧手順を確認したい。無人走行の距離だけでは運用の全体像は見えない。"]},{"heading":"東京2027年の計画は、すでに営業開始したという意味ではない。","body":["Waymoは2026年9月、日本交通とGOとともに、2027年に東京で無人配車サービスを商用化する準備を進めると発表した。GOとWaymoのアプリで利用できる計画を示す一方、必要な許認可と運用検証を前提条件としている。","日本での実証や提携の発表と、一般客が無人車両へ乗れる状態は区別しなければならない。2026年10月時点で2027年の商用開始は計画であり、実現が確定した事実ではない。"]},{"heading":"日本の道路では何を確かめるのか。","body":["狭い生活道路、自転車、歩行者、路上駐車、雨天、乗降場所の確保など、地域ごとの運転条件がある。米国での運行実績をそのまま日本の安全性の証明に使うことはできない。","東京での運用には車両だけでなく、配車、事故時の連絡、乗客対応、整備、自治体との調整が必要になる。日本交通とGOの役割は、技術と地域サービスの接点を作ることにある。"]},{"heading":"他業界が学べるのは『任せる条件』の決め方。","body":["自動運転の考え方をソフトウェアや物流のAIに応用するなら、『何ができるか』だけでなく『どの条件なら人間が常時監視しなくてよいか』を定義する必要がある。","ただし自動運転のレベル分類を、他業界のAIへそのまま公式基準として転用してはいけない。リスクや責任が違うため、あくまで設計の参考になる考え方だ。"]},{"heading":"自動化の本質は、停止できることも含む。","body":["運転システムが安全に動くためには、異常を検知し、必要なら安全な状態で停止し、責任者が復旧を判断できることが欠かせない。これは性能の高さとは別の運用能力だ。","Waymoの事例から学べるのは、万能なAIを待つのではなく、対象範囲を限定し、その中で安全性と運用を積み上げる方法である。"]}],
+sources:[{"label":"Waymo — 6th-generation Driver (2026-02-12)","url":"https://waymo.com/blog/2026/02/ro-on-6th-gen-waymo-driver/"},{"label":"Waymo — World Model","url":"https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation/"},{"label":"Waymo — Tokyo 2027 plan (2026-09-14)","url":"https://waymo.com/blog/2026/09/opening-tokyo-in-2027-with-nihon-kotsu-go/"}]
 },{
 slug:"physical-ai-platforms",category:"robotics",eyebrow:"ROBOTICS & PHYSICAL AI / PLATFORM",
 title:"Physical AIの勝者は、ロボット企業か、基盤企業か。",
@@ -666,30 +616,8 @@ dek:"NVIDIA Cosmos、Isaac、GR00T。Robot本体の競争の下で、Simulation�
 thesis:"Physical AIでは、Robot一台の知能より『学習を何台へ再利用できるか』がScaleを決める。",
 companies:["NVIDIA","Robot foundation model ecosystem"],
 depth:{current:"Level 2–3 — Platform intelligence",target:"Infrastructure for Level 4–5 robots",human:"Task definition、Safety、Deployment、Fleet governance"},
-sections:[
-{heading:"Physical AIには、LLM以上にデータが足りない。",body:[
-"Web上のTextと違い、Robotが必要とするのは、物体の位置、重さ、接触、動き、失敗など現実世界のDataだ。しかも実機で収集するのは高コストになる。",
-"NVIDIA CosmosはWorld generation、Vision reasoning、Action generationをまとめ、Synthetic dataとRobot policy学習を支える基盤を狙っている。"
-]},
-{heading:"Simulationが、Robot開発のCloudになる。",body:[
-"現実で千回失敗させる代わりに、Virtual environmentで大量Scenarioを作り、学習・評価する。IsaacやCosmosの価値は、Robotメーカーが一からSimulation stackを作らなくてよいことにある。",
-"これはPhysical AIにおけるInfrastructure layerだ。"
-]},
-{heading:"次の争点は、Robot fleetへのServing。",body:[
-"Robotが増えると、一台ごとに高性能GPUを持たせるのが最適とは限らない。NVIDIAのROSA研究は、複数Robotが共有GPU poolへアクセスし、工場全体の生産性を最大化するServing modelを示している。",
-"Physical AIは一台の賢さから、Fleet computingへ進む。"
-]},
-{heading:"日本企業はPlatform側でも重要になる。",body:[
-"NVIDIAは2026年、日本のFANUC、安川、川崎重工、富士通などがCosmos/Isaac/Jetson系のPhysical AI ecosystemへ参加する動きを発表した。",
-"日本の強みはHardwareだけではない。RobotとFactoryの実データを持つこと自体が、Foundation model時代の資産になる。"
-]}
-],
-sources:[
-{label:"NVIDIA — Cosmos 3",url:"https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai"},
-{label:"NVIDIA — Physical AI",url:"https://www.nvidia.com/en-us/ai/cosmos/"},
-{label:"NVIDIA — Japan Physical AI ecosystem",url:"https://nvidianews.nvidia.com/news/japans-robotics-and-manufacturing-leaders-build-on-nvidia-cosmos-to-advance-physical-ai-frontier?page=7"},
-{label:"NVIDIA Research — ROSA",url:"https://research.nvidia.com/publication/2026-07_rosa-robotics-foundation-model-serving-system-robot-factories"}
-]
+sections:[{"heading":"ロボットを一台作るより、千台を学習させる方が難しい。","body":["言語AIは大量の文章から学べるが、ロボットには物の位置、重さ、接触、動き、失敗のデータが必要になる。実機を動かして失敗例を集めるには時間と費用がかかる。","そこで重要になるのが、現実に近い仮想環境を作り、学習と評価に使う基盤だ。ロボット本体を作る企業だけでなく、学習環境を提供する企業が競争の中心に入る。"]},{"heading":"NVIDIA Cosmos 3は何をまとめたのか。","body":["NVIDIAは2026年5月、Cosmos 3を物理世界向けの基盤モデルとして発表した。公式説明では、映像や音、動作を扱う推論、世界の生成、行動の予測を一つのモデル群に組み合わせる構想を示している。","開発者は仮想環境の映像や行動データを作り、ロボットの方策モデルを学習・評価する材料にできる。ただし合成データの量が増えれば現実での安全性が自動で保証されるわけではない。"]},{"heading":"CosmosとIsaac、Jetsonは役割が違う。","body":["Cosmosは物理世界を理解・生成するモデル群、Isaacはロボット開発とシミュレーションの基盤、Jetsonはロボット側で推論するための計算機として捉えると整理しやすい。","この区別が重要なのは、シミュレーションで学習したモデルを、実際の機体で必要な速度と電力で動かす工程が別だからだ。開発環境の性能と、現場での稼働性能を混同しない。"]},{"heading":"Cosmos 3 Edgeは『予定』から製品発表へ進んだ。","body":["2026年5月のCosmos 3発表ではEdgeが今後の提供予定とされていたが、NVIDIAは同年7月の日本向け発表で、Jetson上での推論を狙うCosmos 3 Edgeを紹介した。時点の違う公式資料を混ぜ、提供状況を一律に断定しないことが必要だ。","導入検討では、対象ハードウェア、モデルの入手条件、必要なメモリ、推論時間、利用ライセンスを具体的に確認する。"]},{"heading":"ROS A研究が問い直すのは、一台ごとのGPU。","body":["NVIDIAの2026年7月の研究論文ROSAは、ロボットごとに専用GPUを持たせる代わりに、工場内の複数ロボットが共有GPU群を利用する構成を提案する。個別の応答速度だけでなく、工場全体の生産性を目的にスケジューリングする。","論文の改善倍率は研究条件下での結果であり、あらゆる工場で同じ効果が得られるわけではない。通信の遅延や切断、安全停止を含めた実装評価が必要だ。"]},{"heading":"共有計算には、通信障害という新しい弱点がある。","body":["ロボットがクラウドや工場内サーバーの推論に依存すると、通信が遅れたときに動作をどうするかが問題になる。すべての制御を遠隔へ移すのではなく、停止や衝突回避など安全に直結する処理をどこで実行するかを分けたい。","一台の計算資源を共有できても、通信障害で複数台が同時停止するなら工場全体のリスクが高まる。計算費用と可用性を同時に測る必要がある。"]},{"heading":"日本企業は機体だけでなく、データの供給者になれる。","body":["NVIDIAの2026年7月の発表には、FANUC、安川電機、川崎重工、富士通など日本の企業・組織が物理AIのエコシステムに参加する動きが掲載されている。","日本の製造業が持つ設備と作業のデータは、ロボットの学習や評価に使える可能性がある。ただし工場のデータは安全・機密・知的財産の問題を伴い、外部モデルへ無条件で提供できるものではない。"]},{"heading":"基盤企業とロボット企業は単純な競合ではない。","body":["NVIDIAはモデル、シミュレーション、計算基盤を提供する一方、ロボットメーカーは機体、安全設計、現場への適合、保守を担う。両者は同じ市場の別の層にいるため、製品の優劣を一つの指標で比較するのは適切ではない。","ロボットメーカーが独自モデルを作る場合も、外部の学習基盤を利用する場合もある。選択条件はデータの所有、開発費、移植性、必要な性能、長期の保守体制だ。"]},{"heading":"日本での実証は『一台の成功』から『複数台の運用』へ。","body":["実証では、同じ作業を複数台へ展開し、学習の再利用、現場調整の時間、推論費用、故障時の復旧を測りたい。デモで一台が成功することと、工場で長期間稼働することは違う。","物理AIの競争軸はロボットの賢さだけではない。新しい作業をどれほど短時間で教え、何台へ安全に広げられるかという運用能力に移っていく。"]}],
+sources:[{"label":"NVIDIA — Cosmos 3 (2026-05-31)","url":"https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai"},{"label":"NVIDIA — Cosmos","url":"https://www.nvidia.com/en-us/ai/cosmos/"},{"label":"NVIDIA — Japan Physical AI (2026-07-15)","url":"https://nvidianews.nvidia.com/news/japans-robotics-and-manufacturing-leaders-build-on-nvidia-cosmos-to-advance-physical-ai-frontier?page=7"},{"label":"NVIDIA Research — ROSA (2026-07-01)","url":"https://research.nvidia.com/publication/2026-07_rosa-robotics-foundation-model-serving-system-robot-factories"}]
 },{
 slug:"drones",category:"robotics",eyebrow:"ROBOTICS & PHYSICAL AI / DRONES",
 title:"ドローンは、『飛ぶカメラ』から作業主体へ進めるか。",
@@ -697,33 +625,8 @@ dek:"点検、測量、警備、災害対応。DockとCloud controlが進むこ�
 thesis:"Drone autonomyの本質は自動飛行ではない。人間が現地へ行かずに、観測→データ取得→異常確認を回せることだ。",
 companies:["DJI Enterprise","Autonomous drone ecosystem"],
 depth:{current:"Level 3–4 — Automated physical agent",target:"Level 4 — Human-on-the-loop",human:"飛行Policy、異常判断、整備、規制対応、重大Action"},
-sections:[
-{heading:"Droneは、操縦者から離れ始めている。",body:[
-"従来は操縦者が現場へ行き、飛ばし、撮影し、データを持ち帰った。DJI DockとFlightHub 2は、CloudからMissionを予約し、Droneが離陸・飛行・撮影・帰還・充電する運用を可能にする。",
-"これにより点検は『人が行く仕事』から『Remote operation』へ変わる。"
-]},
-{heading:"自動化しやすいのは、繰り返し点検。",body:[
-"送電線、Pipeline、屋根、橋梁、太陽光など、同じ場所を定期的に見る仕事はAutomationと相性がいい。",
-"Routeを再利用し、Visual/Thermal dataを蓄積すれば、時系列比較もしやすくなる。"
-]},
-{heading:"ただし、分析はまだ人間が多く残る。",body:[
-"飛行・撮影が自動でも、亀裂や異常をどう評価し、保守を実施するかは別工程だ。DJIのInspection 作業工程でも、画像を人間が確認するかThird-party model detectionへ渡す設計が多い。",
-"今後のAutomation Depthは、Flight autonomyより、Inspection decisionまで閉じられるかで決まる。"
-]},
-{heading:"日本では、人手不足と危険作業の両方に効く。",body:[
-"山間部、送電線、橋、工場など、移動コストや危険性が高い場所ほどRemote inspectionの価値が大きい。",
-"Droneが人間を完全に消すより、現場へ行く回数を劇的に減らすだけでも事業価値は十分に大きい。"
-]}
-,{heading:"次の差は、飛行性能より『任務を終えられるか』。",body:[
-"Droneが作業主体になるには、目的地まで飛べるだけでは足りない。対象を識別し、異常を判断し、必要なら近づき、撮影・散布・運搬を実行し、結果を記録して戻る必要がある。競争軸は機体性能からMission autonomyへ移る。",
-"比較したいのは、人間OperatorがWaypointを指定するのか、AIが状況から次のActionを選ぶのか、通信が切れても任務を継続できるのか、複数機を一人で監督できるのかだ。同じ『自律Drone』でもAutomationとAutonomyには大きな差がある。",
-"日本では航空法、目視外飛行、機体認証、現場安全が導入速度を決める。技術的にできることと、現場で任せられることを分けて読む必要がある。"
-]}],
-sources:[
-{label:"DJI Enterprise — Inspection",url:"https://enterprise.dji.com/inspection"},
-{label:"DJI Enterprise — Dock",url:"https://enterprise.dji.com/dock"},
-{label:"DJI — O4 Ground Station",url:"https://www.dji.com/media-center/announcements/dji-release-o4-ground-station"}
-]
+sections:[{"heading":"ドローンが飛ぶだけでは、点検の仕事は終わらない。","body":["橋や送電設備を点検する場合、人は現地へ移動し、飛行の準備をして撮影し、持ち帰った画像を確認する。飛行を自動化しても、画像を整理して異常を判断する工程が残れば、点検全体の時間はそれほど減らない。","ドローンを作業主体として評価するには、離陸からデータの確認、再点検の判断までを一つの仕事として見る必要がある。"]},{"heading":"DJI DockとFlightHub 2は何を変えるのか。","body":["DJIのDock製品群は、現地に設置する格納設備とドローンを組み合わせ、遠隔からの運用を支える。FlightHub 2は飛行計画やデータ管理のためのソフトウェアだ。","定期的に同じ場所を撮影する点検では、現場へ毎回人が行く必要を減らせる可能性がある。ただし飛行できる条件、整備、現地の安全確認、通信の確保は別の問題として残る。"]},{"heading":"写真と熱画像は、異なる異常を見つける。","body":["DJI Enterpriseの点検ページは、可視光と熱画像を使った設備点検を説明する。可視光は外観の変化、熱画像は温度の異常を捉えるのに役立つが、撮影だけで故障原因が確定するわけではない。","例えば温度の高い箇所を見つけても、負荷条件や周囲の気温によって見え方は変わる。異常候補の抽出と、設備を停止する判断は分ける必要がある。"]},{"heading":"自動飛行と自動点検は同じではない。","body":["決まった経路を飛んで画像を集めることは自動化できても、亀裂の重要度を判定し、修繕を指示し、再点検を予約するには別の仕組みが必要だ。","導入時は、飛行を人が監視するのか、異常画像を人が確認するのか、保守担当者へ自動で連絡するのかを工程ごとに整理したい。"]},{"heading":"通信は遠隔運用の見えにくい制約。","body":["DJIは2026年6月にO4 Ground Stationを発表し、12本のアンテナと周波数帯の自動選択などで広域の通信を支援すると説明した。山間部や障害物の多い場所での運用を想定した製品だ。","ただし通信距離や安定性は地形、周囲の電波環境、機体との組み合わせで変わる。遠隔から運用できるという説明だけで、すべての現場で無人点検が可能と考えてはいけない。"]},{"heading":"入力・出力・減らせる仕事を定義する。","body":["入力は点検対象の位置、飛行経路、撮影条件、天候、飛行許可、過去の画像。出力は写真や熱画像、飛行ログ、異常候補、再点検の対象リストだ。","減らせる可能性があるのは現地への移動、繰り返しの操縦、画像の整理だ。一方、飛行前の安全確認、設備の故障判断、修繕の優先順位付けは人間が担う。"]},{"heading":"日本で重要なのは、機体の性能と飛行の許可を分けること。","body":["山間部の送電設備や橋梁では、移動の負担を減らせる価値がある。一方、目視外飛行、第三者の上空、人口集中地区など、飛行条件によって必要な手続きが異なる。","機体が自動飛行に対応していても、現場で法的に実施できるかは別の確認事項だ。国土交通省の制度と現地の安全管理に照らして運用を設計したい。"]},{"heading":"点検AIの評価は、異常の見逃しを中心にする。","body":["同じ設備を定期的に撮影できれば、前回との差を比較しやすくなる。しかし照明や撮影角度が変わると、正常な設備まで異常と判定する可能性がある。","試験では撮影条件を揃え、異常の見逃し、誤検出、再撮影の回数、現場へ出向く回数を測る。AIが異常を見つけたというデモだけでは、保守業務の改善を判断できない。"]},{"heading":"ドローンの価値は飛行距離ではなく、任務完了率。","body":["点検が終わるには、必要な画像を取得し、異常の有無を確認し、必要な人へ結果を渡す必要がある。途中で通信が切れたときに安全に帰還できるかも、任務の一部だ。","日本で導入するなら、機体の価格だけでなく、格納設備、通信、整備、運用者、画像解析、保険、許可の費用を合わせて評価したい。人が現地へ行く回数を安全に減らせるかが、事業価値の中心になる。"]}],
+sources:[{"label":"DJI Enterprise — Inspection","url":"https://enterprise.dji.com/inspection"},{"label":"DJI Enterprise — Dock","url":"https://enterprise.dji.com/dock"},{"label":"DJI — O4 Ground Station (2026-06-16)","url":"https://www.dji.com/media-center/announcements/dji-release-o4-ground-station"}]
 },{
 slug:"wearable-memory",category:"gadgets",eyebrow:"GADGETS & FUTURE DEVICES / MEMORY",
 title:"『全部覚えている』ウェアラブルは、便利か、怖いか。",
