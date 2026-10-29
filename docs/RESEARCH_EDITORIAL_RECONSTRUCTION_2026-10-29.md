@@ -36,10 +36,10 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 | robotics | warehouse-robotics | REWRITTEN_LIVE_AUDIT_PENDING |
 | gadgets | ai-glasses | REWRITTEN_LIVE_AUDIT_PENDING |
 | gadgets | personal-ai-device | REWRITTEN_LIVE_AUDIT_PENDING |
-| ai-work | ai-legal | REWRITE_PENDING |
-| ai-work | ai-customer-service | REWRITE_PENDING |
-| ai-security | ai-soc | REWRITE_PENDING |
-| ai-security | identity-agents | REWRITE_PENDING |
+| ai-work | ai-legal | REWRITTEN_AUDIT_PENDING |
+| ai-work | ai-customer-service | REWRITTEN_AUDIT_PENDING |
+| ai-security | ai-soc | REWRITTEN_AUDIT_PENDING |
+| ai-security | identity-agents | REWRITTEN_AUDIT_PENDING |
 | ai-security | ai-fraud | REWRITE_PENDING |
 | ai-security | continuous-validation | REWRITE_PENDING |
 | ai-creative | ai-voice | REWRITE_PENDING |
@@ -94,6 +94,12 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Reconstructed **2 stories**: ai-glasses and personal-ai-device. Total rewritten **15/42**; remaining not rewritten **27**.
 - Source and editorial evidence: [audit/research_reconstruction_batch_2026-10-29_05.md](../audit/research_reconstruction_batch_2026-10-29_05.md).
 - Status **REWRITTEN_LIVE_AUDIT_PENDING**. Both article routes and original WebP heroes verified HTTP 200. Broken historical Humane source replaced with HP first-party acquisition release and contemporary secondary shutdown reporting. Final independent audit and responsive screenshot QA remain open.
+
+## Batch 06 — 2026-10-29
+- Reconstructed **4 articles**: ai-legal, ai-customer-service, ai-soc, identity-agents. Each uses verified first-party feature documentation and specific inputs, outputs, human intervention conditions, product distinctions and Japan adoption tests.
+- Totals: **18/42** rewritten; **24** not yet rewritten. All remain **REWRITTEN_AUDIT_PENDING** until independent source-bound final audit and responsive visual QA. Do not mark PASS on the basis of content or deployment alone.
+- Source evidence: [audit/research_reconstruction_batch_2026-10-29_06.md](../audit/research_reconstruction_batch_2026-10-29_06.md).
+- Existing slugs and image files/mappings unchanged.
 
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
