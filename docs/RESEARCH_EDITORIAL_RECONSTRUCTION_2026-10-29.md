@@ -27,9 +27,9 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 | materials-energy | chargebotic-kestrel | REWRITE_PENDING |
 | robotics | nori-a3 | REWRITE_PENDING |
 | materials-energy | savor-carbon-fats | REWRITE_PENDING |
-| ai-work | coding-agents | REWRITE_PENDING |
-| ai-work | ai-sales | REWRITE_PENDING |
-| ai-work | ai-recruiting | REWRITE_PENDING |
+| ai-work | coding-agents | REWRITTEN_LIVE_AUDIT_PENDING |
+| ai-work | ai-sales | REWRITTEN_LIVE_AUDIT_PENDING |
+| ai-work | ai-recruiting | REWRITTEN_LIVE_AUDIT_PENDING |
 | ai-creative | ai-video | REWRITE_PENDING |
 | ai-creative | runway-production | REWRITE_PENDING |
 | ai-industry | manufacturing-ai | REWRITE_PENDING |
@@ -64,6 +64,13 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 | gadgets | embodied-ai-reception | REWRITE_PENDING |
 | gadgets | bridge-ultrasound-bci | REWRITE_PENDING |
 | gadgets | ultrasound-bci | REWRITE_PENDING |
+
+## Batch 01 — 2026-10-29
+- Rewritten and deployed: **3/42** (ai-sales, coding-agents, ai-recruiting). Remaining not rewritten: **39**.
+- Each of the three has 9 sections and approximately 3,000–3,400 Japanese body characters, with product-specific official sources and live HTTP 200 verification.
+- Separate source-bound editorial review completed; independent final audit and desktop/mobile visual QA are still pending. **Do not count as final PASS.**
+- Evidence: [audit/research_reconstruction_batch_2026-10-29_01.md](../audit/research_reconstruction_batch_2026-10-29_01.md).
+- No existing image files or URL slugs were changed.
 
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
