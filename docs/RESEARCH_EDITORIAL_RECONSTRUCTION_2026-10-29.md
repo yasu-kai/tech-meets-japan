@@ -232,12 +232,12 @@ The statuses below are separate from the first-pass rewrite status. `PASS` means
 | personal-ai-device | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_18.md |
 | ai-legal | ai-work | PASS | audit/research_reconstruction_batch_2026-10-30_18.md |
 | ai-customer-service | ai-work | PASS | audit/research_reconstruction_batch_2026-10-30_18.md |
-| ai-soc | ai-security | PENDING | — |
-| identity-agents | ai-security | PENDING | — |
-| ai-fraud | ai-security | PENDING | — |
-| continuous-validation | ai-security | PENDING | — |
-| ai-voice | ai-creative | PENDING | — |
-| synthetic-media | ai-creative | PENDING | — |
+| ai-soc | ai-security | PASS | audit/research_reconstruction_batch_2026-10-30_19.md |
+| identity-agents | ai-security | PASS | audit/research_reconstruction_batch_2026-10-30_19.md |
+| ai-fraud | ai-security | PASS | audit/research_reconstruction_batch_2026-10-30_19.md |
+| continuous-validation | ai-security | PASS | audit/research_reconstruction_batch_2026-10-30_19.md |
+| ai-voice | ai-creative | PASS | audit/research_reconstruction_batch_2026-10-30_19.md |
+| synthetic-media | ai-creative | PASS | audit/research_reconstruction_batch_2026-10-30_19.md |
 | creative-stack | ai-creative | PENDING | — |
 | logistics-ai | ai-industry | PENDING | — |
 | finance-ai | ai-industry | PENDING | — |
@@ -262,6 +262,15 @@ The statuses below are separate from the first-pass rewrite status. `PASS` means
 | data-privacy | ai-security | PASS | audit/research_reconstruction_batch_2026-10-30_13.md |
 | human-ai-collaboration | ai-work | PASS | audit/research_reconstruction_batch_2026-10-30_13.md |
 | future-of-security | ai-security | PASS | audit/research_reconstruction_batch_2026-10-30_13.md |
+
+
+## Batch 19 — 2026-10-30
+- Independently reviewed and source-corrected **ai-soc, identity-agents, ai-fraud, continuous-validation, ai-voice, synthetic-media**; per-story editorial audit verdict PASS and source/limitations are recorded in [audit/research_reconstruction_batch_2026-10-30_19.md](../audit/research_reconstruction_batch_2026-10-30_19.md).
+- Canonical second-pass count: **38/47 PASS, 9/47 PENDING**. The older 43-row first-pass status block is intentionally unchanged.
+- A malformed TypeScript object splice caused one Vercel ERROR deployment. Exact source restoration at `da0487c3f709a1e02a4245541d88e900fcd70f84` returned READY; corrected content commits `1da8b7a0310454525092162191bf97f364f11c7e` and `429f3ab0126d518f63d0c07ae996a314f477e60e` passed a 47-unique-slug parse and untouched-story check, and final content deployment `dpl_8xuqVUDBmYGYKitnEWUP2FEJRjSj` is **READY**.
+- Independent remote HTTP test of six revised article URLs: **6/6 HTTP 200 and new-body markers present**; six adopted hero WebPs: **6/6 HTTP 200, image/webp, RIFF/WebP magic**.
+- Fresh sitewide 47-page/94-view GitHub Actions Playwright rerun requested on workflow run `40907522742`, previous latest successful job `123740392029`. **Latest rerun result must be checked before claiming post-batch visual QA PASS.**
+- Remaining 9 PENDING: creative-stack, logistics-ai, finance-ai, healthcare-ai, retail-ai, humanoid, autonomous-driving, physical-ai-platforms, drones. No completion notification.
 
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
