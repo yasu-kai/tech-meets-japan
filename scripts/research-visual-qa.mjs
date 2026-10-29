@@ -30,28 +30,36 @@ async function worker() {
     const viewport = job.device === "mobile" ? { width: 390, height: 844 } : { width: 1440, height: 900 };
     const page = await browser.newPage({ viewport, deviceScaleFactor: 1, isMobile: job.device === "mobile", hasTouch: job.device === "mobile" });
     const url = `${root}/research/${job.category}/${job.slug}`;
-    const record = { slug: job.slug, category: job.category, device: job.device, url, status: null, overflow: null, heroLoaded: false, headingVisible: false, error: null };
+    const record = { slug: job.slug, category: job.category, device: job.device, url, status: null, overflow: null, heroLoaded: false, headingVisible: false, relatedImagesLoaded: false, relatedUnique: false, error: null };
     try {
       const response = await page.goto(url, { waitUntil: "domcontentloaded", timeout: 35000 });
       record.status = response?.status() ?? null;
       await page.locator(".story-hero h1").waitFor({ timeout: 12000 });
       await page.locator(`img[data-editorial-slug="${job.slug}"]`).first().waitFor({ timeout: 12000 });
-      await page.waitForTimeout(500);
+      await page.evaluate(async () => {
+        const images = [...document.querySelectorAll(".story-related-card img")];
+        images.forEach((img) => { img.loading = "eager"; });
+        await Promise.all(images.map((img) => img.decode().catch(() => {})));
+      });
+      await page.waitForTimeout(350);
       const state = await page.evaluate((slug) => {
         const hero = document.querySelector(`img[data-editorial-slug="${slug}"]`);
         const h1 = document.querySelector(".story-hero h1");
         const heroRect = hero?.getBoundingClientRect();
         const h1Rect = h1?.getBoundingClientRect();
+        const relatedImages = [...document.querySelectorAll(".story-related-card img")];
         return {
           overflow: document.documentElement.scrollWidth - window.innerWidth,
           heroLoaded: Boolean(hero && hero.complete && hero.naturalWidth > 0),
           headingVisible: Boolean(h1 && h1.getBoundingClientRect().width > 0),
           heroOverlapsHeading: Boolean(heroRect && h1Rect && heroRect.top < h1Rect.bottom - 2 && heroRect.bottom > h1Rect.top + 2),
+          relatedImagesLoaded: relatedImages.length >= 3 && relatedImages.every((img) => img.complete && img.naturalWidth > 0),
+          relatedUnique: new Set(relatedImages.map((img) => img.currentSrc || img.src)).size >= 3,
         };
       }, job.slug);
       Object.assign(record, state);
       await page.screenshot({ path: join(output, `${job.slug}-${job.device}.jpg`), type: "jpeg", quality: 60, fullPage: true, animations: "disabled", timeout: 30000 });
-      if (record.status !== 200 || record.overflow > 2 || !record.heroLoaded || !record.headingVisible || record.heroOverlapsHeading) record.error = "Visual or asset assertion failed";
+      if (record.status !== 200 || record.overflow > 2 || !record.heroLoaded || !record.headingVisible || record.heroOverlapsHeading || !record.relatedImagesLoaded || !record.relatedUnique) record.error = "Visual or asset assertion failed";
     } catch (error) {
       record.error = String(error).slice(0, 300);
     } finally {
