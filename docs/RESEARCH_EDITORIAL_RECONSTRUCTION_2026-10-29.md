@@ -40,10 +40,10 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 | ai-work | ai-customer-service | REWRITTEN_AUDIT_PENDING |
 | ai-security | ai-soc | REWRITTEN_AUDIT_PENDING |
 | ai-security | identity-agents | REWRITTEN_AUDIT_PENDING |
-| ai-security | ai-fraud | REWRITE_PENDING |
-| ai-security | continuous-validation | REWRITE_PENDING |
-| ai-creative | ai-voice | REWRITE_PENDING |
-| ai-creative | synthetic-media | REWRITE_PENDING |
+| ai-security | ai-fraud | REWRITTEN_AUDIT_PENDING |
+| ai-security | continuous-validation | REWRITTEN_AUDIT_PENDING |
+| ai-creative | ai-voice | REWRITTEN_AUDIT_PENDING |
+| ai-creative | synthetic-media | REWRITTEN_AUDIT_PENDING |
 | ai-creative | creative-stack | REWRITE_PENDING |
 | ai-industry | logistics-ai | REWRITE_PENDING |
 | ai-industry | finance-ai | REWRITE_PENDING |
@@ -97,9 +97,14 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 
 ## Batch 06 — 2026-10-29
 - Reconstructed **4 articles**: ai-legal, ai-customer-service, ai-soc, identity-agents. Each uses verified first-party feature documentation and specific inputs, outputs, human intervention conditions, product distinctions and Japan adoption tests.
-- Totals: **18/42** rewritten; **24** not yet rewritten. All remain **REWRITTEN_AUDIT_PENDING** until independent source-bound final audit and responsive visual QA. Do not mark PASS on the basis of content or deployment alone.
+- Totals: **19/43** rewritten; **24** not yet rewritten. All remain **REWRITTEN_AUDIT_PENDING** until independent source-bound final audit and responsive visual QA. Do not mark PASS on the basis of content or deployment alone.
 - Source evidence: [audit/research_reconstruction_batch_2026-10-29_06.md](../audit/research_reconstruction_batch_2026-10-29_06.md).
 - Existing slugs and image files/mappings unchanged.
+
+## Batch 07 — 2026-10-29
+- Reconstructed **4 more articles**: ai-fraud, continuous-validation, ai-voice, synthetic-media. Total tracker inventory: **23/43** rewritten; **20/43** not yet rewritten. Earlier stated denominator 42 was inconsistent with the 43 distinct original tracker rows; do not mark project complete until all 43 have been reconciled and audited.
+- Source evidence: [audit/research_reconstruction_batch_2026-10-29_07.md](../audit/research_reconstruction_batch_2026-10-29_07.md).
+- Existing URLs, categories, images and mapping retained. Final independent audit and responsive visual QA remain pending.
 
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
