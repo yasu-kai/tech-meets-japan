@@ -158,11 +158,11 @@ sections:[{heading:"何をする装置か。",body:["ChargeboticのKestrelは、
     },
     {
       "label": "Cursor — Background Agents security notes",
-      "url": "https://docs.cursor.com/background-agent"
+      "url": "https://cursor.com/docs/cloud-agent/security"
     },
     {
       "label": "Cognition — Devin repository setup",
-      "url": "https://docs.devin.ai/ja/onboard-devin/repo-setup"
+      "url": "https://docs.devin.ai/onboard-devin/environment"
     },
     {
       "label": "Cognition — Devin documentation",
