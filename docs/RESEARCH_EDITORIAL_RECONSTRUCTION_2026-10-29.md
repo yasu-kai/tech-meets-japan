@@ -53,17 +53,17 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 | robotics | autonomous-driving | REWRITTEN_LIVE_AUDIT_PENDING |
 | robotics | physical-ai-platforms | REWRITTEN_LIVE_AUDIT_PENDING |
 | robotics | drones | REWRITTEN_LIVE_AUDIT_PENDING |
-| gadgets | wearable-memory | REWRITE_PENDING |
-| gadgets | future-input | REWRITE_PENDING |
-| gadgets | weird-gadgets | REWRITE_PENDING |
-| gadgets | silent-speech | REWRITE_PENDING |
-| ai-work | browser-agents | REWRITE_PENDING |
-| ai-security | agentic-dev-security | REWRITE_PENDING |
-| ai-industry | procurement-agents | REWRITE_PENDING |
-| robotics | robotics-as-labor | REWRITE_PENDING |
-| gadgets | embodied-ai-reception | REWRITE_PENDING |
-| gadgets | bridge-ultrasound-bci | REWRITE_PENDING |
-| gadgets | ultrasound-bci | REWRITE_PENDING |
+| gadgets | wearable-memory | REWRITTEN_LIVE_AUDIT_PENDING |
+| gadgets | future-input | REWRITTEN_LIVE_AUDIT_PENDING |
+| gadgets | weird-gadgets | REWRITTEN_LIVE_AUDIT_PENDING |
+| gadgets | silent-speech | REWRITTEN_LIVE_AUDIT_PENDING |
+| ai-work | browser-agents | REWRITTEN_LIVE_AUDIT_PENDING |
+| ai-security | agentic-dev-security | REWRITTEN_LIVE_AUDIT_PENDING |
+| ai-industry | procurement-agents | REWRITTEN_LIVE_AUDIT_PENDING |
+| robotics | robotics-as-labor | REWRITTEN_LIVE_AUDIT_PENDING |
+| gadgets | embodied-ai-reception | REWRITTEN_LIVE_AUDIT_PENDING |
+| gadgets | bridge-ultrasound-bci | REWRITTEN_LIVE_AUDIT_PENDING |
+| gadgets | ultrasound-bci | REWRITTEN_LIVE_AUDIT_PENDING |
 
 ## Batch 01 — 2026-10-29
 - Rewritten and deployed: **3/42** (ai-sales, coding-agents, ai-recruiting). Remaining not rewritten: **39**.
@@ -135,6 +135,13 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Robotics sources: 12 of 13 first-party links returned HTTP 200 from a remote client. The original DJI O4 press-release URL returned 404 from that client and was replaced by a live DJI Enterprise product page plus FAQ (both HTTP 200).
 - Batch 08 source links: Rogo, Uber Freight, Blue Yonder and DJI sources returned HTTP 200. Adobe requests timed out or returned 403, project44 and OpenAI returned 403 from the remote client; all cited official source content was independently opened using web retrieval. These restrictions are not proof of broken public links.
 - **Still not final PASS:** independent claim-by-claim audit and desktop/mobile pixel-level screenshot QA remain open. Do not send a completion notification.
+
+## Batch 10 — 2026-10-30
+- Reconstructed **all 11 remaining original tracker stories**: wearable-memory, future-input, weird-gadgets, silent-speech, browser-agents, agentic-dev-security, procurement-agents, robotics-as-labor, embodied-ai-reception, bridge-ultrasound-bci, ultrasound-bci. The long-form Bridge profile was already substantive and received a source-bound clarification of research-stage limits. Current original tracker: **43/43 rewritten, 0/43 final independent PASS**; **0 stories left with REWRITE_PENDING**, but the project is **NOT COMPLETE**.
+- Editorial evidence and per-story lengths: [audit/research_reconstruction_batch_2026-10-30_10.md](../audit/research_reconstruction_batch_2026-10-30_10.md). Several stories remain below the typical 3,000–5,000-character editorial depth goal; independent review should prioritize concrete product facts, not filler.
+- All 11 article routes returned HTTP 200 from an independent remote client; all 11 original WebP hero URLs returned HTTP 200, `image/webp`, RIFF magic bytes. Existing URLs, category assignments and image binaries/mappings were preserved.
+- Primary-source link checks found automated-client HTTP 403 for Plaud support and intermittent ETH/Butterfly source errors. The ETH and Butterfly references were replaced by accessible official alternatives. A 403 does not establish that the page is absent in a normal browser.
+- **Open blockers:** independent source-bound final editorial audit for every original story; desktop/mobile visual QA for all stories; production verification of the latest final content commit; review of four additional separately published AI articles and exact inventory reconciliation. No completion notification until all required gates PASS.
 
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
