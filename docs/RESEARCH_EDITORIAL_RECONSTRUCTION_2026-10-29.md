@@ -188,7 +188,7 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Key corrections: Plaud NotePin vs NotePin S physical control and recording range; Meta Neural Band Japan availability and SilentWear's limited command vocabulary; rabbit r1 third-party agent disclaimer; Engram prototype and 30-word/3-person research accuracy scope; Browserbase Agents general availability and task-level completion metrics; Bridge's observational transcranial study, comparison with Merge and extensive Japanese terminology cleanup.
 - GitHub main editorial content commits `e4d2b240`, `d9f6d3e2`, `ce2d6693`. Original 43-row first-pass statuses are unchanged. Slugs, categories and adopted hero WebP assets unchanged.
 - Independent VPS HTTP QA after deployment: all six updated article routes **200**, six updated body markers present, all six original hero WebP URLs **200** with valid RIFF/WebP signatures. Vercel content commit `ce2d6693` is **READY** (deployment `dpl_8LuYzYHkW57TwsFLxv3Q2WBGG5o1`).
-- Fresh 47-page/94-viewport Playwright rerun requested on workflow `40907522742` after content deployment; **result pending** at this record. Earlier 94/94 success is not counted as post-batch-15 QA.
+- Fresh 47-page/94-viewport Playwright rerun on workflow `40907522742`, job `123649434786`, **completed SUCCESS** after content deployment. Job logs: deterministic editorial audit PASS, **94 views, 0 failures**; screenshot artifact upload succeeded. Automated layout/asset checks are not equivalent to a human pixel-by-pixel review of all screenshots.
 - Canonical independent second-pass editorial status **15/47 PASS, 32/47 PENDING**. Global completion gate remains OPEN; no notification.
 
 ## Canonical final editorial audit — 47 Research articles
