@@ -20,3 +20,12 @@ Five rewrites: creative-stack, logistics-ai, finance-ai, healthcare-ai, retail-a
 - Independent audit against audit/INDEPENDENT_AI_AUDITOR.md is not completed; do not mark PASS.
 - Vercel deployment and live article/image HTTP checks to be recorded after commit.
 - Desktop/mobile screenshot and pixel-level QA not completed.
+
+## Depth expansion — 2026-10-30
+Added source-grounded practical examples and independent selection questions to each story, without changing slugs or images:
+- creative-stack: 9 sections, 2491 Japanese body characters
+- logistics-ai: 9 sections, 2361 Japanese body characters
+- finance-ai: 9 sections, 2385 Japanese body characters
+- healthcare-ai: 9 sections, 2305 Japanese body characters
+- retail-ai: 9 sections, 2167 Japanese body characters
+Final independent audit and desktop/mobile screenshots still outstanding. Vendor-reported performance and feature availability are not independently guaranteed.

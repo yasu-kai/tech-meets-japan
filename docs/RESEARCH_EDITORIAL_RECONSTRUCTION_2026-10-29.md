@@ -116,7 +116,8 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 ## Batch 08 — 2026-10-30
 - Reconstructed **5 more stories**: creative-stack, logistics-ai, finance-ai, healthcare-ai, retail-ai. Total **28/43** rewritten; **15/43** remain not rewritten. No final independent PASS.
 - Source and editorial notes: [audit/research_reconstruction_batch_2026-10-30_08.md](../audit/research_reconstruction_batch_2026-10-30_08.md).
-- Original slugs, image associations and image binaries unchanged. Deployment and visual QA pending.
+- Original slugs, image associations and image binaries unchanged. All five article pages and original WebP heroes returned HTTP 200, WebP MIME and RIFF magic from an independent remote HTTP client on 2026-10-30; screenshot QA and independent final audit pending.
+- Expanded the five rewrites further: creative-stack 2491 body characters; logistics-ai 2361 body characters; finance-ai 2385 body characters; healthcare-ai 2305 body characters; retail-ai 2167 body characters.
 
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
