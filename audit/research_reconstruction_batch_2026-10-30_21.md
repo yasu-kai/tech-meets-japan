@@ -62,6 +62,8 @@ Reviewed the existing nine-story PENDING backlog separately from first-pass rewr
   - https://enterprise.dji.com/o4-ground-station/specs
   - https://enterprise.dji.com/dock
 
-## Publication QA gate
-- GitHub content commits recorded above; production READY and latest post-change Playwright results are not yet certified in this audit record. Update canonical tracker with those results only after independent verification.
-- Do not send completion notification while any sitewide gate remains open.
+## Publication QA gate — verified after both content batches
+- Content commit `05f8e4563ec6ac784903f00e620ff43587e7874f` deployed to Vercel production **READY** (`dpl_5AkobgJRE7CGv82THQpgNidmcRy9`). Latest tracker commit `c6cc0b7e9f2fdd1c7b0657eb3754bc3963317978` also **READY** (`dpl_GksLUE7D2x84sWGvkD8SjmW2BYzG`).
+- Independent VPS HTTP check: **47/47** Research page URLs returned HTTP 200 with their correct slug, and **47/47** adopted hero WebP URLs returned HTTP 200 with valid RIFF/WebP magic and image/webp MIME. All nine newly revised article pages contained their unique revised text markers.
+- Post-change GitHub Actions workflow run `40970573940`, job `123785999867`, checked out latest main commit `c6cc0b7e9f2fdd1c7b0657eb3754bc3963317978` and **SUCCESS**: deterministic editorial gate 47 stories, zero findings; Playwright **94/94 desktop/mobile views, zero automated failures**. Screenshot artifact `12940865087` uploaded (7-day retention). This is automated visual assertion, not a claim of manual inspection of every pixel.
+- All 47 canonical independent editorial verdicts are PASS. Sitewide completion gates are satisfied as of this verification; the scheduled automation should stop after a single completion notice.
