@@ -21,10 +21,10 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 
 | Category | Slug | Status |
 |---|---|---|
-| gadgets | ixana-wir | REWRITE_PENDING |
-| gadgets | mudra-link | REWRITE_PENDING |
-| gadgets | ipolish-digital-nails | REWRITE_PENDING |
-| materials-energy | chargebotic-kestrel | REWRITE_PENDING |
+| gadgets | ixana-wir | REWRITTEN_LIVE_AUDIT_PENDING |
+| gadgets | mudra-link | REWRITTEN_LIVE_AUDIT_PENDING |
+| gadgets | ipolish-digital-nails | REWRITTEN_LIVE_AUDIT_PENDING |
+| materials-energy | chargebotic-kestrel | REWRITTEN_LIVE_AUDIT_PENDING |
 | robotics | nori-a3 | REWRITE_PENDING |
 | materials-energy | savor-carbon-fats | REWRITE_PENDING |
 | ai-work | coding-agents | REWRITTEN_LIVE_AUDIT_PENDING |
@@ -71,6 +71,12 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Separate source-bound editorial review completed; independent final audit and desktop/mobile visual QA are still pending. **Do not count as final PASS.**
 - Evidence: [audit/research_reconstruction_batch_2026-10-29_01.md](../audit/research_reconstruction_batch_2026-10-29_01.md).
 - No existing image files or URL slugs were changed.
+
+## Batch 02 — 2026-10-29
+- Rewritten in this batch: **4 stories** (ixana-wir, mudra-link, ipolish-digital-nails, chargebotic-kestrel). Previously rewritten in batch 01: 3; total rewritten **7/42**, remaining not rewritten **35**.
+- All 4 rewrites use named product mechanisms and explicit distinctions between shipping, sampling, pre-order, demonstration and roadmap targets. Exact editorial counts and primary-source audit are in [audit/research_reconstruction_batch_2026-10-29_02.md](../audit/research_reconstruction_batch_2026-10-29_02.md).
+- Status is **REWRITTEN_LIVE_AUDIT_PENDING** pending final independent review and mobile/desktop visual QA. Do not count any of these as final PASS until verified.
+- No slugs, article imagery, category mapping, or existing validated claims were removed.
 
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
