@@ -19,3 +19,11 @@ Two existing source-rich articles were restructured by inserting four narrative 
 - unsupported_claims: none knowingly added; quantified claims tied to official documents.
 - comparison_failures: no categorical product superiority asserted; alternatives evaluated by context.
 - required_fixes: verify all links, production 200 and unchanged image WebP, independently audit complete texts, visually inspect desktop/mobile.
+
+## Live publication evidence
+- Main content commit: `c8c971f25f48308896cb4b01b96ea9767e454975`.
+- Vercel Production deployment `dpl_3JRTDWia4Ecy7p2T4iFu8CkpxBCi` READY, source commit matched.
+- Production HTML: `/research/robotics/nori-a3` and `/research/materials-energy/savor-carbon-fats` both HTTP 200 with **10 story sections** and new technical sections present.
+- Original hero assets both HTTP 200 image/webp with valid WebP signature; SHA256 prefixes nori-a3 `582e5393c9b6e0e3e66d`, savor-carbon-fats `e9976290df9153338263`.
+- All **9/9 official source links HTTP 200** via read-only remote HTTP check.
+- **Still pending**: independent final editorial audit and desktop/mobile screenshot review; no final PASS claimed.
