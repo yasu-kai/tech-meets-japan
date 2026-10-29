@@ -5,6 +5,7 @@ on:
     paths:
       - ".github/workflows/research-visual-qa.yml"
       - "scripts/research-visual-qa.mjs"
+      - "docs/RESEARCH_EDITORIAL_RECONSTRUCTION_2026-10-29.md"
   workflow_dispatch:
 
 permissions:
@@ -23,6 +24,8 @@ jobs:
         run: |
           npm install --no-save --ignore-scripts playwright@1.58.2
           npx playwright install --with-deps chromium
+      - name: Deterministic editorial audit of all 47 stories
+        run: node scripts/editorial-audit.mjs
       - name: Capture and check all Research pages
         run: node scripts/research-visual-qa.mjs
         env:
