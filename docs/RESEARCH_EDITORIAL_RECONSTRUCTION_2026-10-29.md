@@ -238,15 +238,15 @@ The statuses below are separate from the first-pass rewrite status. `PASS` means
 | continuous-validation | ai-security | PASS | audit/research_reconstruction_batch_2026-10-30_19.md |
 | ai-voice | ai-creative | PASS | audit/research_reconstruction_batch_2026-10-30_19.md |
 | synthetic-media | ai-creative | PASS | audit/research_reconstruction_batch_2026-10-30_19.md |
-| creative-stack | ai-creative | PENDING | — |
-| logistics-ai | ai-industry | PENDING | — |
-| finance-ai | ai-industry | PENDING | — |
-| healthcare-ai | ai-industry | PENDING | — |
-| retail-ai | ai-industry | PENDING | — |
-| humanoid | robotics | PENDING | — |
-| autonomous-driving | robotics | PENDING | — |
-| physical-ai-platforms | robotics | PENDING | — |
-| drones | robotics | PENDING | — |
+| creative-stack | ai-creative | PASS | audit/research_reconstruction_batch_2026-10-30_20.md |
+| logistics-ai | ai-industry | PASS | audit/research_reconstruction_batch_2026-10-30_20.md |
+| finance-ai | ai-industry | PASS | audit/research_reconstruction_batch_2026-10-30_20.md |
+| healthcare-ai | ai-industry | PASS | audit/research_reconstruction_batch_2026-10-30_20.md |
+| retail-ai | ai-industry | PASS | audit/research_reconstruction_batch_2026-10-30_20.md |
+| humanoid | robotics | PASS | audit/research_reconstruction_batch_2026-10-30_21.md |
+| autonomous-driving | robotics | PASS | audit/research_reconstruction_batch_2026-10-30_21.md |
+| physical-ai-platforms | robotics | PASS | audit/research_reconstruction_batch_2026-10-30_21.md |
+| drones | robotics | PASS | audit/research_reconstruction_batch_2026-10-30_21.md |
 | wearable-memory | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_15.md |
 | future-input | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_15.md |
 | weird-gadgets | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_15.md |
@@ -271,6 +271,12 @@ The statuses below are separate from the first-pass rewrite status. `PASS` means
 - Independent remote HTTP test of six revised article URLs: **6/6 HTTP 200 and new-body markers present**; six adopted hero WebPs: **6/6 HTTP 200, image/webp, RIFF/WebP magic**.
 - Post-batch sitewide GitHub Actions rerun `40907522742`, job `123767078935`: **SUCCESS**. Deterministic editorial QA 47 stories / 0 findings; Playwright desktop/mobile **94 views / 0 failures**. Screenshot artifact `12937397849` (7-day retention). This is automated QA, not a claim that all screenshots were manually reviewed.
 - Remaining 9 PENDING: creative-stack, logistics-ai, finance-ai, healthcare-ai, retail-ai, humanoid, autonomous-driving, physical-ai-platforms, drones. No completion notification.
+
+## Batch 20–21 — 2026-10-30 / nine remaining second-pass editorial reviews
+- Source-bound independent second-pass editorial reviews and substantive corrections completed for all nine previously PENDING stories: creative-stack, logistics-ai, finance-ai, healthcare-ai, retail-ai, humanoid, autonomous-driving, physical-ai-platforms, drones. Individual verdict, score, findings, warnings, comparisons, corrected facts and primary-source URLs: [batch 20](../audit/research_reconstruction_batch_2026-10-30_20.md) and [batch 21](../audit/research_reconstruction_batch_2026-10-30_21.md).
+- Source-bound revisions distinguish Adobe Firefly Graph versus Creative Production; project44 Mo versus Autopilot versus Uber Freight; Rogo's financial agent/workspace/MNPI boundaries; OpenAI for Healthcare versus Abridge; Blue Yonder versus Revionics; Figure Helix 2.5's 9%/56% study versus commercial performance; Waymo's Tokyo 2027 conditional plan; Cosmos/Isaac/Jetson/ROSA layers; and DJI O4 Relay Mode unavailable in Japan.
+- Content commits: `87b0af67cd96162046d726e9c0c743afe2a6271b`, `05f8e4563ec6ac784903f00e620ff43587e7874f`. Editorial PASS now **47/47** in the canonical table, but this is **NOT global completion** until current production deployment, all 47 pages/assets, and post-change 94-view Playwright QA are independently confirmed. Original 43-row first-pass statuses are unchanged.
+- Post-change publication and visual QA: **PENDING at time of this editorial update**. Do not notify or stop the automation before those gates PASS.
 
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
