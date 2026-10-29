@@ -36,14 +36,14 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 | robotics | warehouse-robotics | REWRITTEN_LIVE_AUDIT_PENDING |
 | gadgets | ai-glasses | REWRITTEN_LIVE_AUDIT_PENDING |
 | gadgets | personal-ai-device | REWRITTEN_LIVE_AUDIT_PENDING |
-| ai-work | ai-legal | REWRITTEN_AUDIT_PENDING |
-| ai-work | ai-customer-service | REWRITTEN_AUDIT_PENDING |
-| ai-security | ai-soc | REWRITTEN_AUDIT_PENDING |
-| ai-security | identity-agents | REWRITTEN_AUDIT_PENDING |
-| ai-security | ai-fraud | REWRITTEN_AUDIT_PENDING |
-| ai-security | continuous-validation | REWRITTEN_AUDIT_PENDING |
-| ai-creative | ai-voice | REWRITTEN_AUDIT_PENDING |
-| ai-creative | synthetic-media | REWRITTEN_AUDIT_PENDING |
+| ai-work | ai-legal | REWRITTEN_LIVE_AUDIT_PENDING |
+| ai-work | ai-customer-service | REWRITTEN_LIVE_AUDIT_PENDING |
+| ai-security | ai-soc | REWRITTEN_LIVE_AUDIT_PENDING |
+| ai-security | identity-agents | REWRITTEN_LIVE_AUDIT_PENDING |
+| ai-security | ai-fraud | REWRITTEN_LIVE_AUDIT_PENDING |
+| ai-security | continuous-validation | REWRITTEN_LIVE_AUDIT_PENDING |
+| ai-creative | ai-voice | REWRITTEN_LIVE_AUDIT_PENDING |
+| ai-creative | synthetic-media | REWRITTEN_LIVE_AUDIT_PENDING |
 | ai-creative | creative-stack | REWRITE_PENDING |
 | ai-industry | logistics-ai | REWRITE_PENDING |
 | ai-industry | finance-ai | REWRITE_PENDING |
@@ -105,6 +105,13 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Reconstructed **4 more articles**: ai-fraud, continuous-validation, ai-voice, synthetic-media. Total tracker inventory: **23/43** rewritten; **20/43** not yet rewritten. Earlier stated denominator 42 was inconsistent with the 43 distinct original tracker rows; do not mark project complete until all 43 have been reconciled and audited.
 - Source evidence: [audit/research_reconstruction_batch_2026-10-29_07.md](../audit/research_reconstruction_batch_2026-10-29_07.md).
 - Existing URLs, categories, images and mapping retained. Final independent audit and responsive visual QA remain pending.
+
+## Production and link QA — batch 06/07 (2026-10-29)
+- Production deployment `dpl_CtnMdhW3YMVdztnVF9LDkYhAxt7t` reached Vercel **READY** at GitHub commit `606381faa60dae84d0e7f222e774b8ac4819c89e`.
+- All eight article routes returned HTTP **200**, each rendered a story-specific title/keyword and referenced the correct `/editorial/generated/{slug}.webp` hero. All eight WebP URLs returned HTTP **200**, `image/webp`, RIFF/WebP magic bytes. No image binary or association was changed.
+- Of 38 first-party source links, 29 returned HTTP 200 from the remote client; 5 returned HTTP 403 (Salesforce Admin, Feedzai x2, Pentera x2) and 4 Adobe pages returned 403 or timed out. The blocked pages were independently retrievable through web source tools; do not equate anti-bot 403 with a dead URL. Browser visual QA is **not completed**.
+- Headless browser attempt failed because the authorized VPS Chrome binary lacks system libraries (first missing `libatk-1.0.so.0`); do not claim desktop/mobile screenshots or pixel-level QA. No system packages were installed.
+- The original inventory has **43** tracker rows excluding the four separately published new AI governance/privacy/collaboration/security stories; the user request referred to 42. The discrepancy must be resolved by actual inventory, not by dropping an article. Current tracker status: **23/43 rewritten; 20/43 pending**, **0 final independent PASS**.
 
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
