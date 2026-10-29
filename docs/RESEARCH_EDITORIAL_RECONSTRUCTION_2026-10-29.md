@@ -25,8 +25,8 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 | gadgets | mudra-link | REWRITTEN_LIVE_AUDIT_PENDING |
 | gadgets | ipolish-digital-nails | REWRITTEN_LIVE_AUDIT_PENDING |
 | materials-energy | chargebotic-kestrel | REWRITTEN_LIVE_AUDIT_PENDING |
-| robotics | nori-a3 | REWRITE_PENDING |
-| materials-energy | savor-carbon-fats | REWRITE_PENDING |
+| robotics | nori-a3 | REWRITTEN_LIVE_AUDIT_PENDING |
+| materials-energy | savor-carbon-fats | REWRITTEN_LIVE_AUDIT_PENDING |
 | ai-work | coding-agents | REWRITTEN_LIVE_AUDIT_PENDING |
 | ai-work | ai-sales | REWRITTEN_LIVE_AUDIT_PENDING |
 | ai-work | ai-recruiting | REWRITTEN_LIVE_AUDIT_PENDING |
@@ -77,6 +77,12 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - All 4 rewrites use named product mechanisms and explicit distinctions between shipping, sampling, pre-order, demonstration and roadmap targets. Exact editorial counts and primary-source audit are in [audit/research_reconstruction_batch_2026-10-29_02.md](../audit/research_reconstruction_batch_2026-10-29_02.md).
 - Status is **REWRITTEN_LIVE_AUDIT_PENDING** pending final independent review and mobile/desktop visual QA. Do not count any of these as final PASS until verified.
 - No slugs, article imagery, category mapping, or existing validated claims were removed.
+
+## Batch 03 — 2026-10-29
+- Reconstructed **2 more stories**: nori-a3 and savor-carbon-fats. Both expanded from 6 to 10 source-bound sections, including new product-specific mechanical/chemical explanations and commercialization constraints.
+- Total rewritten **9/42**, remaining not rewritten **33**. Final independent audit and responsive screenshot QA remain open; status **REWRITTEN_LIVE_AUDIT_PENDING**.
+- Evidence: [audit/research_reconstruction_batch_2026-10-29_03.md](../audit/research_reconstruction_batch_2026-10-29_03.md).
+- Existing slugs, verified image associations and original source facts retained.
 
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
