@@ -105,5 +105,7 @@ A first GitHub object-splice attempt produced a malformed Research TypeScript da
 
 ## Publication gate
 - Latest content commit: `429f3ab0126d518f63d0c07ae996a314f477e60e`.
-- Vercel READY, six live HTML/hero HTTP checks and fresh 47-page/94-view Playwright QA: **PENDING VERIFICATION**. Do not count the whole project as complete until these are confirmed.
+- Vercel content deployment `dpl_8xuqVUDBmYGYKitnEWUP2FEJRjSj` **READY**. Independent remote verification: six revised article HTML URLs HTTP 200 with new unique-body markers, and six adopted hero WebP URLs HTTP 200, `image/webp`, RIFF/WebP magic.
+- Post-batch GitHub Actions workflow run `40907522742`, rerun job `123767078935`: **SUCCESS**. Deterministic editorial gate: 47 stories / 0 findings. Playwright: **94 desktop/mobile views, 0 failures**. Screenshot artifact `12937397849` (7-day retention). Automated screenshot validation, not manual review of every pixel.
+- Subsequent audit and canonical-tracker documentation deployments reached Vercel READY; no editorial/asset changes since the content commit.
 - Existing 32 editorial PASS stories remain unchanged; with this batch, 38/47 have second-pass editorial PASS and 9 remain PENDING, subject to the canonical table update.
