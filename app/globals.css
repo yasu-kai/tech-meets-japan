@@ -2043,3 +2043,8 @@ linear-gradient(135deg,rgba(255,255,255,.04),transparent 55%)}
 @media(max-width:560px){
   .story-related-grid .story-related-card{grid-template-rows:24px minmax(0,1fr) 24px}
 }
+
+/* New approved batch only; the reviewed 32 articles retain their rendering. */
+.story-related-grid .story-related-image .generated-editorial-media[data-editorial-batch="2026-10-29"]{object-fit:contain}
+.esr-approved-art>.generated-editorial-media{display:block;width:100%;height:auto}
+.esr-image-note{color:#d8e3eb;font-size:10px;line-height:1.6;padding:9px 12px;margin:0}

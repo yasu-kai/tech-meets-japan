@@ -1,5 +1,5 @@
 import GeneratedEditorialImage from "@/components/GeneratedEditorialImage";
-import { generatedEditorialImage } from "@/lib/generatedEditorial";
+import { generatedEditorialImage, isProtectedEditorialArticle } from "@/lib/generatedEditorial";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -37,6 +37,11 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
   const story=storyMap[slug];
   if(!story || story.category!==category) notFound();
   const image=generatedEditorialImage(story.slug);
+  // Keep the reviewed 32 articles identical, including their existing related cards.
+  const relatedImage=(itemSlug:string)=>{
+    const candidate=generatedEditorialImage(itemSlug);
+    return isProtectedEditorialArticle(story.slug) && candidate?.batch ? undefined : candidate;
+  };
   const isFrontierTech=["nori-a3","savor-carbon-fats","chargebotic-kestrel","ixana-wir","mudra-link","ipolish-digital-nails"].includes(story.slug);
   const related=researchStories.filter(item=>item.category===story.category && item.slug!==story.slug).slice(0,3);
 
@@ -116,7 +121,7 @@ export default async function StoryPage({params}:{params:Promise<{category:strin
               {related.map((item,index)=><Link className="story-related-card" href={"/research/"+item.category+"/"+item.slug} key={item.slug}>
                 <span>{String(index+1).padStart(2,"0")}</span>
                 <div>
-                  <div className={"story-related-image story-related-image-"+item.category+" story-related-image-"+item.slug+(generatedEditorialImage(item.slug)?" generated-editorial-frame":"")} style={generatedEditorialImage(item.slug)?{backgroundImage:"none"}:undefined} aria-hidden="true"><GeneratedEditorialImage slug={item.slug}/></div>
+                  <div className={"story-related-image story-related-image-"+item.category+" story-related-image-"+item.slug+(relatedImage(item.slug)?" generated-editorial-frame":"")} style={relatedImage(item.slug)?{backgroundImage:"none"}:undefined} aria-hidden="true"><GeneratedEditorialImage slug={item.slug} enabled={Boolean(relatedImage(item.slug))}/></div>
                   <p>{item.eyebrow}</p>
                   <h3>{item.title}</h3>
                 </div>

@@ -1,3 +1,5 @@
+import GeneratedEditorialImage from "@/components/GeneratedEditorialImage";
+import { generatedEditorialImage } from "@/lib/generatedEditorial";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, ShieldCheck } from "lucide-react";
 import Header from "@/components/Header";
@@ -39,12 +41,17 @@ export default function EarlyStagePage(){
           <p>まだ小さなチームが挑む、大きな問題。会社の狙いと開発の現在地を知ろう。</p>
         </div>
         <div className="esr-features">
-        {picks.map(({p,company},index)=><Link className={"esr-feature esr-"+p.className} key={p.id} href={"/early-stage/"+company!.id}>
-          <div className="esr-feature-art" aria-hidden="true"><span className="esr-art-type">{p.theme}</span><strong>{p.number}</strong><span className="esr-art-mark">{p.theme==="ROBOTICS"?"↗":p.theme==="NEUROTECH"?"∿":"⚡"}</span></div>
+        {picks.map(({p,company},index)=>{
+          const imageSlug=company!.publishedPath?.split("/").pop() || "";
+          const approved=generatedEditorialImage(imageSlug)?.batch === "2026-10-29";
+          return <Link className={"esr-feature esr-"+p.className} key={p.id} href={"/early-stage/"+company!.id}>
+          <div className={"esr-feature-art"+(approved?" esr-approved-art":"")} style={approved?{height:"auto",minHeight:0,display:"block",background:"#0a1320"}:undefined}>
+            {approved?<><GeneratedEditorialImage slug={imageSlug} alt={p.headline+"（AI生成コンセプト画像）"}/><p className="esr-image-note">AI生成コンセプト画像／実在製品の外観・性能を示すものではありません</p></>:<><span className="esr-art-type">{p.theme}</span><strong>{p.number}</strong><span className="esr-art-mark">{p.theme==="ROBOTICS"?"↗":p.theme==="NEUROTECH"?"∿":"⚡"}</span></>}
+          </div>
           <div className="esr-feature-text"><span className="esr-overline esr-overline-dark">{p.theme} <span className="esr-dot">•</span> {maturityLabel[company!.maturity]}</span>
             <h3>{p.headline}</h3><p>{p.lead}</p><span className="esr-read">{p.read}<ArrowUpRight size={18}/></span>
           </div>
-        </Link>)}
+        </Link>})}
         </div>
       </section>
 

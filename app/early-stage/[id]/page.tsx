@@ -1,3 +1,5 @@
+import GeneratedEditorialImage from "@/components/GeneratedEditorialImage";
+import { generatedEditorialImage } from "@/lib/generatedEditorial";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
@@ -44,6 +46,8 @@ export default async function EarlyCompanyProfile({params}:{params:Promise<{id:s
   const p=profiles[id];
   const intelligence=earlyStageProfiles[id];
   if(!c||!p||!intelligence) notFound();
+  const imageSlug=p.research.split("/").pop() || "";
+  const image=generatedEditorialImage(imageSlug);
   return <><Header/><main style={{background:"#f5f2eb",color:"#18201b"}}>
     <article style={{width:"min(900px,calc(100% - 40px))",margin:"0 auto",padding:"68px 0 100px"}}>
       <Link href="/early-stage" style={{display:"inline-flex",alignItems:"center",gap:8,fontSize:13,fontWeight:700,marginBottom:42}}><ArrowLeft size={16}/> Early-Stageに戻る</Link>
@@ -51,6 +55,7 @@ export default async function EarlyCompanyProfile({params}:{params:Promise<{id:s
       <h1 style={{fontSize:"clamp(40px,6vw,74px)",lineHeight:1.22,letterSpacing:"-.055em",margin:"16px 0 22px",overflowWrap:"normal",wordBreak:"normal"}}>{p.headline}</h1>
       <p style={{fontSize:18,lineHeight:1.85,color:"#58645b",marginBottom:38}}>{c.company} / {c.country}</p>
       <p style={{fontSize:"clamp(18px,2vw,23px)",lineHeight:1.95,maxWidth:820,marginBottom:65}}>{p.opening}</p>
+      {image?.batch === "2026-10-29" ? <figure className="generated-editorial-hero"><GeneratedEditorialImage slug={imageSlug} alt={p.headline+"（AI生成コンセプト画像）"} priority/><figcaption>{image.note}</figcaption></figure> : null}
       <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,270px),1fr))",gap:16,marginBottom:66}}>
         {[{title:"なぜ注目するのか",body:p.why},{title:"いま、どこまで来たか",body:p.status},{title:"次に確かめたいこと",body:p.challenge}].map(b=><section key={b.title} style={{borderTop:"2px solid #202820",padding:"22px 8px"}}><h2 style={{fontSize:21,lineHeight:1.45,margin:"0 0 18px"}}>{b.title}</h2><p style={{lineHeight:1.9,color:"#525c54",fontSize:15}}>{b.body}</p></section>)}
       </div>
