@@ -42,5 +42,9 @@ Rewrites were applied to `lib/researchStories.ts` for `ai-sales`, `coding-agents
 - Source evidence: https://www.paradox.ai/products/screening ; https://www.paradox.ai/products/conversational-scheduling ; https://eightfold.ai/products/ ; https://eightfold.ai/products/talent-acquisition/ ; https://www.hirevue.com/press-release/hirevue-launches-assessment-builder-to-scale-validated-skills-hiring-across-enterprises ; https://www.hirevue.com/press-release/hirevue-launches-ai-interviewer .
 - Live HTML: HTTP 200; 9 sections; 9 source links; original hero image previously verified HTTP 200 image/webp.
 
+## Link reachability audit
+- 20 of 23 official links returned HTTP 200 from the remote read-only checker. Three Hirevue pages returned HTTP 403 from that checker, while the web retrieval source opened all three successfully and verified the relevant official content. This is an automated-client access limitation, **not** evidence that the articles are gone. Recheck links with a normal browser during visual QA.
+- The article HTML for all three routes returned HTTP 200, each with nine sections and the correct existing hero WebP returned HTTP 200 and `image/webp` MIME. No screenshots or mobile browser rendering have been inspected.
+
 ## Open QA gate
 **No article in this batch is yet marked final PASS.** An independent audit of each complete published article and desktop/mobile visual checks remain. Production READY and live HTML/hero checks are recorded separately. Do not notify the user until the entire 42-story backlog is final PASS and verified.
