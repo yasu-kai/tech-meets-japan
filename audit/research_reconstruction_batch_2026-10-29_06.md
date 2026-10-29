@@ -78,3 +78,9 @@ Four previously pending Research stories. Primary sources checked via first-part
 
 ## Publication QA
 Pending Vercel READY, route HTTP 200, WebP association verification. Do not count as final PASS until complete.
+
+## Production follow-up
+- All four article pages and their original WebP images: HTTP 200, correct hero URL referenced in HTML, expected article keywords present.
+- Vercel production deployment READY at commit `606381faa60dae84d0e7f222e774b8ac4819c89e`.
+- First-party URLs: most HTTP 200. Salesforce Admin returned 403 to remote client, but was readable in web research; access-control response is not evidence of missing documentation.
+- Browser visual QA blocked by missing Chrome runtime libraries on authorized VPS. Independent final audit remains outstanding; verdict remains REVISE (pending), not PASS.
