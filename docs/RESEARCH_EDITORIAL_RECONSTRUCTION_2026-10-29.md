@@ -129,6 +129,13 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Corrected the drones O4 Ground Station source after a remote HTTP 404 and added the official Japan-specific Relay Mode restriction from DJI's first-party FAQ. Current source and caveat recorded in batch 09 audit.
 - Independent final editorial PASS and desktop/mobile visual QA remain **open** for all articles. No user notification until entire backlog is complete.
 
+## Final HTTP/source QA for this run — 2026-10-30
+- Vercel production deployment `dpl_FRweVuGAztfdtaBiMYHSdoPmLao1` at commit `e6a30e2b96ab4c9da21fa0e609a5bfafd20a974f` is **READY**.
+- All nine batch 08/09 article URLs returned HTTP **200**, each rendered 9–10 article sections (plus shared headings), and all nine original WebP hero URLs returned HTTP **200**, `image/webp`, RIFF/WebP magic. The revised Japanese O4 Relay Mode restriction appears in the live drones article.
+- Robotics sources: 12 of 13 first-party links returned HTTP 200 from a remote client. The original DJI O4 press-release URL returned 404 from that client and was replaced by a live DJI Enterprise product page plus FAQ (both HTTP 200).
+- Batch 08 source links: Rogo, Uber Freight, Blue Yonder and DJI sources returned HTTP 200. Adobe requests timed out or returned 403, project44 and OpenAI returned 403 from the remote client; all cited official source content was independently opened using web retrieval. These restrictions are not proof of broken public links.
+- **Still not final PASS:** independent claim-by-claim audit and desktop/mobile pixel-level screenshot QA remain open. Do not send a completion notification.
+
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
 - Verify official references for each material claim before publishing a rewrite.
