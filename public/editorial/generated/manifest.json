@@ -515,5 +515,45 @@
     "batch": "2026-10-29",
     "article_path": "/research/gadgets/mudra-link",
     "note": "AI生成コンセプト画像／Mudra Linkの実機写真ではありません。空中画面は操作イメージで、投影機能を示すものではありません。"
+  },
+  {
+    "number": 11,
+    "slug": "ai-governance",
+    "category": "ai-security",
+    "width": 1600,
+    "height": 837,
+    "batch": "2026-10-29",
+    "article_path": "/research/ai-security/ai-governance",
+    "note": "AI生成コンセプト画像／実在の製品・運用画面を示すものではありません"
+  },
+  {
+    "number": 11,
+    "slug": "data-privacy",
+    "category": "ai-security",
+    "width": 1600,
+    "height": 837,
+    "batch": "2026-10-29",
+    "article_path": "/research/ai-security/data-privacy",
+    "note": "AI生成コンセプト画像／実在の製品・運用画面を示すものではありません"
+  },
+  {
+    "number": 11,
+    "slug": "human-ai-collaboration",
+    "category": "ai-work",
+    "width": 1600,
+    "height": 837,
+    "batch": "2026-10-29",
+    "article_path": "/research/ai-work/human-ai-collaboration",
+    "note": "AI生成コンセプト画像／実在の製品・運用画面を示すものではありません"
+  },
+  {
+    "number": 11,
+    "slug": "future-of-security",
+    "category": "ai-security",
+    "width": 1600,
+    "height": 837,
+    "batch": "2026-10-29",
+    "article_path": "/research/ai-security/future-of-security",
+    "note": "AI生成コンセプト画像／実在の製品・運用画面を示すものではありません"
   }
 ]
