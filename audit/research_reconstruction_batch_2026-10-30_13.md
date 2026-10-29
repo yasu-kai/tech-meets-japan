@@ -56,3 +56,6 @@
 - Editorial second-pass PASS across batches 12 and 13: **9/47**. The remaining **38/47** require independent source-bound review.
 - The preceding Playwright rerun `40907522742` completed successfully for the earlier five-article batch: **94 views, 0 automated failures**, as recorded in its job log. This is **not** evidence for the newly revised four articles; re-run after commit `1f3bc616a3e057723a23a8c31baa0f20342217ba` is required.
 - Do not notify the owner or stop the automation until all 47 articles have editorial PASS and current production desktop/mobile QA.
+
+## Final post-change visual QA
+- After all four batch-13 articles and two corrected headlines were deployed, GitHub Actions workflow `40907522742`, latest rerun job `123619472614`, completed **successfully: 94 desktop/mobile full-page views, 0 automated failures**. Deterministic editorial checks also passed. Artifact ID `12918667139` contains the latest screenshots. This is automated visual QA; do not imply that every screenshot was individually human-reviewed.
