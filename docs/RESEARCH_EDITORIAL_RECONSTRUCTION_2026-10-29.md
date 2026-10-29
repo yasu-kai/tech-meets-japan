@@ -177,6 +177,12 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Previous post-change Playwright workflow rerun `40907522742` completed **94/94 views with 0 automated failures** for the five batch-12 articles. The latest four article edits still require a new screenshot QA run.
 - Canonical editorial second-pass status now **9/47 PASS, 38/47 PENDING**. Do not notify before all 47 editorial and current visual gates PASS.
 
+## Batch 14 — 2026-10-30 / headline accuracy and final post-change visual QA
+- Replaced two overstated titles in **both** `lib/researchStories.ts` and `lib/research.ts`: `robotics-as-labor` no longer claims that buying robots has ended, and `embodied-ai-reception` no longer implies Proto is not screen-based. GitHub commits `300c01f012d3f912afb633522bf07a8d0a3d26ce`, `c74fb7fd4384eace2abd39d066a90e96e8a374b3`.
+- Latest content commit `c74fb7fd4384eace2abd39d066a90e96e8a374b3` reached Vercel Production **READY** (`dpl_3g9tCBeMsuG6kEc99xfYV9x659Nh`). Both corrected article pages returned HTTP 200 and contained new titles, with old titles absent. All adopted images and URL slugs remain unchanged.
+- GitHub Actions `40907522742` latest rerun job `123619472614`: **94/94 desktop/mobile Playwright views PASS, 0 automated failures** after all nine second-pass editorial revisions and headline fixes. Deterministic editorial checks PASS. Screenshot artifact `12918667139`. This does not constitute individual human visual inspection of all screenshots.
+- Canonical final editorial second-pass verdicts remain **9/47 PASS, 38/47 PENDING**. Next high-priority unreviewed articles: `wearable-memory`, `future-input`, `weird-gadgets`, `silent-speech`, `browser-agents`, `ultrasound-bci`. No completion notification.
+
 ## Canonical final editorial audit — 47 Research articles
 The statuses below are separate from the first-pass rewrite status. `PASS` means source-bound independent second-pass editorial acceptance, `PENDING` means not yet independently reviewed; the sitewide completion gate also requires current production desktop/mobile QA.
 
