@@ -1,0 +1,37 @@
+name: Research desktop and mobile visual QA
+
+on:
+  push:
+    paths:
+      - ".github/workflows/research-visual-qa.yml"
+      - "scripts/research-visual-qa.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  visual-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Playwright
+        run: |
+          npm install --no-save --ignore-scripts playwright@1.58.2
+          npx playwright install --with-deps chromium
+      - name: Capture and check all Research pages
+        run: node scripts/research-visual-qa.mjs
+        env:
+          TMJ_BASE_URL: https://tech-meets-japan.vercel.app
+      - name: Upload QA screenshots and JSON results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-visual-qa
+          path: artifacts/research-visual-qa/
+          if-no-files-found: warn
+          retention-days: 7
