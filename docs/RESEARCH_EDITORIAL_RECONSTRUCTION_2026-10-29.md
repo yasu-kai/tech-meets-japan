@@ -150,6 +150,16 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Added `scripts/research-visual-qa.mjs` and GitHub Actions workflow `.github/workflows/research-visual-qa.yml` to capture desktop (1440px) and mobile (390px) full-page screenshots for all 47 pages, checking hero load, horizontal overflow and heading overlap. The first workflow run failed on an unsupported Ubuntu 26.04 Playwright browser installation; pinned the runner to Ubuntu 24.04 and retriggered. **Do not count visual QA PASS until the corrected workflow completes and screenshots are inspected.**
 - Editorial final independent audit remains **0/43 PASS** for the original tracker; four newer articles also require depth review. Do not notify completion.
 
+## Batch 11 — 2026-10-30 / 47-story quality and visual QA
+- Three newer AI reports (`data-privacy`, `human-ai-collaboration`, `future-of-security`) were expanded from very short summaries into source-grounded multi-section articles. All **47** live Research stories now pass the strengthened deterministic editorial gate: >=1,800 Japanese body characters, >=6 sections, >=3 primary sources, no flagged generic filler, and exactly 47 detected records. This is a **minimum gate**, not a guarantee of satisfying the desired 3,000–5,000-character depth or independent editorial PASS.
+- Corrected `identity-agents` missing third source and repaired the editorial audit parser, which previously failed to count JSON-formatted rewritten stories.
+- Checked **214 unique official source URLs**: 183 HTTP 200, 25 HTTP 403, 6 transient/network errors; zero observed 404 or 500. The 31 non-200 links require normal-browser verification; 403 is not proof of a broken page.
+- Full production QA: **47/47** article pages HTTP 200, **47/47** adopted WebP heroes HTTP 200 and valid RIFF, **47/47** declared image dimensions matching actual WebP dimensions.
+- Playwright GitHub Actions run **40907522742**: **94/94 desktop/mobile full-page screenshots passed automated visual assertions**, including hero decoding, no horizontal overflow, no heading/hero overlap and correctly loaded distinct related-card images. Screenshots archived in the run artifact. Desktop/mobile contact sheets and representative lower-page screenshots were also manually reviewed.
+- Fixed a real related-card image regression: repeated generic laptop placeholders were replaced with each article's already adopted unique image. Added curated cross-topic next reads for 15 stories; existing article URLs and hero image binaries remain unchanged.
+- Evidence and limitations: [audit/research_reconstruction_batch_2026-10-30_11.md](../audit/research_reconstruction_batch_2026-10-30_11.md).
+- **Still NOT COMPLETE:** independent second-pass fact/comparison/reading-quality audit remains **0/43 final PASS** for the original tracker; four newer articles also require independent final review. Prioritize under-depth stories, unnecessary English and source-specific verification. Do not send completion notification or stop the automation.
+
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
 - Verify official references for each material claim before publishing a rewrite.
