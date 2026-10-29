@@ -122,7 +122,7 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 ## Batch 09 — 2026-10-30
 - Reconstructed **4 more stories**: humanoid, autonomous-driving, physical-ai-platforms, drones. Total **32/43** rewritten; **11/43** still pending. **0 final independent PASS**.
 - Source and editorial notes: [audit/research_reconstruction_batch_2026-10-30_09.md](../audit/research_reconstruction_batch_2026-10-30_09.md).
-- No slugs, categories, image binaries or associations changed. Deployment and visual QA pending.
+- No slugs, categories, image binaries or associations changed. Expanded article depth: humanoid 2543 chars; autonomous-driving 2385 chars; physical-ai-platforms 2409 chars; drones 2232 chars. Earlier production commit reached READY and 4 original WebP heroes served HTTP 200; final updated commit requires fresh production verification. Independent final audit and visual QA pending.
 
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.

@@ -18,3 +18,10 @@ Rewritten: humanoid, autonomous-driving, physical-ai-platforms, drones. Product-
 - Independent editorial audit against audit/INDEPENDENT_AI_AUDITOR.md: not complete.
 - Production deployment and responsive QA: not yet verified at time of commit.
 - Existing URLs and images must remain unchanged.
+
+## Source-grounded depth expansion
+- humanoid: 10 sections; 2543 Japanese body characters. Added concrete input/output, failure and implementation tests.
+- autonomous-driving: 10 sections; 2385 Japanese body characters. Added concrete input/output, failure and implementation tests.
+- physical-ai-platforms: 10 sections; 2409 Japanese body characters. Added concrete input/output, failure and implementation tests.
+- drones: 10 sections; 2232 Japanese body characters. Added concrete input/output, failure and implementation tests.
+Final independent audit and desktop/mobile visual QA still outstanding.
