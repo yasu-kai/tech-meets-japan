@@ -4,10 +4,10 @@
 Four articles rewritten in lib/researchStories.ts without changing their slug, category, hero mapping or previously verified factual claims. Primary official product and help pages were read on 2026-10-29. New examples and Japanese adoption scenarios are explicitly labeled as editorial hypotheses.
 
 ## Article metrics
-- **ixana-wir**: 8 sections; 2109 Japanese body characters; source links added or retained. Editorial check: **REVISE / final audit pending**, score not assigned. No independent auditor sign-off.
-- **mudra-link**: 8 sections; 2246 Japanese body characters; source links added or retained. Editorial check: **REVISE / final audit pending**, score not assigned. No independent auditor sign-off.
-- **ipolish-digital-nails**: 8 sections; 2060 Japanese body characters; source links added or retained. Editorial check: **REVISE / final audit pending**, score not assigned. No independent auditor sign-off.
-- **chargebotic-kestrel**: 8 sections; 2098 Japanese body characters; source links added or retained. Editorial check: **REVISE / final audit pending**, score not assigned. No independent auditor sign-off.
+- **ixana-wir**: 10 sections; 2686 Japanese body characters; source links added or retained. Editorial check: **REVISE / final audit pending**, score not assigned. No independent auditor sign-off.
+- **mudra-link**: 10 sections; 2838 Japanese body characters; source links added or retained. Editorial check: **REVISE / final audit pending**, score not assigned. No independent auditor sign-off.
+- **ipolish-digital-nails**: 10 sections; 2619 Japanese body characters; source links added or retained. Editorial check: **REVISE / final audit pending**, score not assigned. No independent auditor sign-off.
+- **chargebotic-kestrel**: 10 sections; 2671 Japanese body characters; source links added or retained. Editorial check: **REVISE / final audit pending**, score not assigned. No independent auditor sign-off.
 
 ## Source-bound fact checks
 - ixana-wir: shipping YR23 5 Mbit/s vs sampling YR31 20 Mbit/s; 0.2 nJ/bit measured full-chip TX/RX; 38× comparison uses a specified Nordic BLE benchmark, **not** battery life. Sources: https://ixana.ai/technology/wi-r-ban ; https://ixana.ai/products/chips/wi-r-ban ; https://ixana.ai/technology/roadmap .
@@ -24,6 +24,9 @@ Four articles rewritten in lib/researchStories.ts without changing their slug, c
 - unsupported_claims: no independently confirmed product claims added; technical and numeric statements tied to official sources; Japanese market applications are hypothetical.
 - comparison_failures: product-vs-standard comparisons use choice conditions; no blanket superiority claims.
 - required_fixes: independently review full published articles; verify live HTTP/MIME and unchanged hero mapping; desktop and mobile visual QA; mark final PASS only after these gates.
+
+## Additional depth pass
+- Added two evidence-aware sections to each article: quantitative Wi-R throughput and industrial use, Mudra interoperability and accessibility, iPolish refill sizing and material disposal, Chargebotic energy arithmetic and high-voltage deployment caveats. All added numerical comparisons are arithmetic or official manufacturer disclosures, not independent product performance tests.
 
 ## Delivery evidence
 GitHub commit and Vercel deployment details are to be appended after successful deployment. Production READY alone does not prove live article rendering.
