@@ -37,6 +37,7 @@ export const researchCategories: ResearchCategory[] = [
     description: "営業、開発、採用、法務、顧客対応。AIがホワイトカラー業務のどこまでを引き受けるのか。",
     thesis: "見るべきは機能数ではなく、人間の業務サイクルから何が消えるか。",
     topics: [
+      { slug:"human-ai-collaboration", title:"AIに任せる仕事、人間が引き受ける判断。協働の設計は「例外」で決まる。", kicker:"ServiceNow Intelligent Approvals / Human-in-the-loop", format:"REPORT", status:"published", href:"/research/ai-work/human-ai-collaboration" },
       { slug:"coding-agents", title:"プログラムを書くAIは、開発者の仕事をどこまで任せられるのか。", kicker:"Replit / Cognition / Cursor / Claude Code", format:"MARKET MAP", status:"published", href:"/research/ai-work/coding-agents" },
       { slug:"ai-sales", title:"営業AIは、見込み客探しから連絡まで任せられるのか。", kicker:"見込み客探し → 連絡 → 商談の見極め → 引き継ぎ", format:"REPORT", status:"published", href:"/research/ai-work/ai-sales" },
       { slug:"ai-recruiting", title:"採用は、AIでどこまで変わるのか。", kicker:"Sourcing / Screening / Interview / Scheduling", format:"MARKET MAP", status:"published", href:"/research/ai-work/ai-recruiting" },
@@ -52,6 +53,9 @@ export const researchCategories: ResearchCategory[] = [
     description: "攻撃、検知、対策、実行、再検証。AIへ渡されるセキュリティ権限の深さを見る。",
     thesis: "AutomationとAutonomyを分け、AIが自ら次の行動を選べる範囲を見る。",
     topics: [
+      { slug:"ai-governance", title:"AIの判断を誰が説明するのか。AI Governanceは「ルール」から「運用」へ。", kicker:"IBM watsonx.governance / Microsoft Purview / NIST", format:"REPORT", status:"published", href:"/research/ai-security/ai-governance" },
+      { slug:"data-privacy", title:"AIに渡す前に、何を消すか。Data Privacyは「禁止」だけでは守れない。", kicker:"Google Cloud Sensitive Data Protection / Microsoft Presidio", format:"REPORT", status:"published", href:"/research/ai-security/data-privacy" },
+      { slug:"future-of-security", title:"守る境界が消える。AIエージェント時代のSecurityは何を守るのか。", kicker:"NIST CSF 2.0 / AI RMF / Identity / Data / Action", format:"REPORT", status:"published", href:"/research/ai-security/future-of-security" },
       { slug:"offensive-ai", title:"AIは、サイバー防御のどこまでを担うのか。", kicker:"XBOW / MindFort / Pentera / Horizon3 / Synack / Terra / AgenticSec", format:"MARKET MAP", status:"published", href:"/research/offensive-ai" },
       { slug:"ai-soc", title:"SOCは監視室からAI監督室へ変わるのか。", kicker:"Detection → Triage → Investigation → Response", format:"REPORT", status:"published", href:"/research/ai-security/ai-soc" },
       { slug:"identity-agents", title:"AI Agent時代のIdentityは誰を認証するのか。", kicker:"Human / Machine / Agent Identity", format:"REPORT", status:"published", href:"/research/ai-security/identity-agents" },
