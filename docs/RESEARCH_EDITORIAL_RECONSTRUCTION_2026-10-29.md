@@ -160,6 +160,68 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Evidence and limitations: [audit/research_reconstruction_batch_2026-10-30_11.md](../audit/research_reconstruction_batch_2026-10-30_11.md).
 - **Still NOT COMPLETE:** independent second-pass fact/comparison/reading-quality audit remains **0/43 final PASS** for the original tracker; four newer articles also require independent final review. Prioritize under-depth stories, unnecessary English and source-specific verification. Do not send completion notification or stop the automation.
 
+## Batch 12 — 2026-10-30 / first five independent second-pass editorial verdicts
+- Completed source-bound second-pass review and substantive corrections for **5 articles**: agentic-dev-security, procurement-agents, robotics-as-labor, embodied-ai-reception, bridge-ultrasound-bci. All five now have an **editorial PASS** verdict based on verified primary product descriptions, explicit limitations, comparisons and natural Japanese. This is editorial approval, **not** final end-to-end publication approval.
+- Corrected significant issues: Snyk's GA versus preview availability, Zip versus SAP Ariba comparison, Formic's historic hourly versus current fixed-monthly offers, Proto's display-based “hologram” versus free-floating imagery, and Bridge's research-stage blood-flow BCI versus a working thought-reading device.
+- Editorial evidence and per-article blocking/warning/source review: [audit/research_reconstruction_batch_2026-10-30_12.md](../audit/research_reconstruction_batch_2026-10-30_12.md).
+- Current independent second-pass **editorial PASS: 5/47**. **42/47** still await this review. No article's slug, category, adopted hero WebP binary or mapping was changed.
+- Latest revised content commit `463620b0032389471522068930467c972d6a73b8` reached Vercel Production **READY**. A remote HTTP client verified all five revised article routes HTTP 200 with new text and all five original hero assets HTTP 200 / image/webp / valid RIFF/WebP magic.
+- Post-change Playwright desktop/mobile QA rerun requested on successful workflow `40907522742` (new job `123616018301`); status pending at this record's creation. Earlier 94/94 visual QA was on the previous article text and must not be misrepresented as post-change QA.
+- The original 43-row tracker table above remains unchanged for backward compatibility with the visual QA script. **Use the new 47-row second-pass table below as the canonical final audit verdict state.**
+
+## Canonical final editorial audit — 47 Research articles
+The statuses below are separate from the first-pass rewrite status. `PASS` means source-bound independent second-pass editorial acceptance, `PENDING` means not yet independently reviewed; the sitewide completion gate also requires current production desktop/mobile QA.
+
+| Slug | Category | Second-pass editorial verdict | Evidence |
+| --- | --- | --- | --- |
+| ixana-wir | gadgets | PENDING | — |
+| mudra-link | gadgets | PENDING | — |
+| ipolish-digital-nails | gadgets | PENDING | — |
+| chargebotic-kestrel | materials-energy | PENDING | — |
+| nori-a3 | robotics | PENDING | — |
+| savor-carbon-fats | materials-energy | PENDING | — |
+| coding-agents | ai-work | PENDING | — |
+| ai-sales | ai-work | PENDING | — |
+| ai-recruiting | ai-work | PENDING | — |
+| ai-video | ai-creative | PENDING | — |
+| runway-production | ai-creative | PENDING | — |
+| manufacturing-ai | ai-industry | PENDING | — |
+| warehouse-robotics | robotics | PENDING | — |
+| ai-glasses | gadgets | PENDING | — |
+| personal-ai-device | gadgets | PENDING | — |
+| ai-legal | ai-work | PENDING | — |
+| ai-customer-service | ai-work | PENDING | — |
+| ai-soc | ai-security | PENDING | — |
+| identity-agents | ai-security | PENDING | — |
+| ai-fraud | ai-security | PENDING | — |
+| continuous-validation | ai-security | PENDING | — |
+| ai-voice | ai-creative | PENDING | — |
+| synthetic-media | ai-creative | PENDING | — |
+| creative-stack | ai-creative | PENDING | — |
+| logistics-ai | ai-industry | PENDING | — |
+| finance-ai | ai-industry | PENDING | — |
+| healthcare-ai | ai-industry | PENDING | — |
+| retail-ai | ai-industry | PENDING | — |
+| humanoid | robotics | PENDING | — |
+| autonomous-driving | robotics | PENDING | — |
+| physical-ai-platforms | robotics | PENDING | — |
+| drones | robotics | PENDING | — |
+| wearable-memory | gadgets | PENDING | — |
+| future-input | gadgets | PENDING | — |
+| weird-gadgets | gadgets | PENDING | — |
+| silent-speech | gadgets | PENDING | — |
+| browser-agents | ai-work | PENDING | — |
+| agentic-dev-security | ai-security | PASS | audit/research_reconstruction_batch_2026-10-30_12.md |
+| procurement-agents | ai-industry | PASS | audit/research_reconstruction_batch_2026-10-30_12.md |
+| robotics-as-labor | robotics | PASS | audit/research_reconstruction_batch_2026-10-30_12.md |
+| embodied-ai-reception | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_12.md |
+| bridge-ultrasound-bci | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_12.md |
+| ultrasound-bci | gadgets | PENDING | — |
+| ai-governance | ai-security | PENDING | — |
+| data-privacy | ai-security | PENDING | — |
+| human-ai-collaboration | ai-work | PENDING | — |
+| future-of-security | ai-security | PENDING | — |
+
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
 - Verify official references for each material claim before publishing a rewrite.
