@@ -84,7 +84,7 @@ Canonical tracker had **21/47 PASS** before this batch. Six previously PENDING a
 ## Deployment and independent smoke QA
 - Vercel Production deployment `dpl_Bom3Fo5MSA7C8P1Z1d4HV7TH3Dvj` for content commit `4feaa6ae7e2c0f5ea3a302a8a303bb7ee6db7892` reached **READY**.
 - Independent remote VPS HTTP check of six `/research/{category}/{slug}` routes: **6/6 HTTP 200**, revised text marker present in all six. Six adopted `/editorial/generated/{slug}.webp` assets: **6/6 HTTP 200**, `image/webp`, RIFF magic. No slug/category/hero binary or mapping changed.
-- Fresh full-site Playwright 47 pages × desktop/mobile = 94 views: **rerun requested after content deploy; do not claim PASS until job result is inspected**. Prior successful job `123664638644` belongs to the previous batch.
+- Fresh post-content GitHub Actions rerun `40907522742`, job `123710330187`, **SUCCESS**: deterministic editorial gate PASS; Playwright **94/94 desktop/mobile views, 0 failures**; screenshot artifact `12930811029` uploaded. This is automated image/layout QA, not a claim of human pixel-by-pixel inspection.
 - Siemens Insights Hub direct page timed out in automated retrieval; do not treat that alone as broken. Other cited first-party material was inspected for the material claims.
 
 ## Completion gate
