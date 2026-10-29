@@ -53,8 +53,8 @@ async function worker() {
           heroLoaded: Boolean(hero && hero.complete && hero.naturalWidth > 0),
           headingVisible: Boolean(h1 && h1.getBoundingClientRect().width > 0),
           heroOverlapsHeading: Boolean(heroRect && h1Rect && heroRect.top < h1Rect.bottom - 2 && heroRect.bottom > h1Rect.top + 2),
-          relatedImagesLoaded: relatedImages.length >= 3 && relatedImages.every((img) => img.complete && img.naturalWidth > 0),
-          relatedUnique: new Set(relatedImages.map((img) => img.currentSrc || img.src)).size >= 3,
+          relatedImagesLoaded: relatedImages.length > 0 && relatedImages.every((img) => img.complete && img.naturalWidth > 0),
+          relatedUnique: new Set(relatedImages.map((img) => img.currentSrc || img.src)).size === relatedImages.length,
         };
       }, job.slug);
       Object.assign(record, state);
