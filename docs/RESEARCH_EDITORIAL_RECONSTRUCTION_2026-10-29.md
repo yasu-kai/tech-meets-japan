@@ -88,7 +88,7 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Reconstructed **4 stories**: ai-video, runway-production, manufacturing-ai, warehouse-robotics. Total rewritten **13/42**; remaining not rewritten **29**.
 - Each story was rewritten from official vendor documentation and includes product-specific mechanisms, operational inputs/outputs, limitations, comparisons, and Japan deployment criteria.
 - Evidence: [audit/research_reconstruction_batch_2026-10-29_04.md](../audit/research_reconstruction_batch_2026-10-29_04.md).
-- Status **REWRITTEN_LIVE_AUDIT_PENDING**. Independent final audit and responsive screenshot QA are not complete. Preserve original image mappings and slugs.
+- Status **REWRITTEN_LIVE_AUDIT_PENDING**. Latest content commit `75340223d18ab3a5df47453619c39ff556d8dab1` is Vercel READY; all four article routes HTTP 200 and correct original WebP heroes HTTP 200. Independent final audit and responsive screenshot QA remain open. Preserve original image mappings and slugs.
 
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
