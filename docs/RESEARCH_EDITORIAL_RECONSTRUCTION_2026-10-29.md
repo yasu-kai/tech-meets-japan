@@ -30,10 +30,10 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 | ai-work | coding-agents | REWRITTEN_LIVE_AUDIT_PENDING |
 | ai-work | ai-sales | REWRITTEN_LIVE_AUDIT_PENDING |
 | ai-work | ai-recruiting | REWRITTEN_LIVE_AUDIT_PENDING |
-| ai-creative | ai-video | REWRITE_PENDING |
-| ai-creative | runway-production | REWRITE_PENDING |
-| ai-industry | manufacturing-ai | REWRITE_PENDING |
-| robotics | warehouse-robotics | REWRITE_PENDING |
+| ai-creative | ai-video | REWRITTEN_LIVE_AUDIT_PENDING |
+| ai-creative | runway-production | REWRITTEN_LIVE_AUDIT_PENDING |
+| ai-industry | manufacturing-ai | REWRITTEN_LIVE_AUDIT_PENDING |
+| robotics | warehouse-robotics | REWRITTEN_LIVE_AUDIT_PENDING |
 | gadgets | ai-glasses | REWRITE_PENDING |
 | gadgets | personal-ai-device | REWRITE_PENDING |
 | ai-work | ai-legal | REWRITE_PENDING |
@@ -83,6 +83,12 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Total rewritten **9/42**, remaining not rewritten **33**. Final independent audit and responsive screenshot QA remain open; status **REWRITTEN_LIVE_AUDIT_PENDING**.
 - Evidence: [audit/research_reconstruction_batch_2026-10-29_03.md](../audit/research_reconstruction_batch_2026-10-29_03.md).
 - Existing slugs, verified image associations and original source facts retained.
+
+## Batch 04 — 2026-10-29
+- Reconstructed **4 stories**: ai-video, runway-production, manufacturing-ai, warehouse-robotics. Total rewritten **13/42**; remaining not rewritten **29**.
+- Each story was rewritten from official vendor documentation and includes product-specific mechanisms, operational inputs/outputs, limitations, comparisons, and Japan deployment criteria.
+- Evidence: [audit/research_reconstruction_batch_2026-10-29_04.md](../audit/research_reconstruction_batch_2026-10-29_04.md).
+- Status **REWRITTEN_LIVE_AUDIT_PENDING**. Independent final audit and responsive screenshot QA are not complete. Preserve original image mappings and slugs.
 
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
