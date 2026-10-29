@@ -485,5 +485,35 @@
     "batch": "2026-10-29",
     "article_path": "/research/ai-security/agentic-dev-security",
     "note": "AI生成コンセプト画像／実在製品の外観・性能・製法を正確に示すものではありません"
+  },
+  {
+    "number": 3,
+    "slug": "nori-a3",
+    "category": "robotics",
+    "source_filename": "日差しの中の家事ロボット助手.png",
+    "library_file_id": "libfile_ddfa923341908191a71a7306218acf14",
+    "source_sha256": "a92feeec692f827fcdcbff63083ca32e04462477c918979b4aca5227b1fb3145",
+    "width": 1600,
+    "height": 900,
+    "sha256": "582e5393c9b6e0e3e66d7c1f20218bdc14395b361ac1fd031221a06ffa950113",
+    "bytes": 140566,
+    "batch": "2026-10-29",
+    "article_path": "/research/robotics/nori-a3",
+    "note": "AI生成コンセプト画像／NORI A3の実機写真ではありません。外観・家事の自律性能を正確に示すものではありません。"
+  },
+  {
+    "number": 5,
+    "slug": "mudra-link",
+    "category": "gadgets",
+    "source_filename": "未来のジェスチャーインターフェース.png",
+    "library_file_id": "libfile_f18ca58c225c819180163156f59ac783",
+    "source_sha256": "b9d506ba106153169ce9a1964cd790621f95b5900b7e6be2d6bd59a4410b9ec5",
+    "width": 1600,
+    "height": 900,
+    "sha256": "6ebfcb146b1eaaf032bcf67c84d152455e14c4a27f054a871fa07a9bbce995ae",
+    "bytes": 136288,
+    "batch": "2026-10-29",
+    "article_path": "/research/gadgets/mudra-link",
+    "note": "AI生成コンセプト画像／Mudra Linkの実機写真ではありません。空中画面は操作イメージで、投影機能を示すものではありません。"
   }
 ]
