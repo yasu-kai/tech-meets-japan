@@ -69,3 +69,9 @@ Four research articles reconstructed from first-party official sources. Content 
 - Adobe — Production workflows: https://business.adobe.com/products/firefly-business/firefly-creative-production/production-workflows.html
 - Adobe — Creative Production overview: https://helpx.adobe.com/jp/firefly/web/work-with-enterprise-features/creative-production/creative-production-overview.html
 - Adobe — 3D Digital Twin workflows: https://helpx.adobe.com/firefly/web/work-with-enterprise-features/creative-production/use-3d-digital-twin-workflows.html
+
+## Production follow-up
+- All four article pages and original WebP assets: HTTP 200, correct story-specific hero URL referenced in HTML, expected article keywords present.
+- Vercel production deployment READY at commit `606381faa60dae84d0e7f222e774b8ac4819c89e`.
+- Source access from remote client: Stripe, Featurespace, Horizon3, XBOW and ElevenLabs HTTP 200. Feedzai and Pentera returned 403; Adobe pages returned 403 or timeout, but all were independently accessible through web research. Do not label as broken links without browser verification.
+- Browser visual QA blocked by missing Chrome runtime libraries on authorized VPS. Independent final audit remains outstanding; verdict remains REVISE (pending), not PASS.
