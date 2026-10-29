@@ -4,7 +4,7 @@
 Four independent Research articles rewritten in one atomic content batch: ai-video, runway-production, manufacturing-ai, warehouse-robotics. Existing slugs, categories, image associations, hero binaries, and previously confirmed facts retained. Official product sources reviewed on 2026-10-29. The status below is a source-bound editorial self-check, **not an independent final PASS**.
 
 ## ai-video
-- Body: 2054 Japanese characters; 8 narrative sections; 5 official source links.
+- Body: 2772 Japanese characters; 11 narrative sections; 5 official source links.
 - Editorial provisional verdict: REVISE (final audit and responsive QA pending).
 - Blocking findings: independent full-text audit and live rendering not yet completed at commit time.
 - Warnings: manufacturer feature and efficiency claims must not be generalized; availability, commercial terms, Japanese support, safety and rights are deployment-specific.
@@ -14,7 +14,7 @@ Four independent Research articles rewritten in one atomic content batch: ai-vid
 - Required fixes: independent review, source link reachability, production HTTP + hero MIME, desktop/mobile visual QA.
 
 ## runway-production
-- Body: 2124 Japanese characters; 8 narrative sections; 5 official source links.
+- Body: 2881 Japanese characters; 11 narrative sections; 5 official source links.
 - Editorial provisional verdict: REVISE (final audit and responsive QA pending).
 - Blocking findings: independent full-text audit and live rendering not yet completed at commit time.
 - Warnings: manufacturer feature and efficiency claims must not be generalized; availability, commercial terms, Japanese support, safety and rights are deployment-specific.
@@ -24,7 +24,7 @@ Four independent Research articles rewritten in one atomic content batch: ai-vid
 - Required fixes: independent review, source link reachability, production HTTP + hero MIME, desktop/mobile visual QA.
 
 ## manufacturing-ai
-- Body: 1933 Japanese characters; 8 narrative sections; 4 official source links.
+- Body: 2637 Japanese characters; 11 narrative sections; 4 official source links.
 - Editorial provisional verdict: REVISE (final audit and responsive QA pending).
 - Blocking findings: independent full-text audit and live rendering not yet completed at commit time.
 - Warnings: manufacturer feature and efficiency claims must not be generalized; availability, commercial terms, Japanese support, safety and rights are deployment-specific.
@@ -34,7 +34,7 @@ Four independent Research articles rewritten in one atomic content batch: ai-vid
 - Required fixes: independent review, source link reachability, production HTTP + hero MIME, desktop/mobile visual QA.
 
 ## warehouse-robotics
-- Body: 1964 Japanese characters; 8 narrative sections; 5 official source links.
+- Body: 2622 Japanese characters; 11 narrative sections; 5 official source links.
 - Editorial provisional verdict: REVISE (final audit and responsive QA pending).
 - Blocking findings: independent full-text audit and live rendering not yet completed at commit time.
 - Warnings: manufacturer feature and efficiency claims must not be generalized; availability, commercial terms, Japanese support, safety and rights are deployment-specific.
@@ -73,3 +73,8 @@ Four independent Research articles rewritten in one atomic content batch: ai-vid
 
 ## Editorial gate
 No article is marked final PASS. All four require independent audit of the complete published text, production HTTP/image verification and desktop/mobile screenshots. Source pages are first-party vendor documents, not independent performance measurements.
+
+## Depth follow-up and live checks
+- Second editorial pass added three article-specific operational sections per story (data quality, localization/version control, editing economics, SKU/safety/ROI). Updated lengths: ai-video 2772 chars / 11 sections; runway-production 2881 chars / 11 sections; manufacturing-ai 2637 chars / 11 sections; warehouse-robotics 2622 chars / 11 sections.
+- The initial content commit `244867a827ee59d355167c895dc43707dbae7e5f` reached Vercel Production deployment `dpl_8viT6AgDxTSsEfatHUH3B6eTMpF6` READY. All four live article routes returned HTTP 200 and contained the rewritten headings; original WebP assets returned HTTP 200 with image/webp and RIFF signatures via authorized remote HTTP checks. These checks precede this depth follow-up commit, so re-verify the latest deployment.
+- Independent editorial audit and desktop/mobile screenshot QA remain pending. No final PASS.
