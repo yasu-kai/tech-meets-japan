@@ -166,8 +166,16 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - Editorial evidence and per-article blocking/warning/source review: [audit/research_reconstruction_batch_2026-10-30_12.md](../audit/research_reconstruction_batch_2026-10-30_12.md).
 - Current independent second-pass **editorial PASS: 5/47**. **42/47** still await this review. No article's slug, category, adopted hero WebP binary or mapping was changed.
 - Latest revised content commit `463620b0032389471522068930467c972d6a73b8` reached Vercel Production **READY**. A remote HTTP client verified all five revised article routes HTTP 200 with new text and all five original hero assets HTTP 200 / image/webp / valid RIFF/WebP magic.
-- Post-change Playwright desktop/mobile QA rerun requested on successful workflow `40907522742` (new job `123616018301`); status pending at this record's creation. Earlier 94/94 visual QA was on the previous article text and must not be misrepresented as post-change QA.
+- Post-change Playwright desktop/mobile QA rerun `40907522742` (job `123616018301`) **completed successfully: 94 views, 0 automated failures** for the batch-12 content. Subsequent batch-13 edits require a new run.
 - The original 43-row tracker table above remains unchanged for backward compatibility with the visual QA script. **Use the new 47-row second-pass table below as the canonical final audit verdict state.**
+
+## Batch 13 — 2026-10-30 / four additional AI reports second-pass PASS
+- The four additional articles outside the original 43-story inventory were reviewed against first-party IBM, Google Cloud, Microsoft, ServiceNow and NIST sources and materially deepened: ai-governance (3,184 body chars), data-privacy (2,818), human-ai-collaboration (2,829), future-of-security (2,814).
+- Notable source-specific findings: IBM's supported discovery environments and observability integrations; Google Cloud Tokyo/Osaka processing regions **not** among the listed image inspection/redaction locations as of 2026-10-26; ServiceNow Intelligent Approvals entitlement/plugin dependencies and three outcomes; NIST CSF 2.0 versus AI RMF scope differences.
+- All four have **editorial PASS** after second-pass source review, with explicit cautions for unverified prices, Japanese product availability, and vendor-marketing claims. Evidence: [audit/research_reconstruction_batch_2026-10-30_13.md](../audit/research_reconstruction_batch_2026-10-30_13.md).
+- Vercel production deployment `dpl_CKaz3eR96i7feKbn5g1wZTu64jGP` for content commit `1f3bc616a3e057723a23a8c31baa0f20342217ba` reached **READY**. Independent remote HTTP client: **4/4** revised pages HTTP 200 with expected text, **4/4** original hero WebPs HTTP 200 and valid RIFF magic. No slug or adopted image changed.
+- Previous post-change Playwright workflow rerun `40907522742` completed **94/94 views with 0 automated failures** for the five batch-12 articles. The latest four article edits still require a new screenshot QA run.
+- Canonical editorial second-pass status now **9/47 PASS, 38/47 PENDING**. Do not notify before all 47 editorial and current visual gates PASS.
 
 ## Canonical final editorial audit — 47 Research articles
 The statuses below are separate from the first-pass rewrite status. `PASS` means source-bound independent second-pass editorial acceptance, `PENDING` means not yet independently reviewed; the sitewide completion gate also requires current production desktop/mobile QA.
@@ -217,10 +225,10 @@ The statuses below are separate from the first-pass rewrite status. `PASS` means
 | embodied-ai-reception | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_12.md |
 | bridge-ultrasound-bci | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_12.md |
 | ultrasound-bci | gadgets | PENDING | — |
-| ai-governance | ai-security | PENDING | — |
-| data-privacy | ai-security | PENDING | — |
-| human-ai-collaboration | ai-work | PENDING | — |
-| future-of-security | ai-security | PENDING | — |
+| ai-governance | ai-security | PASS | audit/research_reconstruction_batch_2026-10-30_13.md |
+| data-privacy | ai-security | PASS | audit/research_reconstruction_batch_2026-10-30_13.md |
+| human-ai-collaboration | ai-work | PASS | audit/research_reconstruction_batch_2026-10-30_13.md |
+| future-of-security | ai-security | PASS | audit/research_reconstruction_batch_2026-10-30_13.md |
 
 ## Change discipline
 - Update article bodies in lib/researchStories.ts, preserving slugs and image mapping.
