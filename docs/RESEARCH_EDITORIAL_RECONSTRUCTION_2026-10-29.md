@@ -183,6 +183,14 @@ Status REWRITE_PENDING means the story has not passed the new editorial gate. AI
 - GitHub Actions `40907522742` latest rerun job `123619472614`: **94/94 desktop/mobile Playwright views PASS, 0 automated failures** after all nine second-pass editorial revisions and headline fixes. Deterministic editorial checks PASS. Screenshot artifact `12918667139`. This does not constitute individual human visual inspection of all screenshots.
 - Canonical final editorial second-pass verdicts remain **9/47 PASS, 38/47 PENDING**. Next high-priority unreviewed articles: `wearable-memory`, `future-input`, `weird-gadgets`, `silent-speech`, `browser-agents`, `ultrasound-bci`. No completion notification.
 
+## Batch 15 — 2026-10-30 / six independent second-pass editorial PASS
+- Source-bound second-pass review and substantive corrections completed for **wearable-memory, future-input, weird-gadgets, silent-speech, browser-agents, ultrasound-bci**. Individual verdict/score/blocking_findings/warnings/generic_text/unsupported_claims/comparison_failures/required_fixes and first-party evidence: [audit/research_reconstruction_batch_2026-10-30_15.md](../audit/research_reconstruction_batch_2026-10-30_15.md).
+- Key corrections: Plaud NotePin vs NotePin S physical control and recording range; Meta Neural Band Japan availability and SilentWear's limited command vocabulary; rabbit r1 third-party agent disclaimer; Engram prototype and 30-word/3-person research accuracy scope; Browserbase Agents general availability and task-level completion metrics; Bridge's observational transcranial study, comparison with Merge and extensive Japanese terminology cleanup.
+- GitHub main editorial content commits `e4d2b240`, `d9f6d3e2`, `ce2d6693`. Original 43-row first-pass statuses are unchanged. Slugs, categories and adopted hero WebP assets unchanged.
+- Independent VPS HTTP QA after deployment: all six updated article routes **200**, six updated body markers present, all six original hero WebP URLs **200** with valid RIFF/WebP signatures. Vercel content commit `ce2d6693` is **READY** (deployment `dpl_8LuYzYHkW57TwsFLxv3Q2WBGG5o1`).
+- Fresh 47-page/94-viewport Playwright rerun requested on workflow `40907522742` after content deployment; **result pending** at this record. Earlier 94/94 success is not counted as post-batch-15 QA.
+- Canonical independent second-pass editorial status **15/47 PASS, 32/47 PENDING**. Global completion gate remains OPEN; no notification.
+
 ## Canonical final editorial audit — 47 Research articles
 The statuses below are separate from the first-pass rewrite status. `PASS` means source-bound independent second-pass editorial acceptance, `PENDING` means not yet independently reviewed; the sitewide completion gate also requires current production desktop/mobile QA.
 
@@ -220,17 +228,17 @@ The statuses below are separate from the first-pass rewrite status. `PASS` means
 | autonomous-driving | robotics | PENDING | — |
 | physical-ai-platforms | robotics | PENDING | — |
 | drones | robotics | PENDING | — |
-| wearable-memory | gadgets | PENDING | — |
-| future-input | gadgets | PENDING | — |
-| weird-gadgets | gadgets | PENDING | — |
-| silent-speech | gadgets | PENDING | — |
-| browser-agents | ai-work | PENDING | — |
+| wearable-memory | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_15.md |
+| future-input | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_15.md |
+| weird-gadgets | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_15.md |
+| silent-speech | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_15.md |
+| browser-agents | ai-work | PASS | audit/research_reconstruction_batch_2026-10-30_15.md |
 | agentic-dev-security | ai-security | PASS | audit/research_reconstruction_batch_2026-10-30_12.md |
 | procurement-agents | ai-industry | PASS | audit/research_reconstruction_batch_2026-10-30_12.md |
 | robotics-as-labor | robotics | PASS | audit/research_reconstruction_batch_2026-10-30_12.md |
 | embodied-ai-reception | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_12.md |
 | bridge-ultrasound-bci | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_12.md |
-| ultrasound-bci | gadgets | PENDING | — |
+| ultrasound-bci | gadgets | PASS | audit/research_reconstruction_batch_2026-10-30_15.md |
 | ai-governance | ai-security | PASS | audit/research_reconstruction_batch_2026-10-30_13.md |
 | data-privacy | ai-security | PASS | audit/research_reconstruction_batch_2026-10-30_13.md |
 | human-ai-collaboration | ai-work | PASS | audit/research_reconstruction_batch_2026-10-30_13.md |
